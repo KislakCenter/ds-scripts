@@ -14,50 +14,105 @@
 #   9976106713503681
 #   9965025663503681
 
-# DS ID
-# Date Added
-# Date Last Updated
-# Holding Institution
-# Holding Institution ID number (shelfmark, call number, etc)
-# (Perma)Link to Holding Institution's record
-# Production Place As Recorded
-# Production Place
-# Production Date As Recorded
-# Production Date
-# Century
-# Dated
-# Uniform Title (240)
-# Title As Recorded (245; Title Statement)
-# Work As Recorded
-# Work
-# Genre As Recorded
-# Genre
-# Subject As Recorded
-# Subject
-# Author As Recorded
-# Author
-# Artist As Recorded
-# Artist
-# Scribe As Recorded
-# Scribe
-# Language As Recorded
-# Language
-# Illuminated initials?
-# Miniatures?
-# Former Owner As Recorded
-# Former owner
-# Former ID number
-# Material
-# Physical Description
-# Acknowledgements
-# Binding
-# Folios
-# Dimensions
-# Decoration
 
 require 'nokogiri'
 require 'csv'
+require 'yaml'
+require 'optionparser'
+
+HEADINGS = %w{
+ds_id
+date_added
+date_last_updated
+holding_institution
+holding_institution_id_number
+link_to_holding_institution_record
+production_place_as_recorded
+production_place
+production_date_as_recorded
+production_date
+century
+dated
+uniform_title_240
+title_as_recorded_245
+work_as_recorded
+work
+genre_as_recorded
+genre
+subject_as_recorded
+subject
+author_as_recorded
+author
+artist_as_recorded
+artist
+scribe_as_recorded
+scribe
+language_as_recorded
+language
+illuminated_initials
+miniatures
+former_owner_as_recorded
+former_owner
+former_id_number
+material
+physical_description
+acknowledgements
+binding
+folios
+dimensions
+decoration
+}
+
+options = {}
+OptionParser.new do |opts|
+
+  opts.banner = "Usage: #{File.basename __FILE__} [options] XML"
+
+  # r_help = %q{Directory containing source assets.path values [REQUIRED]}
+  # opts.on "-r DIRECTORY", "--assets-root=DIRECTORY", r_help do |directory|
+  #   validate_directory directory
+  #   options[:assets_root] = directory
+  # end
+  #
+  # n_help = %q{Dry run; do nothing; only report what would be done}
+  # opts.on "-n", "--dry-run", n_help do |dry_run|
+  #   options[:dry_run] = true
+  # end
+
+  opts.on("-h", "--help", "Prints this help") do
+    puts opts
+    exit
+  end
+end.parse!
+
+in_xml = ARGV.shift
+
+abort 'Please provide an input XML'           unless in_xml
+abort "Can't find input XML: '#{in_xml}'"     unless File.exist? in_xml
+
+xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+xml.remove_namespaces!
 
 
+output_csv = %Q{#{in_xml.chomp '.xml'}.csv}
 
+CSV.open output_csv, "w", headers: true do |row|
+  row << HEADINGS
 
+  holding_institution           = xml.xpath("//record/datafield[@tag=852]/subfield[@code='a']").text
+  holding_institution_id_number = xml.xpath("//record/datafield[@tag=99]/subfield[@code='a']").text
+  production_place_as_recorded  = xml.xpath("//record/datafield[@tag=260]/subfield[@code='a']").text
+  production_date_as_recorded   = xml.xpath("//record/datafield[@tag=260]/subfield[@code='c']").text
+  uniform_title_240             = xml.xpath("//record/datafield[@tag=240]/subfield[@code='a']").text
+
+  data = { 'holding_institution'           => holding_institution,
+           'holding_institution_id_number' => holding_institution_id_number,
+           'production_place_as_recorded'  => production_place_as_recorded,
+           'production_date_as_recorded'   => production_date_as_recorded,
+           'uniform_title_240' => uniform_title_240,
+  }
+
+  row << data
+end
+
+puts "Wrote: #{output_csv}"
