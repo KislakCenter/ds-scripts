@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>01918ctm a2200397Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9965025663503681</marc:controlfield>
+    <marc:controlfield tag="005">20191003131958.0</marc:controlfield>
+    <marc:controlfield tag="008">150827s18uu    pau           000 0 tha d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn919264966</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)919264966</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)6502566-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="041">
+  <marc:subfield code="a">tha</marc:subfield>
+  <marc:subfield code="a">tai</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn919264965</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">Ms. Coll. 990</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="245">
+  <marc:subfield code="a">Thai manuscript,</marc:subfield>
+  <marc:subfield code="f">1800s?</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">1</marc:subfield>
+  <marc:subfield code="f">item (77 folios) :</marc:subfield>
+  <marc:subfield code="b">paper ;</marc:subfield>
+  <marc:subfield code="c">12 x 36 cm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Written in 10 lines per folio.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">After the first 23 folios on the front, the rest of the folios are blank except for one line on the partial last folio of the front (f. A39 upper), which now appears as the lower cover.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Written in the 19th century?</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Folios are black charcoal khoi paper, with white chalk script; folded concertina- or accordion-style.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Upper cover with a border formed of additional layers of heavy paper and with traces of red in the center, possibly from a stamp; lower cover missing.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Manuscript all in Thai script, except for its opening line in Khom, perhaps including transliterations of Khom in Thai script.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn Ms. Coll. 990, Item 14</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">In Thai, with the first line in Khom (f. A01 lower).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Folded books.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Thai</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">Thailand</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="4" tag="655">
+  <marc:subfield code="a">Manuscripts, Digital.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="773">
+  <marc:subfield code="t">Collection of Southeast Asian Manuscripts.</marc:subfield>
+  <marc:subfield code="g">Item 14</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">Ms. Coll. 990</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/6502566</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="996">
+  <marc:subfield code="a">unbound</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20151217</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22342338120003681</marc:holding_id>
+        <marc:call_number>Ms. Coll. 990</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

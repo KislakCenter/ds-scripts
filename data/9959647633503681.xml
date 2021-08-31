@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>03864ctm a2200589Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9959647633503681</marc:controlfield>
+    <marc:controlfield tag="005">20191003131923.0</marc:controlfield>
+    <marc:controlfield tag="008">130619q19001925paua          000 0 gez d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn849519596</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)849519596</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)5964763-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn849519594</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 102</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="245">
+  <marc:subfield code="a">[Zena nagaromu and hymns]</marc:subfield>
+  <marc:subfield code="h">[manuscript].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[Ethiopia,</marc:subfield>
+  <marc:subfield code="c">between 1900 and 1925]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">100 leaves :</marc:subfield>
+  <marc:subfield code="b">parchment ;</marc:subfield>
+  <marc:subfield code="c">135 x 102 (83 x 80) mm. bound to 140 x 115 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation:  Parchment, iv + 100 + iv; 1-10&#xB9;&#x2070;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 2 columns of 14 lines; ruled in drypoint with vertical bounding lines; prickings visible on most leaves.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in ra&#x308;qiq script.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  4 full-page paintings on erased pages, of the Virgin and Child with archangels Michael and Gabriel (f. 2r); the Crucifixion with Mary and John (f. 36r); Saint George and the dragon (f. 71r); and Christ and the Virgin in majesty (f. 100r), all but the first with thread markers on the upper outer corners of their leaves.  Rubrication in red, with twin pairs of red lines separated by 2 or 3 black lines at the beginning of each hymn and significant words in red; rough decorative border (harag) in black and red at the top of the page at the beginning of 2 hymns (f. 1r, 38r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  20th-century wood boards with exposed spine.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Ethiopia in the early 20th century (possible colophon erased and illegible, f. 85v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Account of Creation by the Trinity (Zena nagaromu, f. 1r), followed by hymns (f. 20v, 29v, 38r, 47v, 60r, 85v).  Notes added in a different hand in the top margin (indications of day of the week for readings) and at the end of some hymns (f. 38v, 59v); some erased rubrics supplied in blue ink by a modern hand (for example, f. 31r, 40v, 51v, 85v).  In addition to the brown thread markers in the upper outer corners of 3 illuminations (f. 36r, 71r, 100r), 2 leaves have a bit of magenta fiber threaded through their side margins (f. 76, 85), which may have served as another form of finding tab.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn LJS 102.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Ethiopic.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Possible ownership stamp in purple ink (f. 85v); possible ownership inscription in the same blue ink as supplied rubrics (f. iv verso).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold in Cape Town, South Africa, to Lawrence J. Schoenberg, April 1997.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2013.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2016.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="600">
+  <marc:subfield code="a">Jesus Christ</marc:subfield>
+  <marc:subfield code="x">Crucifixion</marc:subfield>
+  <marc:subfield code="v">Art.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="600">
+  <marc:subfield code="a">Mary,</marc:subfield>
+  <marc:subfield code="c">Blessed Virgin, Saint</marc:subfield>
+  <marc:subfield code="v">Art.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="600">
+  <marc:subfield code="a">George,</marc:subfield>
+  <marc:subfield code="c">Saint,</marc:subfield>
+  <marc:subfield code="d">-303</marc:subfield>
+  <marc:subfield code="v">Art.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Hymns, Ethiopic.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Illumination of books and manuscripts, Ethiopian</marc:subfield>
+  <marc:subfield code="v">Specimens.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Trinity</marc:subfield>
+  <marc:subfield code="v">Prayers and devotions.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Hymns.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Illuminations.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Ethiopic</marc:subfield>
+  <marc:subfield code="y">20th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="4" tag="655">
+  <marc:subfield code="a">Manuscripts, Digital.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="4" tag="655">
+  <marc:subfield code="a">Finding tabs.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 102</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5964763</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20141008</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22410215640003681</marc:holding_id>
+        <marc:call_number>LJS 102</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

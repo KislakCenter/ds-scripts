@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>07123ctm a2200817Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9947675343503681</marc:controlfield>
+    <marc:controlfield tag="005">20191008171549.0</marc:controlfield>
+    <marc:controlfield tag="006">m        d        </marc:controlfield>
+    <marc:controlfield tag="007">cr#cn#008aaaba</marc:controlfield>
+    <marc:controlfield tag="008">100419s1464    paup    s     000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)4767534-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 265</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="100">
+  <marc:subfield code="a">Crescenzi, Pietro de',</marc:subfield>
+  <marc:subfield code="d">approximately 1233-approximately 1320.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="240">
+  <marc:subfield code="a">Ruralia commoda</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">Liber ruralium commodorum</marc:subfield>
+  <marc:subfield code="h">[electronic resource].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[Rome?,</marc:subfield>
+  <marc:subfield code="c">before 1464]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">1 online resource (172 leaves) :</marc:subfield>
+  <marc:subfield code="b">ill.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from rubric (f. 7r, viewed on April 28, 2010).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation:  Parchment, i (18th-century paper) + 172 + i (18th-century paper); 1-16&#xB9;&#x2070; 17&#xB9;&#xB2;; 1-172, foliation in ink in a later hand, lower right recto.  Catchwords, most vertical, on last verso of each gathering.  Remnants of signatures a-c visible on leaves in first 3 gatherings; most trimmed away.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 2 columns of 41 lines; ruled in faint ink.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in semi-humanistic script, possibly in the hand of Petrus de Traiecto; opening words of each book following illuminated initial written in display capitals.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  3-line and 5-line initial in gold interlaced with a white vine pattern on a background of blue, green, and red extending almost the full height of both columns and filling most of the upper margin, ending in a winged insect (f. 1r); 9-line inhabited initial in gold with a similar interlaced white vine pattern and background forming a three-quarters border with winged insects and birds and the arms of Prospero Caffarelli (f. 7r); 12 similar gold initials, 6- to 10-line, with short marginal extensions, at the beginning of each of Books 2-12 (f. 15v, 38v, 46v, 66r, 91r, 115r, 117r, 120v, 150r, 158v, 168v) and in the middle of Book 5 (f. 86r); headings in red and 3-line initials in blue at the beginning of chapters throughout (guide letters often visible).  Manicules used occasionally (for example, f. 69r-72r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  18th-century Italian red morocco; gilt, with broad ornamental borders, cornerpieces, and the arms of Pope Pius VI on covers; spine gilt in compartments.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Italy, probably Rome, in the 1460s (based on analysis of illumination by Albinia de la Mare), probably before 1464 (based on arms of Prospero Caffarelli).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Dimensions of original manuscript:  331 x 227 (210 x 150) mm. bound to 342 x 242 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r: [Letter to Aymeric and dedication to Charles II of Anjou]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">2. f.1r-5v: Rubrice.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.7r-15v: De locis habitabilibus eligendis.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.15v-38r: De natura plantarum et de rebus communibus cultu cuiuslibet generis agrorum.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">5. f.38r-46r: De campestribus agris colendis et de natura et utilitate fructuum qui ex eis percipiuntur.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">6. f.46r-66r: De vitibus et vineis et cultu earum de natura et utilitate fructuum earum.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">7. f.66r-90v: De arboribus et natura et utilitate fructuum ipsarum.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">8. f.90v-115r: De ortis et natura et utilitate tam herbarum que feruntur in eis quarum ceterarum que in aliis locis sine hominis industria naturaliter nascuntur.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">9. f.115r-117r: De pratis et nemoribus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">10. f.117r-120v: De viridariis et rebus delectabilibus ex arboribus et herbis et fructu ipsarum artificiose agendis.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">11. f.120v-150r: De omnibus animalibus que nutriuntur in rure.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">12. f.150r-158v: De diversis ingeniis capiendi animalia fera.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">13. f.158v-168v: De regulis operationum ruris.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">14. f.168v-171v: De his que singulis mensibus possint in rure peragi.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 127-128 (LJS 265).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">A work on agriculture in 12 books harmonizing Roman authors (Varro, Pliny, Palladius) with medieval authors (Avicenna, Albertus Magnus) and practical experience.  Topics include plants, vines, trees, the fruit of all these types of plants, meadows, woods, animals, and hunting.  At the beginning of the manuscript are a letter to Aymeric of Piacenza (Master General of the Dominican order, 1304-1311), a dedication to Charles II of Anjou (King of Naples, 1288-1309), and a list of chapter headings.  A colophon at the end of the manuscript describes the manuscript as having been written on behalf of Cardinal Louis Allerman and set by him to Rome as a gift for Angelotto Fusco, Bishop of Cava and chamberlain of Pope Martin V, but this must have been in the source manuscript from which the present manuscript was copied.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">LJS 265</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="533">
+  <marc:subfield code="a">Electronic reproduction.</marc:subfield>
+  <marc:subfield code="b">Philadelphia, Pa. :</marc:subfield>
+  <marc:subfield code="c">University of Pennsylvania Libraries,</marc:subfield>
+  <marc:subfield code="d">2010.</marc:subfield>
+  <marc:subfield code="n">Lawrence J. Schoenberg Collection.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="534">
+  <marc:subfield code="p">Original:</marc:subfield>
+  <marc:subfield code="t">Liber ruralium commodorum (LJS 265),</marc:subfield>
+  <marc:subfield code="l">Lawrence J. Schoenberg Collection (Florida).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="538">
+  <marc:subfield code="a">Mode of access:  World Wide Web.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Prospero Caffarelli (arms, f. 7r, before he became bishop of Ascoli in Dec. 1463, at which time the bishop's mitre was added to his arms).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Pope Pius VI (papal arms on covers).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Robert Hoe (bookplate inside upper cover); sold in his collection at auction at Anderson Auction Company (New York), 19 Nov. 1912, Part IV, lot 2333.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Alfred Chester Beatty (Beatty label, #44, on front flyleaf, but not listed in Eric George Millar's Library of A. Chester Beatty, 1927-1930).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Hermann Marx (bookplate inside upper cover); sold with other items from his collection at auction at Sotheby's, 19 Apr. 1948, lot 32.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold at auction at Sotheby's, 3 Dec. 1968, lot 26.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Librairie J.-M. LeFell (Paris) to Lawrence J. Schoenberg, June 1998.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Lawrence J. Schoenberg at auction at Sotheby's to an unknown purchaser, 6 Jul. 2010, lot 34.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Agriculture</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Facsimiles.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Illuminations.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="a">Charles</marc:subfield>
+  <marc:subfield code="b">II,</marc:subfield>
+  <marc:subfield code="c">King of Naples,</marc:subfield>
+  <marc:subfield code="d">ca. 1254-1309,</marc:subfield>
+  <marc:subfield code="e">dedicatee.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Firenze, Andrea de,</marc:subfield>
+  <marc:subfield code="d">15th cent.,</marc:subfield>
+  <marc:subfield code="e">illuminator.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Traiecto, Petrus de,</marc:subfield>
+  <marc:subfield code="e">scribe.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Caffarelli, Prospero,</marc:subfield>
+  <marc:subfield code="d">d. 1500,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="a">Pius</marc:subfield>
+  <marc:subfield code="b">VI,</marc:subfield>
+  <marc:subfield code="c">Pope,</marc:subfield>
+  <marc:subfield code="d">1717-1799,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Hoe, Robert,</marc:subfield>
+  <marc:subfield code="d">1839-1909,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Beatty, A. Chester</marc:subfield>
+  <marc:subfield code="q">(Alfred Chester),</marc:subfield>
+  <marc:subfield code="c">Sir,</marc:subfield>
+  <marc:subfield code="d">1875-1968,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Marx, Hermann,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Web</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania.</marc:subfield>
+  <marc:subfield code="j">LJS 265</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="0" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4767534</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20100428</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22399213830003681</marc:holding_id>
+        <marc:call_number>LJS 265</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmsw</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>
