@@ -215,6 +215,22 @@ def extract_physical_description record
   }.reject(&:empty?).join '|'
 end
 
+def extract_holding_institution_ids record
+  # start with the shelfmark
+  ids = [find_shelfmark(record)]
+  # add the MMS ID
+  ids << record.xpath("controlfield[@tag=001]").text
+
+  ids.reject(&:empty?).join '|'
+end
+
+def find_shelfmark record
+  holding_callno = record.xpath('datafield/holdings/holding/call_number').text
+  return holding_callno unless holding_callno.strip.empty?
+
+  record.xpath("datafield[@tag=99]/subfield[@code='a']").text
+end
+
 output_csv = 'output.csv'
 
 CSV.open output_csv, "w", headers: true do |row|
@@ -228,9 +244,7 @@ CSV.open output_csv, "w", headers: true do |row|
 
     records.each do |record|
       holding_institution           = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
-      shelfmark                     = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
-      bibid                         = record.xpath("controlfield[@tag=001]").text
-      holding_institution_id_number = [shelfmark, bibid].reject(&:empty?).join DEFAULT_FIELD_SEP
+      holding_institution_id_number = extract_holding_institution_ids record
       production_place_as_recorded  = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded   = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
       uniform_title_240             = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
