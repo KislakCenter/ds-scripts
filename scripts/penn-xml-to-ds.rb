@@ -225,9 +225,8 @@ def extract_holding_institution_ids record
 end
 
 def find_shelfmark record
-  holding_callno = record.xpath('datafield/holdings/holding/call_number').text
+  holding_callno = record.xpath('holdings/holding/call_number').text
   return holding_callno unless holding_callno.strip.empty?
-
   record.xpath("datafield[@tag=99]/subfield[@code='a']").text
 end
 
