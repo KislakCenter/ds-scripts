@@ -14,6 +14,12 @@
 #   9976106713503681
 #   9965025663503681
 
+##
+#  Questions
+#
+# LJs 235 does not have an 099 field; where should the shelfmark come from?
+# Vernacular script handling?
+#
 
 require 'nokogiri'
 require 'csv'
@@ -34,7 +40,9 @@ production_date
 century
 dated
 uniform_title_240
+uniform_title_240_agr
 title_as_recorded_245
+title_as_recorded_245_agr
 work_as_recorded
 work
 genre_as_recorded
@@ -42,6 +50,7 @@ genre
 subject_as_recorded
 subject
 author_as_recorded
+author_as_recorded_agr
 author
 artist_as_recorded
 artist
@@ -85,53 +94,180 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-in_xml = ARGV.shift
+xmls = ARGV.dup
 
-abort 'Please provide an input XML'           unless in_xml
-abort "Can't find input XML: '#{in_xml}'"     unless File.exist? in_xml
+abort 'Please provide an input XML' if xmls.empty?
+cannot_find = xmls.select { |f| ! File.exist?(f) }
+abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty?
 
-xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-xml.remove_namespaces!
 
-DEFAULT_VALUE_SEP = '|'
+DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
 
 ###
-# Extract and combine MARC subfields for datafield
+# Extract the language codes from controlfield 008 and datafield 041$a.
 #
-# @param [Nokogiri::XML::Node] :node the Nokogiri XML node for a single data
-#     field
-# @param [String] :datafield the marc field +@tag+, '099', '245', etc.
-# @param [Array<String>] :subfields the MARC subfield +@code+ values, +a+, +h+,
-#     etc.
-# @param [String] :field_sep string to use for joins, [default: <tt>' '</tt>]
-# @param [String] :record_sep string to use for joins, [default: <tt>'|'</tt>]
+# @param [Nokogiri::XML::Node] :record the marc:record node
 # @return [String]
-def combine_subfields record:, datafield:, subfields: [], field_sep: ' ', record_sep: '|'
-
+def extract_langs record
+  (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
+  langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
+  langs.uniq.join '|'
 end
 
-output_csv = %Q{#{in_xml.chomp '.xml'}.csv}
+###
+# @param [Nokogiri::XML::Node] :record the marc:record node
+# @return [String]
+def extract_scribe_as_recorded record
+  record.xpath('datafield[@tag=700 and contains(./subfield[@code="e"], "scribe")]').map { |datafield|
+    extract_pn(datafield).strip
+  }.join '|'
+end
+
+###
+# @param [Nokogiri::XML::Node] :record the marc:record node
+# @return [String]
+def extract_scribe_as_recorded_agr record
+  record.xpath('datafield[@tag=700 and contains(./subfield[@code="e"], "scribe")]').map { |datafield|
+    extract_pn_agr(datafield).strip
+  }.join '|'
+end
+
+###
+# @param [Nokogiri::XML::Node] :record the marc:record node
+# @return [String]
+def extract_author_as_recorded record
+  record.xpath('datafield[@tag=100]').map { |datafield|
+    extract_pn(datafield).strip
+  }.join '|'
+end
+
+###
+# @param [Nokogiri::XML::Node] :record the marc:record node
+# @return [String]
+def extract_author_as_recorded_agr record
+  record.xpath('datafield[@tag=100]').map { |datafield|
+    extract_pn_agr(datafield).strip
+  }.join '|'
+end
+
+def extract_pn datafield
+  xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c' or @code = 'd']"
+  datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
+end
+
+##
+# Extract the alternate graphical representation of the name or return +''+.
+#
+# See MARC specification for 880 fields:
+#
+# * https://www.loc.gov/marc/bibliographic/bd880.html
+#
+# Input will look like this:
+#
+#     <marc:datafield ind1="1" ind2=" " tag="100">
+#       <marc:subfield code="6">880-01</marc:subfield>
+#       <marc:subfield code="a">Urmawī, ʻAbd al-Muʼmin ibn Yūsuf,</marc:subfield>
+#       <marc:subfield code="d">approximately 1216-1294.</marc:subfield>
+#     </marc:datafield>
+#     <!-- ... -->
+#     <marc:datafield ind1="1" ind2=" " tag="880">
+#       <marc:subfield code="6">100-01//r</marc:subfield>
+#       <marc:subfield code="a">ارموي، عبد المؤمن بن يوسف،</marc:subfield>
+#       <marc:subfield code="d">اپرxمتلي 12161294.</marc:subfield>
+#     </marc:datafield>
+#
+# @param [Nokogiri::XML::Node] :datafield the main data field @tag = '100', '700', etc.
+# @return [String] the text representation of the value
+def extract_pn_agr datafield
+  linkage = datafield.xpath("subfield[@code='6']").text
+  return '' if linkage.empty?
+  tag   = datafield.xpath('./@tag').text
+  index = linkage.split('-').last
+  xpath = "./parent::record/datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]"
+  extract_pn datafield.xpath(xpath)
+end
+
+def extract_title_agr record, tag
+  linkage = record.xpath("datafield[@tag=#{tag}]/subfield[@code='6']").text
+  return '' if linkage.empty?
+  index = linkage.split('-').last
+  xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a']"
+  record.xpath(xpath).text
+end
+
+
+###
+# Extract and combine MARC datafields
+#
+# @param [Nokogiri::XML::Node] :record the XML node for single +<marc:record>+
+# @param [String] :tag the marc datafield +@tag+, '099', '245', etc.
+# @param [Array<String>] :codes the MARC subfield +@code+ values, +a+, +h+,
+#     etc.
+# @param [Hash] opts the options to create a message with.
+# @option opts [String] :field_sep divider between values from multiple marc
+#   datafields, default: +DEFAULT_FIELD_SEP+
+# @option opts [String] :subfield_sep divider between values from multiple marc
+#   subfields, default: +DEFAULT_WORD_SEP+
+# @return [String]
+def extract_values record:, tag:, codes: [], opts: {}
+  field_sep    = opts[:field_sep] || DEFAULT_FIELD_SEP
+  subfield_sep = opts[:subfield_sep] || DEFAULT_WORD_SEP
+  record.xpath(%Q{datafield[@tag=#{tag}]}).map { |datafield|
+    codes.map { |code|
+      datafield.xpath(%Q{subfield[@code='#{code}']}).text
+    }.reject(&:empty?).join subfield_sep
+  }.reject(&:empty?).join field_sep
+end
+
+output_csv = 'output.csv'
 
 CSV.open output_csv, "w", headers: true do |row|
   row << HEADINGS
 
-  holding_institution           = xml.xpath("//record/datafield[@tag=852]/subfield[@code='a']").text
-  holding_institution_id_number = xml.xpath("//record/datafield[@tag=99]/subfield[@code='a']").text
-  production_place_as_recorded  = xml.xpath("//record/datafield[@tag=260]/subfield[@code='a']").text
-  production_date_as_recorded   = xml.xpath("//record/datafield[@tag=260]/subfield[@code='c']").text
-  uniform_title_240             = xml.xpath("//record/datafield[@tag=240]/subfield[@code='a']").text
-  title_as_recorded_245         = xml.xpath("//record/datafield[@tag=245]/subfield[@code='a']").text
+  xmls.each do |in_xml|
+    xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+    xml.remove_namespaces!
 
-  data = { 'holding_institution'           => holding_institution,
-           'holding_institution_id_number' => holding_institution_id_number,
-           'production_place_as_recorded'  => production_place_as_recorded,
-           'production_date_as_recorded'   => production_date_as_recorded,
-           'uniform_title_240'             => uniform_title_240,
-           'title_as_recorded_245'         => title_as_recorded_245,
-  }
+    records = xml.xpath '//record'
 
-  row << data
+    records.each do |record|
+      holding_institution           = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
+      shelfmark                     = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
+      bibid                         = record.xpath("controlfield[@tag=001]").text
+      holding_institution_id_number = [shelfmark, bibid].reject(&:empty?).join DEFAULT_FIELD_SEP
+      production_place_as_recorded  = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
+      production_date_as_recorded   = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
+      uniform_title_240             = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
+      uniform_title_240_agr         = extract_title_agr record, 240
+      title_as_recorded_245         = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
+      title_as_recorded_245_agr     = extract_title_agr record, 245
+      author_as_recorded            = extract_author_as_recorded record
+      author_as_recorded_agr        = extract_author_as_recorded_agr record
+      scribe_as_recorded            = extract_scribe_as_recorded record
+      scribe_as_recorded_agr        = extract_scribe_as_recorded_agr record
+      language_as_recorded          = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
+      language                      = extract_langs record
+
+      data = { 'holding_institution'           => holding_institution,
+               'holding_institution_id_number' => holding_institution_id_number,
+               'production_place_as_recorded'  => production_place_as_recorded,
+               'production_date_as_recorded'   => production_date_as_recorded,
+               'uniform_title_240'             => uniform_title_240,
+               'uniform_title_240_agr'         => uniform_title_240_agr,
+               'title_as_recorded_245'         => title_as_recorded_245,
+               'title_as_recorded_245_agr'     => title_as_recorded_245_agr,
+               'author_as_recorded'            => author_as_recorded,
+               'author_as_recorded_agr'        => author_as_recorded_agr,
+               'scribe_as_recorded'            => scribe_as_recorded,
+               'scribe_as_recorded_agr'        => scribe_as_recorded_agr,
+               'language_as_recorded'          => language_as_recorded,
+               'language'                      => language,
+      }
+
+      row << data
+    end
+  end
 end
 
 puts "Wrote: #{output_csv}"
