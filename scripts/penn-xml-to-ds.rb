@@ -53,14 +53,17 @@ author_as_recorded
 author_as_recorded_agr
 author
 artist_as_recorded
+artist_as_recorded_agr
 artist
 scribe_as_recorded
+scribe_as_recorded_agr
 scribe
 language_as_recorded
 language
 illuminated_initials
 miniatures
 former_owner_as_recorded
+former_owner_as_recorded_agr
 former_owner
 former_id_number
 material
@@ -75,18 +78,7 @@ decoration
 options = {}
 OptionParser.new do |opts|
 
-  opts.banner = "Usage: #{File.basename __FILE__} [options] XML"
-
-  # r_help = %q{Directory containing source assets.path values [REQUIRED]}
-  # opts.on "-r DIRECTORY", "--assets-root=DIRECTORY", r_help do |directory|
-  #   validate_directory directory
-  #   options[:assets_root] = directory
-  # end
-  #
-  # n_help = %q{Dry run; do nothing; only report what would be done}
-  # opts.on "-n", "--dry-run", n_help do |dry_run|
-  #   options[:dry_run] = true
-  # end
+  opts.banner = "Usage: #{File.basename __FILE__} [options] XML [XML ..]"
 
   opts.on("-h", "--help", "Prints this help") do
     puts opts
@@ -117,9 +109,10 @@ end
 
 ###
 # @param [Nokogiri::XML::Node] :record the marc:record node
+# @param [String] :descriptor the <tt>subfield @code = 'e'</tt> text; e.g., +scribe+
 # @return [String]
-def extract_scribe_as_recorded record
-  record.xpath('datafield[@tag=700 and contains(./subfield[@code="e"], "scribe")]').map { |datafield|
+def extract_nn_as_recorded record, descriptor
+  record.xpath("datafield[(@tag=700 or @tag=710) and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
     extract_pn(datafield).strip
   }.join '|'
 end
@@ -127,8 +120,27 @@ end
 ###
 # @param [Nokogiri::XML::Node] :record the marc:record node
 # @return [String]
-def extract_scribe_as_recorded_agr record
-  record.xpath('datafield[@tag=700 and contains(./subfield[@code="e"], "scribe")]').map { |datafield|
+def extract_nn_as_recorded_agr record, descriptor
+  record.xpath("datafield[(@tag=700 or @tag=710) and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
+    extract_pn_agr(datafield).strip
+  }.join '|'
+end
+
+###
+# @param [Nokogiri::XML::Node] :record the marc:record node
+# @param [String] :descriptor the <tt>subfield @code = 'e'</tt> text; e.g., +scribe+
+# @return [String]
+def extract_pn_as_recorded record, descriptor
+  record.xpath("datafield[@tag=700 and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
+    extract_pn(datafield).strip
+  }.join '|'
+end
+
+###
+# @param [Nokogiri::XML::Node] :record the marc:record node
+# @return [String]
+def extract_pn_as_recorded_agr record, descriptor
+  record.xpath("datafield[@tag=700 and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
     extract_pn_agr(datafield).strip
   }.join '|'
 end
@@ -196,28 +208,11 @@ def extract_title_agr record, tag
   record.xpath(xpath).text
 end
 
-
-###
-# Extract and combine MARC datafields
-#
-# @param [Nokogiri::XML::Node] :record the XML node for single +<marc:record>+
-# @param [String] :tag the marc datafield +@tag+, '099', '245', etc.
-# @param [Array<String>] :codes the MARC subfield +@code+ values, +a+, +h+,
-#     etc.
-# @param [Hash] opts the options to create a message with.
-# @option opts [String] :field_sep divider between values from multiple marc
-#   datafields, default: +DEFAULT_FIELD_SEP+
-# @option opts [String] :subfield_sep divider between values from multiple marc
-#   subfields, default: +DEFAULT_WORD_SEP+
-# @return [String]
-def extract_values record:, tag:, codes: [], opts: {}
-  field_sep    = opts[:field_sep] || DEFAULT_FIELD_SEP
-  subfield_sep = opts[:subfield_sep] || DEFAULT_WORD_SEP
-  record.xpath(%Q{datafield[@tag=#{tag}]}).map { |datafield|
-    codes.map { |code|
-      datafield.xpath(%Q{subfield[@code='#{code}']}).text
-    }.reject(&:empty?).join subfield_sep
-  }.reject(&:empty?).join field_sep
+def extract_physical_description record
+  record.xpath("datafield[@tag=300]").map { |datafield|
+    xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
+    datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
+  }.reject(&:empty?).join '|'
 end
 
 output_csv = 'output.csv'
@@ -244,10 +239,15 @@ CSV.open output_csv, "w", headers: true do |row|
       title_as_recorded_245_agr     = extract_title_agr record, 245
       author_as_recorded            = extract_author_as_recorded record
       author_as_recorded_agr        = extract_author_as_recorded_agr record
-      scribe_as_recorded            = extract_scribe_as_recorded record
-      scribe_as_recorded_agr        = extract_scribe_as_recorded_agr record
+      artist_as_recorded            = extract_pn_as_recorded record, 'artist'
+      artist_as_recorded_agr        = extract_pn_as_recorded_agr record, 'artist'
+      scribe_as_recorded            = extract_pn_as_recorded record, 'scribe'
+      scribe_as_recorded_agr        = extract_pn_as_recorded_agr record, 'scribe'
       language_as_recorded          = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
       language                      = extract_langs record
+      former_owner_as_recorded      = extract_nn_as_recorded record, 'former owner'
+      former_owner_as_recorded_agr  = extract_nn_as_recorded_agr record, 'former owner'
+      physical_description          = extract_physical_description record
 
       data = { 'holding_institution'           => holding_institution,
                'holding_institution_id_number' => holding_institution_id_number,
@@ -259,10 +259,15 @@ CSV.open output_csv, "w", headers: true do |row|
                'title_as_recorded_245_agr'     => title_as_recorded_245_agr,
                'author_as_recorded'            => author_as_recorded,
                'author_as_recorded_agr'        => author_as_recorded_agr,
+               'artist_as_recorded'            => artist_as_recorded,
+               'artist_as_recorded_agr'        => artist_as_recorded_agr,
                'scribe_as_recorded'            => scribe_as_recorded,
                'scribe_as_recorded_agr'        => scribe_as_recorded_agr,
                'language_as_recorded'          => language_as_recorded,
                'language'                      => language,
+               'former_owner_as_recorded'      => former_owner_as_recorded,
+               'former_owner_as_recorded_agr'  => former_owner_as_recorded_agr,
+               'physical_description'          => physical_description,
       }
 
       row << data
