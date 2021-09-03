@@ -92,7 +92,6 @@ abort 'Please provide an input XML' if xmls.empty?
 cannot_find = xmls.select { |f| ! File.exist?(f) }
 abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty?
 
-
 DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
 
@@ -107,65 +106,96 @@ def extract_langs record
   langs.uniq.join '|'
 end
 
-###
-# @param [Nokogiri::XML::Node] :record the marc:record node
-# @param [String] :descriptor the <tt>subfield @code = 'e'</tt> text; e.g., +scribe+
-# @return [String]
-def extract_nn_as_recorded record, descriptor
-  record.xpath("datafield[(@tag=700 or @tag=710) and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
-    extract_pn(datafield).strip
+##
+# Extract names from record using tags and relators. Tags understood are +100+,
+# +700+, and +710+. The +relators+ are used to require datafields based on the
+# contents of a subfield code +e+ containing the specified value, like 'scribe':
+#
+#     contains(./subfield[@code ='e'], 'scribe')
+#
+# @see #build_name_query for details on query construction
+#
+# @param [Nokogiri::XML:Node] :record a +<marc:record>+ node
+# @param [Array<String>] :tags the MARC field code[s]
+# @param [Array<String>] :relators for +700$e+, +710$e+, a value[s] like 'former owner'
+def extract_names_as_recorded record, tags: [], relators: []
+  xpath = build_name_query tags: tags, relators: relators
+  return '' if xpath.empty? # don't process nonsensical requests
+
+  record.xpath(xpath).map { |datafield|
+    extract_pn datafield
   }.join '|'
 end
 
-###
-# @param [Nokogiri::XML::Node] :record the marc:record node
-# @return [String]
-def extract_nn_as_recorded_agr record, descriptor
-  record.xpath("datafield[(@tag=700 or @tag=710) and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
-    extract_pn_agr(datafield).strip
+##
+# Extract the alternate graphical representation of the name or return +''+.
+#
+# See MARC specification for 880 fields:
+#
+# * https://www.loc.gov/marc/bibliographic/bd880.html
+#
+# @see #build_name_query for details on query construction
+#
+# @param [Nokogiri::XML:Node] :record a +<marc:record>+ node
+# @param [Array<String>] :tags the MARC field code[s]
+# @param [Array<String>] :relators for +700$e+, +710$e+, a value[s] like 'former owner'
+def extract_names_as_recorded_agr record, tags: [], relators: []
+  xpath = build_name_query tags: tags, relators: relators
+  return '' if xpath.empty? # don't process nonsensical requests
+
+  record.xpath(xpath).map { |datafield|
+    extract_pn_agr datafield
   }.join '|'
 end
 
-###
-# @param [Nokogiri::XML::Node] :record the marc:record node
-# @param [String] :descriptor the <tt>subfield @code = 'e'</tt> text; e.g., +scribe+
-# @return [String]
-def extract_pn_as_recorded record, descriptor
-  record.xpath("datafield[@tag=700 and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
-    extract_pn(datafield).strip
-  }.join '|'
-end
+##
+# Build names query tags and relators. Tags understood are +100+, +700+,
+# and +710+. The +relators+ are used to require datafields based on the contents
+# of a subfield code +e+ containing the specified value, like 'scribe':
+#
+#     contains(./subfield[@code ='e'], 'scribe')
+#
+# For relators see section <strong>$e - Relator term<strong>, here:
+#
+#   https://www.loc.gov/marc/bibliographic/bdx00.html
+#
+# To require the subfield not have a relator, pass +:none+ as the relator value.
+#
+#     build_name_query tags: ['100'], relators: :none
+#
+# This will add the following to the query.
+#
+#     not(./subfield[@code = 'e'])
+#
+# Note: In U. Penn manuscript catalog records, 700 and 710 fields that *do*
+# *not* have a subfield code +e+ are associated authors.
+#
+# @param [Array<String>] :tags the MARC field code[s]
+# @param [Array<String>] :relators for +700$e+, +710$e+, a value[s] like 'former owner'
+# @return [String] the data field query string
+def build_name_query tags: [], relators: []
+  return '' if tags.empty? # don't process nonsensical requests
+  # make sure the tags are all strings
+  _tags        = [tags].flatten.map &:to_s
+  tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
+  query_string = "(#{tag_query})"
 
-###
-# @param [Nokogiri::XML::Node] :record the marc:record node
-# @return [String]
-def extract_pn_as_recorded_agr record, descriptor
-  record.xpath("datafield[@tag=700 and contains(./subfield[@code='e'], '#{descriptor}')]").map { |datafield|
-    extract_pn_agr(datafield).strip
-  }.join '|'
-end
+  _relators    = [relators].flatten.map { |r| r.to_s.strip.downcase == 'none' ? :none : r }
+  return "datafield[#{query_string}]" if _relators.empty?
 
-###
-# @param [Nokogiri::XML::Node] :record the marc:record node
-# @return [String]
-def extract_author_as_recorded record
-  record.xpath('datafield[@tag=100]').map { |datafield|
-    extract_pn(datafield).strip
-  }.join '|'
-end
+  if _relators.include? :none
+    query_string += " and not(./subfield[@code = 'e'])"
+    return "datafield[#{query_string}]"
+  end
 
-###
-# @param [Nokogiri::XML::Node] :record the marc:record node
-# @return [String]
-def extract_author_as_recorded_agr record
-  record.xpath('datafield[@tag=100]').map { |datafield|
-    extract_pn_agr(datafield).strip
-  }.join '|'
+  relator_string = relators.map { |r| "contains(./subfield[@code ='e'], '#{r}')" }.join " or "
+  query_string   += (relator_string.empty? ? '' : " and (#{relator_string})")
+  "datafield[#{query_string}]"
 end
 
 def extract_pn datafield
-  xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c' or @code = 'd']"
-  datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
+  codes = %w{ a b c d }
+  collect_subfields datafield, codes: codes
 end
 
 ##
@@ -198,6 +228,13 @@ def extract_pn_agr datafield
   index = linkage.split('-').last
   xpath = "./parent::record/datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]"
   extract_pn datafield.xpath(xpath)
+end
+
+def collect_subfields datafield, codes: []
+  # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
+  code_query = codes.map { |code| "@code = '#{code}'" }.join ' or '
+  xpath      = %Q{subfield[#{code_query}]}
+  datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
 end
 
 def extract_title_agr record, tag
@@ -250,16 +287,16 @@ CSV.open output_csv, "w", headers: true do |row|
       uniform_title_240_agr         = extract_title_agr record, 240
       title_as_recorded_245         = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr     = extract_title_agr record, 245
-      author_as_recorded            = extract_author_as_recorded record
-      author_as_recorded_agr        = extract_author_as_recorded_agr record
-      artist_as_recorded            = extract_pn_as_recorded record, 'artist'
-      artist_as_recorded_agr        = extract_pn_as_recorded_agr record, 'artist'
-      scribe_as_recorded            = extract_pn_as_recorded record, 'scribe'
-      scribe_as_recorded_agr        = extract_pn_as_recorded_agr record, 'scribe'
+      author_as_recorded            = extract_names_as_recorded record,     tags: [100]
+      author_as_recorded_agr        = extract_names_as_recorded_agr record, tags: [100]
+      artist_as_recorded            = extract_names_as_recorded record,     tags: [700, 710], relators: ['artist', 'illuminator']
+      artist_as_recorded_agr        = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['artist', 'illuminator']
+      scribe_as_recorded            = extract_names_as_recorded record,     tags: [700, 710], relators: ['scribe']
+      scribe_as_recorded_agr        = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['scribe']
       language_as_recorded          = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
       language                      = extract_langs record
-      former_owner_as_recorded      = extract_nn_as_recorded record, 'former owner'
-      former_owner_as_recorded_agr  = extract_nn_as_recorded_agr record, 'former owner'
+      former_owner_as_recorded      = extract_names_as_recorded record,     tags: [700, 710], relators: ['former owner']
+      former_owner_as_recorded_agr  = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['former owner']
       physical_description          = extract_physical_description record
 
       data = { 'holding_institution'           => holding_institution,
