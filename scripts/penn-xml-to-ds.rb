@@ -284,27 +284,27 @@ CSV.open output_csv, "w", headers: true do |row|
     records = xml.xpath '//record'
 
     records.each do |record|
-      holding_institution             = %q{https://www.wikidata.org/wiki/Q49117}
-      holding_institution_as_recorded = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
-      holding_institution_id_number   = extract_holding_institution_ids record
+      holding_institution                = %q{https://www.wikidata.org/wiki/Q49117}
+      holding_institution_as_recorded    = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
+      holding_institution_id_number      = extract_holding_institution_ids record
       link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{extract_mmsid(record)}}
-      production_place_as_recorded    = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
-      production_date_as_recorded     = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
-      uniform_title_240_as_recorded   = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
-      uniform_title_240_agr           = extract_title_agr record, 240
-      title_as_recorded_245           = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
-      title_as_recorded_245_agr       = extract_title_agr record, 245
-      author_as_recorded              = extract_names_as_recorded record,     tags: [100]
-      author_as_recorded_agr          = extract_names_as_recorded_agr record, tags: [100]
-      artist_as_recorded              = extract_names_as_recorded record,     tags: [700, 710], relators: ['artist', 'illuminator']
-      artist_as_recorded_agr          = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['artist', 'illuminator']
-      scribe_as_recorded              = extract_names_as_recorded record,     tags: [700, 710], relators: ['scribe']
-      scribe_as_recorded_agr          = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['scribe']
-      language_as_recorded            = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
-      language                        = extract_langs record
-      former_owner_as_recorded        = extract_names_as_recorded record,     tags: [700, 710], relators: ['former owner']
-      former_owner_as_recorded_agr    = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['former owner']
-      physical_description            = extract_physical_description record
+      production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
+      production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
+      uniform_title_240_as_recorded      = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
+      uniform_title_240_agr              = extract_title_agr record, 240
+      title_as_recorded_245              = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
+      title_as_recorded_245_agr          = extract_title_agr record, 245
+      author_as_recorded                 = extract_names_as_recorded record,      tags: [100]
+      author_as_recorded_agr             = extract_names_as_recorded_agr record,  tags: [100]
+      artist_as_recorded                 = extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
+      artist_as_recorded_agr             = extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['artist', 'illuminator']
+      scribe_as_recorded                 = extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
+      scribe_as_recorded_agr             = extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['scribe']
+      language_as_recorded               = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
+      language                           = extract_langs record
+      former_owner_as_recorded           = extract_names_as_recorded record,      tags: [700, 710], relators: ['former owner']
+      former_owner_as_recorded_agr       = extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['former owner']
+      physical_description               = extract_physical_description record
 
       data = { 'holding_institution'             => holding_institution,
                'holding_institution_as_recorded' => holding_institution_as_recorded,
