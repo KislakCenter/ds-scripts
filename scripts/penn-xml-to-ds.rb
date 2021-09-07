@@ -302,11 +302,6 @@ CSV.open output_csv, "w", headers: true do |row|
 
     records = xml.xpath '//record'
 
-    # TODO: add date information from encoded date in 008 as date_code? https://www.loc.gov/marc/bibliographic/bd008a.html
-    # TODO: add material_as_recorded
-    # TODO: add folios_as_recorded
-    # TODO: add dimensions_as_recorded
-
     records.each do |record|
       holding_institution                = %q{https://www.wikidata.org/wiki/Q49117}
       holding_institution_as_recorded    = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
