@@ -232,11 +232,22 @@ def extract_pn_agr datafield
   extract_pn datafield.xpath(xpath)
 end
 
-def collect_subfields datafield, codes: []
+def collect_datafields record, tags: [], codes: [], field_sep:  '|', sub_sep: ' '
+  _tags        = [tags].flatten.map &:to_s
+  tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
+  # binding.pry
+  record.xpath("datafield[#{tag_query}]").map { |datafield|
+    collect_subfields datafield, codes: codes, sub_sep: sub_sep
+  }.join field_sep
+end
+
+def collect_subfields datafield, codes: [], sub_sep: ' '
+  # ensure that +codes+ is an array of strings
+  _codes = [codes].flatten.map &:to_s
   # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
-  code_query = codes.map { |code| "@code = '#{code}'" }.join ' or '
+  code_query = _codes.map { |code| "@code = '#{code}'" }.join ' or '
   xpath      = %Q{subfield[#{code_query}]}
-  datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
+  datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
 end
 
 def extract_title_agr record, tag
@@ -284,8 +295,6 @@ CSV.open output_csv, "w", headers: true do |row|
     records = xml.xpath '//record'
 
     # TODO: add date information from encoded date in 008 as date_code? https://www.loc.gov/marc/bibliographic/bd008a.html
-    # TODO: add genre_as_recorded
-    # TODO: add subject_as_recorded
     # TODO: add material_as_recorded
     # TODO: add folios_as_recorded
     # TODO: add dimensions_as_recorded
@@ -301,6 +310,11 @@ CSV.open output_csv, "w", headers: true do |row|
       uniform_title_240_agr              = extract_title_agr record, 240
       title_as_recorded_245              = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr          = extract_title_agr record, 245
+      # NOTE: For open we require 655$a.
+      # Not doing that here.
+      # Need to confirm this is ok.
+      genre_as_recorded                  = collect_datafields record, tags: 655, codes: 'abcvxyz'.split(//), sub_sep: '--'
+      subject_as_recorded                = collect_datafields record, tags: [610, 650, 651, 600], codes: ('a'..'z').to_a, sub_sep: '--'
       author_as_recorded                 = extract_names_as_recorded record,      tags: [100]
       author_as_recorded_agr             = extract_names_as_recorded_agr record,  tags: [100]
       artist_as_recorded                 = extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
@@ -323,6 +337,8 @@ CSV.open output_csv, "w", headers: true do |row|
                'uniform_title_240_agr'              => uniform_title_240_agr,
                'title_as_recorded_245'              => title_as_recorded_245,
                'title_as_recorded_245_agr'          => title_as_recorded_245_agr,
+               'genre_as_recorded'                  => genre_as_recorded,
+               'subject_as_recorded'                => subject_as_recorded,
                'author_as_recorded'                 => author_as_recorded,
                'author_as_recorded_agr'             => author_as_recorded_agr,
                'artist_as_recorded'                 => artist_as_recorded,
