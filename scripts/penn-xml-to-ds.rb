@@ -69,11 +69,14 @@ former_owner_as_recorded_agr
 former_owner
 former_id_number
 material
+material_as_recorded
 physical_description
 acknowledgements
 binding
 folios
+extent_as_recorded
 dimensions
+dimensions_as_recorded
 decoration
 }
 
@@ -325,7 +328,10 @@ CSV.open output_csv, "w", headers: true do |row|
       language                           = extract_langs record
       former_owner_as_recorded           = extract_names_as_recorded record,      tags: [700, 710], relators: ['former owner']
       former_owner_as_recorded_agr       = extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['former owner']
+      material_as_recorded               = collect_datafields record, tags: 300, codes: 'b'
       physical_description               = extract_physical_description record
+      extent_as_recorded                 = collect_datafields record, tags: 300, codes: 'a'
+      dimensions_as_recorded             = collect_datafields record, tags: 300, codes: 'c'
 
       data = { 'holding_institution'                => holding_institution,
                'holding_institution_as_recorded'    => holding_institution_as_recorded,
@@ -349,7 +355,10 @@ CSV.open output_csv, "w", headers: true do |row|
                'language'                           => language,
                'former_owner_as_recorded'           => former_owner_as_recorded,
                'former_owner_as_recorded_agr'       => former_owner_as_recorded_agr,
+               'material_as_recorded'               => material_as_recorded,
                'physical_description'               => physical_description,
+               'extent_as_recorded'                 => extent_as_recorded,
+               'dimensions_as_recorded'             => dimensions_as_recorded,
       }
 
       row << data
