@@ -31,6 +31,7 @@ ds_id
 date_added
 date_last_updated
 holding_institution
+holding_institution_as_recorded
 holding_institution_id_number
 link_to_holding_institution_record
 production_place_as_recorded
@@ -280,8 +281,10 @@ CSV.open output_csv, "w", headers: true do |row|
 
     records.each do |record|
       # TODO: Change holding_institution to Wikidata URI
+      #       https://www.wikidata.org/wiki/Q49117
       # TODO: Add holding_institution_as_recorded column and value (852$a)
-      holding_institution           = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
+      holding_institution           = %q{https://www.wikidata.org/wiki/Q49117}
+      holding_institution_as_recorded           = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
       holding_institution_id_number = extract_holding_institution_ids record
       production_place_as_recorded  = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded   = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
@@ -304,6 +307,7 @@ CSV.open output_csv, "w", headers: true do |row|
       physical_description          = extract_physical_description record
 
       data = { 'holding_institution'           => holding_institution,
+               'holding_institution_as_recorded' => holding_institution_as_recorded,
                'holding_institution_id_number' => holding_institution_id_number,
                'production_place_as_recorded'  => production_place_as_recorded,
                'production_date_as_recorded'   => production_date_as_recorded,
