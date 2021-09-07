@@ -95,7 +95,7 @@ end.parse!
 xmls = ARGV.dup
 
 abort 'Please provide an input XML' if xmls.empty?
-cannot_find = xmls.select { |f| ! File.exist?(f) }
+cannot_find = xmls.reject { |f| File.exist?(f) }
 abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty?
 
 DEFAULT_FIELD_SEP = '|'
