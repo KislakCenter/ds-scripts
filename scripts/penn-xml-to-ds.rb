@@ -41,6 +41,7 @@ production_date
 century
 dated
 uniform_title_240
+uniform_title_240_as_recorded
 uniform_title_240_agr
 title_as_recorded_245
 title_as_recorded_245_agr
@@ -285,9 +286,7 @@ CSV.open output_csv, "w", headers: true do |row|
       holding_institution_id_number   = extract_holding_institution_ids record
       production_place_as_recorded    = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded     = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
-      # TODO: Add uniform_title_240_as_recorded -- use for the text in the record
-      # TODO: Leave uniform_title_240 blank, to be added in data cleaning process
-      uniform_title_240               = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
+      uniform_title_240_as_recorded   = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
       uniform_title_240_agr           = extract_title_agr record, 240
       title_as_recorded_245           = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr       = extract_title_agr record, 245
@@ -308,7 +307,7 @@ CSV.open output_csv, "w", headers: true do |row|
                'holding_institution_id_number'   => holding_institution_id_number,
                'production_place_as_recorded'    => production_place_as_recorded,
                'production_date_as_recorded'     => production_date_as_recorded,
-               'uniform_title_240'               => uniform_title_240,
+               'uniform_title_240_as_recorded'   => uniform_title_240_as_recorded,
                'uniform_title_240_agr'           => uniform_title_240_agr,
                'title_as_recorded_245'           => title_as_recorded_245,
                'title_as_recorded_245_agr'       => title_as_recorded_245_agr,
