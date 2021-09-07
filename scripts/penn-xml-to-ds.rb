@@ -258,7 +258,7 @@ def extract_holding_institution_ids record
   # start with the shelfmark
   ids = [find_shelfmark(record)]
   # add the MMS ID
-  ids << record.xpath("controlfield[@tag=001]").text
+  ids << extract_mmsid(record)
 
   ids.reject(&:empty?).join '|'
 end
@@ -269,6 +269,9 @@ def find_shelfmark record
   record.xpath("datafield[@tag=99]/subfield[@code='a']").text
 end
 
+def extract_mmsid record
+  record.xpath("controlfield[@tag=001]").text
+end
 output_csv = 'output.csv'
 
 CSV.open output_csv, "w", headers: true do |row|
@@ -284,6 +287,7 @@ CSV.open output_csv, "w", headers: true do |row|
       holding_institution             = %q{https://www.wikidata.org/wiki/Q49117}
       holding_institution_as_recorded = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
       holding_institution_id_number   = extract_holding_institution_ids record
+      link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{extract_mmsid(record)}}
       production_place_as_recorded    = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded     = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
       uniform_title_240_as_recorded   = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
@@ -305,6 +309,7 @@ CSV.open output_csv, "w", headers: true do |row|
       data = { 'holding_institution'             => holding_institution,
                'holding_institution_as_recorded' => holding_institution_as_recorded,
                'holding_institution_id_number'   => holding_institution_id_number,
+               'link_to_holding_institution_record' => link_to_holding_institution_record,
                'production_place_as_recorded'    => production_place_as_recorded,
                'production_date_as_recorded'     => production_date_as_recorded,
                'uniform_title_240_as_recorded'   => uniform_title_240_as_recorded,
