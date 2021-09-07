@@ -242,10 +242,14 @@ CSV.open output_csv, "w", headers: true do |row|
     records = xml.xpath '//record'
 
     records.each do |record|
+      # TODO: Change holding_institution to Wikidata URI
+      # TODO: Add holding_institution_as_recorded column and value (852$a)
       holding_institution           = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
       holding_institution_id_number = extract_holding_institution_ids record
       production_place_as_recorded  = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded   = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
+      # TODO: Add uniform_title_240_as_recorded -- use for the text in the record
+      # TODO: Leave uniform_title_240 blank, to be added in data cleaning process
       uniform_title_240             = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
       uniform_title_240_agr         = extract_title_agr record, 240
       title_as_recorded_245         = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
