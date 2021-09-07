@@ -290,15 +290,15 @@ CSV.open output_csv, "w", headers: true do |row|
       uniform_title_240_agr           = extract_title_agr record, 240
       title_as_recorded_245           = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr       = extract_title_agr record, 245
-      author_as_recorded              = extract_names_as_recorded record, tags: [100]
+      author_as_recorded              = extract_names_as_recorded record,     tags: [100]
       author_as_recorded_agr          = extract_names_as_recorded_agr record, tags: [100]
-      artist_as_recorded              = extract_names_as_recorded record, tags: [700, 710], relators: ['artist', 'illuminator']
+      artist_as_recorded              = extract_names_as_recorded record,     tags: [700, 710], relators: ['artist', 'illuminator']
       artist_as_recorded_agr          = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['artist', 'illuminator']
-      scribe_as_recorded              = extract_names_as_recorded record, tags: [700, 710], relators: ['scribe']
+      scribe_as_recorded              = extract_names_as_recorded record,     tags: [700, 710], relators: ['scribe']
       scribe_as_recorded_agr          = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['scribe']
       language_as_recorded            = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
       language                        = extract_langs record
-      former_owner_as_recorded        = extract_names_as_recorded record, tags: [700, 710], relators: ['former owner']
+      former_owner_as_recorded        = extract_names_as_recorded record,     tags: [700, 710], relators: ['former owner']
       former_owner_as_recorded_agr    = extract_names_as_recorded_agr record, tags: [700, 710], relators: ['former owner']
       physical_description            = extract_physical_description record
 
