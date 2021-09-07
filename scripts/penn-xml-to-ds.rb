@@ -37,6 +37,7 @@ link_to_holding_institution_record
 production_place_as_recorded
 production_place
 production_date_as_recorded
+production_date_encoded_008
 production_date
 century
 dated
@@ -109,6 +110,10 @@ def extract_langs record
   (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
   langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
   langs.uniq.join '|'
+end
+
+def extract_encoded_date_008 record
+  record.xpath "substring(controlfield[@tag='008']/text(), 7,9)"
 end
 
 ##
@@ -307,6 +312,7 @@ CSV.open output_csv, "w", headers: true do |row|
       holding_institution_as_recorded    = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
       holding_institution_id_number      = extract_holding_institution_ids record
       link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{extract_mmsid(record)}}
+      production_date_encoded_008        = extract_encoded_date_008 record
       production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
       uniform_title_240_as_recorded      = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
@@ -337,6 +343,7 @@ CSV.open output_csv, "w", headers: true do |row|
                'holding_institution_as_recorded'    => holding_institution_as_recorded,
                'holding_institution_id_number'      => holding_institution_id_number,
                'link_to_holding_institution_record' => link_to_holding_institution_record,
+               'production_date_encoded_008'        => production_date_encoded_008,
                'production_place_as_recorded'       => production_place_as_recorded,
                'production_date_as_recorded'        => production_date_as_recorded,
                'uniform_title_240_as_recorded'      => uniform_title_240_as_recorded,
