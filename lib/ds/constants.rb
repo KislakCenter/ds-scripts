@@ -1,6 +1,6 @@
 module DS
   module Constants
-    HEADINGS = %w{
+    HEADINGS = %i{
 ds_id
 date_added
 date_last_updated
