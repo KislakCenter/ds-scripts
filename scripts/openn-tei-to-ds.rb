@@ -84,19 +84,17 @@ CSV.open output_csv, "w", headers: true do |row|
     title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
     author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
     author                             = xml.xpath('//msItem/author/@ref').map(&:to_s).join '|'
-    artist_as_recorded                 = ''
-    artist                             = ''
-    scribe_as_recorded                 = ''
-    scribe                             = ''
+    artist_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
+    artist                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
+    scribe_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
+    scribe                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
     language_as_recorded               = ''
     language                           = ''
     illuminated_initials               = ''
     miniatures                         = ''
-    former_owner_as_recorded           = extract_resp_names(nodes: xml.xpath('//msContents/msItem'), types: 'former owner')
-    former_owner                       = ''
-    former_id_number                   = extract_resp_ids(nodes: xml.xpath('//msContents/msItem'), types: 'former owner')
+    former_owner_as_recorded           = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
+    former_owner                       = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
     material                           = ''
-    material_as_recorded               = ''
     physical_description               = ''
     acknowledgements                   = ''
     binding                            = ''
@@ -128,9 +126,7 @@ CSV.open output_csv, "w", headers: true do |row|
       miniatures:                         miniatures,
       former_owner_as_recorded:           former_owner_as_recorded,
       former_owner:                       former_owner,
-      former_id_number:                   former_id_number,
       material:                           material,
-      material_as_recorded:               material_as_recorded,
       physical_description:               physical_description,
       acknowledgements:                   acknowledgements,
       binding:                            binding,
