@@ -46,6 +46,13 @@ def extract_resp_ids nodes: , types: []
   }.join '|'
 end
 
+def extract_language_codes xml
+  xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
+  xml.xpath(xpath).flat_map { |x|
+    x.value.split
+  }.join '|'
+end
+
 options = {}
 OptionParser.new do |opts|
 
@@ -88,8 +95,8 @@ CSV.open output_csv, "w", headers: true do |row|
     artist                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
     scribe_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
     scribe                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
-    language_as_recorded               = ''
-    language                           = ''
+    language_as_recorded               = xml.xpath '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
+    language                           = extract_language_codes xml
     illuminated_initials               = ''
     miniatures                         = ''
     former_owner_as_recorded           = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
