@@ -23,9 +23,7 @@ def extract_resp_names nodes: , types: []
   _types = [types].flatten.map &:to_s
   type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
   xpath = %Q{//respStmt[#{type_query}]}
-  nodes.xpath(xpath).map { |resp_stmt|
-    resp_stmt.xpath('persName/text()')
-  }.join '|'
+  nodes.xpath(xpath).map { |rs| rs.xpath('persName/text()') }.join '|'
 end
 
 ##
@@ -41,16 +39,12 @@ def extract_resp_ids nodes: , types: []
   _types = [types].flatten.map &:to_s
   type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
   xpath = %Q{//respStmt[#{type_query}]}
-  nodes.xpath(xpath).map { |resp_stmt|
-    resp_stmt.xpath('persName/@ref')
-  }.join '|'
+  nodes.xpath(xpath).map { |rs| rs.xpath('persName/@ref') }.join '|'
 end
 
 def extract_language_codes xml
   xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
-  xml.xpath(xpath).flat_map { |x|
-    x.value.split
-  }.join '|'
+  xml.xpath(xpath).flat_map { |lang| lang.value.split }.join '|'
 end
 
 options = {}
