@@ -65,14 +65,14 @@ end
 # @return [String]
 def extract_physical_description xml
   parts = []
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()').text
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/foliation/text()').text
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()')
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()')
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/foliation/text()')
   parts << extract_collation(xml)
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()').text
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/scriptDesc/scriptNote/text()').text
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()')
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/scriptDesc/scriptNote/text()')
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()')
+  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()')
   parts.flatten.map { |x| x.to_s.strip }.reject(&:empty?).join '. '
 end
 
@@ -80,6 +80,10 @@ options = {}
 OptionParser.new do |opts|
 
   opts.banner = "Usage: #{File.basename __FILE__} [options] XML [XML ..]"
+
+  opts.on('-o FILE', '--output-csv=FILE', "Name of the output CSV file [default: output.csv]") do |output|
+    options[:output_csv] = output
+  end
 
   opts.on("-h", "--help", "Prints this help") do
     puts opts
@@ -96,7 +100,7 @@ abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty
 DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
 
-output_csv = 'output.csv'
+output_csv = options[:output_csv] || 'output.csv'
 
 CSV.open output_csv, "w", headers: true do |row|
   row << DS::HEADINGS
@@ -105,6 +109,7 @@ CSV.open output_csv, "w", headers: true do |row|
     xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
     xml.remove_namespaces!
 
+    source_type                        = 'openn-tei'
     holding_institution_as_recorded    = xml.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
     holding_institution                = DS::INSTITUTION_IDS_BY_NAME.fetch holding_institution_as_recorded, ''
     holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
@@ -140,6 +145,7 @@ CSV.open output_csv, "w", headers: true do |row|
     # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
 
     data = {
+      source_type:                        source_type,
       holding_institution:                holding_institution,
       holding_institution_as_recorded:    holding_institution_as_recorded,
       holding_institution_id_number:      holding_institution_id_number,

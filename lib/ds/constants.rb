@@ -4,6 +4,7 @@ module DS
 ds_id
 date_added
 date_last_updated
+source_type
 holding_institution
 holding_institution_as_recorded
 holding_institution_id_number

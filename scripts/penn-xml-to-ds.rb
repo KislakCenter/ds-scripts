@@ -32,6 +32,10 @@ OptionParser.new do |opts|
 
   opts.banner = "Usage: #{File.basename __FILE__} [options] XML [XML ..]"
 
+  opts.on('-o FILE', '--output-csv=FILE', "Name of the output CSV file [default: output.csv]") do |output|
+    options[:output_csv] = output
+  end
+
   opts.on("-h", "--help", "Prints this help") do
     puts opts
     exit
@@ -237,7 +241,8 @@ end
 def extract_mmsid record
   record.xpath("controlfield[@tag=001]").text
 end
-output_csv = 'output.csv'
+
+output_csv = options[:output_csv] || 'output.csv'
 
 CSV.open output_csv, "w", headers: true do |row|
   row << DS::HEADINGS
@@ -249,6 +254,7 @@ CSV.open output_csv, "w", headers: true do |row|
     records = xml.xpath '//record'
 
     records.each do |record|
+      source_type                        = 'marc-xml'
       holding_institution                = %q{https://www.wikidata.org/wiki/Q49117}
       holding_institution_as_recorded    = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
       holding_institution_id_number      = extract_holding_institution_ids record
@@ -260,7 +266,7 @@ CSV.open output_csv, "w", headers: true do |row|
       uniform_title_240_agr              = extract_title_agr record, 240
       title_as_recorded_245              = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr          = extract_title_agr record, 245
-      # NOTE: For open we require 655$a.
+      # NOTE: For openn we require 655$a subfield is present for genre.
       # Not doing that here.
       # Need to confirm this is ok.
       genre_as_recorded                  = collect_datafields record, tags: 655, codes: 'abcvxyz'.split(//), sub_sep: '--'
@@ -280,7 +286,8 @@ CSV.open output_csv, "w", headers: true do |row|
       extent_as_recorded                 = collect_datafields record, tags: 300, codes: 'a'
       dimensions_as_recorded             = collect_datafields record, tags: 300, codes: 'c'
 
-      data = { holding_institution:                 holding_institution,
+      data = { source_type:                         source_type,
+               holding_institution:                 holding_institution,
                holding_institution_as_recorded:     holding_institution_as_recorded,
                holding_institution_id_number:       holding_institution_id_number,
                link_to_holding_institution_record:  link_to_holding_institution_record,
