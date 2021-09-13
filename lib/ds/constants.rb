@@ -48,11 +48,22 @@ material_as_recorded
 physical_description
 acknowledgements
 binding
+binding_as_recorded
 folios
 extent_as_recorded
 dimensions
 dimensions_as_recorded
 decoration
 }
+
+    INSTITUTION_IDS_BY_NAME = {
+      'Bryn Mawr College'                         => 'https://www.wikidata.org/wiki/Q995265',
+      'Chemical Heritage Foundation'              => 'https://www.wikidata.org/wiki/Q5090408',
+      'Free Library of Philadelphia'              => 'https://www.wikidata.org/wiki/Q3087288',
+      'Philadelphia Museum of Art'                => 'https://www.wikidata.org/wiki/Q510324',
+      'Swarthmore College'                        => 'https://www.wikidata.org/wiki/Q1378320',
+      'The College of Physicians of Philadelphia' => 'https://www.wikidata.org/wiki/Q5146808',
+      'University of Pennsylvania'                => 'https://www.wikidata.org/wiki/Q49117',
+    }
   end
 end
