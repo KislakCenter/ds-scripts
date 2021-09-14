@@ -62,6 +62,11 @@ def extract_langs record
   langs.uniq.join '|'
 end
 
+###
+# Extract the encoded date from controlfield 008.
+#
+# @param [Nokogiri::XML::Node] :record the +marc:record+ node
+# @return [String]
 def extract_encoded_date_008 record
   record.xpath "substring(controlfield[@tag='008']/text(), 7,9)"
 end
@@ -153,6 +158,11 @@ def build_name_query tags: [], relators: []
   "datafield[#{query_string}]"
 end
 
+###
+# Extract the encoded date from controlfield 008.
+#
+# @param [Nokogiri::XML::Node] :datafield the +marc:datafield+ node with the name
+# @return [String]
 def extract_pn datafield
   codes = %w{ a b c d }
   collect_subfields datafield, codes: codes
@@ -218,16 +228,17 @@ end
 
 def extract_physical_description record
   parts = []
-  parts << record.xpath("datafield[@tag=300]").map { |datafield|
+  extent = record.xpath("datafield[@tag=300]").map { |datafield|
     xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
     datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
-  }
+  }.join ' '
+  parts << "Extent: #{extent}" unless extent.strip.empty?
   parts << extract_named_500(record, name: 'Collation')
   parts << extract_named_500(record, name: 'Layout')
   parts << extract_named_500(record, name: 'Script')
   parts << extract_named_500(record, name: 'Decoration')
   parts << extract_named_500(record, name: 'Binding')
-  parts.flatten.join ' '
+  parts.flatten.map(&:strip).join ' '
 end
 
 def extract_holding_institution_ids record

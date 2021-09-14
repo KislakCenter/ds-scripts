@@ -42,12 +42,21 @@ def extract_resp_ids nodes: , types: []
   nodes.xpath(xpath).map { |rs| rs['ref'] }.join '|'
 end
 
+##
+# Extract language the ISO codes from +textLang+ attributes +@mainLang+ and
+# +@otherLangs+ and return as a pipe separated list.
+#
+# @param [Nokogiri::XML::Node] :xml the TEI xml
+# @return [String]
 def extract_language_codes xml
   xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
   xml.xpath(xpath).flat_map { |lang| lang.value.split }.join '|'
 end
 
 ##
+# Extract the collation formula and catchwords description from +supportDesc+,
+# returning those values that are present.
+#
 # @param [Nokogiri::XML::Node] :xml the TEI xml
 # @return [String]
 def extract_collation xml
@@ -61,12 +70,36 @@ def extract_collation xml
 end
 
 ##
+# Extract +extent+ element and prefix with <tt>'Extent: '</tt>, return +''+
+# (empty string) if +extent+ is not present or empty.
+#
+# @param [Nokogiri::XML::Node] :xml the TEI xml
+# @return [String]
+def extract_extent xml
+  formula = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()')
+  return '' if formula.to_s.strip.empty?
+  "Extent: #{formula}"
+end
+
+##
+# Extract +support+ element text and prefix with <tt>'Support: '</tt>, return
+# +''+ (empty string) if +support+ is not present or empty.
+#
+# @param [Nokogiri::XML::Node] :xml the TEI xml
+# @return [String]
+def extract_support xml
+  support = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()')
+  return '' if support.to_s.strip.empty?
+  "Support: #{support}"
+end
+
+##
 # @param [Nokogiri::XML::Node] :xml the TEI xml
 # @return [String]
 def extract_physical_description xml
   parts = []
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()')
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()')
+  parts << extract_support(xml)
+  parts << extract_extent(xml)
   parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/foliation/text()')
   parts << extract_collation(xml)
   parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()')
