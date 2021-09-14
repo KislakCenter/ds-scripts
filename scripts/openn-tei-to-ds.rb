@@ -38,8 +38,8 @@ def extract_resp_ids nodes: , types: []
   return '' if types.empty?
   _types = [types].flatten.map &:to_s
   type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
-  xpath = %Q{//respStmt[#{type_query}]}
-  nodes.xpath(xpath).map { |rs| rs.xpath('persName/@ref') }.join '|'
+  xpath = %Q{//respStmt[#{type_query}]/persName}
+  nodes.xpath(xpath).map { |rs| rs['ref'] }.join '|'
 end
 
 def extract_language_codes xml
@@ -119,7 +119,7 @@ CSV.open output_csv, "w", headers: true do |row|
     production_date                    = production_date_as_recorded
     title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
     author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
-    author                             = xml.xpath('//msItem/author/@ref').map(&:to_s).join '|'
+    author                             = xml.xpath('//msItem/author').map{ |a| a['ref'] }.join '|'
     artist_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
     artist                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
     scribe_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
