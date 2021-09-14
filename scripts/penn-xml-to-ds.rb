@@ -217,10 +217,17 @@ def extract_title_agr record, tag
 end
 
 def extract_physical_description record
-  record.xpath("datafield[@tag=300]").map { |datafield|
+  parts = []
+  parts << record.xpath("datafield[@tag=300]").map { |datafield|
     xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
     datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
-  }.reject(&:empty?).join '|'
+  }
+  parts << extract_named_500(record, name: 'Collation')
+  parts << extract_named_500(record, name: 'Layout')
+  parts << extract_named_500(record, name: 'Script')
+  parts << extract_named_500(record, name: 'Decoration')
+  parts << extract_named_500(record, name: 'Binding')
+  parts.flatten.join ' '
 end
 
 def extract_holding_institution_ids record
@@ -240,6 +247,13 @@ end
 
 def extract_mmsid record
   record.xpath("controlfield[@tag=001]").text
+end
+
+def extract_named_500 record, name:
+  return '' if name.to_s.strip.empty?
+
+  xpath = "datafield[@tag=500]/subfield[@code='a' and starts-with(./text(), '#{name}')]"
+  record.xpath(xpath).map { |d| d.text.sub(%r{^#{name}:?\s*}, '').strip }.join ' '
 end
 
 output_csv = options[:output_csv] || 'output.csv'
@@ -266,9 +280,6 @@ CSV.open output_csv, "w", headers: true do |row|
       uniform_title_240_agr              = extract_title_agr record, 240
       title_as_recorded_245              = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr          = extract_title_agr record, 245
-      # NOTE: For openn we require 655$a subfield is present for genre.
-      # Not doing that here.
-      # Need to confirm this is ok.
       genre_as_recorded                  = collect_datafields record, tags: 655, codes: 'abcvxyz'.split(//), sub_sep: '--'
       subject_as_recorded                = collect_datafields record, tags: [610, 650, 651, 600], codes: ('a'..'z').to_a, sub_sep: '--'
       author_as_recorded                 = extract_names_as_recorded record,      tags: [100]
@@ -283,8 +294,11 @@ CSV.open output_csv, "w", headers: true do |row|
       former_owner_as_recorded_agr       = extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['former owner']
       material_as_recorded               = collect_datafields record, tags: 300, codes: 'b'
       physical_description               = extract_physical_description record
+      binding_description                = extract_named_500 record,  name: 'Binding'
       extent_as_recorded                 = collect_datafields record, tags: 300, codes: 'a'
+      folios                             = collect_datafields record, tags: 300, codes: 'a'
       dimensions_as_recorded             = collect_datafields record, tags: 300, codes: 'c'
+      decoration                         = extract_named_500 record,  name: 'Decoration'
 
       data = { source_type:                         source_type,
                holding_institution:                 holding_institution,
@@ -312,8 +326,11 @@ CSV.open output_csv, "w", headers: true do |row|
                former_owner_as_recorded_agr:        former_owner_as_recorded_agr,
                material_as_recorded:                material_as_recorded,
                physical_description:                physical_description,
+               binding:                             binding_description,
+               folios:                              folios,
                extent_as_recorded:                  extent_as_recorded,
                dimensions_as_recorded:              dimensions_as_recorded,
+               decoration:                          decoration,
       }
 
       row << data

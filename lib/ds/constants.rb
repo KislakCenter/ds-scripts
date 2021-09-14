@@ -49,7 +49,6 @@ material_as_recorded
 physical_description
 acknowledgements
 binding
-binding_as_recorded
 folios
 extent_as_recorded
 dimensions

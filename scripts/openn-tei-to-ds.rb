@@ -134,13 +134,12 @@ CSV.open output_csv, "w", headers: true do |row|
     material_as_recorded               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
     physical_description               = extract_physical_description xml
     acknowledgements                   = ''
-    binding                            = ''
-    binding_as_recorded                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
+    binding_description                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
     folios                             = ''
     extent_as_recorded                 = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
     dimensions                         = ''
     dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
-    decoration                         = ''
+    decoration                         = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
 
     # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
 
@@ -170,8 +169,7 @@ CSV.open output_csv, "w", headers: true do |row|
       material_as_recorded:               material_as_recorded,
       physical_description:               physical_description,
       acknowledgements:                   acknowledgements,
-      binding:                            binding,
-      binding_as_recorded:                binding_as_recorded,
+      binding:                            binding_description,
       folios:                             folios,
       extent_as_recorded:                 extent_as_recorded,
       dimensions:                         dimensions,
