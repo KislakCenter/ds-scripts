@@ -21,8 +21,6 @@ uniform_title_240_as_recorded
 uniform_title_240_agr
 title_as_recorded_245
 title_as_recorded_245_agr
-work_as_recorded
-work
 genre_as_recorded
 genre
 subject_as_recorded
@@ -38,22 +36,13 @@ scribe_as_recorded_agr
 scribe
 language_as_recorded
 language
-illuminated_initials
-miniatures
 former_owner_as_recorded
 former_owner_as_recorded_agr
 former_owner
-former_id_number
 material
 material_as_recorded
 physical_description
 acknowledgements
-binding
-folios
-extent_as_recorded
-dimensions
-dimensions_as_recorded
-decoration
 }
 
     INSTITUTION_IDS_BY_NAME = {
