@@ -9,6 +9,7 @@ holding_institution
 holding_institution_as_recorded
 holding_institution_id_number
 link_to_holding_institution_record
+iiif_manifest
 production_place_as_recorded
 production_place
 production_date_as_recorded

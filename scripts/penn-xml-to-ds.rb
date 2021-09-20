@@ -241,6 +241,22 @@ def extract_physical_description record
   parts.flatten.map(&:strip).join ' '
 end
 
+# We don't have a good way to look these up, so I'm hard-coding the addresses.
+IIIF_MANIFESTS = {
+  '9947675343503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3k649t48/manifest',
+  '9947675343503681-test' => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3k649t48/manifest',
+  '9950569233503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3zm0w/manifest',
+  '9952666523503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p37w6764x/manifest',
+  '9959647633503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3mp74/manifest',
+  '9965025663503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3h00n/manifest',
+  '9976106713503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3n29p909/manifest',
+}
+
+def find_iiif_manifest record
+  mmsid = extract_mmsid record
+  IIIF_MANIFESTS[mmsid.to_s]
+end
+
 def extract_holding_institution_ids record
   # start with the shelfmark
   ids = [find_shelfmark(record)]
@@ -284,6 +300,7 @@ CSV.open output_csv, "w", headers: true do |row|
       holding_institution_as_recorded    = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
       holding_institution_id_number      = extract_holding_institution_ids record
       link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{extract_mmsid(record)}}
+      iiif_manifest                      = find_iiif_manifest record
       production_date_encoded_008        = extract_encoded_date_008 record
       production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
@@ -316,6 +333,7 @@ CSV.open output_csv, "w", headers: true do |row|
                holding_institution_as_recorded:     holding_institution_as_recorded,
                holding_institution_id_number:       holding_institution_id_number,
                link_to_holding_institution_record:  link_to_holding_institution_record,
+               iiif_manifest:                       iiif_manifest,
                production_date_encoded_008:         production_date_encoded_008,
                production_place_as_recorded:        production_place_as_recorded,
                production_date_as_recorded:         production_date_as_recorded,
