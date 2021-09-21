@@ -53,6 +53,13 @@ acknowledgements
       'Swarthmore College'                        => 'https://www.wikidata.org/wiki/Q1378320',
       'The College of Physicians of Philadelphia' => 'https://www.wikidata.org/wiki/Q5146808',
       'University of Pennsylvania'                => 'https://www.wikidata.org/wiki/Q49117',
+      'Columbia University'                       => 'https://www.wikidata.org/wiki/Q49088',
+      'Nelson-Atkins Museum of Art' => 'https://www.wikidata.org/wiki/Q1976985',
+      'General Theological Seminary' => 'https://www.wikidata.org/wiki/Q1501676',
+      'Grolier Club' => 'https://www.wikidata.org/wiki/Q5174002',
+      'Wellesley College' => 'https://www.wikidata.org/wiki/Q49205',
+
+
     }
   end
 end
