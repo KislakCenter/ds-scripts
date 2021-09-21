@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mets:mets PROFILE="http://www.loc.gov/mets/profiles/00000013.xml" LABEL="[No Title for Display]"
+    OBJID="ark:/28722/bk001546k1j"
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://cosimo.stanford.edu/sdr/metsrights/ http://www.loc.gov/standards/rights/METSRights.xsd info:lc/xmlns/premis-v2/ http://www.loc.gov/standards/premis/premis.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd http://www.loc.gov/mix/v20 http://www.loc.gov/standards/mix/mix20/mix20.xsd"
+    xmlns:premis="info:lc/xmlns/premis-v2/" xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:mets="http://www.loc.gov/METS/" xmlns:ead="urn:isbn:1-931666-22-9"
+    xmlns:ns2="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="info:lc/xmlns/premis-v2"
+    xmlns:ns4="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:ns3="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.loc.gov/mods/v3/"
+    xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:ns5="http://www.loc.gov/METS/"
+    xmlns:ns7="http://www.loc.gov/mix/v20" xmlns:ns9="http://www.loc.gov/mods/v3"
+    xmlns:mix="http://www.loc.gov/mix/v20" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <mets:metsHdr LASTMODDATE="2019-02-14T13:03:44" CREATEDATE="2014-08-18T03:23:54">
+        <mets:agent TYPE="ORGANIZATION" ROLE="CREATOR">
+            <mets:name>Columbia University;;Burke Library at Union Theological Seminary;;New York</mets:name>
+        </mets:agent>
+    </mets:metsHdr>
+    <mets:dmdSec ID="DM1">
+        <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+            <mets:xmlData>
+                <mods:mods>
+                    <mods:titleInfo>
+                        <mods:title>[Title not supplied]</mods:title>
+                    </mods:titleInfo>
+                    <mods:typeOfResource>text</mods:typeOfResource>
+                    <mods:physicalDescription>
+                        <mods:extent>f. 1;;Binding material, flyleaf?</mods:extent>
+                    </mods:physicalDescription>
+                    <mods:note type="bibliography">De Ricci, p. 1644, no. 37. Milton McC. Gatch, ed. &#39;So Precious a Foundation&#39;: The Library of Leander Van Ess at the Burke Library of Union Theological Seminary in the City of New York. New York: Union Theological Seminary and The Grolier Club, 1996: 243-250.</mods:note>
+                    <mods:note type="admin">We are grateful to Hannah Barker for cataloguing this manuscript.</mods:note>
+                    <mods:note type="action">Hannah Barker, 2010-07-02</mods:note>
+                    <mods:relatedItem displayLabel="METACOLLECTION" type="host">
+                        <mods:titleInfo>
+                            <mods:title>Digital Scriptorium</mods:title>
+                        </mods:titleInfo>
+                    </mods:relatedItem>
+                    <mods:identifier type="local">UTS MS 037-87</mods:identifier>
+                    <mods:location>
+                        <mods:physicalLocation>Columbia University;;Burke Library at Union Theological Seminary;;The Burke Library, Union Theological Seminary, 3041 Broadway at 121st Street, New York, NY 10027;;, URL: http://www.columbia.edu/cu/lweb/indiv/burke/</mods:physicalLocation>
+                    </mods:location>
+                </mods:mods>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:dmdSec ID="DM2">
+        <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+            <mets:xmlData>
+                <mods:mods>
+                    <mods:titleInfo>
+                        <mods:title>[Title not supplied]</mods:title>
+                    </mods:titleInfo>
+                    <mods:titleInfo type="alternative">
+                        <mods:title>Donation</mods:title>
+                    </mods:titleInfo>
+                    <mods:typeOfResource>text</mods:typeOfResource>
+                    <mods:physicalDescription>
+                        <mods:extent>f. 1v</mods:extent>
+                    </mods:physicalDescription>
+                    <mods:abstract>Andreas Hoppenrade, notary of the diocese of Brandenburg, records a gift of property from Lawrence Welsow to Ambrose Smedo or Smedt.</mods:abstract>
+                    <mods:note>Dating clause in first line, repeated in the last line. The location is described as the chancery of a castle, but the name of the castle has been obscured by damage to the right side of the page. The witnesses are John Benedictus and John Molenbeke.</mods:note>
+                    <mods:note>Lang: Latin</mods:note>
+                    <mods:location>
+                        <mods:physicalLocation>Columbia University;;Burke Library at Union Theological Seminary;;The Burke Library, Union Theological Seminary, 3041 Broadway at 121st Street, New York, NY 10027;;, URL: http://www.columbia.edu/cu/lweb/indiv/burke/</mods:physicalLocation>
+                    </mods:location>
+                </mods:mods>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:dmdSec ID="DM3">
+        <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+            <mets:xmlData>
+                <mods:mods>
+                    <mods:titleInfo>
+                        <mods:title>[Title not supplied]</mods:title>
+                    </mods:titleInfo>
+                    <mods:typeOfResource>text</mods:typeOfResource>
+                    <mods:genre>Document</mods:genre>
+                    <mods:originInfo>
+                        <mods:place>
+                            <mods:placeTerm type="text">Germany;;</mods:placeTerm>
+                        </mods:place>
+                        <mods:dateCreated>1488, September 18</mods:dateCreated>
+                        <mods:dateCreated point="start" encoding="iso8601">1485</mods:dateCreated>
+                        <mods:dateCreated point="end" encoding="iso8601">1499</mods:dateCreated>
+                        <mods:dateOther>s. XV#^ex#</mods:dateOther>
+                    </mods:originInfo>
+                    <mods:note type="date">Y</mods:note>
+                    <mods:physicalDescription>
+                        <mods:extent>f. 1v;;346 x 261 mm</mods:extent>
+                        <mods:note type="support">Parchment</mods:note>
+                        <mods:note type="physical description">23-line initial I in the left margin, pen and ink decoration. Notarial signature at the bottom also begins with a decorated pen and ink initial I.;;;</mods:note>
+                    </mods:physicalDescription>
+                    <mods:note>The top has been trimmed, truncating some of the letters on the top line but not enough to obscure their meaning. The right edge has been folded and worn so that some of the letters have become illegible. In the lower left corner there is a notarial sign: a fleur de lis resting on a crescent which is resting on a pillar or trunk with two small projections, one on each side. The pillar or trunk is set on a pedestal with two tiers. Inside the bottom tier is written &#34;Andreas Hoppenrade,&#34; the name of the notary. There is a Union Theological Seminary stamp on the lower right corner and a modern note in pencil in the left margin giving the date as Thursday, 18 September, 1488.</mods:note>
+                    <mods:note>Latin</mods:note>
+                    <mods:subject>
+                        <mods:geographic>Brandenburg</mods:geographic>
+                    </mods:subject>
+                    <mods:location>
+                        <mods:physicalLocation>Columbia University;;Burke Library at Union Theological Seminary;;The Burke Library, Union Theological Seminary, 3041 Broadway at 121st Street, New York, NY 10027;;, URL: http://www.columbia.edu/cu/lweb/indiv/burke/</mods:physicalLocation>
+                    </mods:location>
+                </mods:mods>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:dmdSec ID="DM4">
+        <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+            <mets:xmlData>
+                <mods:mods>
+                    <mods:titleInfo>
+                        <mods:title>[Title not supplied]</mods:title>
+                    </mods:titleInfo>
+                    <mods:titleInfo type="alternative">
+                        <mods:title>Calendar</mods:title>
+                    </mods:titleInfo>
+                    <mods:typeOfResource>text</mods:typeOfResource>
+                    <mods:physicalDescription>
+                        <mods:extent>f. 1</mods:extent>
+                    </mods:physicalDescription>
+                    <mods:note>Latin text, probably a list, followed by a 7x6 grid, probably containing calendrical information. The columns are labeled at the bottom of the grid with the dominical letters &#34;B C D E F G A&#34; and the right side of the grid has the numbers &#34;4 2 3 4 4&#34; with the final row left blank. It is likely that this list and grid were associated not with the text on the reverse, but with the book in which this page served as a flyleaf or binding material.</mods:note>
+                    <mods:note>Lang: Latin</mods:note>
+                    <mods:location>
+                        <mods:physicalLocation>Columbia University;;Burke Library at Union Theological Seminary;;The Burke Library, Union Theological Seminary, 3041 Broadway at 121st Street, New York, NY 10027;;, URL: http://www.columbia.edu/cu/lweb/indiv/burke/</mods:physicalLocation>
+                    </mods:location>
+                </mods:mods>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:dmdSec ID="DM5">
+        <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+            <mets:xmlData>
+                <mods:mods>
+                    <mods:titleInfo>
+                        <mods:title>[Title not supplied]</mods:title>
+                    </mods:titleInfo>
+                    <mods:typeOfResource>text</mods:typeOfResource>
+                    <mods:originInfo>
+                        <mods:place>
+                            <mods:placeTerm type="text">Germany;;</mods:placeTerm>
+                        </mods:place>
+                        <mods:dateOther>s. XV</mods:dateOther>
+                    </mods:originInfo>
+                    <mods:note type="date">N</mods:note>
+                    <mods:physicalDescription>
+                        <mods:extent>f. 1;;346 x 261 mm</mods:extent>
+                        <mods:note type="support">Parchment</mods:note>
+                    </mods:physicalDescription>
+                    <mods:note>Seven lines of text followed by a 7x6 grid. Number 87 circled in pencil in the upper left corner, Union Theological Seminary stamp in the lower right.</mods:note>
+                    <mods:note>Latin</mods:note>
+                    <mods:location>
+                        <mods:physicalLocation>Columbia University;;Burke Library at Union Theological Seminary;;The Burke Library, Union Theological Seminary, 3041 Broadway at 121st Street, New York, NY 10027;;, URL: http://www.columbia.edu/cu/lweb/indiv/burke/</mods:physicalLocation>
+                    </mods:location>
+                </mods:mods>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:amdSec>
+        <mets:rightsMD ID="RMD1">
+            <mets:mdWrap OTHERMDTYPE="METSRights" MDTYPE="OTHER">
+                <mets:xmlData>
+                    <rts:RightsDeclarationMD OTHERCATEGORYTYPE="UNKNOWN" RIGHTSCATEGORY="OTHER">
+                        <rts:RightsHolder>
+                            <rts:RightsHolderComments>All requests to reproduce, publish, quote
+                                from, or otherwise use collection materials must be submitted in
+                                writing to the Head of Public Services, The Burke Theological
+                                Library--not assigned, Columbia University, New York, NY
+                                10027.</rts:RightsHolderComments>
+                        </rts:RightsHolder>
+                        <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
+                            <rts:Constraints>
+                                <rts:ConstraintDescription>Some materials in these collections may
+                                    be protected by the U.S. Copyright Law (Title 17, U.S.C.). In
+                                    addition, the reproduction of some materials may be restricted
+                                    by terms of University of California gift or purchase
+                                    agreements, donor restrictions, privacy and publicity rights,
+                                    licensing and trademarks. Transmission or reproduction of
+                                    materials protected by copyright beyond that allowed by fair use
+                                    requires the written permission of the copyright owners. Works
+                                    not in the public domain cannot be commercially exploited
+                                    without permission of the copyright owner. Responsibility for
+                                    any use rests exclusively with the
+                                    user.</rts:ConstraintDescription>
+                            </rts:Constraints>
+                        </rts:Context>
+                    </rts:RightsDeclarationMD>
+                </mets:xmlData>
+            </mets:mdWrap>
+        </mets:rightsMD>
+    </mets:amdSec>
+    <mets:structMap>
+        <mets:div TYPE="text" ADMID="RMD1" DMDID="DM1" LABEL="[No Title for Display]">
+            <mets:div TYPE="text" DMDID="DM5" LABEL="[No Title for Display]">
+                <mets:div TYPE="text" DMDID="DM4" LABEL="[No Title for Display]"/>
+            </mets:div>
+            <mets:div TYPE="text" DMDID="DM3" LABEL="[No Title for Display]">
+                <mets:div TYPE="text" DMDID="DM2" LABEL="[No Title for Display]"/>
+            </mets:div>
+        </mets:div>
+    </mets:structMap>
+</mets:mets>

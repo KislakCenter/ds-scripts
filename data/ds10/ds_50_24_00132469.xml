@@ -1,0 +1,3182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:mods="http://www.loc.gov/mods/v3"
+  xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:mix="http://www.loc.gov/mix/v10"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.loc.gov/METS/
+ http://www.loc.gov/standards/mets/mets.xsd
+ http://cosimo.stanford.edu/sdr/metsrights/
+ http://cosimo.stanford.edu/sdr/metsrights.xsd
+ http://www.loc.gov/mods/v3
+ http://www.loc.gov/standards/mods/v3/mods-3-2.xsd
+ http://www.loc.gov/mix/v10
+ http://www.loc.gov/standards/mix/mix10/mix10.xsd" OBJID="ark:/28722/bk0008x3p51"
+  LABEL="[No Title for Display]" PROFILE="http://www.loc.gov/mets/profiles/00000013.xml">
+
+
+  <mets:metsHdr CREATEDATE="2011-08-13T04:14:35" LASTMODDATE="2011-11-08T01:15:37">
+    <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
+      <mets:name>Grolier Club;;;;New York</mets:name>
+    </mets:agent>
+  </mets:metsHdr>
+
+  <mets:dmdSec ID="DM1">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>ff. ii (paper) + 71 + ii (paper)</mods:extent>
+            <mods:note type="presentation">Modern red velvet.</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="bibliography">De Ricci, p. 1290.</mods:note>
+          <mods:note type="ownership">Arms of first owners: 1, azure a six-pointed star or between three crescents or; 2, gules a bend sable charged with three small cups (?) or. George Bruce collection; given to the Grolier Club in July 1894 by David Wolfe Bruce.</mods:note>
+          <mods:note type="action">Inputter: C. W. Dutschke, 1/1/2008</mods:note>
+          <mods:relatedItem displayLabel="Metacollection" type="host">
+            <mods:titleInfo>
+              <mods:title>Digital Scriptorium</mods:title>
+            </mods:titleInfo>
+          </mods:relatedItem>
+          <mods:identifier type="local">MS 10</mods:identifier>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM2">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:originInfo>
+            <mods:place>
+              <mods:placeTerm type="text">France;;</mods:placeTerm>
+            </mods:place>
+            <mods:dateCreated encoding="iso8601" point="start">1500</mods:dateCreated>
+            <mods:dateCreated encoding="iso8601" point="end">1515</mods:dateCreated>
+            <mods:dateOther>s. XVI#^in#</mods:dateOther>
+          </mods:originInfo>
+          <mods:physicalDescription>
+            <mods:extent>ff. 1-71v;;192 x 127 mm</mods:extent>
+            <mods:note type="physical details">15 miniatures; 22 smaller miniatures in the calendar</mods:note>
+            <mods:note type="technique">2 columns of 28 lines</mods:note>
+            <mods:note type="script">B&#226;tarde</mods:note>
+            <mods:note type="support">Parchment</mods:note>
+          </mods:physicalDescription>
+          <mods:note>Latin</mods:note>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM3">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative">
+            <mods:title>Book of hours, use of Rouen</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>ff. 1-71v</mods:extent>
+          </mods:physicalDescription>
+          <mods:note>Calendar in French; gospel pericopes; Obsecro te &amp; O Intemerata (masc. forms), other prayers; Short Hours of the Holy Spirit (misbound); Hours of the Virgin; Short Hours of the Cross; Penitential psalms; Office of the Dead; prayers and suffrages.</mods:note>
+          <mods:note>lang: Latin; French</mods:note>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM4">
+    <mets:mdWrap MDTYPE="MODS"
+      LABEL="Title page on parchment, glued to the other blank recto of f. 1, with the rubric, &quot;Hore beate Marie virginis secundum usum diocesis Rothom&lt;a&gt;gensis.&quot; Tree of Jesse; days of Creation; Cain and Abel.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Title page on parchment, glued to the other blank recto of f. 1, with the rubric, &quot;Hore beate Marie virginis secundum usum diocesis Rothom&lt;a&gt;gensis.&quot; Tree of Jesse; days of Creation; Cain and Abel.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Title page on parchment, glued to the other blank recto of f. 1, with the rubric, &quot;Hore beate Marie virginis secundum usum diocesis Rothom&lt;a&gt;gensis.&quot; Tree of Jesse; days of Creation; Cain and Abel.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 1</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM5">
+    <mets:mdWrap MDTYPE="MODS"
+      LABEL="Calendar with the month of January: monthly occupation; zodiac sign.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Calendar with the month of January: monthly occupation; zodiac sign.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Calendar with the month of January: monthly occupation; zodiac sign.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 1v</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM6">
+    <mets:mdWrap MDTYPE="MODS" LABEL="John on Patmos.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>John on Patmos.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>John on Patmos.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 7</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM7">
+    <mets:mdWrap MDTYPE="MODS"
+      LABEL="Annunciation. (the rubric that announces this page is on the present f. 14v).">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Annunciation. (the rubric that announces this page is on the present f. 14v).</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Annunciation. (the rubric that announces this page is on the present f. 14v).</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 16</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM8">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Visitation.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Visitation.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Visitation.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 21</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM9">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Crucifixion with Good and Bad Thief and a crowd of soldiers.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Crucifixion with Good and Bad Thief and a crowd of soldiers.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Crucifixion with Good and Bad Thief and a crowd of soldiers.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 38</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM10">
+    <mets:mdWrap MDTYPE="MODS"
+      LABEL="Pentecost (for the opening of the Short Hours of the Holy Spirit, bound out of order, and ending with the rubric &quot;ad primam&quot; for the Hours of the Virgin).">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Pentecost (for the opening of the Short Hours of the Holy Spirit, bound out of order, and ending with the rubric &quot;ad primam&quot; for the Hours of the Virgin).</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Pentecost (for the opening of the Short Hours of the Holy Spirit, bound out of order, and ending with the rubric &quot;ad primam&quot; for the Hours of the Virgin).</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 15</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM11">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Nativity; a wooden saddle lies on the ground of the stable.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Nativity; a wooden saddle lies on the ground of the stable.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Nativity; a wooden saddle lies on the ground of the stable.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 27</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM12">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Annunciation to the shepherds; bagpipes lie on the ground.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Annunciation to the shepherds; bagpipes lie on the ground.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Annunciation to the shepherds; bagpipes lie on the ground.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 29</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM13">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Adoration of the Magi.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Adoration of the Magi.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Adoration of the Magi.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 31</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM14">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Presentation in the temple.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Presentation in the temple.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Presentation in the temple.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 33</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM15">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Flight into Egypt, with a serving woman, an angel and others.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Flight into Egypt, with a serving woman, an angel and others.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Flight into Egypt, with a serving woman, an angel and others.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 35</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM16">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Painted gold used in border decoration.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Painted gold used in border decoration.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Painted gold used in border decoration.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>ff. 36v-37</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM17">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Dormition of the Virgin.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Dormition of the Virgin.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Dormition of the Virgin.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 39</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM18">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Annointing of David (Penitential psalms).">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Annointing of David (Penitential psalms).</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Annointing of David (Penitential psalms).</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 42</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM19">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Raising of Lazarus (Office of the Dead, use of Rouen).">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Raising of Lazarus (Office of the Dead, use of Rouen).</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Raising of Lazarus (Office of the Dead, use of Rouen).</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 50</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:dmdSec ID="DM20">
+    <mets:mdWrap MDTYPE="MODS"
+      LABEL="Virgin and Child, a male saint (?), and the owner and his wife, with coats of arms in the lower margin.">
+      <mets:xmlData>
+        <mods:mods>
+
+          <mods:titleInfo>
+            <mods:title>Virgin and Child, a male saint (?), and the owner and his wife, with coats of arms in the lower margin.</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Virgin and Child, a male saint (?), and the owner and his wife, with coats of arms in the lower margin.</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 63v</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>Grolier Club;;Grolier Club;;, The Grolier Club , 47 East 60th Street, New York, NY 10022;;, URL: http://www.grolierclub.org/</mods:physicalLocation>
+          </mods:location>
+
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+
+  <mets:amdSec>
+
+    <mets:techMD ID="ADM1">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/tiff</mix:formatName>
+              </mix:FormatDesignation>
+            </mix:BasicDigitalObjectInformation>
+
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM2">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/jpeg</mix:formatName>
+              </mix:FormatDesignation>
+            </mix:BasicDigitalObjectInformation>
+
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM3">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/jpeg</mix:formatName>
+              </mix:FormatDesignation>
+            </mix:BasicDigitalObjectInformation>
+
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM4">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3p6k</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM5">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3p74</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM6">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3p8p</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM7">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3p97</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM8">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q0s</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM9">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q1b</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM10">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q2w</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM11">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q3f</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM12">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q40</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM13">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q5j</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM14">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q63</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM15">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q7n</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM16">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q86</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM17">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3q9r</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM18">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r09</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM19">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r1v</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM20">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r2d</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2010-11-19</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM21">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r3z</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p6k</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM22">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r4h</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p6k</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM23">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r52</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p6k</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM24">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r6m</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p6k</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM25">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r75</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p74</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM26">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r8q</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p74</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM27">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3r98</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p74</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM28">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s0t</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p74</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM29">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s1c</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p8p</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM30">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s2x</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p8p</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM31">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s3g</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p8p</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM32">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s41</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p8p</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM33">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s5k</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p97</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM34">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s64</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p97</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM35">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s7p</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p97</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM36">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s87</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3p97</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM37">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3s9s</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q0s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM38">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t0b</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q0s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM39">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t1w</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q0s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM40">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t2f</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q0s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM41">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t30</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q1b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM42">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t4j</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q1b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM43">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t53</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q1b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM44">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t6n</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q1b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM45">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t76</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q2w</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM46">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t8r</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q2w</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM47">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3t99</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q2w</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM48">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v0v</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q2w</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM49">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v1d</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q3f</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM50">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v2z</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q3f</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM51">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v3h</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q3f</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM52">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v42</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q3f</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM53">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v5m</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q40</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM54">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v65</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q40</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM55">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v7q</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q40</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM56">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v88</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q40</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM57">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3v9t</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q5j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM58">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w0c</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q5j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM59">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w1x</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q5j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM60">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w2g</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q5j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM61">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w31</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q63</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM62">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w4k</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q63</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM63">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w54</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q63</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM64">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w6p</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q63</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM65">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w77</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q7n</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM66">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w8s</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q7n</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM67">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3w9b</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q7n</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM68">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x0w</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q7n</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM69">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x1f</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q86</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM70">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x20</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q86</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM71">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x3j</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q86</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM72">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x43</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q86</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM73">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x5n</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q9r</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM74">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x66</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q9r</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM75">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x7r</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q9r</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM76">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x89</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3q9r</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM77">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3x9v</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r09</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM78">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z0d</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r09</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM79">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z1z</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r09</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM80">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z2h</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r09</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM81">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z32</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r1v</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM82">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z4m</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r1v</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM83">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z55</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r1v</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM84">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z6q</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r1v</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM85">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z78</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r2d</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM86">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z8t</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r2d</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM87">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x3z9c</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r2d</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:techMD ID="ADM88">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0008x400d</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2010-11-19</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0008x3r2d</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+
+    <mets:rightsMD ID="RMD1">
+      <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+        <mets:xmlData>
+          <rts:RightsDeclarationMD RIGHTSCATEGORY="OTHER" OTHERCATEGORYTYPE="UNKNOWN">
+            <rts:RightsHolder>
+              <rts:RightsHolderComments>All requests to reproduce, publish, quote from, or otherwise
+                use collection materials must be submitted in writing to the Head of Public
+                Services, The Grolier Club, 47 East 60th Street, New York, NY
+                10022.</rts:RightsHolderComments>
+            </rts:RightsHolder>
+            <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
+              <rts:Constraints>
+                <rts:ConstraintDescription>Some materials in these collections may be protected by
+                  the U.S. Copyright Law (Title 17, U.S.C.). In addition, the reproduction of some
+                  materials may be restricted by terms of University of California gift or purchase
+                  agreements, donor restrictions, privacy and publicity rights, licensing and
+                  trademarks. Transmission or reproduction of materials protected by copyright
+                  beyond that allowed by fair use requires the written permission of the copyright
+                  owners. Works not in the public domain cannot be commercially exploited without
+                  permission of the copyright owner. Responsibility for any use rests exclusively
+                  with the user.</rts:ConstraintDescription>
+              </rts:Constraints>
+            </rts:Context>
+          </rts:RightsDeclarationMD>
+
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:rightsMD>
+
+  </mets:amdSec>
+
+  <mets:fileSec>
+
+    <mets:fileGrp USE="image/master">
+      <mets:file ID="FID1" MIMETYPE="image/tiff" SEQ="1" CREATED="2010-11-19T12:23:45.23"
+        ADMID="ADM1 ADM4" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3p6k" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID2" MIMETYPE="image/tiff" SEQ="2" CREATED="2010-11-19T12:23:45.29"
+        ADMID="ADM1 ADM5" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3p74" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID3" MIMETYPE="image/tiff" SEQ="3" CREATED="2010-11-19T12:23:45.353"
+        ADMID="ADM1 ADM6" GROUPID="GID3">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3p8p" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID4" MIMETYPE="image/tiff" SEQ="4" CREATED="2010-11-19T12:23:45.417"
+        ADMID="ADM1 ADM7" GROUPID="GID4">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3p97" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID5" MIMETYPE="image/tiff" SEQ="5" CREATED="2010-11-19T12:23:45.493"
+        ADMID="ADM1 ADM8" GROUPID="GID5">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q0s" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID6" MIMETYPE="image/tiff" SEQ="6" CREATED="2010-11-19T12:23:45.557"
+        ADMID="ADM1 ADM9" GROUPID="GID6">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q1b" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID7" MIMETYPE="image/tiff" SEQ="7" CREATED="2010-11-19T12:23:45.62"
+        ADMID="ADM1 ADM10" GROUPID="GID7">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q2w" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID8" MIMETYPE="image/tiff" SEQ="8" CREATED="2010-11-19T12:23:45.683"
+        ADMID="ADM1 ADM11" GROUPID="GID8">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q3f" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID9" MIMETYPE="image/tiff" SEQ="9" CREATED="2010-11-19T12:23:45.76"
+        ADMID="ADM1 ADM12" GROUPID="GID9">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q40" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID10" MIMETYPE="image/tiff" SEQ="10" CREATED="2010-11-19T12:23:45.84"
+        ADMID="ADM1 ADM13" GROUPID="GID10">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q5j" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID11" MIMETYPE="image/tiff" SEQ="11" CREATED="2010-11-19T12:23:45.9"
+        ADMID="ADM1 ADM14" GROUPID="GID11">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q63" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID12" MIMETYPE="image/tiff" SEQ="12" CREATED="2010-11-19T12:23:45.963"
+        ADMID="ADM1 ADM15" GROUPID="GID12">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q7n" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID13" MIMETYPE="image/tiff" SEQ="13" CREATED="2010-11-19T12:23:46.04"
+        ADMID="ADM1 ADM16" GROUPID="GID13">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q86" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID14" MIMETYPE="image/tiff" SEQ="14" CREATED="2010-11-19T12:23:46.12"
+        ADMID="ADM1 ADM17" GROUPID="GID14">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3q9r" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID15" MIMETYPE="image/tiff" SEQ="15" CREATED="2010-11-19T12:23:46.213"
+        ADMID="ADM1 ADM18" GROUPID="GID15">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r09" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID16" MIMETYPE="image/tiff" SEQ="16" CREATED="2010-11-19T12:23:46.34"
+        ADMID="ADM1 ADM19" GROUPID="GID16">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r1v" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID17" MIMETYPE="image/tiff" SEQ="17" CREATED="2010-11-19T12:23:46.947"
+        ADMID="ADM1 ADM20" GROUPID="GID17">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r2d" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+
+    <mets:fileGrp USE="image/thumbnail">
+      <mets:file ID="FID18" MIMETYPE="image/jpeg" SEQ="1" CREATED="2010-11-19T12:23:45.243"
+        ADMID="ADM2" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r3z" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID19" MIMETYPE="image/jpeg" SEQ="2" CREATED="2010-11-19T12:23:45.307"
+        ADMID="ADM2" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r75" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID20" MIMETYPE="image/jpeg" SEQ="3" CREATED="2010-11-19T12:23:45.37"
+        ADMID="ADM2" GROUPID="GID3">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s1c" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID21" MIMETYPE="image/jpeg" SEQ="4" CREATED="2010-11-19T12:23:45.433"
+        ADMID="ADM2" GROUPID="GID4">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s5k" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID22" MIMETYPE="image/jpeg" SEQ="5" CREATED="2010-11-19T12:23:45.51"
+        ADMID="ADM2" GROUPID="GID5">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s9s" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID23" MIMETYPE="image/jpeg" SEQ="6" CREATED="2010-11-19T12:23:45.573"
+        ADMID="ADM2" GROUPID="GID6">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t30" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID24" MIMETYPE="image/jpeg" SEQ="7" CREATED="2010-11-19T12:23:45.62"
+        ADMID="ADM2" GROUPID="GID7">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t76" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID25" MIMETYPE="image/jpeg" SEQ="8" CREATED="2010-11-19T12:23:45.683"
+        ADMID="ADM2" GROUPID="GID8">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v1d" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID26" MIMETYPE="image/jpeg" SEQ="9" CREATED="2010-11-19T12:23:45.777"
+        ADMID="ADM2" GROUPID="GID9">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v5m" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID27" MIMETYPE="image/jpeg" SEQ="10" CREATED="2010-11-19T12:23:45.853"
+        ADMID="ADM2" GROUPID="GID10">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v9t" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID28" MIMETYPE="image/jpeg" SEQ="11" CREATED="2010-11-19T12:23:45.917"
+        ADMID="ADM2" GROUPID="GID11">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w31" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID29" MIMETYPE="image/jpeg" SEQ="12" CREATED="2010-11-19T12:23:45.98"
+        ADMID="ADM2" GROUPID="GID12">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w77" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID30" MIMETYPE="image/jpeg" SEQ="13" CREATED="2010-11-19T12:23:46.057"
+        ADMID="ADM2" GROUPID="GID13">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x1f" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID31" MIMETYPE="image/jpeg" SEQ="14" CREATED="2010-11-19T12:23:46.15"
+        ADMID="ADM2" GROUPID="GID14">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x5n" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID32" MIMETYPE="image/jpeg" SEQ="15" CREATED="2010-11-19T12:23:46.213"
+        ADMID="ADM2" GROUPID="GID15">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x9v" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID33" MIMETYPE="image/jpeg" SEQ="16" CREATED="2010-11-19T12:23:46.463"
+        ADMID="ADM2" GROUPID="GID16">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z32" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID34" MIMETYPE="image/jpeg" SEQ="17" CREATED="2010-11-19T12:23:46.963"
+        ADMID="ADM2" GROUPID="GID17">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z78" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID35" MIMETYPE="image/jpeg" SEQ="1" CREATED="2010-11-19T12:23:45.26"
+        ADMID="ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r4h" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID36" MIMETYPE="image/jpeg" SEQ="2" CREATED="2010-11-19T12:23:45.323"
+        ADMID="ADM3" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r8q" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID37" MIMETYPE="image/jpeg" SEQ="3" CREATED="2010-11-19T12:23:45.387"
+        ADMID="ADM3" GROUPID="GID3">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s2x" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID38" MIMETYPE="image/jpeg" SEQ="4" CREATED="2010-11-19T12:23:45.447"
+        ADMID="ADM3" GROUPID="GID4">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s64" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID39" MIMETYPE="image/jpeg" SEQ="5" CREATED="2010-11-19T12:23:45.527"
+        ADMID="ADM3" GROUPID="GID5">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t0b" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID40" MIMETYPE="image/jpeg" SEQ="6" CREATED="2010-11-19T12:23:45.573"
+        ADMID="ADM3" GROUPID="GID6">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t4j" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID41" MIMETYPE="image/jpeg" SEQ="7" CREATED="2010-11-19T12:23:45.637"
+        ADMID="ADM3" GROUPID="GID7">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t8r" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID42" MIMETYPE="image/jpeg" SEQ="8" CREATED="2010-11-19T12:23:45.713"
+        ADMID="ADM3" GROUPID="GID8">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v2z" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID43" MIMETYPE="image/jpeg" SEQ="9" CREATED="2010-11-19T12:23:45.79"
+        ADMID="ADM3" GROUPID="GID9">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v65" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID44" MIMETYPE="image/jpeg" SEQ="10" CREATED="2010-11-19T12:23:45.87"
+        ADMID="ADM3" GROUPID="GID10">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w0c" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID45" MIMETYPE="image/jpeg" SEQ="11" CREATED="2010-11-19T12:23:45.933"
+        ADMID="ADM3" GROUPID="GID11">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w4k" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID46" MIMETYPE="image/jpeg" SEQ="12" CREATED="2010-11-19T12:23:45.993"
+        ADMID="ADM3" GROUPID="GID12">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w8s" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID47" MIMETYPE="image/jpeg" SEQ="13" CREATED="2010-11-19T12:23:46.073"
+        ADMID="ADM3" GROUPID="GID13">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x20" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID48" MIMETYPE="image/jpeg" SEQ="14" CREATED="2010-11-19T12:23:46.167"
+        ADMID="ADM3" GROUPID="GID14">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x66" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID49" MIMETYPE="image/jpeg" SEQ="15" CREATED="2010-11-19T12:23:46.23"
+        ADMID="ADM3" GROUPID="GID15">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z0d" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID50" MIMETYPE="image/jpeg" SEQ="16" CREATED="2010-11-19T12:23:46.667"
+        ADMID="ADM3" GROUPID="GID16">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z4m" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID51" MIMETYPE="image/jpeg" SEQ="17" CREATED="2010-11-19T12:23:46.98"
+        ADMID="ADM3" GROUPID="GID17">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z8t" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID52" MIMETYPE="image/jpeg" SEQ="1" CREATED="2010-11-19T12:23:45.243"
+        ADMID="ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r52" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID53" MIMETYPE="image/jpeg" SEQ="2" CREATED="2010-11-19T12:23:45.307"
+        ADMID="ADM3" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r98" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID54" MIMETYPE="image/jpeg" SEQ="3" CREATED="2010-11-19T12:23:45.37"
+        ADMID="ADM3" GROUPID="GID3">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s3g" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID55" MIMETYPE="image/jpeg" SEQ="4" CREATED="2010-11-19T12:23:45.433"
+        ADMID="ADM3" GROUPID="GID4">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s7p" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID56" MIMETYPE="image/jpeg" SEQ="5" CREATED="2010-11-19T12:23:45.493"
+        ADMID="ADM3" GROUPID="GID5">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t1w" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID57" MIMETYPE="image/jpeg" SEQ="6" CREATED="2010-11-19T12:23:45.557"
+        ADMID="ADM3" GROUPID="GID6">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t53" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID58" MIMETYPE="image/jpeg" SEQ="7" CREATED="2010-11-19T12:23:45.62"
+        ADMID="ADM3" GROUPID="GID7">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t99" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID59" MIMETYPE="image/jpeg" SEQ="8" CREATED="2010-11-19T12:23:45.683"
+        ADMID="ADM3" GROUPID="GID8">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v3h" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID60" MIMETYPE="image/jpeg" SEQ="9" CREATED="2010-11-19T12:23:45.777"
+        ADMID="ADM3" GROUPID="GID9">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v7q" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID61" MIMETYPE="image/jpeg" SEQ="10" CREATED="2010-11-19T12:23:45.84"
+        ADMID="ADM3" GROUPID="GID10">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w1x" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID62" MIMETYPE="image/jpeg" SEQ="11" CREATED="2010-11-19T12:23:45.9"
+        ADMID="ADM3" GROUPID="GID11">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w54" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID63" MIMETYPE="image/jpeg" SEQ="12" CREATED="2010-11-19T12:23:45.98"
+        ADMID="ADM3" GROUPID="GID12">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w9b" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID64" MIMETYPE="image/jpeg" SEQ="13" CREATED="2010-11-19T12:23:46.057"
+        ADMID="ADM3" GROUPID="GID13">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x3j" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID65" MIMETYPE="image/jpeg" SEQ="14" CREATED="2010-11-19T12:23:46.137"
+        ADMID="ADM3" GROUPID="GID14">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x7r" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID66" MIMETYPE="image/jpeg" SEQ="15" CREATED="2010-11-19T12:23:46.213"
+        ADMID="ADM3" GROUPID="GID15">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z1z" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID67" MIMETYPE="image/jpeg" SEQ="16" CREATED="2010-11-19T12:23:46.463"
+        ADMID="ADM3" GROUPID="GID16">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z55" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID68" MIMETYPE="image/jpeg" SEQ="17" CREATED="2010-11-19T12:23:46.963"
+        ADMID="ADM3" GROUPID="GID17">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z9c" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID69" MIMETYPE="image/jpeg" SEQ="1" CREATED="2010-11-19T12:23:45.26"
+        ADMID="ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3r6m" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID70" MIMETYPE="image/jpeg" SEQ="2" CREATED="2010-11-19T12:23:45.323"
+        ADMID="ADM3" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s0t" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID71" MIMETYPE="image/jpeg" SEQ="3" CREATED="2010-11-19T12:23:45.37"
+        ADMID="ADM3" GROUPID="GID3">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s41" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID72" MIMETYPE="image/jpeg" SEQ="4" CREATED="2010-11-19T12:23:45.447"
+        ADMID="ADM3" GROUPID="GID4">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3s87" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID73" MIMETYPE="image/jpeg" SEQ="5" CREATED="2010-11-19T12:23:45.51"
+        ADMID="ADM3" GROUPID="GID5">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t2f" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID74" MIMETYPE="image/jpeg" SEQ="6" CREATED="2010-11-19T12:23:45.573"
+        ADMID="ADM3" GROUPID="GID6">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3t6n" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID75" MIMETYPE="image/jpeg" SEQ="7" CREATED="2010-11-19T12:23:45.637"
+        ADMID="ADM3" GROUPID="GID7">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v0v" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID76" MIMETYPE="image/jpeg" SEQ="8" CREATED="2010-11-19T12:23:45.697"
+        ADMID="ADM3" GROUPID="GID8">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v42" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID77" MIMETYPE="image/jpeg" SEQ="9" CREATED="2010-11-19T12:23:45.777"
+        ADMID="ADM3" GROUPID="GID9">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3v88" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID78" MIMETYPE="image/jpeg" SEQ="10" CREATED="2010-11-19T12:23:45.853"
+        ADMID="ADM3" GROUPID="GID10">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w2g" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID79" MIMETYPE="image/jpeg" SEQ="11" CREATED="2010-11-19T12:23:45.917"
+        ADMID="ADM3" GROUPID="GID11">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3w6p" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID80" MIMETYPE="image/jpeg" SEQ="12" CREATED="2010-11-19T12:23:45.993"
+        ADMID="ADM3" GROUPID="GID12">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x0w" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID81" MIMETYPE="image/jpeg" SEQ="13" CREATED="2010-11-19T12:23:46.073"
+        ADMID="ADM3" GROUPID="GID13">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x43" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID82" MIMETYPE="image/jpeg" SEQ="14" CREATED="2010-11-19T12:23:46.15"
+        ADMID="ADM3" GROUPID="GID14">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3x89" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID83" MIMETYPE="image/jpeg" SEQ="15" CREATED="2010-11-19T12:23:46.23"
+        ADMID="ADM3" GROUPID="GID15">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z2h" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID84" MIMETYPE="image/jpeg" SEQ="16" CREATED="2010-11-19T12:23:46.667"
+        ADMID="ADM3" GROUPID="GID16">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x3z6q" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID85" MIMETYPE="image/jpeg" SEQ="17" CREATED="2010-11-19T12:23:46.98"
+        ADMID="ADM3" GROUPID="GID17">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008x400d" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+
+  </mets:fileSec>
+
+  <mets:structMap>
+    <mets:div TYPE="text" LABEL="[No Title for Display]" ADMID="RMD1" DMDID="DM1">
+      <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM2">
+        <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM3">
+          <mets:div TYPE="item"
+            LABEL="Title page on parchment, glued to the other blank recto of f. 1, with the rubric, &quot;Hore beate Marie virginis secundum usum diocesis Rothom&lt;a&gt;gensis.&quot; Tree of Jesse; days of Creation; Cain and Abel."
+            DMDID="DM4">
+            <mets:fptr FILEID="FID1"/>
+            <mets:fptr FILEID="FID18"/>
+            <mets:fptr FILEID="FID35"/>
+            <mets:fptr FILEID="FID52"/>
+            <mets:fptr FILEID="FID69"/>
+          </mets:div>
+          <mets:div TYPE="item"
+            LABEL="Calendar with the month of January: monthly occupation; zodiac sign." DMDID="DM5">
+            <mets:fptr FILEID="FID2"/>
+            <mets:fptr FILEID="FID19"/>
+            <mets:fptr FILEID="FID36"/>
+            <mets:fptr FILEID="FID53"/>
+            <mets:fptr FILEID="FID70"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="John on Patmos." DMDID="DM6">
+            <mets:fptr FILEID="FID3"/>
+            <mets:fptr FILEID="FID20"/>
+            <mets:fptr FILEID="FID37"/>
+            <mets:fptr FILEID="FID54"/>
+            <mets:fptr FILEID="FID71"/>
+          </mets:div>
+          <mets:div TYPE="item"
+            LABEL="Annunciation. (the rubric that announces this page is on the present f. 14v)."
+            DMDID="DM7">
+            <mets:fptr FILEID="FID4"/>
+            <mets:fptr FILEID="FID21"/>
+            <mets:fptr FILEID="FID38"/>
+            <mets:fptr FILEID="FID55"/>
+            <mets:fptr FILEID="FID72"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Visitation." DMDID="DM8">
+            <mets:fptr FILEID="FID5"/>
+            <mets:fptr FILEID="FID22"/>
+            <mets:fptr FILEID="FID39"/>
+            <mets:fptr FILEID="FID56"/>
+            <mets:fptr FILEID="FID73"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Crucifixion with Good and Bad Thief and a crowd of soldiers."
+            DMDID="DM9">
+            <mets:fptr FILEID="FID6"/>
+            <mets:fptr FILEID="FID23"/>
+            <mets:fptr FILEID="FID40"/>
+            <mets:fptr FILEID="FID57"/>
+            <mets:fptr FILEID="FID74"/>
+          </mets:div>
+          <mets:div TYPE="item"
+            LABEL="Pentecost (for the opening of the Short Hours of the Holy Spirit, bound out of order, and ending with the rubric &quot;ad primam&quot; for the Hours of the Virgin)."
+            DMDID="DM10">
+            <mets:fptr FILEID="FID7"/>
+            <mets:fptr FILEID="FID24"/>
+            <mets:fptr FILEID="FID41"/>
+            <mets:fptr FILEID="FID58"/>
+            <mets:fptr FILEID="FID75"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Nativity; a wooden saddle lies on the ground of the stable."
+            DMDID="DM11">
+            <mets:fptr FILEID="FID8"/>
+            <mets:fptr FILEID="FID25"/>
+            <mets:fptr FILEID="FID42"/>
+            <mets:fptr FILEID="FID59"/>
+            <mets:fptr FILEID="FID76"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Annunciation to the shepherds; bagpipes lie on the ground."
+            DMDID="DM12">
+            <mets:fptr FILEID="FID9"/>
+            <mets:fptr FILEID="FID26"/>
+            <mets:fptr FILEID="FID43"/>
+            <mets:fptr FILEID="FID60"/>
+            <mets:fptr FILEID="FID77"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Adoration of the Magi." DMDID="DM13">
+            <mets:fptr FILEID="FID10"/>
+            <mets:fptr FILEID="FID27"/>
+            <mets:fptr FILEID="FID44"/>
+            <mets:fptr FILEID="FID61"/>
+            <mets:fptr FILEID="FID78"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Presentation in the temple." DMDID="DM14">
+            <mets:fptr FILEID="FID11"/>
+            <mets:fptr FILEID="FID28"/>
+            <mets:fptr FILEID="FID45"/>
+            <mets:fptr FILEID="FID62"/>
+            <mets:fptr FILEID="FID79"/>
+          </mets:div>
+          <mets:div TYPE="item"
+            LABEL="Flight into Egypt, with a serving woman, an angel and others." DMDID="DM15">
+            <mets:fptr FILEID="FID12"/>
+            <mets:fptr FILEID="FID29"/>
+            <mets:fptr FILEID="FID46"/>
+            <mets:fptr FILEID="FID63"/>
+            <mets:fptr FILEID="FID80"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Painted gold used in border decoration." DMDID="DM16">
+            <mets:fptr FILEID="FID13"/>
+            <mets:fptr FILEID="FID30"/>
+            <mets:fptr FILEID="FID47"/>
+            <mets:fptr FILEID="FID64"/>
+            <mets:fptr FILEID="FID81"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Dormition of the Virgin." DMDID="DM17">
+            <mets:fptr FILEID="FID14"/>
+            <mets:fptr FILEID="FID31"/>
+            <mets:fptr FILEID="FID48"/>
+            <mets:fptr FILEID="FID65"/>
+            <mets:fptr FILEID="FID82"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Annointing of David (Penitential psalms)." DMDID="DM18">
+            <mets:fptr FILEID="FID15"/>
+            <mets:fptr FILEID="FID32"/>
+            <mets:fptr FILEID="FID49"/>
+            <mets:fptr FILEID="FID66"/>
+            <mets:fptr FILEID="FID83"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Raising of Lazarus (Office of the Dead, use of Rouen)."
+            DMDID="DM19">
+            <mets:fptr FILEID="FID16"/>
+            <mets:fptr FILEID="FID33"/>
+            <mets:fptr FILEID="FID50"/>
+            <mets:fptr FILEID="FID67"/>
+            <mets:fptr FILEID="FID84"/>
+          </mets:div>
+          <mets:div TYPE="item"
+            LABEL="Virgin and Child, a male saint (?), and the owner and his wife, with coats of arms in the lower margin."
+            DMDID="DM20">
+            <mets:fptr FILEID="FID17"/>
+            <mets:fptr FILEID="FID34"/>
+            <mets:fptr FILEID="FID51"/>
+            <mets:fptr FILEID="FID68"/>
+            <mets:fptr FILEID="FID85"/>
+          </mets:div>
+        </mets:div>
+      </mets:div>
+    </mets:div>
+  </mets:structMap>
+
+</mets:mets>
