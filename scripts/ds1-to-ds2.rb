@@ -60,18 +60,21 @@ CSV.open output_csv, "w", headers: true do |row|
   xmls.each do |in_xml|
     xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
 
-    source_type = 'digital-scriptorium'
-    # /mets:mets/mets:metsHdr/mets:agent/mets:name
+    source_type                        = 'digital-scriptorium'
     holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
     holding_institution                = DS::INSTITUTION_IDS_BY_NAME.fetch holding_institution_as_recorded, ''
     holding_institution_id_number      = DS::DS10.extract_institution_id xml
-    link_to_holding_institution_record = ''
+    link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
     production_date_encoded_008        = ''
     production_place_as_recorded       = DS::DS10.extract_production_place xml
+    production_place                   = ''
     production_date_as_recorded        = DS::DS10.extract_date_as_recorded xml
+    production_date                    = ''
+    century                            = ''
+    dated                              = DS::DS10.dated_by_scribe? xml
     uniform_title_240_as_recorded      = ''
     uniform_title_240_agr              = ''
-    title_as_recorded_245              = ''
+    title_as_recorded_245              = DS::DS10.extract_title xml
     title_as_recorded_245_agr          = ''
     genre_as_recorded                  = ''
     subject_as_recorded                = ''
@@ -85,13 +88,10 @@ CSV.open output_csv, "w", headers: true do |row|
     language                           = ''
     former_owner_as_recorded           = ''
     former_owner_as_recorded_agr       = ''
+    material                           = ''
     material_as_recorded               = ''
     physical_description               = ''
-    binding_description                = ''
-    extent_as_recorded                 = ''
-    folios                             = ''
-    dimensions_as_recorded             = ''
-    decoration                         = ''
+    acknowledgements                   = ''
 
     data = { source_type:                        source_type,
              holding_institution:                holding_institution,
@@ -99,7 +99,11 @@ CSV.open output_csv, "w", headers: true do |row|
              holding_institution_id_number:      holding_institution_id_number,
              link_to_holding_institution_record: link_to_holding_institution_record,
              production_date_encoded_008:        production_date_encoded_008,
+             production_date:                    production_date,
              production_place_as_recorded:       production_place_as_recorded,
+             production_place:                   production_place,
+             century:                            century,
+             dated:                              dated,
              production_date_as_recorded:        production_date_as_recorded,
              uniform_title_240_as_recorded:      uniform_title_240_as_recorded,
              uniform_title_240_agr:              uniform_title_240_agr,
@@ -118,12 +122,9 @@ CSV.open output_csv, "w", headers: true do |row|
              former_owner_as_recorded:           former_owner_as_recorded,
              former_owner_as_recorded_agr:       former_owner_as_recorded_agr,
              material_as_recorded:               material_as_recorded,
+             material:                           material,
              physical_description:               physical_description,
-             binding:                            binding_description,
-             folios:                             folios,
-             extent_as_recorded:                 extent_as_recorded,
-             dimensions_as_recorded:             dimensions_as_recorded,
-             decoration:                         decoration,
+             acknowledgements:                   acknowledgements,
     }
 
     row << data

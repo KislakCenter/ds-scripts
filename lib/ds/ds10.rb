@@ -9,12 +9,19 @@ module DS
       }
 
       def extract_institution_name xml
-        extract_creator(xml).first
+        extract_mets_creator(xml).first
       end
 
-      def extract_creator xml
+      def extract_mets_creator xml
         creator = xml.xpath('/mets:mets/mets:metsHdr/mets:agent[@ROLE="CREATOR" and @TYPE="ORGANIZATION"]/mets:name', NS).text
         creator.split %r{;;}
+      end
+
+      def extract_title xml
+        xpath = "mets:mdWrap/mets:xmlData/mods:mods/mods:titleInfo/mods:title"
+        find_texts(xml).flat_map { |text|
+          text.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:titleInfo/mods:title').map(&:text)
+        }.reject { |t| t == '[Title not supplied]' }.join '|'
       end
 
       def extract_production_place xml
@@ -29,8 +36,23 @@ module DS
 
       def extract_institution_id xml
         ms = find_ms xml
-        # binding.pry
         ms.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="local"]/text()')
+      end
+
+      def extract_link_to_inst_record xml
+        ms = find_ms xml
+        # xpath mets:mdWrap/mets:xmlData/mods:mods/mods:relatedItem/mods:location/mods:url
+        xpath = "mets:mdWrap/mets:xmlData/mods:mods/mods:relatedItem/mods:location/mods:url"
+        ms.xpath(xpath).map(&:text).join '|'
+      end
+
+      def dated_by_scribe? xml
+        parts = find_parts xml
+        # mets:mdWrap/mets:xmlData/mods:mods/mods:note
+        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:note[@type="date"]'
+        parts.any? { |part |
+          part.xpath(xpath).text.upcase == 'Y'
+        }
       end
 
       def extract_date_as_recorded xml
@@ -79,10 +101,22 @@ module DS
       end
 
       def find_ms xml
+        # the manuscript is one div deep in the structMap
         # /mets:mets/mets:structMap/mets:div/@DMDID
         xpath = '/mets:mets/mets:structMap/mets:div/@DMDID'
         id = xml.xpath(xpath).first.text
         xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
+      end
+
+      def find_texts xml
+        # /mets:mets/mets:structMap/mets:div/mets:div/mets:div/@DMDID
+        # the texts are three divs deep in the structMap
+        # We need to get the IDs in order
+        xpath = '/mets:mets/mets:structMap/mets:div/mets:div/mets:div/@DMDID'
+        ids = xml.xpath(xpath).map &:text
+        ids.map { |id|
+          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
+        }
       end
     end
 
