@@ -49,18 +49,19 @@ acknowledgements
     INSTITUTION_IDS_BY_NAME = {
       'Bryn Mawr College'                         => 'https://www.wikidata.org/wiki/Q995265',
       'Chemical Heritage Foundation'              => 'https://www.wikidata.org/wiki/Q5090408',
+      'City College of New York'                  => 'https://www.wikidata.org/wiki/Q1093910',
+      'Columbia University'                       => 'https://www.wikidata.org/wiki/Q49088',
       'Free Library of Philadelphia'              => 'https://www.wikidata.org/wiki/Q3087288',
+      'General Theological Seminary'              => 'https://www.wikidata.org/wiki/Q1501676',
+      'Grolier Club'                              => 'https://www.wikidata.org/wiki/Q5174002',
+      'Nelson-Atkins Museum of Art'               => 'https://www.wikidata.org/wiki/Q1976985',
       'Philadelphia Museum of Art'                => 'https://www.wikidata.org/wiki/Q510324',
       'Swarthmore College'                        => 'https://www.wikidata.org/wiki/Q1378320',
       'The College of Physicians of Philadelphia' => 'https://www.wikidata.org/wiki/Q5146808',
+      'University of California, Berkeley'        => 'https://www.wikidata.org/wiki/Q168756',
+      'University of Missouri'                    => 'https://www.wikidata.org/wiki/Q579968',
       'University of Pennsylvania'                => 'https://www.wikidata.org/wiki/Q49117',
-      'Columbia University'                       => 'https://www.wikidata.org/wiki/Q49088',
-      'Nelson-Atkins Museum of Art' => 'https://www.wikidata.org/wiki/Q1976985',
-      'General Theological Seminary' => 'https://www.wikidata.org/wiki/Q1501676',
-      'Grolier Club' => 'https://www.wikidata.org/wiki/Q5174002',
-      'Wellesley College' => 'https://www.wikidata.org/wiki/Q49205',
-
-
+      'Wellesley College'                         => 'https://www.wikidata.org/wiki/Q49205',
     }
   end
 end
