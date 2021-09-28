@@ -3,16 +3,6 @@
 ######
 # Script to convert UPenn Marc XML to DS 2.0 format.
 #
-# Input should be an MMS ID.
-#
-# The initial test set will use these IDs:
-#
-#   9947675343503681
-#   9952666523503681
-#   9959647633503681
-#   9950569233503681
-#   9976106713503681
-#   9965025663503681
 
 ##
 #  Questions
@@ -30,7 +20,12 @@ require_relative '../lib/ds'
 options = {}
 OptionParser.new do |opts|
 
-  opts.banner = "Usage: #{File.basename __FILE__} [options] XML [XML ..]"
+  opts.banner = <<EOF
+Usage: #{File.basename __FILE__} [options] XML [XML ..]
+
+Generate a DS 2.0 CSV from MARC XML.
+
+EOF
 
   opts.on('-o FILE', '--output-csv=FILE', "Name of the output CSV file [default: output.csv]") do |output|
     options[:output_csv] = output

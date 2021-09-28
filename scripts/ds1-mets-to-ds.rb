@@ -31,7 +31,12 @@ require_relative '../lib/ds'
 options = {}
 OptionParser.new do |opts|
 
-  opts.banner = "Usage: #{File.basename __FILE__} [options] XML [XML ..]"
+  opts.banner = <<EOF
+Usage: #{File.basename __FILE__} [options] XML [XML ..]
+
+Generate a DS 2.0 CSV from legacy DS METS/MODS XML.
+
+EOF
 
   opts.on('-o FILE', '--output-csv=FILE', "Name of the output CSV file [default: output.csv]") do |output|
     options[:output_csv] = output
