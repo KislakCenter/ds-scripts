@@ -46,6 +46,8 @@ abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty
 DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
 
+# TODO: Extract methods to a separate module as with DS::DS10
+
 ###
 # Extract the language codes from controlfield 008 and datafield 041$a.
 #
@@ -237,6 +239,7 @@ def extract_physical_description record
 end
 
 # We don't have a good way to look these up, so I'm hard-coding the addresses.
+# TODO: Make IIIF manifest mapping configurable or dynamic
 IIIF_MANIFESTS = {
   '9947675343503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3k649t48/manifest',
   '9947675343503681-test' => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3k649t48/manifest',
@@ -262,9 +265,23 @@ def extract_holding_institution_ids record
 end
 
 def find_shelfmark record
-  holding_callno = record.xpath('holdings/holding/call_number').text
-  return holding_callno unless holding_callno.strip.empty?
-  record.xpath("datafield[@tag=99]/subfield[@code='a']").text
+  callno = record.xpath('holdings/holding/call_number').text
+  return callno unless callno.strip.empty?
+
+  callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
+  return callno unless callno.strip.empty?
+
+  # Princeton call number
+  xpath = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h']"
+  callno = record.xpath(xpath).text
+  return callno unless callno.strip.empty?
+
+  xpath = "datafield[@tag='500']/subfield[@code='a' and starts-with(text(), 'Shelfmark:')]"
+  callno = record.xpath(xpath).text
+  return callno.sub(%r{^Shelfmark:\s*}, '') unless callno.strip.empty?
+
+  # return empty string if we get this far
+  ''
 end
 
 def extract_mmsid record
