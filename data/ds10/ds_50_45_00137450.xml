@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/"
- xmlns:mix="http://www.loc.gov/mix/v10"
- xmlns:xlink="http://www.w3.org/1999/xlink"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation=
-"http://www.loc.gov/METS/
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:mods="http://www.loc.gov/mods/v3"
+  xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:mix="http://www.loc.gov/mix/v10"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.loc.gov/METS/
  http://www.loc.gov/standards/mets/mets.xsd
  http://cosimo.stanford.edu/sdr/metsrights/
  http://cosimo.stanford.edu/sdr/metsrights.xsd
@@ -14,551 +10,561 @@
  http://www.loc.gov/standards/mods/v3/mods-3-2.xsd
  http://www.loc.gov/mix/v10
  http://www.loc.gov/standards/mix/mix10/mix10.xsd"
- OBJID="ark:/28722/bk0009b149s"
- LABEL="[No Title for Display]"
- PROFILE="http://www.loc.gov/mets/profiles/00000013.xml">
+  OBJID="ark:/28722/bk0009b149s" LABEL="[No Title for Display]"
+  PROFILE="http://www.loc.gov/mets/profiles/00000013.xml">
 
- 
-<mets:metsHdr CREATEDATE="2011-08-23T10:53:39" LASTMODDATE="2011-11-08T09:52:25">
-  <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
-   <mets:name>University of Missouri;;Ellis Library, Special Collections;;Columbia</mets:name>
-  </mets:agent>
-</mets:metsHdr>
 
-<mets:dmdSec ID="DM1">
- <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
-  <mets:xmlData>
-    <mods:mods>
+  <mets:metsHdr CREATEDATE="2011-08-23T10:53:39" LASTMODDATE="2011-11-08T09:52:25">
+    <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
+      <mets:name>University of Missouri;;Ellis Library, Special Collections;;Columbia</mets:name>
+    </mets:agent>
+  </mets:metsHdr>
 
-     <mods:titleInfo>
-      <mods:title>[Title not supplied]</mods:title>
-     </mods:titleInfo>
-     <mods:typeOfResource>text</mods:typeOfResource>
-     <mods:physicalDescription>
-     <mods:extent>f. 1r-v</mods:extent>
-     <mods:note type="presentation">Not bound</mods:note>
-     </mods:physicalDescription>
-     <mods:note type="bibliography">M. McC. Gatch, &quot;Fragmenta Manuscripta and Varia at Missouri and Cambridge,&quot; Transactions of the Cambridge Bibliographical Society9 (1990) 434-75.</mods:note>
-     <mods:note type="ownership">John Bagford (1650s-1716) to St. Martin-in-the-Fields; sale 1861 to Sir Thomas Phillipps, n.15758; his sale 22 May, 1913, lot 742; Sir Sydney Cockerell (1867-1962) sale Sotheby&apos;s 3 April, 1957; William Salloch (Ossining NY) Cat. 258 (1968) to U. Missouri.</mods:note>
-     <mods:note type="action">Inputter: Tim Spence, 8/10/2001; Reviser: C. W. Dutschke, 8/10/2005</mods:note>
-     <mods:note type="admin">Prof. L. Voigts and Dr. K. Gould kindly supplied the information that made this description possible.</mods:note>
-     <mods:relatedItem displayLabel="Metacollection" type="host">
-      <mods:titleInfo>
-       <mods:title>Digital Scriptorium</mods:title>
-      </mods:titleInfo>
-     </mods:relatedItem>
-     <mods:identifier type="local">Fragmenta Manuscripta 039</mods:identifier>
-	 <mods:location>
-	  <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
-	 </mods:location>
+  <mets:dmdSec ID="DM1">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
 
-    </mods:mods>
-  </mets:xmlData>
- </mets:mdWrap>
-</mets:dmdSec>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 1r-v</mods:extent>
+            <mods:note type="presentation">Not bound</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="bibliography">M. McC. Gatch, &quot;Fragmenta Manuscripta and Varia at Missouri and Cambridge,&quot; Transactions of the Cambridge Bibliographical Society9 (1990) 434-75.</mods:note>
+          <mods:note type="ownership">John Bagford (1650s-1716) to St. Martin-in-the-Fields; sale 1861 to Sir Thomas Phillipps, n.15758; his sale 22 May, 1913, lot 742; Sir Sydney Cockerell (1867-1962) sale Sotheby&apos;s 3 April, 1957; William Salloch (Ossining NY) Cat. 258 (1968) to U. Missouri.</mods:note>
+          <mods:note type="action">Inputter: Tim Spence, 8/10/2001; Reviser: C. W. Dutschke, 8/10/2005</mods:note>
+          <mods:note type="admin">Prof. L. Voigts and Dr. K. Gould kindly supplied the information that made this description possible.</mods:note>
+          <mods:relatedItem displayLabel="Metacollection" type="host">
+            <mods:titleInfo>
+              <mods:title>Digital Scriptorium</mods:title>
+            </mods:titleInfo>
+          </mods:relatedItem>
+          <mods:identifier type="local">Fragmenta Manuscripta 039</mods:identifier>
+          <mods:location>
+            <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
+          </mods:location>
 
-<mets:dmdSec ID="DM2">
- <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
-  <mets:xmlData>
-    <mods:mods>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
 
-     <mods:titleInfo>
-      <mods:title>[Title not supplied]</mods:title>
-     </mods:titleInfo>
-     <mods:typeOfResource>text</mods:typeOfResource>
-     <mods:originInfo>
-      <mods:place>
-       <mods:placeTerm type="text">England; France?;;</mods:placeTerm>
-      </mods:place>
-      <mods:dateCreated encoding="iso8601" point="start">900</mods:dateCreated>
-      <mods:dateCreated encoding="iso8601" point="end">999</mods:dateCreated>
-      <mods:dateOther>s. X</mods:dateOther>
-     </mods:originInfo>
-     <mods:physicalDescription>
-     <mods:extent>f. 1r-v;;130 x 83 mm</mods:extent>
-     <mods:note type="technique">Single column visible with 19 lines visible, bounding lines, ruling with drypoint on recto (hair)</mods:note>
-     <mods:note type="support">Parchment</mods:note>
-     <mods:note type="physical description">;;1</mods:note>
-     </mods:physicalDescription>
-     <mods:note>Evidence of cropping on top, right, bottom; &quot;r&quot; below line, &quot;g&quot; has heavy clubs compressed</mods:note>
-     <mods:note>Latin</mods:note>
-	 <mods:location>
-	  <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
-	 </mods:location>
+  <mets:dmdSec ID="DM2">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
 
-    </mods:mods>
-  </mets:xmlData>
- </mets:mdWrap>
-</mets:dmdSec>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:originInfo>
+            <mods:place>
+              <mods:placeTerm type="text">England; France?;;</mods:placeTerm>
+            </mods:place>
+            <mods:dateCreated encoding="iso8601" point="start">900</mods:dateCreated>
+            <mods:dateCreated encoding="iso8601" point="end">999</mods:dateCreated>
+            <mods:dateOther>s. X</mods:dateOther>
+          </mods:originInfo>
+          <mods:physicalDescription>
+            <mods:extent>f. 1r-v;;130 x 83 mm</mods:extent>
+            <mods:note type="technique">Single column visible with 19 lines visible, bounding lines, ruling with drypoint on recto (hair)</mods:note>
+            <mods:note type="support">Parchment</mods:note>
+            <mods:note type="physical description">;;1</mods:note>
+          </mods:physicalDescription>
+          <mods:note>Evidence of cropping on top, right, bottom; &quot;r&quot; below line, &quot;g&quot; has heavy clubs compressed</mods:note>
+          <mods:note>Latin</mods:note>
+          <mods:location>
+            <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
+          </mods:location>
 
-<mets:dmdSec ID="DM3">
- <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
-  <mets:xmlData>
-    <mods:mods>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
 
-     <mods:titleInfo>
-      <mods:title>[Title not supplied]</mods:title>
-     </mods:titleInfo>
-     <mods:titleInfo type="alternative">
-     <mods:title>Breviary</mods:title>
-     </mods:titleInfo>
-     <mods:typeOfResource>text</mods:typeOfResource>
-     <mods:physicalDescription>
-     <mods:extent>f. 1r-v</mods:extent>
-     </mods:physicalDescription>
-     <mods:note>Identified by N. R. Ker. Text contains part of service for the feast of the Circumcision.</mods:note>
-     <mods:note>lang: Latin</mods:note>
-	 <mods:location>
-	  <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
-	 </mods:location>
+  <mets:dmdSec ID="DM3">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
 
-    </mods:mods>
-  </mets:xmlData>
- </mets:mdWrap>
-</mets:dmdSec>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative">
+            <mods:title>Breviary</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 1r-v</mods:extent>
+          </mods:physicalDescription>
+          <mods:note>Identified by N. R. Ker. Text contains part of service for the feast of the Circumcision.</mods:note>
+          <mods:note>lang: Latin</mods:note>
+          <mods:location>
+            <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
+          </mods:location>
 
-<mets:dmdSec ID="DM4">
- <mets:mdWrap MDTYPE="MODS" LABEL="Frag 039r">
-  <mets:xmlData>
-    <mods:mods>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
 
-     <mods:titleInfo>
-      <mods:title>Frag 039r</mods:title>
-     </mods:titleInfo>
-     <mods:titleInfo type="alternative" displayLabel="Caption">
-      <mods:title>Frag 039r</mods:title>
-     </mods:titleInfo>
-     <mods:typeOfResource>text</mods:typeOfResource>
-     <mods:physicalDescription>
-     <mods:extent>Frag 039r</mods:extent>
-     </mods:physicalDescription>
-	 <mods:location>
-	  <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
-	 </mods:location>
+  <mets:dmdSec ID="DM4">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Frag 039r">
+      <mets:xmlData>
+        <mods:mods>
 
-    </mods:mods>
-  </mets:xmlData>
- </mets:mdWrap>
-</mets:dmdSec>
+          <mods:titleInfo>
+            <mods:title>Frag 039r</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Frag 039r</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>Frag 039r</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
+          </mods:location>
 
-<mets:dmdSec ID="DM5">
- <mets:mdWrap MDTYPE="MODS" LABEL="Frag 039v">
-  <mets:xmlData>
-    <mods:mods>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
 
-     <mods:titleInfo>
-      <mods:title>Frag 039v</mods:title>
-     </mods:titleInfo>
-     <mods:titleInfo type="alternative" displayLabel="Caption">
-      <mods:title>Frag 039v</mods:title>
-     </mods:titleInfo>
-     <mods:typeOfResource>text</mods:typeOfResource>
-     <mods:physicalDescription>
-     <mods:extent>Frag 039v</mods:extent>
-     </mods:physicalDescription>
-	 <mods:location>
-	  <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
-	 </mods:location>
+  <mets:dmdSec ID="DM5">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Frag 039v">
+      <mets:xmlData>
+        <mods:mods>
 
-    </mods:mods>
-  </mets:xmlData>
- </mets:mdWrap>
-</mets:dmdSec>
+          <mods:titleInfo>
+            <mods:title>Frag 039v</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" displayLabel="Caption">
+            <mods:title>Frag 039v</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>Frag 039v</mods:extent>
+          </mods:physicalDescription>
+          <mods:location>
+            <mods:physicalLocation>University of Missouri;;Ellis Library, Special Collections;;, 1020 Lowry Street, Columbia, MO 65201-5149;;, URL: http://mulibraries.missouri.edu/collections/ellis.htm</mods:physicalLocation>
+          </mods:location>
 
-<mets:amdSec>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
 
- <mets:techMD ID="ADM1">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
+  <mets:amdSec>
 
-     <mix:BasicDigitalObjectInformation>
-       <mix:FormatDesignation>
-	 <mix:formatName>image/tiff</mix:formatName>
-       </mix:FormatDesignation>
-     </mix:BasicDigitalObjectInformation>
+    <mets:techMD ID="ADM1">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
 
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/tiff</mix:formatName>
+              </mix:FormatDesignation>
+            </mix:BasicDigitalObjectInformation>
 
- <mets:techMD ID="ADM2">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
-     <mix:BasicDigitalObjectInformation>
-       <mix:FormatDesignation>
-	 <mix:formatName>image/gif</mix:formatName> 
-       </mix:FormatDesignation>
-     </mix:BasicDigitalObjectInformation>
+    <mets:techMD ID="ADM2">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
 
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/gif</mix:formatName>
+              </mix:FormatDesignation>
+            </mix:BasicDigitalObjectInformation>
 
- <mets:techMD ID="ADM3">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
-     <mix:BasicDigitalObjectInformation>
-       <mix:FormatDesignation>
-	 <mix:formatName>image/jpeg</mix:formatName> 
-       </mix:FormatDesignation>
-     </mix:BasicDigitalObjectInformation>
+    <mets:techMD ID="ADM3">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
 
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/jpeg</mix:formatName>
+              </mix:FormatDesignation>
+            </mix:BasicDigitalObjectInformation>
 
- <mets:techMD ID="ADM4">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b150b</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ImageCaptureMetadata>
-       <mix:SourceInformation>
-	 <mix:sourceType>text/item</mix:sourceType>
-       </mix:SourceInformation>
-       <mix:GeneralCaptureInformation>
-	 <mix:dateTimeCreated>2011-05-10</mix:dateTimeCreated>
-       </mix:GeneralCaptureInformation>
-     </mix:ImageCaptureMetadata>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM5">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b1530</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ImageCaptureMetadata>
-       <mix:SourceInformation>
-	 <mix:sourceType>text/item</mix:sourceType>
-       </mix:SourceInformation>
-       <mix:GeneralCaptureInformation>
-	 <mix:dateTimeCreated>2011-05-10</mix:dateTimeCreated>
-       </mix:GeneralCaptureInformation>
-     </mix:ImageCaptureMetadata>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM4">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b150b</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2011-05-10</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM6">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b156n</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM5">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b1530</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text/item</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2011-05-10</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM7">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b1599</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM6">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b156n</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM8">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b161d</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM7">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b1599</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM9">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b163h</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM8">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b161d</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM10">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b165m</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM9">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b163h</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b150b</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM11">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b167q</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM10">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b165m</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM12">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b169t</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM11">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b167q</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:techMD ID="ADM13">
-  <mets:mdWrap MDTYPE="NISOIMG">
-   <mets:xmlData>
-    <mix:mix>
-     <mix:BasicDigitalObjectInformation>
-       <mix:ObjectIdentifier>
-	 <mix:objectIdentifierType>ark</mix:objectIdentifierType>
-	 <mix:objectIdentifierValue>ark:/28722/bk0009b171x</mix:objectIdentifierValue>
-       </mix:ObjectIdentifier>
-     </mix:BasicDigitalObjectInformation>
-     <mix:BasicImageInformation>
-       <mix:BasicImageCharacteristics>
-       </mix:BasicImageCharacteristics>
-     </mix:BasicImageInformation>
-     <mix:ChangeHistory>
-       <mix:ImageProcessing>
-	 <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
-	 <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
-       </mix:ImageProcessing>
-     </mix:ChangeHistory>
-    </mix:mix>
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:techMD>
+    <mets:techMD ID="ADM12">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b169t</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
- <mets:rightsMD ID="RMD1">
-  <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
-   <mets:xmlData>
-    <rts:RightsDeclarationMD RIGHTSCATEGORY="OTHER" OTHERCATEGORYTYPE="UNKNOWN">
-     <rts:RightsHolder>
-      <rts:RightsHolderComments>All requests to reproduce, publish, quote from, or otherwise use collection materials must be submitted in writing to the Head of Public Services, The Bancroft Library, University of California, Berkeley 94720-6000. See: http://bancroft.berkeley.edu/reference/permissions.html</rts:RightsHolderComments>
-     </rts:RightsHolder>
-     <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
-      <rts:Constraints>
-       <rts:ConstraintDescription>Some materials in these collections may be protected by the U.S. Copyright Law (Title 17, U.S.C.). In addition, the reproduction of some materials may be restricted by terms of University of California gift or purchase agreements, donor restrictions, privacy and publicity rights, licensing and trademarks. Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.</rts:ConstraintDescription>
-      </rts:Constraints>
-     </rts:Context>
-    </rts:RightsDeclarationMD>
+    <mets:techMD ID="ADM13">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0009b171x</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics> </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2011-05-10</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0009b1530</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
 
-   </mets:xmlData>
-  </mets:mdWrap>
- </mets:rightsMD>
+    <mets:rightsMD ID="RMD1">
+      <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+        <mets:xmlData>
+          <rts:RightsDeclarationMD RIGHTSCATEGORY="OTHER" OTHERCATEGORYTYPE="UNKNOWN">
+            <rts:RightsHolder>
+              <rts:RightsHolderComments>All requests to reproduce, publish, quote from, or otherwise
+                use collection materials must be submitted in writing to the Head of Public
+                Services, The Bancroft Library, University of California, Berkeley 94720-6000. See:
+                http://bancroft.berkeley.edu/reference/permissions.html</rts:RightsHolderComments>
+            </rts:RightsHolder>
+            <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
+              <rts:Constraints>
+                <rts:ConstraintDescription>Some materials in these collections may be protected by
+                  the U.S. Copyright Law (Title 17, U.S.C.). In addition, the reproduction of some
+                  materials may be restricted by terms of University of California gift or purchase
+                  agreements, donor restrictions, privacy and publicity rights, licensing and
+                  trademarks. Transmission or reproduction of materials protected by copyright
+                  beyond that allowed by fair use requires the written permission of the copyright
+                  owners. Works not in the public domain cannot be commercially exploited without
+                  permission of the copyright owner. Responsibility for any use rests exclusively
+                  with the user.</rts:ConstraintDescription>
+              </rts:Constraints>
+            </rts:Context>
+          </rts:RightsDeclarationMD>
 
-</mets:amdSec>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:rightsMD>
 
-<mets:fileSec>
+  </mets:amdSec>
 
- <mets:fileGrp USE="image/master">
-   <mets:file ID="FID1" MIMETYPE="image/tiff" SEQ="1" CREATED="2011-05-10T08:53:12.677" ADMID="ADM1 ADM4" GROUPID="GID1">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b150b" LOCTYPE="URL"/>
-   </mets:file>
-   <mets:file ID="FID2" MIMETYPE="image/tiff" SEQ="2" CREATED="2011-05-10T08:53:12.707" ADMID="ADM1 ADM5" GROUPID="GID2">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b1530" LOCTYPE="URL"/>
-   </mets:file>
- </mets:fileGrp>
+  <mets:fileSec>
 
- <mets:fileGrp USE="image/thumbnail">
-   <mets:file ID="FID3" MIMETYPE="image/gif" SEQ="1" CREATED="2011-05-10T08:53:12.677" ADMID="ADM2" GROUPID="GID1">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b156n" LOCTYPE="URL"/>
-   </mets:file>
-   <mets:file ID="FID4" MIMETYPE="image/gif" SEQ="2" CREATED="2011-05-10T08:53:12.707" ADMID="ADM2" GROUPID="GID2">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b165m" LOCTYPE="URL"/>
-   </mets:file>
- </mets:fileGrp>
+    <mets:fileGrp USE="image/master">
+      <mets:file ID="FID1" MIMETYPE="image/tiff" SEQ="1" CREATED="2011-05-10T08:53:12.677"
+        ADMID="ADM1 ADM4" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b150b" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID2" MIMETYPE="image/tiff" SEQ="2" CREATED="2011-05-10T08:53:12.707"
+        ADMID="ADM1 ADM5" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b1530" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
 
- <mets:fileGrp USE="image/reference">
-   <mets:file ID="FID5" MIMETYPE="image/jpeg" SEQ="1" CREATED="2011-05-10T08:53:12.677" ADMID="ADM3" GROUPID="GID1">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b1599" LOCTYPE="URL"/>
-   </mets:file>
-   <mets:file ID="FID6" MIMETYPE="image/jpeg" SEQ="2" CREATED="2011-05-10T08:53:12.723" ADMID="ADM3" GROUPID="GID2">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b167q" LOCTYPE="URL"/>
-   </mets:file>
- </mets:fileGrp>
+    <mets:fileGrp USE="image/thumbnail">
+      <mets:file ID="FID3" MIMETYPE="image/gif" SEQ="1" CREATED="2011-05-10T08:53:12.677"
+        ADMID="ADM2" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b156n" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID4" MIMETYPE="image/gif" SEQ="2" CREATED="2011-05-10T08:53:12.707"
+        ADMID="ADM2" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b165m" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
 
- <mets:fileGrp USE="image/reference">
-   <mets:file ID="FID7" MIMETYPE="image/jpeg" SEQ="1" CREATED="2011-05-10T08:53:12.69" ADMID="ADM3" GROUPID="GID1">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b161d" LOCTYPE="URL"/>
-   </mets:file>
-   <mets:file ID="FID8" MIMETYPE="image/jpeg" SEQ="2" CREATED="2011-05-10T08:53:12.74" ADMID="ADM3" GROUPID="GID2">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b169t" LOCTYPE="URL"/>
-   </mets:file>
- </mets:fileGrp>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID5" MIMETYPE="image/jpeg" SEQ="1" CREATED="2011-05-10T08:53:12.677"
+        ADMID="ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b1599" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID6" MIMETYPE="image/jpeg" SEQ="2" CREATED="2011-05-10T08:53:12.723"
+        ADMID="ADM3" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b167q" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
 
- <mets:fileGrp USE="image/reference">
-   <mets:file ID="FID9" MIMETYPE="image/jpeg" SEQ="1" CREATED="2011-05-10T08:53:12.69" ADMID="ADM3" GROUPID="GID1">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b163h" LOCTYPE="URL"/>
-   </mets:file>
-   <mets:file ID="FID10" MIMETYPE="image/jpeg" SEQ="2" CREATED="2011-05-10T08:53:12.74" ADMID="ADM3" GROUPID="GID2">
-    <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b171x" LOCTYPE="URL"/>
-   </mets:file>
- </mets:fileGrp>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID7" MIMETYPE="image/jpeg" SEQ="1" CREATED="2011-05-10T08:53:12.69"
+        ADMID="ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b161d" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID8" MIMETYPE="image/jpeg" SEQ="2" CREATED="2011-05-10T08:53:12.74"
+        ADMID="ADM3" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b169t" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
 
-</mets:fileSec>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID9" MIMETYPE="image/jpeg" SEQ="1" CREATED="2011-05-10T08:53:12.69"
+        ADMID="ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b163h" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID10" MIMETYPE="image/jpeg" SEQ="2" CREATED="2011-05-10T08:53:12.74"
+        ADMID="ADM3" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0009b171x" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
 
-<mets:structMap>
-  <mets:div TYPE="text" LABEL="[No Title for Display]" ADMID="RMD1" DMDID="DM1">
-    <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM2">
-      <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM3">
- <mets:div TYPE="item" LABEL="Frag 039r" DMDID="DM4">
-   <mets:fptr FILEID="FID1"/>
-   <mets:fptr FILEID="FID3"/>
-   <mets:fptr FILEID="FID5"/>
-   <mets:fptr FILEID="FID7"/>
-   <mets:fptr FILEID="FID9"/>
- </mets:div>
- <mets:div TYPE="item" LABEL="Frag 039v" DMDID="DM5">
-   <mets:fptr FILEID="FID2"/>
-   <mets:fptr FILEID="FID4"/>
-   <mets:fptr FILEID="FID6"/>
-   <mets:fptr FILEID="FID8"/>
-   <mets:fptr FILEID="FID10"/>
- </mets:div>
+  </mets:fileSec>
+
+  <mets:structMap>
+    <mets:div TYPE="text" LABEL="[No Title for Display]" ADMID="RMD1" DMDID="DM1">
+      <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM2">
+        <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM3">
+          <mets:div TYPE="item" LABEL="Frag 039r" DMDID="DM4">
+            <mets:fptr FILEID="FID1"/>
+            <mets:fptr FILEID="FID3"/>
+            <mets:fptr FILEID="FID5"/>
+            <mets:fptr FILEID="FID7"/>
+            <mets:fptr FILEID="FID9"/>
+          </mets:div>
+          <mets:div TYPE="item" LABEL="Frag 039v" DMDID="DM5">
+            <mets:fptr FILEID="FID2"/>
+            <mets:fptr FILEID="FID4"/>
+            <mets:fptr FILEID="FID6"/>
+            <mets:fptr FILEID="FID8"/>
+            <mets:fptr FILEID="FID10"/>
+          </mets:div>
+        </mets:div>
       </mets:div>
     </mets:div>
-  </mets:div>
-</mets:structMap>
+  </mets:structMap>
 
 </mets:mets>

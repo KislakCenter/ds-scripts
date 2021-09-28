@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<mets:mets PROFILE="http://www.loc.gov/mets/profiles/00000013.xml" LABEL="[No Title for Display]" OBJID="ark:/28722/bk0009h602h" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://cosimo.stanford.edu/sdr/metsrights/ http://www.loc.gov/standards/rights/METSRights.xsd info:lc/xmlns/premis-v2/ http://www.loc.gov/standards/premis/premis.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd http://www.loc.gov/mix/v20 http://www.loc.gov/standards/mix/mix20/mix20.xsd" xmlns:premis="info:lc/xmlns/premis-v2/" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:mets="http://www.loc.gov/METS/" xmlns:ead="urn:isbn:1-931666-22-9" xmlns:ns2="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="info:lc/xmlns/premis-v2" xmlns:ns4="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:ns3="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.loc.gov/mods/v3/" xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:ns5="http://www.loc.gov/METS/" xmlns:ns7="http://www.loc.gov/mix/v20" xmlns:ns9="http://www.loc.gov/mods/v3" xmlns:mix="http://www.loc.gov/mix/v20" xmlns:xlink="http://www.w3.org/1999/xlink">
+<mets:mets PROFILE="http://www.loc.gov/mets/profiles/00000013.xml" LABEL="[No Title for Display]"
+    OBJID="ark:/28722/bk0009h602h"
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://cosimo.stanford.edu/sdr/metsrights/ http://www.loc.gov/standards/rights/METSRights.xsd info:lc/xmlns/premis-v2/ http://www.loc.gov/standards/premis/premis.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd http://www.loc.gov/mix/v20 http://www.loc.gov/standards/mix/mix20/mix20.xsd"
+    xmlns:premis="info:lc/xmlns/premis-v2/" xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:mets="http://www.loc.gov/METS/" xmlns:ead="urn:isbn:1-931666-22-9"
+    xmlns:ns2="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="info:lc/xmlns/premis-v2"
+    xmlns:ns4="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:ns3="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns6="http://www.loc.gov/mods/v3/"
+    xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:ns5="http://www.loc.gov/METS/"
+    xmlns:ns7="http://www.loc.gov/mix/v20" xmlns:ns9="http://www.loc.gov/mods/v3"
+    xmlns:mix="http://www.loc.gov/mix/v20" xmlns:xlink="http://www.w3.org/1999/xlink">
     <mets:metsHdr LASTMODDATE="2019-11-08T03:37:54" CREATEDATE="2011-08-16T02:20:05">
         <mets:agent TYPE="ORGANIZATION" ROLE="CREATOR">
             <mets:name>Columbia University;;Rare Book and Manuscript Library;;New York</mets:name>
@@ -1343,11 +1353,26 @@
                 <mets:xmlData>
                     <rts:RightsDeclarationMD OTHERCATEGORYTYPE="UNKNOWN" RIGHTSCATEGORY="OTHER">
                         <rts:RightsHolder>
-                            <rts:RightsHolderComments>All requests to reproduce, publish, quote from, or otherwise use collection materials must be submitted in writing to the Head of Public Services, Rare Book and Manuscript Library, Columbia University, New York, NY 10027.</rts:RightsHolderComments>
+                            <rts:RightsHolderComments>All requests to reproduce, publish, quote
+                                from, or otherwise use collection materials must be submitted in
+                                writing to the Head of Public Services, Rare Book and Manuscript
+                                Library, Columbia University, New York, NY
+                                10027.</rts:RightsHolderComments>
                         </rts:RightsHolder>
                         <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
                             <rts:Constraints>
-                                <rts:ConstraintDescription>Some materials in these collections may be protected by the U.S. Copyright Law (Title 17, U.S.C.). In addition, the reproduction of some materials may be restricted by terms of University of California gift or purchase agreements, donor restrictions, privacy and publicity rights, licensing and trademarks. Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.</rts:ConstraintDescription>
+                                <rts:ConstraintDescription>Some materials in these collections may
+                                    be protected by the U.S. Copyright Law (Title 17, U.S.C.). In
+                                    addition, the reproduction of some materials may be restricted
+                                    by terms of University of California gift or purchase
+                                    agreements, donor restrictions, privacy and publicity rights,
+                                    licensing and trademarks. Transmission or reproduction of
+                                    materials protected by copyright beyond that allowed by fair use
+                                    requires the written permission of the copyright owners. Works
+                                    not in the public domain cannot be commercially exploited
+                                    without permission of the copyright owner. Responsibility for
+                                    any use rests exclusively with the
+                                    user.</rts:ConstraintDescription>
                             </rts:Constraints>
                         </rts:Context>
                     </rts:RightsDeclarationMD>
@@ -1357,193 +1382,313 @@
     </mets:amdSec>
     <mets:fileSec>
         <mets:fileGrp USE="image/master">
-            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/tiff" GROUPID="GID1" SEQ="1" ID="FID1">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w5r" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/tiff" GROUPID="GID1"
+                SEQ="1" ID="FID1">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w5r"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.187" MIMETYPE="image/tiff" GROUPID="GID2" SEQ="1" ID="FID2">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v8w" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.187" MIMETYPE="image/tiff" GROUPID="GID2"
+                SEQ="1" ID="FID2">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v8w"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.153" MIMETYPE="image/tiff" GROUPID="GID3" SEQ="1" ID="FID3">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v7b" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.153" MIMETYPE="image/tiff" GROUPID="GID3"
+                SEQ="1" ID="FID3">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v7b"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.123" MIMETYPE="image/tiff" GROUPID="GID4" SEQ="1" ID="FID4">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v6s" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.123" MIMETYPE="image/tiff" GROUPID="GID4"
+                SEQ="1" ID="FID4">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v6s"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.250" MIMETYPE="image/tiff" GROUPID="GID5" SEQ="1" ID="FID5">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w00" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.250" MIMETYPE="image/tiff" GROUPID="GID5"
+                SEQ="1" ID="FID5">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w00"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.310" MIMETYPE="image/tiff" GROUPID="GID6" SEQ="1" ID="FID6">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w23" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.310" MIMETYPE="image/tiff" GROUPID="GID6"
+                SEQ="1" ID="FID6">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w23"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/tiff" GROUPID="GID7" SEQ="1" ID="FID7">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w46" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/tiff" GROUPID="GID7"
+                SEQ="1" ID="FID7">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w46"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.280" MIMETYPE="image/tiff" GROUPID="GID8" SEQ="1" ID="FID8">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w1j" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.280" MIMETYPE="image/tiff" GROUPID="GID8"
+                SEQ="1" ID="FID8">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w1j"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/tiff" GROUPID="GID9" SEQ="1" ID="FID9">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w3n" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/tiff" GROUPID="GID9"
+                SEQ="1" ID="FID9">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w3n"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.043" MIMETYPE="image/tiff" GROUPID="GID10" SEQ="1" ID="FID10">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v4p" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.043" MIMETYPE="image/tiff" GROUPID="GID10"
+                SEQ="1" ID="FID10">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v4p"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.077" MIMETYPE="image/tiff" GROUPID="GID11" SEQ="1" ID="FID11">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v57" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.077" MIMETYPE="image/tiff" GROUPID="GID11"
+                SEQ="1" ID="FID11">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v57"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.217" MIMETYPE="image/tiff" GROUPID="GID12" SEQ="1" ID="FID12">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v9f" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.217" MIMETYPE="image/tiff" GROUPID="GID12"
+                SEQ="1" ID="FID12">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942v9f"
+                    LOCTYPE="URL"/>
             </mets:file>
         </mets:fileGrp>
         <mets:fileGrp USE="image/thumbnail">
-            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/jpeg" GROUPID="GID1" ADMID="ADM1 ADM47" SEQ="1" ID="FID13">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943202" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/jpeg" GROUPID="GID1"
+                ADMID="ADM1 ADM47" SEQ="1" ID="FID13">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943202"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.187" MIMETYPE="image/jpeg" GROUPID="GID2" ADMID="ADM1 ADM19" SEQ="2" ID="FID14">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z24" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.187" MIMETYPE="image/jpeg" GROUPID="GID2"
+                ADMID="ADM1 ADM19" SEQ="2" ID="FID14">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z24"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.153" MIMETYPE="image/jpeg" GROUPID="GID3" ADMID="ADM1 ADM15" SEQ="3" ID="FID15">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x8x" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.153" MIMETYPE="image/jpeg" GROUPID="GID3"
+                ADMID="ADM1 ADM15" SEQ="3" ID="FID15">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x8x"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.123" MIMETYPE="image/jpeg" GROUPID="GID4" ADMID="ADM1 ADM11" SEQ="4" ID="FID16">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x4q" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.123" MIMETYPE="image/jpeg" GROUPID="GID4"
+                ADMID="ADM1 ADM11" SEQ="4" ID="FID16">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x4q"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.250" MIMETYPE="image/jpeg" GROUPID="GID5" ADMID="ADM1 ADM27" SEQ="5" ID="FID17">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943001" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.250" MIMETYPE="image/jpeg" GROUPID="GID5"
+                ADMID="ADM1 ADM27" SEQ="5" ID="FID17">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943001"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.310" MIMETYPE="image/jpeg" GROUPID="GID6" ADMID="ADM1 ADM35" SEQ="6" ID="FID18">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094308f" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.310" MIMETYPE="image/jpeg" GROUPID="GID6"
+                ADMID="ADM1 ADM35" SEQ="6" ID="FID18">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094308f"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7" ADMID="ADM1 ADM43" SEQ="7" ID="FID19">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094316v" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7"
+                ADMID="ADM1 ADM43" SEQ="7" ID="FID19">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094316v"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.280" MIMETYPE="image/jpeg" GROUPID="GID8" ADMID="ADM1 ADM31" SEQ="8" ID="FID20">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943047" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.280" MIMETYPE="image/jpeg" GROUPID="GID8"
+                ADMID="ADM1 ADM31" SEQ="8" ID="FID20">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943047"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/jpeg" GROUPID="GID9" ADMID="ADM1 ADM39" SEQ="9" ID="FID21">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094312n" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/jpeg" GROUPID="GID9"
+                ADMID="ADM1 ADM39" SEQ="9" ID="FID21">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094312n"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.043" MIMETYPE="image/jpeg" GROUPID="GID10" ADMID="ADM1 ADM3" SEQ="10" ID="FID22">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w69" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.043" MIMETYPE="image/jpeg" GROUPID="GID10"
+                ADMID="ADM1 ADM3" SEQ="10" ID="FID22">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w69"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11" ADMID="ADM1 ADM7" SEQ="11" ID="FID23">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x0h" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11"
+                ADMID="ADM1 ADM7" SEQ="11" ID="FID23">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x0h"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.217" MIMETYPE="image/jpeg" GROUPID="GID12" ADMID="ADM1 ADM23" SEQ="12" ID="FID24">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z6b" LOCTYPE="URL"/>
-            </mets:file>
-        </mets:fileGrp>
-        <mets:fileGrp USE="image/reference">
-            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/jpeg" GROUPID="GID1" ADMID="ADM2 ADM48" SEQ="1" ID="FID25">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094321m" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.187" MIMETYPE="image/jpeg" GROUPID="GID2" ADMID="ADM2 ADM20" SEQ="2" ID="FID26">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z3p" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.153" MIMETYPE="image/jpeg" GROUPID="GID3" ADMID="ADM2 ADM16" SEQ="3" ID="FID27">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x9g" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.123" MIMETYPE="image/jpeg" GROUPID="GID4" ADMID="ADM2 ADM12" SEQ="4" ID="FID28">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x58" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.263" MIMETYPE="image/jpeg" GROUPID="GID5" ADMID="ADM2 ADM28" SEQ="5" ID="FID29">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094301k" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.327" MIMETYPE="image/jpeg" GROUPID="GID6" ADMID="ADM2 ADM36" SEQ="6" ID="FID30">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943090" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7" ADMID="ADM2 ADM44" SEQ="7" ID="FID31">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094317d" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.293" MIMETYPE="image/jpeg" GROUPID="GID8" ADMID="ADM2 ADM32" SEQ="8" ID="FID32">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094305s" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/jpeg" GROUPID="GID9" ADMID="ADM2 ADM40" SEQ="9" ID="FID33">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943136" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.060" MIMETYPE="image/jpeg" GROUPID="GID10" ADMID="ADM2 ADM4" SEQ="10" ID="FID34">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w7v" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11" ADMID="ADM2 ADM8" SEQ="11" ID="FID35">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x12" LOCTYPE="URL"/>
-            </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.217" MIMETYPE="image/jpeg" GROUPID="GID12" ADMID="ADM2 ADM24" SEQ="12" ID="FID36">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z7w" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.217" MIMETYPE="image/jpeg" GROUPID="GID12"
+                ADMID="ADM1 ADM23" SEQ="12" ID="FID24">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z6b"
+                    LOCTYPE="URL"/>
             </mets:file>
         </mets:fileGrp>
         <mets:fileGrp USE="image/reference">
-            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/jpeg" GROUPID="GID1" ADMID="ADM2 ADM49" SEQ="1" ID="FID37">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943225" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/jpeg" GROUPID="GID1"
+                ADMID="ADM2 ADM48" SEQ="1" ID="FID25">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094321m"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.200" MIMETYPE="image/jpeg" GROUPID="GID2" ADMID="ADM2 ADM21" SEQ="2" ID="FID38">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z47" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.187" MIMETYPE="image/jpeg" GROUPID="GID2"
+                ADMID="ADM2 ADM20" SEQ="2" ID="FID26">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z3p"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.170" MIMETYPE="image/jpeg" GROUPID="GID3" ADMID="ADM2 ADM17" SEQ="3" ID="FID39">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z01" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.153" MIMETYPE="image/jpeg" GROUPID="GID3"
+                ADMID="ADM2 ADM16" SEQ="3" ID="FID27">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x9g"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.140" MIMETYPE="image/jpeg" GROUPID="GID4" ADMID="ADM2 ADM13" SEQ="4" ID="FID40">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x6t" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.123" MIMETYPE="image/jpeg" GROUPID="GID4"
+                ADMID="ADM2 ADM12" SEQ="4" ID="FID28">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x58"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.263" MIMETYPE="image/jpeg" GROUPID="GID5" ADMID="ADM2 ADM29" SEQ="5" ID="FID41">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943024" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.263" MIMETYPE="image/jpeg" GROUPID="GID5"
+                ADMID="ADM2 ADM28" SEQ="5" ID="FID29">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094301k"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.327" MIMETYPE="image/jpeg" GROUPID="GID6" ADMID="ADM2 ADM37" SEQ="6" ID="FID42">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094310j" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.327" MIMETYPE="image/jpeg" GROUPID="GID6"
+                ADMID="ADM2 ADM36" SEQ="6" ID="FID30">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943090"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7" ADMID="ADM2 ADM45" SEQ="7" ID="FID43">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094318z" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7"
+                ADMID="ADM2 ADM44" SEQ="7" ID="FID31">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094317d"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.293" MIMETYPE="image/jpeg" GROUPID="GID8" ADMID="ADM2 ADM33" SEQ="8" ID="FID44">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094306b" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.293" MIMETYPE="image/jpeg" GROUPID="GID8"
+                ADMID="ADM2 ADM32" SEQ="8" ID="FID32">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094305s"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/jpeg" GROUPID="GID9" ADMID="ADM2 ADM41" SEQ="9" ID="FID45">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094314r" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/jpeg" GROUPID="GID9"
+                ADMID="ADM2 ADM40" SEQ="9" ID="FID33">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943136"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.060" MIMETYPE="image/jpeg" GROUPID="GID10" ADMID="ADM2 ADM5" SEQ="10" ID="FID46">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w8d" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.060" MIMETYPE="image/jpeg" GROUPID="GID10"
+                ADMID="ADM2 ADM4" SEQ="10" ID="FID34">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w7v"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11" ADMID="ADM2 ADM9" SEQ="11" ID="FID47">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x2m" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11"
+                ADMID="ADM2 ADM8" SEQ="11" ID="FID35">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x12"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.233" MIMETYPE="image/jpeg" GROUPID="GID12" ADMID="ADM2 ADM25" SEQ="12" ID="FID48">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z8f" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.217" MIMETYPE="image/jpeg" GROUPID="GID12"
+                ADMID="ADM2 ADM24" SEQ="12" ID="FID36">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z7w"
+                    LOCTYPE="URL"/>
             </mets:file>
         </mets:fileGrp>
         <mets:fileGrp USE="image/reference">
-            <mets:file CREATED="2011-08-02T13:16:06.437" MIMETYPE="image/jpeg" GROUPID="GID1" ADMID="ADM2 ADM50" SEQ="1" ID="FID49">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094323q" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.420" MIMETYPE="image/jpeg" GROUPID="GID1"
+                ADMID="ADM2 ADM49" SEQ="1" ID="FID37">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943225"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.200" MIMETYPE="image/jpeg" GROUPID="GID2" ADMID="ADM2 ADM22" SEQ="2" ID="FID50">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z5s" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.200" MIMETYPE="image/jpeg" GROUPID="GID2"
+                ADMID="ADM2 ADM21" SEQ="2" ID="FID38">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z47"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.170" MIMETYPE="image/jpeg" GROUPID="GID3" ADMID="ADM2 ADM18" SEQ="3" ID="FID51">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z1k" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.170" MIMETYPE="image/jpeg" GROUPID="GID3"
+                ADMID="ADM2 ADM17" SEQ="3" ID="FID39">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z01"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.140" MIMETYPE="image/jpeg" GROUPID="GID4" ADMID="ADM2 ADM14" SEQ="4" ID="FID52">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x7c" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.140" MIMETYPE="image/jpeg" GROUPID="GID4"
+                ADMID="ADM2 ADM13" SEQ="4" ID="FID40">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x6t"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.263" MIMETYPE="image/jpeg" GROUPID="GID5" ADMID="ADM2 ADM30" SEQ="5" ID="FID53">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094303p" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.263" MIMETYPE="image/jpeg" GROUPID="GID5"
+                ADMID="ADM2 ADM29" SEQ="5" ID="FID41">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943024"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.327" MIMETYPE="image/jpeg" GROUPID="GID6" ADMID="ADM2 ADM38" SEQ="6" ID="FID54">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943113" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.327" MIMETYPE="image/jpeg" GROUPID="GID6"
+                ADMID="ADM2 ADM37" SEQ="6" ID="FID42">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094310j"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7" ADMID="ADM2 ADM46" SEQ="7" ID="FID55">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094319h" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7"
+                ADMID="ADM2 ADM45" SEQ="7" ID="FID43">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094318z"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.293" MIMETYPE="image/jpeg" GROUPID="GID8" ADMID="ADM2 ADM34" SEQ="8" ID="FID56">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094307w" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.293" MIMETYPE="image/jpeg" GROUPID="GID8"
+                ADMID="ADM2 ADM33" SEQ="8" ID="FID44">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094306b"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.373" MIMETYPE="image/jpeg" GROUPID="GID9" ADMID="ADM2 ADM42" SEQ="9" ID="FID57">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943159" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.357" MIMETYPE="image/jpeg" GROUPID="GID9"
+                ADMID="ADM2 ADM41" SEQ="9" ID="FID45">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094314r"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.060" MIMETYPE="image/jpeg" GROUPID="GID10" ADMID="ADM2 ADM6" SEQ="10" ID="FID58">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w9z" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.060" MIMETYPE="image/jpeg" GROUPID="GID10"
+                ADMID="ADM2 ADM5" SEQ="10" ID="FID46">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w8d"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11" ADMID="ADM2 ADM10" SEQ="11" ID="FID59">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x35" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11"
+                ADMID="ADM2 ADM9" SEQ="11" ID="FID47">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x2m"
+                    LOCTYPE="URL"/>
             </mets:file>
-            <mets:file CREATED="2011-08-02T13:16:06.233" MIMETYPE="image/jpeg" GROUPID="GID12" ADMID="ADM2 ADM26" SEQ="12" ID="FID60">
-                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z90" LOCTYPE="URL"/>
+            <mets:file CREATED="2011-08-02T13:16:06.233" MIMETYPE="image/jpeg" GROUPID="GID12"
+                ADMID="ADM2 ADM25" SEQ="12" ID="FID48">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z8f"
+                    LOCTYPE="URL"/>
+            </mets:file>
+        </mets:fileGrp>
+        <mets:fileGrp USE="image/reference">
+            <mets:file CREATED="2011-08-02T13:16:06.437" MIMETYPE="image/jpeg" GROUPID="GID1"
+                ADMID="ADM2 ADM50" SEQ="1" ID="FID49">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094323q"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.200" MIMETYPE="image/jpeg" GROUPID="GID2"
+                ADMID="ADM2 ADM22" SEQ="2" ID="FID50">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z5s"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.170" MIMETYPE="image/jpeg" GROUPID="GID3"
+                ADMID="ADM2 ADM18" SEQ="3" ID="FID51">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z1k"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.140" MIMETYPE="image/jpeg" GROUPID="GID4"
+                ADMID="ADM2 ADM14" SEQ="4" ID="FID52">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x7c"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.263" MIMETYPE="image/jpeg" GROUPID="GID5"
+                ADMID="ADM2 ADM30" SEQ="5" ID="FID53">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094303p"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.327" MIMETYPE="image/jpeg" GROUPID="GID6"
+                ADMID="ADM2 ADM38" SEQ="6" ID="FID54">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943113"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.390" MIMETYPE="image/jpeg" GROUPID="GID7"
+                ADMID="ADM2 ADM46" SEQ="7" ID="FID55">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094319h"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.293" MIMETYPE="image/jpeg" GROUPID="GID8"
+                ADMID="ADM2 ADM34" SEQ="8" ID="FID56">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk00094307w"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.373" MIMETYPE="image/jpeg" GROUPID="GID9"
+                ADMID="ADM2 ADM42" SEQ="9" ID="FID57">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000943159"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.060" MIMETYPE="image/jpeg" GROUPID="GID10"
+                ADMID="ADM2 ADM6" SEQ="10" ID="FID58">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942w9z"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.090" MIMETYPE="image/jpeg" GROUPID="GID11"
+                ADMID="ADM2 ADM10" SEQ="11" ID="FID59">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942x35"
+                    LOCTYPE="URL"/>
+            </mets:file>
+            <mets:file CREATED="2011-08-02T13:16:06.233" MIMETYPE="image/jpeg" GROUPID="GID12"
+                ADMID="ADM2 ADM26" SEQ="12" ID="FID60">
+                <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk000942z90"
+                    LOCTYPE="URL"/>
             </mets:file>
         </mets:fileGrp>
     </mets:fileSec>
@@ -1551,14 +1696,16 @@
         <mets:div TYPE="text" ADMID="RMD1" DMDID="DM1" LABEL="[No Title for Display]">
             <mets:div TYPE="item" DMDID="DM13" LABEL="[No Title for Display]">
                 <mets:div TYPE="item" DMDID="DM3" LABEL="Libro di conti">
-                    <mets:div TYPE="item" DMDID="DM12" LABEL="Front flyleaf, decorated paper (carta bassanese.">
+                    <mets:div TYPE="item" DMDID="DM12"
+                        LABEL="Front flyleaf, decorated paper (carta bassanese.">
                         <mets:fptr FILEID="FID10"/>
                         <mets:fptr FILEID="FID22"/>
                         <mets:fptr FILEID="FID34"/>
                         <mets:fptr FILEID="FID46"/>
                         <mets:fptr FILEID="FID58"/>
                     </mets:div>
-                    <mets:div TYPE="item" DMDID="DM14" LABEL="Front pastedown, decorated paper (carta bassanese, with bookplate of Walter Sneyd.">
+                    <mets:div TYPE="item" DMDID="DM14"
+                        LABEL="Front pastedown, decorated paper (carta bassanese, with bookplate of Walter Sneyd.">
                         <mets:fptr FILEID="FID11"/>
                         <mets:fptr FILEID="FID23"/>
                         <mets:fptr FILEID="FID35"/>
@@ -1572,7 +1719,8 @@
                         <mets:fptr FILEID="FID40"/>
                         <mets:fptr FILEID="FID52"/>
                     </mets:div>
-                    <mets:div TYPE="item" DMDID="DM5" LABEL="Castle on a hill, with date below (1686); grotesque.">
+                    <mets:div TYPE="item" DMDID="DM5"
+                        LABEL="Castle on a hill, with date below (1686); grotesque.">
                         <mets:fptr FILEID="FID3"/>
                         <mets:fptr FILEID="FID15"/>
                         <mets:fptr FILEID="FID27"/>
@@ -1586,7 +1734,8 @@
                         <mets:fptr FILEID="FID38"/>
                         <mets:fptr FILEID="FID50"/>
                     </mets:div>
-                    <mets:div TYPE="item" DMDID="DM15" LABEL="Landscapes; man knocking acorns (?) from a tree.">
+                    <mets:div TYPE="item" DMDID="DM15"
+                        LABEL="Landscapes; man knocking acorns (?) from a tree.">
                         <mets:fptr FILEID="FID12"/>
                         <mets:fptr FILEID="FID24"/>
                         <mets:fptr FILEID="FID36"/>
@@ -1614,14 +1763,16 @@
                         <mets:fptr FILEID="FID42"/>
                         <mets:fptr FILEID="FID54"/>
                     </mets:div>
-                    <mets:div TYPE="item" DMDID="DM11" LABEL="Sketch of a man falling from his horse.">
+                    <mets:div TYPE="item" DMDID="DM11"
+                        LABEL="Sketch of a man falling from his horse.">
                         <mets:fptr FILEID="FID9"/>
                         <mets:fptr FILEID="FID21"/>
                         <mets:fptr FILEID="FID33"/>
                         <mets:fptr FILEID="FID45"/>
                         <mets:fptr FILEID="FID57"/>
                     </mets:div>
-                    <mets:div TYPE="item" DMDID="DM9" LABEL="Cartouche with name, Antonio Venturini.">
+                    <mets:div TYPE="item" DMDID="DM9"
+                        LABEL="Cartouche with name, Antonio Venturini.">
                         <mets:fptr FILEID="FID7"/>
                         <mets:fptr FILEID="FID19"/>
                         <mets:fptr FILEID="FID31"/>
