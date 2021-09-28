@@ -2,6 +2,13 @@ module DS
   module MarcXML
     module ClassMethods
 
+      # TODO: Determine how the following, URL extraction, will work with name authority work flow
+      # TODO: Add URL extraction (subfield $0) for authors (100)
+      # TODO: Add URL extraction (subfield $0) for related names
+      # TODO: Add URL extraction (subfield $0) uniform titles (do these exist?)
+      # TODO: Add URL extraction (subfield $0) for subjects
+      # TODO: Add URL extraction (subfield $0) for genres
+
       ###
       # Extract the language codes from controlfield 008 and datafield 041$a.
       #
