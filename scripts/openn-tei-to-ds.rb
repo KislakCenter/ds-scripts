@@ -10,105 +10,6 @@ require 'yaml'
 require 'optionparser'
 require_relative '../lib/ds'
 
-##
-# From the given set of nodes, extract the names from all the respStmts with
-# resp text == type.
-#
-# @param [Nokogiri::XML:NodeSet] :nodes the nodes to search for +respStmt+s
-# @param [Array<String>] :types a list of types; e.g., +artist+, <tt>former
-#         owner</tt>
-# @return [String] pipe-separated list of names
-def extract_resp_names nodes: , types: []
-  return '' if types.empty?
-  _types = [types].flatten.map &:to_s
-  type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
-  xpath = %Q{//respStmt[#{type_query}]}
-  nodes.xpath(xpath).map { |rs| rs.xpath('persName/text()') }.join '|'
-end
-
-##
-# From the given set of nodes, extract the URIs from all the respStmts with
-# resp text == type.
-#
-# @param [Nokogiri::XML:NodeSet] :nodes the nodes to search for +respStmt+s
-# @param [Array<String>] :types a list of types; e.g., +artist+, <tt>former
-#         owner</tt>
-# @return [String] pipe-separated list of URIs
-def extract_resp_ids nodes: , types: []
-  return '' if types.empty?
-  _types = [types].flatten.map &:to_s
-  type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
-  xpath = %Q{//respStmt[#{type_query}]/persName}
-  nodes.xpath(xpath).map { |rs| rs['ref'] }.join '|'
-end
-
-##
-# Extract language the ISO codes from +textLang+ attributes +@mainLang+ and
-# +@otherLangs+ and return as a pipe separated list.
-#
-# @param [Nokogiri::XML::Node] :xml the TEI xml
-# @return [String]
-def extract_language_codes xml
-  xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
-  xml.xpath(xpath).flat_map { |lang| lang.value.split }.join '|'
-end
-
-##
-# Extract the collation formula and catchwords description from +supportDesc+,
-# returning those values that are present.
-#
-# @param [Nokogiri::XML::Node] :xml the TEI xml
-# @return [String]
-def extract_collation xml
-  formula    = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p[not(catchwords)]/text()').text
-  catchwords = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p/catchwords/text()').text
-  s          = ''
-  s          += "Collation: #{formula.strip}. " unless formula.strip.empty?
-  s          += "#{catchwords.strip}"           unless catchwords.strip.empty?
-
-  s.strip
-end
-
-##
-# Extract +extent+ element and prefix with <tt>'Extent: '</tt>, return +''+
-# (empty string) if +extent+ is not present or empty.
-#
-# @param [Nokogiri::XML::Node] :xml the TEI xml
-# @return [String]
-def extract_extent xml
-  formula = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()')
-  return '' if formula.to_s.strip.empty?
-  "Extent: #{formula}"
-end
-
-##
-# Extract +support+ element text and prefix with <tt>'Support: '</tt>, return
-# +''+ (empty string) if +support+ is not present or empty.
-#
-# @param [Nokogiri::XML::Node] :xml the TEI xml
-# @return [String]
-def extract_support xml
-  support = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()')
-  return '' if support.to_s.strip.empty?
-  "Support: #{support}"
-end
-
-##
-# @param [Nokogiri::XML::Node] :xml the TEI xml
-# @return [String]
-def extract_physical_description xml
-  parts = []
-  parts << extract_support(xml)
-  parts << extract_extent(xml)
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/foliation/text()')
-  parts << extract_collation(xml)
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()')
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/scriptDesc/scriptNote/text()')
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()')
-  parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()')
-  parts.flatten.map { |x| x.to_s.strip }.reject(&:empty?).join '. '
-end
-
 options = {}
 OptionParser.new do |opts|
 
@@ -158,19 +59,19 @@ CSV.open output_csv, "w", headers: true do |row|
     title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
     author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
     author                             = xml.xpath('//msItem/author').map{ |a| a['ref'] }.join '|'
-    artist_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
-    artist                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
-    scribe_as_recorded                 = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
-    scribe                             = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
+    artist_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
+    artist                             = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
+    scribe_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
+    scribe                             = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
     language_as_recorded               = xml.xpath '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-    language                           = extract_language_codes xml
+    language                           = DS::OPennTEI.extract_language_codes xml
     illuminated_initials               = ''
     miniatures                         = ''
-    former_owner_as_recorded           = extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
-    former_owner                       = extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
+    former_owner_as_recorded           = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
+    former_owner                       = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
     material                           = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/@material').text
     material_as_recorded               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
-    physical_description               = extract_physical_description xml
+    physical_description               = DS::OPennTEI.extract_physical_description xml
     acknowledgements                   = ''
     binding_description                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
     folios                             = ''
