@@ -1,6 +1,5 @@
 module DS
   module DS10
-
     module ClassMethods
 
       NS = {
