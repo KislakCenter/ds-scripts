@@ -78,20 +78,20 @@ CSV.open output_csv, "w", headers: true do |row|
     title_as_recorded_245_agr          = ''
     genre_as_recorded                  = ''
     subject_as_recorded                = ''
-    author_as_recorded                 = ''
+    author_as_recorded                 = DS::DS10.extract_text_name xml, 'author'
     author_as_recorded_agr             = ''
-    artist_as_recorded                 = ''
+    artist_as_recorded                 = DS::DS10.extract_part_name xml, 'artist'
     artist_as_recorded_agr             = ''
-    scribe_as_recorded                 = ''
+    scribe_as_recorded                 = DS::DS10.extract_part_name xml, 'scribe'
     scribe_as_recorded_agr             = ''
-    language_as_recorded               = ''
+    language_as_recorded               = DS::DS10.extract_language xml
     language                           = ''
-    former_owner_as_recorded           = ''
+    former_owner_as_recorded           = DS::DS10.extract_ownership xml
     former_owner_as_recorded_agr       = ''
-    material                           = ''
+    material                           = DS::DS10.extract_support xml
     material_as_recorded               = ''
-    physical_description               = ''
-    acknowledgements                   = ''
+    physical_description               = DS::DS10.extract_physical_description xml
+    acknowledgements                   = DS::DS10.extract_acknowledgements xml
 
     data = { source_type:                        source_type,
              holding_institution:                holding_institution,

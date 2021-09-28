@@ -8,6 +8,13 @@ module DS
         mets: 'http://www.loc.gov/METS/',
       }
 
+      def clean_string string, terminator: nil
+        # handle superscripts, whitespace, duplicate '.', and ensure a
+        # terminator is present if added
+        normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{\.\.+}, '.')
+        terminator.nil? ? normal : "#{normal.sub(%r{[.;,!?]+$}, '').strip}."
+      end
+
       def extract_institution_name xml
         extract_mets_creator(xml).first
       end
@@ -15,6 +22,80 @@ module DS
       def extract_mets_creator xml
         creator = xml.xpath('/mets:mets/mets:metsHdr/mets:agent[@ROLE="CREATOR" and @TYPE="ORGANIZATION"]/mets:name', NS).text
         creator.split %r{;;}
+      end
+
+      def extract_part_name xml, name_type
+        find_parts(xml).map { |part|
+          extract_name part, name_type
+        }.join '|'
+      end
+
+      def extract_text_name xml, name_type
+        find_texts(xml).flat_map { |text|
+          extract_name text, name_type
+        }.join '|'
+      end
+
+      def extract_physical_description xml
+        find_parts(xml).flat_map { |part|
+          node = part.xpath('./descendant::mods:physicalDescription')
+
+          extent    = extract_extent(node).flat_map { |s| "Extent: #{s}." }.join ' '
+          details   = note_by_type node, 'physical details'
+          marks     = note_by_type node, 'marks', tag: 'Marks'
+          technique = note_by_type node, 'technique', tag: 'Technique'
+          script    = note_by_type node, 'script', tag: 'Script'
+          medium    = note_by_type node, 'medium', tag: 'Medium'
+          support   = note_by_type node, 'support', tag: 'Support'
+          desc      = note_by_type(node, 'physical description').flat_map { |d|
+            d.split(%r{;;}).first
+          }.join ' '
+          [
+            extent, details, marks, technique, script, medium, support, desc
+          ].flatten.reject(&:empty?).map{ |s|
+            clean_string s, terminator: '.'
+          }.join ' '
+        }.join '|'
+      end
+
+      def note_by_type node, note_type, tag: nil
+        xpath = "./descendant::mods:note[@type='#{note_type}']"
+        node.xpath(xpath).map { |x|
+          tag.nil? ? x.text : "#{tag}: #{x.text}"
+        }
+      end
+
+      def extract_extent phys_desc_node
+        xpath = 'mods:extent'
+        phys_desc_node.xpath(xpath).map { |extent|
+          extent.text.split(%r{;;}).reject(&:empty?).join '; '
+        }
+      end
+
+      def extract_support xml
+        find_parts(xml).flat_map { |part|
+          note_by_type part, 'support'
+        }.map { |s| s.downcase.chomp('.') }.uniq.join '|'
+      end
+
+      def extract_ownership xml
+        xpath = "./descendant::mods:note[@type='ownership']"
+        clean_string find_ms(xml).xpath(xpath).text
+      end
+
+      def extract_language xml
+        # /mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:note
+        xpath = './descendant::mods:note[starts-with(text(), "lang:")]'
+        find_texts(xml).flat_map { |text|
+          text.xpath(xpath).map{ |note| note.text.sub(%r{^lang:\s*}, '') }
+        }.join '|'
+      end
+
+      def extract_name node, name_type
+        xpath = "./descendant::mods:name[./mods:role/mods:roleTerm/text() = '#{name_type}']"
+        node.xpath(xpath).map { |name |
+          name.xpath('mods:namePart').map(&:text).join ' '
+        }
       end
 
       def extract_title xml
@@ -84,6 +165,12 @@ module DS
         # For now we replace the #^<VAL># with (<VAL>)
         xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateOther'
         part.xpath(xpath).text.gsub %r{#\^(\w+)#}, '(\1)'
+      end
+
+      def extract_acknowledgements xml
+        note_by_type(find_ms(xml), 'admin').map { |note|
+          clean_string note, terminator: '.'
+        }.join ' '
       end
 
       def find_parts xml
