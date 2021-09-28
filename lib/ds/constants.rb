@@ -46,6 +46,7 @@ physical_description
 acknowledgements
 }
 
+    # TODO: Make source of institution Wikidata IDs configurable or dynamic
     INSTITUTION_IDS_BY_NAME = {
       'Bryn Mawr College'                         => 'https://www.wikidata.org/wiki/Q995265',
       'Chemical Heritage Foundation'              => 'https://www.wikidata.org/wiki/Q5090408',
