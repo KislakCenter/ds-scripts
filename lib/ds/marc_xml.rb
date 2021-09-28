@@ -244,7 +244,8 @@ module DS
         return callno unless callno.strip.empty?
 
         # Princeton call number
-        xpath = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h']"
+        # Some records mistakenly have two 852$b = 'hsvm' values; get the first
+        xpath = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
         callno = record.xpath(xpath).text
         return callno unless callno.strip.empty?
 
