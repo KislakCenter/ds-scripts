@@ -225,10 +225,21 @@ module DS
         ids.reject(&:empty?).join '|'
       end
 
+      ##
+      # Shelfmarks do not have a standard location in Marc records. Most
+      # institutions catalog in OCLC Connexion, which is for print books.
+      # Call numbers are not added to OCLC records, as they are local
+      # information. Institutions follow different conventions for recording
+      # shelfmarks. This method attempts to find the call number in a number of
+      # common locations.
       def find_shelfmark record
+        # For Penn XML from Marmite, use the pseudo-marc holding data
+        # Note that some MSS have more than one holding. This method will
+        # break when this happens
         callno = record.xpath('holdings/holding/call_number').text
         return callno unless callno.strip.empty?
 
+        # U. Penn uses the 099$a subfield
         callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
         return callno unless callno.strip.empty?
 
@@ -237,6 +248,7 @@ module DS
         callno = record.xpath(xpath).text
         return callno unless callno.strip.empty?
 
+        # AMREMM method of a 500$a starting with "Shelfmark: "
         xpath = "datafield[@tag='500']/subfield[@code='a' and starts-with(text(), 'Shelfmark:')]"
         callno = record.xpath(xpath).text
         return callno.sub(%r{^Shelfmark:\s*}, '') unless callno.strip.empty?
