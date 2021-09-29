@@ -1,24 +1,7 @@
 #!/usr/bin/env ruby
 
 ######
-# Script to convert UPenn Marc XML to DS 2.0 format.
-#
-# Input should be an MMS ID.
-#
-# The initial test set will use these IDs:
-#
-#   9947675343503681
-#   9952666523503681
-#   9959647633503681
-#   9950569233503681
-#   9976106713503681
-#   9965025663503681
-
-##
-#  Questions
-#
-# LJs 235 does not have an 099 field; where should the shelfmark come from?
-# Vernacular script handling?
+# Script to convert legacy Digital Scriptorium METS/MODS to DS 2.0 CSV format.
 #
 
 require 'nokogiri'

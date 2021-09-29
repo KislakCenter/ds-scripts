@@ -1,15 +1,9 @@
 #!/usr/bin/env ruby
 
 ######
-# Script to convert UPenn Marc XML to DS 2.0 format.
+# Script to convert UPenn Marc XML to DS 2.0 CSV format.
 #
 
-##
-#  Questions
-#
-# LJs 235 does not have an 099 field; where should the shelfmark come from?
-# Vernacular script handling?
-#
 
 require 'nokogiri'
 require 'csv'
