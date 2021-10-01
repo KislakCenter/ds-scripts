@@ -250,9 +250,8 @@ module DS
         return callno unless callno.strip.empty?
 
         # AMREMM method of a 500$a starting with "Shelfmark: "
-        xpath = "datafield[@tag='500']/subfield[@code='a' and starts-with(text(), 'Shelfmark:')]"
-        callno = record.xpath(xpath).text
-        return callno.sub(%r{^Shelfmark:\s*}, '') unless callno.strip.empty?
+        callno = extract_named_500 record, name: 'Shelfmark'
+        return callno unless callno.strip.empty?
 
         # return empty string if we get this far
         ''
