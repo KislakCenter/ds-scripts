@@ -37,12 +37,29 @@ def find_file html:, filename:, inst_dir: ''
   return s if html.xpath("//a[@href='#{s}']").size > 0
 end
 
+##
+# Argument is a list of directories like:
+#
+#     digitalassets.lib.berkeley.edu/ds/missouri digitalassets.lib.berkeley.edu/ds/wellesley ... etc. ...
+#
+# Each diretory is expected to have this structure:
+#
+#     digitalassets.lib.berkeley.edu/ds/missouri
+#     ├── images
+#     └── mets
+#
+# Cycle through the directories and for each get `images/index.html` (which
+# lists) all the files in the `images` directory.
+# Then cycle through all the METS XML files in each `mets` dir and find the
+# names of the corresponding images `index.html`
 ARGV.each do |inst_dir|
-  inst                  = File.basename inst_dir
-  images_list           = "#{inst_dir}/images/index.html"
+  inst                  = File.basename inst_dir              # get the institution folder name; like 'missouri' or `ucb`
+  images_list           = "#{inst_dir}/images/index.html"     # path to the image list; like `digitalassets.lib.berkeley.edu/ds/missouri/images/index.html`
   images_html           = File.open(images_list) { |f| Nokogiri::HTML f }
+  # all the mets files; e.g., `digitalassets.lib.berkeley.edu/ds/missouri/mets/*.xml`
   Dir["#{inst_dir}/mets/*.xml"].each do |in_xml|
     xml = File.open(in_xml) { |f| Nokogiri::XML f }
+    # cycle through every `mets:xmlData` element with a filename
     xml.xpath('//mets:xmlData/mods:mods/mods:identifier[@type="filename"]/text()', NS).each do |filename|
       found_file = find_file html: images_html, filename: filename, inst_dir: inst
       found_file = 'NOT_FOUND' if found_file.to_s.strip.empty?
