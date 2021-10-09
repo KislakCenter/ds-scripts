@@ -10,18 +10,18 @@ NS = {
 
 # We're only interest in these
 DEPENDENT_ON_DS = %w{
+conception
 csl
 cuny
-conception
-gts
 grolier
+gts
 indiana
+kansas
+nelsonatkins
 nyu
 providence
 rutgers
-nelsonatkins
 ucb
-kansas
 wellesley
 }.sort.freeze
 
