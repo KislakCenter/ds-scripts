@@ -3,6 +3,8 @@
 require 'nokogiri'
 require 'csv'
 
+require_relative '../lib/ds'
+
 NS = {
   mods: 'http://www.loc.gov/mods/v3',
   mets: 'http://www.loc.gov/METS/',
@@ -153,37 +155,31 @@ CSV.open(output_file, 'w+') do |csv|
   csv << HEADER
   DEPENDENT_ON_DS.each do |inst|
     inst_dir    = File.join ds_dir, inst          # something like path/to/digitalassets.lib.berkeley.edu/ds/gts
+    unless File.directory? inst_dir               # for small test data sets; allow missing institutional directories
+      STDERR.puts %Q{\e[31mWARNING: Missing directory: #{inst_dir}\e[0m}
+      next
+    end
     images_list = "#{inst_dir}/images/index.html" # path to the image list; like `path/to/digitalassets.lib.berkeley.edu/ds/gts/images/index.html`
     image_map   = read_images images_list         # an array of all the JPEGs listed in index.html
     STDERR.puts "Processing: '#{inst_dir}'"
     # all the mets files; e.g., `digitalassets.lib.berkeley.edu/ds/missouri/mets/*.xml`
     Dir["#{inst_dir}/mets/*.xml"].each do |mets_xml|
       xml = File.open(mets_xml) { |f| Nokogiri::XML f }
-      # cycle through every `mets:dmdSec` node with a filename
-      #
-      # <mets:dmdSec ID="DM4">
-      #  <mets:mdWrap MDTYPE="MODS" LABEL="Opening initial and heading.">
-      #   <mets:xmlData>
-      #     <mods:mods>
-      #       <!-- SNIP -->
-      #       <mods:identifier type="filename" displayLabel="Filename">DS003686a.tif</mods:identifier>
-      #       <!-- SNIP -->
-      #     </mods:mods>
-      #   </mets:xmlData>
-      #  </mets:mdWrap>
-      # </mets:dmdSec>
-      xml.xpath('//mets:dmdSec[./mets:mdWrap/mets:xmlData/mods:mods/mods:identifier/@type="filename"]', NS).each do |node|
+      DS::DS10.find_pages(xml).each do |node|
         dmdsec_id = node['ID'] # get the node ID; e.g., DM4
-        # there should be only one filename per node, but we iterate just in case
-        node.xpath("mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type='filename']", NS).each do |filename|
+        filenames = DS::DS10.extract_filenames node
+        filenames.each do |filename|
+          if filename =~ /http/
+            found_path = filename
+          elsif filename == ''
+            found_path = 'NO_FILE'
+          else
+            found_base = find_file image_map: image_map, filename: filename, inst_dir: inst
 
-          # found_base: filename found in the image_map or NOT_FOUND; e.g.,
-          #     0000078.jpg
-          found_base = find_file image_map: image_map, filename: filename, inst_dir: inst
-
-          # found_path: relative path to the found file; e.g.,
-          #     digitalassets.lib.berkeley.edu/ds/gts/images/0000078.jpg
-          found_path = get_found_path inst_dir, found_base
+            # found_path: relative path to the found file; e.g.,
+            #     digitalassets.lib.berkeley.edu/ds/gts/images/0000078.jpg
+            found_path = get_found_path inst_dir, found_base
+          end
 
           # mets_path: relative path to the METS file; e.g.,
           #     digitalassets.lib.berkeley.edu/ds/gts/mets/ds_50_23_00148750.xml
