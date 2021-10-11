@@ -50,7 +50,7 @@ CSV.open output_csv, "w", headers: true do |row|
 
     source_type                        = 'openn-tei'
     holding_institution_as_recorded    = xml.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
-    holding_institution                = DS::INSTITUTION_IDS_BY_NAME.fetch holding_institution_as_recorded, ''
+    holding_institution                = DS::INSTITUTION_QIDS_BY_NAME.fetch holding_institution_as_recorded, ''
     holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
     link_to_holding_institution_record = xml.xpath('//altIdentifier[@type="resource"][1]').text.strip
     production_place_as_recorded       = xml.xpath('//origPlace/text()').map(&:to_s).join '|'
