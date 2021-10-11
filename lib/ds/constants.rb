@@ -47,7 +47,7 @@ acknowledgements
 }
 
     # TODO: Make source of institution Wikidata IDs configurable or dynamic
-    INSTITUTION_IDS_BY_NAME = {
+    INSTITUTION_QIDS_BY_NAME = {
       'Bryn Mawr College'                         => 'https://www.wikidata.org/wiki/Q995265',
       'Chemical Heritage Foundation'              => 'https://www.wikidata.org/wiki/Q5090408',
       'City College of New York'                  => 'https://www.wikidata.org/wiki/Q1093910',
@@ -64,5 +64,43 @@ acknowledgements
       'University of Pennsylvania'                => 'https://www.wikidata.org/wiki/Q49117',
       'Wellesley College'                         => 'https://www.wikidata.org/wiki/Q49205',
     }
+
+    # Institutions dependent on DS and their DS IDs
+    # Some institutions have more than one collection
+    #
+    # conception    15
+    # csl           12, 9
+    # cuny           5
+    # grolier       24
+    # gts           23
+    # indiana       40
+    # kansas        30
+    # nelsonatkins  46
+    # nyu           25
+    # providence    28
+    # rutgers        6
+    # ucb            1, 8, 11
+    # wellesley     50
+
+    INSTITUTION_DS_IDS = {
+      15 => 'conception',
+      12 => 'csl',
+      9  => 'csl',
+      5  => 'cuny',
+      24 => 'grolier',
+      23 => 'gts',
+      40 => 'indiana',
+      30 => 'kansas',
+      46 => 'nelsonatkins',
+      25 => 'nyu',
+      28 => 'providence',
+      6  => 'rutgers',
+      1  => 'ucb',
+      8  => 'ucb',
+      11 => 'ucb',
+      50 => 'wellesley',
+    }.freeze
+
+    INSTITUTIONS = INSTITUTION_DS_IDS.values.uniq.freeze
   end
 end
