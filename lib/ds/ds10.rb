@@ -1,3 +1,5 @@
+require 'net/http'
+
 module DS
   module DS10
     module ClassMethods
@@ -172,6 +174,24 @@ module DS
         }.join ' '
       end
 
+      def extract_filenames page
+        # mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type='filename']
+        xpath     = 'mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="filename"]'
+        filenames = page.xpath(xpath).map(&:text)
+        return filenames unless filenames.empty?
+
+        # no filename; find the fptr
+        xpath    = %Q{//mets:structMap/descendant::mets:div[@DMDID='DM4']/mets:fptr/@FILEID}
+        id_query = page.xpath(xpath).map(&:text).map { |id| "@ID='#{id}'" }.join ' or '
+        return [] if id_query.strip.empty? # there is no associated mets:fptr
+
+        xpath          = "//mets:fileGrp[@USE='image/master']/mets:file[#{id_query}]/mets:FLocat/@xlink:href"
+        fptr_addresses = page.xpath(xpath).map &:text
+        return [] if fptr_addresses.empty?
+
+        fptr_addresses.map { |address| locate_filename address }
+      end
+
       def find_parts xml
         # /mets:mets/mets:structMap/mets:div/mets:div/@DMDID
         # the parts are two divs deep in the structMap
@@ -203,6 +223,30 @@ module DS
         ids.map { |id|
           xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
         }
+      end
+
+      def find_pages xml
+        # /mets:mets/mets:structMap/mets:div/mets:div/mets:div/mets:div/@DMDID
+        # The pages are four divs deep in the structMap
+        # We need the IDs in order
+        xpath = '/mets:mets/mets:structMap/mets:div/mets:div/mets:div/mets:div/@DMDID'
+        ids = xml.xpath(xpath).map &:text
+        ids.flat_map { |id|
+          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
+        }
+      end
+
+      protected
+
+      def locate_filename address, limit=4
+        return if limit == 0
+
+        resp     = Net::HTTP.get_response URI address
+        location = resp['location']
+        return                             if location.nil?
+        locate_filename location, limit-=1 unless location =~ %r{\.tif$}
+
+        File.basename URI(location).path
       end
     end
 
