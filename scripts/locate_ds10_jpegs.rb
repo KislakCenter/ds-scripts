@@ -142,17 +142,17 @@ end
 ##
 # Argument is the folder path to the folder containing the institution folders:
 #
-#     path/to/digitalassets.lib.berkeley.edu/ds
+#     /path/to/digitalassets.lib.berkeley.edu/ds
 #
-# Cycle through the DEPENDENT_ON_DS list and for each institution folder get
-# `images/index.html` and compile an array of the JPEGS listed in the `images`
-# directory. Then cycle through all the METS XML files in each `mets` dir and
-# find the names of the corresponding images from `index.html`
-output_file = "output.csv"
-ds_dir = ARGV.shift
-HEADER = %w{ inst mets_path mets_basename dmdsec_id mets_image_filename jpeg }
-CSV.open(output_file, 'w+') do |csv|
-  csv << HEADER
+output_file = "ds-jpeg-locations.csv"
+ds_dir      = ARGV.shift
+HEADERS     = %i{ inst callno mets_path mets_basename dmdsec_id mets_image_filename jpeg }
+CSV.open output_file, 'w+', headers: true do |csv|
+  csv << HEADERS
+  # Cycle through the DEPENDENT_ON_DS list, for each institution folder get
+  # `images/index.html`, and compile an array of the JPEGS in the `images`
+  # directory. Then cycle through all the METS XML files in each `mets` dir and
+  # find the names of the corresponding images from `index.html`.
   DEPENDENT_ON_DS.each do |inst|
     inst_dir    = File.join ds_dir, inst          # something like path/to/digitalassets.lib.berkeley.edu/ds/gts
     unless File.directory? inst_dir               # for small test data sets; allow missing institutional directories
@@ -164,32 +164,32 @@ CSV.open(output_file, 'w+') do |csv|
     STDERR.puts "Processing: '#{inst_dir}'"
     # all the mets files; e.g., `digitalassets.lib.berkeley.edu/ds/missouri/mets/*.xml`
     Dir["#{inst_dir}/mets/*.xml"].each do |mets_xml|
-      xml = File.open(mets_xml) { |f| Nokogiri::XML f }
-      DS::DS10.find_pages(xml).each do |node|
-        dmdsec_id = node['ID'] # get the node ID; e.g., DM4
-        filenames = DS::DS10.extract_filenames node
-        filenames.each do |filename|
-          if filename =~ /http/
-            found_path = filename
-          elsif filename == ''
-            found_path = 'NO_FILE'
-          else
-            found_base = find_file image_map: image_map, filename: filename, inst_dir: inst
+      xml             = File.open(mets_xml) { |f| Nokogiri::XML f }
+      row                       = {}
+      row[:inst]                = inst
+      row[:callno]              = DS::DS10.extract_institution_id xml
+      row[:mets_path]           = rel_path mets_xml
+      row[:mets_basename]       = File.basename mets_xml
+      row[:mets_image_filename] = 'NO_PAGES' # default value
+      row[:jpeg]                = 'NO_PAGES' # default value
 
-            # found_path: relative path to the found file; e.g.,
-            #     digitalassets.lib.berkeley.edu/ds/gts/images/0000078.jpg
-            found_path = get_found_path inst_dir, found_base
-          end
+      pages = DS::DS10.find_pages(xml)
+      # if there are no pages, accept the values and go to the next METS file
+      pages.empty? and (csv << row) and next
 
-          # mets_path: relative path to the METS file; e.g.,
-          #     digitalassets.lib.berkeley.edu/ds/gts/mets/ds_50_23_00148750.xml
-          mets_path = rel_path mets_xml
+      pages.each do |page_node|
+        row[:dmdsec_id] = page_node['ID'] # get the node ID; e.g., DM4
+        DS::DS10.extract_filenames(page_node).each do |filename|
+          row[:mets_image_filename] = filename
+          row[:jpeg]                = 'NO_FILE' # default value
 
-          # mets_base: base METS filename; e.g.,
-          #     ds_50_23_00148750.xml
-          mets_base = File.basename mets_xml
+          # if filename isn't present, accept values and go to next filename
+          filename == 'NO_FILE' and (csv << row) and next
 
-          csv << [inst, mets_path, mets_base, dmdsec_id, filename, found_path]
+          # finally, we have a filename; search for it
+          found_jpeg = find_file image_map: image_map, filename: filename, inst_dir: inst
+          row[:jpeg] = get_found_path inst_dir, found_jpeg
+          csv << row
         end
       end
     end
