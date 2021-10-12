@@ -1,4 +1,5 @@
 require 'net/http'
+require 'nokogiri'
 
 module DS
   module DS10
@@ -174,6 +175,22 @@ module DS
         }.join ' '
       end
 
+      ##
+      # Extract the filename for page. This will be either:
+      #
+      #  * the values for +mods:identifier+ with +@type='filename'+; or
+      #
+      #  * the filenames pointed to by the linked +mets:fptr+ in the
+      #       +mets:fileGrp+ with +@USE='image/master'+
+      #
+      #  * an array containing +['NO_FILE']+, if no files are associated with
+      #       the page
+      #
+      # There will almost always be one file, but at least one manuscript has
+      # page with two associated images. Thus, we return an array.
+      #
+      # @param [Nokogiri::XML::Node] page the +mets:dmdSec+ node for the page
+      # @return [Array<String>] array of all the filenames for +page+
       def extract_filenames page
         # mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type='filename']
         xpath     = 'mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="filename"]'
@@ -181,20 +198,21 @@ module DS
         return filenames unless filenames.empty?
 
         # no filename; find the fptr
-        xpath    = %Q{//mets:structMap/descendant::mets:div[@DMDID='DM4']/mets:fptr/@FILEID}
+        dmdid = page['ID']
+        xpath    = %Q{//mets:structMap/descendant::mets:div[@DMDID='#{dmdid}']/mets:fptr/@FILEID}
         id_query = page.xpath(xpath).map(&:text).map { |id| "@ID='#{id}'" }.join ' or '
-        return [] if id_query.strip.empty? # there is no associated mets:fptr
+        return ['NO_FILE'] if id_query.strip.empty? # there is no associated mets:fptr
 
         xpath          = "//mets:fileGrp[@USE='image/master']/mets:file[#{id_query}]/mets:FLocat/@xlink:href"
         fptr_addresses = page.xpath(xpath).map &:text
-        return [] if fptr_addresses.empty?
+        return ['NO_FILE'] if fptr_addresses.empty? # I don't know if this happens, but just in case...
 
         fptr_addresses.map { |address| locate_filename address }
       end
 
       def find_parts xml
         # /mets:mets/mets:structMap/mets:div/mets:div/@DMDID
-        # the parts are two divs deep in the structMap
+        # manuscripts parts are two divs deep in the structMap
         # We need to get the IDs in order
         xpath = '/mets:mets/mets:structMap/mets:div/mets:div/@DMDID'
         ids = xml.xpath(xpath).map &:text
@@ -216,7 +234,7 @@ module DS
 
       def find_texts xml
         # /mets:mets/mets:structMap/mets:div/mets:div/mets:div/@DMDID
-        # the texts are three divs deep in the structMap
+        # texts are three divs deep in the structMap
         # We need to get the IDs in order
         xpath = '/mets:mets/mets:structMap/mets:div/mets:div/mets:div/@DMDID'
         ids = xml.xpath(xpath).map &:text
@@ -225,12 +243,17 @@ module DS
         }
       end
 
+      ##
+      # @param [Nokogiri::XML::Node] xml parsed XML of the METS document
+      # @return [Arry<Nokogiri::XML::Node>] array of the page-level +mets:dmdSec+
+      #     nodes
       def find_pages xml
         # /mets:mets/mets:structMap/mets:div/mets:div/mets:div/mets:div/@DMDID
-        # The pages are four divs deep in the structMap
+        # the pages are four divs deep in the structMap
         # We need the IDs in order
         xpath = '/mets:mets/mets:structMap/mets:div/mets:div/mets:div/mets:div/@DMDID'
         ids = xml.xpath(xpath).map &:text
+        # collect dmdSec's for all the page IDs
         ids.flat_map { |id|
           xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
         }
@@ -238,7 +261,54 @@ module DS
 
       protected
 
+      @@ark_cache = nil
+
+      ##
+      # Rather than follow the ARK URLs to retrieve the locations, use a
+      # cache that maps the arks to the TIFF filenames.
+      #
+      # Cache format:
+      #
+      #     http://nma.berkeley.edu/ark:/28722/bk00091894z|dummy_MoConA_0000068.tif
+      #     http://nma.berkeley.edu/ark:/28722/bk00091895h|dummy_MoConA_0000069.tif
+      #     http://nma.berkeley.edu/ark:/28722/bk000918b51|dummy_MoConA_0000070.tif
+      #     http://nma.berkeley.edu/ark:/28722/bk000918b6k|dummy_MoConA_0000071.tif
+      #
+      # This method lazily initializes a hash that maps the URL to the file name.
+      #
+      # @param [String] address the ark URL; e.g.,
+      #     +http://nma.berkeley.edu/ark:/28722/bk000919772+
+      # @return [String] the filename associated with +address+ or +nil+
+      def search_ark_cache address
+        if @@ark_cache.nil?
+          STDERR.puts "Creating ARK cache"
+          path = File.expand_path '../data/berkeley-arks.txt', __FILE__
+          @@ark_cache = File.readlines(path).inject({}) { |h,line|
+            ark, filename = line.strip.split '|'
+            h.update({ ark => filename})
+          }
+        end
+        @@ark_cache[address]
+      end
+
+      ##
+      # Extract filename by following DS ARK URL (e.g.,
+      # +http://nma.berkeley.edu/ark:/28722/bk000855n2z+). We can't get
+      # the image, but we can get the filename from the redirect location
+      # header. As soon as we get a location that ends in +.tif+, we extract
+      # the basename and return it.
+      #
+      # We limit the number of redirects to 4 to prevent infinite recursion
+      # following redirects. We should always get the filename in the first
+      # call.
+      #
+      # @param [String] address ARK address of an image file
+      # @param [Integer] limit decrementing count of recursive calls; stops
+      #     at +0+
+      # @return [String] the basename of the first +.tif+ file encountered
       def locate_filename address, limit=4
+        return search_ark_cache address if search_ark_cache address
+        STDERR.puts "WARNING -- recursion: location='#{address}', limit=#{limit}" if limit < 4
         return if limit == 0
 
         resp     = Net::HTTP.get_response URI address
