@@ -38,30 +38,42 @@ Dir[mets_dir].each do |f|
         path  = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/gts/general_theological/images/*.tif'
         match = matching_tif(path, '\d{7}', m)
       when 'grolier'
-        # path     = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/grolier/grolier/images/GC_10_01_09/Processed/*.tif'
+        # path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/grolier/grolier/images/GC_10_01_09/Processed/*.tif'
       when 'indiana'
         # indiana must be searched recursively
         # only 2 filenames in XML, but many more images in TIF folder
-        path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/indiana/indiana/images/**/*.tif'
+        # path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/indiana/indiana/images/**/*.tif'
       when 'nyu'
         path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/nyu/nyu/images/*.tif'
         match = matching_tif(path, '\d{7}', m)
       when 'providence'
+        # no filenames in mets
+        # path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/providence/providence/images/*.tif'
       when 'rutgers'
+        # no filenames in mets
       when 'nelsonatkins'
+        # 141 filenames in mets
+        path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/nelsonatkins/images/*.tif'
+        images = Dir[path]
+        id = /\d{3}/.match(m).to_s
+        match = images.grep(/#{id}/)
+        puts "single" if match.count == 1
       when 'ucb'
-      when 'kansas'
+        match = 'No match.'
       when 'wellesley'
+        # 423 matches
       end
+      # match = match.first unless match.count >= 2
       match = 'No match.' if match.nil?
       row = [institution, f.sub(%r{^/Volumes/sceti-completed-4/}, ''),
             dmdSec,
             m.to_s,
             match]
-      puts row.inspect
-      # CSV.open("ds2_dependent_images.csv", "a") do |csv|
-      #   csv << row
-      # end
+      # puts row.inspect
+      CSV.open("ds2_dependent_images.csv", "a+") do |csv|
+        csv << []
+        csv << row
+      end
     end
   end
 end
