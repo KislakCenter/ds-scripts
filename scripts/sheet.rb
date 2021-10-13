@@ -20,6 +20,40 @@ def matching_tif(path, regex, dummy)
   match&.sub(%r{^/Volumes/sceti-completed-4/}, '')
 end
 
+def atkins_rename m
+  if m.include? 'LEV'
+    # GouldCollection030LEVerecto.tif
+    # mets_image_id = m.sub(/GouldCollection(\d+)([a-z])(recto|verso)(detail)(\d)(.*)$/,
+    #                       'Gould_Collection_\1_\2_\3\4')
+    if m.match /([a-z])(recto|verso)(detail)/
+      # GouldCollection030LEVerectodetail1.tif
+      m.sub(/GouldCollection(\d+)(LEV)([a-z])(recto|verso)(detail)(\d)(.*)$/,
+            'Gould_Collection_\1_\2_\3_\4_\5_\6\7')
+    else
+      # GouldCollection030LEVeverso.tif
+      m.sub(/GouldCollection(\d+)(LEV)([a-z])(recto|verso)(.*)$/,
+            'Gould_Collection_\1_\2_\3_\4\5')
+    end
+  elsif m.include? 'folio'
+    # GouldCollection039foliorecto.tif
+    m.sub(/GouldCollection(\d+)(folio)(recto|verso)(.*)$/,
+          'Gould_Collection_\1_\2_\3\4')
+  elsif m.include? 'versodetail'
+    # GouldCollection015versodetail.tif
+    m.sub(/GouldCollection(\d+)(recto|verso)(detail)(.*)$/,
+          'Gould_Collection_\1_\2_\3\4')
+    # HOW DO WE GET THIS CONDITION TO WORK??????
+  elsif %w[a_recto b_recto c_recto a_verso b_verso c_verso].any? { |s| m.include? s }
+    # GouldCollection002brecto.tif
+    m.sub(/GouldCollection(\d+)([a-z])(recto|verso)(.*)$/,
+          'Gould_Collection_\1_\2_\3\4')
+  else
+    # GouldCollection014recto.tif
+    m.sub(/GouldCollection(\d+)(recto|verso)(.*)$/,
+          'Gould_Collection_\1_\2\3')
+  end
+end
+
 raise 'METS directory not found.' unless Dir[mets_dir].any?
 
 # loop through institution mets XMLs
@@ -28,7 +62,6 @@ Dir[mets_dir].each do |f|
   pages = DS::DS10.find_pages xml
   unless pages.any?
     row = [institution, f.sub(%r{^/Volumes/sceti-completed-4/}, '')] unless pages.any?
-    puts row.inspect
     # CSV.open("ds2_dependent_images_v2.csv", "a+") do |csv|
     #   csv << []
     #   csv << row
@@ -37,7 +70,6 @@ Dir[mets_dir].each do |f|
   pages.each do |page|
     dmdSec   = page.attr('ID').to_s
     mets_tif = DS::DS10.extract_filenames page
-    # puts mets_tif
 
     mets_tif.each do |m|
       case institution
@@ -75,8 +107,9 @@ Dir[mets_dir].each do |f|
         # 141 filenames in mets
         path = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/nelsonatkins/images/*.tif'
         images = Dir[path]
-        match = images.grep(/#{m}/).first
-        match&.sub(%r{^/Volumes/sceti-completed-4/}, '')
+        # if match isn't nil, return match
+        # regex sub underscores, capture groups, back references
+        puts atkins_rename(m)
       when 'ucb'
         # only 3 tiffs, can manually match
       when 'kansas'
@@ -89,7 +122,7 @@ Dir[mets_dir].each do |f|
             dmdSec,
             m.to_s,
             match]
-      puts row.inspect
+      # puts row.inspect
       # CSV.open("ds2_dependent_images_v2.csv", "a+") do |csv|
       #   csv << []
       #   csv << row
