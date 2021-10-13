@@ -1,6 +1,8 @@
 require 'net/http'
 require 'nokogiri'
 
+##
+# Module with class methods for working with DS10 METS XML.
 module DS
   module DS10
     module ClassMethods
