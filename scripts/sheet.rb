@@ -31,7 +31,7 @@ def matching_tif(path, regex, dummy)
   images        = Dir[path]
   mets_image_id = /#{regex}/.match(dummy)
   match         = images.grep(/#{mets_image_id}/).first
-  match&.sub(%r{^/Volumes/sceti-completed-4/}, '')
+  match&.sub(%r{^/Volumes/sceti-completed-4/DS-Legacy-Data/}, '')
 end
 
 # adjust nelsonatkins filenames to match TIF filenames
@@ -77,7 +77,7 @@ DEPENDENT_ON_DS.each do |institution|
     # insert row into CSV even if no pages are found
     unless pages.any?
       row = [institution, f.sub(%r{^/Volumes/sceti-completed-4/}, '')] unless pages.any?
-      CSV.open('ds2_dependent_images_v2.csv', 'a+') do |csv|
+      CSV.open('ds2_tifs.csv', 'a+') do |csv|
         csv << []
         csv << row
       end
@@ -110,18 +110,17 @@ DEPENDENT_ON_DS.each do |institution|
           images        = Dir[path]
           mets_image_id = m.sub(/^dummy_InU-Li_/, '')
           match         = images.grep(/#{mets_image_id.downcase}/).first
-          match&.sub(%r{^/Volumes/sceti-completed-4/}, '')
-          # must differentiate between all different kinds of filenames
+          match = match.sub(%r{^/Volumes/sceti-completed-4/DS-Legacy-Data/}, '') unless match.nil?
         when 'nyu'
           path  = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/nyu/nyu/images/*.tif'
-          match = matching_tif(path, '\d{7}', m)
+          match = matching_tif(path, '\d{7}', m) unless m == 'NO_FILE'
         when 'providence'
           path  = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/providence/providence/images/*.tif'
-          match = matching_tif(path, '\d{7}', m)
+          match = matching_tif(path, '\d{7}', m) unless m == 'NO_FILE'
         when 'rutgers'
           # no filenames in mets
           path  = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/rutgers/rutgers/images/*.tif'
-          match = matching_tif(path, '\d{7}', m)
+          match = matching_tif(path, '\d{7}', m) unless m == 'NO_FILE'
         when 'nelsonatkins'
           # 141 filenames in mets
           path          = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/nelsonatkins/images/*.tif'
@@ -129,13 +128,13 @@ DEPENDENT_ON_DS.each do |institution|
           mets_image_id = atkins_rename m
           # puts mets_image_id
           match = images.grep(/#{mets_image_id}/).first
-          match&.sub(%r{^/Volumes/sceti-completed-4/}, '')
+          match = match.sub(%r{^/Volumes/sceti-completed-4/DS-Legacy-Data/}, '') unless match.nil?
         when 'ucb'
           # only 3 tiffs, can manually match (if they actually match at all)
           match = 'NO_MATCH'
         when 'kansas'
           path  = '/Volumes/sceti-completed-4/DS-Legacy-Data/TIF/Box/kansas/kansas/images/Master/*.tif'
-          match = matching_tif(path, '\d{4}', m)
+          match = matching_tif(path, '\d{4}', m) unless m == 'NO_FILE'
         when 'wellesley'
           # 423 tifs
           match = 'NO_MATCH'
@@ -144,12 +143,13 @@ DEPENDENT_ON_DS.each do |institution|
         match = 'NO_MATCH' if m == 'NO_FILE'
         match = 'NO_MATCH' if match.nil?
         # put together CSV row
+        puts match
         row   = [institution, f.sub(%r{^/Volumes/sceti-completed-4/DS-Legacy-Data/}, ''),
                  dmdSec,
                  m.to_s,
                  match]
         # write to CSV
-        CSV.open('ds2_dependent_images_v2.csv', 'a+') do |csv|
+        CSV.open('ds2_tifs.csv', 'a+') do |csv|
           csv << []
           csv << row
         end
