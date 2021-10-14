@@ -5,12 +5,63 @@ require 'csv'
 
 require_relative '../lib/ds'
 
-NS = {
-  mods: 'http://www.loc.gov/mods/v3',
-  mets: 'http://www.loc.gov/METS/',
-}
+##
+# Script to extract filename information from DS v1 METS XML and find the
+# corresponding JPEG filenames from +https://digitalassets.lib.berkeley.edu+.
+# This script searches for images for the thirteen institutions that rely on DS
+# for cataloging. They are:
+#
+#         California State Library (Sacramento and SF locations)  csl/
+#         City College of New York                                cuny/
+#         Conception Abbey and Seminary                           conception/
+#         General Theological Seminary                            gts/
+#         Grolier Club                                            grolier/
+#         Indiana University                                      indiana/
+#         New York University                                     nyu/
+#         Providence Public Library                               providence/
+#         Rutgers, The State University of New Jersey             rutgers/
+#         The Nelson-Atkins Museum of Art                         nelsonatkins/
+#         University of California, Berkeley (Bancroft;           ucb/
+#             Jean Gray Hargrove Music Library; Robbins
+#             Collection)
+#         University of Kansas                                    kansas/
+#         Wellesley                                               wellesley/
+#
+# To run this script you need the METS files and the directory listings for JPEG
+# images. These are in `data/digitalassets-lib-berkeley-edu.tgz`, which should
+# be decompressed before running the script:
+#
+#     tar xf data/digitalassets-lib-berkeley-edu.tgz --directory data
+#
+#     bundle exec ruby scripts/locate_ds10_jpegs.rb data/digitalassets.lib.berkeley.edu/ds
+#
+# The output is a CSV with these columns:
+#
+# - +inst+: institution folder, like `ucb`
+# - +callno+: local manuscript identifier from the METS
+# - +mets_path+: relative path the METS file, like +digitalassets.lib.berkeley.edu/ds/conception/mets/ds_50_15_00132328.xml+
+# - +mets_basename+: base filename of the METS file, like +ds_50_15_00132328.xml+
+# - +dmdsec_id+: the +@ID+ from the page-level +mets:dmdSec+
+# - +mets_image_filename+: the TIFF filename from the page-level +mets:dmdSec+
+# - +jpeg+: the corresponding path to the JPEG from the institutions `images` folder; like +digitalassets.lib.berkeley.edu/ds/conception/images/MoConA.0000068A.jpg+
+#
+# This script outputs at least one row for every METS file.
+#
+# The +mets_image_filename+ and +jpeg+ columns may also have these values:
+#
+# - +NO_PAGES+: if there is no page-level metadata in the METS file
+# - +NO_FILE+: if there is page-level metadata in the METS, but no image file name
+# - +NOT_FOUND+: in the +jpeg+ column if there is a filename in the METS, but the JPEG could not be found
+#
+# Filenames are linked from the METS in one of two ways:
+#
+# 1. the page-level +mets:identifer[@type='filename']+
+#
+# 2. the master image +mets:file+ that is mapped to the page-level +mets:dmdSec+
+#     via a +mets:fptr+
+#
 
-# We're only interest in these
+# We're only interested in these institutions
 DEPENDENT_ON_DS = %w{
 conception
 csl
@@ -28,8 +79,8 @@ wellesley
 }.sort.freeze
 
 ##
-# Transform the incoming METS TIFF name to the correct JPEG version and return
-# the JPEG name or +NOT_FOUND+.
+# Find and return the name of the JPEGs file that corresponds to the TIFF name
+# from the incoming METS XML. Return +NOT_FOUND+ if no file can be found.
 #
 # The typical conversion is from something like
 #
