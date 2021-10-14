@@ -9,6 +9,7 @@ NS = {
   mets: 'http://www.loc.gov/METS/'
 }.freeze
 
+# the isntitutions that are dependent on DS for their data
 DEPENDENT_ON_DS = %w[
   conception
   csl
@@ -25,6 +26,7 @@ DEPENDENT_ON_DS = %w[
   wellesley
 ].sort.freeze
 
+# find the matching tif for a given dummy filename
 def matching_tif(path, regex, dummy)
   images        = Dir[path]
   mets_image_id = /#{regex}/.match(dummy)
@@ -32,13 +34,12 @@ def matching_tif(path, regex, dummy)
   match&.sub(%r{^/Volumes/sceti-completed-4/}, '')
 end
 
+# adjust nelsonatkins filenames to match TIF filenames
 def atkins_rename m
   m = File.basename m, '.tif' if m.include? '_'
   m = m.gsub '__', '_' if m.include? '__'
   if m.include? 'LEV'
     # GouldCollection030LEVerecto.tif
-    # mets_image_id = m.sub(/GouldCollection(\d+)([a-z])(recto|verso)(detail)(\d)(.*)$/,
-    #                       'Gould_Collection_\1_\2_\3\4')
     if m.match /([a-z])(recto|verso)(detail)/
       # GouldCollection030LEVerectodetail1.tif
       m.sub(/GouldCollection(\d+)(LEV)([a-z])(recto|verso)(detail)(\d)(.*)$/,
@@ -63,14 +64,17 @@ def atkins_rename m
   end
 end
 
+# loop through each institution
 DEPENDENT_ON_DS.each do |institution|
+  puts "working on #{institution}..."
   mets_dir = "/Volumes/sceti-completed-4/DS-Legacy-Data/METS/digitalassets.lib.berkeley.edu/ds/#{institution}/mets/*.xml"
   raise 'METS directory not found.' unless Dir[mets_dir].any?
 
-  # loop through institution mets XMLs
+  # loop through an institution's METS XMLs
   Dir[mets_dir].each do |f|
     xml   = File.open(f) { |x| Nokogiri::XML x }
     pages = DS::DS10.find_pages xml
+    # insert row into CSV even if no pages are found
     unless pages.any?
       row = [institution, f.sub(%r{^/Volumes/sceti-completed-4/}, '')] unless pages.any?
       CSV.open('ds2_dependent_images_v2.csv', 'a+') do |csv|
@@ -78,10 +82,12 @@ DEPENDENT_ON_DS.each do |institution|
         csv << row
       end
     end
+    # loop through each page and get TIF filenames
     pages.each do |page|
       dmdSec   = page.attr('ID').to_s
       mets_tif = DS::DS10.extract_filenames page
 
+      # loop through each TIF filename and find a matching TIF image
       mets_tif.each do |m|
         case institution
         when 'csl'
@@ -134,14 +140,15 @@ DEPENDENT_ON_DS.each do |institution|
           # 423 tifs
           match = 'NO_MATCH'
         end
-        # match = match.first unless match.count >= 2
+        # stick string into the CSV insead of empty/nil values
         match = 'NO_MATCH' if m == 'NO_FILE'
         match = 'NO_MATCH' if match.nil?
+        # put together CSV row
         row   = [institution, f.sub(%r{^/Volumes/sceti-completed-4/DS-Legacy-Data/}, ''),
                  dmdSec,
                  m.to_s,
                  match]
-        puts row.inspect
+        # write to CSV
         CSV.open('ds2_dependent_images_v2.csv', 'a+') do |csv|
           csv << []
           csv << row
@@ -149,4 +156,5 @@ DEPENDENT_ON_DS.each do |institution|
       end
     end
   end
+  puts "#{institution} completed"
 end
