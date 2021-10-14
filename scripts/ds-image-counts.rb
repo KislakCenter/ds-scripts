@@ -63,7 +63,9 @@ require_relative '../lib/ds'
 # For each of these we extract the call number and the value of 'Number of
 # Images Available'.
 
-CSV.open('ds-image-counts.csv', 'w') do |csv|
+output_file = 'ds-image-counts.csv'
+
+CSV.open(output_file, 'w') do |csv|
   csv << %w{ inst callno count }
   DS::INSTITUTION_DS_IDS.each do |id, inst|
     uri = "https://digital-scriptorium.org/xtf3/search?rmode=digscript&smode=bid&bid=#{id}&docsPerPage=1000"
@@ -76,3 +78,5 @@ CSV.open('ds-image-counts.csv', 'w') do |csv|
     end
   end
 end
+
+STDERR.puts "Wrote: #{output_file}"
