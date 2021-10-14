@@ -199,16 +199,66 @@ module DS
         filenames = page.xpath(xpath).map(&:text)
         return filenames unless filenames.empty?
 
-        # no filename; find the fptr
+        # no filename; find the ARK URL for the master image for this page
+        extract_master_mets_file page
+      end
+
+      ##
+      # In some  METS files each page has a list of mets:fptr elements, we need
+      # to get the @FILEID for the master image, but we don't know which one is
+      # for the master. Thus we get all the @FILEIDs.
+      #
+      #     <mets:structMap>
+      #       <mets:div TYPE="text" LABEL="[No Title for Display]" ADMID="RMD1" DMDID="DM1">
+      #         <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM2">
+      #           <mets:div TYPE="item" LABEL="[No Title for Display]" DMDID="DM3">
+      #             <mets:div TYPE="item" LABEL="Music extending into right margin, upper right column." DMDID="DM4">
+      #               <mets:fptr FILEID="FID1"/>
+      #               <mets:fptr FILEID="FID3"/>
+      #               <mets:fptr FILEID="FID5"/>
+      #               <mets:fptr FILEID="FID7"/>
+      #               <mets:fptr FILEID="FID9"/>
+      #             </mets:div>
+      #             <!-- snip -->
+      #           </mets:div>
+      #         </mets:div>
+      #       </mets:div>
+      #     </mets:structMap>
+      #
+      # Using the FILEIDs, find the corresponding mets:file in the
+      # mets:fileGrp with @USE='image/master'.
+      #
+      #     <mets:fileGrp USE="image/master">
+      #       <mets:file ID="FID1" MIMETYPE="image/tiff" SEQ="1" CREATED="2010-11-08T10:26:20.3" ADMID="ADM1 ADM4" GROUPID="GID1">
+      #         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008v1k7q" LOCTYPE="URL"/>
+      #       </mets:file>
+      #       <mets:file ID="FID2" MIMETYPE="image/tiff" SEQ="2" CREATED="2010-11-08T10:26:20.393" ADMID="ADM1 ADM5" GROUPID="GID2">
+      #         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0008v1k88" LOCTYPE="URL"/>
+      #       </mets:file>
+      #     </mets:fileGrp>
+      #
+      # We then follow the +xlink:href+ to get the filename from the 'location'
+      # HTTP header.
+      #
+      # @param [Nokogiri::XML::Node] page the +mets:dmdSec+ node for the page
+      # @return [Array<String>] array of all the filenames for +page+
+      def extract_master_mets_file page
         dmdid = page['ID']
+        # all the mets:fptr @FILEIDs for this page
         xpath    = %Q{//mets:structMap/descendant::mets:div[@DMDID='#{dmdid}']/mets:fptr/@FILEID}
+
+        # create an OR query because we don't know which FILEID is for the
+        # master mets:file:
+        #     "@ID = 'FID1' or @ID = 'FID3' or @ID = 'FID5' ... etc."
         id_query = page.xpath(xpath).map(&:text).map { |id| "@ID='#{id}'" }.join ' or '
         return ['NO_FILE'] if id_query.strip.empty? # there is no associated mets:fptr
 
+        # the @xlink:href is the Berkeley ARK address; e.g., http://nma.berkeley.edu/ark:/28722/bk0008v1k88
         xpath          = "//mets:fileGrp[@USE='image/master']/mets:file[#{id_query}]/mets:FLocat/@xlink:href"
         fptr_addresses = page.xpath(xpath).map &:text
         return ['NO_FILE'] if fptr_addresses.empty? # I don't know if this happens, but just in case...
 
+        # for each ARK address, find the TIFF filename
         fptr_addresses.map { |address| locate_filename address }
       end
 
@@ -309,14 +359,17 @@ module DS
       #     at +0+
       # @return [String] the basename of the first +.tif+ file encountered
       def locate_filename address, limit=4
+        # Before hitting the web, try the ARK/URL to FILE cache
         return search_ark_cache address if search_ark_cache address
+
         STDERR.puts "WARNING -- recursion: location='#{address}', limit=#{limit}" if limit < 4
         return if limit == 0
 
         resp     = Net::HTTP.get_response URI address
         location = resp['location']
         return                             if location.nil?
-        locate_filename location, limit-=1 unless location =~ %r{\.tif$}
+        # recurse if location isn't a TIFF file
+        return locate_filename location, limit-1 unless location =~ %r{\.tif$}
 
         File.basename URI(location).path
       end
