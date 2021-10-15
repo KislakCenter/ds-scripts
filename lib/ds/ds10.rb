@@ -203,6 +203,12 @@ module DS
         extract_master_mets_file page
       end
 
+      def extract_folio_num page
+        # mets:mdWrap/mets:xmlData/mods:mods/mods:physicalDescription/mods:extent
+        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:physicalDescription/mods:extent'
+        page.xpath(xpath).map(&:text).join '; '
+      end
+
       ##
       # In some  METS files each page has a list of mets:fptr elements, we need
       # to get the @FILEID for the master image, but we don't know which one is

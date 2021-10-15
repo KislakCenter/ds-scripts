@@ -197,7 +197,7 @@ end
 #
 output_file = "ds-jpeg-locations.csv"
 ds_dir      = ARGV.shift
-HEADERS     = %i{ inst callno mets_path mets_basename dmdsec_id mets_image_filename jpeg }
+HEADERS     = %i{ inst callno folio mets_path mets_basename dmdsec_id mets_image_filename jpeg }
 CSV.open output_file, 'w+', headers: true do |csv|
   csv << HEADERS
   # Cycle through the DEPENDENT_ON_DS list, for each institution folder get
@@ -219,6 +219,7 @@ CSV.open output_file, 'w+', headers: true do |csv|
       row                       = {}
       row[:inst]                = inst
       row[:callno]              = DS::DS10.extract_institution_id xml
+      row[:folio]               = 'None'
       row[:mets_path]           = rel_path mets_xml
       row[:mets_basename]       = File.basename mets_xml
       row[:mets_image_filename] = 'NO_PAGES' # default value
@@ -233,6 +234,7 @@ CSV.open output_file, 'w+', headers: true do |csv|
         DS::DS10.extract_filenames(page_node).each do |filename|
           row[:mets_image_filename] = filename
           row[:jpeg]                = 'NO_FILE' # default value
+          row[:folio]               = DS::DS10.extract_folio_num page_node
 
           # if filename isn't present, accept values and go to next filename
           filename == 'NO_FILE' and (csv << row) and next
