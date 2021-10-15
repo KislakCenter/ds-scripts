@@ -163,7 +163,7 @@ end
 # @return [String] the path beginning with `digitalassets.lib.berkeley.edu`; e.g.,
 #     digitalassets.lib.berkeley.edu/ds/csl
 def rel_path path
-  path.sub %r{^/.*/digitalassets.lib.berkeley.edu}, 'digitalassets.lib.berkeley.edu'
+  path.sub %r{^.*/digitalassets.lib.berkeley.edu}, 'digitalassets.lib.berkeley.edu'
 end
 
 ##
