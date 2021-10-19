@@ -45,9 +45,9 @@ bundle exec ruby scripts/ds1-to-mets.rb $files
 
 ## Fifty MSS from UPenn from OPenn
 
-These URLs were used to extract bibids, which were then used pull the data from 
-Marmite. Twenty-five are from BiblioPhilly and twenty-five are from Manuscripts 
-of the Muslim World.
+These URLs were used to extract bibids for Penn manuscripts on OPenn. These were
+then used pull the data MARC XML from Marmite. Twenty-five are from BiblioPhilly
+and twenty-five are from Manuscripts of the Muslim World.
 
 ```shell
 https://openn.library.upenn.edu/Data/0001/ljs101/data/ljs101_TEI.xml
