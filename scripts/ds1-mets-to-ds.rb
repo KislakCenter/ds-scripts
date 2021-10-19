@@ -50,7 +50,7 @@ CSV.open output_csv, "w", headers: true do |row|
 
     source_type                        = 'digital-scriptorium'
     holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
-    holding_institution                = DS::INSTITUTION_QIDS_BY_NAME.fetch holding_institution_as_recorded, ''
+    holding_institution                = DS::INSTITUTION_NAMES_TO_QID.fetch holding_institution_as_recorded, ''
     holding_institution_id_number      = DS::DS10.extract_institution_id xml
     link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
     production_date_encoded_008        = ''

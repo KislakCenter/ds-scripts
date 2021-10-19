@@ -20,6 +20,12 @@ module DS
         langs.uniq.join '|'
       end
 
+      def extract_institution_name record, default: nil
+        val = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
+        return default if val.to_s.strip.empty?
+        val
+      end
+
       ###
       # Extract the encoded date from controlfield 008.
       #

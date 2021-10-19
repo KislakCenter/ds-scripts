@@ -15,7 +15,7 @@ options = {}
 OptionParser.new do |opts|
 
   opts.banner = <<EOF
-Usage: #{File.basename __FILE__} [options] XML [XML ..]
+Usage: #{File.basename __FILE__} [options] --institution=INSTITUTION XML [XML ..]
 
 Generate a DS 2.0 CSV from MARC XML.
 
@@ -25,7 +25,19 @@ EOF
     options[:output_csv] = output
   end
 
-  opts.on("-h", "--help", "Prints this help") do
+  # We can't predictably extract the institution name from MARC records
+  inst_help = "Short name of the institution to create this CSV for; REQUIRED"
+  opts.on('-i INSTITUTION', '--institution=INSTITUTION', inst_help) do |inst|
+    options[:institution] = inst
+  end
+
+  help_help = <<~EOF
+Prints this help
+
+You must provide a value for the '--institution' flag. Values are: #{DS::INSTITUTION_ALIASES.join ', '}
+
+EOF
+  opts.on("-h", "--help", help_help) do
     puts opts
     exit
   end
@@ -36,6 +48,11 @@ xmls = ARGV.dup
 abort 'Please provide an input XML' if xmls.empty?
 cannot_find = xmls.reject { |f| File.exist?(f) }
 abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty?
+
+abort "Please provide an --institution value" unless options[:institution]
+inst_qid = DS.find_qid options[:institution]
+abort "Not a known institution: #{options[:institution]}" unless inst_qid
+preferred_name = DS.preferred_inst_name options[:institution]
 
 DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
@@ -53,8 +70,8 @@ CSV.open output_csv, "w", headers: true do |row|
 
     records.each do |record|
       source_type                        = 'marc-xml'
-      holding_institution                = %q{https://www.wikidata.org/wiki/Q49117}
-      holding_institution_as_recorded    = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
+      holding_institution                = inst_qid
+      holding_institution_as_recorded    = DS::MarcXML.extract_institution_name record, default: preferred_name
       holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record
       link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{DS::MarcXML.extract_mmsid(record)}}
       iiif_manifest                      = DS::MarcXML.find_iiif_manifest record

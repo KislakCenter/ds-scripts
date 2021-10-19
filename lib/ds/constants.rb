@@ -47,45 +47,45 @@ acknowledgements
 }
 
     # TODO: Switch from QID URLs to standalone IDs
-    # TODO: Look at TOML for institution config -- have a single hash of names ana aliases pointing to QIDs
-    INSTITUTION_QIDS_BY_NAME = {
-      'Beinecke Rare Book & Manuscript Library'   => 'https://www.wikidata.org/wiki/Q814779',
-      'Bryn Mawr College'                         => 'https://www.wikidata.org/wiki/Q995265',
-      'Chemical Heritage Foundation'              => 'https://www.wikidata.org/wiki/Q5090408',
-      'City College of New York'                  => 'https://www.wikidata.org/wiki/Q1093910',
-      'Columbia University'                       => 'https://www.wikidata.org/wiki/Q49088',
-      'Cornell University'                        => 'https://www.wikidata.org/wiki/Q49115',
-      'Free Library of Philadelphia'              => 'https://www.wikidata.org/wiki/Q3087288',
-      'General Theological Seminary'              => 'https://www.wikidata.org/wiki/Q1501676',
-      'Grolier Club'                              => 'https://www.wikidata.org/wiki/Q5174002',
-      'Harvard University'                        => 'https://www.wikidata.org/wiki/Q13371',
-      'Huntington Library, Art Museum, and Botanical Gardens' => 'https://www.wikidata.org/wiki/Q1400558',
-      'Nelson-Atkins Museum of Art'               => 'https://www.wikidata.org/wiki/Q1976985',
-      'Philadelphia Museum of Art'                => 'https://www.wikidata.org/wiki/Q510324',
-      'Princeton University'                      => 'https://www.wikidata.org/wiki/Q21578',
-      'Swarthmore College'                        => 'https://www.wikidata.org/wiki/Q1378320',
-      'The College of Physicians of Philadelphia' => 'https://www.wikidata.org/wiki/Q5146808',
-      'The Huntington Library, Art Museum, and Botanical Gardens' => 'https://www.wikidata.org/wiki/Q1400558',
-      'University of California, Berkeley'        => 'https://www.wikidata.org/wiki/Q168756',
-      'University of Missouri'                    => 'https://www.wikidata.org/wiki/Q579968',
-      'University of Pennsylvania'                => 'https://www.wikidata.org/wiki/Q49117',
-      'Wellesley College'                         => 'https://www.wikidata.org/wiki/Q49205',
-      'Yale University'                           => 'https://www.wikidata.org/wiki/Q49112',
-    }
+    # TODO: Look at TOML for institution config -- have a single hash of names and aliases pointing to QIDs
+    # Hash from QID to array of institution names, preferred name is first;
+    # alias is last
+    # primarily useful as a non repeating configuration for other hashes
+    QID_TO_INSTITUTION_NAMES = {
+      'Q814779'  => ['Beinecke Rare Book & Manuscript Library', 'beinecke'],
+      'Q995265'  => ['Bryn Mawr College'],
+      'Q5090408' => ['Science History Institute', 'Chemical Heritage Foundation', 'shi'],
+      'Q1093910' => ['City College of New York'],
+      'Q49088'   => ['Columbia University', 'columbia'],
+      'Q49115'   => ['Cornell University', 'cornell'],
+      'Q3087288' => ['Free Library of Philadelphia', 'flp'],
+      'Q1501676' => ['General Theological Seminary'],
+      'Q5174002' => ['Grolier Club'],
+      'Q13371'   => ['Harvard University', 'harvard'],
+      'Q1400558' => ['Huntington Library, Art Museum, and Botanical Gardens',
+                     'The Huntington Library, Art Museum, and Botanical Gardens',
+                     'huntington'],
+      'Q1976985' => ['Nelson-Atkins Museum of Art'],
+      'Q510324'  => ['Philadelphia Museum of Art'],
+      'Q21578'   => ['Princeton University', 'princeton'],
+      'Q1378320' => ['Swarthmore College'],
+      'Q5146808' => ['The College of Physicians of Philadelphia'],
+      'Q168756'  => ['University of California, Berkeley'],
+      'Q579968'  => ['University of Missouri'],
+      'Q49117'   => ['University of Pennsylvania', 'upenn', 'penn'],
+      'Q49205'   => ['Wellesley College', 'wellesley'],
+      'Q49112'   => ['Yale University', 'yale'],
+    }.freeze
 
-    INSTITUTION_ALIASES = {
-      'beinecke'   => 'Beinecke Rare Book & Manuscript Library',
-      'columbia'   => 'Columbia University',
-      'cornell'    => 'Cornell University',
-      'flp'        => 'Free Library of Philadelphia',
-      'harvard'    => 'Harvard, University',
-      'huntington' => 'The Huntington Library, Art Museum, and Botanical Gardens',
-      'penn'       => 'University of Pennsylvania',
-      'princeton'  => 'Princeton University',
-      'upenn'      => 'University of Pennsylvania',
-      'wellesley'  => 'Wellesley College',
-      'yale'       => 'Yale University',
-    }
+    # Reverse QID_TO_INSTITUTION_NAMES: Point from each name to the QID URL
+    INSTITUTION_NAMES_TO_QID = QID_TO_INSTITUTION_NAMES.inject({}) { |hash, values|
+      qid, names = values
+      names.each { |name| hash.update({name => "https://www.wikidata.org/wiki/#{qid}" }) }
+      hash
+    }.freeze
+
+    # Extract all the one-word names as institution aliases; [:alnum:] -- allow unicode characters
+    INSTITUTION_ALIASES = INSTITUTION_NAMES_TO_QID.keys.select { |k| k =~ %r{^[[:alnum:]]+$} }
 
     # Institutions dependent on DS and their DS IDs
     # Some institutions have more than one collection
