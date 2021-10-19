@@ -12,13 +12,6 @@ module DS
         mets: 'http://www.loc.gov/METS/',
       }
 
-      def clean_string string, terminator: nil
-        # handle superscripts, whitespace, duplicate '.', and ensure a
-        # terminator is present if added
-        normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{\.\.+}, '.')
-        terminator.nil? ? normal : "#{normal.sub(%r{[.;,!?]+$}, '').strip}."
-      end
-
       def extract_institution_name xml
         extract_mets_creator(xml).first
       end
@@ -57,7 +50,7 @@ module DS
           [
             extent, details, marks, technique, script, medium, support, desc
           ].flatten.reject(&:empty?).map{ |s|
-            clean_string s, terminator: '.'
+            DS.clean_string s, terminator: '.'
           }.join ' '
         }.join '|'
       end
@@ -84,7 +77,7 @@ module DS
 
       def extract_ownership xml
         xpath = "./descendant::mods:note[@type='ownership']"
-        clean_string find_ms(xml).xpath(xpath).text
+        DS.clean_string find_ms(xml).xpath(xpath).text
       end
 
       def extract_language xml
@@ -173,7 +166,7 @@ module DS
 
       def extract_acknowledgements xml
         note_by_type(find_ms(xml), 'admin').map { |note|
-          clean_string note, terminator: '.'
+          DS.clean_string note, terminator: '.'
         }.join ' '
       end
 

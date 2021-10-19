@@ -73,7 +73,7 @@ CSV.open output_csv, "w", headers: true do |row|
       artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['artist', 'illuminator']
       scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
       scribe_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['scribe']
-      language_as_recorded               = record.xpath("datafield[@tag=546]/subfield[@code='a']").text
+      language_as_recorded               = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
       language                           = DS::MarcXML.extract_langs record
       former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['former owner']
       former_owner_as_recorded_agr       = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['former owner']

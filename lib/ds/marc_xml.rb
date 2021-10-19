@@ -196,7 +196,7 @@ module DS
         parts << extract_named_500(record, name: 'Script')
         parts << extract_named_500(record, name: 'Decoration')
         parts << extract_named_500(record, name: 'Binding')
-        parts.flatten.map(&:strip).join ' '
+        DS.clean_string parts.flatten.map(&:strip).join ' '
       end
 
       # We don't have a good way to look these up, so I'm hard-coding the addresses.
@@ -244,7 +244,7 @@ module DS
         return callno unless callno.strip.empty?
 
         # Princeton call number
-        # Some records mistakenly have two 852$b = 'hsvm' values; get the first
+        # Some records mistakenly have two 852$b = 'hsvm' values; get the firsto
         xpath = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
         callno = record.xpath(xpath).text
         return callno unless callno.strip.empty?
