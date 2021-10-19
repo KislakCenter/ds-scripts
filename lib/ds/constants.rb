@@ -46,7 +46,8 @@ physical_description
 acknowledgements
 }
 
-    # TODO: Make source of institution Wikidata IDs configurable or dynamic
+    # TODO: Switch from QID URLs to standalone IDs
+    # TODO: Look at TOML for institution config -- have a single hash of names ana aliases pointing to QIDs
     INSTITUTION_QIDS_BY_NAME = {
       'Beinecke Rare Book & Manuscript Library'   => 'https://www.wikidata.org/wiki/Q814779',
       'Bryn Mawr College'                         => 'https://www.wikidata.org/wiki/Q995265',
