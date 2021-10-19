@@ -80,7 +80,7 @@ CSV.open output_csv, "w", headers: true do |row|
       production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
       uniform_title_240_as_recorded      = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
       uniform_title_240_agr              = DS::MarcXML.extract_title_agr record, 240
-      title_as_recorded_245              = record.xpath("datafield[@tag=245]/subfield[@code='a']").text
+      title_as_recorded_245              = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr          = DS::MarcXML.extract_title_agr record, 245
       genre_as_recorded                  = DS::MarcXML.collect_datafields record, tags: 655, codes: 'abcvxyz'.split(//), sub_sep: '--'
       subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [610, 650, 651, 600], codes: ('a'..'z').to_a, sub_sep: '--'
