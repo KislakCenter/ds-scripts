@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>04978ctm a2200709Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9950320043503681</marc:controlfield>
+    <marc:controlfield tag="005">20211011114818.0</marc:controlfield>
+    <marc:controlfield tag="008">110822s1496    enk           000 0 eng d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn747428748</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)747428748</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)5032004-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PU</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">OCLCG</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="041">
+  <marc:subfield code="a">enm</marc:subfield>
+  <marc:subfield code="h">lat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn122591906</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 191</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="100">
+  <marc:subfield code="a">Mariensu&#x308;ss, Bartholoma&#x308;us,</marc:subfield>
+  <marc:subfield code="d">-1504.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">[Commentary on the Ephemerides of Regiomontanus]</marc:subfield>
+  <marc:subfield code="h">[manuscript].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[England],</marc:subfield>
+  <marc:subfield code="c">[circa 1496]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">18 leaves :</marc:subfield>
+  <marc:subfield code="b">paper ;</marc:subfield>
+  <marc:subfield code="c">190 x 140 (170 x 112) mm bound to 197 x 150 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title supplied by cataloger (Kurtz and Voigts).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation:  Paper, ii (modern) + ii + 18 + ii + ii (modern); 1&#xB9;&#x2076; 2&#xB2;; 1-18, contemporary foliation in ink, lower right recto.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 24-29 long lines; ruled in drypoint.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in a secretary script.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Modern calf, formerly stab-sewn.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in England, ca. 1496 (f. 8v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">The first part of Bute MS 13 (f. 1r-46v), including a copy of Chaucer's Treatise on the astrolabe, was purchased after 1988 by Shozo Asahata (Nara, Japan), current location unknown (Kurtz and Voigts).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 75 (LJS 191).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Partial copy of a Middle English translation of a commentary by Bartholoma&#x308;us Mariensu&#x308;ss on the Ephemerides of Regiomontanus, including a treatise in nine chapters addressing ephemerides, astrological signs, planets, their aspects, fixed stars (veryfied the yere of our lorde 1496, f. 8v), weather forecasting, and favorable days for various activities.  Followed by three canons for favorable times for bloodletting, giving medicine, and planting (f. 15r-18v).  With one table relating the signs of the zodiac and the planets (f. 3r).  A note in a later hand on the flyleaf following the manuscript refers to conditions from the beginning of March or from the vernal equinox to the summer solstice.  This manuscript was part of Bute MS 13 (formerly f. 124r-141v), preceded by another section (formerly f. 101r-120v), now LJS 188, University of Pennsylvania.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">LJS 191.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="544">
+  <marc:subfield code="n">The fourth part of Bute MS 13 (formerly f. 145r-161v) is HM 60320, The Huntington Library, San Marino, California.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Middle English.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by James Alleyn (signature in another part of parent manuscript).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Parent manuscript formerly held in the library of the Marquesses of Bute, Ms. 13.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold at auction at Sotheby's as part of the Bute collection, 13 June 1983, lot 32 (part 7).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Appears in H. P. Kraus's cat. 180 (1988), no. 133.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 22.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, Sept. 1997.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="581">
+  <marc:subfield code="a">Patricia Deery Kurtz and Linda Ehrsam Voigts. "The significance of now-dispersed Bute 13: a mixed-language scientific manuscript." In Communicating early English manuscripts, edited by P&#xE4;ivi Pahta and Andreas H. Jucker, 38-54. Cambridge: Cambridge University Press, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Astrology</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Astronomy</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Ephemerides</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">tables (documents)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">treatises.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, English (Middle)</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Alleyn, James,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 191</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5032004</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333436</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3g63j</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs191.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20111010</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22308463780003681</marc:holding_id>
+        <marc:call_number>LJS 191</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

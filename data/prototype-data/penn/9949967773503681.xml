@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>02728ctm a2200445Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9949967773503681</marc:controlfield>
+    <marc:controlfield tag="005">20210607104517.0</marc:controlfield>
+    <marc:controlfield tag="008">110527q13001399pau           000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn727366566</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)727366566</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)4996777-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PU</marc:subfield>
+  <marc:subfield code="e">dacs</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn155903210</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 119</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="110">
+  <marc:subfield code="a">Catholic Church.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">Manuscript leaf from a collection of papal decretals,</marc:subfield>
+  <marc:subfield code="f">1300s.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">1</marc:subfield>
+  <marc:subfield code="f">item (1 leaf) :</marc:subfield>
+  <marc:subfield code="b">parchment ;</marc:subfield>
+  <marc:subfield code="c">210 x 116 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Part of a leaf, used in a binding, of a canon law manuscript, containing papal decretals of Lucius III, Alexander III, and Urban III.  The manuscript, written in a Gothic script in France in the 14th century, was written in 2 columns of 46 lines, surrounded by 2 columns of commentary.  This fragment shows the outer column of main text and most of the outer column of commentary, with the rubrics De sententia et re iudicata on the recto and Iure iurando on the verso in the main text.  2 decretals on the recto are listed in Jaffe&#x301;'s Regesta pontificum Romanorum (Quia indicante abbate Cessano monasterii Sancti Petri, v. 2, no. 14106; Dilecti filii nostri abbas et fratres monasterii Sancti Ebulsi, v. 2, no. 13729).  3-line initials at the beginning of the decretals alternate between red with blue filigree and blue with red filigree; 1-line initials for the popes cited alternate between red and blue.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn LJS 119</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">In Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Canon law</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Fragments.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Decretals.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">14th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2="2" tag="710">
+  <marc:subfield code="a">Catholic Church.</marc:subfield>
+  <marc:subfield code="b">Pope (1159-1181 : Alexander III)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2="2" tag="710">
+  <marc:subfield code="a">Catholic Church.</marc:subfield>
+  <marc:subfield code="b">Pope (1181-1185 : Lucius III)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2="2" tag="710">
+  <marc:subfield code="a">Catholic Church.</marc:subfield>
+  <marc:subfield code="b">Pope (1185-1187 : Urban III)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 119</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4996777</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="996">
+  <marc:subfield code="a">unbound</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20111128</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22354663760003681</marc:holding_id>
+        <marc:call_number>LJS 119</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

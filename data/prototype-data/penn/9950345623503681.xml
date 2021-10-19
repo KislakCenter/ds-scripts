@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>05228ctm a2200697Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9950345623503681</marc:controlfield>
+    <marc:controlfield tag="005">20210607104553.0</marc:controlfield>
+    <marc:controlfield tag="008">110826s1511    fr a          000 0 frm d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn747949150</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)747949150</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)5034562-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PU</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">OCLCG</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn122492314</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 215</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="100">
+  <marc:subfield code="a">Feutrier, Imbert,</marc:subfield>
+  <marc:subfield code="e">compiler.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">[Scientific miscellany]</marc:subfield>
+  <marc:subfield code="h">[manuscript].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[France],</marc:subfield>
+  <marc:subfield code="c">1511.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">283 leaves :</marc:subfield>
+  <marc:subfield code="b">paper ;</marc:subfield>
+  <marc:subfield code="c">101 x 70 (80 x 53) mm. bound to 105 x 76 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation: Paper, i + 283 + i;  1&#x2078; 2&#xB2; 3&#x2078; 4&#x2076; 5&#xB9;&#x2070; 6-7&#x2076; 8-12&#x2078; 13&#x2076;(-1) 14&#x2078;(-1) 15&#x2078;(+1) 16-20&#x2078; 21&#xB9;&#x2076; 22-23&#x2078; 24&#xB2; 25-32&#x2078; 33&#x2076; 34&#x2078; 35&#xB9;&#x2074; 36&#x2078;(+2); gatherings signed d-i, i&#x2082;,l-t, v, x-z, @, 9 (abbreviation for con-), 2 (abbreviation for -orum), *a-*i, *i&#x2082;, *l-*n; multiple foliation schemes, many with numbers trimmed away, lower right recto.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Text written in 2 columns of 37 lines; tables in various arrangements of columns and rows.  Pricking visible on outer edge of many leaves.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in a ba&#x302;tarde script by Imbert Feutrier (f. 225v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  Numerous 8- to 10-line cadel, strapwork, or ribbon initials in red and green, red and blue, or red and black, some with grotesque faces or acanthus leaves added in black ink; 1- to 5-line initials in red or blue throughout; numerous tables and small astronomical and geometric diagrams, and a few illustrated geometric diagrams in red and black; rubrics in red throughout.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  18th-century morocco, gilt spine, label with title Astronomie, ribbon marker.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in France by Imbert Feutrier in 1511 (signed Imbert Feutryer, date of event, f. 225v-226r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Omont, Henri.  Un bibliophile bourguignon au xviii sie&#x300;cle:  collection de manuscrits du Marquis de Migieu au cha&#x302;teau de Savigny-les-Beaune (1760).  In Revue des bibliothe&#x300;ques 11 (1901),</marc:subfield>
+  <marc:subfield code="c">p. 259 (no. 67).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 75 (LJS 215).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Compendium of astrological charts; astronomical and astrological tables; treatises on astronomy (calculating equinoxes and solstices, f. 51v; using an astrolabe, f. 68r) and geometry (f. 133r-180v, perhaps lacking ending, with numerous small diagrams and a few small illustrations); and instructions for making dyes and pigments (f. 182r-208r) and medical preparations (f. 224r, 226v).  The first three gatherings of the manuscript are lacking, based on the signature of the first extant gathering, and the upper margin has been trimmed.  17th-century table of contents on lower flyleaf.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">LJS 215</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="545">
+  <marc:subfield code="a">Bailli (bailiff) of Cr&#xE8;vec&#x153;ur-sur-l&#x2019;Escaut, near Cambrai.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Middle French and Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Christian Friderich (signatures dated 1633, f. 251v, and 1635, f. 283v and lower endpaper).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Anthelme-Michel-Laurent de Migieu, marquis de Savigny (signature dated 1760 on lower endpaper).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Offered for sale by Rodolphe Chamonal, Biennale des Antiquaires (1988), no. 19.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 46.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, Sept. 1997.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Astrolabes</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Astrology</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Astronomy</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Dyes and dyeing</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Medicine</marc:subfield>
+  <marc:subfield code="v">Formulae, receipts, prescriptions</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Anthologies.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Diagrams.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Tables (documents)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, French</marc:subfield>
+  <marc:subfield code="y">16th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">16th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Migieu, Anthelme-Michel-Laurent de,</marc:subfield>
+  <marc:subfield code="c">marquis de Savigny,</marc:subfield>
+  <marc:subfield code="d">1723-1788,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 215</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5034562</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1338702</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20111112</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22292796130003681</marc:holding_id>
+        <marc:call_number>LJS 215</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

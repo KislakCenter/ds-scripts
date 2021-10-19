@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>02582ctm a2200445Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9949945603503681</marc:controlfield>
+    <marc:controlfield tag="005">20210607104601.0</marc:controlfield>
+    <marc:controlfield tag="008">110523s1358    pau           000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn726764015</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)726764015</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)4994560-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="e">dacs</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn225058761</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">Oversize LJS 110</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="245">
+  <marc:subfield code="a">John Elys deed :</marc:subfield>
+  <marc:subfield code="k">manuscript,</marc:subfield>
+  <marc:subfield code="f">1358.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">1</marc:subfield>
+  <marc:subfield code="f">item (1 leaf) :</marc:subfield>
+  <marc:subfield code="b">parchment ;</marc:subfield>
+  <marc:subfield code="c">170 x 245 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Deed of a sale of a life estate by John Elys and his son John to John de Beeleye and his wife Margery, all of Toneworth, Warwickshire.  Dated the first Wednesday after the feast of Saint Hillary in the thirty-first regnal year of Edward III (January 1358), in Toneworth.  The document states that Robert de Crowenhale, Edward de Middelmor, John Waryn, Richard Russel, John Page, and others were present as witnesses.  It is written in 25 long lines, in a notarial hand, and has a parchment tag at the bottom.  Words have been erased in two places (in one case with a correction written in the space) and nearly 4 lines have been canceled by crossing out in ink.  The document has the undulating upper edge of an indenture and was marked before cutting.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn Oversize LJS 110</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">In Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Bernard Quaritch Ltd. (London), cat. 880 (1967), no. 42, to Lawrence J. Schoenberg.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="600">
+  <marc:subfield code="a">Elys, John.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="600">
+  <marc:subfield code="a">Beeleye, John de.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="600">
+  <marc:subfield code="a">Beeleye, Margery de.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Real property</marc:subfield>
+  <marc:subfield code="z">England</marc:subfield>
+  <marc:subfield code="z">Warwickshire.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="651">
+  <marc:subfield code="a">Warwickshire (England)</marc:subfield>
+  <marc:subfield code="x">History.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Deeds.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Indentures.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Legal documents.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">14th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">Oversize LJS 110</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4994560</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20111128</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22289906790003681</marc:holding_id>
+        <marc:call_number>Oversize LJS 110</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

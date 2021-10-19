@@ -1,0 +1,160 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>03034ctma 2200505Ma 4500</leader>
+  <controlfield tag="001">ocm64758505 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132912.0</controlfield>
+  <controlfield tag="008">000615q10751125it a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">amremm</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCA</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64758505</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="100">
+    <subfield code="a">Origen.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Commentary on the Epistle to the Romans</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Expositio super epistolam Pauli ad Romanos.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">[Italy,</subfield>
+    <subfield code="c">ca. 1100]</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">190 leaves :</subfield>
+    <subfield code="b">parchment, ill. ;</subfield>
+    <subfield code="c">260 x 180 (185 x 103) mm. bound to 274 x 189 mm.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Ms. codex.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">Text in Latin.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">This translation of Origen&apos;s Greek text is the version by Rufinus,
+      although the rubrics have misidentified Jerome as the translator.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Marginal glosses written in scripts of various centuries.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Written in 30-33 long lines; frame-ruled in dry point.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Script: Protogothic (or &quot;Romanesque&quot;) transitional script: frequent
+      use of cedilla with long e; ampersand and tyronian form of &quot;et&quot; both appear;
+      Carolingian and uncial forms of &quot;d&quot; both appear.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Decoration: Large decorative initials with fleshy acanthus tendrils drawn in
+      brown ink introduce each of the ten books. Some of these initials have been painted in red,
+      yellow, or blue. Initials within the line are sometimes executed in red ink. Some initials in
+      brown ink are highlighted in red.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Binding: 18th cent., mottled calf.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Probably written in Italy, ca. 1100.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="561">
+    <subfield code="a">Provenance: Bought by George Lincoln Burr for A.D. White in 1885 from
+      Maisonneuve &amp; Co., Paris. Donated to the White Library in 1891.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
+      Misc. Bd. Ms. 44.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Former shelfmark: MSS Bd. Rare BX O69+</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Related shelfmark: MS B.12 (De Ricci).</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
+      States and Canada,</subfield>
+    <subfield code="c">II, p. 1227; Calkins, R.G. Illuminated Manuscripts, pp. 42-43, no.
+      22</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="581">
+    <subfield code="a">Origenes. Commentarii in Epistulam ad Romanos: Römerbriefkommentar, Latin ed.
+      and German tr. in 6 vols., by Theresia Heither. Freiburg: Herder, 1990-1999. (The edition is
+      drawn from Migne, Patrologia Graeca vol. 14.).</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Theology</subfield>
+    <subfield code="v">Early works to 1800.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Theology.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01149559</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Parchment.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Early works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01411636</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">White, Andrew Dickson,</subfield>
+    <subfield code="d">1832-1918.</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="710">
+    <subfield code="a">Cornell University.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
+    <subfield code="k">Manuscript.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 44.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">Italy.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Origen.</subfield>
+    <subfield code="s">Commentary on the Epistle to the Romans.</subfield>
+    <subfield code="t">Expositio super epistolam Pauli ad Romanos.</subfield>
+    <subfield code="d">[Italy, ca. 1100]</subfield>
+    <subfield code="w">(OCoLC)1129079640</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

@@ -1,0 +1,125 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>02117ctma 2200361Ma 4500</leader>
+  <controlfield tag="001">ocm68051413 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132912.0</controlfield>
+  <controlfield tag="008">060417q11001135xx 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">appm</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCLCF</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)68051413</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="130">
+    <subfield code="a">Bible.</subfield>
+    <subfield code="p">Epistles of Paul.</subfield>
+    <subfield code="l">Latin.</subfield>
+    <subfield code="s">Vulgate.</subfield>
+    <subfield code="f">1100.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Epistles of St. Paul, with commentary,</subfield>
+    <subfield code="f">[ca. 1100-1135].</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">1 volume ([60] leaves) ;</subfield>
+    <subfield code="c">26 cm</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Manuscript on vellum, in Latin, written in Italian Caroline miniscule,
+      rubricated and glossed. The text contains a few large decorated initials. Many leaves are
+      lacking. The text begins: Domino non manducat (from Romans 14:6) and ends: Homines enim per
+      majorem (from Hebrews 6:16). The volume is housed in a cloth case, together with several
+      handwritten bibliographical descriptions of the manuscript, including one description by E.S.
+      Buchanan, and another in a letter from George Lincoln Burr to E.C. Mitchell.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="506">
+    <subfield code="a">By appointment only.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="530">
+    <subfield code="a">Also on microfilm.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="561">
+    <subfield code="a">Provenance: Andrew Dickson White (bookplate).</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">Calkins, R.G. Medieval and Renaissance Illuminated Manuscripts in the Cornell
+      University Library, 2003 rev.,</subfield>
+    <subfield code="c">23; de Ricci, II, 1245</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Epistles of St. Paul, With Commentary, #4600. Division of Rare and Manuscript
+      Collections, Cornell University Library.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="630">
+    <subfield code="a">Bible.</subfield>
+    <subfield code="p">Epistles of Paul</subfield>
+    <subfield code="v">Commentaries.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="7" tag="630">
+    <subfield code="a">Bible.</subfield>
+    <subfield code="p">Epistles of Paul.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01808029</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Commentaries.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423723</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">White, Andrew Dickson,</subfield>
+    <subfield code="d">1832-1918.</subfield>
+    <subfield code="4">fmo</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Burr, George Lincoln,</subfield>
+    <subfield code="d">1857-1938.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Mitchell, E. C.</subfield>
+    <subfield code="q">(Edward Cushing),</subfield>
+    <subfield code="d">1829-1900.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Buchanan, E. S.</subfield>
+    <subfield code="q">(Edgar Simmons),</subfield>
+    <subfield code="d">1872-1932.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Bible. Epistles of Paul. Latin. Vulgate. 1100.</subfield>
+    <subfield code="t">Epistles of St. Paul, with commentary, [ca. 1100-1135]</subfield>
+    <subfield code="w">(OCoLC)1129079642</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

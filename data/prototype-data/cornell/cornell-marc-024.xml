@@ -1,0 +1,134 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>02177ctm 2200409Ma 4500</leader>
+  <controlfield tag="001">ocn626941444</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132913.0</controlfield>
+  <controlfield tag="008">100521s1830 xx a 000 0 per d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">dacs</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)626941444</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="043">
+    <subfield code="a">a-ir---</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="100">
+    <subfield code="a">Firdawsī.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Shānāmah</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Shānāmah :</subfield>
+    <subfield code="k">manuscript,</subfield>
+    <subfield code="f">probably 1830s.</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="246">
+    <subfield code="a">Shāh nāmah</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">1 volume (approximately 200 pages) :</subfield>
+    <subfield code="b">color illustrations ;</subfield>
+    <subfield code="c">36 cm</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Contains illuminated headpieces and?26 miniatures portraying various scenes
+      from the poem.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">A Persian manuscript containing an abridgement of the poem, Shahnamah (Book
+      of Kings). Written by the Persian poet Firdawsi around 1000 AD, it is the national epic of the
+      Persian-speaking world. Its 60,000 rhyming couplets relate the story of the Persian kings,
+      legendary and historical, the mythical and historical past of (Greater) Iran from the creation
+      of the world up until the Islamic conquest of Persia in the 7th century.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">In Persian; written in a professional nastaʻlīq script in black ink; ʻunwān
+      and illustrations in colors and gold; text rubricated.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Firdawsī̄̄̄, #8039. Division of Rare and Manuscript Collections, Cornell
+      University Library.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Epic poetry, Persian</subfield>
+    <subfield code="v">Early works to 1800.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Persian poetry</subfield>
+    <subfield code="v">Early works to 1800.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Manuscripts, Persian.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Islamic illumination of books and manuscripts</subfield>
+    <subfield code="z">Iran.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Epic poetry, Persian.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01741636</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Islamic illumination of books and manuscripts.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01730333</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Manuscripts, Persian.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01008462</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Persian poetry.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01058542</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="651">
+    <subfield code="a">Iran.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01204889</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Early works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01411636</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Firdawsī</subfield>
+    <subfield code="s">Shānāmah.</subfield>
+    <subfield code="t">Shānāmah : manuscript, probably 1830s</subfield>
+    <subfield code="w">(OCoLC)1037866135</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

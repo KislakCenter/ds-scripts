@@ -1,0 +1,130 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>02384ctma 2200409Ma 4500</leader>
+  <controlfield tag="001">ocm64755199 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132911.0</controlfield>
+  <controlfield tag="008">000417s1438 gw 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCG</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64755199</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="100">
+    <subfield code="a">Sacro Bosco, Joannes de,</subfield>
+    <subfield code="d">active 1230.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">[Algorismus, cum glosa /</subfield>
+    <subfield code="c">John of Sacro Bosco].</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">[Germany],</subfield>
+    <subfield code="c">[approximately 1438]</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">28 leaves :</subfield>
+    <subfield code="b">paper ;</subfield>
+    <subfield code="c">219 x 146 (160 x 112) mm, unbound</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">Text in Latin.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">This manuscript is related to Misc. Bd. Mss. 12 and 115. All three are
+      unbound, written on paper of nearly identical dimensions and in the same script, and all three
+      were acquired together from the same source. Misc. Bd. Ms. 115 is dated to 1438 and was
+      written at the monastery of Ewich near Attendorn in Germany.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Written in 32-40 long lines; lightly framed (usually in dry point),
+      but not ruled.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Script: Gothic cursive.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Decoration: Decorated initials, most of them imperfect.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Binding: Unbound, boxed.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Written in Germany, probably at the monastery of Ewich near
+      Attendorn, ca. 1438.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="561">
+    <subfield code="a">Provenance: Bought in 1888 by George Lincoln Burr for the White Library from
+      Dr. Gerhard Hennen at Düsseldorf, Germany.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
+      Misc. Bd. Ms. 146.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Former shelfmark: MSS Bd. Rare P S12+</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Related shelfmark: MS B.52 (De Ricci).</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
+      States and Canada,</subfield>
+    <subfield code="c">II, p. 1237</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="581">
+    <subfield code="a">Fridericus S. Pedersen, ed. Petri Philomenae de Dacia et Petri de S. Audomaro
+      Opera Quadrivialia (Copenhagen: Apud Librarium G.E.C. Gad, 1983), pp. 165-201 (text without
+      glosses).</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="710">
+    <subfield code="a">Cornell University.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
+    <subfield code="k">Manuscript.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 146.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">Germany.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Sacro Bosco, Joannes de, active 1230.</subfield>
+    <subfield code="t">[Algorismus, cum glosa.</subfield>
+    <subfield code="d">[Germany], [approximately 1438]</subfield>
+    <subfield code="w">(OCoLC)1129079621</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

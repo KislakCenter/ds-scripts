@@ -1,0 +1,174 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>03170ctma 2200541Ma 4500</leader>
+  <controlfield tag="001">ocm64755185 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132911.0</controlfield>
+  <controlfield tag="008">000417s1438 gw a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">amremm</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64755185</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="130">
+    <subfield code="a">Ars computistica.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="245">
+    <subfield code="a">[Computus Cirometralis].</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">Germany,</subfield>
+    <subfield code="c">1438.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">30 leaves :</subfield>
+    <subfield code="b">paper, ill. ;</subfield>
+    <subfield code="c">219 x 146 (167 x 112) mm., unbound.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Ms. gatherings.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">Text in Latin.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">This manuscript is related to Misc. Bd. Mss. 12 and 146. All three are
+      unbound, written on paper of nearly identical dimensions and in the same script, and all three
+      were acquired together from the same source.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">The date &quot;1438&quot; appears on fol. 16r in the text, and is repeated in
+      the outer margin in ink by a 19th-century hand.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Fol. 11 is torn, so that text on 11r and half of a full-page table on 11v
+      have been lost.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">A slip of paper has been inserted to add a table between fols. 13v and 14r;
+      the other half of the slip, appearing between fols. 21v and 22r, is blank.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Written in 41-48 long lines; occasionally framed, but unruled. The
+      text is interrupted by tables and diagrams.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Script: Gothic cursive; formal Gothic hybrid used in tables and
+      diagrams.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Decoration: Tables, diagrams, decorated initials.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Binding: Unbound, boxed.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Accompanying materials: Loose paper cover in which the manuscript was once
+      stored, with the title &quot;Computus Cirometralis [1438.]&quot; in the hand of George Lincoln
+      Burr; inside the cover is a note by Burr indicating provenance and other details about the
+      manuscript.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Written in Germany at the monastery of Ewich near Attendorn, in
+      1438.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="561">
+    <subfield code="a">Provenance: &quot;Liber monasterii in Ewich regularium iuxta Attendorn&quot;
+      (fol. 1r). Dr. Gerhard Hennen of Trier. Bought by George Lincoln Burr for the White Library in
+      1888 at Düsseldorf, Germany.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
+      Misc. Bd. Ms. 115.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Former shelfmark: MSS Bd. Rare P A78.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Related shelfmark: MS B.53 (De Ricci).</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
+      States and Canada,</subfield>
+    <subfield code="c">II, p. 1237</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Calendar.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Mathematics</subfield>
+    <subfield code="v">Early works to 1800.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Calendar.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00844160</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Mathematics.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01012163</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Scientific illustrations.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Early works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01411636</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Burr, George Lincoln,</subfield>
+    <subfield code="d">1857-1938.</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="710">
+    <subfield code="a">Cornell University.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
+    <subfield code="k">Manuscript.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 115.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">Germany.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Ars computistica.</subfield>
+    <subfield code="t">[Computus Cirometralis]</subfield>
+    <subfield code="d">Germany, 1438</subfield>
+    <subfield code="w">(OCoLC)1129079620</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

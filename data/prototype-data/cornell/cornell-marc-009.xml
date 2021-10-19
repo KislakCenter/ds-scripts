@@ -1,0 +1,90 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>01406ctma 2200289Ma 4500</leader>
+  <controlfield tag="001">ocm70687032 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132912.0</controlfield>
+  <controlfield tag="008">060717s13uu xx 001 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">appm</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)70687032</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="245">
+    <subfield code="a">Sermones,</subfield>
+    <subfield code="f">[13--].</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">1 v. ([143] leaves) ;</subfield>
+    <subfield code="c">37 cm.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Manuscript on paper, in Latin. Written in double columns, with 51 lines to a
+      page, in a small, neat script with many scribal abbreviations. The text is preceded by an
+      index. Damp-staining on the first few leaves renders the incipit illegible. Some worming in
+      the lower margins, with minimal effect on the text. Bound in undressed sheep over oak boards,
+      very worn. The remains of clasps are present on the upper board. The spine is lacking,
+      exposing the three cords.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Sermones, #4600 Bd. Ms. 228. Division of Rare and Manuscript Collections,
+      Cornell University Library.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Sermons, Latin.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Sermons, Medieval.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Sermons, Latin.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01113283</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Sermons, Medieval.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01113290</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Sermons</subfield>
+    <subfield code="y">14th century.</subfield>
+    <subfield code="2">rbgenr</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Cords.</subfield>
+    <subfield code="5">NIC</subfield>
+    <subfield code="2">rbbin</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="t">Sermones, [13--]</subfield>
+    <subfield code="w">(OCoLC)1129127858</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

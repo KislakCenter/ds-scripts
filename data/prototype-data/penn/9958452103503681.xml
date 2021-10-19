@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>07110ctm a2200949Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9958452103503681</marc:controlfield>
+    <marc:controlfield tag="005">20210607104540.0</marc:controlfield>
+    <marc:controlfield tag="008">121025q12651299sp ap         000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn814384269</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)814384269</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)5845210-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn814388590</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 184</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="100">
+  <marc:subfield code="a">Isidore,</marc:subfield>
+  <marc:subfield code="c">of Seville, Saint,</marc:subfield>
+  <marc:subfield code="d">d. 636.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="240">
+  <marc:subfield code="a">Etymologiae</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">Liber ethimologiarum</marc:subfield>
+  <marc:subfield code="h">[manuscript].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[Catalonia],</marc:subfield>
+  <marc:subfield code="c">[between 1265 and 1299]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">184 leaves :</marc:subfield>
+  <marc:subfield code="b">parchment ;</marc:subfield>
+  <marc:subfield code="c">356 x 242 (234 x 160) mm. bound to 357 x 246 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from opening rubric (f. 1r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation:  Parchment, i (modern) + 184 + i (former pastedown); 1-15&#xB9;&#xB2; 16&#x2074;; [1-184], modern foliation in pencil, lower left recto.  Vertical catchword in ornamental frame on the last verso of each gathering, except gathering 6 and the final gathering.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 2 columns of 40 lines, with running heads of L (for Liber) on the versos and book number on the rectos; frame-ruled in lead with double vertical and horizontal bounding lines.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in Gothic script by a single hand.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  Historiated 6-line initial depicting Isidore lecturing to 2 monks and half border with grotesques, including human-animal hybrid musicians (f. 1r); 2 2-line initials in burnished gold on pink and blue grounds (f. 1r); numerous 2- to 4-line initials alternating between blue with red flourishing and red with purple flourishing; running heads in alternating red and blue letters; narrow red and blue borders on the left margin of the columns on many pages, more often the left column, sometimes both; initials touched with red; rubrication in red.  Blank space between De mathematica and De musica (f. 29r) was probably intended for diagrams that are characteristic of Iberian manuscripts of this text (Michel Huglo, CNRS, Paris).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  14th-century boards, with some writing on the upper cover including the name of Isidore, and part of a Spanish notarial document dated 1330 as a former pastedown inside the lower cover (Kyle Ann Huskin); rebacked in 1990.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Probably written in Catalonia, possibly at the monastery of Poblet (Michel Huglo; Manuel C. Di&#x301;az y Di&#x301;az, University of Santiago de Compostela), in the late 13th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r-2v: [Prefatory material]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">2. f.3r-16r: Liber I, [De grammatica]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.16r-26r: Liber II, [De rhetorica et dialectica]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.26r-31r: Liber III, [De mathematica, De musica]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">5. f.31r-35r: Liber IV, [De astronomia]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">6. f.35r-39r: Liber V, [De medicina]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">7. f.39r-47v: Liber VI, [De legibus et temporibus]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">8. f.47v-57r: Liber VII, [De libris et officiis ecclesiasticis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">9. f.57r-68r: Liber VIII, [De deo, angelis, et sanctis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">10. f.68r-77r: Liber IX, [De ecclesia et sectis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">11. f.77r-87r: Liber X, [De linguis, gentibus, regnis, militia, civibus, affinitatibus]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">12. f.87r-95r: Liber XI, [De vocabulis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">13. f.95r-102v: Liber XII, [De homine et portentis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">14. f.102v-114r: Liber XIII, [De animalibus]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">15. f.114r-120v: Liber XIV, [De mundo et partibus]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">16. f.120v-129r: Liber XV, [De terra et partibus]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">17. f.129r-137r: Liber XVI, [De aedificiis et agris]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">18. f.137r-147v: Liber XVII, [De lapidis et metallis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">19. f.147v-158r: Liber XVIII, [De rebus rusticis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">20. f.158r-164r: Liber XIX, [De bello et ludis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">21. f.164r-173v: Liber XX, [De navibus, aedificiis, et vestibus]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">22. f.173v-178v: Liber XXI, [De domo et instrumentis domesticis]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">23. f.178v-183v: [Additions from Bede's De temporum ratione]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 131 (LJS 184).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Encyclopedia with emphasis on word origins, arranged by subject.  The manuscript follows the standard division into 20 books, except that Book 3, on mathematics, music, and astronomy, is divided into Books 3 and 4, giving the manuscript a total of 21 books.  Additional astronomical material, probably from Bede's De temporum ratione, appears at the end of Book 21 (f. 178v-183v), with the running head of Book 21 continuing to the end of the manuscript.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn LJS 184</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Probably formerly held in the library of the monastery of Poblet in Catalonia (Huglo and Di&#x301;az y Di&#x301;az).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Harrison D. Horblit (Ridgefield, Conn.).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Appears in H. P. Kraus's cat. 155 (1980), no. 8.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 15.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, Sept. 1997.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Lawrence J. Schoenberg and Barbara Brizdle in honor of William Noel, Director, Schoenberg Institute for Manuscript Studies, 2012.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="581">
+  <marc:subfield code="a">Quandt, Abigail B.  "The documentation and treatment of a late 13th century copy of Isidore of Seville's Etymologies."  The Book and Paper Group Annual, Volume 10 (1991).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="581">
+  <marc:subfield code="a">Huglo, Michel.  "The Musica Isidori tradition in the Iberian Peninsula," footnotes 31 and 36 (page 86).  In Zapke, Susana, editor.  Hispania vetus:  musical-liturgical manuscripts from Visigothic origins to the Franco-Roman transition (9th-12th centuries).  Bilbao:  Fundacio&#x301;n BBVA, 2007.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Encyclopedias and dictionaries</marc:subfield>
+  <marc:subfield code="v">Early works to 1600.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Encyclopedias.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Illuminations.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">13th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="700">
+  <marc:subfield code="a">Bede,</marc:subfield>
+  <marc:subfield code="c">the Venerable, Saint,</marc:subfield>
+  <marc:subfield code="d">673-735.</marc:subfield>
+  <marc:subfield code="t">De temporum ratione.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Horblit, Harrison D.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Poblet (Monastery),</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 184</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5845210</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333433</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20131106</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22263033010003681</marc:holding_id>
+        <marc:call_number>Oversize LJS 184</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

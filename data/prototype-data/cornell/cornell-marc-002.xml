@@ -1,0 +1,203 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>03364ctma 2200625Ma 4500</leader>
+  <controlfield tag="001">ocm64755201 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132911.0</controlfield>
+  <controlfield tag="008">000418q14251450xx a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">amremm</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64755201</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="100">
+    <subfield code="a">Boethius,</subfield>
+    <subfield code="d">-524.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">De consolatione philosohiae</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">[De consolatione philosophiae] /</subfield>
+    <subfield code="c">Boetius.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">[France, probably between 1425 and 1450]</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">132 leaves :</subfield>
+    <subfield code="b">parchment, illustrations ;</subfield>
+    <subfield code="c">214 x 151 (132 x 70) mm bound to 222 x 163 mm</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Ms. codex.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Deluxe copy with interlinear and marginal glosses (in the same hand as the
+      text) in widely varying frequency; includes an Accessus (f. 1r-1v) and concluding notes (ff.
+      128r-131r).</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">Text in Latin.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Text beings imperfectly in Book I, prosa 1: &quot;[ple]na foret, ut nullo
+      ...&quot;</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Written in 16 long lines, above top line; frame-ruled in ink. Ample
+      space left between the lines and in the margins for glosses.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Script: Bâtard.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Decoration: Diagram of the winds (f. 26r), large burnished and illuminated
+      foliate initials throughout, small red or blue flourished initials in the first quire (ff.
+      1-16), and elaborate ivy borders (ff. 26v and 97v).</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Binding: French 17th-cent. brown calf with gilt tooling on spine.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Written in France in the fifteenth century.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="561">
+    <subfield code="a">Provenance: Claude Le Jay. D.C. Bret . A.D. White (bookplate). Bought in 1885
+      by George Lincoln Burr from Maisonneuve &amp; Co., Paris for A.D. White.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
+      Misc. Bd. Ms. 13.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Former shelfmark: MSS Bd. Rare BX B67.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Related shelfmark: MS B.7 (De Ricci).</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
+      States and Canada,</subfield>
+    <subfield code="c">II, p. 1226; Calkins, R.G. Illuminated Manuscripts, p. 27, no. 11</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="581">
+    <subfield code="a">Rudolfus Peiper, ed. Anicii Manlii Severini Boetii Philosophiae Consolationis
+      libri quinque (Leipzig, B.G. Teubner, 1871).</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Latin poetry.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Philosophy</subfield>
+    <subfield code="v">Poetry.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Philosophy, Medieval.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Happiness</subfield>
+    <subfield code="v">Early works to 1800.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Happiness.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00951160</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Latin poetry.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00993373</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Philosophy.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01060777</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Philosophy, Medieval.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01061057</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Scientific illustrations.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Illuminations.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Vellum.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Early works.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01411636</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Poetry.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423828</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">White, Andrew Dickson,</subfield>
+    <subfield code="d">1832-1918.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Le Jay, Claude,</subfield>
+    <subfield code="d">1504-1552.</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="710">
+    <subfield code="a">Cornell University.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
+    <subfield code="k">Manuscript.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 13.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">France.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="8" tag="776">
+    <subfield code="i">Online version:</subfield>
+    <subfield code="a">Boethius, -524.</subfield>
+    <subfield code="s">De consolatione philosohiae.</subfield>
+    <subfield code="t">[De consolatione philosophiae]</subfield>
+    <subfield code="d">[France, probably between 1425 and 1450]</subfield>
+    <subfield code="w">(OCoLC)1129079622</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>

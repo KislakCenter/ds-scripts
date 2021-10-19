@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>05448ctm a2200769Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9949222153503681</marc:controlfield>
+    <marc:controlfield tag="005">20211008115439.0</marc:controlfield>
+    <marc:controlfield tag="008">120402q13001399ir ap         001 0 per d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)782977167</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn782977167</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)4922215-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">OCLCQ</marc:subfield>
+  <marc:subfield code="d">OCLCO</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+  <marc:subfield code="d">OCLCF</marc:subfield>
+  <marc:subfield code="d">PAU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">Oversize LJS 189</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="100">
+  <marc:subfield code="6">880-01</marc:subfield>
+  <marc:subfield code="a">Jurja&#x304;ni&#x304;, Isma&#x304;&#x2BB;i&#x304;l ibn H&#x323;asan,</marc:subfield>
+  <marc:subfield code="d">1042 or 1043-1136 or 1137.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="6">880-02</marc:subfield>
+  <marc:subfield code="a">Z&#x332;akhi&#x304;rah-&#x2B9;i Khva&#x304;razmsha&#x304;hi&#x304;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[Persia?],</marc:subfield>
+  <marc:subfield code="c">[between 1300 and 1399?]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">352 leaves :</marc:subfield>
+  <marc:subfield code="b">paper, illustrations, illuminations ;</marc:subfield>
+  <marc:subfield code="c">395 x 317 (278 x 230) mm bound to 400 x 322 mm</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="336">
+  <marc:subfield code="a">text</marc:subfield>
+  <marc:subfield code="b">txt</marc:subfield>
+  <marc:subfield code="2">rdacontent</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="337">
+  <marc:subfield code="a">unmediated</marc:subfield>
+  <marc:subfield code="b">n</marc:subfield>
+  <marc:subfield code="2">rdamedia</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="338">
+  <marc:subfield code="a">volume</marc:subfield>
+  <marc:subfield code="b">nc</marc:subfield>
+  <marc:subfield code="2">rdacarrier</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from colophon (f. 352v) and beginning and end of each book.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Paper, ii + 352 + ii; [1-352]; modern foliation in pencil, upper left recto. Catchwords added after re-margination, lower left verso.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: Written in 33 long lines; ruled in blind.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script: Written in naskh in black ink; pointed. 14 replacement folios written in a second hand.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Illuminated text divider (f. 62v, 125v); illuminated circular medallion (f. 125r), miniature of a couple sitting under a tree (f. 214v); text block outlined in red; rubrics in red.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: 18th-century blind-stamped reddish-brown leather remnants laid down on the same color leather over boards; marbled paper pastedowns.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: The item is undated, probably copied in Persia in the 14th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 84-85 (LJS 189).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Medical encyclopedia in 9 books, with discussions of physiology, anatomy, pathology, diagnosis, fevers, specific diseases, surgery, fractures, poisons, and antidotes. Includes indexes, although some leaves are missing. Most leaves re-margined with pink paper; a few leaves have original margins and extensive marginal notes or commentary (f. 255v-261r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn LJS 189.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Persian.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Ownership stamp dated 1186? (1772-1773 CE) with inscription in ink (f. 1r); Persian customs stamp dated 1342 (f. 1r, 352v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by the Hagop Kevorkian Fund; offered for sale at auction at Sotheby's (London) in a sale of property of the Hagop Kevorkian Fund, 2 May 1977, lot 163, unsold.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold at auction at Sotheby's with other Hagop Kevorkian Fund materials, 27 April 1981, lot 108.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Appears in H.P. Kraus's catalog 186 (1991), no. 173.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 20.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, September 1997.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2016.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Medicine, Persian</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Persian.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, 14th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Encyclopedias.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Illuminations (painting)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Miniatures (paintings)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Illuminations.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="6">880-03</marc:subfield>
+  <marc:subfield code="a">Qut&#x323;b al-Di&#x304;n Muh&#x323;ammad,</marc:subfield>
+  <marc:subfield code="c">Shah of Khwarazm,</marc:subfield>
+  <marc:subfield code="d">1097-1127,</marc:subfield>
+  <marc:subfield code="e">dedicatee.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Hagop Kevorkian Fund,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 189</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0001/html/ljs189.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4922215</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333435</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3m03xz3w</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x62C;&#x631;&#x62C;&#x627;&#x646;&#x64A;&#x60C; &#x627;&#x633;&#x645;&#x627;&#x639;&#x64A;&#x644; &#x628;&#x646; &#x62D;&#x633;&#x646;&#x60C;</marc:subfield>
+  <marc:subfield code="d">1042 or 1043-1136 or 1137.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x630;&#x62E;&#x64A;&#x631;&#x647;&#x200C; &#x62E;&#x648;&#x627;&#x631;&#x632;&#x645;&#x200C;&#x634;&#x627;&#x647;&#x649;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="880">
+  <marc:subfield code="6">700-03//r</marc:subfield>
+  <marc:subfield code="a">&#x642;&#x637;&#x628; &#x627;&#x644;&#x62F;&#x64A;&#x646; &#x645;&#x62D;&#x645;&#x62F;&#x60C;</marc:subfield>
+  <marc:subfield code="c">&#x634;&#x627;&#x647; &#x62E;&#x648;&#x631;&#x627;&#x632;&#x645;&#x60C;</marc:subfield>
+  <marc:subfield code="d">1097-1127&#x60C;</marc:subfield>
+  <marc:subfield code="e">dedicatee.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="996">
+  <marc:subfield code="a">hinge-right</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20110214</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22337021450003681</marc:holding_id>
+        <marc:call_number>Oversize LJS 189</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

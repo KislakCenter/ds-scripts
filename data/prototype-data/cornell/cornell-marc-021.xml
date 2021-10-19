@@ -1,0 +1,129 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>02163ctm 2200385Ia 4500</leader>
+  <controlfield tag="001">on1224949622</controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20211004132913.0</controlfield>
+  <controlfield tag="008">201201s1550 ic 000 0 non d</controlfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">COO</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="e">dcrmmss</subfield>
+    <subfield code="c">COO</subfield>
+    <subfield code="d">COO</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">COO</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCF</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)1224949622</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="043">
+    <subfield code="a">e-ic---</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="049">
+    <subfield code="a">COOO</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="110">
+    <subfield code="a">Iceland.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Jónsbók.</subfield>
+    <subfield code="f">1550</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="245">
+    <subfield code="a">Jónsbók :</subfield>
+    <subfield code="k">manuscript fair copy.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="264">
+    <subfield code="a">Iceland,</subfield>
+    <subfield code="c">circa 1550.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="300">
+    <subfield code="a">1 volume (approximately 306 pages) ;</subfield>
+    <subfield code="c">20 cm</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="336">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="337">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="338">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="545">
+    <subfield code="a">Jónsbók is a law code developed by King Haakon IV Haakonsson of Norway, who
+      gained sovereignty over Iceland and Greenland in 1261-1262. The existing laws were
+      subsequently compiled by Jón Einarsson (hence the name Jónsbók) at the request of King Magnus
+      Hakonsson (Magnus VI Lagabœtir, son of Haakon IV). The Alþing, the Icelandic parliament,
+      accepted Jónsbók as its legal code in 1281. It was in force until the 17th century, and some
+      of its provisions remain in force today.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Manuscript fair copy on vellum, with many scribal abbreviations. Rubricated,
+      with decorated initials. Rebound in white calf, with contrasting morocco spine label. Housed
+      in clamshell box. Its original binding, together with its original sewing material and
+      supports, is housed in a separate clamshell box, lettered Lögbók Íslendinga on
+      spine.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">In Old Norse.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="561">
+    <subfield code="a">Provenance: Willard Fiske (bookplate). Purchased from Quaritch in London in
+      1886.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="524">
+    <subfield code="a">Jónsbók, #8765 Bd. Ms. 1. Division of Rare and Manuscript Collections,
+      Cornell University Library.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Law</subfield>
+    <subfield code="z">Iceland.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Law.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00993678</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="651">
+    <subfield code="a">Iceland.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01210572</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="700">
+    <subfield code="a">Jón Einarsson,</subfield>
+    <subfield code="e">compiler.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="700">
+    <subfield code="a">Haakon</subfield>
+    <subfield code="b">IV Haakonsson,</subfield>
+    <subfield code="c">King of Norway,</subfield>
+    <subfield code="d">1204-1263.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="700">
+    <subfield code="a">Magnus</subfield>
+    <subfield code="b">VI Lagabœtir,</subfield>
+    <subfield code="c">King of Norway,</subfield>
+    <subfield code="d">1238-1280.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">Fiske, Willard,</subfield>
+    <subfield code="d">1831-1904,</subfield>
+    <subfield code="e">former owner.</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="710">
+    <subfield code="a">Fiske Icelandic Collection.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="994">
+    <subfield code="a">C0</subfield>
+    <subfield code="b">COO</subfield>
+  </datafield>
+</record>
