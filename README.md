@@ -20,11 +20,7 @@ standard columns. By default the name of the output file is `output.csv`, but an
 alternate name and path can be specified with the `-o, --output-csv=` option.
 
 All output CSV files have the same columns in the same order. Columns names and
-order are set in `lib/ds/constants.rb` and can be access via
-
-```ruby
-DS::HEADINGS
-```
+order are set in `lib/ds/constants.rb` and can be access via `DS::HEADINGS`.
 
 ## Legacy Digital Scriptorium data scripts
 
@@ -34,9 +30,10 @@ DS for cataloging and image hosting_. For this list, see below.
 
 ```
 scripts/
-├── ds-image-counts.rb      # Count online images for dependent org's
-├── locate_ds10_jpegs.rb    # From METS files locate JPEG images
-└── sheet.rb                # From METS files locate TIFF images
+├── collect-protoptype-data.sh  # Pull together all the prototype CSV
+├── ds-image-counts.rb          # Count online images for dependent org's
+├── locate_ds10_jpegs.rb        # From METS files locate JPEG images
+└── sheet.rb                    # From METS files locate TIFF images
 ```
 
 Locate scripts rely on METS files and image lists found in the gzipped tarball
@@ -95,3 +92,38 @@ bundler; e.g.,
 ```shell
 $ bundle exec ruby scripts/ds-image-counts.rb
 ```
+
+### Configuration
+
+Several of the scripts rely on mappings from institution names to Wikidata QIDs
+for CSV output. These have be entered manually in `lib/ds/constants.rb`.
+
+Wikidata QIDs for institutions are mapped to institution names in
+`lib/ds/constants.rb` in `QID_TO_INSTITUTION_NAMES`. This hash is used to create
+a reverse hash, `INSTITUTION_NAMES_TO_QID`, which maps institution names and the
+one-word aliases to Wikidata QID URLs.
+
+```ruby
+    # Hash from QID to array of institution names, preferred name is first;
+    # alias is last
+    # primarily useful as a non repeating configuration for other hashes
+    QID_TO_INSTITUTION_NAMES = {
+      'Q814779'   => ['Beinecke Rare Book & Manuscript Library', 'beinecke'],
+      'Q995265'   => ['Bryn Mawr College', 'brynmawr'],
+      'Q63969940' => ['Burke Library at Union Theological Seminary', 'burke'],
+      'Q5146808'  => ['The College of Physicians of Philadelphia'],
+      'Q30257935' => ['Conception Abbey and Seminary', 'Conception Seminary College', 'conception'],
+      'Q1093910'  => ['City College of New York', 'cuny', 'ccny'],
+      'Q5021042'  => ['State of California', 'California State Library', 'csl'],
+    # ... etc.
+    }
+```
+
+To modify values for a QID already in the list, edit the array contents.
+
+To add a new QID, create a new key-value pair. Make sure the new QID is not a
+duplicate.
+
+Arrays can be any length to allow for a number of variant names. The preferred
+name for the institution should be first in the list, and alias(es) should come
+at the end.
