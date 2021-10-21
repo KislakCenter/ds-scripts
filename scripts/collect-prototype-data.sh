@@ -17,6 +17,19 @@ LEGACY_INSTS="conception csl cuny grolier gts indiana kansas nelsonatkins nyu pr
 # These are the folders in data/prototype-data/ containing MARC XML
 MARC_INSTS="penn cornell columbia burke"
 
+##############
+# Pre-run test
+##############
+if [[ -e ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds ]]; then
+  : # do nothing; we the METS files are available
+else
+  echo "ERROR: METS folders not found: '${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds'" >&2
+  echo "Please: unzip ${SCRIPT_DIR}/../data/digitalassets-lib-berkeley-edu.tgz to ${SCRIPT_DIR}/../data" >&2
+  echo "Run: " >&2
+  echo "    tar xf ${SCRIPT_DIR}/../data/digitalassets-lib-berkeley-edu.tgz --directory ${SCRIPT_DIR}/../data" >&2
+  exit 1
+fi
+
 ################
 # DS legacy METS
 ################
@@ -37,7 +50,7 @@ done
 #######################
 # Combine in single CSV
 #######################
-# get a list of all of the CSVs: legacy.csv penn.csv [...]
+# list of all of the CSVs: legacy.csv penn.csv [...]
 CSVS=$(for x in legacy ${MARC_INSTS}; do echo "${x}.csv"; done)
 (
   cd $TMP_DIR
@@ -48,4 +61,4 @@ CSVS=$(for x in legacy ${MARC_INSTS}; do echo "${x}.csv"; done)
   tail -q -n +2 ${CSVS} >> combined-ds.csv
 )
 
-echo "Wrote '${TMP_DIR}/combined-ds.csv'"
+echo "Wrote: ${TMP_DIR}/combined-ds.csv"
