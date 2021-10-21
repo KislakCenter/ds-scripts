@@ -9,7 +9,7 @@ Scriptorium.
 There are three transformation scripts:
 
 ```
-scripts/
+bin/
 ├── ds1-mets-to-ds.rb    # Convert Digital Scriptorium METS XML
 ├── marc-xml-to-ds.rb    # Convert MARC XML
 └── openn-tei-to-ds.rb   # Convert OPenn TEI XML
