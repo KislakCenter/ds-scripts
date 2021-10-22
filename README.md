@@ -11,6 +11,7 @@ There are three transformation scripts:
 ```
 bin/
 ├── ds1-mets-to-ds.rb    # Convert Digital Scriptorium METS XML
+├── marc-mrc-to-xml.rb   # Extract MARC XML from MARC MRC/DAT
 ├── marc-xml-to-ds.rb    # Convert MARC XML
 └── openn-tei-to-ds.rb   # Convert OPenn TEI XML
 ```
