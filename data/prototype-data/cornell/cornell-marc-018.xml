@@ -1,124 +1,102 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>03040ctma 2200457Ma 4500</leader>
-  <controlfield tag="001">ocm64755978 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132912.0</controlfield>
-  <controlfield tag="008">000814q12751300xx 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCF</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCA</subfield>
+  <leader>03139ctmaa2200481 a 4500</leader>
+  <controlfield tag="001">3978587</controlfield>
+  <controlfield tag="005">20141225215506.0</controlfield>
+  <controlfield tag="008">000518q14001500be a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV00A61</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64755978</subfield>
+    <subfield code="a">(CStRLIN)NYCV00-A61</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">3978587</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="130">
-    <subfield code="a">Lives of the Saints.</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64758500</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">amremm</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Manual</subfield>
   </datafield>
   <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Vita beati Francisci [... et al.].</subfield>
+    <subfield code="a">Manuale in investionibus, professionibus, et iubileis monialium necessarium,
+      ad usum prioris monasterii Rubee vallis.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Belgium, between ca. 1275 and ca. 1300]</subfield>
+    <subfield code="a">[Rougeval, Belgium (near Brussels),</subfield>
+    <subfield code="c">between ca. 1400 and ca. 1500]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">180 leaves :</subfield>
+    <subfield code="a">52 leaves :</subfield>
     <subfield code="b">parchment ;</subfield>
-    <subfield code="c">248 x 175 (172-180 x 110-115) mm. bound to 260 x 190 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
+    <subfield code="c">145 x 109 (99 x 70) mm. bound to 153 x 118 mm.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
     <subfield code="a">Ms. codex.</subfield>
   </datafield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Ceremonial for Augustinian nuns.</subfield>
+  </datafield>
   <datafield ind1=" " ind2=" " tag="546">
     <subfield code="a">Text in Latin.</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">1. ff. 1ra-63vb: Vita beati Francisci -- 2. ff. 63vb-87vb: Quedam de
-      miraculis ipsius post mortem ostensis et primo de virtutibus sacrorum stigmatum -- 3. ff.
-      88ra-88vb: Vita beati Antonii (beginning of the &quot;Assidua&quot; or shorter version;
-      incomplete) -- 4. ff. 89ra-120rb: Vita beati Antonii (the &quot;Benignitas&quot; or longer
-      version, begins imperfectly; fol. 88 was apparently inserted to help remedy the
-      loss).</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">(Continued) 5. ff. 120va-125rb: Privilegium sancte Clare -- 6. ff.
-      125rb-148ra: Vita et legenda sanctissime virginis Clare ordinis pauperum dominarum sancti
-      Damiani aput Assysyum -- 7. ff. 148ra-173vb: Legenda sancte Katherine virginis [Passio beate
-      Katharine] -- 8. ff. 173vb-179vb: Legenda sancte Margarete virginis et martiris -- 9. ff.
-      179vb-180vb: De stigmatibus sancti Francisci (ends imperfectly).</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Contents: f. 1r: Title in a 17th-century hand -- ff. 2r-7v: &quot;De iubileo
+      sororum&quot; in a 15th-century formal Gothic hand -- f. 8r: blank -- f. 8v: Additions to the
+      service in a 17th-century cursive hand and a contemporary pseudo-Gothic hand -- ff. 9r-27v (in
+      a formal Gothic hand): Ceremonial for the induction of a nun into the Augustinian order,
+      beginning &quot;Postq[ua]m p[er]sona q[ue] ad h[a]bitu[m] religionis...&quot;, and ending
+      &quot;e[t] s[ic] introducat[ur].&quot; -- ff. 27v-32r: &quot;De iubileo sororum&quot;
+      reiterated (see ff. 2r-7v), with variations, in a Gothic hybrid hand -- ff. 32v-33v: blank --
+      ff. 34r-51v: Ceremonial which appears on ff. 9r-27v reiterated, with variations, in a formal
+      Gothic hand -- 52r: Three injunctions in a 17th-century hand on a slip of paper tipped into
+      the flyleaf.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 2 columns of 29 or 23 lines; frame-ruled in
-      ink.</subfield>
+    <subfield code="a">Layout: Written in 16 (or 17) long lines; frame-ruled, prickings visible on
+      some folios.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The manuscript was composed in two separate albeit contemporary stages,
-      corresponding to ff. 1-87 (29 lines per column) and ff. 88-180 (23 lines per
-      column).</subfield>
+    <subfield code="a">Script: Gothic textual and Gothic hybrid hands of the 15th century; cursive
+      hands of the 17th century; 17th-century imitation of Gothic textual. A late (presumably
+      17th-century) hand has dotted the i&apos;s of the 15th-century Gothic textual on several
+      folios.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic textual quadrata (ff. 1-87); Gothic textual semi-rotunda (ff.
-      88-179vb); Gothic chancery (ff. 179vb-180vb).</subfield>
+    <subfield code="a">Music: Contains musical notation.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: ca. 1900, brown grained calfskin over heavy boards with five raised
-      bands; gilt edges. The front cover is loose.</subfield>
+    <subfield code="a">Binding: 17th century, calf.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: Dealer&apos;s description (13 pp.), in an envelope
-      labeled &quot;Rare Bd. Mss ...&quot;</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Probably written in Belgium, in the last quarter of the 13th
-      century.</subfield>
+    <subfield code="a">Origin: Written in Belgium, fifteenth century.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Emily May Thornton, 1893 . Obtained from Bruce Ferrini,
-      1995.</subfield>
+    <subfield code="a">Provenance: L. Weerdt. Obtained in Europe by A.D. White in 1886. Donated to
+      the White Library in 1891.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
     <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 615.</subfield>
+      Misc. Bd. Ms. 31.</subfield>
   </datafield>
-  <datafield ind1="2" ind2="0" tag="610">
-    <subfield code="a">Franciscans.</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Former shelfmark: MSS Bd. Rare BX C36 M295</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Related shelfmark: MS B.37</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
+      States and Canada,</subfield>
+    <subfield code="c">II, p. 1235.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Hagiography.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2="7" tag="610">
-    <subfield code="a">Franciscans.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00530004</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Hagiography.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00950239</subfield>
+    <subfield code="a">Monastic and religious life</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
     <subfield code="a">Gothic scripts.</subfield>
@@ -128,25 +106,46 @@
     <subfield code="a">Parchment.</subfield>
     <subfield code="2">aat</subfield>
   </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Monastic and religious life</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01025101</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">White, Andrew Dickson,</subfield>
+    <subfield code="d">1832-1918.</subfield>
+  </datafield>
   <datafield ind1="2" ind2=" " tag="710">
     <subfield code="a">Cornell University.</subfield>
     <subfield code="b">Library.</subfield>
     <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
     <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 615.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 31.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="752">
     <subfield code="a">Belgium.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">Lives of the Saints.</subfield>
-    <subfield code="t">Vita beati Francisci [... et al.]</subfield>
-    <subfield code="d">[Belgium, between ca. 1275 and ca. 1300]</subfield>
-    <subfield code="w">(OCoLC)1129079624</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 31</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="1" ind2=" " tag="899">
+    <subfield code="a">med</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20141225</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">addfast</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">d67bc2d0-a67d-4414-9577-e4a39b18e641</subfield>
+    <subfield code="s">3965c214-7fb2-4cfd-a486-3955254d2a34</subfield>
   </datafield>
 </record>

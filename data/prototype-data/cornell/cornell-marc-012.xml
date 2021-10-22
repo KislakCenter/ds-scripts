@@ -1,44 +1,48 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>05993ctma 2200589Ma 4500</leader>
-  <controlfield tag="001">ocm64758484 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132912.0</controlfield>
-  <controlfield tag="008">000602q13011400xx a 000 0 lat d</controlfield>
+  <leader>02381ctm a2200421 a 4500</leader>
+  <controlfield tag="001">13128245</controlfield>
+  <controlfield tag="005">20210118044052.0</controlfield>
+  <controlfield tag="008">201201s1550 ic 000 0 non d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)1224949622</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">13128245</subfield>
+  </datafield>
   <datafield ind1=" " ind2=" " tag="040">
     <subfield code="a">COO</subfield>
     <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
     <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCQ</subfield>
+    <subfield code="e">dcrmmss</subfield>
+    <subfield code="d">COO</subfield>
     <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">COO</subfield>
+    <subfield code="d">NIC</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758484</subfield>
+  <datafield ind1=" " ind2=" " tag="043">
+    <subfield code="a">e-ic---</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2="9" tag="099">
+    <subfield code="a">8765 Bd. Ms. 1</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="100">
-    <subfield code="a">James,</subfield>
-    <subfield code="c">of Viterbo, Archbishop of Naples,</subfield>
-    <subfield code="d">approximately 1255-1307 or 1308.</subfield>
+  <datafield ind1="1" ind2=" " tag="110">
+    <subfield code="a">Iceland.</subfield>
   </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">[Quodlibeta] /</subfield>
-    <subfield code="c">James of Viterbo [and others].</subfield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Jónsbók.</subfield>
+    <subfield code="f">1550</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy (Fabriano)],</subfield>
-    <subfield code="c">[14th century]</subfield>
+  <datafield ind1="0" ind2="0" tag="245">
+    <subfield code="a">Jónsbók :</subfield>
+    <subfield code="k">manuscript fair copy.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="264">
+    <subfield code="a">Iceland,</subfield>
+    <subfield code="c">circa 1550.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">121 leaves :</subfield>
-    <subfield code="b">parchment, illustrations ;</subfield>
-    <subfield code="c">226 x 170 (164 x 117) mm bound to 236 x 180 mm</subfield>
+    <subfield code="a">1 volume (approximately 306 pages) ;</subfield>
+    <subfield code="c">20 cm</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="336">
     <subfield code="a">text</subfield>
@@ -55,168 +59,89 @@
     <subfield code="b">nc</subfield>
     <subfield code="2">rdacarrier</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Composite ms. codex.</subfield>
+  <datafield ind1="1" ind2=" " tag="545">
+    <subfield code="a">Jónsbók is a law code developed by King Haakon IV Haakonsson of Norway, who
+      gained sovereignty over Iceland and Greenland in 1261-1262. The existing laws were
+      subsequently compiled by Jón Einarsson (hence the name Jónsbók) at the request of King
+      Magnus Hakonsson (Magnus VI Lagabœtir, son of Haakon IV). The Alþing, the Icelandic
+      parliament, accepted Jónsbók as its legal code in 1281. It was in force until the 17th
+      century, and some of its provisions remain in force today.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">James of Viterbo&apos;s Quodlibeta, Books I, II, and IV (ff. 1-90); the
-      manuscript misidentifies Book IV as Book III. The works of pseudo-Dionysius the Areopagite
-      (ff. 91-121) were added later and are written on irregular scraps of parchment.</subfield>
+    <subfield code="a">Manuscript fair copy on vellum, with many scribal abbreviations. Rubricated,
+      with decorated initials. Rebound in white calf, with contrasting morocco spine label. Housed
+      in clamshell box. Its original binding, together with its original sewing material and
+      supports, is housed in a separate clamshell box, lettered Lögbók Íslendinga on
+      spine.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
+    <subfield code="a">In Old Norse.</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">1. ff. 1ra-37rb: [Disputatio prima de quolibet] / James of Viterbo -- 2. ff.
-      37rb-73vb: [Disputatio secunda de quolibet] / James of Viterbo -- 3. ff. 74ra-74va: [Untitled
-      text]; incipit: &quot;[U]trum el[ement]a manea[n]t i[n] mixto q[uantu]m ad suas
-      s[u]b[stanti]as [et] n[atur]as ...&quot; -- 4. ff. 75ra-89rb: [Disputatio quarta de quolibet]
-      / James of Viterbo -- 5. ff. 89va-90va: [Untitled text]; incipit: &quot;[U]trum for[m]a
-      s[u]bsta[nti]al[is] i[n]troducat[ur] succe[ssi]ve ...&quot; -- 6. ff. 91r-96v: De celesti
-      ierarchia / Pseudo-Dionysius the Areopagite -- 7. ff. 97r-104v: De ecclesiastica ierarchia /
-      Pseudo-Dionysius the Areopagite -- 8. ff. 105r-118r: De divinis nominibus / Pseudo-Dionysius
-      the Areopagite -- 9. ff. 118r-118v: De mystica theologia / Pseudo-Dionysius the Areopagite --
-      10. ff. 118v-121r: [Epistole] / Pseudo-Dionysius the Areopagite. -- 11. ff. 121r-121v:
-      [Accessus ad Dionysium Areopagitam] / Anon.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Fols. 1-72 are numbered (in medieval Arabic numerals) to correspond with the
-      quodlibetal question that appears on that folio; many of these numerals, which appear in the
-      upper right corner of the recto side, have been mutilated by trimming. The absence of such
-      numeration from fols. 73-90 may be due to trimming.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Fol. 104 has been torn, with the loss of some text.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Fols. 1-90 written in 2 columns of 44 lines; fols. 91-121 written in
-      as many as 65 long lines, with much variation.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic textual, several hands. The letter-forms in fols. 91-121 show
-      chancery influence and cursive tendencies.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Fols. 1-90 contain large illuminated initials and smaller
-      initials in red or blue with red or violet flourishes. Fols. 91-121 are not
-      decorated.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: Modern, paper with leather straps. The manuscript was rebound by P.
-      Verhegen on 8/2/1994. The previous binding has not been preserved; Calkins states that it
-      consisted of 18th-century vellum, stamped with the initials &quot;W.D.B.&quot; and the date
-      &quot;1701&quot;. It would therefore share the same provenance as Misc. Bd. Ms. 2 (Quinque
-      Platonicae sapientiae claves / Marsilio Ficino), which bears the same initials and date
-      stamped on a white vellum wrapper.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: three leaves of Latin transcription in modern cursive
-      hands.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Fols. 1-90 were written in Fabriano, Italy by a certain William who
-      belonged to the same religious order as James of Viterbo (Ordo Eremitarum Sancti Augustini),
-      14th century (see fol. 90v). The scripts contained in fols. 91-121 are not typically Italian,
-      and it is not known when the two manuscripts were first bound together.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: W.D.B. (1701) -- according to the old covers, which are no longer
-      extant, but reported by Calkins. Bought by George Lincoln Burr for the White Library, from
-      Tregaskis, London (Cat. 242, no. 16; May 1893).</subfield>
+  <datafield ind1="1" ind2=" " tag="561">
+    <subfield code="a">Provenance: Willard Fiske (bookplate). Purchased from Quaritch in London in
+      1886.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 39.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare BX J17.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.11 (De Ricci).</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
-      States and Canada,</subfield>
-    <subfield code="c">II, p. 1227; Calkins, R.G. Illuminated Manuscripts, p. 19, no. 7; Ypma, E.
-      Jacobi de Viterbio O.E.S.A. Disputatio Prima de Quolibet, p. x; Ypma, E. Jacobi de Viterbio
-      O.E.S.A. Disputatio Quarta de Quolibet, pp. vi-vii.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="581">
-    <subfield code="a">1. Jacobi de Viterbio O.E.S.A. Disputatio Prima de Quolibet, ed. E. Ypma,
-      Würzburg-Rome, 1968; 2. Jacobi de Viterbio O.E.S.A. Disputatio Secunda de Quolibet, ed. E.
-      Ypma, Würzburg, 1969; 4. Jacobi de Viterbio O.E.S.A. Disputatio Quarta de Quolibet, ed. E.
-      Ypma, Würzburg-Rome, 1975; 6. Patrologia latina 122:1037-1070; 7. Patrologia latina
-      122:1069-1112; 8. Patrologia latina 122:1115-1172; 9. Patrologia latina 122:1171-1176; 10.
-      Patrologia latina 122:1177-1194.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The present manuscript was used by Eelcko Ypma in his edition of the
-      Disputatio Quarta of James of Viterbo (1975), but not in his editions of the earlier
-      books.</subfield>
+    <subfield code="a">Jónsbók, #8765 Bd. Ms. 1. Division of Rare and Manuscript Collections,
+      Cornell University Library.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="v">Early works to 1800.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Mysticism.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Quaestiones disputatae.</subfield>
+    <subfield code="a">Law</subfield>
+    <subfield code="z">Iceland.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Mysticism.</subfield>
+    <subfield code="a">Law.</subfield>
     <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01031629</subfield>
+    <subfield code="0">(OCoLC)fst00993678</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Theology.</subfield>
+  <datafield ind1=" " ind2="7" tag="651">
+    <subfield code="a">Iceland.</subfield>
     <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01149559</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Parchment.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
+    <subfield code="0">(OCoLC)fst01210572</subfield>
   </datafield>
   <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Dionysius,</subfield>
-    <subfield code="c">the Areopagite, Saint,</subfield>
-    <subfield code="d">active 1st century.</subfield>
+    <subfield code="a">Jón Einarsson,</subfield>
+    <subfield code="e">compiler.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="700">
+    <subfield code="a">Haakon</subfield>
+    <subfield code="b">IV Haakonsson,</subfield>
+    <subfield code="c">King of Norway,</subfield>
+    <subfield code="d">1204-1263.</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="700">
+    <subfield code="a">Magnus</subfield>
+    <subfield code="b">VI Lagabœtir,</subfield>
+    <subfield code="c">King of Norway,</subfield>
+    <subfield code="d">1238-1280.</subfield>
   </datafield>
   <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Burr, George Lincoln,</subfield>
-    <subfield code="d">1857-1938.</subfield>
+    <subfield code="a">Fiske, Willard,</subfield>
+    <subfield code="d">1831-1904,</subfield>
+    <subfield code="e">former owner.</subfield>
   </datafield>
   <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 39.</subfield>
+    <subfield code="a">Fiske Icelandic Collection.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy</subfield>
-    <subfield code="d">Fabriano.</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">8765 Bd. Ms. 1</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">James, of Viterbo, Archbishop of Naples, approximately 1255-1307 or
-      1308.</subfield>
-    <subfield code="t">[Quodlibeta]</subfield>
-    <subfield code="d">[Italy (Fabriano)], [14th century]</subfield>
-    <subfield code="w">(OCoLC)1129079575</subfield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20201202</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">mnr1</subfield>
+    <subfield code="e">lts</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20210118</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">WorldShare</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">911101ea-3fd7-42ce-8438-c0f8c5974c75</subfield>
+    <subfield code="s">2b9bd4ae-5104-4a34-857e-ee810d790523</subfield>
   </datafield>
 </record>

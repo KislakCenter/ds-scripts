@@ -1,125 +1,175 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02117ctma 2200361Ma 4500</leader>
-  <controlfield tag="001">ocm68051413 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132912.0</controlfield>
-  <controlfield tag="008">060417q11001135xx 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">appm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCF</subfield>
+  <leader>03222ctmaa2200565 a 4500</leader>
+  <controlfield tag="001">3816174</controlfield>
+  <controlfield tag="005">20141223205704.0</controlfield>
+  <controlfield tag="008">000417s1438 gw a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV00A37</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)68051413</subfield>
+    <subfield code="a">(CStRLIN)NYCV00-A37</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(NIC)notisATD6088</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="130">
-    <subfield code="a">Bible.</subfield>
-    <subfield code="p">Epistles of Paul.</subfield>
-    <subfield code="l">Latin.</subfield>
-    <subfield code="s">Vulgate.</subfield>
-    <subfield code="f">1100.</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">3816174</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64755185</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">amremm</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="240">
+    <subfield code="a">Ars computistica</subfield>
   </datafield>
   <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Epistles of St. Paul, with commentary,</subfield>
-    <subfield code="f">[ca. 1100-1135].</subfield>
+    <subfield code="a">[Computus Cirometralis]</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">Germany,</subfield>
+    <subfield code="c">1438.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 volume ([60] leaves) ;</subfield>
-    <subfield code="c">26 cm</subfield>
+    <subfield code="a">30 leaves :</subfield>
+    <subfield code="b">paper, ill. ;</subfield>
+    <subfield code="c">219 x 146 (167 x 112) mm., unbound.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Ms. gatherings.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">Text in Latin.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">This manuscript is related to Misc. Bd. Mss. 12 and 146. All three are
+      unbound, written on paper of nearly identical dimensions and in the same script, and all three
+      were acquired together from the same source.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Manuscript on vellum, in Latin, written in Italian Caroline miniscule,
-      rubricated and glossed. The text contains a few large decorated initials. Many leaves are
-      lacking. The text begins: Domino non manducat (from Romans 14:6) and ends: Homines enim per
-      majorem (from Hebrews 6:16). The volume is housed in a cloth case, together with several
-      handwritten bibliographical descriptions of the manuscript, including one description by E.S.
-      Buchanan, and another in a letter from George Lincoln Burr to E.C. Mitchell.</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">The date &quot;1438&quot; appears on fol. 16r in the text, and is repeated in
+      the outer margin in ink by a 19th-century hand.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="506">
-    <subfield code="a">By appointment only.</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Fol. 11 is torn, so that text on 11r and half of a full-page table on 11v
+      have been lost.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="530">
-    <subfield code="a">Also on microfilm.</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">A slip of paper has been inserted to add a table between fols. 13v and 14r;
+      the other half of the slip, appearing between fols. 21v and 22r, is blank.</subfield>
   </datafield>
-  <datafield ind1="1" ind2=" " tag="561">
-    <subfield code="a">Provenance: Andrew Dickson White (bookplate).</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Written in 41-48 long lines; occasionally framed, but unruled. The
+      text is interrupted by tables and diagrams.</subfield>
   </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">Calkins, R.G. Medieval and Renaissance Illuminated Manuscripts in the Cornell
-      University Library, 2003 rev.,</subfield>
-    <subfield code="c">23; de Ricci, II, 1245</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Script: Gothic cursive; formal Gothic hybrid used in tables and
+      diagrams.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Decoration: Tables, diagrams, decorated initials.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Binding: Unbound, boxed.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Accompanying materials: Loose paper cover in which the manuscript was once
+      stored, with the title &quot;Computus Cirometralis [1438.]&quot; in the hand of George Lincoln
+      Burr; inside the cover is a note by Burr indicating provenance and other details about the
+      manuscript.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Written in Germany at the monastery of Ewich near Attendorn, in
+      1438.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="561">
+    <subfield code="a">Provenance: &quot;Liber monasterii in Ewich regularium iuxta Attendorn&quot;
+      (fol. 1r). Dr. Gerhard Hennen of Trier. Bought by George Lincoln Burr for the White Library in
+      1888 at Düsseldorf, Germany.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Epistles of St. Paul, With Commentary, #4600. Division of Rare and Manuscript
-      Collections, Cornell University Library.</subfield>
+    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
+      Misc. Bd. Ms. 115.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="0" tag="630">
-    <subfield code="a">Bible.</subfield>
-    <subfield code="p">Epistles of Paul</subfield>
-    <subfield code="v">Commentaries.</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Former shelfmark: MSS Bd. Rare P A78</subfield>
   </datafield>
-  <datafield ind1="0" ind2="7" tag="630">
-    <subfield code="a">Bible.</subfield>
-    <subfield code="p">Epistles of Paul.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01808029</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Related shelfmark: MS B.53 (De Ricci)</subfield>
+  </datafield>
+  <datafield ind1="4" ind2=" " tag="510">
+    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
+      States and Canada,</subfield>
+    <subfield code="c">II, p. 1237.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Calendar.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="0" tag="650">
+    <subfield code="a">Mathematics</subfield>
+    <subfield code="x">Early works to 1800.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Commentaries.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01423723</subfield>
+    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="2">aat</subfield>
   </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">White, Andrew Dickson,</subfield>
-    <subfield code="d">1832-1918.</subfield>
-    <subfield code="4">fmo</subfield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Scientific illustrations.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Calendar</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00844160</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Mathematics</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01012163</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Early works</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01411636</subfield>
   </datafield>
   <datafield ind1="1" ind2=" " tag="700">
     <subfield code="a">Burr, George Lincoln,</subfield>
     <subfield code="d">1857-1938.</subfield>
   </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Mitchell, E. C.</subfield>
-    <subfield code="q">(Edward Cushing),</subfield>
-    <subfield code="d">1829-1900.</subfield>
+  <datafield ind1="2" ind2=" " tag="710">
+    <subfield code="a">Cornell University.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
+    <subfield code="k">Manuscript.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 115.</subfield>
   </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Buchanan, E. S.</subfield>
-    <subfield code="q">(Edgar Simmons),</subfield>
-    <subfield code="d">1872-1932.</subfield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">Germany.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">Bible. Epistles of Paul. Latin. Vulgate. 1100.</subfield>
-    <subfield code="t">Epistles of St. Paul, with commentary, [ca. 1100-1135]</subfield>
-    <subfield code="w">(OCoLC)1129079642</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 115 +</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="1" ind2=" " tag="899">
+    <subfield code="a">med</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20141223</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">addfast</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">d06525fb-2ca5-425d-bf41-f55d3b66f3fa</subfield>
+    <subfield code="s">3d741cdd-8922-4dac-bc4f-f252718ac761</subfield>
   </datafield>
 </record>

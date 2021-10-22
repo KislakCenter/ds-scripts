@@ -1,181 +1,124 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>05993ctma 2200589Ma 4500</leader>
-  <controlfield tag="001">ocm64758484 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132911.0</controlfield>
-  <controlfield tag="008">000602q13011400xx a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCF</subfield>
+  <leader>03667ctmaa2200589 a 4500</leader>
+  <controlfield tag="001">3963913</controlfield>
+  <controlfield tag="005">20141225213001.0</controlfield>
+  <controlfield tag="008">000726q14001500it 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV00A116</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758484</subfield>
+    <subfield code="a">(CStRLIN)NYCV00-A116</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">3963913</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64758147</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">amremm</subfield>
   </datafield>
   <datafield ind1="0" ind2=" " tag="100">
-    <subfield code="a">James,</subfield>
-    <subfield code="c">of Viterbo, Archbishop of Naples,</subfield>
-    <subfield code="d">approximately 1255-1307 or 1308.</subfield>
+    <subfield code="a">Pliny,</subfield>
+    <subfield code="c">the Elder.</subfield>
   </datafield>
   <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">[Quodlibeta] /</subfield>
-    <subfield code="c">James of Viterbo [and others].</subfield>
+    <subfield code="a">Naturalis Historia.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy (Fabriano)],</subfield>
-    <subfield code="c">[14th century]</subfield>
+    <subfield code="a">[Italy,</subfield>
+    <subfield code="d">15th century]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">121 leaves :</subfield>
-    <subfield code="b">parchment, illustrations ;</subfield>
-    <subfield code="c">226 x 170 (164 x 117) mm bound to 236 x 180 mm</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
+    <subfield code="a">147 leaves :</subfield>
+    <subfield code="b">parchment ;</subfield>
+    <subfield code="c">190 x 130 (125-135 x 60-65) mm. bound to 199 x 137 mm.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Composite ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">James of Viterbo&apos;s Quodlibeta, Books I, II, and IV (ff. 1-90); the
-      manuscript misidentifies Book IV as Book III. The works of pseudo-Dionysius the Areopagite
-      (ff. 91-121) were added later and are written on irregular scraps of parchment.</subfield>
+    <subfield code="a">Ms. codex.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="546">
     <subfield code="a">Text in Latin.</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">1. ff. 1ra-37rb: [Disputatio prima de quolibet] / James of Viterbo -- 2. ff.
-      37rb-73vb: [Disputatio secunda de quolibet] / James of Viterbo -- 3. ff. 74ra-74va: [Untitled
-      text]; incipit: &quot;[U]trum el[ement]a manea[n]t i[n] mixto q[uantu]m ad suas
-      s[u]b[stanti]as [et] n[atur]as ...&quot; -- 4. ff. 75ra-89rb: [Disputatio quarta de quolibet]
-      / James of Viterbo -- 5. ff. 89va-90va: [Untitled text]; incipit: &quot;[U]trum for[m]a
-      s[u]bsta[nti]al[is] i[n]troducat[ur] succe[ssi]ve ...&quot; -- 6. ff. 91r-96v: De celesti
-      ierarchia / Pseudo-Dionysius the Areopagite -- 7. ff. 97r-104v: De ecclesiastica ierarchia /
-      Pseudo-Dionysius the Areopagite -- 8. ff. 105r-118r: De divinis nominibus / Pseudo-Dionysius
-      the Areopagite -- 9. ff. 118r-118v: De mystica theologia / Pseudo-Dionysius the Areopagite --
-      10. ff. 118v-121r: [Epistole] / Pseudo-Dionysius the Areopagite. -- 11. ff. 121r-121v:
-      [Accessus ad Dionysium Areopagitam] / Anon.</subfield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Contains Pliny&apos;s Naturalis Historia, beginning in Book 3 (3.1.3:
+      &quot;Terrarum orbis universus...&quot;) and ending at the conclusion of Book 6 (&quot;...et
+      hactenus de terris.&quot;).</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Fols. 1-72 are numbered (in medieval Arabic numerals) to correspond with the
-      quodlibetal question that appears on that folio; many of these numerals, which appear in the
-      upper right corner of the recto side, have been mutilated by trimming. The absence of such
-      numeration from fols. 73-90 may be due to trimming.</subfield>
+    <subfield code="a">The first 36 folios contain numerous brief glosses in the margins (mostly of
+      place-names that occur in the text).</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Fol. 104 has been torn, with the loss of some text.</subfield>
+    <subfield code="a">Folios 105 and 112 have been incorrectly bound, and the modern foliation has
+      taken the error into account. Thus, the folios are numbered: 1-104, 106-111, 105, 113-120,
+      112, 121-147.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Fols. 1-90 written in 2 columns of 44 lines; fols. 91-121 written in
-      as many as 65 long lines, with much variation.</subfield>
+    <subfield code="a">Many of the folios are palimpsest; the earlier script appears to be a 14th or
+      15th century cursive, and may be written in a vernacular, possibly Portugese.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic textual, several hands. The letter-forms in fols. 91-121 show
-      chancery influence and cursive tendencies.</subfield>
+    <subfield code="a">Several mutilated folios which are missing marginal strips of parchment have
+      been repaired with tissue. The last two folios (both blank) have been pasted together,
+      apparently to repair the mutilation of the second.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Fols. 1-90 contain large illuminated initials and smaller
-      initials in red or blue with red or violet flourishes. Fols. 91-121 are not
-      decorated.</subfield>
+    <subfield code="a">Layout: Written in 25-26 long lines; framed-ruled in dry point. Prickings
+      sometimes visible.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: Modern, paper with leather straps. The manuscript was rebound by P.
-      Verhegen on 8/2/1994. The previous binding has not been preserved; Calkins states that it
-      consisted of 18th-century vellum, stamped with the initials &quot;W.D.B.&quot; and the date
-      &quot;1701&quot;. It would therefore share the same provenance as Misc. Bd. Ms. 2 (Quinque
-      Platonicae sapientiae claves / Marsilio Ficino), which bears the same initials and date
-      stamped on a white vellum wrapper.</subfield>
+    <subfield code="a">Script: Humanistic round.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: three leaves of Latin transcription in modern cursive
-      hands.</subfield>
+    <subfield code="a">Binding: 19th cent., red morocco, by J. Héritier. Spine is wrongly lettered
+      &quot;Ptolomaeus Geograph.&quot;, but now covered with the correct label: &quot;Plinius /
+      Historia Natura / lis / Books 3-6&quot;.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Fols. 1-90 were written in Fabriano, Italy by a certain William who
-      belonged to the same religious order as James of Viterbo (Ordo Eremitarum Sancti Augustini),
-      14th century (see fol. 90v). The scripts contained in fols. 91-121 are not typically Italian,
-      and it is not known when the two manuscripts were first bound together.</subfield>
+    <subfield code="a">Accompanying materials: Note in blue ink in a modern hand, tipped into the
+      front flyleaves, indicating the contents of the codex. Typed note on index card which claims
+      Portugese origin for the codex and suggests that it &quot;very probably belonged to one of the
+      old navigators&quot; (but no reasons for these suppositions are given).</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Probably written in Italy, 15th century.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: W.D.B. (1701) -- according to the old covers, which are no longer
-      extant, but reported by Calkins. Bought by George Lincoln Burr for the White Library, from
-      Tregaskis, London (Cat. 242, no. 16; May 1893).</subfield>
+    <subfield code="a">Provenance: Purchased in 1885 from Maisonneuve &amp; Co., Paris, by George
+      Lincoln Burr for A.D. White.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
     <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 39.</subfield>
+      Misc. Bd. Ms. 142.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare BX J17.</subfield>
+    <subfield code="a">Former shelfmark: MSS Bd. Rare P P72 N2</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.11 (De Ricci).</subfield>
+    <subfield code="a">Related shelfmark: MS B.6 (De Ricci)</subfield>
   </datafield>
   <datafield ind1="4" ind2=" " tag="510">
     <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
       States and Canada,</subfield>
-    <subfield code="c">II, p. 1227; Calkins, R.G. Illuminated Manuscripts, p. 19, no. 7; Ypma, E.
-      Jacobi de Viterbio O.E.S.A. Disputatio Prima de Quolibet, p. x; Ypma, E. Jacobi de Viterbio
-      O.E.S.A. Disputatio Quarta de Quolibet, pp. vi-vii.</subfield>
+    <subfield code="c">II, p. 1226.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="581">
-    <subfield code="a">1. Jacobi de Viterbio O.E.S.A. Disputatio Prima de Quolibet, ed. E. Ypma,
-      Würzburg-Rome, 1968; 2. Jacobi de Viterbio O.E.S.A. Disputatio Secunda de Quolibet, ed. E.
-      Ypma, Würzburg, 1969; 4. Jacobi de Viterbio O.E.S.A. Disputatio Quarta de Quolibet, ed. E.
-      Ypma, Würzburg-Rome, 1975; 6. Patrologia latina 122:1037-1070; 7. Patrologia latina
-      122:1069-1112; 8. Patrologia latina 122:1115-1172; 9. Patrologia latina 122:1171-1176; 10.
-      Patrologia latina 122:1177-1194.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The present manuscript was used by Eelcko Ypma in his edition of the
-      Disputatio Quarta of James of Viterbo (1975), but not in his editions of the earlier
-      books.</subfield>
+    <subfield code="a">Carolus Mayhoff, ed. C. Plini Secundi Naturalis Historiae, vol. 1 (Leipzig:
+      Teubner, 1906), pp. 230-522.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="v">Early works to 1800.</subfield>
+    <subfield code="a">Natural history</subfield>
+    <subfield code="v">Pre-Linnean works.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Mysticism.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Quaestiones disputatae.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Mysticism.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01031629</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Theology.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01149559</subfield>
+    <subfield code="a">Latin literature</subfield>
+    <subfield code="x">Natural history.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="a">Humanistic scripts.</subfield>
     <subfield code="2">aat</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
@@ -183,40 +126,64 @@
     <subfield code="2">aat</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works.</subfield>
+    <subfield code="a">Palimpsests.</subfield>
+    <subfield code="2">aat</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="650">
+    <subfield code="a">Natural history</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01034268</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Early works</subfield>
     <subfield code="2">fast</subfield>
     <subfield code="0">(OCoLC)fst01411636</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Dionysius,</subfield>
-    <subfield code="c">the Areopagite, Saint,</subfield>
-    <subfield code="d">active 1st century.</subfield>
   </datafield>
   <datafield ind1="1" ind2=" " tag="700">
     <subfield code="a">Burr, George Lincoln,</subfield>
     <subfield code="d">1857-1938.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="700">
+    <subfield code="a">White, Andrew Dickson,</subfield>
+    <subfield code="d">1832-1918.</subfield>
   </datafield>
   <datafield ind1="2" ind2=" " tag="710">
     <subfield code="a">Cornell University.</subfield>
     <subfield code="b">Library.</subfield>
     <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
     <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 39.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 142.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy</subfield>
-    <subfield code="d">Fabriano.</subfield>
+    <subfield code="a">Italy.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">James, of Viterbo, Archbishop of Naples, approximately 1255-1307 or
-      1308.</subfield>
-    <subfield code="t">[Quodlibeta]</subfield>
-    <subfield code="d">[Italy (Fabriano)], [14th century]</subfield>
-    <subfield code="w">(OCoLC)1129079575</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 142</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="1" ind2=" " tag="899">
+    <subfield code="a">med</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20131028</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">asl96</subfield>
+    <subfield code="e">lts</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20141225</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">addfast</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">379966f3-9a91-480b-bb65-ca553fac5c3d</subfield>
+    <subfield code="s">128f931f-2c97-4c9c-b0a4-fca4f9a4cfe5</subfield>
   </datafield>
 </record>

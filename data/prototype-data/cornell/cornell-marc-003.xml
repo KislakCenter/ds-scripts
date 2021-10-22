@@ -1,185 +1,76 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>03613ctma 2200565Ma 4500</leader>
-  <controlfield tag="001">ocm64758147 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132911.0</controlfield>
-  <controlfield tag="008">000726q14001500it 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCQ</subfield>
+  <leader>01066ctm a2200265 a 4500</leader>
+  <controlfield tag="001">6382455</controlfield>
+  <controlfield tag="005">20170418150315.0</controlfield>
+  <controlfield tag="008">081104s16uu nyua 000 0 per d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)268932040</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758147</subfield>
+    <subfield code="a">6382455</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">dacs</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="9" tag="099">
+    <subfield code="a">4600 Bd. Ms. 176</subfield>
   </datafield>
   <datafield ind1="0" ind2=" " tag="100">
-    <subfield code="a">Pliny,</subfield>
-    <subfield code="c">the Elder.</subfield>
+    <subfield code="a">Firdawsī.</subfield>
   </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Naturalis Historia.</subfield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Shāhnāmah</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy,</subfield>
-    <subfield code="c">15th century]</subfield>
+  <datafield ind1="0" ind2="0" tag="245">
+    <subfield code="a">Shah-nameh,</subfield>
+    <subfield code="f">1600s.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">147 leaves :</subfield>
-    <subfield code="b">parchment ;</subfield>
-    <subfield code="c">190 x 130 (125-135 x 60-65) mm. bound to 199 x 137 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
+    <subfield code="a">1 v. (395 leaves) :</subfield>
+    <subfield code="b">col. ill. ;</subfield>
+    <subfield code="c">30 cm.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Contains Pliny&apos;s Naturalis Historia, beginning in Book 3 (3.1.3:
-      &quot;Terrarum orbis universus ... &quot;) and ending at the conclusion of Book 6 (&quot; ...
-      et hactenus de terris.&quot;).</subfield>
+    <subfield code="a">Persian manuscript illustrated with about 40 color miniatures and numerous
+      small decorations in gold and colors. Lacks front and final pages. Rebound in cloth and housed
+      in cloth box.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The first 36 folios contain numerous brief glosses in the margins (mostly of
-      place-names that occur in the text).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Folios 105 and 112 have been incorrectly bound, and the modern foliation has
-      taken the error into account. Thus, the folios are numbered: 1-104, 106-111, 105, 113-120,
-      112, 121-147.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Many of the folios are palimpsest; the earlier script appears to be a 14th or
-      15th century cursive, and may be written in a vernacular, possibly Portugese.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Several mutilated folios which are missing marginal strips of parchment have
-      been repaired with tissue. The last two folios (both blank) have been pasted together,
-      apparently to repair the mutilation of the second.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 25-26 long lines; framed-ruled in dry point. Prickings
-      sometimes visible.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Humanistic round.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 19th cent., red morocco, by J. Héritier. Spine is wrongly lettered
-      &quot;Ptolomaeus Geograph.&quot;, but now covered with the correct label: &quot;Plinius /
-      Historia Natura / lis / Books 3-6.&quot;</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: Note in blue ink in a modern hand, tipped into the
-      front flyleaves, indicating the contents of the codex. Typed note on index card which claims
-      Portugese origin for the codex and suggests that it &quot;very probably belonged to one of the
-      old navigators&quot; (but no reasons for these suppositions are given).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Probably written in Italy, 15th century.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Purchased in 1885 from Maisonneuve &amp; Co., Paris, by George
-      Lincoln Burr for A.D. White.</subfield>
+  <datafield ind1=" " ind2=" " tag="546">
+    <subfield code="a">In Persian.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 142.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare P P72 N2.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.6 (De Ricci).</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
-      States and Canada,</subfield>
-    <subfield code="c">II, p. 1226</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="581">
-    <subfield code="a">Carolus Mayhoff, ed. C. Plini Secundi Naturalis Historiae, vol. 1 (Leipzig:
-      Teubner, 1906), pp. 230-522.</subfield>
+    <subfield code="a">Firdawsī. Shah nameh, #4600. Division of Rare and Manuscript Collections,
+      Cornell University Library.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Natural history</subfield>
-    <subfield code="v">Pre-Linnean works.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Latin literature</subfield>
-    <subfield code="x">Natural history.</subfield>
+    <subfield code="a">Epic poetry, Persian.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Natural history.</subfield>
+    <subfield code="a">Epic poetry, Persian</subfield>
     <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01034268</subfield>
+    <subfield code="0">(OCoLC)fst01741636</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Humanistic scripts.</subfield>
-    <subfield code="2">aat</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 176</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Parchment.</subfield>
-    <subfield code="2">aat</subfield>
+  <datafield ind1="1" ind2=" " tag="948">
+    <subfield code="a">20081104</subfield>
+    <subfield code="b">o</subfield>
+    <subfield code="d">mnr1</subfield>
+    <subfield code="e">lts</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Palimpsests.</subfield>
-    <subfield code="2">aat</subfield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20141230</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">addfast</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Burr, George Lincoln,</subfield>
-    <subfield code="d">1857-1938.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">White, Andrew Dickson,</subfield>
-    <subfield code="d">1832-1918.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 142.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">Pliny, the Elder.</subfield>
-    <subfield code="t">Naturalis Historia.</subfield>
-    <subfield code="d">[Italy, 15th century]</subfield>
-    <subfield code="w">(OCoLC)1129079627</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">36a35407-cc40-4708-a606-acac22334341</subfield>
+    <subfield code="s">14de088f-fc5c-45ab-ac21-807788c992b6</subfield>
   </datafield>
 </record>

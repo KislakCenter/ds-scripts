@@ -1,129 +1,131 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02163ctm 2200385Ia 4500</leader>
-  <controlfield tag="001">on1224949622</controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132913.0</controlfield>
-  <controlfield tag="008">201201s1550 ic 000 0 non d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">dcrmmss</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">COO</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">COO</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCF</subfield>
+  <leader>03203ctmaa2200421 a 4500</leader>
+  <controlfield tag="001">3864181</controlfield>
+  <controlfield tag="005">20140801215037.0</controlfield>
+  <controlfield tag="008">000816q12501300enk 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV00A136</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)1224949622</subfield>
+    <subfield code="a">(CStRLIN)NYCV00-A136</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="043">
-    <subfield code="a">e-ic---</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">3864181</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64755979</subfield>
   </datafield>
-  <datafield ind1="1" ind2=" " tag="110">
-    <subfield code="a">Iceland.</subfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">amremm</subfield>
   </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Jónsbók.</subfield>
-    <subfield code="f">1550</subfield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Latin Bible, with prologues attributed to St. Jerome and the interpretation
+      of Hebrew names.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">Jónsbók :</subfield>
-    <subfield code="k">manuscript fair copy.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="264">
-    <subfield code="a">Iceland,</subfield>
-    <subfield code="c">circa 1550.</subfield>
+  <datafield ind1=" " ind2=" " tag="260">
+    <subfield code="a">[England,</subfield>
+    <subfield code="c">between ca. 1250 and ca. 1300]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 volume (approximately 306 pages) ;</subfield>
-    <subfield code="c">20 cm</subfield>
+    <subfield code="a">429 (of 448) leaves :</subfield>
+    <subfield code="b">parchment ;</subfield>
+    <subfield code="c">303 x 220 (223 x 141) mm. bound to 322 x 241 mm.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="545">
-    <subfield code="a">Jónsbók is a law code developed by King Haakon IV Haakonsson of Norway, who
-      gained sovereignty over Iceland and Greenland in 1261-1262. The existing laws were
-      subsequently compiled by Jón Einarsson (hence the name Jónsbók) at the request of King Magnus
-      Hakonsson (Magnus VI Lagabœtir, son of Haakon IV). The Alþing, the Icelandic parliament,
-      accepted Jónsbók as its legal code in 1281. It was in force until the 17th century, and some
-      of its provisions remain in force today.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Manuscript fair copy on vellum, with many scribal abbreviations. Rubricated,
-      with decorated initials. Rebound in white calf, with contrasting morocco spine label. Housed
-      in clamshell box. Its original binding, together with its original sewing material and
-      supports, is housed in a separate clamshell box, lettered Lögbók Íslendinga on
-      spine.</subfield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Ms. codex.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">In Old Norse.</subfield>
+    <subfield code="a">Text in Latin.</subfield>
   </datafield>
-  <datafield ind1="1" ind2=" " tag="561">
-    <subfield code="a">Provenance: Willard Fiske (bookplate). Purchased from Quaritch in London in
-      1886.</subfield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">This Latin Bible embodies several characteristics of the standard Vulgate
+      text developed in the schools of Paris during the thirteenth century, in particular the order
+      of the books, the division into chapters established by Stephen Langon and still used, the
+      interpretation of Hebrew names copied at the end, and several of the prologues that became
+      standard.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Some lacunae due to the loss of leaves; missing Genesis 1:1-22:13 after f. 3,
+      II Chronicles 34:18-Tobit 4:9 after f. 139, Jeremiah 25:4-41:10 after f. 237.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Occasional marginal glosses in a later cursive hand (15th century), often
+      trimmed.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Written in double columns of 46 lines.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Script: Gothic textual.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Decoration: Red and blue Lombard initials of 3 to 5 lines in height with red
+      and blue pen-flourishing often extending the height of the page (introducing each book and
+      most prologues); red or blue Lombards of 2 lines in height with contrasting pen-flourishing;
+      1-line red or blue Lombards as chapter initials and versal intials in the Psalms; headlines
+      and chapter numbers in alternating red and blue Lombards; some capitals touched in yellow or
+      red; some rubrics in red, most rubrics not executed.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Binding: 19th cent., brown morocco, edges gilt. Spine: &quot;Biblia Latina /
+      Ms. Saec. XIV&quot;.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Accompanying materials: Copy of a detailed printed description (1 page), no.
+      94 from an unidentified source, in an envelope labeled &quot;Rare Bd.
+      Mss...K-221-A-3-B&quot;.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Origin: Written in England in the latter half of the 13th century.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="561">
+    <subfield code="a">Provenance: Possibly at Lanthony Priory near Gloucester (although it is not
+      listed in the 13th-century catalogue of the Lanthony library). Matthew Hale of Alderley,
+      Gloucestershire, 1686. Edward Sherwood Hale (sale, Christie&apos;s, 17 June 1946, lot 45).
+      Brian Douglas Stilwell (bookplate). An unidentified owner has pencilled a note on the flyleaf,
+      dated 1 Feb. 1960, with illegible signature.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Jónsbók, #8765 Bd. Ms. 1. Division of Rare and Manuscript Collections,
-      Cornell University Library.</subfield>
+    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
+      Misc. Bd. Ms. 616.</subfield>
   </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Law</subfield>
-    <subfield code="z">Iceland.</subfield>
+  <datafield ind1="0" ind2=" " tag="630">
+    <subfield code="a">Bible.</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Law.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00993678</subfield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="2">aat</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="651">
-    <subfield code="a">Iceland.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01210572</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Jón Einarsson,</subfield>
-    <subfield code="e">compiler.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Haakon</subfield>
-    <subfield code="b">IV Haakonsson,</subfield>
-    <subfield code="c">King of Norway,</subfield>
-    <subfield code="d">1204-1263.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Magnus</subfield>
-    <subfield code="b">VI Lagabœtir,</subfield>
-    <subfield code="c">King of Norway,</subfield>
-    <subfield code="d">1238-1280.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Fiske, Willard,</subfield>
-    <subfield code="d">1831-1904,</subfield>
-    <subfield code="e">former owner.</subfield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Parchment.</subfield>
+    <subfield code="2">aat</subfield>
   </datafield>
   <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Fiske Icelandic Collection.</subfield>
+    <subfield code="a">Cornell University.</subfield>
+    <subfield code="b">Library.</subfield>
+    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
+    <subfield code="k">Manuscript.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 616.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1=" " ind2=" " tag="752">
+    <subfield code="a">England.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 616 ++</subfield>
+  </datafield>
+  <datafield ind1="1" ind2=" " tag="899">
+    <subfield code="a">med</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">f4c349bc-b73b-4c7b-a849-85412e2bf79a</subfield>
+    <subfield code="s">4f49151a-3124-45f4-a1f8-a0b56af6093c</subfield>
   </datafield>
 </record>

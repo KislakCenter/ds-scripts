@@ -1,52 +1,39 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02708ctma 2200469Ma 4500</leader>
-  <controlfield tag="001">ocm64758420 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132912.0</controlfield>
-  <controlfield tag="008">000622q13001400it a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCA</subfield>
+  <leader>02482ctmaa2200409 a 4500</leader>
+  <controlfield tag="001">2088162</controlfield>
+  <controlfield tag="005">20140819234011.0</controlfield>
+  <controlfield tag="008">881209s1429 sp 001 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV00A140</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758420</subfield>
+    <subfield code="a">(CStRLIN)NYCV00-A140</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">2088162</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="130">
-    <subfield code="a">Miscellany.</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)63934949</subfield>
   </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">[Sermones].</subfield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">amremm</subfield>
+  </datafield>
+  <datafield ind1="0" ind2=" " tag="100">
+    <subfield code="a">Valerius Maximus.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="245">
+    <subfield code="a">Factorum et dictorum memorabilium libri IX [...et al.]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy,</subfield>
-    <subfield code="c">between ca. 1300 and ca. 1400]</subfield>
+    <subfield code="a">[Spain],</subfield>
+    <subfield code="d">late 14th century (before 1429).</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">160 leaves :</subfield>
-    <subfield code="b">parchment ;</subfield>
-    <subfield code="c">210 x 145 (162 x 98) mm. bound to 219 x 159 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
+    <subfield code="a">134 leaves :</subfield>
+    <subfield code="b">paper (2 leaves parchment) ;</subfield>
+    <subfield code="c">218 x 145 (138 x 85) mm. bound to 222 x 160 mm.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
     <subfield code="a">Ms. codex.</subfield>
@@ -54,59 +41,46 @@
   <datafield ind1=" " ind2=" " tag="546">
     <subfield code="a">Text in Latin.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">A collection of sermons on various subjects, organized for the most part
-      around the feast-days of the Saints. There is a detailed table of contents on the rear
-      pastedown listing 59 entries (based mainly on the medieval rubrics occurring in the
-      manuscript), by Dr. Eric Millar.</subfield>
+  <datafield ind1="0" ind2=" " tag="505">
+    <subfield code="a">1. f. i: Recapitulatio annorum a constitutione mundi Pauli Orosii -- 2. ff.
+      1r-89r: [Factorum et dictorum memorabilium libri IX] / Valerius Maximus -- 3. ff. 89v-127r:
+      Tabula Valerii Maximi [alphabetical index] -- 4. ff. 127v-130r: [On prosody] -- 5. f. 130v:
+      [Notes of ownership, of which one is dated 12 June 1429]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The manuscript begins and ends imperfectly. Quires are missing after ff. 60,
-      84, and 120, and some of the existing quires are bound in the incorrect order. See the note by
-      Dr. Eric Millar tipped into the first flyleaf, and the annotations penciled into the
-      manuscript itself by a modern hand.</subfield>
+    <subfield code="a">The first four leaves are not foliated. Modern pencilled foliation appears at
+      the bottom center of the recto side of each leaf; earlier foliation in ink, often at variance
+      with the modern, appears at the bottom right.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 28 long lines; frame-ruled.</subfield>
+    <subfield code="a">The bifolium that constitutes ff. 1 and 10 is parchment; all the other leaves
+      are paper.</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="500">
+    <subfield code="a">Layout: Main text written in 28-29 long lines; ruled. Other texts written in
+      30-35 long lines.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
     <subfield code="a">Script: Gothic textual.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Red and blue initials with flourishes.</subfield>
+    <subfield code="a">Decoration: First initial in red and blue with violet pen-flourishes; ff.
+      1r-4r contain initials in red or blue; thereafter all initials in red only.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 19th cent., rebacked; spine reads &quot;M.S. / Sermons / 14th
-      Cent.&quot;</subfield>
+    <subfield code="a">Binding: 17th cent.(?), parchment wrapper. Spine (in Gothic script):
+      &quot;Valerio Maximo. manuscripto&quot;.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying Materials: Description of the manuscript in a modern hand on
-      lined paper tipped into the recto side of the first flyleaf; note in a different modern hand
-      pasted onto the verso of the rear flyleaf, which identifies the author of the description (and
-      of the table of contents that follows) as Dr. Eric Millar; table of contents glued to the rear
-      pastedown.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in Italy, 14th century.</subfield>
+    <subfield code="a">Origin: Written in Spain, late 14th century (before 1429).</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Purchased from C.A. Stonehill, Inc.</subfield>
+    <subfield code="a">Provenance: Early owners noted on f. 130v. Acquired by Dorothy M. Schullian,
+      23 July 1945. Donated to Cornell University Library, 10 June 1988.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="524">
     <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 49.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare BX S47.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="v">Early works to 1800.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Theology.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01149559</subfield>
+      Misc. Bd. Ms. 617.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
     <subfield code="a">Gothic scripts.</subfield>
@@ -116,33 +90,30 @@
     <subfield code="a">Parchment.</subfield>
     <subfield code="2">aat</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Millar, Eric George.</subfield>
-  </datafield>
   <datafield ind1="2" ind2=" " tag="710">
     <subfield code="a">Cornell University.</subfield>
     <subfield code="b">Library.</subfield>
     <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
     <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 49.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 617.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy.</subfield>
+    <subfield code="a">Spain.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">Miscellany.</subfield>
-    <subfield code="t">[Sermones]</subfield>
-    <subfield code="d">[Italy, between ca. 1300 and ca. 1400]</subfield>
-    <subfield code="w">(OCoLC)1129079634</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 617</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="1" ind2=" " tag="899">
+    <subfield code="a">med</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">cef21caf-36a4-4782-a0cf-772da1fde52e</subfield>
+    <subfield code="s">ee3dad93-b5fc-48eb-9aac-2d1e20a642c5</subfield>
   </datafield>
 </record>

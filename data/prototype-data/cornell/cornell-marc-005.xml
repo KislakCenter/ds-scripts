@@ -1,185 +1,134 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>04120ctma 2200553Ma 4500</leader>
-  <controlfield tag="001">ocm64758145 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132911.0</controlfield>
-  <controlfield tag="008">000728q13501500it 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCA</subfield>
-    <subfield code="d">OCLCQ</subfield>
+  <leader>02328ctmaa22003971a 4500</leader>
+  <controlfield tag="001">3313577</controlfield>
+  <controlfield tag="005">20170913155853.0</controlfield>
+  <controlfield tag="008">981020s14uu it a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV98A100</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758145</subfield>
+    <subfield code="a">(CStRLIN)NYCV98-A100</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(NIC)notisARA3908</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="100">
-    <subfield code="a">Pseudo-Cicero.</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)63890538</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">3313577</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="d">NIC</subfield>
+    <subfield code="d">NIC</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="110">
+    <subfield code="a">Catholic Church.</subfield>
+  </datafield>
+  <datafield ind1="1" ind2="0" tag="240">
+    <subfield code="a">Office of the Blessed Virgin Mary</subfield>
   </datafield>
   <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Rhetorica ad Herennium.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy,</subfield>
-    <subfield code="c">14th and 15th centuries]</subfield>
+    <subfield code="a">Incipit officium beate Marie Virginis secundum cursum roman ...</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">45 leaves (originally 48, but 3 leaves have been lost) :</subfield>
-    <subfield code="b">parchment ;</subfield>
-    <subfield code="c">227 x 162 (175 x 115) mm. bound to 230 x 164 mm.</subfield>
+    <subfield code="a">1 v. (187 p.) ;</subfield>
+    <subfield code="c">10 cm.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
+  <datafield ind1=" " ind2=" " tag="520">
+    <subfield code="a">Manuscript on vellum, written in a 15th century hand; 9-1/2 x 7 cm.; single
+      column, 11 lines per page. Thirteen pages with illuminations. Borders and miniatures, 132
+      large illuminated initials, 722 small.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The central bifolium of the first quire (ff. 4-5) has been lost, so the codex
-      lacks the text for Rhetorica ad Herennium 1.9.16-1.14.24 (i.e., &quot;parum fuisse ... recte
-      factum&quot;; pp. 28.4-44.2 in Harry Caplan&apos;s edition). A note in a modern hand on f. 3v
-      observes the hiatus, and the foliation takes into account the absence of ff. 4-5.</subfield>
+    <subfield code="a">[Begins fol. 1,a] Incipit officium beate / marie virginis secun/dum cursum
+      roman... [Illuminated initial D] ne labia mea aperies et/. [Ends fol. 102, 6] ora pro nobis
+      deum/ alleluia. [Ff. 103, 104, vacant.] Septem psalmi penitentiales [Begin, fol. 105,a]
+      Incipiunt septem psalmi pe/nitentiales. [Ends fol. 130,b] Finis laus deo-Officium mortuorum
+      [Ff. 140, 141, 142 vacant] [Begins fol. 143,a] Incipit officium mortu/orum [Ends, fol. 187,b]
+      Orationes vero ut supra in vesperis.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Fols. 1-3 were mutilated and subsequently repaired with parchment; the
-      affected text was skillfully restored in a neat humanistic hand of the 15th
-      century.</subfield>
+    <subfield code="a">Bound in full calf, inlaid with red and blue. Clasp gone; no
+      lettering.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The folios of the first quire were once incorrectly bound, but were rebound
-      ca. 1986 and are now set in the correct order. The modern notes in pencil on ff. 1v, 7v, and
-      8v which were intended to guide the reader through the confusion of the misbound folios are
-      now obsolete.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The manuscript is heavily glossed throughout in a 14th-century Gothic cursive
-      hand (both interlinear and marginal glosses).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Annotations include outlines of the subject-matter in schematic diagrams,
-      which appear in some of the bottom margins.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 27-38 long lines; irregularly ruled.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Written in Gothic textual script of the 14th century (two hands, of
-      which the second begins on f. 46r); ff. 1-3 contain several lines of humanistic round script
-      of the 15th century where mutilated text has been restored.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Large rubricated initials. There are crude drawings of clenched
-      hands on f. 47v.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 14th cent.; wooden boards, rebacked; remains of a clasp. The quires
-      are stitched together, yet are not attached to the binding. The first quire was once misbound,
-      but was corrected ca. 1986. The spine reads &quot;Ciceronis / Rhetorica / Manoscritt[o] / in /
-      Pergamen.&quot;, and a label on the cover reads &quot;No. 41.&quot;</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in Italy, mid-14th century; restoration of mutilated text on
-      ff. 1-3 dates to the mid-15th century.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Guglielmo Libri sale (London, 28 March 1859, n. 255) to Sir T.
-      Phillipps (n. 16298). Sotheby sale (15 June 1908, Lot No. 183) to Steppe. Added to the
-      Library&apos;s collection on 7 July 1913.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 145.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare P R47.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.28 (De Ricci).</subfield>
+  <datafield ind1=" " ind2=" " tag="530">
+    <subfield code="a">Selected illustrations are included in the Images from Cornell&apos;s Rare
+      Book and Manuscript Collections digital collection.</subfield>
   </datafield>
   <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
-      States and Canada,</subfield>
-    <subfield code="c">II, p. 1234</subfield>
+    <subfield code="a">Calkins, R. Catalogue, 1971,</subfield>
+    <subfield code="c">no. 28.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="581">
-    <subfield code="a">Harry Caplan, ed. and tr. [Cicero] Ad C. Herennium de ratione dicendi
-      (Rhetorica ad Herennium), Loeb Classical Library (Cambridge, Mass.: Harvard University Press,
-      1954).</subfield>
+  <datafield ind1="2" ind2="0" tag="610">
+    <subfield code="a">Catholic Church</subfield>
+    <subfield code="v">Prayers and devotions</subfield>
+    <subfield code="x">Italian.</subfield>
   </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Rhetoric, Ancient.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="600">
-    <subfield code="a">Cicero, Marcus Tullius</subfield>
-    <subfield code="x">Spurious and doubtful works.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="7" tag="600">
-    <subfield code="a">Cicero, Marcus Tullius.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00032861</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Rhetoric, Ancient.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01096982</subfield>
+  <datafield ind1="2" ind2="0" tag="610">
+    <subfield code="a">Catholic Church</subfield>
+    <subfield code="v">Prayers and devotions</subfield>
+    <subfield code="x">Latin.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
+    <subfield code="a">Miniatures (Illuminations)</subfield>
+    <subfield code="z">Italy</subfield>
+    <subfield code="y">15th century.</subfield>
+    <subfield code="2">gmgpc</subfield>
+  </datafield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Marginal illustrations</subfield>
+    <subfield code="z">Italy</subfield>
+    <subfield code="y">15th century.</subfield>
     <subfield code="2">aat</subfield>
   </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Humanistic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Parchment.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Spurious and doubtful works.</subfield>
+  <datafield ind1="2" ind2="7" tag="610">
+    <subfield code="a">Catholic Church</subfield>
     <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01423886</subfield>
+    <subfield code="0">(OCoLC)fst00531720</subfield>
   </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 145.</subfield>
+  <datafield ind1=" " ind2="7" tag="655">
+    <subfield code="a">Prayers</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01423909</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy.</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 286, tiny</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">Pseudo-Cicero.</subfield>
-    <subfield code="t">Rhetorica ad Herennium.</subfield>
-    <subfield code="d">[Italy, 14th and 15th centuries]</subfield>
-    <subfield code="w">(OCoLC)1129079626</subfield>
+  <datafield ind1="4" ind2="2" tag="856">
+    <subfield code="3">Selected illustrations</subfield>
+    <subfield code="u">http://resolver.library.cornell.edu/misc/5862713</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20160627</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">fix530fix856</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20170818</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">mnr1</subfield>
+    <subfield code="e">lts</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20170906</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">add899forArchivesSpace</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">41f08a5c-5e60-4327-99c4-1e201316ef1b</subfield>
+    <subfield code="s">043163d2-3858-4029-b920-64809d6d1727</subfield>
   </datafield>
 </record>

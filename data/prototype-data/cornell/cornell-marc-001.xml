@@ -1,174 +1,140 @@
 <record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>03170ctma 2200541Ma 4500</leader>
-  <controlfield tag="001">ocm64755185 </controlfield>
-  <controlfield tag="003">OCoLC</controlfield>
-  <controlfield tag="005">20211004132911.0</controlfield>
-  <controlfield tag="008">000417s1438 gw a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="d">OCLCQ</subfield>
-    <subfield code="d">OCLCO</subfield>
-    <subfield code="d">OCLCA</subfield>
+  <leader>02654ctmaa2200469 a 4500</leader>
+  <controlfield tag="001">3817793</controlfield>
+  <controlfield tag="005">20141223210351.0</controlfield>
+  <controlfield tag="008">000420q14001450it a 000 0 lat d</controlfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(CStRLIN)NYCV00A43</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64755185</subfield>
+    <subfield code="a">(CStRLIN)NYCV00-A43</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="049">
-    <subfield code="a">COOO</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(NIC)notisATD7776</subfield>
   </datafield>
-  <datafield ind1="0" ind2=" " tag="130">
-    <subfield code="a">Ars computistica.</subfield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">3817793</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="035">
+    <subfield code="a">(OCoLC)64755213</subfield>
+  </datafield>
+  <datafield ind1=" " ind2=" " tag="040">
+    <subfield code="a">NIC</subfield>
+    <subfield code="c">NIC</subfield>
+    <subfield code="e">amremm</subfield>
+  </datafield>
+  <datafield ind1="0" ind2="0" tag="240">
+    <subfield code="a">Antiphonal</subfield>
   </datafield>
   <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">[Computus Cirometralis].</subfield>
+    <subfield code="a">[Antiphonarium].</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">Germany,</subfield>
-    <subfield code="c">1438.</subfield>
+    <subfield code="a">[Northern Italy,</subfield>
+    <subfield code="c">between ca. 1400 and ca. 1450.]</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">30 leaves :</subfield>
-    <subfield code="b">paper, ill. ;</subfield>
-    <subfield code="c">219 x 146 (167 x 112) mm., unbound.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
+    <subfield code="a">123 leaves :</subfield>
+    <subfield code="b">parchment, ill. ;</subfield>
+    <subfield code="c">131 x 98 (105 x 70) mm. bound to 141 x 113 mm.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. gatherings.</subfield>
+    <subfield code="a">Ms. codex.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="546">
     <subfield code="a">Text in Latin.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">This manuscript is related to Misc. Bd. Mss. 12 and 146. All three are
-      unbound, written on paper of nearly identical dimensions and in the same script, and all three
-      were acquired together from the same source.</subfield>
+    <subfield code="a">Begins imperfectly. Original foliation in rubricated Roman numerals appears
+      on the verso side of fols. 1-24 and 56-109. The numerals have been trimmed in rebinding, which
+      may explain the absence of original foliation for fols. 25-55 and 110-122. The remnants of the
+      original foliation indicate that a quire of 8 leaves preceded the text as it exists
+      today.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The date &quot;1438&quot; appears on fol. 16r in the text, and is repeated in
-      the outer margin in ink by a 19th-century hand.</subfield>
+    <subfield code="a">A note on fol. 122v in Italian is dated 1600.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Fol. 11 is torn, so that text on 11r and half of a full-page table on 11v
-      have been lost.</subfield>
+    <subfield code="a">Layout: Written in 19 long lines; ruled in red ink, framed in
+      lead.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">A slip of paper has been inserted to add a table between fols. 13v and 14r;
-      the other half of the slip, appearing between fols. 21v and 22r, is blank.</subfield>
+    <subfield code="a">Script: Round Gothic (littera Bononiensis), several hands.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 41-48 long lines; occasionally framed, but unruled. The
-      text is interrupted by tables and diagrams.</subfield>
+    <subfield code="a">Decoration: Historiated initials with burnished background (f. 25r, Virgin
+      and Child; f. 80r, Christ Child), foliated initial with burnished background (f. 105r), red
+      and blue decorative initials throughout (with or without flourishes), numerous black pen
+      scrolls touched with green and yellow wash (fols. 1r-109v).</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic cursive; formal Gothic hybrid used in tables and
-      diagrams.</subfield>
+    <subfield code="a">Music: Contains musical notation.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Tables, diagrams, decorated initials.</subfield>
+    <subfield code="a">Binding: 20th cent. calf.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: Unbound, boxed.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: Loose paper cover in which the manuscript was once
-      stored, with the title &quot;Computus Cirometralis [1438.]&quot; in the hand of George Lincoln
-      Burr; inside the cover is a note by Burr indicating provenance and other details about the
-      manuscript.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in Germany at the monastery of Ewich near Attendorn, in
-      1438.</subfield>
+    <subfield code="a">Origin: Written in northern Italy, probably earlier half of the 15th
+      century.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: &quot;Liber monasterii in Ewich regularium iuxta Attendorn&quot;
-      (fol. 1r). Dr. Gerhard Hennen of Trier. Bought by George Lincoln Burr for the White Library in
-      1888 at Düsseldorf, Germany.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 115.</subfield>
+    <subfield code="a">Provenance: Alessandro Rivarola(?), before 1600 (fol. 122v). Bought in Europe
+      in 1885 by A.D. White.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare P A78.</subfield>
+    <subfield code="a">Former shelfmark: MSS Bd. Rare BX C36 A637</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.53 (De Ricci).</subfield>
+    <subfield code="a">Related shelfmark: MS B.21 (De Ricci)</subfield>
   </datafield>
   <datafield ind1="4" ind2=" " tag="510">
     <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
       States and Canada,</subfield>
-    <subfield code="c">II, p. 1237</subfield>
+    <subfield code="c">II, p. 1232; Calkins, R.G. Illuminated Manuscripts, p. 55, no. 29.</subfield>
   </datafield>
   <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Calendar.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Mathematics</subfield>
-    <subfield code="v">Early works to 1800.</subfield>
+    <subfield code="a">Divine office.</subfield>
   </datafield>
   <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Calendar.</subfield>
+    <subfield code="a">Divine office</subfield>
     <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00844160</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Mathematics.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01012163</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Scientific illustrations.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
+    <subfield code="0">(OCoLC)fst00895757</subfield>
   </datafield>
   <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Burr, George Lincoln,</subfield>
-    <subfield code="d">1857-1938.</subfield>
+    <subfield code="a">White, Andrew Dickson,</subfield>
+    <subfield code="d">1832-1918.</subfield>
   </datafield>
   <datafield ind1="2" ind2=" " tag="710">
     <subfield code="a">Cornell University.</subfield>
     <subfield code="b">Library.</subfield>
     <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
     <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 115.</subfield>
+    <subfield code="n">Misc. Bd. Ms. 16.</subfield>
   </datafield>
   <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Germany.</subfield>
+    <subfield code="a">Italy.</subfield>
   </datafield>
-  <datafield ind1="0" ind2="8" tag="776">
-    <subfield code="i">Online version:</subfield>
-    <subfield code="a">Ars computistica.</subfield>
-    <subfield code="t">[Computus Cirometralis]</subfield>
-    <subfield code="d">Germany, 1438</subfield>
-    <subfield code="w">(OCoLC)1129079620</subfield>
+  <datafield ind1=" " ind2=" " tag="852">
+    <subfield code="a">NIC</subfield>
+    <subfield code="j">4600 Bd. Ms. 16.</subfield>
   </datafield>
-  <datafield ind1=" " ind2=" " tag="994">
-    <subfield code="a">C0</subfield>
-    <subfield code="b">COO</subfield>
+  <datafield ind1="1" ind2=" " tag="899">
+    <subfield code="a">med</subfield>
+  </datafield>
+  <datafield ind1="3" ind2=" " tag="948">
+    <subfield code="a">20070525</subfield>
+    <subfield code="h">RLINAMC</subfield>
+    <subfield code="i">RLINAMC1.mrc</subfield>
+  </datafield>
+  <datafield ind1="2" ind2=" " tag="948">
+    <subfield code="a">20141223</subfield>
+    <subfield code="b">m</subfield>
+    <subfield code="d">batch</subfield>
+    <subfield code="e">lts</subfield>
+    <subfield code="x">addfast</subfield>
+  </datafield>
+  <datafield ind1="f" ind2="f" tag="999">
+    <subfield code="i">1c2b3edb-e3af-41cc-b3d3-3252ae0fdefd</subfield>
+    <subfield code="s">d68ae9aa-8fe5-461b-82de-00bd3f98b532</subfield>
   </datafield>
 </record>
