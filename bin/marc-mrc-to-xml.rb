@@ -50,7 +50,7 @@ EOF
 Prints this help
 
 Note on encodings: Legacy MARC files can use MARC-8. If the default fails, 
-try that. To see a list of available encodings (a long list). Use the -l option.
+try that. To see a list of available encodings (a long list), use the -l option.
 EOF
   opts.on("-h", "--help", h_help) do
     puts opts
