@@ -170,7 +170,7 @@ The bibids are:
 ```shell
 for x in `cat bibids.txt `
 do
-  curl -o "${x}.xml" "http://mdproc.library.upenn.edu:9292/records/${x}/show?format=marc21
+  curl -o "${x}.xml" "http://mdproc.library.upenn.edu:9292/records/${x}/show?format=marc21"
 done
 ```
 
