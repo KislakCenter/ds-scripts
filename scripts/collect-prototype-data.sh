@@ -49,6 +49,15 @@ do
   bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution ${inst} -o ${TMP_DIR}/${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
+##########
+# FLP TEI
+##########
+# Run through the TEI_INSTS and output a CSV for each to TMP_DIR
+for inst in ${TEI_INSTS}
+do
+  bundle exec ruby ${SCRIPT_DIR}/../bin/openn-tei-to-ds.rb -o ${TMP_DIR}/${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+done
+
 #######################
 # Combine in single CSV
 #######################
