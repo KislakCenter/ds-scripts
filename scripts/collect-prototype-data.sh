@@ -16,6 +16,8 @@ TMP_DIR=${SCRIPT_DIR}/../tmp
 LEGACY_INSTS="conception csl cuny grolier gts indiana kansas nelsonatkins nyu providence rutgers ucb wellesley"
 # These are the folders in data/prototype-data/ containing MARC XML
 MARC_INSTS="penn cornell columbia burke"
+# TEI
+TEI_INSTS="flp"
 
 ##############
 # Pre-run test
