@@ -321,4 +321,10 @@ https://openn.library.upenn.edu/Data/0023/lewis_e_034/data/lewis_e_034_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_035/data/lewis_e_035_TEI.xml
 ```
 
+```shell
+# for each URL download the file
+# e.g., lewis_e_035_TEI.xml
+for x in $urls; do mark=$(awk -F/ '{ print $6 }' <<< $x); curl -O $x; done
+```
+
 Files have been downloaded to `data/prototype/flp`
