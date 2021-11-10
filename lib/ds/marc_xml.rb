@@ -222,13 +222,39 @@ module DS
         IIIF_MANIFESTS[mmsid.to_s]
       end
 
-      def extract_holding_institution_ids record
+      def extract_holding_institution_ids record, mmsid_file = nil
+        # binding.pry
         # start with the shelfmark
-        ids = [find_shelfmark(record)]
+        ids = []
+        if !find_shelfmark(record).empty?
+          ids = [find_shelfmark(record)]
+        elsif !mmsid_file.nil?
+          ids = [shelfmark_lookup(record, mmsid_file)]
+        end
         # add the MMS ID
         ids << extract_mmsid(record)
 
         ids.reject(&:empty?).join '|'
+      end
+
+      def shelfmark_lookup record, mmsids_file
+        # get the id from the record
+        id = extract_mmsid(record)
+        # search for mmsid in the external mmsid_file: "85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4084Y"
+        c0 = mmsids_file.first.xpath("//x:R[./x:C2/text() = '#{id}']/x:C0", { 'x' => 'urn:schemas-microsoft-com:xml-analysis:rowset' }).text
+        # split: ["85280 ", "b rare ", "c hsvm ", "h Islamic Manuscripts, Garrett no. 4084Y"]
+        all_marks = c0.split('$$')
+        # get marks we're concerned with: ["h Islamic Manuscripts, Garrett no. 4084Y"]
+        raw_marks = all_marks.select { |m| m =~ /^[hd] / }
+        # make pretty: ["Islamic Manuscripts, Garrett no. 4084Y"]
+        shelfmarks = raw_marks.map { |m| format_shelfmark(m) }
+        shelfmarks
+      end
+
+      def format_shelfmark s
+        # trim first character
+        m = s[1..-1]
+        m.strip
       end
 
       ##
