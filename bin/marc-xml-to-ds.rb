@@ -81,6 +81,7 @@ CSV.open output_csv, "w", headers: true do |row|
       link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{DS::MarcXML.extract_mmsid(record)}}
       iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
       production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
+      production_date                    = DS::MarcXML.parse_008 production_date_encoded_008
       production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
       uniform_title_240_as_recorded      = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
@@ -114,6 +115,7 @@ CSV.open output_csv, "w", headers: true do |row|
                link_to_holding_institution_record:  link_to_holding_institution_record,
                iiif_manifest:                       iiif_manifest,
                production_date_encoded_008:         production_date_encoded_008,
+               production_date:                     production_date,
                production_place_as_recorded:        production_place_as_recorded,
                production_date_as_recorded:         production_date_as_recorded,
                uniform_title_240_as_recorded:       uniform_title_240_as_recorded,

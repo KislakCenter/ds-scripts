@@ -137,7 +137,7 @@ module DS
         find_parts(xml).map { |part |
           assigned = extract_assigned_date part
           range    = extract_date_range part
-          [assigned, range].join ', '
+          [assigned, range].reject(&:empty?).join ', '
         }.join '|'
       end
 
@@ -147,7 +147,7 @@ module DS
         start_date = part.xpath(xpath).text
         xpath      = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
         end_date   = part.xpath(xpath).text
-        [start_date, end_date].join '-'
+        [start_date, end_date].reject(&:empty?).join '-'
       end
 
       def extract_assigned_date part
@@ -162,6 +162,19 @@ module DS
         # For now we replace the #^<VAL># with (<VAL>)
         xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateOther'
         part.xpath(xpath).text.gsub %r{#\^(\w+)#}, '(\1)'
+      end
+
+      def transform_production_date xml
+        recorded_dates = find_parts(xml).map do |part|
+          extract_date_range part
+        end
+        date_array = recorded_dates.flat_map{ |date| date.split '-'}.sort_by(&:to_i).uniq
+        return nil if date_array.empty?
+        if date_array.length <= 2
+          return date_array.join '-'
+        else
+          return "#{date_array.first}-#{date_array.last}"
+        end
       end
 
       def extract_acknowledgements xml
