@@ -27,6 +27,19 @@ module DS
       qid = Regexp.last_match[0]
       DS::QID_TO_INSTITUTION_NAMES[qid].first
     end
+
+    def transform_date_to_century date
+      return if date.nil?
+      century = []
+      date.split('-').each do |d|
+        if d.length <= 3
+          century << (d[0].to_i + 1).to_s
+        else
+          century << (d[0..1].to_i + 1).to_s
+        end
+      end
+      century.uniq.join '-'
+    end
   end
 
   self.extend ClassMethods

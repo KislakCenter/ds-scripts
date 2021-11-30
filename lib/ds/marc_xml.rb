@@ -319,9 +319,11 @@ module DS
           return nil
         end
       end
-    end
 
-    # test commit
+      def transform_date_to_century date
+
+      end
+    end
 
     self.extend ClassMethods
   end

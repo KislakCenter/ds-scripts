@@ -99,6 +99,13 @@ module DS
         parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()')
         parts.flatten.map { |x| x.to_s.strip }.reject(&:empty?).join '. '
       end
+
+      def extract_production_date_as_recorded xml
+        date_array = xml.xpath('//origDate/@notBefore | //origDate/@notAfter').map { |date|
+          date.text
+        }.sort_by(&:to_i)
+        [date_array.first, date_array.last].compact.reject(&:empty?).join '-'
+      end
     end
 
     self.extend ClassMethods
