@@ -41,6 +41,7 @@ DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
 
 output_csv = options[:output_csv] || 'output.csv'
+timestamp = DS.timestamp
 
 CSV.open output_csv, "w", headers: true do |row|
   row << DS::HEADINGS
@@ -80,6 +81,7 @@ CSV.open output_csv, "w", headers: true do |row|
     material_as_recorded               = ''
     physical_description               = DS::DS10.extract_physical_description xml
     acknowledgements                   = DS::DS10.extract_acknowledgements xml
+    data_processed_at                  = timestamp
 
     data = { source_type:                        source_type,
              holding_institution:                holding_institution,
@@ -113,6 +115,7 @@ CSV.open output_csv, "w", headers: true do |row|
              material:                           material,
              physical_description:               physical_description,
              acknowledgements:                   acknowledgements,
+             data_processed_at:                  data_processed_at,
     }
 
     row << data
