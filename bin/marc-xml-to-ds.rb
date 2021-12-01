@@ -63,6 +63,7 @@ DEFAULT_WORD_SEP  = ' '
 
 output_csv = options[:output_csv] || 'output.csv'
 mmsids_file = File.open(options[:mmsids]) { |f| Nokogiri::XML(f) } unless options[:mmsids].nil?
+timestamp = DS.timestamp
 
 CSV.open output_csv, "w", headers: true do |row|
   row << DS::HEADINGS
@@ -108,6 +109,7 @@ CSV.open output_csv, "w", headers: true do |row|
       folios                             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
       dimensions_as_recorded             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'c'
       decoration                         = DS::MarcXML.extract_named_500 record,  name: 'Decoration'
+      data_processed_at                  = timestamp
 
       data = { source_type:                         source_type,
                holding_institution:                 holding_institution,
@@ -143,6 +145,7 @@ CSV.open output_csv, "w", headers: true do |row|
                extent_as_recorded:                  extent_as_recorded,
                dimensions_as_recorded:              dimensions_as_recorded,
                decoration:                          decoration,
+               data_processed_at:                  data_processed_at,
       }
 
       row << data

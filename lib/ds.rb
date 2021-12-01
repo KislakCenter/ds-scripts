@@ -40,6 +40,10 @@ module DS
       end
       century.uniq.join '-'
     end
+
+    def timestamp
+      DateTime.now.iso8601.to_s
+    end
   end
 
   self.extend ClassMethods
