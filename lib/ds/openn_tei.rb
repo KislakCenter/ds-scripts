@@ -108,9 +108,9 @@ module DS
       end
 
       def source_modified xml
-        record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when')
+        record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when').text
         return nil if record_date.empty?
-        record_date.join '-'
+        record_date
       end
     end
 
