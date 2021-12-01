@@ -45,6 +45,7 @@ material_as_recorded
 physical_description
 acknowledgements
 data_processed_at
+data_source_modified
 }
 
     # TODO: Switch from QID URLs to standalone IDs

@@ -319,6 +319,12 @@ module DS
           return nil
         end
       end
+
+      def source_modified record
+        record_date = record.xpath("controlfield[@tag=005]").text[0..7]
+        return nil if record_date.empty?
+        "#{record_date[0..3]}-#{record_date[4..5]}-#{record_date[6..7]}"
+      end
     end
 
     self.extend ClassMethods
