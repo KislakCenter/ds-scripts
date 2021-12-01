@@ -79,5 +79,6 @@ regex = '''(?i)(sk|pk)_(test|live)_[0-9a-zA-Z]{10,32}'''
   description = "Global Allowlists"
 
 regexes = [
-'''make_key'''
+'''make_key''',
+'''Secretum secretorum'''
 ]
