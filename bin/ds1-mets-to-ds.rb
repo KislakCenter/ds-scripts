@@ -82,6 +82,7 @@ CSV.open output_csv, "w", headers: true do |row|
     physical_description               = DS::DS10.extract_physical_description xml
     acknowledgements                   = DS::DS10.extract_acknowledgements xml
     data_processed_at                  = timestamp
+    data_source_modified               = DS::DS10.source_modified
 
     data = { source_type:                        source_type,
              holding_institution:                holding_institution,
@@ -116,6 +117,7 @@ CSV.open output_csv, "w", headers: true do |row|
              physical_description:               physical_description,
              acknowledgements:                   acknowledgements,
              data_processed_at:                  data_processed_at,
+             data_source_modified:               data_source_modified,
     }
 
     row << data

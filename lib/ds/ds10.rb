@@ -323,6 +323,10 @@ module DS
         }
       end
 
+      def source_modified
+        "2021-10-01"
+      end
+
       protected
 
       @@ark_cache = nil

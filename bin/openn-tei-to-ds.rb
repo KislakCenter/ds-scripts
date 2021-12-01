@@ -82,6 +82,7 @@ CSV.open output_csv, "w", headers: true do |row|
     dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
     decoration                         = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
     data_processed_at                  = timestamp
+    data_source_modified               = DS::OPennTEI.source_modified xml
 
     # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
 
@@ -119,6 +120,7 @@ CSV.open output_csv, "w", headers: true do |row|
       dimensions_as_recorded:             dimensions_as_recorded,
       decoration:                         decoration,
       data_processed_at:                  data_processed_at,
+      data_source_modified:               data_source_modified,
     }
 
     row << data

@@ -106,6 +106,12 @@ module DS
         }.sort_by(&:to_i)
         [date_array.first, date_array.last].compact.reject(&:empty?).join '-'
       end
+
+      def source_modified xml
+        record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when')
+        return nil if record_date.empty?
+        record_date.join '-'
+      end
     end
 
     self.extend ClassMethods
