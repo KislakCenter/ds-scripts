@@ -319,10 +319,6 @@ module DS
           return nil
         end
       end
-
-      def transform_date_to_century date
-
-      end
     end
 
     self.extend ClassMethods
