@@ -223,7 +223,6 @@ module DS
       end
 
       def extract_holding_institution_ids record, mmsid_file = nil
-        # binding.pry
         # start with the shelfmark
         ids = []
         if !find_shelfmark(record).empty?
@@ -327,11 +326,8 @@ module DS
       end
 
       def extract_uniform_title_as_recorded record
-        # check for 240
         title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
-        # check for 130
         title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
-        # put both in array, reject nil or empty values, and join
         [title_240, title_130].reject(&:empty?).join '|'
       end
     end
