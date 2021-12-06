@@ -65,7 +65,7 @@ module DS
       def extract_extent phys_desc_node
         xpath = 'mods:extent'
         phys_desc_node.xpath(xpath).map { |extent|
-          extent.text.split(%r{;;}).reject(&:empty?).join '; '
+          extent.text.split(%r{;;}).reject(&:empty?).join '|'
         }
       end
 
@@ -212,7 +212,7 @@ module DS
       def extract_folio_num page
         # mets:mdWrap/mets:xmlData/mods:mods/mods:physicalDescription/mods:extent
         xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:physicalDescription/mods:extent'
-        page.xpath(xpath).map(&:text).join '; '
+        page.xpath(xpath).map(&:text).join '|'
       end
 
       ##
