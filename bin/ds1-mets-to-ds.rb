@@ -54,7 +54,6 @@ CSV.open output_csv, "w", headers: true do |row|
     holding_institution                = DS::INSTITUTION_NAMES_TO_QID.fetch holding_institution_as_recorded, ''
     holding_institution_id_number      = DS::DS10.extract_institution_id xml
     link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
-    production_date_encoded_008        = ''
     production_place_as_recorded       = DS::DS10.extract_production_place xml
     production_place                   = ''
     production_date_as_recorded        = DS::DS10.extract_date_as_recorded xml
@@ -89,7 +88,6 @@ CSV.open output_csv, "w", headers: true do |row|
              holding_institution_as_recorded:    holding_institution_as_recorded,
              holding_institution_id_number:      holding_institution_id_number,
              link_to_holding_institution_record: link_to_holding_institution_record,
-             production_date_encoded_008:        production_date_encoded_008,
              production_date:                    production_date,
              production_place_as_recorded:       production_place_as_recorded,
              production_place:                   production_place,
