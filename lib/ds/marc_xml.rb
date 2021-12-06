@@ -190,6 +190,12 @@ module DS
         record.xpath(xpath).text
       end
 
+      def extract_uniform_title_agr record
+        tag240 = extract_title_agr record, 240
+        tag130 = extract_title_agr record, 130
+        [tag240, tag130].reject(&:empty?).join '|'
+      end
+
       def extract_physical_description record
         parts = []
         extent = record.xpath("datafield[@tag=300]").map { |datafield|
