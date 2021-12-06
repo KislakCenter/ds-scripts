@@ -190,6 +190,12 @@ module DS
         record.xpath(xpath).text
       end
 
+      def extract_uniform_title_as_recorded record
+        title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
+        title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
+        [title_240, title_130].reject(&:empty?).join '|'
+      end
+
       def extract_uniform_title_agr record
         tag240 = extract_title_agr record, 240
         tag130 = extract_title_agr record, 130
@@ -329,12 +335,6 @@ module DS
         record_date = record.xpath("controlfield[@tag=005]").text[0..7]
         return nil if record_date.empty?
         "#{record_date[0..3]}-#{record_date[4..5]}-#{record_date[6..7]}"
-      end
-
-      def extract_uniform_title_as_recorded record
-        title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
-        title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
-        [title_240, title_130].reject(&:empty?).join '|'
       end
     end
 
