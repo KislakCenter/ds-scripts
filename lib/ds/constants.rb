@@ -17,9 +17,9 @@ production_date_encoded_008
 production_date
 century
 dated
-uniform_title_240
-uniform_title_240_as_recorded
-uniform_title_240_agr
+uniform_title
+uniform_title_as_recorded
+uniform_title_agr
 title_as_recorded_245
 title_as_recorded_245_agr
 genre_as_recorded
