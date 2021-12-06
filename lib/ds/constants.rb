@@ -13,7 +13,6 @@ iiif_manifest
 production_place_as_recorded
 production_place
 production_date_as_recorded
-production_date_encoded_008
 production_date
 century
 dated

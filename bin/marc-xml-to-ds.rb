@@ -118,7 +118,6 @@ CSV.open output_csv, "w", headers: true do |row|
                holding_institution_id_number:       holding_institution_id_number,
                link_to_holding_institution_record:  link_to_holding_institution_record,
                iiif_manifest:                       iiif_manifest,
-               production_date_encoded_008:         production_date_encoded_008,
                production_date:                     production_date,
                century:                             century,
                production_place_as_recorded:        production_place_as_recorded,
