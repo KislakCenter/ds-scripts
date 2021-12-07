@@ -336,6 +336,15 @@ module DS
         return nil if record_date.empty?
         "#{record_date[0..3]}-#{record_date[4..5]}-#{record_date[6..7]}"
       end
+
+      def extract_link_to_inst_record record, institution
+        if institution == "penn"
+          link = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{extract_mmsid(record)}}
+        else
+          link = ''
+        end
+        link
+      end
     end
 
     self.extend ClassMethods
