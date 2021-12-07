@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>03442ctm a2200565Ia 4500</marc:leader>
+    <marc:leader>03485ctm a2200565Ia 4500</marc:leader>
     <marc:controlfield tag="001">9914691823503681</marc:controlfield>
-    <marc:controlfield tag="005">20210120111639.0</marc:controlfield>
+    <marc:controlfield tag="005">20210929170206.0</marc:controlfield>
     <marc:controlfield tag="008">930927q17501850xx            000 0 ara d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)86167193</marc:subfield>
@@ -149,11 +149,11 @@
   <marc:subfield code="j">Ms. Codex 24</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile in OPenn</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex24.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3gh9bg67</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">

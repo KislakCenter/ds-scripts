@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>05120ctm a2200697Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9947699533503681</marc:controlfield>
+    <marc:controlfield tag="005">20211011114817.0</marc:controlfield>
+    <marc:controlfield tag="006">m        d        </marc:controlfield>
+    <marc:controlfield tag="007">cr#cn#008aaaba</marc:controlfield>
+    <marc:controlfield tag="008">100422s1460    paup    s     000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)4769953-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 237</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="100">
+  <marc:subfield code="a">Josephus, Flavius.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="240">
+  <marc:subfield code="a">De bello Judaico.</marc:subfield>
+  <marc:subfield code="l">Latin.</marc:subfield>
+  <marc:subfield code="s">Pseudo-Hegesippus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="245">
+  <marc:subfield code="a">Quinque libri Egesippi nacione Judei de excidio iudeorum</marc:subfield>
+  <marc:subfield code="h">[electronic resource].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[Padua?, Italy,</marc:subfield>
+  <marc:subfield code="c">ca. 1460]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">1 online resource (185 leaves) :</marc:subfield>
+  <marc:subfield code="b">ill.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from opening rubric (f. 2r, viewed on April 27, 2010).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation:  Parchment, i (17th-century paper) + 185 + i (17th-century paper); 1&#xB9; 2-24&#x2078;; modern foliation in pencil on every fifth leaf, lower right recto.  Catchwords (mostly vertical) on last verso of gatherings 3-24.  Some signatures visible, most trimmed away.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 28 long lines; ruled in lead.  Pricking visible in outer margins.  Running headings for number of book, upper center recto, from Book 2 (f. 58r) onward.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in the humanistic bookhand of Petrus Lomer (f. 185r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  6 illuminated initials marking beginning of prologue and each of the five books (f. 1r, 1v, 57v, 80r, 104v, 127v), 5-line to 8-line, maroon infilled with green strapwork on blue ground sprinkled with white within a gold border, identified by Albinia de la Mare as a Paduan type, ca. 1460.  Rubrics in red at beginning of prologue, beginning of Book 1, and end of Book 5 (f. 2r, 2v, 185r).  Numerous manicules.  17th-century painted architectural border with floral vases and Visconti armorial shield with two helmets (f. 2r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  17th-century morocco, panelled in blind with fleur-de-lis cornerpieces, spine with the gilt label EGESIPPI DE EXCIDIO JUDAEORUM MSS.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Italy, possibly Padua, ca. 1460 (based on analysis of illumination by Albinia de la Mare).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Dimensions of original manuscript: 288 x 199 (183 x 125) mm. bound to 302 x 216 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.2r-2v: Prologus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">2. f.2v-57v: Liber primus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.57v-80r: Liber secundus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.80r-104v: Liber tertius.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">5. f.104v-127v: Liber quartus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">6. f.127v-185r: Liber quintus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 144 (LJS 237).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Digital facsimile of an illuminated manuscript of a Latin translation and adaptation of De bello Judaico with information added from other historians, mostly Latin, traditionally attributed to Egesippus.  Contemporary scholarly marginalia and glosses attempt to resolve inconsistencies between this text and the more literal Latin translation of Rufinus.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">LJS 237</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="533">
+  <marc:subfield code="a">Electronic reproduction.</marc:subfield>
+  <marc:subfield code="b">Philadelphia, Pa. :</marc:subfield>
+  <marc:subfield code="c">University of Pennsylvania Libraries,</marc:subfield>
+  <marc:subfield code="d">2010.</marc:subfield>
+  <marc:subfield code="n">Lawrence J. Schoenberg Collection.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="534">
+  <marc:subfield code="p">Original:</marc:subfield>
+  <marc:subfield code="t">Quinque libri Egesippi nacione Judei de excidio iudeorum (LJS 237),</marc:subfield>
+  <marc:subfield code="l">Lawrence J. Schoenberg Collection (Florida).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="538">
+  <marc:subfield code="a">Mode of access:  World Wide Web.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">The added border with the Visconti arms (f. 2r) suggests that this manuscript was in the library of the bishop of Bamberg, Franz Joseph Anton von Hahn; many manuscripts in this library had borders with the arms of various well-known Italian families added before the library was sold at auction in Venice in the 18th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by W. E. Gladstone (Hawarden Castle Library, MMI10, label inside upper cover).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold at auction at Christie's, 8 Dec. 1982, lot 122.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Sam Fogg (London) to Lawrence J. Schoenberg, Feb. 1998.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Lawrence J. Schoenberg at auction at Sotheby's to an unknown purchaser, 6 Jul. 2010, lot 33.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Jews</marc:subfield>
+  <marc:subfield code="x">History</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Jews</marc:subfield>
+  <marc:subfield code="x">History</marc:subfield>
+  <marc:subfield code="y">586 B.C.-70 A.D.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Jews</marc:subfield>
+  <marc:subfield code="x">History</marc:subfield>
+  <marc:subfield code="y">Rebellion, 66-73.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Facsimiles.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Histories.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Annotations.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Lomer, Petrus,</marc:subfield>
+  <marc:subfield code="e">scribe.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Hahn, Franz Joseph Anton von,</marc:subfield>
+  <marc:subfield code="d">1699-1748,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Gladstone, W. E.</marc:subfield>
+  <marc:subfield code="q">(William Ewart),</marc:subfield>
+  <marc:subfield code="d">1809-1898,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="8" ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Web</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania.</marc:subfield>
+  <marc:subfield code="j">LJS 237</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="0" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4769953</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3nz80q8v</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs237.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20100427</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22276840520003681</marc:holding_id>
+        <marc:call_number>LJS 237</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmsw</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

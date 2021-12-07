@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>06303ctm a2200805Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9958895573503681</marc:controlfield>
+    <marc:controlfield tag="005">20211011114819.0</marc:controlfield>
+    <marc:controlfield tag="008">130122q14501499paua          000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn824738751</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)824738751</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)5889557-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn824738750</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 236</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="100">
+  <marc:subfield code="a">John</marc:subfield>
+  <marc:subfield code="b">XXI,</marc:subfield>
+  <marc:subfield code="c">Pope,</marc:subfield>
+  <marc:subfield code="d">-1277</marc:subfield>
+  <marc:subfield code="e">attributed name.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">Thesaurus pauperum ... [etc.]</marc:subfield>
+  <marc:subfield code="h">[manuscript].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[Italy,</marc:subfield>
+  <marc:subfield code="c">ca. 1450-1499]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">233 leaves :</marc:subfield>
+  <marc:subfield code="b">paper, ill. ;</marc:subfield>
+  <marc:subfield code="c">147 x 104 (92-95 x 66-69) mm. bound to 147 x 118 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title for manuscript from explicit for predominant work (f. 101r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation:  Paper, 233 + i (11th-century parchment); 1&#xB9;&#x2070;(-2) 2-11&#xB9;&#x2070; 12&#xB9;&#x2070;(-2) 13&#xB9;&#x2070;(-8) 14&#xB9;&#x2070;(-4) 15&#xB9;&#xB2;(-5) 16-21&#xB9;&#x2070; 22&#xB9;&#xB2; 23&#xB9;&#xB2;(-3) 24&#xB9;&#x2070;(-1) 25&#xB9;&#xB2;; early foliation in ink, [1], 2-8, 11-69, 80-89, 100-138, 149-151, 154-157, 160-167, 173-212, 113, 214-247, 251-263, 265-278 (f. 9-10, 139-148, 152-153, 158-159, 168-172 torn out), upper right recto.  Catchwords on the last verso of gatherings 2-11, 13-14, 16-23 (f. 20v, 30v, 40v, 50v, 60v, 80v, 100v, 110v, 120v, 130v, 150v, 160v, 182v, 192v, 202v, 212v, 222v, 232v, 244v, 256v); at least one gathering may be missing after a dangling catchword on gathering 21 (f. 232v).  References in this record are to foliation as it appears in the manuscript.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 31-35 long lines; some pages frame-ruled in lead.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in Gothic cursive script by at least 3 hands.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  Diagram of chemical apparatus in text (f. 260r); rough drawings in ink of faces (f. 167v); spaces left for 2-line and 3-line initials, with guide letters</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Original (15th-century) parchment with 5 metal bosses on each cover and remnants of a clasp; title Thesaurus pauperum partially visible on the upper cover in ink; attachment of covers to spine and binding to manuscript very fragile.  Back flyleaf and pastedown are formed from a fragment from a mid-11th-century German homiliary; the text is from Pope Leo I's Sermon 42, on Quadragesima.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in northern Italy in the second half of the 15th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r-100v: Thesaurus pauperum [often attributed elsewhere to Petrus Hispanus, later Pope John XXI; Thorndike-Kibre 698, 1132)]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">2. f.101r-138v: Medicina mirabilis et secreta.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.149r-163r: Liber computi de festis anni.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.163v-167v: [Poems, pen trials, names of teachers and others, drawings]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">5. f.173r-213v: Liber de consideratione 5 essentiae omnium rerum / [Johannes de Rupescissa; beginning lacking]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">6. f.213v-223v: Ars operativa / Magistri Raymundi [attributed in manuscript to Ramon Llull; Thorndike-Kibre 296]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">7. f.223v-233v: [Medical recipes]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">8. f.233v- 236r: [Medical recipes] / eddite a fratre Andrea Portugallensi.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">9. f.236r-247r: Tractatus utilissimus de proprietatibus aque vite / editus per Magistrum Arnaldum de villa nova [Thorndike-Kibre 645]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">10. f.247r-263v: [Medical recipes in Latin and Italian]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">11. f.265r-266v: [Notes, names of men and women]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">12. f.267r-272r: [Pharmacological treatise in Italian]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">13. f.272r-278r: [Medical recipes in Latin and Italian]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 92 (LJS 236).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Medical miscellany with almost the first half of the volume devoted to a copy of Thesaurus pauperum, a compilation of remedies for a variety of diseases frequently attributed to Petrus Hispanus, later Pope John XXI.  The remainder includes a work by Arnaldus de Villanova, a partial copy of a work by Johannes de Rupescissa, a work attributed to Ramon Llull, and several other unattributed collections of remedies.  Lists of multiple names, perhaps of teachers or students, many associated with locations in northern Italy, added by a few hands (f. 165r-167r, 265r-266r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">LJS 236</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Latin, with one section (f. 267r-272r) and some recipes, notes, and names in Italian.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Les Enluminures (Paris and Chicago) to Lawrence J. Schoenberg, Dec. 1997.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2012.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Medicine</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Medicine</marc:subfield>
+  <marc:subfield code="v">Formulae, receipts, prescriptions</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Diagrams.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Drawings.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Prescriptions.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Recipes.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Italian</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Llull, Ramon,</marc:subfield>
+  <marc:subfield code="d">1232?-1316,</marc:subfield>
+  <marc:subfield code="e">attributed name.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="700">
+  <marc:subfield code="a">Johannes,</marc:subfield>
+  <marc:subfield code="c">de Rupescissa,</marc:subfield>
+  <marc:subfield code="d">approximately 1300-approximately 1365.</marc:subfield>
+  <marc:subfield code="t">Liber de consideratione quintae essentiae omnium rerum.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="700">
+  <marc:subfield code="a">Arnaldus,</marc:subfield>
+  <marc:subfield code="c">de Villanova,</marc:subfield>
+  <marc:subfield code="d">-1311.</marc:subfield>
+  <marc:subfield code="t">Tractatus de proprietatibus aque vite.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="740">
+  <marc:subfield code="a">Ars operativa medica.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 236</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5889557</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/2025255</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3wk8z</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs236.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20140730</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22397463930003681</marc:holding_id>
+        <marc:call_number>LJS 236</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>
