@@ -86,8 +86,8 @@ CSV.open output_csv, "w", headers: true do |row|
       century                            = DS.transform_date_to_century production_date
       production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
-      uniform_title_240_as_recorded      = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
-      uniform_title_240_agr              = DS::MarcXML.extract_title_agr record, 240
+      uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
+      uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
       title_as_recorded_245              = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text
       title_as_recorded_245_agr          = DS::MarcXML.extract_title_agr record, 245
       genre_as_recorded                  = DS::MarcXML.collect_datafields record, tags: 655, codes: 'abcvxyz'.split(//), sub_sep: '--'
@@ -118,13 +118,12 @@ CSV.open output_csv, "w", headers: true do |row|
                holding_institution_id_number:       holding_institution_id_number,
                link_to_holding_institution_record:  link_to_holding_institution_record,
                iiif_manifest:                       iiif_manifest,
-               production_date_encoded_008:         production_date_encoded_008,
                production_date:                     production_date,
                century:                             century,
                production_place_as_recorded:        production_place_as_recorded,
                production_date_as_recorded:         production_date_as_recorded,
-               uniform_title_240_as_recorded:       uniform_title_240_as_recorded,
-               uniform_title_240_agr:               uniform_title_240_agr,
+               uniform_title_as_recorded:           uniform_title_as_recorded,
+               uniform_title_agr:                   uniform_title_agr,
                title_as_recorded_245:               title_as_recorded_245,
                title_as_recorded_245_agr:           title_as_recorded_245_agr,
                genre_as_recorded:                   genre_as_recorded,
