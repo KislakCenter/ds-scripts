@@ -79,7 +79,7 @@ CSV.open output_csv, "w", headers: true do |row|
       holding_institution                = inst_qid
       holding_institution_as_recorded    = DS::MarcXML.extract_institution_name record, default: preferred_name
       holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record, mmsids_file
-      link_to_holding_institution_record = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{DS::MarcXML.extract_mmsid(record)}}
+      link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, options[:institution]
       iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
       production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
       production_date                    = DS::MarcXML.parse_008 production_date_encoded_008
