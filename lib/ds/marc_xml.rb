@@ -187,7 +187,7 @@ module DS
         return '' if linkage.empty?
         index = linkage.split('-').last
         xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a']"
-        record.xpath(xpath).text
+        record.xpath(xpath).text.delete '[]'
       end
 
       def extract_uniform_title_as_recorded record

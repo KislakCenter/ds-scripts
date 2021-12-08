@@ -30,7 +30,7 @@ module DS
         _types = [types].flatten.map &:to_s
         type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
         xpath = %Q{//respStmt[#{type_query}]/persName}
-        nodes.xpath(xpath).map { |rs| rs['ref'] }.join '|'
+        nodes.xpath(xpath).map { |rs| rs['ref'] }.reject(&:nil?).join '|'
       end
 
       ##
