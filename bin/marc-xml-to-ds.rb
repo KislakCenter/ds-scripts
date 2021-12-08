@@ -92,8 +92,8 @@ CSV.open output_csv, "w", headers: true do |row|
       title_as_recorded_245_agr          = DS::MarcXML.extract_title_agr record, 245
       genre_as_recorded                  = DS::MarcXML.collect_datafields record, tags: 655, codes: 'abcvxyz'.split(//), sub_sep: '--'
       subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [610, 650, 651, 600], codes: ('a'..'z').to_a, sub_sep: '--'
-      author_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [100]
-      author_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [100]
+      author_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [100, 110, 111]
+      author_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [100, 110, 111]
       artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
       artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['artist', 'illuminator']
       scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
