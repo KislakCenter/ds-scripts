@@ -1,0 +1,2715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+    <record>
+        <leader>01508ctmaa22002652a 4500</leader>
+        <controlfield tag="001">9962668453506421</controlfield>
+        <controlfield tag="005">20200927195335.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266845</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266845-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Erzurūmī, Ibrāhīm ibn ʻUthmān ḥaqqī,</subfield>
+            <subfield code="d">d. 1781.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Ulfat al-anām bi-al-amn wa-al-āmān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 2b-25a. 208 x 130; 155 x 77 mm. 25 lin. Rajab 1290.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Aaccording to Brockelmann, GAL, and Tahir, Osmanlı müʻellifleri
+                (1914-24), the author d. 1186/1772, but the colophon of the ms. indicates that the
+                author completed his work in 1190 H.).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, S II, 1004 (79: no. 3) Tahir, Osmanlı müʻellifleri
+                (1914-24), I, 35 (no. 37).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">The treatise is divided into 25 faṣl and khātimah:</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">الاول): فى بىان فضائل الالفة</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">... الثانى): فى بىان فوائد الافة بحسن الخلق مع الخلق</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">الرابع والعشرون): فى آداب صحبة اخوان الصفا وارکان الالفة
+                بهم</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">... الخامس والعشرون): فى آداب صحبة معارف الناس. خاتمة آداب صحبة مجاهل
+                الناس</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الرؤف الرحىم</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islamic etiquette</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Ulfat al-anām bi-al-amn wa-al-āmān ... etc.]</subfield>
+            <subfield code="w">99116510643506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00678ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668463506421</controlfield>
+        <controlfield tag="005">20200927195335.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266846</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266846-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="3">
+            <subfield code="a">al-Risālah al-salāmīyah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 145b-150b. 200 x 143; 143 x 73 mm. 19 lin. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Anon. (the title appears in the colophon).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... قال رسول الله .. اولى الناس بالله تعالى من بدأ
+                بالسلام</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islamic etiquette</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Sharḥ al-Durr al-yatīm ... etc.]</subfield>
+            <subfield code="w">99116511003506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00717ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668473506421</controlfield>
+        <controlfield tag="005">20200927195335.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266847</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266847-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="3">
+            <subfield code="a">al-Risālah al-salāmīyah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 150b-155b. 200 x 143; 143 x 73 mm. 19 lin. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon. -same as Fihrist al-makhṭūṭāt (1961-63) I, 356; title on
+                fol. 150b.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... فصل فى السلام وما ىتعلق به وهو مشتمل على ثلاثىن
+                مسئلة</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islamic etiquette</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Sharḥ al-Durr al-yatīm ... etc.]</subfield>
+            <subfield code="w">99116511003506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00765ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668483506421</controlfield>
+        <controlfield tag="005">20200927195335.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266848</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266848-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Bāb fī al-luʻb bi-al-maysir.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 221a-b. 301 x 190 mm. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... باب ىحوى کىفىة اللعب بالمىسر وما لسهامه من السهام .. اعلم
+                ان المىسر کان عند العرب</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Gambling</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Games</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Bāb fī al-luʻb bi-al-maysir ... etc.]</subfield>
+            <subfield code="w">99116509713506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00663ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668493506421</controlfield>
+        <controlfield tag="005">20200927195335.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266849</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266849-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Quṭb al-Dīn al-Iznīqī, Muḥammad ibn Muḥammad,</subfield>
+            <subfield code="d">d. 1418.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Murshid al-mutaʼahhil.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">ff. 28. 207 x 147; 167 x 80 mm. 27 lin. Rajab 1121.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 291 (7); S II, 315.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى خلق من الماء بشرا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Marriage</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00727ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668503506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266850</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266850-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Quṭb al-Dīn al-Iznīqī, Muḥammad ibn Muḥammad,</subfield>
+            <subfield code="d">d. 1418.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Murshid al-mutaʼahhil.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 45b-89b. 200 x 148; 140 x 76 mm. 15 lin. 19th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 291 (7); S II, 315.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى خلق من الماء بشرا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Marriage</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Murshid al-mutaʼahhil ... etc.]</subfield>
+            <subfield code="w">99116513093506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>01026ctmaa22002292a 4500</leader>
+        <controlfield tag="001">9962668513506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266851</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266851-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Suyūṭī,</subfield>
+            <subfield code="d">1445-1505.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n80081636</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Shaqāʼiq al-utrunj fī raqāʼiq al-ghunj.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 69b-75b. 212 x 151; 165 x 96 mm. 25 lin. Rajab 966.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 196 (no. 207); S II, 192.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله وسلام .. هذا جزء ىسمى شقائق</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islam</subfield>
+            <subfield code="x">Customs and practices</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008104961</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Women</subfield>
+            <subfield code="z">Islamic Empire</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Women</subfield>
+            <subfield code="x">Sexual behavior</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Erotic literature, Arabic</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Shaqāʼiq al-utrunj fī raqāʼiq al-ghunj ... etc.]</subfield>
+            <subfield code="w">99116509303506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00864ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668523506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266852</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266852-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Suyūṭī,</subfield>
+            <subfield code="d">1445-1505.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n80081636</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Wishāḥ fī fawāʼid al-nikāḥ.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 4a-69a. 212 x 151; 165 x 96mrm. 25 lin. [966 H.]</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 196 (no. 208); S II, 192.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">The first leaf is missing; incip. (as extant): ... وجعلته على مقدمة
+                وتسعة فصول الفصل الاول اما ترغىب النکاح</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Marriage</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Shaqāʼiq al-utrunj fī raqāʼiq al-ghunj ... etc.]</subfield>
+            <subfield code="w">99116509303506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00914ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668533506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266853</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266853-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Suyūṭī,</subfield>
+            <subfield code="d">1445-1505.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n80081636</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Nuzʹhat al-mutaʼammil wa-murshid al-mutaʼahhil.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">ff. 28. 201 x 130; 158 x 82 mm. 25 lin. 17th/18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 196 (no. 211); S II, 192.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">The first leaf is missing; incip. (as extant): ... سمىتها مباسم
+                الملاح ... فاختصرت منها هذا المختصر فى نحو عشرها</subfield>
+        </datafield>
+        <datafield tag="530" ind1=" " ind2=" ">
+            <subfield code="a">Also available in an electronic version.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Marriage</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="856" ind1="4" ind2="1">
+            <subfield code="u">http://arks.princeton.edu/ark:/88435/0z709004r</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00739ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668543506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q14001499xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266854</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266854-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Abḥāth al-nikāḥ li-dhī istīḍāḥ.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 14b-27a. 175 x 130; 130 x 90 mm. 13 lin. 15th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى خلق الناس من نفس واحد ... وبعد فالنکاح
+                ىنظر فى مدلوله لغة وشرعا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Marriage</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">15th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Abḥāth al-nikāḥ li-dhī istīḍāḥ ... etc.]</subfield>
+            <subfield code="w">99116506803506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00845ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668553506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q14001499xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266855</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266855-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Asās sirr al-akyās.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 27b-41b. 175 x 130; 130 x 90 mm. 13 lin. 15th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Anon. treatise on sexual ethics.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى خلق من الماء بشرا ... وبعد فبىان بعض اساس
+                سر الاکىاس</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islam</subfield>
+            <subfield code="x">Customs and practices</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008104961</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Sexual ethics</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">15th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Abḥāth al-nikāḥ li-dhī istīḍāḥ ... etc.]</subfield>
+            <subfield code="w">99116506803506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>01620ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668563506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266856</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266856-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Tuḥfat al-ruʼasāʼ fī baʻḍ mā warada fī al-nisāʼ.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 96a-124b. 200 x 145; 155 x 92 mm. Shaʻbān 1064, ʻAbd al-Jawād
+                ibn ʻAlī al-Abyārī.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">One leaf, containing the commencement of the preface, is missing; the
+                anon. author describes the arrangement of his work as follows (fol. 96a, lin. 16
+                sqq.): ... وسمىتها تحفة الروسا ... وضمنتها بابىن الباب الاول فىما ورد فىما فى النسا
+                وفىه ثلاثة فصول الفصل الاول فى ذم النساء الفصل الثانى فى التحذر من فتنتهن الفصل
+                الثالث فى فعلهن القبىح المسمى بالسحاق الباب الثانى فى النکاح وفىه اربعة فصول الفصل
+                الاول فى الترغىب فىه وفى آفاته الفصل الثانى فى الترغىب فىه وفى فوائده الفصل الثالث
+                فى حق الزوج على الزوجة الفصل الرابع فى آداب معاشرتهن</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">According to colophon, the author completed his work in 1025
+                H.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Marriage</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Women</subfield>
+            <subfield code="z">Islamic Empire</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Tuḥfat al-ruʼasāʼ fī baʻḍ mā warada fī al-nisāʼ ...
+                etc.]</subfield>
+            <subfield code="w">99116510813506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00930ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668573506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266857</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266857-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Zāhid, Aḥmad ibn Muḥammad,</subfield>
+            <subfield code="d">-1416.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n2012000135</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Tuḥfat al-sullāk fī faḍl al-siwāk.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 22a-27a. 217 x 156; 165 x 90 mm. 25 lin. 18th cen. (collated in
+                1151 H.).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 117 (24: no. 6).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله ... وبعد فهذه احادىث ذکرتها محذوفة
+                الاوائل</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Teeth</subfield>
+            <subfield code="x">Care and hygiene</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Toothpicks</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">Sharḥ al-Munfarijah ... [etc.],</subfield>
+            <subfield code="g">leaves 22a-27a</subfield>
+            <subfield code="w">9976980353506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00735ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668583506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266858</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266858-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Suyūṭī,</subfield>
+            <subfield code="d">1445-1505.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n80081636</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Isfār ʻan qalm al-aẓfār.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 47a-50a. 264 x 185; 203 x 130 mm. 31 lin. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 194 (no. 180); S II, 191.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... هذا جزء فى آداب قلم الاظفار ...</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islamic hygiene</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Isfār ʻan qalm al-aẓfār ... etc.]</subfield>
+            <subfield code="w">99116509783506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00935ctmaa22002172a 4500</leader>
+        <controlfield tag="001">9962668593506421</controlfield>
+        <controlfield tag="005">20200927195336.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266859</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266859-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Suyūṭī,</subfield>
+            <subfield code="d">1445-1505.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n80081636</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Akhbār al-maʼthūrah fī al-iṭṭilāʼ bi-al-nūrah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 17b-20b. 180 x 133; 147 x 80 mm. 23 lin. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 197 (no. 230); S II, 192.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... مسئلة ما قولکم فى الاطلاء</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hair</subfield>
+            <subfield code="x">Removal</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hair</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hair</subfield>
+            <subfield code="x">Removal</subfield>
+            <subfield code="x">Legal aspects</subfield>
+            <subfield code="x">Islamic law</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Akhbār al-maʼthūrah fī al-iṭṭilāʼ bi-al-nūrah ...
+                etc.]</subfield>
+            <subfield code="w">99116511353506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00777ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668603506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266860</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266860-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Bukhārī, Muḥammad ibn Yaḥyá,</subfield>
+            <subfield code="d">fl. 1527.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī faḍīlat al-ʻimāmah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 139b-141b. 200 x 134 mm. 18 lin. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Berlin 5459.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى کوّر عناصر وجودنا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Clothing and dress</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Turbans</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Sharḥ al-Durr al-yatīm ... etc.]</subfield>
+            <subfield code="w">99116511003506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00777ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668613506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266861</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266861-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Bukhārī, Muḥammad ibn Yaḥyá,</subfield>
+            <subfield code="d">fl. 1527.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī faḍīlat al-ʻimāmah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 142b-145a. 200 x 143 mm. 18 lin. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Berlin 5459.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى کوّر عناصر وجودنا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Clothing and dress</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Turbans</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Sharḥ al-Durr al-yatīm ... etc.]</subfield>
+            <subfield code="w">99116511003506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00780ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668623506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266862</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266862-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Bukhārī, Muḥammad ibn Yaḥyá,</subfield>
+            <subfield code="d">fl. 1527.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī faḍīlat al-ʻimāmah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 17b-20a. 197 x 115 mm. 19 lin. 1211 H.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Berlin 5459.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى کوّر عناصر وجودنا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Clothing and dress</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Turbans</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[[Five unidentified Turkish texts] ... etc.]</subfield>
+            <subfield code="w">99116515373506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00833ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668633506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266863</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266863-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Kemalpaşazade,</subfield>
+            <subfield code="d">1468 or 1469-1534.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n85370452</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-khiḍāb.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 1b-5a. 202 x 131; 140 x 68 mm. 21 lin. 16th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 601 (no. 96); S II, 671; Atsız,
+                Kemalpaşa-oğluʼnun eserleri, Şarkiyat mecmuası no. 58.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى الهم الحق</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hair</subfield>
+            <subfield code="x">Dyeing and bleaching</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-khiḍāb ... etc.]</subfield>
+            <subfield code="w">99116516013506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00825ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668643506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266864</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266864-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Kemalpaşazade,</subfield>
+            <subfield code="d">1468 or 1469-1534.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n85370452</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-khiḍāb.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 57b-60a. 213 x 145 mm. 23 lin. 16th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 601 (no. 96); S II, 671; Atsız,
+                Kemalpaşa-oğluʼnun eserleri, Şarkiyat mecmuası no. 58.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى الهم الحق</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hair</subfield>
+            <subfield code="x">Dyeing and bleaching</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-khiḍāb ... etc.]</subfield>
+            <subfield code="w">99116508323506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>01158ctmaa22002172a 4500</leader>
+        <controlfield tag="001">9962668653506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266865</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266865-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Ibn Ḥajar al-Haythamī, Aḥmad ibn Muḥammad,</subfield>
+            <subfield code="d">approximately 1503-approximately 1566.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n82165741</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Darr al-ghamāmah fī durr al-ṭaylasān wa-al-ʻadhabah
+                wa-al-ʻimāmah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 48b-62b. 182 x 137; 120 x 100 mm. 23 lin. Wādī Minā, Dhū
+                al-ḥijjah 969, Abū al-Luṭf ibn Ṣārim al-Dīn al-Ṣaydāwī.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 509 (no. 19); S II, 528.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى مىز العلماء بشعار فى العذبة</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Clothing and dress</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Headgear</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Turbans</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Ghurar al-sawāfir ʻan mā yaḥtāju ilayhi al-musāfir ...
+                etc.]</subfield>
+            <subfield code="w">99116506813506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00833ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668663506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266866</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266866-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Qārī al-Harawī, ʻAlī ibn Sulṭān Muḥammad,</subfield>
+            <subfield code="d">-1605 or 1606.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n82091823</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Taṣrīḥ fī sharḥ al-tasrīḥ.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 1b-4b. 221 x 154; 177 x 110 mm. 25 lin. 19th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 522 (no. 78); S II, 541.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى زىن العباد بما أراد</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hair</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Taḥqīq al-iḥtisāb fī tadqīq al-intisāb ... etc.]</subfield>
+            <subfield code="w">99116509033506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00887ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668673506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266867</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266867-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Ibn Bīrī, Ibrāhīm ibn ḥusayn,</subfield>
+            <subfield code="d">1614-1688.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Suʼāl wa-al-murād fī jawāz istiʻmāl al-misk wa-al-ʻanbar
+                wa-al-zabād.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 3b-4a. 222 x 167 mm. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 647 (26a: no. 3).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله المىسر لکل عسىر</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Perfumes</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hanafites</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105466</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Niʻmah al-kubrá ʻalá al-ʻālam bi-mawlid sayyid wuld Ādam ...
+                etc.]</subfield>
+            <subfield code="w">99116508243506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00885ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668683506421</controlfield>
+        <controlfield tag="005">20200927195337.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266868</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266868-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Himmātʹzādah, Muḥammad ibn Ḥasan,</subfield>
+            <subfield code="d">1680 or 1681-1761 or 1762.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/nr92013083</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Qawl al-aẓhar fī jawāz libs al-aḥmar.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 147b-149a. 240 x 166 mm. 19th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Baghdādī, Īḍāḥ al-maknūn, II, 246; Ṭalas, al-Kashshāf, 3468
+                (7).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد الله الذى اىّد الدىن بأقوال العلماء</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Clothing and dress</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-jahr bi-al-dhikr wa-al-taghannī ...
+                etc.]</subfield>
+            <subfield code="w">99116513923506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>01160ctmaa22002172a 4500</leader>
+        <controlfield tag="001">9962668693506421</controlfield>
+        <controlfield tag="005">20200927195338.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266869</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266869-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Saffārīnī, Muḥammad ibn Aḥmad,</subfield>
+            <subfield code="d">1702 or 1703-1774.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n85212066</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Bughyat al-nussāk fī al-kalām ʻalá al-siwāk.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 48b-59a. 224 x 165; 168 x 99 mm. 27 lin. autograph, 18th
+                cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Murādī, Silk al-durar, IV, 31 and Baghdādī, Īḍāḥ al-maknūn,
+                I, 262 mention his Tuhfat al-nussāk fī faḍl al-siwāk.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">The treatise is divided into muqaddimah, 5 faṣl, and
+                khātimah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله وحده وکفى ... اما بعد فانى قد سئلت مرارا عن
+                السواك</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Teeth</subfield>
+            <subfield code="x">Care and hygiene</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Toothpicks</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Bughyat al-nussāk fī al-kalām ʻalá al-siwāk ...
+                etc.]</subfield>
+            <subfield code="w">99116508733506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00675ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668703506421</controlfield>
+        <controlfield tag="005">20200927195338.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266870</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266870-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Qūnawī, ʻAlī.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī ḥukm libs al-aḥmar.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 72b-74a. 202 x 143; 130 x 63 mm. 17 lin. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى البسنا بلباس التقوى</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Clothing and dress</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[[Risālah fī ibāḥat shurb al-dukhān] ... etc.]</subfield>
+            <subfield code="w">99116515153506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00787ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668713506421</controlfield>
+        <controlfield tag="005">20200927195338.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266871</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266871-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Risālah fī al-siwāk.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 65b-68a. 202 x 143; 130 x 63 mm. 17 lin. Jumādá I,
+                1105</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله وسلام ... اعلم ان السواك کما انه سنة للرجال سنة
+                للنساء</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Teeth</subfield>
+            <subfield code="x">Care and hygiene</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Toothpicks</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[[Risālah fī ibāḥat shurb al-dukhān] ... etc.]</subfield>
+            <subfield code="w">99116515153506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00932ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668723506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266872</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266872-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Kemalpaşazade,</subfield>
+            <subfield code="d">1468 or 1469-1534.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n85370452</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī bayān ḥadd al-khamr.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 92b-94a. 194 x 125 mm. 17 lin. 16th/17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 601 (no. 98); S II, 671; Atsız,
+                Kemalpaşa-oğluʼnun eserleri, Şarkiyat mecmuası no. 61.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لولىه ... اعلم ان حد الخمر بالشرب</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Liquor laws (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hanafites</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105466</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-faqr ... etc.]</subfield>
+            <subfield code="w">99116514073506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00917ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668733506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266873</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266873-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Kemalpaşazade,</subfield>
+            <subfield code="d">1468 or 1469-1534.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n85370452</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī bayān ḥadd al-khamr.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 42a-b. 214 x 155 mm. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 601 (no. 98); S II, 671; Atsız,
+                Kemalpaşa-oğluʼnun eserleri, Şarkiyat mecmuası no. 61.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لولىه ... اعلم ان حد الخمر بالشرب</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Liquor laws (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hanafites</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105466</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālat al-miʻrāj ... etc.]</subfield>
+            <subfield code="w">99116508643506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00722ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668743506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266874</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266874-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Qarabāghī, Muḥammad ibn ʻAlī,</subfield>
+            <subfield code="d">-1535 or 1536.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/no2006104905</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī bayān ḥurmat al-khamr.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 43a-44a. 214 x 155 mm. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لولىه ... وبعد فلما قرع السمع وقلقل
+                الطبع</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Liquor laws (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālat al-miʻrāj ... etc.]</subfield>
+            <subfield code="w">99116508643506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00604ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668753506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q16001699xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266875</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266875-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Zaynī, Muḥammad ibn Maḥmūd,</subfield>
+            <subfield code="d">fl. 1613.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-qahwah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 167a-170a. 208 x 147 mm. 19 lin. 17th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الصانع الحکىم</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Coffee</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">17th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[[Unidentified Turkish text] ... etc.]</subfield>
+            <subfield code="w">99116512133506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00756ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668763506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266876</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266876-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Nābulusī, ʻAbd al-Ghanī ibn Ismāʻīl,</subfield>
+            <subfield code="d">1641-1731.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n83198301</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Ṣulḥ bayna al-ikhwān fī ḥukm ibāḥat al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">ff. 46. 210 x 150; 146 x 96 mm. 23 lin. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 456 (no. 32); S II, 474.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى جعل استعمال دخان التتن نافعا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00901ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668773506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266877</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266877-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Nābulusī, ʻAbd al-Ghanī ibn Ismāʻīl,</subfield>
+            <subfield code="d">1641-1731.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n83198301</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Ṣulḥ bayna al-ikhwān fī ḥukm ibāḥat al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 203b-217a (incompl. at end). 197 x 144; 148 x 63 mm. 19 lin.
+                19th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 456 (no. 32); S II, 474.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى جعل استعمال دخان التتن نافعا</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Muʻīn ʻalá maʻrifat al-rijāl al-madhkūrīn fī Kitāb
+                al-Arbaʻīn ... etc.]</subfield>
+            <subfield code="w">99116511483506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00813ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668783506421</controlfield>
+        <controlfield tag="005">20200927195339.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266878</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266878-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Khādimī, Muḥammad ibn Muṣṭafá,</subfield>
+            <subfield code="d">1701 or 1702-1762 or 1763.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/nr91027348</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-qahwah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 49a. 215 x 160 mm. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Tahir, Osmanlı müʻellifleri (1914-24), I, 298 (no. 20).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... وفى بعض المواضع من شرح ابن حجر على العباب طال الاختلاف فى
+                القهوة</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Coffee</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah al-Naqshabandīyah ... etc.]</subfield>
+            <subfield code="w">99116508983506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00777ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668793506421</controlfield>
+        <controlfield tag="005">20200927195340.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266879</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266879-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Khādimī, Muḥammad ibn Muṣṭafá,</subfield>
+            <subfield code="d">1701 or 1702-1762 or 1763.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/nr91027348</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 48b-49a. 215 x 160 mm. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Tahir, Osmanlı müʻellifleri (1914-24), I, 298 (no. 21).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لولىه ... اعلم ان امر الدخان</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah al-Naqshabandīyah ... etc.]</subfield>
+            <subfield code="w">99116508983506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00774ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668803506421</controlfield>
+        <controlfield tag="005">20200927195340.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266880</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266880-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Khādimī, Muḥammad ibn Muṣṭafá,</subfield>
+            <subfield code="d">1701 or 1702-1762 or 1763.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/nr91027348</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 21b-22a. 207 x 149 mm. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Tahir, Osmanlı müʻellifleri (1914-24), I, 298 (no. 21).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لولىه ... اعلم ان امر الدخان</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-dukhān ... etc.]</subfield>
+            <subfield code="w">99116509213506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00798ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668813506421</controlfield>
+        <controlfield tag="005">20200927195340.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266881</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266881-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Khādimī, Muḥammad ibn Muṣṭafá,</subfield>
+            <subfield code="d">1701 or 1702-1762 or 1763.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/nr91027348</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 6b-7a. 228 x 162 mm. 19th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Tahir, Osmanlı müʻellifleri (1914-24), I, 298 (no. 21).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لولىه ... اعلم ان امر الدخان</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Haza mektup lil-fazıl ıl-kâmil Mehmet el-Birgivi ...
+                etc.]</subfield>
+            <subfield code="w">99116512973506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00815ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668823506421</controlfield>
+        <controlfield tag="005">20200927195340.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266882</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266882-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Jabartī, Ḥasan ibn Ibrāhīm,</subfield>
+            <subfield code="d">1698 or 1699-1774?</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/nr94039118</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Aqwāl al-muʻribah fī aḥwāl al-ashribah.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 1b-5b. 220 x 158; 180 x 95 mm. 25 lin. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, II, 472 (no. 9); S II, 487.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الهادى الى الصواب</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Beverages</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-jahr bi-al-dhikr wa-al-taghannī ...
+                etc.]</subfield>
+            <subfield code="w">99116508123506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00691ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668833506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266883</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266883-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Alāʼīyawī, Maḥmūd ibn ʻAbd al-Raḥmān.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālah fī shurb al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 79b-83b. 202 x 143; 147 x 81 mm. 19 lin. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى بىن لعباده الحلال والحرام</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[[Risālah fī ibāḥat shurb al-dukhān] ... etc.]</subfield>
+            <subfield code="w">99116515153506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00861ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668843506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266884</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266884-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">ʻAymakī, Abū Bakr ibn Muʻāwiyah.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Iʻlām al-tilmīdh bi-aḥkām al-nabīdh.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 15a-20a. 220 x 176; 192 x 130 mm. 22 lin. 19th cen. (Imām
+                Shāmil).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى بىن بفضله الحلال والحرام ... وبعد فىقول
+                ... لما رأىت علماء داغستان</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Liquor laws (Islamic law)</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh85077417</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Beverages</subfield>
+            <subfield code="x">Religious aspects</subfield>
+            <subfield code="x">Islam.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī īmān abaway al-Nabī ... etc.]</subfield>
+            <subfield code="w">99116512943506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00639ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668853506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266885</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266885-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Risālah fī al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 32a-b. 210 x 150 mm. 16 lin. 18th cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله ... اعلم ان بىع الدخان ... باطل لانه لا ىصلح
+                الا للهو</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-dukhān ... etc.]</subfield>
+            <subfield code="w">99116506163506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00650ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668863506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266886</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266886-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Risālah fī al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 84b-86a (incompl. at end) 202 x 143; 147 x 81 mm. 19 lin. 18th
+                cen.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى اباح لنا ما خلق فى الارض</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[[Risālah fī ibāḥat shurb al-dukhān] ... etc.]</subfield>
+            <subfield code="w">99116515153506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00613ctmaa22001812a 4500</leader>
+        <controlfield tag="001">9962668873506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266887</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266887-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="a">Risālah fī al-dukhān.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 40a-44b. 213 x 158; 148 x 110 mm. 25 lin. 1246 H.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">anon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى اباح لنا ما خلق فى الارض</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Smoking (Islamic law)</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Risālah fī al-dukhān ... etc.]</subfield>
+            <subfield code="w">99116508293506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00921ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668883506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q15001599xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266888</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266888-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Ibn Abī al-Dunyā, ʻAbd Allāh ibn Muḥammad,</subfield>
+            <subfield code="d">823-894.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n85136568</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Risālat al-hawātif.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 63b-68a. 164 x 117; 108 x 70 mm. 11 lin. Zabīd, Ramaḍān
+                917.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, S I, 247 (no. 12).</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Contains al-hātif al-sābiʻ.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الهاتف السابع هاتف هداىة وارشاد الى سلوك سىبل
+                جهاد</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Jihad</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">16th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Ghāyat al-maṭlūb wa-aʻẓam al-minnah fīmā yaghfiru Allāh bi-hi
+                al-dhunūb wa-yūjibu al-jannah ... etc.]</subfield>
+            <subfield code="w">99116506843506421</subfield>
+        </datafield>
+    </record>
+
+    <record>
+        <leader>01042ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668903506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266890</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266890-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="0" ind2=" ">
+            <subfield code="a">Suyūṭī,</subfield>
+            <subfield code="d">1445-1505.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n80081636</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="3">
+            <subfield code="a">al-Araj fī al-faraj.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">fol. 210b-225b. 256 x 163; 175 x 110 mm. 25 lin. Ṣafar
+                1188.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Abridgment of the work of Ibn Abī al-Dunyā (d. 281/894):
+                Brockelmann, GAL, I, 160 (3: no. 1, Ausz.); S I, 247; Brockelmann, GAL, II, 203 (no.
+                298); S II, 197.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... هذا تألىف لطىف لخصت فىه کتاب الفرج ...</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Moral exhortation</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="700" ind1="1" ind2=" ">
+            <subfield code="a">Ibn Abī al-Dunyā, ʻAbd Allāh ibn Muḥammad,</subfield>
+            <subfield code="d">823-894.</subfield>
+            <subfield code="t">Faraj baʻda al-shiddah.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n88251324</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">[Masʼalah fī al-Qurʼān wa-mā waqaʻa fīhi min nizāʻ ...
+                etc.]</subfield>
+            <subfield code="w">99116508463506421</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00908ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668913506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q18001899xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266891</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266891-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Diyārbakrī, Musṭafá ibn ʻUmar.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Tadhkirat al-mudhakkirīn wa-tafkirat al-mufakkirīn.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">ff. 94. 213 x 156; 155 x 84 mm. 17 lin. 1234 H.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Abridgement of Rawḍat al-ʻuqalāʼ of Ibn Ḥibbān al-Bustī, d.
+                354/965, cf. Brockelmann, GAL, S I, 273 (8: no. 5); the title appears in the
+                colophon.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى التجى الىه فى کدرة حالى</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islamic ethics.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh85068451</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">19th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="700" ind1="1" ind2="2">
+            <subfield code="a">Ibn Ḥibbān, Muḥammad,</subfield>
+            <subfield code="d">d. 965.</subfield>
+            <subfield code="t">Rawḍat al-ʻuqalāʼ wa-nuzʹhat al-fuḍalāʼ.</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>01091ctmaa22002172a 4500</leader>
+        <controlfield tag="001">9962668923506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q13001399xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266892</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266892-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Abū al-Layth al-Samarqandī, Naṣr ibn Muḥammad,</subfield>
+            <subfield code="d">-983?</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n82268136</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Tanbīh al-ghāfilīn.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">acephalous ff. 118. 242 x 185; 203 x 135 mm. 21 lin. Dhū al-ḥijjah
+                716, Muḥammad ibn ʻAbd al-Razzāq ibn Khālid al-Maqdisī.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, I, 211 (no. 9); S I, 348.</subfield>
+        </datafield>
+        <datafield tag="530" ind1=" " ind2=" ">
+            <subfield code="a">Also available in an electronic version.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Religious life</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh86008165</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008104957</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hadith</subfield>
+            <subfield code="x">Criticism, interpretation, etc.</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105464</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">14th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="856" ind1="4" ind2="1">
+            <subfield code="u">http://arks.princeton.edu/ark:/88435/r781wj636</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00963ctmaa22002052a 4500</leader>
+        <controlfield tag="001">9962668933506421</controlfield>
+        <controlfield tag="005">20200927195341.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266893</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266893-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Abū al-Layth al-Samarqandī, Naṣr ibn Muḥammad,</subfield>
+            <subfield code="d">-983?</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n82268136</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Tanbīh al-ghāfilīn.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Incip.: ... الحمد لله الذى هدانا لکتابه</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">ff. 335. 210 x 150; 150 x 62 mm. 21 lin. 1117 H.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, I, 211 (no. 9); S I, 348.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Religious life</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh86008165</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008104957</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hadith</subfield>
+            <subfield code="x">Criticism, interpretation, etc.</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105464</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>00885ctmaa22001932a 4500</leader>
+        <controlfield tag="001">9962668943506421</controlfield>
+        <controlfield tag="005">20200927195342.0</controlfield>
+        <controlfield tag="008">851121q17001799xx 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6266894</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6266894-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="066" ind1=" " ind2=" ">
+            <subfield code="c">(3</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Abū al-Layth al-Samarqandī, Naṣr ibn Muḥammad,</subfield>
+            <subfield code="d">-983?</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/names/n82268136</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Tanbīh al-ghāfilīn.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">ff. 225. 285 x 194; 210 x 125 mm. 21 lin. 1154 H.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Brockelmann, GAL, I, 211 (no. 9); S I, 348.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Religious life</subfield>
+            <subfield code="x">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh86008165</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Islam</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008104957</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Hadith</subfield>
+            <subfield code="x">Criticism, interpretation, etc.</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+            <subfield code="0">http://id.loc.gov/authorities/subjects/sh2008105464</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+    </record>
+    <record>
+        <leader>01765camaa2200361Ia 4500</leader>
+        <controlfield tag="001">9968554023506421</controlfield>
+        <controlfield tag="005">20200928171839.0</controlfield>
+        <controlfield tag="008">111007q17001799xx d 000 0 ara d</controlfield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(OCoLC)ocn756215414</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">6855402</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(OCoLC)756215414</subfield>
+        </datafield>
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NjP)6855402-princetondb</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">PUL</subfield>
+            <subfield code="e">amremm</subfield>
+            <subfield code="c">PUL</subfield>
+        </datafield>
+        <datafield tag="130" ind1="0" ind2=" ">
+            <subfield code="a">Majmūʻat ḥisābāt wa-ṣuwar aqlām.</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="0">
+            <subfield code="a">Kitāb Majmūʻat ḥisābāt wa-ṣuwar aqlām.</subfield>
+        </datafield>
+        <datafield tag="246" ind1="1" ind2="0">
+            <subfield code="a">Majmūʻat ḥisābāt wa-ṣuwar aqlām</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">[17--?]</subfield>
+        </datafield>
+        <datafield tag="300" ind1=" " ind2=" ">
+            <subfield code="a">70 leaves :</subfield>
+            <subfield code="b">paper ;</subfield>
+            <subfield code="c">162 x 107 (123 x 70) mm. bound to 163 x 109 mm.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Ms. codex.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Title from fol. 2b.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">On spine: Label reading "Majmūʻah H" in Arabic script.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Originally shelved as Islamic Manuscripts, Garrett no.
+                387L.</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Physical description: 15 lines per page; written in serto script in
+                black on unglazed, laid European paper. Rubrication and catchwords. Numerous tables
+                in Arabic script, including abjad and astrological tables. Lists of magical
+                alphabets on fol. 57b-68b. Fol. 1a-2a, 69a-70b blank. Light staining; otherwise in
+                excellent condition.</subfield>
+        </datafield>
+        <datafield tag="520" ind1="8" ind2=" ">
+            <subfield code="a">Collection of texts on divination, astrology, and magical
+                alphabets.</subfield>
+        </datafield>
+        <datafield tag="541" ind1=" " ind2=" ">
+            <subfield code="c">Gift ;</subfield>
+            <subfield code="a">Robert Garrett,</subfield>
+            <subfield code="d">1942.</subfield>
+        </datafield>
+        <datafield tag="546" ind1=" " ind2=" ">
+            <subfield code="a">Arabic in Syriac script.</subfield>
+        </datafield>
+        <datafield tag="563" ind1=" " ind2=" ">
+            <subfield code="a">Full red leather with paper pastedowns.</subfield>
+        </datafield>
+        <datafield tag="580" ind1=" " ind2=" ">
+            <subfield code="a">Forms part of the Robert Garrett Collection (C0744).</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Astrology, Arab</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Divination</subfield>
+            <subfield code="z">Middle East</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Magic</subfield>
+            <subfield code="z">Middle East</subfield>
+            <subfield code="v">Early works to 1800.</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Manuscripts, Arabic</subfield>
+            <subfield code="y">18th century.</subfield>
+            <subfield code="2">lcsh</subfield>
+        </datafield>
+        <datafield tag="773" ind1="0" ind2=" ">
+            <subfield code="t">Robert Garrett Collection,</subfield>
+            <subfield code="d">ca. 1340 B.C.-1900s.</subfield>
+            <subfield code="w">997895233506421</subfield>
+        </datafield>
+        <datafield tag="902" ind1=" " ind2=" ">
+            <subfield code="a">des</subfield>
+            <subfield code="b">o</subfield>
+            <subfield code="6">a</subfield>
+            <subfield code="7">m</subfield>
+            <subfield code="d">a</subfield>
+            <subfield code="f">0</subfield>
+            <subfield code="e">20111007</subfield>
+        </datafield>
+    </record>
+</collection>
