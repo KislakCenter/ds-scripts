@@ -234,13 +234,13 @@ module DS
         IIIF_MANIFESTS[mmsid.to_s]
       end
 
-      def extract_holding_institution_ids record, mmsid_file = nil
+      def extract_holding_institution_ids record, holdings_file = nil
         # start with the shelfmark
         ids = []
         if !find_shelfmark(record).empty?
           ids = [find_shelfmark(record)]
-        elsif !mmsid_file.nil?
-          ids = [shelfmark_lookup(record, mmsid_file)]
+        elsif !holdings_file.nil?
+          ids = [shelfmark_lookup(record, holdings_file)]
         end
         # add the MMS ID
         ids << extract_mmsid(record)
@@ -248,11 +248,11 @@ module DS
         ids.reject(&:empty?).join '|'
       end
 
-      def shelfmark_lookup record, mmsids_file
+      def shelfmark_lookup record, holdings_file
         # get the id from the record
         id = extract_mmsid(record)
         # search for mmsid in the external mmsid_file: "85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4084Y"
-        c0 = mmsids_file.first.xpath("//x:R[./x:C2/text() = '#{id}']/x:C0", { 'x' => 'urn:schemas-microsoft-com:xml-analysis:rowset' }).text
+        c0 = holdings_file.xpath("//x:R[./x:C2/text() = '#{id}']/x:C0", { 'x' => 'urn:schemas-microsoft-com:xml-analysis:rowset' }).text
         # split: ["85280 ", "b rare ", "c hsvm ", "h Islamic Manuscripts, Garrett no. 4084Y"]
         all_marks = c0.split('$$')
         # get marks we're concerned with: ["h Islamic Manuscripts, Garrett no. 4084Y"]

@@ -31,8 +31,8 @@ EOF
     options[:institution] = inst
   end
 
-  opts.on('-h FILE', '--holdings-file=FILE', 'Associated Holdings File (if separate from records)') do |h|
-    options[:holdings_file] = h
+  opts.on('-f FILE', '--holdings-file=FILE', 'Associated Holdings File (if separate from records)') do |f|
+    options[:holdings_file] = f
   end
 
   help_help = <<~EOF
