@@ -31,8 +31,8 @@ EOF
     options[:institution] = inst
   end
 
-  opts.on('-m FILE', '--mmsids=FILE', 'Associated MMSIDs (if separate from records)') do |m|
-    options[:mmsids] = m
+  opts.on('-f FILE', '--holdings-file=FILE', 'Associated Holdings File (if separate from records)') do |f|
+    options[:holdings_file] = f
   end
 
   help_help = <<~EOF
@@ -62,7 +62,7 @@ DEFAULT_FIELD_SEP = '|'
 DEFAULT_WORD_SEP  = ' '
 
 output_csv = options[:output_csv] || 'output.csv'
-mmsids_file = File.open(options[:mmsids]) { |f| Nokogiri::XML(f) } unless options[:mmsids].nil?
+holdings_file = File.open(options[:holdings_file]) { |f| Nokogiri::XML(f) } unless options[:holdings_file].nil?
 timestamp = DS.timestamp
 
 CSV.open output_csv, "w", headers: true do |row|
@@ -78,7 +78,7 @@ CSV.open output_csv, "w", headers: true do |row|
       source_type                        = 'marc-xml'
       holding_institution                = inst_qid
       holding_institution_as_recorded    = DS::MarcXML.extract_institution_name record, default: preferred_name
-      holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record, mmsids_file
+      holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record, holdings_file
       link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, options[:institution]
       iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
       production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
