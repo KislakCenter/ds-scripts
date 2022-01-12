@@ -33,26 +33,19 @@ module DS
         }.join '|'
       end
 
+      ##
+      # Extract the physical description for each part in +xml+, and return
+      # formatted string; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
+      #
+      # @param [Nokogiri::XML::Node] xml the document's xml
+      # @return [String] the physical description; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
       def extract_physical_description xml
         find_parts(xml).flat_map { |part|
           node = part.xpath('./descendant::mods:physicalDescription')
 
           extent    = extract_extent(node).flat_map { |s| "Extent: #{s}." }.join ' '
-          details   = note_by_type node, 'physical details'
-          marks     = note_by_type node, 'marks', tag: 'Marks'
-          technique = note_by_type node, 'technique', tag: 'Technique'
-          script    = note_by_type node, 'script', tag: 'Script'
-          medium    = note_by_type node, 'medium', tag: 'Medium'
-          support   = note_by_type node, 'support', tag: 'Support'
-          desc      = note_by_type(node, 'physical description').flat_map { |d|
-            d.split(%r{;;}).first
-          }.join ' '
-          [
-            extent, details, marks, technique, script, medium, support, desc
-          ].flatten.reject(&:empty?).map{ |s|
-            DS.clean_string s, terminator: '.'
-          }.join ' '
-        }.join '|'
+          DS.clean_string extent, terminator: '.'
+        }.join ' '
       end
 
       def note_by_type node, note_type, tag: nil
@@ -65,7 +58,7 @@ module DS
       def extract_extent phys_desc_node
         xpath = 'mods:extent'
         phys_desc_node.xpath(xpath).map { |extent|
-          extent.text.split(%r{;;}).reject(&:empty?).join '|'
+          extent.text.split(%r{;;}).reject(&:empty?).join '; '
         }
       end
 
