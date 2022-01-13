@@ -9,9 +9,9 @@ module DS
   module ClassMethods
     def clean_string string, terminator: nil
       # handle DS legacy superscript encoding, whitespace, duplicate '.', and ensure a
-      # terminator is present if added
       normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{\.\.+}, '.').delete '[]'
-      terminator.nil? ? normal : "#{normal.strip.sub(%r{[:.;,!?]+$}, '').strip}."
+      # terminator is added if present after any removing trailing whitespace and punctuation
+      terminator.nil? ? normal : "#{normal.sub(%r{[[:punct:][:space:]]+$}, '').strip}."
     end
 
     def find_qid inst_alias
