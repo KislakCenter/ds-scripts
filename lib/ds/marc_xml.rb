@@ -203,18 +203,12 @@ module DS
       end
 
       def extract_physical_description record
-        parts = []
         extent = record.xpath("datafield[@tag=300]").map { |datafield|
-          xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
+          xpath = "subfield[@code = 'a' or @code = 'c']"
           datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
         }.join ' '
-        parts << "Extent: #{extent}" unless extent.strip.empty?
-        parts << extract_named_500(record, name: 'Collation')
-        parts << extract_named_500(record, name: 'Layout')
-        parts << extract_named_500(record, name: 'Script')
-        parts << extract_named_500(record, name: 'Decoration')
-        parts << extract_named_500(record, name: 'Binding')
-        DS.clean_string parts.flatten.map(&:strip).join ' '
+        STDERR.puts "WARNING Value over 400 characters: '#{extent}'" if extent.size > 400
+        "Extent: #{DS.clean_string extent, terminator: '.'}" unless extent.strip.empty?
       end
 
       # We don't have a good way to look these up, so I'm hard-coding the addresses.

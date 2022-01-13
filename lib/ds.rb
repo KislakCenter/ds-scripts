@@ -11,7 +11,7 @@ module DS
       # handle DS legacy superscript encoding, whitespace, duplicate '.', and ensure a
       # terminator is present if added
       normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{\.\.+}, '.').delete '[]'
-      terminator.nil? ? normal : "#{normal.sub(%r{[.;,!?]+$}, '').strip}."
+      terminator.nil? ? normal : "#{normal.strip.sub(%r{[:.;,!?]+$}, '').strip}."
     end
 
     def find_qid inst_alias
