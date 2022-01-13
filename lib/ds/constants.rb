@@ -42,6 +42,7 @@ former_owner
 material
 material_as_recorded
 physical_description
+note
 acknowledgements
 data_processed_at
 data_source_modified
