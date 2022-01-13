@@ -203,12 +203,12 @@ module DS
       end
 
       def extract_physical_description record
-        extent = record.xpath("datafield[@tag=300]").map { |datafield|
+        phys_desc = record.xpath("datafield[@tag=300]").map { |datafield|
           xpath = "subfield[@code = 'a' or @code = 'c']"
           datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
         }.join ' '
-        STDERR.puts "WARNING Value over 400 characters: '#{extent}'" if extent.size > 400
-        "Extent: #{DS.clean_string extent, terminator: '.'}" unless extent.strip.empty?
+        STDERR.puts "WARNING Value over 400 characters: '#{phys_desc}'" if phys_desc.size > 400
+        "Extent: #{DS.clean_string phys_desc, terminator: '.'}" unless phys_desc.strip.empty?
       end
 
       # We don't have a good way to look these up, so I'm hard-coding the addresses.
