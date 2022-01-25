@@ -58,7 +58,6 @@ CSV.open output_csv, "w", headers: true do |row|
     production_date_as_recorded        = DS::OPennTEI.extract_production_date_as_recorded xml
     production_date                    = production_date_as_recorded
     century                            = DS.transform_date_to_century production_date
-    STDERR.puts "#{holding_institution_id_number}: '#{production_date_as_recorded}': #{century}"
     title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
     author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
     author                             = xml.xpath('//msItem/author').map{ |a| a['ref'] }.join '|'
