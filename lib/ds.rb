@@ -52,22 +52,53 @@ module DS
       DS::QID_TO_INSTITUTION_NAMES[qid].first
     end
 
+    ##
+    # Given date range like '1350-1520', return a pipe-separated list of Getty
+    # AAT century URIs.
+    #
+    # @param [String] date a single data or data range: '1832', '1350-1520'
+    # @return [String] a pipe-separated list of AAT URIs
     def transform_date_to_century date
-      return if date.nil?
-      century = []
-      date.split('-').each do |d|
-        if d.length <= 3
-          century << (d[0].to_i + 1).to_s
-        else
-          century << (d[0..1].to_i + 1).to_s
-        end
-      end
-      century.uniq.join '-'
+      return if date.to_s.empty?
+      centuries = date.split(/-/).map { |i| i.to_i/100 + 1 }.sort
+      (centuries.first..centuries.last).to_a.map { |c|
+        century_list[c.to_s]
+      }.uniq.join '|'
     end
 
     def timestamp
       DateTime.now.iso8601.to_s
     end
+
+    protected
+    @@centuries = nil
+
+    ##
+    # Read in the file `data/getty-aat-centuries.csv` and return a hash of Getty
+    # AAT century URIs. Keys are string century integers, like '1', '2', '3',
+    # '-1', '-2', '-3', etc. and values are AAT URIs.
+    #
+    # @return [Hash] a dictionary of AAT URIs for centuries
+    def century_list
+      return @@centuries unless @@centuries.nil?
+      path = File.expand_path '../ds/data/getty-aat-centuries.csv', __FILE__
+
+      # aat_id,label,number
+      # http://vocab.getty.edu/aat/300404465,fifteenth century (dates CE),15
+      # http://vocab.getty.edu/aat/300404493,first century (dates CE),1
+      # http://vocab.getty.edu/aat/300404494,second century (dates CE),2
+      # etc. ...
+      @@centuries = CSV.read(path).inject({}) do |h,row|
+        if row.first == 'aat_id'
+          h
+        else
+          h.update({ row.last => row.first })
+        end
+      end.freeze
+
+      @@centuries
+    end
+
   end
 
   self.extend ClassMethods
