@@ -158,16 +158,9 @@ module DS
       end
 
       def transform_production_date xml
-        recorded_dates = find_parts(xml).map do |part|
+        find_parts(xml).map { |part|
           extract_date_range part
-        end
-        date_array = recorded_dates.flat_map{ |date| date.split '-'}.sort_by(&:to_i).uniq
-        return nil if date_array.empty?
-        if date_array.length <= 2
-          return date_array.join '-'
-        else
-          return "#{date_array.first}-#{date_array.last}"
-        end
+        }.reject(&:empty?).join '|'
       end
 
       def extract_acknowledgements xml
