@@ -61,8 +61,14 @@ module DS
     # @return [String] a pipe-separated list of AAT URIs
     def transform_date_to_century dates
       return if dates.to_s.empty?
-      dates.split(/\|/).flat_map { |date|
+      dates.split('|').flat_map { |date|
+        next [] if date.strip.empty? # don't process empty values
+        # turn the date/date range into an array of century integers:
+        #     1350-1550 => [14,16]
         centuries = date.split(/-/).map { |i| i.to_i / 100 + 1 }.sort
+        # then we get an array for the range of centuries:
+        #       [14,16] => 14, 15, 16
+        # and we look up each AAT URI for those values
         (centuries.first..centuries.last).to_a.map { |c|
           lookup_century c
         }.join '-'
@@ -83,7 +89,7 @@ module DS
     # converted to a hash of Getty AAT century URIs. Keys are century integers,
     # like '1', '2', '3', '-1', '-2', '-3', etc. and values are AAT URIs.
     #
-    # @param [Integer] century a number like +1+, +12+, +-3+, etc.
+    # @param [Integer] century an integer like +1+, +12+, +-3+, etc.
     # @return [String] the AAT URI for the century
     def lookup_century century
       if @@centuries.nil?
