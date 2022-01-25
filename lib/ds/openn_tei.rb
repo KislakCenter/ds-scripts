@@ -101,10 +101,9 @@ module DS
       end
 
       def extract_production_date_as_recorded xml
-        date_array = xml.xpath('//origDate/@notBefore | //origDate/@notAfter').map { |date|
-          date.text
-        }.sort_by(&:to_i)
-        [date_array.first, date_array.last].compact.reject(&:empty?).join '-'
+        date_array = xml.xpath('//origDate').map { |orig|
+          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join '-'
+        }.reject(&:empty?).join '|'
       end
 
       def source_modified xml
