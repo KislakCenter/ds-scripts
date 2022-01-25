@@ -56,13 +56,22 @@ module DS
     # Given date range like '1350-1520', return a pipe-separated list of Getty
     # AAT century URIs.
     #
-    # @param [String] date a single data or data range: '1832', '1350-1520'
+    # @param [String] dates a pipe separated list of single dates or dats
+    #    ranges: '1832', '1350-1520'
     # @return [String] a pipe-separated list of AAT URIs
-    def transform_date_to_century date
-      return if date.to_s.empty?
-      centuries = date.split(/-/).map { |i| i.to_i/100 + 1 }.sort
-      (centuries.first..centuries.last).to_a.map { |c|
-        century_list[c.to_s]
+    def transform_date_to_century dates
+      return if dates.to_s.empty?
+      dates.split('|').flat_map { |date|
+        next [] if date.strip.empty? # don't process empty values
+        # turn the date/date range into an array of century integers:
+        #     1350-1550 => [14,16]
+        centuries = date.split(/-/).map { |i| i.to_i / 100 + 1 }.sort
+        # then we get an array for the range of centuries:
+        #       [14,16] => 14, 15, 16
+        # and we look up each AAT URI for those values
+        (centuries.first..centuries.last).to_a.map { |c|
+          lookup_century c
+        }.join '-'
       }.uniq.join '|'
     end
 
@@ -74,29 +83,30 @@ module DS
     @@centuries = nil
 
     ##
-    # Read in the file `data/getty-aat-centuries.csv` and return a hash of Getty
-    # AAT century URIs. Keys are string century integers, like '1', '2', '3',
-    # '-1', '-2', '-3', etc. and values are AAT URIs.
+    # Look up the URI for +century+, where century is an integer like +1+, +12+,
+    # +-3+, etc.
+    # Values are read in from the file `data/getty-aat-centuries.csv` and
+    # converted to a hash of Getty AAT century URIs. Keys are century integers,
+    # like '1', '2', '3', '-1', '-2', '-3', etc. and values are AAT URIs.
     #
-    # @return [Hash] a dictionary of AAT URIs for centuries
-    def century_list
-      return @@centuries unless @@centuries.nil?
-      path = File.expand_path '../ds/data/getty-aat-centuries.csv', __FILE__
+    # @param [Integer] century an integer like +1+, +12+, +-3+, etc.
+    # @return [String] the AAT URI for the century
+    def lookup_century century
+      if @@centuries.nil?
+        path = File.expand_path '../ds/data/getty-aat-centuries.csv', __FILE__
 
-      # aat_id,label,number
-      # http://vocab.getty.edu/aat/300404465,fifteenth century (dates CE),15
-      # http://vocab.getty.edu/aat/300404493,first century (dates CE),1
-      # http://vocab.getty.edu/aat/300404494,second century (dates CE),2
-      # etc. ...
-      @@centuries = CSV.read(path).inject({}) do |h,row|
-        if row.first == 'aat_id'
-          h
-        else
-          h.update({ row.last => row.first })
-        end
-      end.freeze
-
-      @@centuries
+        # aat_id,label,number
+        # http://vocab.getty.edu/aat/300404465,fifteenth century (dates CE),15
+        # http://vocab.getty.edu/aat/300404493,first century (dates CE),1
+        @@centuries = CSV.read(path).inject({}) do |h, row|
+          if row.first == 'aat_id'
+            h
+          else
+            h.update({ row.last => row.first })
+          end
+        end.freeze
+      end
+      @@centuries[century.to_s]
     end
 
   end
