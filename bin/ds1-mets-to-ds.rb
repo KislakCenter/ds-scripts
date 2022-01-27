@@ -76,8 +76,8 @@ CSV.open output_csv, "w", headers: true do |row|
     language                           = ''
     former_owner_as_recorded           = DS::DS10.extract_ownership xml
     former_owner_as_recorded_agr       = ''
-    material                           = DS::DS10.extract_support xml
-    material_placeholder               = ''
+    material                           = ''
+    material_placeholder               = DS::DS10.extract_support xml
     physical_description               = DS::DS10.extract_physical_description xml
     acknowledgements                   = DS::DS10.extract_acknowledgements xml
     data_processed_at                  = timestamp
