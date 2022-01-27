@@ -102,7 +102,7 @@ CSV.open output_csv, "w", headers: true do |row|
       language                           = DS::MarcXML.extract_langs record
       former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['former owner']
       former_owner_as_recorded_agr       = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['former owner']
-      material_as_recorded               = DS::MarcXML.collect_datafields record, tags: 300, codes: 'b'
+      material_placeholder               = DS::MarcXML.collect_datafields record, tags: 300, codes: 'b'
       physical_description               = DS::MarcXML.extract_physical_description record
       binding_description                = DS::MarcXML.extract_named_500 record,  name: 'Binding'
       extent_as_recorded                 = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
@@ -138,7 +138,7 @@ CSV.open output_csv, "w", headers: true do |row|
                language:                            language,
                former_owner_as_recorded:            former_owner_as_recorded,
                former_owner_as_recorded_agr:        former_owner_as_recorded_agr,
-               material_as_recorded:                material_as_recorded,
+               material_placeholder:                material_placeholder,
                physical_description:                physical_description,
                binding:                             binding_description,
                folios:                              folios,
