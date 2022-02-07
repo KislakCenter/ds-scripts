@@ -204,7 +204,7 @@ module DS
 
       def extract_physical_description record
         phys_desc = record.xpath("datafield[@tag=300]").map { |datafield|
-          xpath = "subfield[@code = 'a' or @code = 'c']"
+          xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
           datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
         }.join ' '
         STDERR.puts "WARNING Value over 400 characters: '#{phys_desc}'" if phys_desc.size > 400

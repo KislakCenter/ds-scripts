@@ -72,7 +72,7 @@ CSV.open output_csv, "w", headers: true do |row|
     former_owner_as_recorded           = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
     former_owner                       = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
     material                           = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/@material').text
-    material_as_recorded               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
+    material_placeholder               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
     physical_description               = DS::OPennTEI.extract_physical_description xml
     acknowledgements                   = ''
     binding_description                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
@@ -110,7 +110,7 @@ CSV.open output_csv, "w", headers: true do |row|
       former_owner_as_recorded:           former_owner_as_recorded,
       former_owner:                       former_owner,
       material:                           material,
-      material_as_recorded:               material_as_recorded,
+      material_placeholder:               material_placeholder,
       physical_description:               physical_description,
       acknowledgements:                   acknowledgements,
       binding:                            binding_description,
