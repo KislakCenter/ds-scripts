@@ -40,7 +40,7 @@ former_owner_as_recorded
 former_owner_as_recorded_agr
 former_owner
 material
-material_as_recorded
+material_placeholder
 physical_description
 acknowledgements
 data_processed_at
