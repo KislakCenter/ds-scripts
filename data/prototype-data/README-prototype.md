@@ -378,6 +378,19 @@ Files have been downloaded to `data/prototype-data/burke`.
 
 ### FLP TEI on OPenn
 
+To get the TEI paths, I took the CSV from OPenn (https://openn.library.upenn.edu/Data/0023_contents.csv);
+sorted the path column and copied a number of paths to a `dirs` variable.
+Because splitting a string by whitespace in ZSH always confuses me, here's how
+to iterate over `$dirs` in ZSH.
+
+```shell
+for x in $(echo $dirs)
+do 
+  folder=$(awk -F/ '{ print $2 }' <<< $x)
+  echo "https://openn.library.upenn.edu/Data/${x}/data/${folder}_TEI.xml"
+done
+```
+
 ```text
 https://openn.library.upenn.edu/Data/0023/horace_ms_1a/data/horace_ms_1a_TEI.xml
 https://openn.library.upenn.edu/Data/0023/horace_ms_1b/data/horace_ms_1b_TEI.xml
@@ -396,6 +409,15 @@ https://openn.library.upenn.edu/Data/0023/lewis_add_001/data/lewis_add_001_TEI.x
 https://openn.library.upenn.edu/Data/0023/lewis_add_002/data/lewis_add_002_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_add_003/data/lewis_add_003_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_add_004/data/lewis_add_004_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_001/data/lewis_c_001_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_002/data/lewis_c_002_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_006/data/lewis_c_006_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_016/data/lewis_c_016_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_017/data/lewis_c_017_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_018/data/lewis_c_018_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_025/data/lewis_c_025_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_026/data/lewis_c_026_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_c_027/data/lewis_c_027_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_001/data/lewis_e_001_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_002/data/lewis_e_002_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_003/data/lewis_e_003_TEI.xml
@@ -429,12 +451,33 @@ https://openn.library.upenn.edu/Data/0023/lewis_e_032/data/lewis_e_032_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_033/data/lewis_e_033_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_034/data/lewis_e_034_TEI.xml
 https://openn.library.upenn.edu/Data/0023/lewis_e_035/data/lewis_e_035_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_036/data/lewis_e_036_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_037/data/lewis_e_037_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_038/data/lewis_e_038_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_039/data/lewis_e_039_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_040/data/lewis_e_040_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_042/data/lewis_e_042_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_043/data/lewis_e_043_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_044/data/lewis_e_044_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_045/data/lewis_e_045_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_046/data/lewis_e_046_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_047/data/lewis_e_047_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_048/data/lewis_e_048_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_049/data/lewis_e_049_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_050/data/lewis_e_050_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_051/data/lewis_e_051_TEI.xml
+https://openn.library.upenn.edu/Data/0023/lewis_e_052/data/lewis_e_052_TEI.xml
 ```
 
 ```shell
 # for each URL download the file
 # e.g., lewis_e_035_TEI.xml
-for x in $urls; do mark=$(awk -F/ '{ print $6 }' <<< $x); curl -O $x; done
+for x in $urls; do curl -O $x; done
+```
+
+```shell
+# ZSH version
+for x in $(echo $urls); do curl -O $x; done
 ```
 
 Files have been downloaded to `data/prototype/flp`
