@@ -1,285 +1,387 @@
 <RS xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
-	<!-- Alma Analytics output. See schema. C0 is their version of MARC, with $$ as delimiter. Holdings and bibliographic record IDs [MARC 001] in C1 and C2, respectively.-->
-	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql"
-		targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
+    <!-- Alma Analytics output. See schema. C0 is their version of MARC, with $$ as delimiter. Holdings and bibliographic record IDs [MARC 001] in C1 and C2, respectively.-->
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
 		<xsd:complexType name="R">
 			<xsd:sequence>
-				<xsd:element name="C0" type="xsd:string" minOccurs="0" maxOccurs="1"
-					saw-sql:type="varchar"
-					saw-sql:sqlFormula="&quot;Physical Items&quot;.&quot;Holding Details&quot;.&quot;852 MARC&quot;"
-					saw-sql:displayFormula="&quot;Holding Details&quot;.&quot;852 MARC&quot;"
-					saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg"
-					saw-sql:tableHeading="Holding Details" saw-sql:columnHeading="852 MARC"
-					saw-sql:isDoubleColumn="false" saw-sql:columnID="c29a01822bd0d50d7"
-					saw-sql:length="1000" saw-sql:scale="0" saw-sql:precision="1000"/>
-				<xsd:element name="C1" type="xsd:string" minOccurs="0" maxOccurs="1"
-					saw-sql:type="varchar"
-					saw-sql:sqlFormula="&quot;Physical Items&quot;.&quot;Holding Details&quot;.&quot;Holding Id&quot;"
-					saw-sql:displayFormula="&quot;Holding Details&quot;.&quot;Holding Id&quot;"
-					saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg"
-					saw-sql:tableHeading="Holding Details" saw-sql:columnHeading="Holding Id"
-					saw-sql:isDoubleColumn="false" saw-sql:columnID="c5cde877e30ea41da"
-					saw-sql:length="255" saw-sql:scale="0" saw-sql:precision="255"/>
-				<xsd:element name="C2" type="xsd:string" minOccurs="0" maxOccurs="1"
-					saw-sql:type="varchar"
-					saw-sql:sqlFormula="&quot;Physical Items&quot;.&quot;Bibliographic Details&quot;.&quot;MMS Id&quot;"
-					saw-sql:displayFormula="&quot;Bibliographic Details&quot;.&quot;MMS Id&quot;"
-					saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg"
-					saw-sql:tableHeading="Bibliographic Details" saw-sql:columnHeading="MMS Id"
-					saw-sql:isDoubleColumn="false" saw-sql:columnID="c8f60c7c45c0c561f"
-					saw-sql:length="255" saw-sql:scale="0" saw-sql:precision="255"/>
+				<xsd:element name="C0" type="xsd:string" minOccurs="0" maxOccurs="1" saw-sql:type="varchar" saw-sql:sqlFormula="&quot;Physical Items&quot;.&quot;Holding Details&quot;.&quot;852 MARC&quot;" saw-sql:displayFormula="&quot;Holding Details&quot;.&quot;852 MARC&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="Holding Details" saw-sql:columnHeading="852 MARC" saw-sql:isDoubleColumn="false" saw-sql:columnID="c29a01822bd0d50d7" saw-sql:length="1000" saw-sql:scale="0" saw-sql:precision="1000"/>
+				<xsd:element name="C1" type="xsd:string" minOccurs="0" maxOccurs="1" saw-sql:type="varchar" saw-sql:sqlFormula="&quot;Physical Items&quot;.&quot;Holding Details&quot;.&quot;Holding Id&quot;" saw-sql:displayFormula="&quot;Holding Details&quot;.&quot;Holding Id&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="Holding Details" saw-sql:columnHeading="Holding Id" saw-sql:isDoubleColumn="false" saw-sql:columnID="c5cde877e30ea41da" saw-sql:length="255" saw-sql:scale="0" saw-sql:precision="255"/>
+				<xsd:element name="C2" type="xsd:string" minOccurs="0" maxOccurs="1" saw-sql:type="varchar" saw-sql:sqlFormula="&quot;Physical Items&quot;.&quot;Bibliographic Details&quot;.&quot;MMS Id&quot;" saw-sql:displayFormula="&quot;Bibliographic Details&quot;.&quot;MMS Id&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="Bibliographic Details" saw-sql:columnHeading="MMS Id" saw-sql:isDoubleColumn="false" saw-sql:columnID="c8f60c7c45c0c561f" saw-sql:length="255" saw-sql:scale="0" saw-sql:precision="255"/>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:schema>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4084Y</C0>
-		<C1>22525514800006421</C1>
-		<C2>9962668453506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
-		<C1>22525508390006421</C1>
-		<C2>9962668463506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
-		<C1>22525479450006421</C1>
-		<C2>9962668473506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3586Yq $$k Oversize</C0>
-		<C1>22525512530006421</C1>
-		<C2>9962668483506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3289Y</C0>
-		<C1>22525512170006421</C1>
-		<C2>9962668493506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5130Y</C0>
-		<C1>22525507110006421</C1>
-		<C2>9962668503506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 335Y</C0>
-		<C1>22525553730006421</C1>
-		<C2>9962668513506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 335Y</C0>
-		<C1>22525562820006421</C1>
-		<C2>9962668523506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2317Y</C0>
-		<C1>22525483970006421</C1>
-		<C2>9962668533506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1370Y</C0>
-		<C1>22525508050006421</C1>
-		<C2>9962668543506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1370Y</C0>
-		<C1>22525494590006421</C1>
-		<C2>9962668553506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4145Y</C0>
-		<C1>22525572400006421</C1>
-		<C2>9962668563506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3064Y</C0>
-		<C1>22525515490006421</C1>
-		<C2>9962668573506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3648Y</C0>
-		<C1>22525526000006421</C1>
-		<C2>9962668583506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4343Y</C0>
-		<C1>22525566880006421</C1>
-		<C2>9962668593506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
-		<C1>22525553960006421</C1>
-		<C2>9962668603506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
-		<C1>22525486160006421</C1>
-		<C2>9962668613506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5930Y</C0>
-		<C1>22525514370006421</C1>
-		<C2>9962668623506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 846Y</C0>
-		<C1>22525539110006421</C1>
-		<C2>9962668633506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2904Y</C0>
-		<C1>22525486870006421</C1>
-		<C2>9962668643506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1371Y</C0>
-		<C1>22525462690006421</C1>
-		<C2>9962668653506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3239Y</C0>
-		<C1>22525573300006421</C1>
-		<C2>9962668663506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2868Y</C0>
-		<C1>22525536240006421</C1>
-		<C2>9962668673506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5386Y</C0>
-		<C1>22525546520006421</C1>
-		<C2>9962668683506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 312Y</C0>
-		<C1>22525483170006421</C1>
-		<C2>9962668693506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
-		<C1>22525545920006421</C1>
-		<C2>9962668703506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
-		<C1>22525568260006421</C1>
-		<C2>9962668713506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5437Y</C0>
-		<C1>22525551200006421</C1>
-		<C2>9962668723506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3091Y</C0>
-		<C1>22525480870006421</C1>
-		<C2>9962668733506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3091Y</C0>
-		<C1>22525563360006421</C1>
-		<C2>9962668743506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4602Y</C0>
-		<C1>22525462310006421</C1>
-		<C2>9962668753506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4572Y</C0>
-		<C1>22525562280006421</C1>
-		<C2>9962668763506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4396Y</C0>
-		<C1>22525537560006421</C1>
-		<C2>9962668773506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3225Y</C0>
-		<C1>22525497610006421</C1>
-		<C2>9962668783506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3225Y</C0>
-		<C1>22525589850006421</C1>
-		<C2>9962668793506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3331Y</C0>
-		<C1>22525539000006421</C1>
-		<C2>9962668803506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5091Y</C0>
-		<C1>22525521430006421</C1>
-		<C2>9962668813506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2798Y</C0>
-		<C1>22525544160006421</C1>
-		<C2>9962668823506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
-		<C1>22525474760006421</C1>
-		<C2>9962668833506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5080Y</C0>
-		<C1>22525505760006421</C1>
-		<C2>9962668843506421</C2>
-	</R>
-	<R>
+<R>
 		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1088Y</C0>
 		<C1>22525569910006421</C1>
 		<C2>9962668853506421</C2>
 	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
-		<C1>22525460130006421</C1>
-		<C2>9962668863506421</C2>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1127Y</C0>
+		<C1>22525573650006421</C1>
+		<C2>9962669203506421</C2>
 	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2886Y</C0>
-		<C1>22525491240006421</C1>
-		<C2>9962668873506421</C2>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1370Y</C0>
+		<C1>22525494590006421</C1>
+		<C2>9962668553506421</C2>
 	</R>
-	<R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1370Y</C0>
+		<C1>22525508050006421</C1>
+		<C2>9962668543506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1371Y</C0>
+		<C1>22525462690006421</C1>
+		<C2>9962668653506421</C2>
+	</R>
+<R>
 		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1391Y</C0>
 		<C1>22525555460006421</C1>
 		<C2>9962668883506421</C2>
 	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2992Y</C0>
-		<C1>22525507560006421</C1>
-		<C2>9962668903506421</C2>
-	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5983Y</C0>
-		<C1>22525563670006421</C1>
-		<C2>9962668913506421</C2>
-	</R>
-	<R>
+<R>
 		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 177Y</C0>
 		<C1>22525480450006421</C1>
 		<C2>9962668923506421</C2>
 	</R>
-	<R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 1891Y</C0>
+		<C1>22525579330006421</C1>
+		<C2>9962668893506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2295Y</C0>
+		<C1>22525549230006421</C1>
+		<C2>9962669133506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2317Y</C0>
+		<C1>22525483970006421</C1>
+		<C2>9962668533506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2533Y</C0>
+		<C1>22525516210006421</C1>
+		<C2>9962669213506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2780Y</C0>
+		<C1>22525567060006421</C1>
+		<C2>9962669063506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2798Y</C0>
+		<C1>22525544160006421</C1>
+		<C2>9962668823506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2828Y</C0>
+		<C1>22525524640006421</C1>
+		<C2>9962669023506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2868Y</C0>
+		<C1>22525536240006421</C1>
+		<C2>9962668673506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2886Y</C0>
+		<C1>22525491240006421</C1>
+		<C2>9962668873506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2904Y</C0>
+		<C1>22525486870006421</C1>
+		<C2>9962668643506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 2992Y</C0>
+		<C1>22525507560006421</C1>
+		<C2>9962668903506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3064Y</C0>
+		<C1>22525515490006421</C1>
+		<C2>9962668573506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3091Y</C0>
+		<C1>22525480870006421</C1>
+		<C2>9962668733506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3091Y</C0>
+		<C1>22525563360006421</C1>
+		<C2>9962668743506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 312Y</C0>
+		<C1>22525483170006421</C1>
+		<C2>9962668693506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3149Y</C0>
+		<C1>22525460380006421</C1>
+		<C2>9962669103506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3174Y</C0>
+		<C1>22525490000006421</C1>
+		<C2>9962668983506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3225Y</C0>
+		<C1>22525497610006421</C1>
+		<C2>9962668783506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3225Y</C0>
+		<C1>22525589850006421</C1>
+		<C2>9962668793506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3239Y</C0>
+		<C1>22525573300006421</C1>
+		<C2>9962668663506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3288Y</C0>
+		<C1>22525563920006421</C1>
+		<C2>9962669013506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3289Y</C0>
+		<C1>22525512170006421</C1>
+		<C2>9962668493506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3319Y</C0>
+		<C1>22525576630006421</C1>
+		<C2>9962669073506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3331Y</C0>
+		<C1>22525539000006421</C1>
+		<C2>9962668803506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 335Y</C0>
+		<C1>22525553730006421</C1>
+		<C2>9962668513506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 335Y</C0>
+		<C1>22525562820006421</C1>
+		<C2>9962668523506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3370Y</C0>
+		<C1>22525545690006421</C1>
+		<C2>9962669163506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3388Y</C0>
+		<C1>22525474210006421</C1>
+		<C2>9962669153506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3452Y</C0>
+		<C1>22525476910006421</C1>
+		<C2>9962669053506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3586Yq $$k Oversize</C0>
+		<C1>22525512530006421</C1>
+		<C2>9962668483506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3648Y</C0>
+		<C1>22525526000006421</C1>
+		<C2>9962668583506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3891Y</C0>
+		<C1>22525546370006421</C1>
+		<C2>9962669193506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 3960Y</C0>
+		<C1>22525571950006421</C1>
+		<C2>9962669113506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4080Y</C0>
+		<C1>22525551560006421</C1>
+		<C2>9962668973506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4084Y</C0>
+		<C1>22525514800006421</C1>
+		<C2>9962668453506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4145Y</C0>
+		<C1>22525572400006421</C1>
+		<C2>9962668563506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4183Y</C0>
+		<C1>22525536000006421</C1>
+		<C2>9962669183506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
+		<C1>22525479450006421</C1>
+		<C2>9962668473506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
+		<C1>22525486160006421</C1>
+		<C2>9962668613506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
+		<C1>22525508390006421</C1>
+		<C2>9962668463506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4204Y</C0>
+		<C1>22525553960006421</C1>
+		<C2>9962668603506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4343Y</C0>
+		<C1>22525566880006421</C1>
+		<C2>9962668593506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4396Y</C0>
+		<C1>22525537560006421</C1>
+		<C2>9962668773506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4572Y</C0>
+		<C1>22525562280006421</C1>
+		<C2>9962668763506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4573Y</C0>
+		<C1>22525570590006421</C1>
+		<C2>9962668963506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4602Y</C0>
+		<C1>22525462310006421</C1>
+		<C2>9962668753506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4757Y</C0>
+		<C1>22525460790006421</C1>
+		<C2>9962669083506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5080Y</C0>
+		<C1>22525505760006421</C1>
+		<C2>9962668843506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5091Y</C0>
+		<C1>22525521430006421</C1>
+		<C2>9962668813506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5130Y</C0>
+		<C1>22525507110006421</C1>
+		<C2>9962668503506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5169Y</C0>
+		<C1>22525546170006421</C1>
+		<C2>9962668993506421</C2>
+	</R>
+<R>
 		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5232Y</C0>
 		<C1>22525524980006421</C1>
 		<C2>9962668933506421</C2>
 	</R>
-	<R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5361Y</C0>
+		<C1>22525502410006421</C1>
+		<C2>9962669033506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5386Y</C0>
+		<C1>22525546520006421</C1>
+		<C2>9962668683506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5437Y</C0>
+		<C1>22525551200006421</C1>
+		<C2>9962668723506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5714Y</C0>
+		<C1>22525463260006421</C1>
+		<C2>9962668953506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5744Y</C0>
+		<C1>22525574580006421</C1>
+		<C2>9962669043506421</C2>
+	</R>
+<R>
 		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5810Yq $$k Oversize</C0>
 		<C1>22525575630006421</C1>
 		<C2>9962668943506421</C2>
 	</R>
-	<R>
-		<C0>85280 $$b rare $$c hsvm $$h C0744.05 (Garrett Syriac Manuscripts, no. 21) $$d Islamic
-			Manuscripts, Garrett no. 387L $$x tr fr mss</C0>
-		<C1>22543763880006421</C1>
-		<C2>9968554023506421</C2>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
+		<C1>22525460130006421</C1>
+		<C2>9962668863506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
+		<C1>22525474760006421</C1>
+		<C2>9962668833506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
+		<C1>22525545920006421</C1>
+		<C2>9962668703506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5838Y</C0>
+		<C1>22525568260006421</C1>
+		<C2>9962668713506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5930Y</C0>
+		<C1>22525514370006421</C1>
+		<C2>9962668623506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 5983Y</C0>
+		<C1>22525563670006421</C1>
+		<C2>9962668913506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 638Y</C0>
+		<C1>22525472840006421</C1>
+		<C2>9962669123506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 846Y</C0>
+		<C1>22525539110006421</C1>
+		<C2>9962668633506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 910Y</C0>
+		<C1>22525547820006421</C1>
+		<C2>9962669173506421</C2>
+	</R>
+<R>
+		<C0>85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 912Y</C0>
+		<C1>22525540370006421</C1>
+		<C2>9962669093506421</C2>
 	</R>
 </RS>
