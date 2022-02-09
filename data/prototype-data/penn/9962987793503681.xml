@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>04554ctd a2200553Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9962987793503681</marc:controlfield>
+    <marc:controlfield tag="005">20191003131937.0</marc:controlfield>
+    <marc:controlfield tag="008">141111q17001850ii            000 0 san d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn895003832</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)895003832</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)6298779-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="e">dacs</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn895003831</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="100">
+  <marc:subfield code="a">S&#x301;an&#x307;kara&#x304;ca&#x304;rya.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="6">880-01</marc:subfield>
+  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;bha&#x304;s&#x323;ya.</marc:subfield>
+  <marc:subfield code="n">Adhya&#x304;ya 3,</marc:subfield>
+  <marc:subfield code="f">circa 1700-1850.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">1</marc:subfield>
+  <marc:subfield code="f">item (123 leaves) :</marc:subfield>
+  <marc:subfield code="b">paper ;</marc:subfield>
+  <marc:subfield code="c">17 x 31 cm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from colophon (f. 123v); title of super-commentary Bha&#x304;s&#x323;yaratnaprabha&#x304; from commentary colophon (f. 123v); alternate titles of super-commentary, S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;vya&#x304;khya&#x304;ya&#x304; and S&#x301;a&#x304;ri&#x304;rakabhagavatpa&#x304;dabha&#x304;s&#x323;yavibha&#x304;ga, supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Written in 10-21 lines per leaf.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">123 leaves foliated 1-123, upper right verso.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Colophon (commentary): iti s&#x301;ri&#x304;matparamaham&#x323;saparivra&#x304;jaka&#x304;ca&#x304;rya s&#x301;ri&#x304;govim&#x323;da&#x304;nam&#x323;dabhagavatkr&#x323;tau s&#x301;a&#x304;ri&#x304;raka[mi&#x304;ma&#x304;m&#x323;sa&#x304;]vya&#x304;khya&#x304;ya&#x304;m&#x323; bha&#x304;s&#x323;yaratnaprabha&#x304;ya&#x304;m&#x323; tr&#x323;ti&#x304;ya&#x304;dhya&#x304;yasya caturthah&#x323; pa&#x304;dah&#x323; // tr&#x323;ti&#x304;ya&#x304;dhya&#x304;yah&#x323; sama&#x304;ptah&#x323; // s&#x301;ri&#x304;s&#x301;am&#x323;kara&#x304;ca&#x304;ryebhyo namah&#x323; // (f. 123v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Manuscript was part of a larger work along with Ms. Coll. 390, Item 1010.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">Prathama pa&#x304;da (f. 1-18) -- [Dviti&#x304;ya] pa&#x304;da (f. 19-47r) --  Tr&#x323;ti&#x304;ya pa&#x304;da (f. 47v-99v)-- Caturti&#x304;ya pa&#x304;da (f.100r-123v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Manuscript used for contemplation and study and contains two commentaries. The main text is the S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;bha&#x304;s&#x323;ya by S&#x301;an&#x323;kara&#x304;ca&#x304;rya, while the second text, the Bha&#x304;s&#x323;yaratnaprabha&#x304; by Govinda&#x304;nanda, is a super-commentary of the former. The main text by S&#x301;an&#x323;kara&#x304;ca&#x304;rya is itself is a commentary on the ancient Brahmasu&#x304;tra. All of these Hindu commentaries are from the Advaita (non-dualism) Veda&#x304;nta school of philosophy. The super-commentary runs horizontally above and below the main text.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn Ms. Coll. 390, Item 1009</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">In Sanskrit</marc:subfield>
+  <marc:subfield code="b">(Devana&#x304;gari&#x304;)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="600">
+  <marc:subfield code="a">Ba&#x304;dara&#x304;yan&#x323;a.</marc:subfield>
+  <marc:subfield code="t">Brahmasu&#x304;tra.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Hindu philosophy.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Vedanta.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Advaita.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Treatises.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="700">
+  <marc:subfield code="a">Govinda&#x304;nanda.</marc:subfield>
+  <marc:subfield code="t">Bha&#x304;s&#x323;yaratnaprabha&#x304;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="740">
+  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;vya&#x304;khya&#x304;ya&#x304;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="740">
+  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakabhagavatpa&#x304;dabha&#x304;s&#x323;yavibha&#x304;ga.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="773">
+  <marc:subfield code="t">Collection of Indic Manuscripts.</marc:subfield>
+  <marc:subfield code="g">Item 1009</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/6298779</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-01</marc:subfield>
+  <marc:subfield code="a">&#x936;&#x93E;&#x930;&#x940;&#x930;&#x915;&#x92E;&#x940;&#x92E;&#x93E;&#x902;&#x938;&#x93E;&#x92D;&#x93E;&#x937;&#x94D;&#x92F;.</marc:subfield>
+  <marc:subfield code="n">&#x905;&#x927;&#x94D;&#x92F;&#x93E;&#x92F; &#x969;,</marc:subfield>
+  <marc:subfield code="f">&#x967;&#x96D;&#x966;&#x966;-&#x967;&#x96E;&#x96B;&#x966;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="996">
+  <marc:subfield code="a">unbound</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20160818</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22364058570003681</marc:holding_id>
+        <marc:call_number>Ms. Coll. 390</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

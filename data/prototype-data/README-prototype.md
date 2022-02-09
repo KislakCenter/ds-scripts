@@ -42,8 +42,15 @@ files=$(for x in ${institutions}; do find data/digitalassets.lib.berkeley.edu/ds
 ## Fifty MSS from UPenn from OPenn
 
 These URLs were used to extract bibids for Penn manuscripts on OPenn. These were
-then used pull the data MARC XML from Marmite. Twenty-five are from BiblioPhilly
-and twenty-five are from Manuscripts of the Muslim World.
+then used pull the data MARC XML from Marmite.
+
+```shell
+# get URLs from OPenn CSV paths
+for x in $(echo $dirs); do 
+  folder=$(awk -F/ '{ print $2 }' <<< $x)
+  echo "https://openn.library.upenn.edu/Data/${x}/data/${folder}_TEI.xml"
+done
+```
 
 ```shell
 https://openn.library.upenn.edu/Data/0001/ljs101/data/ljs101_TEI.xml
@@ -152,6 +159,56 @@ https://openn.library.upenn.edu/Data/0002/mscodex45_v2/data/mscodex45_v2_TEI.xml
 https://openn.library.upenn.edu/Data/0002/msindic6/data/msindic6_TEI.xml
 https://openn.library.upenn.edu/Data/0002/mscodex21_v2/data/mscodex21_v2_TEI.xml
 https://openn.library.upenn.edu/Data/0002/mscodex21_v3/data/mscodex21_v3_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1/data/mscoll390_item1_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item10/data/mscoll390_item10_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item100/data/mscoll390_item100_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1000/data/mscoll390_item1000_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1001/data/mscoll390_item1001_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1002/data/mscoll390_item1002_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1003/data/mscoll390_item1003_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1004/data/mscoll390_item1004_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1005/data/mscoll390_item1005_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1006/data/mscoll390_item1006_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1007/data/mscoll390_item1007_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1008/data/mscoll390_item1008_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1009/data/mscoll390_item1009_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item101/data/mscoll390_item101_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1010/data/mscoll390_item1010_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1011/data/mscoll390_item1011_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1012/data/mscoll390_item1012_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1013/data/mscoll390_item1013_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1014/data/mscoll390_item1014_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1015/data/mscoll390_item1015_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1016/data/mscoll390_item1016_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1017/data/mscoll390_item1017_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1018/data/mscoll390_item1018_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1019/data/mscoll390_item1019_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item102/data/mscoll390_item102_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1020/data/mscoll390_item1020_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1021/data/mscoll390_item1021_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1022/data/mscoll390_item1022_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1023/data/mscoll390_item1023_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1024/data/mscoll390_item1024_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1025/data/mscoll390_item1025_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1026/data/mscoll390_item1026_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1027/data/mscoll390_item1027_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1028/data/mscoll390_item1028_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1029/data/mscoll390_item1029_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item103/data/mscoll390_item103_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1030/data/mscoll390_item1030_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1031/data/mscoll390_item1031_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1032/data/mscoll390_item1032_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1033/data/mscoll390_item1033_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1034/data/mscoll390_item1034_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1035/data/mscoll390_item1035_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1036/data/mscoll390_item1036_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1037/data/mscoll390_item1037_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1038/data/mscoll390_item1038_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1039/data/mscoll390_item1039_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item104/data/mscoll390_item104_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1040/data/mscoll390_item1040_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1041/data/mscoll390_item1041_TEI.xml
+https://openn.library.upenn.edu/Data/0002/mscoll390_item1042/data/mscoll390_item1042_TEI.xml
 ```
 
 ```ruby
@@ -275,6 +332,56 @@ The bibids are:
 9972460113503681
 9914691793503681
 9914691793503681
+9931779933503681
+9931780173503681
+9951882003503681
+9962986433503681
+9962986493503681
+9962878673503681
+9962986513503681
+9962986713503681
+9962986813503681
+9962986913503681
+9962986963503681
+9962905673503681
+9962987793503681
+9951865803503681
+9962991713503681
+9963024203503681
+9963024283503681
+9967808973503681
+9963024303503681
+9963024323503681
+9963140263503681
+9962984263503681
+9962991893503681
+9962991973503681
+9951882013503681
+9962992013503681
+9962992073503681
+9962994193503681
+9962994513503681
+9962994613503681
+9962994703503681
+9962984323503681
+9963140453503681
+9963142223503681
+9963142283503681
+9951882743503681
+9963171793503681
+9963171853503681
+9963171933503681
+9963172013503681
+9963172113503681
+9963172213503681
+9963172263503681
+9963172293503681
+9963172363503681
+9963172493503681
+9951866203503681
+9963172533503681
+9963172623503681
+9963172723503681
 ```
 
 ```shell
@@ -286,7 +393,7 @@ done
 
 # MS records from Columbia (MARC XML)
 
-The first 50 records from OPenn for Columbia's special collections and all the
+The first 75 records from OPenn for Columbia's special collections and all the
 records from Burke Theologiical. All of these MSS are from the Mulsim World
 project.
 
@@ -343,6 +450,31 @@ https://openn.library.upenn.edu/Data/0032/ms_or_110/data/marc.xml
 https://openn.library.upenn.edu/Data/0032/ms_or_111/data/marc.xml
 https://openn.library.upenn.edu/Data/0032/ms_or_112/data/marc.xml
 https://openn.library.upenn.edu/Data/0032/ms_or_113/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_114/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_115/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_118/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_117/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_120/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_122/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_123/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_131/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_132/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_137/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_138/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_140/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_141/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_146a/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_152a/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_150/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_152b/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_152c/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_146/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_173/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_169/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_178/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_179/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_186/data/marc.xml
+https://openn.library.upenn.edu/Data/0032/ms_or_203/data/marc.xml
 ```
 
 ```shell
