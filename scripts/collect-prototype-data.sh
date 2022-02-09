@@ -35,9 +35,9 @@ fi
 ################
 # DS legacy METS
 ################
-# the first 50 records for each of the legacy institutions; 450 files total
-files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -name \*.xml | sort | head -50; done)
-# Convert all 450 to CSV format
+# the first 75 records for each of the legacy institutions
+files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -name \*.xml | sort | head -100; done)
+# Convert CSV format
 bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/legacy.csv $files
 
 ##########
@@ -65,7 +65,7 @@ done
 # Combine in single CSV
 #######################
 # list of all of the CSVs: legacy.csv penn.csv [...]
-CSVS=$(for x in legacy ${MARC_INSTS}; do echo "${x}.csv"; done)
+CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS} princeton; do echo "${x}.csv"; done)
 (
   cd $TMP_DIR
 
