@@ -111,6 +111,7 @@ CSV.open output_csv, "w", headers: true do |row|
       decoration                         = DS::MarcXML.extract_named_500 record,  name: 'Decoration'
       data_processed_at                  = timestamp
       data_source_modified               = DS::MarcXML.source_modified record
+      source_file                        = in_xml
 
       data = { source_type:                         source_type,
                holding_institution:                 holding_institution,
@@ -147,6 +148,7 @@ CSV.open output_csv, "w", headers: true do |row|
                decoration:                          decoration,
                data_processed_at:                   data_processed_at,
                data_source_modified:                data_source_modified,
+               source_file:                         source_file,
       }
 
       row << data

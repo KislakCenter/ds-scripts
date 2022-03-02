@@ -36,7 +36,7 @@ fi
 # DS legacy METS
 ################
 # the first 75 records for each of the legacy institutions
-files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -name \*.xml | sort | head -100; done)
+files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100; done)
 # Convert CSV format
 bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/legacy.csv $files
 

@@ -43,6 +43,7 @@ DEFAULT_WORD_SEP  = ' '
 output_csv = options[:output_csv] || 'output.csv'
 timestamp = DS.timestamp
 
+seen = []
 CSV.open output_csv, "w", headers: true do |row|
   row << DS::HEADINGS
 
@@ -82,6 +83,7 @@ CSV.open output_csv, "w", headers: true do |row|
     acknowledgements                   = DS::DS10.extract_acknowledgements xml
     data_processed_at                  = timestamp
     data_source_modified               = DS::DS10.source_modified
+    source_file                        = in_xml
 
     data = { source_type:                        source_type,
              holding_institution:                holding_institution,
@@ -116,6 +118,7 @@ CSV.open output_csv, "w", headers: true do |row|
              acknowledgements:                   acknowledgements,
              data_processed_at:                  data_processed_at,
              data_source_modified:               data_source_modified,
+             source_file:                        source_file,
     }
 
     row << data
