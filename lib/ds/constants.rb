@@ -45,6 +45,7 @@ physical_description
 acknowledgements
 data_processed_at
 data_source_modified
+source_file
 }
 
     # TODO: Switch from QID URLs to standalone IDs
