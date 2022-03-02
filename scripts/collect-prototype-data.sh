@@ -50,7 +50,7 @@ do
 done
 
 # Run Princeton with Holdings information
-bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton -o ${TMP_DIR}/princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB*-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
+bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton -o ${TMP_DIR}/princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
 
 ##########
 # FLP TEI
