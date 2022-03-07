@@ -24,13 +24,13 @@ Convert MARC MRC to MARC XML.
 
 EOF
 
-  p_help = "String prefix for file name; e.g., 'inst-marc-' [default: #{options[:prefix]}]"
+  p_help = "String prefix for file name; e.g., 'inst-marc-' [default: '#{options[:prefix]}']"
   opts.on('-p PREFIX', '--prefix=PREFIX', p_help) do |prefix|
     options[:prefix] = prefix
   end
 
-  d_help = "Path of an directory to output XML files to [default: #{options[:directory]}"
-  opts.on('-d PATH', '--directory=PAGE', d_help) do |directory|
+  d_help = "Path of an directory to output XML files to [default: '#{options[:directory]}']"
+  opts.on('-d PATH', '--directory=PATH', d_help) do |directory|
     options[:directory] = directory
   end
 
