@@ -1,0 +1,172 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>03003ctm a2200505Ki 4500</leader>
+    <controlfield tag="001">99900477834101852</controlfield>
+    <controlfield tag="005">20200520073643.5</controlfield>
+    <controlfield tag="008">180302q14011500fr p 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026502047</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026502047</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324896054401451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCA</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="110">
+        <subfield code="a">Catholic Church.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="240">
+        <subfield code="a">Book of hours.</subfield>
+        <subfield code="k">Selections</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="0" tag="245">
+        <subfield code="a">Leaf from a French Book of hours.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">France,</subfield>
+        <subfield code="c">between 1400 and 1499?</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">1 leaf :</subfield>
+        <subfield code="b">paper ;</subfield>
+        <subfield code="c">144 x 106 mm.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript document.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: A single leaf, having been pasted onto a piece of paper
+            therefore showing only its recto, introduced by 5 lines of rubrication in its left
+            column.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: France.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: 2 columns of 28 lines upon an area 86 x 63mm; panelled by
+            borders.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Much abbreviated early gothic bookhand. The &apos;g&apos; is
+            portrayed with a crossbar extending through ascenders. Contains many, less-frequent
+            ligatures.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Borders include variety of gilt floral and serif, as well as
+            illustrations of the last supper of Jesus, with 13 guests, an angel displays arms of
+            argent chevron upon azure base. Other decoration is a decorated green majuscule
+            &apos;B&apos; upon gilt square containing an image of a cloaked man praying.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: Disbound.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 061.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 061.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22329398060001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvault</subfield>
+        <subfield code="h">MS 061</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

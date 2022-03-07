@@ -1,0 +1,219 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>05858ctm a2200565Ii 4500</leader>
+    <controlfield tag="001">99900467282501852</controlfield>
+    <controlfield tag="005">20200115084347.3</controlfield>
+    <controlfield tag="008">180302s1380 gw 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026502057</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026502057</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324896053901451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="130">
+        <subfield code="a">Bible.</subfield>
+        <subfield code="l">Latin.</subfield>
+        <subfield code="s">Vulgate.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Biblia sacra Latina, liber Prophetarium.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">Germany,</subfield>
+        <subfield code="c">1380.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">226 leaves :</subfield>
+        <subfield code="b">vellum ;</subfield>
+        <subfield code="c">350 x 250 mm.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">Inside front cover: Presented by / (I/J) Lee Doctors Commons /
+            --&gt;reframed. August 1835. no 12/93; H. Wilmut Brixton / 1862; 1037 caxx / myaxx /
+            [circled_&quot;31&quot;]; Biblia Liber Prophetarum / Ms. Pars Juee. XIV / (1380 circa) ;
+            (2 ex libris). Front cover, ex libris: bend dexter azure over field with dual fess in
+            the first and fourth quarters, anchored chevron surrounded by 3 diamonds, in the second
+            and third quarter. Supported above by bridled bear passant (dexter) and equine
+            crest/bust showing fleur. (motto:) verum atque decens. (Also below read with a loop and
+            magnifying glass) &quot;_\hitlow SeYork 81.&quot; Front cover ex libris: Amadei Svajer /
+            halved field showing arborial dexter and rampant lion sinister, crowned with helm and
+            rampant lion. Front flyleaf recto: No. 109; Burgess Ms. 31; 25; 19; No. 4; 12/93. Rear
+            cover: Pasted stamp with blue border: 1; 90069; 1200/-; 950/- . Rear flyleaf verso: C M
+            Jr.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+        <subfield code="a">This is a vulgate translation of the minor prophets, including prologues.
+            of special interest in that it exemplifies the type of script which influenced
+            Gutenburg. &quot;The date, &quot;circa 1380,&quot; is given in a note on the inside
+            cover, confirmed by a well-known palaeographer. In the 14th century there was a return
+            from the close-packed text, executed with precision of the 13th century, to the
+            amplitude of the 12th century. Bibles and liturgical works were built on a large scale.
+            The letters were more in uniform than those seen in our example of the 12th century, and
+            lacked the flexible individuality of the special scribe. &quot;An air of softness
+            pervades the writing&quot; says E. Maude Thompson, but the effect in &quot;Liber
+            Prophetarum&quot; is one of noble simplicity. One notes a resemblance between this
+            script and the printed text of Gutenburg&apos;s 36-line Bible. The difference is in the
+            more rounded letter and in the uncrowned line of this script. There is softness, but it
+            is a hoppy mean between the extreme pointed text found in Gutenburg&apos;s Bible and the
+            rounded text of later times. This script is distinctly and beautifully
+            Gothic.&quot;</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript codex.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: folio in quires of 8 (except last 3). One leaf blank removed
+            between Isaiah and Jeremiah, with no loss to the text. Enclosed catchwords, lower corner
+            of last page. Penciled folio numbers.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Germany.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: 2 columns of 34 lines at 8 mm, on writing area 265 x 160 mm. Each
+            interior column width is 73 mm, and exterior is 74 mm. Central margin is 21.5 mm. Book
+            titles above text, Roman chapter numerals, capital strokes, and long introductory
+            headings, all in red. Ruling by lead point and pricking visible.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Gothic minuscule textura with a 1.5 mm width nib.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Book initials in red and blue, 5-6 lines high. Initials in
+            red or blue with alternate red or blue tracery, 2 lines high.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: Polished calf over paper board; spine shows 6 raised bands
+            (though 7 exposed); front cover fully disconnected; rear cover partially disconnected.
+            Gilt medallion of a Bishop has been obliterated from each cover.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 031.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Former shelfmark: MS 7 (Bond &amp; Faye).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">Formatted Content Note: ff1-47 Ysaias; ff48-104 Iherias, ff105-109 verba
+            baruch; ff109-111 Epl&apos;a ihemie; ff. 112-160 Ezechiel; ff161-181 Daniel; ff182-189
+            Osee; ff189-192 Iohel; ff192-197 Amos; f198 Abdias; ff 199-200 Ionas; ff201-205 Micheas;
+            ff205-207 Naum; ff208-211 Abacuc; ff211-213 Sophonias; ff214-215 Aggeus; ff216-223
+            Zacharias, ff 224-226 Malachias.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 031.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="700">
+        <subfield code="a">Jerome,</subfield>
+        <subfield code="c">Saint,</subfield>
+        <subfield code="d">-419 or 420,</subfield>
+        <subfield code="e">translator.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22330899530001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvaultxxx</subfield>
+        <subfield code="h">MS 031</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

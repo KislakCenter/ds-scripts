@@ -1,0 +1,246 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>08342ctm a2200565Ki 4500</leader>
+    <controlfield tag="001">99900477831801852</controlfield>
+    <controlfield tag="005">20200226072708.4</controlfield>
+    <controlfield tag="008">180301q12011300enk 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026484793</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026484793</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887736101451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+        <subfield code="d">ORU</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="100">
+        <subfield code="a">Halgren, John,</subfield>
+        <subfield code="c">of Abbeville.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Sermones de Tempore et de Sanctis; Summa Sermonum (fragment).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">England or Northern France,</subfield>
+        <subfield code="c">between 1201 and 1300?</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">61 leaves :</subfield>
+        <subfield code="b">vellulm ;</subfield>
+        <subfield code="c">286 x 215mm</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1="3" ind2=" " tag="510">
+        <subfield code="a">Wyly, Bryan Weston. Report on Article Burgess 035.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">From the bequest of Edward Sanford Burgess (Jan 19 1915) Purchase from
+            Dr. Giuseppe Martini.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+        <subfield code="a">Contained in this volume are the fragmentary sermons of Iohannes
+            Halgrinus de AbbatisVilla (died 1237), A French philosopher and writer of Sermons, as
+            well as Papal legate to the court of Fredric II of Spain &amp; Portugal, and Cardinal of
+            Sabina(1227). He has been described as a theological follower of Petrus Cantor and
+            Cardinal Stephen Langton. He studied in Paris with Hugolino of Ostia (Pope Gregory IX)
+            at the University of Paris.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript codex.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: small folio (286 x 215 mm) in gatherings of 8 with roman
+            numeral signatures and folio numbers, with the exception signed XXII^15-1 (for further
+            clarification seek report by Bryan Weston Wyly). In this fragment the first page number
+            is [CXXXVII] on folio 1, the first quire signature is XVIII on f7r and follow to XXIIII.
+            Cataloging numeration follows Wyly diagram, f1r is f137r, f61v (final) is f192v. The red
+            stain on the fol 141v indicates a capitulum on the adjacent missing folio.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Northern France and England.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: 2 columns of 34 lines upon an area of 212x150mm. Pricking has
+            been trimmed but ruling by lead point is visible.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Gothic Minuscule Bookhand. &quot;The script of this codex gives
+            the general impression of an English or Northern French Gothic minuscule: the minimed
+            letter i, u, m and n are clubbed (the u and i in debuit on f19r, column 1, line 28),
+            letters are quite angular (the right stroke in m and n); ascenders and descenders are
+            short (the l in calice and the p in portauit on f19r, column 1, line 1);the back of the
+            unical d fuses to the back of the e (mordebit on f18v, column 2, line 16) as does the
+            bowl of p with the back of e in opera in f18v, column 2, line 33. This script also has a
+            number of features that distinguish it [...]; the clubbing on i,u,m and n is much more
+            pronounced (in uitro on f18v, column 2, line 15), the ascenders are forked--a v-shaped
+            stroke at the top of the ascender--(the b&apos;s in bibere on f19r, column 2, line 25),
+            (÷) is used for est (f19r, column 2, line 2), the writing is more compressed, and a
+            straight ling is the common mark of abbreviation (manuu on f19r column 1, line 3).&quot;
+            Pierce &amp; Fox. Also of note in the script is the customary very slight bend which
+            defines minims, ascenders and descenders. Also to accompany the use of the augmented
+            obelus (division symbol), with comma replacing the lower tittle, is the frequent
+            application of the tironian nota, clearly not representing the same thing (see f19r,
+            column 2, line 5, with both symbols adjacent). As well as the isolated occurrence of a
+            stroked nota, or perhaps capital Zed, in the proceeding lines of f19r, column
+            2.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Each major section of the text begins with alternating
+            Blue/Red initial with opposite colour tracery. Sermon headings are
+            rubricated.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: Vellum over boards labelled &quot;the Gospels - MS. XII(I)
+            century&quot; on spine in gilt letters. Third &apos;I&apos; with gilt having been
+            obliterated. (Third &apos;I&apos; without any remaining gilt, helping explain why
+            previous catalogues had this work misrepresented.) Inside rear cover expresses clearly
+            watermark &quot;MICHALLET,&quot; upon the same material of flyleaves and current, later
+            binding.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 035.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">f137va 1.10: &quot;Estote factores verbi non auditores tantum.&quot; IAC,
+            1:22 &quot;Invitat nos apostulos non solum audiendum...&quot; T: Sermo 50b (Dominica.
+            iiia [post octavam pasche]) f67. P: Sermo 50b. S: Schn. No 96T33. f139ra, 1.2:
+            &quot;Amen amen dico vobis et cetera.&quot; Ioh. 5:25, 6:54, 16:20. &quot;Prevocat
+            dominus discipulos ad praetendum eum...&quot; T: Sermo 51a(D. iiia de evangelio). P:
+            Sermo 51a, fol. 122. S: om. f139va 1.8: &quot;Amen amen dico vobis... in nomine meo
+            dabit vobis.&quot; Ioh. 16:23. &quot;ut fiduciam impetrandi praebat dominus...&quot; T:
+            Sermo 51b (D. .iiia de evangelio), fol. 68. P: Sermo 51b, fol. 122v S: Schn. No 98T33,
+            fol. 3 marge. inf. fol 144ra, 1.18: &quot;cum veniret paracletus... a patre et
+            cetera&quot; Ioh 15:26. &quot;In hac evangelii lectione...&quot; T: Sermo 53a, Fol 70v.
+            P: Sermo 53a, fol 125v. S: om. fol. 154va, 1.22: &quot;Homo quidam erat dives...
+            bysso&quot; Luc 16:19 (A specific man was productive - bysso: fine linen). &quot;Iste
+            quasi ignoratus a domino...&quot;(that one as if unknown by the lord). T: Sermo 57a. P:
+            Sermo 57a. S: fols 19-19v, 1.18. fol. 155r: &quot;FRATER&quot; Majuscule engraved in
+            upper margin. fol. 158ra, 1.15: &quot;Nolite mirari si vos odit mundus&quot; [Eccl.
+            2:11]. &quot;Confortat Iohannes eos quibus scripsit...&quot; T: Sermo 58b (D. .iia.[post
+            pentacosten] de epistula). P: Sermo 58b. S: Schn. No. 113T42. fol. 159ra, 1.20:
+            &quot;Homo quidam fecit cenam magnam.&quot; Luc. 14:16. &quot;Ex hoc evangelio potest
+            elici sermo...&quot;(A conversation/Language is able to be elicted/drawn from this
+            gospel). T: Sermo 59 (D. .iia.[post pent.]de evangelio). P: Sermo 59. S: Schn. No.
+            114T42, fols 20v-21. fol 160 va, 1.32: &quot;Humiliamini sub potenti manu dei.&quot; I
+            Petr. 5:6 &quot;Tertia dominica respondet secunde hoc modo...&quot; T: Sermo 60 (D.
+            .iiia. [post pent.] de epistula). P: Sermo 60. S: Schn. No. 115T43. fol. 163ra 1.6:
+            &quot;Quis ex vobis homo qui habet centum oves... et cetera&quot; Luc. 15:4
+            &quot;Dominus in triplica parabola indicum nobis.&quot; T: Sermo 61 (D. .iiia[post
+            pent.] de evangelio). P: Sermo 61. S: Schn. No. 116T43. fol. 165, 1.19: &quot;Existimo
+            quod non sunt condigne passiones... in nobis&quot; Rom 8:18. &quot;Tertie domince sic
+            respondit quarta...&quot; T: Sermo 62A (D. .iiiia. [post pent.] de epistula). P: Sermo
+            62A. S: Schn. No. 117T-T44 dominica iiiia ad Romanos IX˚. Key to References: SUMMA
+            SERMONUM. T: Troyes, BIBL. mun 876 (.xiii.s.). P: Paris, Bibl. nat. lat. 2909 (.xiii.s.)
+            fols 1-203. P1: Paris, Bibl. nat. lat. 2910 (.xiii.s.) fols 1-232. P2: Paris, Bibl. nat.
+            lat. 2911 (.xiii.s.) fols 1-326. P3: Paris, Bibl. nat. lat. 2911a (mutil.)(undated) fols
+            1-140. SERMONOS de TEMPORE. S: Siossons, Bibl. mun. 137.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Sermons.</subfield>
+        <subfield code="2">lcgft</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Sermons.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01423904</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 035.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="4" ind2="2" tag="856">
+        <subfield code="u">https://library.uoregon.edu/ec/exhibits/burgess/ms35.html</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22329397370001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvault</subfield>
+        <subfield code="h">MS 035</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

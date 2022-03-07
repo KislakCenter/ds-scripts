@@ -1,0 +1,286 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>07790ctm a2200721Ia 4500</leader>
+    <controlfield tag="001">9960565001852</controlfield>
+    <controlfield tag="005">20200331074633.8</controlfield>
+    <controlfield tag="008">040129s1490 fr p 000 0 fro d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)54104992</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)ocm54104992 </subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99111597510001451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">OCLCG</subfield>
+        <subfield code="d">OCLCF</subfield>
+        <subfield code="d">OCLCO</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="043">
+        <subfield code="a">e-fr---</subfield>
+        <subfield code="a">n-us-or</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="099">
+        <subfield code="a">Ms.</subfield>
+        <subfield code="a">65</subfield>
+        <subfield code="9">local</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="130">
+        <subfield code="a">Geste de Garin de Monglane.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Geste de Monglane.</subfield>
+    </datafield>
+    <datafield ind1="3" ind2=" " tag="246">
+        <subfield code="a">Cheltenham manuscript</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">[France],</subfield>
+        <subfield code="c">[approximately 1490]</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">[458] pages, bound :</subfield>
+        <subfield code="b">vellum ;</subfield>
+        <subfield code="c">283 x 170 mm bound to 294 x 184 mm.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="510">
+        <subfield code="a">Described in: La Geste de Monglane. Eugene, Or. : University of Oregon
+            Books, 1966</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">Bookplate with coat of arms mounted on inside cover reads: Bibliotheca
+            Phillippica. From the collection formed by Sir Thomas Phillipps Br., 1792-1872,
+            purchased by private treaty by William H. Robinson Ltd., Pall Mall, London; Pencilled
+            above bookplate: Phillipps Ms. 26092.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">Manuscript originally purchased by Sir Thomas Phillips in 1861 and added
+            to his collection at Cheltenham as no. 26,092. Subsequently purchased by the University
+            of Oregon in 1956.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manduscript codex comprising a medieval epic poem, containing segments of
+            the cycle of Guillaume d&apos;Orange.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binder&apos;s title.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Also known as: The Cheltenham manuscript.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript comprises 229 vellum folios and has five distinct parts. The
+            1st two folios are missing; At the end of the 2nd part, Renier de Gennes, eight folios
+            are missing. These were missing in 1883.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Half page at end may contain former ownership information.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: Single column in short lines from f. 1a to f. 136a and f. 191a to
+            f. 192a; long lines from f. 137a to 190a and f. 192b to f. 224a. Margins and lines ruled
+            in brown ink, some rubricated lines. Some pages have pricking at outer foredge; pages
+            have been trimmed. Occasional marginal notes by scribe, and some later entries in
+            another, looser hand.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Written in ink in lettres bâtardes, with flourishes in brown
+            ink, and extended decorative ink flourishes at top of page. Some upper swashes and some
+            capital letters are accented with yellow-brown wash. Capitals in gold and
+            colors.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: At least one to four small decorative initials per page:
+            burnished gold letter on counterchanged pink and blue ground with white highlights. f.
+            138b 2 sm. initials and 6 very small initials. f. 137a Four-sided illuminated border: 30
+            x 25 mm initial &apos;A&apos; in pink, filled with red and blue leaves on spiral stems,
+            on a background of burnished gold. Initial extends in a vertical bar in gold, red, and
+            blue, sprouting burnished gold leaves in trefoil and spearhead shapes on black ink
+            stems; top extends vertically into pink and blue acanthus, and extends across the top
+            edge in burnished gold leaves and a pink rose and a blue forget-me-not, all on ink
+            stems. Bottom and foredge have a band of alternating red and blue with white tracery and
+            occasional burnished gold accents, sprouting gold leaves on ink outlines, with pink
+            flowers, blue forget-me-not, and blue bachelor&apos;s buttons. Center of foredge and
+            lower right corner have blue and red acanthus. Lower left corner has blue forget-me-nots
+            on green stems and leaves. Text a smaller gold initial on red and blue with white
+            tracery, followed by 2 lines of rubrication at top and one line in center. f. 141b
+            Four-sided illuminated border: At top, 11 very small burnished gold initials on pink and
+            blue with white tracery. Midway down page: 25 x 20 mm initial &apos;A&apos; in blue with
+            white tracery, filled with red and blue leaves on spiral stems, on a background of
+            burnished gold. Foredge and bottom edge have band of alternating red and blue with white
+            tracery and occasional burnished gold accents, sprouting gold leaves on ink outlines,
+            with blue bachelor&apos;s buttons, blue forget-me-nots, and pink roses. Gutter edge has
+            a vertical bar in gold, red, and blue, sprouting burnished gold leaves on ink stems.
+            Upper right and lower left corners have blue and red acanthus. To left of &apos;A&apos;
+            are pink and white thistles on green stems and leaves. In upper left corner, pink roses
+            on green stems and leaves. Lower right corner, blue forget-me-nots on green stems and
+            leaves. f. 143b One calligraphic ascender flourish includes an unusual stylized human
+            face in brown ink. f. 148b 9 small initials. f. 149a 17 small initials. f. 149b 13 sm.
+            initials. f.183a 17 sm. initials, f. 191b 29 very small initials, f. 192a 33 very small
+            initials. f. 150a 2 rubricated lines followed by large burnished gold initial
+            &apos;A&apos; on pink and blue background (water-damaged). f. 191a 3 rubricated lines,
+            the top line with ascender flourishes, and 26 very small initials.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">On spine: Geste de Monglane. Manuscript on vellum.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: Modern brown leather. Each cover has a gold outline.
+            Six-panelled spine with raised bands and gold letters: &quot;Geste de Montglane&quot;
+            and &quot;Manuscript on vellum&quot;. Silk head and tail bands in brown, green, and
+            white. Cover interiors have three nested gold rectangles. Inside front cover gold
+            stamped letters: &quot;Bound by Sangorski and Sutcliffe, London, England.&quot;
+            Parchment pastedowns and three flyleaves of modern parchment at front and
+            back.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 065.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">Text in Old French.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">Hernaut de Beaulande (folios 1a-35a) -- Renier de Gennes (folios 35a-46b)
+            -- Girart de Vienne (folios 47a-83b) -- Galiens li restorés (folios 83b-135b) -- La
+            Chronique de Saint-Denis (folios 137a-224a).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="590">
+        <subfield code="a">Supplemented by print reproduction of folios 50-53 of Arsenal manuscript
+            3351, La Geste de Garin de Monglane (PQ1463.G232 1350)</subfield>
+        <subfield code="9">local</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, French</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, French.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008338</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Manuscripts.</subfield>
+        <subfield code="2">aat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Epic poetry.</subfield>
+        <subfield code="2">gsafd</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="2" tag="730">
+        <subfield code="a">Hernaut de Beaulande (Chanson de geste)</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="2" tag="730">
+        <subfield code="a">Renier de Gennes (Chanson de geste)</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="2" tag="730">
+        <subfield code="a">Girard de Viane (Chanson de geste)</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="2" tag="730">
+        <subfield code="a">Galiens li restorés (Chanson de geste)</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="2" tag="730">
+        <subfield code="a">Chronique de Saint-Denis (Chanson de geste)</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">65.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Phillipps, Thomas,</subfield>
+        <subfield code="c">Sir,</subfield>
+        <subfield code="d">1792-1872,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="4" ind2="2" tag="856">
+        <subfield code="u">https://oregondigital.org/catalog/oregondigital:fx71bj562</subfield>
+        <subfield code="z">Online access to digitized portions of this manuscript</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22209444510001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvault</subfield>
+        <subfield code="h">MS 065</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="978">
+        <subfield code="a">.b32603861</subfield>
+        <subfield code="b">03-17-14</subfield>
+        <subfield code="c">01-29-04</subfield>
+        <subfield code="9">local</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

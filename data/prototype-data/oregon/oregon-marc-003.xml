@@ -1,0 +1,231 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>04831ctm a2200613Ii 4500</leader>
+    <controlfield tag="001">99900467282701852</controlfield>
+    <controlfield tag="005">20200402071530.9</controlfield>
+    <controlfield tag="008">180301q10011100gw 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026484812</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026484812</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887735301451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+        <subfield code="d">OCLCA</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="100">
+        <subfield code="a">Augustine,</subfield>
+        <subfield code="c">of Hippo, Saint,</subfield>
+        <subfield code="d">354-430,</subfield>
+        <subfield code="e">author.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Opera varia.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">Germany ;</subfield>
+        <subfield code="c">between 1001 and 1100.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">109 leaves :</subfield>
+        <subfield code="b">vellum ;</subfield>
+        <subfield code="c">238 x 165 mm</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">Obtained from Bernard Quaritch, LTD., London 1923, £100.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="541">
+        <subfield code="a">Acquired by purchase and donation from Julia Burgess, circa
+            1935-1924.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+        <subfield code="a">Collection of Augustine&apos;s writings on marriage and sexuality.
+            Contents f1v Prologus. Epistola ad valerium. f2v De Nuptis. f63 De Sancta Virginitate.
+            f86 De Bono Viduale. f99v Ad Hieronymum. f106v Retractio Librorum Beati
+            Augustini.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript codex.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: 109+1 leaves in 15 gatherings of 8 leaves; XII⁴, showing 4
+            removed;14⁷, 15 of 2 stubs+flyleaf. Foliation in ink on upper corner of each recto,
+            1-110 in Arabic numerals. Signatures. Stylus ruled.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Germany.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: 1 column of 28 lines upon a writing area 79 x 126 mm.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Gothic bookhand.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Eight Capitals in Red, Blue, and Yellow ink. f1v(S), f1v(D),
+            f19R(I),f46v(Q),f63r(L),f86r(A), f99v(Q), f106r(V).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: Deerskin over wooden boards. Leaf of old manuscript used as
+            endpaper.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 025.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">ff 1v-18r Prologue, Book I &quot;marriage and concupiscence&quot;
+            &quot;Prologus St. Augustinus is libros de nup/tis et concupiscetia [Large_S]cripsi duos
+            libros abillustre(m) viru(m).&quot; -- ff 19r-46r: Book II &quot;...incipit
+            secundus&quot; &quot;INTERALILITIETVECVRAS et in lustris persone quas pro/meritis gestas
+            actus que re (-gi-) publice necessarius fili diline/ et honorande Valeri tanto studiote
+            adsus hereticos/ ineloquia divina flagrare.&quot; -- ff 46r-47v The epilogue &quot;Qui
+            bona multa cupit. nec undiq; capere novit./ sic ego queti; locis reperi degens
+            alieni.&quot; -- ff 46v-62v: A Book on Good Marriage, &quot;Quod unus quisque homo
+            humani generis pars est et sociale quiditam est natura humana.&quot; -- ff 63r-85v: A
+            Book on Blessed Virginity&quot; ff 72v-85r &quot;de Virginibus&quot; &quot;pergite
+            itaque sancti dei pueri ac puelle manes et femine celebes et in nuptie...&quot; -- ff
+            85v-99v A book on &quot;good widowhood.&quot; -- ff 99v-106r A letter from Augustine to
+            Jerome. &quot;Augustinus ad ieroni mu(?) ite eo quod scripti ei. qui tota legem... -- ff
+            106r-106v Jerome&apos;s reply. &quot;Rescripto beati ierohim&quot; &quot;venerabili pape
+            Augustinus Hieronius.&quot; -- f ir/v a fragment not authored by Augustine.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Marriage</subfield>
+        <subfield code="x">Religious aspects</subfield>
+        <subfield code="x">Christianity</subfield>
+        <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Sex</subfield>
+        <subfield code="x">Religious aspects</subfield>
+        <subfield code="x">Christianity</subfield>
+        <subfield code="x">Early works to 1800.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Marriage</subfield>
+        <subfield code="x">Religious aspects</subfield>
+        <subfield code="x">Christianity.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01010496</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Sex</subfield>
+        <subfield code="x">Religious aspects</subfield>
+        <subfield code="x">Christianity.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01114193</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Early works.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01411636</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 025.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22330899550001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvault</subfield>
+        <subfield code="h">MS 025</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

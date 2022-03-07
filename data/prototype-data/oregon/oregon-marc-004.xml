@@ -1,0 +1,247 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>07324ctm a2200589Ii 4500</leader>
+    <controlfield tag="001">99900467282801852</controlfield>
+    <controlfield tag="005">20200115084337.5</controlfield>
+    <controlfield tag="008">180301q11601170fr p 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026484805</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026484805</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887735501451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="100">
+        <subfield code="a">Rabanus Maurus,</subfield>
+        <subfield code="c">Archbishop of Mainz,</subfield>
+        <subfield code="d">784?-856,</subfield>
+        <subfield code="e">author.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Exposito Libri Numerorum.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">[Northern France] ;</subfield>
+        <subfield code="c">[between 1160 and 1170]</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">85 unnumbered leaves :</subfield>
+        <subfield code="b">vellum ;</subfield>
+        <subfield code="c">41 x 31 cm</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1="4" ind2=" " tag="510">
+        <subfield code="a">Thompson, Sir Edward Maunde. Greek and Latin Paleography,
+            1912,</subfield>
+        <subfield code="c">page 436</subfield>
+    </datafield>
+    <datafield ind1="4" ind2=" " tag="510">
+        <subfield code="a">Thomson, S. Harrison. Latin Bookhands,</subfield>
+        <subfield code="c">pages 83-88.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, 2018.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+        <subfield code="a">Commentaries on the Book of Numbers by Saint Rabanus Maurus, in 4
+            volumes. Rabanus Marus was the Abbot of Fulda, as well as the Archbishop of Mainz. This
+            text is a commentary on the Book of Numbers by German teacher and theologian Rabanus
+            Maurus (776-856). The authorship of the text is divulged in three places within the
+            text. The scribe denoted the author as Rabanus Maurus in the phrase that begins the
+            preface, the phrase that begins Book I and the phrase that ends Book IV (see list of
+            contents above). Rabanus Maurus was born of French parents in Mainz in 776. He completed
+            his studies at Fulda and became deacon there in 801. In 802 he traveled to Tours and
+            studied under the famous Alcuin. Rabanus became well-known for his successful teaching
+            and drew many pupils around him as head of the convent school at Fulda. In 822 he was
+            consecrated abbot of Fulda. In 847 he was drawn out of retirement to become archbishop
+            of Mainz. He died on 4 February 856. In addition to successful teaching of literature,
+            science and theology, Rabanus was an erudite Biblical scholar. He wrote commentaries on
+            all of the books of the New and Old Testaments and many of the Apocryphal ones.
+            (McClintock and Strong, p. 1) MS 9 contains commentary on all 36 chapters of the Book of
+            Numbers. The text is divided into four books. Each book is divided into a number of
+            chapters (17, 25, 12 and 12, respectively). However, these chapters and book divisions
+            do not match up with the actual chapter divisions of the Book of Numbers. As a remedy to
+            this problem, another scribe marked the true biblical chapters at the top of the recto
+            and verso of each leaf.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript document.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: Large folio in 10 gatherings of 8 (except 10⁵). With
+            signatures. Vertical catchwords at the foot of the final verso of each quire. Rubricated
+            headings on each page indicate book and chapter.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Northern France.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: 2 columns of 40 lines, separated by a 2 cm margin, upon a writing
+            area of 28 x 22cm. Visible pricking and ruling by point, to include vertical
+            margins.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Lettering: Written in a late Romanesque script.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: 3 large and 2 smaller illuminated initials with zoomorphic
+            elements, also alternating blue initials with red tracery, and rubricated initials with
+            blue tracery; f1r (12 line knotted green N upon red square entangled with serif of
+            lion); f2v (11+ line Large blue L with Agape lion in green with floral tail); f63r (blue
+            faced lion inside blue D, upon gold square, 4 lines); f18v (Large blue 35 line L, with
+            foot of a Lion headed bird with floral serif proclaiming from its mouth);</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: rebound in 2009, in dark brown calf over laminated boards of 4
+            layer rag mat board.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 009.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">f18v [RUBRICATION] &quot;explicit profacie, Incipunt capitula libri
+            secundi.// [TEXT/CAPITULA] I. De Tempore Pasche. suo. quo eis p(ro)ceptu fuit fa(cere)
+            (...) XXVI. De seditoe isrltarvs ad aqm contradictionis.&quot; -- f6r [Marginalia]
+            Ougene. -- f41r [RUBRICATION] explicit liber seds. Incipunt capitula libri tercii.
+            [TEXT/CAPITULA] I. De trisitu filiorum isrta cades in montem hor et pugna eorum atque
+            victoria in chananeis (...) (f41v) XII. ubi moyes ascende. monte iubet. et (pdicit^n) ei
+            qui ii iii t ram repinissionis ingrediat [ihequs] pro eo chix costi/tuitux.&quot; --
+            f63r [RUBRICATION] explicit liber tercius. Incipiunt capitula libri quarti Cap .I.//
+            [TEXT/CAPITULA] [Capital Blue &apos;D&apos;]e singulis spebus sacrificiorum que
+            offerebant duo in va/riis festivitibus. hoc est sabbati. kalandarii. mensis primi et
+            mensis primitivorum et mensis septimi. (...) XII. De filiabus salphaad ut p(ro)ximis
+            suis nubant.&quot;</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">1. Preface, f. 1r Inc. Incipit prefatio Rabani mauri expositionem libri
+            numerorum. Numerorum librum multiplicibus mysteriorum. Ex. Explicit prefacie. -- 2.
+            Contents of Book I, f. 1 Inc. Incipiunt capitula libri primi expositionis in libro
+            numerorum. Ex. Expliciunt capitula. -- 3. Book I, ff. 1v-18v Inc. Incipit liber
+            commentariorum Rabani mauri in libro numerorum. Ex. Explicit liber primus. -- 4.
+            Contents of Book II, f. 18v Inc. Incipiunt capitula libri secundi. Ex. Expliciunt
+            capitula. -- 5. Book II, ff. 18v-41r Inc. Incipit liber secundus. Locutus est dominus ad
+            moysen in deserto synai. Ex. Explicit liber secundus. -- 6. Contents of Book III, f. 41
+            Inc. Incipiunt capitula libri tercij. Ex. Expliciunt capitula. -- 7. Book III, ff.
+            41v-63r Inc. Incipit liber III, capitulum I. Misit interea nuntios moyses de cades ad
+            regem edom. Ex. Explicit liber tercius. -- 8. Contents of Book IV, f. 63r Inc. Incipiunt
+            capitula libri quarti. Ex. Expliciunt capitula. -- 9. Book IV, ff. 63r-85r Inc. Incipit
+            liber quartus. Dixit que dominus ad moysen. Ex. Explicit liber quartus commentariorum
+            Rabbani mauri in uolumine numerorum.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="0" tag="630">
+        <subfield code="a">Bible.</subfield>
+        <subfield code="p">Numbers</subfield>
+        <subfield code="x">Commentaries</subfield>
+        <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="7" tag="630">
+        <subfield code="a">Bible.</subfield>
+        <subfield code="p">Numbers.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01892933</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Early works.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01411636</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 009.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22330899560001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvaultxxx</subfield>
+        <subfield code="h">MS 009</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

@@ -1,0 +1,238 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>07014ctm a2200589Ki 4500</leader>
+    <controlfield tag="001">99900468584101852</controlfield>
+    <controlfield tag="005">20200520073635.8</controlfield>
+    <controlfield tag="008">180301q14301470it p 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026484794</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026484794</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887736001451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="100">
+        <subfield code="a">Cicero, Marcus Tullius,</subfield>
+        <subfield code="e">author.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Orationes ;</subfield>
+        <subfield code="b">In C. Sallustium Invectiva and Oratio ad Romanos ; In M. Tullium
+            Ciceronem Invectiva.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">Italy,</subfield>
+        <subfield code="c">between 1430 and 1470?</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">252 leaves :</subfield>
+        <subfield code="b">parchment;</subfield>
+        <subfield code="c">230 x 325 mm bound to 240 x 330 mm.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">Written in book: &quot;preparatoria ad missam opus Johannis van
+            Memmelinghe&quot;, nephew of painter Hans Memling (Edward Sandford Burgess&apos;s
+            notes). Autographed P. S. Kuyl, in same style as van Memmelinghe&apos;s autograph,
+            indicating Memmelinghe gave it to Kuyl (Burgess&apos;s notes). Formerly owned by Edward
+            P. Warren of Boston, Massachusetts. Burgess apparently paid $750. Given by Julia Burgess
+            in memory of her mother.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+        <subfield code="a">Orations. Publius Cornelius Sulla was implicated along with Catiline for
+            the insurrection at the beginning of 62 BCE. Through the efforts of Cicero he was
+            exonerated from all charges.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript codex.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: 25 quires: 24 consisting of 10 leaves, the last of one.
+            Vertical catchwords on last leaf of each quire. No signatures.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Italy, early 15th century.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: Single column, 36 long lines, ruled with lead point and
+            stylus.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Humanistic minuscule in brown ink, rubrication at chapter
+            openings and page titles. Inconsistent use of long &apos;s&apos; (initial, medial, and
+            final letter). Short ascenders and descenders.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: One full page illumination with three-quarter border of
+            interlaced white vines set off by blue, rose, and green, with cherubs, birds, butterfly,
+            and florets. Inside the raised gold initial &apos;Q&apos; is a medallion portrait of
+            Cicero (in blue robe and pink cowl and cap) holding a book. There are scattered clusters
+            of dots of raised gold, outlined in extremely thin penwork. In the lower margin, there
+            is a medallion which held a coat of arms, now obliterated. 37 large initials in gold and
+            white vine against blue, rose, and green, at first lines of orations.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: 19th century parchment, gauffered gilt edges in lattice pattern.
+            Spine title in brown ink: &quot;M. Tullii Ciceronis Opera.&quot; Pink and blue head and
+            tail bands. One paper flyleaf at front and back.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Annotations: Note on free endpaper: &quot;Prof. Clark looked hastily at
+            this MS. He thought it certainly subsequent to 1430 and probably before
+            1470.&quot;</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 048.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">l. 1r M. Tullii Ciceronis de Lege Maniliana Oratio and Quirites incipit
+            feliciter -- l. 7v: M. Tullii Ciceronis pro A. Licinio Poeta Oratio incipit ad iudices
+            -- l. 11r M. Tullii Ciceronis Oratio in Catilinam incipit habita in senatu -- l. 14v M.
+            Tullii Ciceronis in L. Catalina Oratio incipit ad quirites secunda -- l. 21r In
+            Catilinam Invectiva IIII -- l. 24r Crispi Salustii in M. Tul. Ciceronem -- l. 24v M.
+            Tullii Ciceronis Oratio in Crispum Salustin incipit -- l. 26v M. Tullii Ciceronis pro T.
+            Annio Milone Oratio incipit -- l. 36r M. Tullii Ciceronis pro cn. Plancio Oratio ad
+            iudices incipit -- l. 47v M. Tullii Ciceronis pro P. Sylia Oratio ad iudices incipit
+            feliciter -- l. 56v M. Tullii Ciceronis pro A. Cecinna oratio incipit -- l. 68v M.
+            Tullii Ciceronis pro C. Rabirio Posthumo Oratio ad iudices incipit -- l. 72r M. Tullii
+            Ciceronis pro C. Rabirio Perduellione o ratio ad Quirites incipit -- l. 75v M. Tullii
+            Ciceronis oratio pro Roscio Comedo -- l. 81r M. Tullii Ciceronis pro Q. Ligario Oratio
+            ad C. Caesarem incipit -- l. 84r M. Tullii Ciceronis in Vatinium testem Oratio incipit
+            -- l. 89r M. Tullii Ciceronis ad Equites Romanos pridie quam iret in exilium incipit --
+            l. 92r M. Tullii Ciceronis Oratio ad Qurities in Reditu suo incipit -- l. 95r M. Tullii
+            Ciceronis Oratio ad Senatum post reditum suum incipit -- l. 99r M. Tullii Ciceronis de
+            Provinciis Consularibus Oratio incipit -- l. 106r M. Tullii Ciceronis pro M. Caelio
+            Oratio incipit -- l. 111v M. Tullii Ciceronis de lege Agraria Oratio ad Quirites incipit
+            -- l. 123v M. Tullii Ciceronis de lege Agraria liber primus -- l. 126r M. Tullii
+            Ciceronis de lege Agraria contra P. Rullum liber II incipit -- l. 140r M. Tullii
+            Ciceronis pro M. Marcello Oratio incipit -- l. 143r M. Tullii Ciceronis pro Rege
+            Deiotaro Oratio incipit -- l. 146v M. Tullii Ciceronis pro A. Cluentio Habito Oratio ad
+            iudices incipit -- l. 167r M. Tullii Ciceronis pro L. Flacco ad Iudices Oratio incipit
+            -- l. 177r M. Tullii Ciceronis pro P. Quintio Oratio incipit -- l. 185v M. Tullii
+            Ciceronis oratio pro Domo sua ad Pontifices incipit -- l. 201r M. Tullii Ciceronis pro
+            P. Sextio Oratio incipit -- l. 214v M. Tullii Ciceronis pro L. Cornello Balbo Oratio
+            incipit -- l. 221r M. Tullii Ciceronis pro Sexto Roscio Amerino Oratio incipit -- l.
+            234v M. Tullii Ciceronis pro L. Murena Oratio incipit -- l. 241r M. Tullii Ciceronis de
+            Responsis aruspicum Oratio incipit.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Gauffered edges (Binding).</subfield>
+        <subfield code="2">rbbin</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 048.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="700">
+        <subfield code="a">Pseudo-Cicero,</subfield>
+        <subfield code="e">author.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="700">
+        <subfield code="a">Pseudo-Sallust,</subfield>
+        <subfield code="e">author.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22330899510001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvaultxxx</subfield>
+        <subfield code="h">MS 048</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

@@ -1,0 +1,291 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>09696ctm a2200661Ii 4500</leader>
+    <controlfield tag="001">99900470084901852</controlfield>
+    <controlfield tag="005">20200115084347.3</controlfield>
+    <controlfield tag="008">180302q15331538it p 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026502037</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026502037</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324896054701451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="0" ind2="0" tag="245">
+        <subfield code="a">Privilegia et documenta de monasterium S. Zenonis aiorii Veronae
+            spectantia ab anno 883 usque ad annum 1533.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">Verona, Italy;</subfield>
+        <subfield code="c">between 1533 and 1538 .</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">76 folios :</subfield>
+        <subfield code="b">parchment ;</subfield>
+        <subfield code="c">250 x 350 mm</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1="4" ind2=" " tag="510">
+        <subfield code="a">Bond, W., and Faye, C. Supplement to the census of Medieval and
+            Renaissance manuscripts in the United States and Canada,</subfield>
+        <subfield code="c">page 433, item 22.</subfield>
+    </datafield>
+    <datafield ind1="3" ind2=" " tag="510">
+        <subfield code="a">Gaylin, J. An analysis of &quot;Privilegia et documenta d monasterium S.
+            Zenonis aiorii Veronae spectantia ab anno 883 usque ad annum 1533&quot;. [Unpublished
+            research paper for History 410, Dr. Raymond Birn and Bernard McTigue. Eugene, Oregon:
+            University of Oregon.]</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">Remained at the Monastery of St. Zeno at least until 1588, the last date
+            recorded in the manuscript. Written in pencil on inside front cover: &quot;Verona, XVI
+            c., 71&quot;. Purchased by Sarah Julia Burgess (1870-1942) from L&apos;Art Ancien for
+            the University (per note attached to Gaylin&apos;s paper, author unknown). L&apos;Art
+            Ancien S. A. was a bookseller founded in 1920 in Lugano, Switzerland by Dr Erwin
+            Rosenthal (1889-1981).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="541">
+        <subfield code="a">Acquired by purchase and donation from Julia Burgess, circa
+            1935-1924.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+        <subfield code="a">The Privileges and Donations to the Monastery of St. Zeno the
+            Greater/Elder of Verona pertaining to the period from the year 833 to the year 1533. The
+            list of authorities granting privileges includes rulers such as Otto I (963-973), Henry
+            II (1002-1024), Pope Urban III (1185-1187), rulers of Verona, Dukes of Venice, and
+            Countess Beatrice. Evidence of local historical events and the relationships of these
+            people to the people and policies of Verona. (Gaylin, page 5). Many entries also include
+            the monogram of the privilege grantor (Gaylin, page 6).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript codex.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: Quires of 10, second to last of 8, last of 6. The original
+            rubricated foliation begins on 1a and ends on folio 53. Foliation in Arabic numerals in
+            brown ink begins on f. 2, and brief marginal notes and underlined sections. Modern
+            pencil foliation begins on first (blank) page.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Verona, Italy. The Monastery of St. Zeno in Verona was dedicated
+            to St. Zeno, 8th bishop of Verona, 4th c. (Gaylin, 1994, page 2). The monastery was
+            certainly in existence by the reign of Otto I (962-973), who contributed to the
+            church&apos;s completion.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: Main text in one column of 40 lines. Ruled with hard
+            point.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Mainly humanistic minuscule. Inconsistent slope and spacing. Many
+            abbreviations, ligatures, and truncation marks (often omitted). Later script by Cresci
+            in 1560 is better quality. From v. 54 to v. 59 there are letters in various cursive
+            hands in Latin and Italian, dating from April, 1538 to 1588 (Gaylin, 1994, page
+            3).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: One full page illuminated border and simple illuminated
+            initials throughout. Full page is in a highly realistic Renaissance style with trompe
+            l&apos;oeil jewel-like elements and drop-flower large initial &apos;I&apos; and bottom
+            border. Colors are mainly blue, red, black, white, and gold, with green and yellow, and
+            painted gold. The border is framed in gold lines, selectively outlined in black ink and
+            pale yellow. Each corner has rectangular panels of yellow lattice on red, with delicate
+            green vines and white flower sprays. The top border depicts gold ornaments with red
+            jewels, and white pearls, connected by stylized foliage in red and blue with touches of
+            yellow, and a center oval medallion with a crowned white dove radiating yellow light
+            against blue. The left border has green, blue, and yellow foliage and flowers (including
+            blue forget-me-nots) with touches of yellow, on a background of gold or dark red with
+            small yellow dots, with a small area of silver paint at top and bottom. There is a
+            center oval medallion outlined in silver and gold, with a putto executed in subtle
+            blue-on-blue monochrome. The bottom border has a wide panel with a drop-flower border of
+            carnation, rose, forget-me-not, and a white flower, with green stems and leaves, on a
+            gold background; there is also a red and black beetle and an earthworm. In the center of
+            this panel is a coat of arms in red, gold, and blue on a gold shield, surmounted by a
+            cardinal&apos;s red hat and red 12-tasseled cords, on a blue fabric backdrop hanging
+            from 6 nails. The coat of arms is a circular Tuscan shield, with a gold bend sinister
+            (upper left to lower right) on an azure field, and a border gules with a gold cross and
+            7 gold stars. Bond and Faye (1962., page 433, item 22) attribute the coat of arms to
+            Bishop Bernardo Navagero (1507-1565), a Venetian ambassador; Gaylin (1994, page 10)
+            disagrees because the manuscript was completed well before he became a cardinal in 1561.
+            The right border has the same colors and foliage as the left, with three medallions: the
+            center of a putto holding a book, in monochrome blue-on-blue, the top and bottom with
+            classical figures in monochrome grey on black: the upper a seated armored figure with a
+            Greek helmet and shield (Mars), the lower a standing figure (Artemis), with delicate
+            drapery. Under the top border is a blue banner with the title of the privilege of
+            Charles II in gold capitals. Under this is a large initial I in Red and blue with a
+            white pearl and tiny gold filigree, with a gold drop flower background of strawberries
+            and a white pea flower with green leaves and stems. To the right of the initial are 8
+            lines of widely spaced capital letters, then a small gold capital A with blue background
+            begins the minuscule text. Initial letter of each entry is a gold capital against a 2 cm
+            square field of red or blue. Three also have gold filigree on the colored background.
+            The last illuminated capital is on v. 30, after which spaces were left but the initials
+            were never added.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: 16th c. Venetian (Gaylin, 1994, page 12), reddish-brown leather
+            on beveled wooden boards, 4 thongs and 4 raised bands on spine, 6 sewing stations,
+            originally with 4 clasps (two at fore-edge, one top and one bottom), one on lower
+            fore-edge now missing. Clasps of brass with a shell motif, on short leather straps.
+            Covers have blind-tooled rectangular lines, and a gold-tooled vine border, with a
+            freestanding floral motif on the outside and inside of each corner. In the center in
+            gold, nude Fortune holding her sail (Gaylin, 1994, page 13) inside a double circle with
+            an abstract border. Paper pastedowns, one blank parchment flyleaf at front.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 030.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Latin.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">The main Latin text, the last date in which is 1533, continues to r. 54.
+            Rubricated entry headings continue up to f. 49. (Gaylin, 1994, page 3). First entry:
+            privilege of Charles II, Emperor 876-887 (Gaylin, 1994, page 5). In the back, after 14
+            blank folios, is an entry titled &quot;An index of advances (processus) granted by the
+            favor of the (Maleficiorum) to our monastery of St. Zeno,&quot; dated between Feb. 1555
+            and May 1587, not included in the letters which follow the main text (Gaylin, 1994, page
+            4). Note: Gaylin has extensive list of the 59 rubricated entry headings and their
+            translation.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Theology, Doctrinal.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01149617</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1="2" ind2="0" tag="610">
+        <subfield code="a">San Zeno Maggiore (Church : Verona, Italy)</subfield>
+        <subfield code="x">Doctrines</subfield>
+        <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+    <datafield ind1="2" ind2="0" tag="610">
+        <subfield code="a">San Zeno Maggiore (Church : Verona, Italy)</subfield>
+        <subfield code="x">History</subfield>
+        <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+    <datafield ind1="2" ind2="7" tag="610">
+        <subfield code="a">San Zeno Maggiore (Church : Verona, Italy)</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst00574026</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Privileges and immunities, Ecclesiastical.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">Early works.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01411636</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="655">
+        <subfield code="a">History.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01411628</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 030.</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">San Zeno Maggiore (Church : Verona, Italy)</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22329338700001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvault</subfield>
+        <subfield code="h">MS 030</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>

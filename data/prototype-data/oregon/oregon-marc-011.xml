@@ -1,0 +1,253 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+    <leader>08056ctm a2200613Ki 4500</leader>
+    <controlfield tag="001">99900470084801852</controlfield>
+    <controlfield tag="005">20200308062223.6</controlfield>
+    <controlfield tag="008">180302s1484 be p 000 0 lat d</controlfield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)1026501310</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(OCoLC)on1026501310</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="035">
+        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324896105901451</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="040">
+        <subfield code="a">ORU</subfield>
+        <subfield code="b">eng</subfield>
+        <subfield code="e">rda</subfield>
+        <subfield code="c">ORU</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCQ</subfield>
+        <subfield code="d">OCLCA</subfield>
+        <subfield code="d">ORU</subfield>
+        <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="041">
+        <subfield code="a">lat</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="049">
+        <subfield code="a">MAIN</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="110">
+        <subfield code="a">Catholic Church.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="240">
+        <subfield code="a">Book of hours</subfield>
+    </datafield>
+    <datafield ind1="1" ind2="0" tag="245">
+        <subfield code="a">Horae Beatae Virginis Mariae cum Calendario (Book of Hours with
+            Calendar).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="264">
+        <subfield code="a">Flanders,</subfield>
+        <subfield code="c">approximately 1484.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="300">
+        <subfield code="a">206 leaves :</subfield>
+        <subfield code="b">parchment ;</subfield>
+        <subfield code="c">112 x 168 mm bound to 116 x 178 mm.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+        <subfield code="a">text</subfield>
+        <subfield code="b">txt</subfield>
+        <subfield code="2">rdacontent</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="337">
+        <subfield code="a">unmediated</subfield>
+        <subfield code="b">n</subfield>
+        <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="338">
+        <subfield code="a">volume</subfield>
+        <subfield code="b">nc</subfield>
+        <subfield code="2">rdacarrier</subfield>
+    </datafield>
+    <datafield ind1="3" ind2=" " tag="510">
+        <subfield code="a">Lackaff, D. Flemish or Dutch? A study of Burgess Ms 38 in the University
+            of Oregon library (Unpublished research paper), 1997.</subfield>
+    </datafield>
+    <datafield ind1="3" ind2=" " tag="510">
+        <subfield code="a">Parrott, N. A Flemish Treasure (Unpublished research paper), 1965.
+            Portland, Oregon, Portland State University.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="561">
+        <subfield code="a">The names Petrus Warimont and Franciscus Warimont, 1603, are written on
+            the first flyleaf, with &quot;Donatus est hic liber Anna Elise De Coulons a
+            Reverendissimo P. Warimont...in Homborch anno domini 1603.&quot; (Possibly De Coulon, a
+            river and region in France?) The 2nd fly leaf indicates ownership by another Petrus
+            Warimont in 1674. Thomas Thorp of London obtained it from Kent. It was offered for sale
+            at Sotheby&apos;s 11/13/1933, Lot 11 (per Jim Marrow, 1985). Given to the University of
+            Oregon in honor of Irene Hamilton Burgess (wife of Edward Sandford Burgess).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="583">
+        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
+            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="540">
+        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
+            submitted in writing to the Head of Special Collections &amp; University
+            Archives.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="541">
+        <subfield code="c">Donation/Purchase ;</subfield>
+        <subfield code="a">Julia Burgess,</subfield>
+        <subfield code="d">1935-1942.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Manuscript codex.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Title devised by cataloger.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Collation: Quires of 8 plus 2 new flyleaves in front, 3 in back. No
+            titles or signatures, leaves numbered in pencil 1-206.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Origin: Flanders.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Layout: Single column, 19 lines each. Ruled in lead point or graphite.
+            Some pricking marks visible at the bottom of most pages.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Script: Gothic minuscule in brown ink. First two pages have cursive
+            inscription in Latin dated 1603.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Extensively decorated. Illumination is of high quality and
+            originality but shows considerable wear from use.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Two double-page illuminations: 1. Large miniature in gold and
+            colors at left side, historiated initial and text at right; broad four-sided borders
+            surrounding both. F. 77v scene of crucifixion, and border with four Evangelist animals,
+            foliage, human figures in each corner, and an angel on the right. F. 78r has historiated
+            letter &apos;C&apos; showing the betrayal of Christ, and a foliage border with a
+            tonsured priest, a monkey, and a bird. 2. F. 133v has interior scene of a woman (in pink
+            gown, black and white headdress, and black cloak; probably the patron of the manuscript)
+            and her patron St. Bernard, both kneeling in prayer before the Virgin and Child. A
+            four-sided foliage border has an angel playing a harp, a bird, an angel with a hunting
+            horn and spear pursuing a unicorn, a Flemish lady in a pink dress and black hennin
+            playing a lute, and another angel. F. 134r has a large initial &apos;I&apos; and a
+            foliage border with a bird and a monk.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Three single page illuminations: large historiated or
+            decorated initials in raised gold on blue, with central panel of text and full-page
+            borders of flowers, birds, and acanthus foliage. 1. F. 53r has historiated initial
+            &apos;H&apos; and foliage border with a swan and another bird. 2. F. 92r has initial
+            &apos;H&apos; and border with monkey. 3. F. 163r has initial &apos;I&apos; and foliage
+            border.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: 18 historiated initials (showing 6 Hours of the Cross and
+            Suffragia, etc.) with half-borders, and 32 large capitals in gold and colors with
+            marginal decorations: delicate brown ink vines and accents with sprays of stylized
+            acanthus foliage, naturalistic fruit and flowers (including columbine, tulips,
+            morning-glories, and myrtle), often inhabited by birds (falcons, pelican, owl, thrush,
+            dove, peacock, hen and chicks, bird-of-paradise, etc.), animals (fox, rabbit, monkey,
+            baby boar, kangaroo, etc.), several grotesques (griffin, unicorn), and insects
+            (butterflies/ moths). Colors mainly raised gold, light pink, several shades of green,
+            light and dark blue, and touches of white, yellow, red, and brown. Smaller blue or
+            raised gold capitals throughout, 8-10 on most pages. Calendar contains two circular
+            numerical charts, each titled with date MCCCCLXXXIIII (1484). Some initials have incised
+            designs on the gold backgrounds (e.g. F. 136v).</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Decoration: Rubrication includes numerals in the Kalendar, full lines,
+            capital letters and names of certain saints, feast days, underlining of select phrases,
+            and corrections.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Binding: Modern conservator&apos;s binding in style of the period, dark
+            brown leather over wood boards, four raised cords, front and back covers blind-tooled
+            with a grid of vertical and horizontal lines. Gilt edges. Flyleaves of heavy modern
+            paper.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="500">
+        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
+            University of Oregon, MS 038.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="546">
+        <subfield code="a">In Flemish.</subfield>
+    </datafield>
+    <datafield ind1="0" ind2=" " tag="505">
+        <subfield code="a">Kalendar ff. 1-12b. The calendar does not include entries for every day
+            of the year, and is approximately half full. Entries in red include St. Agnes, Landoald,
+            Pancras, Boniface, Odulf, Martin, Laurence, Lambert, Remigius and Bavo, Gereon,
+            Willibrord, Lebuin, Nicholas, Thomas, and Steven. St. Donatian was added in a later
+            hand, suggesting the book was not originally made for Bruges usage. Saints such as
+            Agnes, Odulf, Lebuin, and Willibrord point to the use of Utrecht (Lackaff, 1997, p. 3).
+            Names of the months and saints are in a mix of Latin and Dutch. On the versos of January
+            and December are two computation circles, one for finding the Dominical letters in the
+            lunar month of 28 days (f. 1a), and the other for computing the golden number (f. 12r).
+            Each figure includes on its outer, upper right edge the numerals &quot;m cccc lxxx
+            iiij&quot; dating the ms to 1484 (Lackaff, 1997, p. 3) -- Hours of the Blessed Virgin,
+            ff. 13-52. Compline is followed by &apos;Salve Regina&apos; f. 49 -- Seven Penitential
+            Psalms and Litany, ff. 53-76 -- Hours of the Cross, ff. 77-91 -- Hours of the Eternal
+            Wisdom, and Trinity, ff. 92-132v -- Prayers to the Virgin and to St. Bernard and St.
+            Thomas, ff. 133-138 -- Prayers of St. James, St. George, St. Augustin, St. Barbara, St.
+            Sebastian, St. Nicholas, St. Anthony, St. Mary Magdalene, St. Margaret; All Saints and
+            Angels, ff. 148-162v -- Vigelia, Office of the Dead etc., ff. 163-203v (with Lessons) --
+            Seven Prayers of St. Gregory, ff. 205-206.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="506">
+        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
+        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
+            concerning this item should be directed, in writing, to the Public Services Librarian,
+            Special Collections Department, UO Libraries, or electronically:</subfield>
+        <subfield code="u"
+            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="650">
+        <subfield code="a">Manuscripts, Medieval</subfield>
+        <subfield code="z">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="650">
+        <subfield code="a">Manuscripts, Medieval.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01008422</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="7" tag="651">
+        <subfield code="a">Oregon</subfield>
+        <subfield code="z">Eugene.</subfield>
+        <subfield code="2">fast</subfield>
+        <subfield code="0">(OCoLC)fst01205922</subfield>
+    </datafield>
+    <datafield ind1=" " ind2="0" tag="655">
+        <subfield code="a">Manuscripts, Dutch.</subfield>
+    </datafield>
+    <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">University of Oregon.</subfield>
+        <subfield code="b">Libraries.</subfield>
+        <subfield code="b">Special Collections &amp; University Archives.</subfield>
+        <subfield code="k">Manuscript.</subfield>
+        <subfield code="n">MS 038.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Edward Sandford,</subfield>
+        <subfield code="d">1855-1928,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="a">Burgess, Julia,</subfield>
+        <subfield code="e">former owner.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="851">
+        <subfield code="a">Special Collections and University Archives,</subfield>
+        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
+    </datafield>
+    <datafield ind1="8" ind2=" " tag="852">
+        <subfield code="8">22329338670001852</subfield>
+        <subfield code="b">SpecColl</subfield>
+        <subfield code="c">spvault</subfield>
+        <subfield code="h">MS 038</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="994">
+        <subfield code="a">92</subfield>
+        <subfield code="b">OCACL</subfield>
+    </datafield>
+</record>
