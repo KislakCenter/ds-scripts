@@ -13,11 +13,9 @@ module DS
     # - converts encoded DS 1.0 encoded superscripts to parenthetical values; e.g., 'XVI#^4/4#' is converted to 'XVI(4/4)'
     # - cleans tabs, newlines and duplicate spaces with a single +' '+
     # - removes isolated pairs of period characters, which show up for some reason
-    # - remove square brackets
+    # - removes square brackets
     #
-    # If +terminator+ is non-nil, the method
-    #
-    # - removes any trailing punctuation and whitespace and append +terminator+.
+    # If +terminator+ is non-nil, the method removes any trailing punctuation and whitespace and appends +terminator+.
     #
     # Set +terminator+ to +``+ (empty string) to remove trailing punctuation.
     #
