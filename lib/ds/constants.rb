@@ -82,6 +82,7 @@ source_file
       'Q1378320'  => ['Swarthmore College', 'swarthmore'],
       'Q168756'   => ['University of California, Berkeley'],
       'Q579968'   => ['University of Missouri', 'mizzou', 'missouri'],
+      'Q766145'   => ['University of Oregon', 'oregon'],
       'Q49117'    => ['University of Pennsylvania', 'upenn', 'penn'],
       'Q49205'    => ['Wellesley College', 'wellesley'],
       'Q49112'    => ['Yale University', 'yale'],
