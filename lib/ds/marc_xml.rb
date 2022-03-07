@@ -274,28 +274,28 @@ module DS
         # Note that some MSS have more than one holding. This method will
         # break when this happens
         callno = record.xpath('holdings/holding/call_number').text
-        return callno unless callno.strip.empty?
+        return DS.clean_string callno unless callno.strip.empty?
 
         # Cornell call number; Cornell sometimes uses the 710 field; the records
         # are not consistent
         # TODO: Determine if this the best way to get this
         xpath = "datafield[@tag=710 and contains(subfield[@code='a']/text(), 'Cornell University')]/subfield[@code='n']"
         callno = record.xpath(xpath).text
-        return callno unless callno.strip.empty?
+        return DS.clean_string callno unless callno.strip.empty?
 
         # Princeton call number
         # Some records mistakenly have two 852$b = 'hsvm' values; get the firsto
         xpath = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
         callno = record.xpath(xpath).text
-        return callno unless callno.strip.empty?
+        return DS.clean_string callno unless callno.strip.empty?
 
         # AMREMM method of a 500$a starting with "Shelfmark: "
         callno = extract_named_500 record, name: 'Shelfmark'
-        return callno unless callno.strip.empty?
+        return DS.clean_string callno unless callno.strip.empty?
 
         # U. Penn uses the 099$a subfield
         callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
-        return callno unless callno.strip.empty?
+        return DS.clean_string callno unless callno.strip.empty?
 
 
         # return empty string if we get this far
