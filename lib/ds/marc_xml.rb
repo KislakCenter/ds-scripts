@@ -173,6 +173,27 @@ module DS
         }.join field_sep
       end
 
+      def extract_genre_as_recorded_rbprov record, field_sep: '|', sub_sep: '--'
+        xpath = %q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = 'rbprov']}
+        record.xpath(xpath).map { |datafield|
+          collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
+        }.join field_sep
+      end
+
+      def extract_genre_as_recorded_aat record, field_sep: '|', sub_sep: '--'
+        xpath = %q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = 'aat']}
+        record.xpath(xpath).map { |datafield|
+          collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
+        }.join field_sep
+      end
+
+      def extract_genre_as_recorded_lcsh record, field_sep: '|', sub_sep: '--'
+        xpath = %q{datafield[@tag = 655 and @ind2 = '0']}
+        record.xpath(xpath).map { |datafield|
+          collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
+        }.join field_sep
+      end
+
       def collect_subfields datafield, codes: [], sub_sep: ' '
         # ensure that +codes+ is an array of strings
         _codes = [codes].flatten.map &:to_s
