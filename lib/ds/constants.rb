@@ -22,6 +22,9 @@ uniform_title_agr
 title_as_recorded_245
 title_as_recorded_245_agr
 genre_as_recorded
+genre_as_recorded_lcsh
+genre_as_recorded_aat
+genre_as_recorded_rbprov
 genre
 subject_as_recorded
 subject

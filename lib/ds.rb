@@ -69,7 +69,7 @@ module DS
         # and we look up each AAT URI for those values
         (centuries.first..centuries.last).to_a.map { |c|
           lookup_century c
-        }.join '-'
+        }.join ';' # join list of centuries by semicolons
       }.uniq.join '|'
     end
 
