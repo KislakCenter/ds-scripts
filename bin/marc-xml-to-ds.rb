@@ -94,7 +94,8 @@ CSV.open output_csv, "w", headers: true do |row|
       genre_as_recorded_lcsh             = DS::MarcXML.extract_genre_as_recorded_lcsh record,   field_sep: '|', sub_sep: '--'
       genre_as_recorded_aat              = DS::MarcXML.extract_genre_as_recorded_aat record,    field_sep: '|', sub_sep: '--'
       genre_as_recorded_rbprov           = DS::MarcXML.extract_genre_as_recorded_rbprov record, field_sep: '|', sub_sep: '--'
-      subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [610, 650, 651, 600], codes: ('a'..'z').to_a, sub_sep: '--'
+      named_subject_as_recorded          = DS::MarcXML.collect_datafields record, tags: [610, 600], codes: ('a'..'z').to_a, sub_sep: '--'
+      subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [650, 651], codes: ('a'..'z').to_a, sub_sep: '--'
       author_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [100, 110, 111]
       author_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [100, 110, 111]
       artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
@@ -134,6 +135,7 @@ CSV.open output_csv, "w", headers: true do |row|
                genre_as_recorded_lcsh:              genre_as_recorded_lcsh,
                genre_as_recorded_aat:               genre_as_recorded_aat,
                genre_as_recorded_rbprov:            genre_as_recorded_rbprov,
+               named_subject_as_recorded:           named_subject_as_recorded,
                subject_as_recorded:                 subject_as_recorded,
                author_as_recorded:                  author_as_recorded,
                author_as_recorded_agr:              author_as_recorded_agr,
