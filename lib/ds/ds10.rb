@@ -140,7 +140,7 @@ module DS
         start_date = part.xpath(xpath).text
         xpath      = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
         end_date   = part.xpath(xpath).text
-        [start_date, end_date].reject(&:empty?).join '-'
+        [start_date, end_date].reject(&:empty?).map(&:to_i).join('-')
       end
 
       def extract_assigned_date part
@@ -154,7 +154,7 @@ module DS
         #
         # For now we replace the #^<VAL># with (<VAL>)
         xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateOther'
-        part.xpath(xpath).text.gsub %r{#\^(\w+)#}, '(\1)'
+        part.xpath(xpath).text.gsub %r{#\^?([\w/]+)(\^|#)}, '(\1)'
       end
 
       def transform_production_date xml
