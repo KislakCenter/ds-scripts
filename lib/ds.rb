@@ -111,36 +111,6 @@ module DS
       DateTime.now.iso8601.to_s
     end
 
-    protected
-    @@centuries = nil
-
-    ##
-    # Look up the URI for +century+, where century is an integer like +1+, +12+,
-    # +-3+, etc.
-    # Values are read in from the file `data/getty-aat-centuries.csv` and
-    # converted to a hash of Getty AAT century URIs. Keys are century integers,
-    # like '1', '2', '3', '-1', '-2', '-3', etc. and values are AAT URIs.
-    #
-    # @param [Integer] century an integer like +1+, +12+, +-3+, etc.
-    # @return [String] the AAT URI for the century
-    def lookup_century century
-      if @@centuries.nil?
-        path = File.expand_path '../ds/data/getty-aat-centuries.csv', __FILE__
-
-        # aat_id,label,number
-        # http://vocab.getty.edu/aat/300404465,fifteenth century (dates CE),15
-        # http://vocab.getty.edu/aat/300404493,first century (dates CE),1
-        @@centuries = CSV.read(path).inject({}) do |h, row|
-          if row.first == 'aat_id'
-            h
-          else
-            h.update({ row.last => row.first })
-          end
-        end.freeze
-      end
-      @@centuries[century.to_s]
-    end
-
   end
 
   self.extend ClassMethods
