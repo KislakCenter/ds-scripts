@@ -61,6 +61,12 @@ module DS
       return if dates.to_s.empty?
       dates.to_s.split('|').flat_map { |date|
         next [] if date.strip.empty? # don't process empty values
+        # this system assumes '1401-1500' = 15th C.
+        # Some members have dates like '1400-1499' for 15th C.; or '1400-1415'.
+        # Without adjustment such dates will have centuries 14 and 15, when
+        # clearly 15. C. is intended.
+        # TODO: Discuss with DS group -- how to handle?
+        date = adjust_for_century date
         # turn the date/date range into an array of century integers:
         #     1350-1550 => [14,16]
         # centuries begin with the 1st year: 901, 1001, etc.
@@ -71,6 +77,19 @@ module DS
         # and we look up each AAT URI for those values
         (centuries.first..centuries.last).to_a.join ';' # join list of centuries by semicolons
       }.join '|'
+    end
+
+    DATE_RANGE_RE = %r{^(-?\d{1,4})-(-?\d{1,4})$}
+    def adjust_for_century range
+      # return a single date
+      return range if range =~ %r{^-?\d+$}
+      range =~ DATE_RANGE_RE
+      start_year, end_year = $1, $2
+      start_int, end_int = start_year.to_i, end_year.to_i
+
+      end_year = end_int.pred.to_s if end_int < 0 && end_year =~ %r{00$}
+      start_year = start_int.succ.to_s if start_int > 0 && start_year =~ %r{00$}
+      [start_year, end_year].join '-'
     end
 
     ##

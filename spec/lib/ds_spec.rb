@@ -25,6 +25,14 @@ RSpec.describe 'DS' do
     it 'handles multiple date ranges' do
       expect(DS.transform_date_to_century '901-1125|1375').to eq '10;11;12|14'
     end
+
+    it 'handles x00-x99 dates' do
+      expect(DS.transform_date_to_century '1000-1099').to eq('11')
+    end
+
+    it 'handles BCE single dates' do
+      expect(DS.transform_date_to_century '-1100').to eq('-11')
+    end
   end
 
   context 'calculate_century' do
