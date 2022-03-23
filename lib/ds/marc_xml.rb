@@ -336,7 +336,7 @@ module DS
 
       # parse encoded date field into human readable date range
       def parse_008 date_string
-        date_string.scan(/\d{4}/).map(&:to_i).join '-'
+        date_string.scan(/\d{4}/).map(&:to_i).join '^'
       end
 
       def source_modified record

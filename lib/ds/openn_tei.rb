@@ -102,7 +102,7 @@ module DS
 
       def extract_production_date_as_recorded xml
         date_array = xml.xpath('//origDate').map { |orig|
-          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join '-'
+          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join '^'
         }.reject(&:empty?).join '|'
       end
 
