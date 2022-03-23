@@ -83,7 +83,7 @@ CSV.open output_csv, "w", headers: true do |row|
       iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
       production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
       production_date                    = DS::MarcXML.parse_008 production_date_encoded_008
-      century                            = DS.transform_date_to_century production_date
+      century                            = DS.transform_dates_to_centuries production_date
       production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
       production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
       uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record

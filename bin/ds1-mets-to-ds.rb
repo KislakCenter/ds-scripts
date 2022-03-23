@@ -59,7 +59,7 @@ CSV.open output_csv, "w", headers: true do |row|
     production_place                   = ''
     production_date_as_recorded        = DS::DS10.extract_date_as_recorded xml
     production_date                    = DS::DS10.transform_production_date xml
-    century                            = DS.transform_date_to_century production_date
+    century                            = DS.transform_dates_to_centuries production_date
     dated                              = DS::DS10.dated_by_scribe? xml
     uniform_title_as_recorded          = ''
     uniform_title_agr                  = ''
