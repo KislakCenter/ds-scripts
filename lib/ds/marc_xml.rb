@@ -12,7 +12,7 @@ module DS
       ###
       # Extract the language codes from controlfield 008 and datafield 041$a.
       #
-      # @param [Nokogiri::XML::Node] :record the marc:record node
+      # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
       def extract_langs record
         (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
@@ -29,7 +29,7 @@ module DS
       ###
       # Extract the encoded date from controlfield 008.
       #
-      # @param [Nokogiri::XML::Node] :record the +marc:record+ node
+      # @param [Nokogiri::XML::Node] record the +marc:record+ node
       # @return [String]
       def extract_encoded_date_008 record
         record.xpath "substring(controlfield[@tag='008']/text(), 7,9)"
@@ -44,9 +44,9 @@ module DS
       #
       # @see #build_name_query for details on query construction
       #
-      # @param [Nokogiri::XML:Node] :record a +<marc:record>+ node
-      # @param [Array<String>] :tags the MARC field code[s]
-      # @param [Array<String>] :relators for +700$e+, +710$e+, a value[s] like 'former owner'
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC field code[s]
+      # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
@@ -65,9 +65,9 @@ module DS
       #
       # @see #build_name_query for details on query construction
       #
-      # @param [Nokogiri::XML:Node] :record a +<marc:record>+ node
-      # @param [Array<String>] :tags the MARC field code[s]
-      # @param [Array<String>] :relators for +700$e+, +710$e+, a value[s] like 'former owner'
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC field code[s]
+      # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
       def extract_names_as_recorded_agr record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
@@ -99,8 +99,8 @@ module DS
       # Note: In U. Penn manuscript catalog records, 700 and 710 fields that *do*
       # *not* have a subfield code +e+ are associated authors.
       #
-      # @param [Array<String>] :tags the MARC field code[s]
-      # @param [Array<String>] :relators for +700$e+, +710$e+, a value[s] like 'former owner'
+      # @param [Array<String>] tags the MARC field code[s]
+      # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
       # @return [String] the data field query string
       def build_name_query tags: [], relators: []
         return '' if tags.empty? # don't process nonsensical requests
@@ -125,7 +125,7 @@ module DS
       ###
       # Extract the encoded date from controlfield 008.
       #
-      # @param [Nokogiri::XML::Node] :datafield the +marc:datafield+ node with the name
+      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
       # @return [String]
       def extract_pn datafield
         codes = %w{ a b c d }
@@ -153,7 +153,7 @@ module DS
       #       <marc:subfield code="d">اپرxمتلي 12161294.</marc:subfield>
       #     </marc:datafield>
       #
-      # @param [Nokogiri::XML::Node] :datafield the main data field @tag = '100', '700', etc.
+      # @param [Nokogiri::XML::Node] datafield the main data field @tag = '100', '700', etc.
       # @return [String] the text representation of the value
       def extract_pn_agr datafield
         linkage = datafield.xpath("subfield[@code='6']").text
@@ -336,7 +336,7 @@ module DS
 
       # parse encoded date field into human readable date range
       def parse_008 date_string
-        date_string.scan(/\d{4}/).map(&:to_i).join '-'
+        date_string.scan(/\d{4}/).map(&:to_i).join '^'
       end
 
       def source_modified record

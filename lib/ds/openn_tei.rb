@@ -5,8 +5,8 @@ module DS
       # From the given set of nodes, extract the names from all the respStmts with
       # resp text == type.
       #
-      # @param [Nokogiri::XML:NodeSet] :nodes the nodes to search for +respStmt+s
-      # @param [Array<String>] :types a list of types; e.g., +artist+, <tt>former
+      # @param [Nokogiri::XML:NodeSet] nodes the nodes to search for +respStmt+s
+      # @param [Array<String>] types a list of types; e.g., +artist+, <tt>former
       #         owner</tt>
       # @return [String] pipe-separated list of names
       def extract_resp_names nodes: , types: []
@@ -21,8 +21,8 @@ module DS
       # From the given set of nodes, extract the URIs from all the respStmts with
       # resp text == type.
       #
-      # @param [Nokogiri::XML:NodeSet] :nodes the nodes to search for +respStmt+s
-      # @param [Array<String>] :types a list of types; e.g., +artist+, <tt>former
+      # @param [Nokogiri::XML:NodeSet] nodes the nodes to search for +respStmt+s
+      # @param [Array<String>] types a list of types; e.g., +artist+, <tt>former
       #         owner</tt>
       # @return [String] pipe-separated list of URIs
       def extract_resp_ids nodes: , types: []
@@ -37,7 +37,7 @@ module DS
       # Extract language the ISO codes from +textLang+ attributes +@mainLang+ and
       # +@otherLangs+ and return as a pipe separated list.
       #
-      # @param [Nokogiri::XML::Node] :xml the TEI xml
+      # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_language_codes xml
         xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
@@ -48,7 +48,7 @@ module DS
       # Extract the collation formula and catchwords description from +supportDesc+,
       # returning those values that are present.
       #
-      # @param [Nokogiri::XML::Node] :xml the TEI xml
+      # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_collation xml
         formula    = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p[not(catchwords)]/text()').text
@@ -64,7 +64,7 @@ module DS
       # Extract +extent+ element and prefix with <tt>'Extent: '</tt>, return +''+
       # (empty string) if +extent+ is not present or empty.
       #
-      # @param [Nokogiri::XML::Node] :xml the TEI xml
+      # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_extent xml
         formula = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()')
@@ -76,7 +76,7 @@ module DS
       # Extract +support+ element text and prefix with <tt>'Support: '</tt>, return
       # +''+ (empty string) if +support+ is not present or empty.
       #
-      # @param [Nokogiri::XML::Node] :xml the TEI xml
+      # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_support xml
         support = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()')
@@ -85,7 +85,7 @@ module DS
       end
 
       ##
-      # @param [Nokogiri::XML::Node] :xml the TEI xml
+      # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_physical_description xml
         parts = []
@@ -102,7 +102,7 @@ module DS
 
       def extract_production_date_as_recorded xml
         date_array = xml.xpath('//origDate').map { |orig|
-          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join '-'
+          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join '^'
         }.reject(&:empty?).join '|'
       end
 
