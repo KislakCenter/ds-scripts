@@ -100,9 +100,9 @@ module DS
         parts.flatten.map { |x| x.to_s.strip }.reject(&:empty?).join '. '
       end
 
-      def extract_production_date_as_recorded xml
+      def extract_production_date xml, range_sep: '-'
         date_array = xml.xpath('//origDate').map { |orig|
-          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join '^'
+          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
         }.reject(&:empty?).join '|'
       end
 
