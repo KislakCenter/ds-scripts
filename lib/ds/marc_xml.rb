@@ -36,6 +36,23 @@ module DS
       end
 
       ##
+      # Look for a date as recorded. Look first at 260$c, then 260$d, then
+      # 245$f, finally use the encoded date from 008
+      def extract_date_as_recorded record
+        dar = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
+        return dar unless dar.strip.empty?
+
+        dar = record.xpath("datafield[@tag=260]/subfield[@code='d']").text
+        return dar unless dar.strip.empty?
+
+        dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
+        return dar unless dar.strip.empty?
+
+        encoded_date = extract_encoded_date_008 record
+        parse_008 encoded_date, range_sep: '-'
+      end
+
+      ##
       # Extract names from record using tags and relators. Tags understood are +100+,
       # +700+, and +710+. The +relators+ are used to require datafields based on the
       # contents of a subfield code +e+ containing the specified value, like 'scribe':
@@ -335,8 +352,8 @@ module DS
       end
 
       # parse encoded date field into human readable date range
-      def parse_008 date_string
-        date_string.scan(/\d{4}/).map(&:to_i).join '^'
+      def parse_008 date_string, range_sep: '-'
+        date_string.scan(/\d{4}/).map(&:to_i).join range_sep
       end
 
       def source_modified record

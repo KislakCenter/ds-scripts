@@ -60,6 +60,7 @@ CSV.open output_csv, "w", headers: true do |row|
     production_date_as_recorded        = DS::DS10.extract_date_as_recorded xml
     production_date                    = DS::DS10.transform_production_date xml
     century                            = DS.transform_dates_to_centuries production_date
+    century_aat                        = DS.transform_centuries_to_aat century
     dated                              = DS::DS10.dated_by_scribe? xml
     uniform_title_as_recorded          = ''
     uniform_title_agr                  = ''
@@ -94,6 +95,7 @@ CSV.open output_csv, "w", headers: true do |row|
              production_place_as_recorded:       production_place_as_recorded,
              production_place:                   production_place,
              century:                            century,
+             century_aat:                        century_aat,
              dated:                              dated,
              production_date_as_recorded:        production_date_as_recorded,
              uniform_title_as_recorded:          uniform_title_as_recorded,

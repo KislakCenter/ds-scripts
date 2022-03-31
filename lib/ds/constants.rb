@@ -15,6 +15,7 @@ production_place
 production_date_as_recorded
 production_date
 century
+century_aat
 dated
 uniform_title
 uniform_title_as_recorded
