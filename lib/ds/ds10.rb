@@ -129,18 +129,21 @@ module DS
       def extract_date_as_recorded xml
         find_parts(xml).map { |part |
           assigned = extract_assigned_date part
-          range    = extract_date_range part
+          range    = extract_date_range(part).join '-'
           [assigned, range].reject(&:empty?).join ', '
         }.join '|'
       end
 
+      ##
+      # @param [Nokogiri::XML:Node]
+      # @return [Array<Integer>] the start and end dates as an array of integers
       def extract_date_range part
         xpath      = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateCreated[@point="start"]'
 
         start_date = part.xpath(xpath).text
         xpath      = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
         end_date   = part.xpath(xpath).text
-        [start_date, end_date].reject(&:empty?).map(&:to_i).join('^')
+        [start_date, end_date].reject(&:empty?).map(&:to_i)
       end
 
       def extract_assigned_date part
@@ -159,7 +162,7 @@ module DS
 
       def transform_production_date xml
         find_parts(xml).map { |part|
-          extract_date_range part
+          extract_date_range(part).join '^'
         }.reject(&:empty?).join '|'
       end
 

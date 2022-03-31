@@ -82,10 +82,11 @@ CSV.open output_csv, "w", headers: true do |row|
       link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, options[:institution]
       iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
       production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
-      production_date                    = DS::MarcXML.parse_008 production_date_encoded_008
+      production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
       century                            = DS.transform_dates_to_centuries production_date
+      century_aat                        = DS.transform_centuries_to_aat century
       production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
-      production_date_as_recorded        = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
+      production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
       uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
       uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
       title_as_recorded_245              = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text
@@ -125,6 +126,7 @@ CSV.open output_csv, "w", headers: true do |row|
                iiif_manifest:                       iiif_manifest,
                production_date:                     production_date,
                century:                             century,
+               century_aat:                         century_aat,
                production_place_as_recorded:        production_place_as_recorded,
                production_date_as_recorded:         production_date_as_recorded,
                uniform_title_as_recorded:           uniform_title_as_recorded,

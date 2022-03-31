@@ -55,9 +55,10 @@ CSV.open output_csv, "w", headers: true do |row|
     holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
     link_to_holding_institution_record = xml.xpath('//altIdentifier[@type="resource"][1]').text.strip
     production_place_as_recorded       = xml.xpath('//origPlace/text()').map(&:to_s).join '|'
-    production_date_as_recorded        = DS::OPennTEI.extract_production_date_as_recorded xml
-    production_date                    = production_date_as_recorded
+    production_date_as_recorded        = DS::OPennTEI.extract_production_date xml, range_sep: '-'
+    production_date                    = DS::OPennTEI.extract_production_date xml, range_sep: '^'
     century                            = DS.transform_dates_to_centuries production_date
+    century_aat                        = DS.transform_centuries_to_aat century
     title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
     author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
     author                             = xml.xpath('//msItem/author').map{ |a| a['ref'] }.join '|'
@@ -98,6 +99,7 @@ CSV.open output_csv, "w", headers: true do |row|
       production_date_as_recorded:        production_date_as_recorded,
       production_date:                    production_date,
       century:                            century,
+      century_aat:                        century_aat,
       title_as_recorded_245:              title_as_recorded_245,
       author_as_recorded:                 author_as_recorded,
       author:                             author,

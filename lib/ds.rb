@@ -87,6 +87,22 @@ module DS
     end
 
     ##
+    # Take a formatted string of century integers and return the string AAT
+    # century URIs, retaining the divisions.
+    #
+    # @param [String] centuries_string
+    # @return [String]
+    def transform_centuries_to_aat centuries_string, rec_sep: '|', sub_sep: ';'
+      return if centuries_string.to_s.strip.empty?
+
+      centuries_string.split(rec_sep).map { |century_range|
+        century_range.split(sub_sep).map { |century_int|
+          lookup_century century_int
+        }.join sub_sep
+      }.join rec_sep
+    end
+
+    ##
     # Adjust date ranges so that intended results are returned for century
     # values. Thus:
     #
@@ -114,11 +130,11 @@ module DS
       return range if range =~ %r{^-?\d+$}
 
       start_year, end_year = range.split('^')
-      start_int, end_int = start_year.to_i, end_year.to_i
+      start_int, end_int   = start_year.to_i, end_year.to_i
 
       # end dates divisible by 100 need to be reduced by one:
       #   1500 => 1499; -1500 => -1501
-      end_int -= 1 if end_int % 100 == 0
+      end_int              -= 1 if end_int % 100 == 0
       [start_int, end_int].uniq.join '^'
     end
 
@@ -145,21 +161,48 @@ module DS
       year_int = Integer year
       # year <=> 0 returns 1 if year > 0; -1 if year < 0; 0 if year == 0
       # 0 is a special year; its sign is 1 and its absolute value is 1
-      sign =    year_int == 0 ? 1 : (year_int <=> 0)
+      sign    = year_int == 0 ? 1 : (year_int <=> 0)
       abs_val = year_int == 0 ? 1 : year_int.abs
-      offset = sign < 0 ? 1 : 0
+      offset  = sign < 0 ? 1 : 0
 
       # if year is 1501, sign == 1 and abs_val == 1501
       #     => 1 * ((1501 - 1)/100 +1) => 1 * (1500/100 + 1) => 1 * (15 + 1) = 16
       # if year is 1500, sign == 1 and abs_val == 1500
       #     => 1 * ((1500 - 1)/100 +1) => 1 * (1499/100 + 1) => 1 * (14 + 1) = 15
-      sign * ((abs_val - offset)/100 + 1)
+      sign * ((abs_val - offset) / 100 + 1)
     end
 
     def timestamp
       DateTime.now.iso8601.to_s
     end
 
+    @@centuries = nil
+    ##
+    # Look up the URI for +century+, where century is an integer like +1+, +12+,
+    # +-3+, etc.
+    # Values are read in from the file `data/getty-aat-centuries.csv` and
+    # converted to a hash of Getty AAT century URIs. Keys are century integers,
+    # like '1', '2', '3', '-1', '-2', '-3', etc. and values are AAT URIs.
+    #
+    # @param [Integer] century an integer like +1+, +12+, +-3+, etc.
+    # @return [String] the AAT URI for the century
+    def lookup_century century
+      if @@centuries.nil?
+        path = File.expand_path '../ds/data/getty-aat-centuries.csv', __FILE__
+
+        # aat_id,label,number
+        # http://vocab.getty.edu/aat/300404465,fifteenth century (dates CE),15
+        # http://vocab.getty.edu/aat/300404493,first century (dates CE),1
+        @@centuries = CSV.read(path).inject({}) do |h, row|
+          if row.first == 'aat_id'
+            h
+          else
+            h.update({ row.last => row.first })
+          end
+        end.freeze
+      end
+      @@centuries[century.to_s]
+    end
   end
 
   self.extend ClassMethods
