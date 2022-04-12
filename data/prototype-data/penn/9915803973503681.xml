@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>05071ctc a2200733Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9915803973503681</marc:controlfield>
+    <marc:controlfield tag="005">20220201132659.0</marc:controlfield>
+    <marc:controlfield tag="008">940812i14491453ci            000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn155962319</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)155962319</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(CStRLIN)PAUR94-A110</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)1580397-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PU</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="041">
+  <marc:subfield code="a">lat</marc:subfield>
+  <marc:subfield code="a">ita</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn122545112</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">Ms. Codex 88</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="100">
+  <marc:subfield code="a">Guillaume,</marc:subfield>
+  <marc:subfield code="c">de Lanicia,</marc:subfield>
+  <marc:subfield code="d">d. after 1310.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="240">
+  <marc:subfield code="a">Diaeta salutis</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">Via salutis, del dieta</marc:subfield>
+  <marc:subfield code="h">[manuscript].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[S&#x30C;ibenik, Croatia],</marc:subfield>
+  <marc:subfield code="c">1449-1453.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">93 leaves :</marc:subfield>
+  <marc:subfield code="b">paper, col. ill. ;</marc:subfield>
+  <marc:subfield code="c">215 x 148 (138 x 85) mm. bound to 221 x 144 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Written in Sebenico (Dalmatia), 1449-1453 (f. 73r-75r). Today Sebenico is S&#x30C;ibenik in Croatia.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: 15th-century Italian vellum over boards, rebacked.  Vellum splitting and pulling away from spine. Possible evidence of slight water damage.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from heading (f. 1r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">First work, incipit and explicit: (f. 1r) Hec est via ambulate in ea ... (f. 73r) orationes pro dampnatis deus non exaudit.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Colophon (f. 73r): Iste liber est mei fratris Strephani Bilicich, abbatis monasterii sancti Nicolai portus sibenicensis, quem scripsi manu propria. [It is then dated 1449.].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Second work, incipit and explicit: (f. 73r) 1421. Consecrata fuit ecclesia in vodice ... (f. 75r) Dominus Michael dux[?] Seubenico obiit nescio quando.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Incipit of Italian poem (f. 88r): Ara la arena, chi per comune pena [this is repeated as an explicit].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation: Paper, i (modern paper) + 93 + i (modern paper); 1-5&#xB9;&#x2076;, 6&#xB9;&#x2074; ( -1); 1-89, 91-94; contemporary foliation in ink, upper center recto. Catchwords in lower center margin, last verso of each quire, in a decorative border.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: Written in 21 long lines; ruled in lead; prickings visible.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script: Written in Gothic hybrid and Gothic cursive scripts; at least partly (if not mainly) in the hand of Stephanus Bilicich.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: 6-line initial in red and white on a gold illuminated background, with foliage in margin (f. 1r); gold has mostly flaked away, leaving only the ground; several other colored initials in red, purple, yellow, green, brown, and black with penwork ornamentation; extensive use of red for highlights, headings and decorations; frequent use of manicules in margins.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Zacour, Norman P. and Hirsch, Rudolf. Catalogue of Manuscripts in the Libraries of the University of Pennsylvania to 1800 (Philadelphia: University of Pennsylvania Press, 1965),</marc:subfield>
+  <marc:subfield code="c">p. 161 (Ms. Lea 62).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Text of Via salutus, vel dieta, by Guilelmus (or Guillaume) de Lanicia (f. 1r-73r). There is an index of chapter headings on f. 91v-92r. Also includes a chronicle of the abbey of St. Nicholas in Sebenico from 1421-1453 (f. 73r-75r), by Stephanus Bilicich. Folios 75v-79r are blank. Also includes a miscellany, primarily in the hand of Stephanus Bilicich (f. 79v-94v); includes a cryptogram (f. 80r), prayers, proverbs, recipes (including for ink) and an Italian poem (f. 88r; this poem has one line for every letter of the alphabet).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn Ms. Codex 88</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Latin, with several items in Italian.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Offered for sale at auction at Sotheby's, 10-17 June 1896, lot 1261.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Acquired, 1953.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Appears in Jacques Rosenthal's catalog 83 (1925), no. 49.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Guillaume Libri at auction at Sotheby's, 28 March 1859, lot 1043; purchased by Sir Thomas Phillipps (Phillipps ms. 14870).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2="0" tag="610">
+  <marc:subfield code="a">Sveti Nikola (Abbey : S&#x30C;ibenik, Croatia)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Christian life</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Spiritual life</marc:subfield>
+  <marc:subfield code="x">Catholic Church</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="651">
+  <marc:subfield code="a">S&#x30C;ibenik (Croatia)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Annals and chronicles.</marc:subfield>
+  <marc:subfield code="2">lcgft</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Poetry.</marc:subfield>
+  <marc:subfield code="2">lcgft</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Prayers.</marc:subfield>
+  <marc:subfield code="2">lcgft</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Recipes.</marc:subfield>
+  <marc:subfield code="2">lcgft</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Italian</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Bilicich, Stephanus,</marc:subfield>
+  <marc:subfield code="e">scribe.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Libri, Guillaume,</marc:subfield>
+  <marc:subfield code="d">1803-1869,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Phillipps, Thomas,</marc:subfield>
+  <marc:subfield code="c">Sir,</marc:subfield>
+  <marc:subfield code="d">1792-1872,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="740">
+  <marc:subfield code="a">Hec est via ambulate in ea.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="2" tag="740">
+  <marc:subfield code="a">Ara la arena, chi per comune pena.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">Ms. Codex 88</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/1580397</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3nk3676d</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20100324</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22349561270003681</marc:holding_id>
+        <marc:call_number>Ms. Codex 88</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

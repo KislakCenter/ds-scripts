@@ -190,15 +190,17 @@ module DS
         }.join field_sep
       end
 
-      def extract_genre_as_recorded_rbprov record, field_sep: '|', sub_sep: '--'
-        xpath = %q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = 'rbprov']}
-        record.xpath(xpath).map { |datafield|
-          collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
-        }.join field_sep
-      end
-
-      def extract_genre_as_recorded_aat record, field_sep: '|', sub_sep: '--'
-        xpath = %q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = 'aat']}
+      ##
+      # Extract genre and form terms from MARC datafield 655 values, where the
+      # 655$2 value can be specified; e.g., +rbprov+, +aat+, +lcgft+.
+      #
+      # @param [Nokogiri::XML::Node] record the MARC record
+      # @param [String] sub2 the value of the 655$2 subfield +rbprov+, +aat+, etc.
+      # @param [String] field_sep separator for multiple 655 datafields
+      # @param [String] sub_sep separator for keywords
+      # @return [String] concatenated field value(s)
+      def extract_genre_as_recorded record, sub2:, field_sep: '|', sub_sep: '--'
+        xpath = %Q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = '#{sub2}']}
         record.xpath(xpath).map { |datafield|
           collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
         }.join field_sep

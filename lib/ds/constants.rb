@@ -26,6 +26,7 @@ genre_as_recorded
 genre_as_recorded_lcsh
 genre_as_recorded_aat
 genre_as_recorded_rbprov
+genre_as_recorded_lcgft
 genre
 named_subject_as_recorded
 subject_as_recorded
