@@ -2,6 +2,7 @@ require_relative './ds/constants'
 require_relative './ds/ds10'
 require_relative './ds/openn_tei'
 require_relative './ds/marc_xml'
+require_relative './ds/csv_util'
 
 module DS
   include DS::Constants
