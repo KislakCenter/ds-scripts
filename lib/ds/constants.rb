@@ -141,5 +141,11 @@ source_file
     }.freeze
 
     INSTITUTIONS = INSTITUTION_DS_IDS.values.uniq.freeze
+
+    MARC_XML = :marc
+    METS_XML = :mets
+    TEI_XML  = :tei
+    CSV      = :csv
+    SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, CSV ].freeze
   end
 end

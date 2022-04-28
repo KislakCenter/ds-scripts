@@ -74,6 +74,27 @@ module DS
       end
 
       ##
+      # For the given record, extract the names as an array of arrays, including
+      # the concatenated name string (subfields, a, b, c, d) and, if present,
+      # the alternate graphical representation (AGR) and authority number (or
+      # URI).
+      #
+      # Each returned sub array will have three values: name, name AGR, URI.
+      #
+      def extract_name_sets record, tags: [], relators: []
+        xpath = build_name_query tags: tags, relators: relators
+        return '' if xpath.empty? # don't process nonsensical requests
+
+        record.xpath(xpath).map { |datafield|
+          row = []
+          row << extract_pn(datafield)
+          row << extract_pn_agr(datafield)
+          row << extract_authority_number(datafield)
+          row
+        }
+      end
+
+      ##
       # Extract the alternate graphical representation of the name or return +''+.
       #
       # See MARC specification for 880 fields:
@@ -140,13 +161,23 @@ module DS
       end
 
       ###
-      # Extract the encoded date from controlfield 008.
+      # Extract the the PN from datafield, pulling subfields $a, $b, $c, $d.
       #
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
       # @return [String]
       def extract_pn datafield
         codes = %w{ a b c d }
         collect_subfields datafield, codes: codes
+      end
+
+      ###
+      # Extract the authority number, subfield +$0+ from the given datafield.
+      #
+      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
+      # @return [String]
+      def extract_authority_number datafield
+        xpath = "./subfield[@code='0']"
+        datafield.xpath(xpath).text
       end
 
       ##
