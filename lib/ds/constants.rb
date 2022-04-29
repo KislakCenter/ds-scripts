@@ -86,7 +86,7 @@ source_file
       'Q499451'   => ['Rutgers, The State University of New Jersey', 'rutgers'],
       'Q5090408'  => ['Science History Institute', 'Chemical Heritage Foundation', 'shi'],
       'Q1378320'  => ['Swarthmore College', 'swarthmore'],
-      'Q168756'   => ['University of California, Berkeley'],
+      'Q168756'   => ['University of California, Berkeley', 'ucb'],
       'Q579968'   => ['University of Missouri', 'mizzou', 'missouri'],
       'Q766145'   => ['University of Oregon', 'oregon'],
       'Q49117'    => ['University of Pennsylvania', 'upenn', 'penn'],

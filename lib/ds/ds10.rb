@@ -82,16 +82,18 @@ module DS
       end
 
       def extract_name node, name_type
-        xpath = "./descendant::mods:name[./mods:role/mods:roleTerm/text() = '#{name_type}']"
+        # Roles have different cases: Author, author, etc.
+        # Xpath 1.0 has no lower-case function, so use translate()
+        xpath = "./descendant::mods:name[translate(./mods:role/mods:roleTerm/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '#{name_type}']"
         node.xpath(xpath).map { |name |
           name.xpath('mods:namePart').map(&:text).join ' '
         }
       end
 
       def extract_title xml
-        xpath = "mets:mdWrap/mets:xmlData/mods:mods/mods:titleInfo/mods:title"
+        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:titleInfo/mods:title'
         find_texts(xml).flat_map { |text|
-          text.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:titleInfo/mods:title').map(&:text)
+          text.xpath(xpath).map(&:text)
         }.reject { |t| t == '[Title not supplied]' }.join '|'
       end
 
@@ -103,6 +105,26 @@ module DS
             place.text.split(%r{;;}).join ', '
           }
         }.uniq.join '|'
+      end
+
+      def extract_recon_names xml
+        data = []
+        extract_text_name(xml, 'author').split('|').each do |name|
+          data << [name, '', '']
+        end
+
+        extract_part_name(xml, 'artist').split('|').each do |name|
+          data << [name, '', '']
+        end
+
+        extract_part_name(xml, 'scribe').split('|').each do |name|
+          data << [name, '', '']
+        end
+
+        extract_ownership(xml).split('|').each do |name|
+          data << [name, '', '']
+        end
+        data
       end
 
       def extract_institution_id xml

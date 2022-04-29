@@ -4,7 +4,6 @@
 # Script to extract CSV of names for reconciliation from source files
 #
 
-
 require 'nokogiri'
 require 'csv'
 require 'yaml'
@@ -25,21 +24,43 @@ def names_from_marc files
   data.sort { |a,b| a.first <=> b.first }
 end
 
+def names_from_mets files
+  data = []
+  files.each do |in_xml|
+    xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+
+    data += DS::DS10.extract_recon_names xml
+  end
+  data.uniq!
+  data.sort { |a,b| a.first <=> b.first }
+end
+
+def names_from_tei files
+  data = []
+  files.each do |in_xml|
+    xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+    xml.remove_namespaces!
+    nodes = xml.xpath('//msContents/msItem')
+    data += DS::OPennTEI.extract_recon_names xml
+  end
+  data.uniq!
+  data.sort { |a, b| a.first <=> b.first }
+end
+
 options = {
   out_dir: '.'
 }
 parser = OptionParser.new do |opts|
 
+  opts.accept :outfile_tag do |value|
+    raise "The --tag value cannot have spaces" if value =~ %r{\s}
+    value
+  end
+
   opts.accept :source_type do |value|
     sym = value.to_s.strip.downcase.to_sym
     raise "Unknown source type: '#{value}'" unless DS::SOURCE_TYPES.include? sym
     sym
-  end
-
-  opts.accept :institution do |value|
-    inst_qid = DS.find_qid value
-    raise "Not a known institution: '#{value}'" unless inst_qid
-    value.to_s.strip.downcase
   end
 
   opts.accept :directory do |value|
@@ -48,16 +69,15 @@ parser = OptionParser.new do |opts|
   end
 
   opts.banner = <<EOF
-Usage: #{File.basename __FILE__} [options] --institution=INSTITUTION XML [XML ..]
+Usage: #{File.basename __FILE__} [options] --source-type TYPE XML [XML ..]
 
 Extract names from DS source files (MARC XML, TEI, METS, CSV)
 
 EOF
 
-  # We can't predictably extract the institution name from MARC records
-  inst_help = "Short name for the institution; REQUIRED"
-  opts.on('-i INSTITUTION', '--institution=INSTITUTION', :institution, inst_help) do |inst|
-    options[:institution] = inst
+  tag_help = "Tag to append to output CSV name; e.g., 'penn' => 'name-penn.csv'"
+  opts.on('-a TAG', '--tag=TAG', :outfile_tag, tag_help) do |tag|
+    options[:outfile_tag] = tag
   end
 
   # source type
@@ -72,13 +92,17 @@ EOF
     options[:out_dir] = path
   end
 
+  # verbose
+  verb_help = "Print full error messages"
+  opts.on('-v', '--verbose', TrueClass, verb_help) do |verbose|
+    options[:verbose] = verbose
+  end
+
   help_help = <<~EOF
     Prints this help
-
-    You must provide a value for the '--institution' flag. Values are: #{DS::INSTITUTION_ALIASES.join ', '}
-
 EOF
   opts.on("-h", "--help", help_help) do
+    # binding.pry
     puts opts
     exit
   end
@@ -87,6 +111,7 @@ end
 begin
   parser.parse!
 rescue
+  STDERR.puts $!.backtrace if options[:verbose]
   abort $!.message
 end
 
@@ -95,26 +120,34 @@ files = ARGV.dup
 abort 'Please provide one or more input files' if files.empty?
 cannot_find = files.reject { |f| File.exist?(f) }
 abort "Can't find input XML: #{cannot_find.join '; ' }" unless cannot_find.empty?
-abort "Please provide an --institution value" unless options[:institution]
 abort "Please provide a --source-type value" unless options[:source_type]
 
-out_file = File.join options[:out_dir], "#{names}-#{options[:institution]}.csv"
-data = []
-case options[:source_type]
-when DS::MARC_XML
-  data = names_from_marc files
-else
-  raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
-end
-
-header = %w{name name_agr source_authority_uri}
-CSV.open out_file, 'wb' do |csv|
-  csv << header
-  data.each do |row|
-    csv << row
+csv_name = options[:outfile_tag] ? "names-#{options[:outfile_tag]}.csv" : 'names.csv'
+out_file = File.join options[:out_dir], csv_name
+begin
+  case options[:source_type]
+  when DS::MARC_XML
+    data = names_from_marc files
+  when DS::METS_XML
+    data = names_from_mets files
+  when DS::TEI_XML
+    data = names_from_tei files
+  else
+    raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
   end
+
+  header = %w{name name_agr source_authority_uri}
+  CSV.open out_file, 'wb' do |csv|
+    csv << header
+    data.each do |row|
+      csv << row
+    end
+  end
+  puts "Wrote: #{out_file}"
+rescue NotImplementedError, StandardError
+  STDERR.puts $!.backtrace if options[:verbose]
+  abort "#{$!}"
 end
-puts "Wrote: #{out_file}"
 
 
 
