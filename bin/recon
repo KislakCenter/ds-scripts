@@ -1,0 +1,102 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'csv'
+require_relative '../lib/ds'
+
+class ReconNames
+  def self.names_from_marc files
+    data = []
+    files.each do |in_xml|
+      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      xml.remove_namespaces!
+      xml.xpath('//record').each do |record|
+        data += DS::MarcXML.extract_name_sets record, tags: [100, 110, 111]
+        data += DS::MarcXML.extract_name_sets record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
+      end
+    end
+    data.uniq!
+    data.sort { |a,b| a.first <=> b.first }
+  end
+
+  def self.names_from_mets files
+    data = []
+    files.each do |in_xml|
+      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+
+      data += DS::DS10.extract_recon_names xml
+    end
+    data.uniq!
+    data.sort { |a,b| a.first <=> b.first }
+  end
+
+  def self.names_from_tei files
+    data = []
+    files.each do |in_xml|
+      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      xml.remove_namespaces!
+      nodes = xml.xpath('//msContents/msItem')
+      data += DS::OPennTEI.extract_recon_names xml
+    end
+    data.uniq!
+    data.sort { |a, b| a.first <=> b.first }
+  end
+end
+
+module ReconCLI
+  class Names < Thor
+    def self.exit_on_failure?
+      true
+    end
+    
+    desc "names FILES", "Extract names from one or more FILEs"
+    long_desc <<-LONGDESC
+    Extract names from one or more FILEs.
+    LONGDESC
+    option :tag, :banner => "TAG", desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
+    option :directory, :banner => "PATH", desc: "Output directory", aliases: '-o', default: '.'
+    option :'source-type', :banner => "TYPE", desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
+    option :verbose, :banner => "TYPE", desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
+    def names *files
+      cannot_find = files.reject { |f| File.exist?(f) }
+      unless cannot_find.empty?
+        puts "Can't find input XML: #{cannot_find.join '; ' }"
+        return false
+      end
+
+      csv_name = options[:tag] ? "names-#{options[:tag]}.csv" : 'names.csv'
+      out_file = File.join options[:directory], csv_name
+      begin
+        case options[:'source-type']
+        when 'marc'
+          data = ReconNames.names_from_marc files
+        when 'mets'
+          data = ReconNames.names_from_mets files
+        when 'tei'
+          data = ReconNames.names_from_tei files
+        else
+          raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        end
+
+        header = %w{name name_agr source_authority_uri}
+        CSV.open out_file, 'wb' do |csv|
+          csv << header
+          data.each do |row|
+            csv << row
+          end
+        end
+        puts "Wrote: #{out_file}"
+      rescue NotImplementedError, StandardError
+        STDERR.puts $!.backtrace if options[:verbose]
+        abort "#{$!}"
+      end
+
+      true
+    end
+
+  end
+
+
+end
+
+ReconCLI::Names.start ARGV
