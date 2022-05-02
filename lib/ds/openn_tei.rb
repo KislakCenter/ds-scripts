@@ -38,14 +38,19 @@ module DS
         nodes = xml.xpath('//msContents/msItem')
 
         nodes.xpath('author').each do |author|
-          data << [author.xpath('text()').text, '', author['ref']]
+          data << [author.xpath('text()').text, 'author', '', author['ref']]
         end
 
         _types = [ 'artist', 'scribe', 'former owner']
         type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
         xpath = %Q{//respStmt[#{type_query}]}
         nodes.xpath(xpath).each { |rs|
-          data << [rs.xpath('persName/text()').text, '', rs.xpath('persName/@ref/text()').text]
+          data << [
+            rs.xpath('persName/text()').text,
+            rs.xpath('resp/text()').text,
+            '',
+            rs.xpath('persName/@ref/text()').text
+          ]
         }
         data
       end

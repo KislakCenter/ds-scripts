@@ -109,20 +109,26 @@ module DS
 
       def extract_recon_names xml
         data = []
-        extract_text_name(xml, 'author').split('|').each do |name|
-          data << [name, '', '']
+        %w{author artist scribe}.each do |role|
+          extract_text_name(xml, role).split('|').each do |name|
+            data << [name, role, '', '']
+          end
         end
 
-        extract_part_name(xml, 'artist').split('|').each do |name|
-          data << [name, '', '']
-        end
-
-        extract_part_name(xml, 'scribe').split('|').each do |name|
-          data << [name, '', '']
-        end
+        # extract_text_name(xml, 'author').split('|').each do |name|
+        #   data << [name, 'author', '', '']
+        # end
+        #
+        # extract_part_name(xml, 'artist').split('|').each do |name|
+        #   data << [name, 'artist', '', '']
+        # end
+        #
+        # extract_part_name(xml, 'scribe').split('|').each do |name|
+        #   data << [name, 'scribe', '', '']
+        # end
 
         extract_ownership(xml).split('|').each do |name|
-          data << [name, '', '']
+          data << [name, 'former owner', '', '']
         end
         data
       end

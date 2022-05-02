@@ -38,7 +38,7 @@ fi
 # the first 100 records for each of the legacy institutions
 files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100; done)
 # Convert CSV format
-${SCRIPT_DIR}/../bin/recon names -o ${TMP_DIR} -a legacy -t mets $files
+${SCRIPT_DIR}/../bin/recon places -o ${TMP_DIR} -a legacy -t mets $files
 
 ##########
 # MARC XML
@@ -46,7 +46,7 @@ ${SCRIPT_DIR}/../bin/recon names -o ${TMP_DIR} -a legacy -t mets $files
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  ${SCRIPT_DIR}/../bin/recon names -o ${TMP_DIR} -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  ${SCRIPT_DIR}/../bin/recon places -o ${TMP_DIR} -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 ##########
@@ -55,18 +55,18 @@ done
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  ${SCRIPT_DIR}/../bin/recon names -o ${TMP_DIR} -a ${inst} -t tei ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  ${SCRIPT_DIR}/../bin/recon places -o ${TMP_DIR} -a ${inst} -t tei ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 #######################
 # Combine in single CSV
 #######################
 # list of all of the CSVs: legacy.csv penn.csv [...]
-CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS}; do echo "${TMP_DIR}/names-${x}.csv"; done)
+CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS}; do echo "${TMP_DIR}/places-${x}.csv"; done)
 
 #(
 #  cd $TMP_DIR
-  ruby ${SCRIPT_DIR}/csv_cat.rb -o ${TMP_DIR}/names-combined.csv $CSVS
+  ruby ${SCRIPT_DIR}/csv_cat.rb -o ${TMP_DIR}/places-combined.csv $CSVS
 #)
 
-echo "Wrote: ${TMP_DIR}/names-combined.csv"
+echo "Wrote: ${TMP_DIR}/places-combined.csv"

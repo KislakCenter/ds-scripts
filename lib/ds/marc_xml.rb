@@ -88,6 +88,8 @@ module DS
         record.xpath(xpath).map { |datafield|
           row = []
           row << extract_pn(datafield)
+          role = extract_role(datafield)
+          row << (role.strip.empty? ? 'author' : role)
           row << extract_pn_agr(datafield)
           row << extract_authority_number(datafield)
           row
@@ -168,6 +170,16 @@ module DS
       def extract_pn datafield
         codes = %w{ a b c d }
         collect_subfields datafield, codes: codes
+      end
+
+      ###
+      # Extract the role value, subfield +$e+, from the given datafield.
+      #
+      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
+      # @return [String]
+      def extract_role datafield
+        xpath = "./subfield[@code='e']"
+        datafield.xpath(xpath).text
       end
 
       ###

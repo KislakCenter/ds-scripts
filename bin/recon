@@ -5,7 +5,7 @@ require 'csv'
 require_relative '../lib/ds'
 
 class ReconNames
-  def self.names_from_marc files
+  def self.from_marc files
     data = []
     files.each do |in_xml|
       xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
@@ -19,7 +19,7 @@ class ReconNames
     data.sort { |a,b| a.first <=> b.first }
   end
 
-  def self.names_from_mets files
+  def self.from_mets files
     data = []
     files.each do |in_xml|
       xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
@@ -30,7 +30,7 @@ class ReconNames
     data.sort { |a,b| a.first <=> b.first }
   end
 
-  def self.names_from_tei files
+  def self.from_tei files
     data = []
     files.each do |in_xml|
       xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
@@ -43,60 +43,149 @@ class ReconNames
   end
 end
 
-module ReconCLI
-  class Names < Thor
-    def self.exit_on_failure?
-      true
-    end
-    
-    desc "names FILES", "Extract names from one or more FILEs"
-    long_desc <<-LONGDESC
-    Extract names from one or more FILEs.
-    LONGDESC
-    option :tag, :banner => "TAG", desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
-    option :directory, :banner => "PATH", desc: "Output directory", aliases: '-o', default: '.'
-    option :'source-type', :banner => "TYPE", desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
-    option :verbose, :banner => "TYPE", desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
-    def names *files
-      cannot_find = files.reject { |f| File.exist?(f) }
-      unless cannot_find.empty?
-        puts "Can't find input XML: #{cannot_find.join '; ' }"
-        return false
-      end
-
-      csv_name = options[:tag] ? "names-#{options[:tag]}.csv" : 'names.csv'
-      out_file = File.join options[:directory], csv_name
-      begin
-        case options[:'source-type']
-        when 'marc'
-          data = ReconNames.names_from_marc files
-        when 'mets'
-          data = ReconNames.names_from_mets files
-        when 'tei'
-          data = ReconNames.names_from_tei files
-        else
-          raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+class ReconPlaces
+  def self.from_marc files
+    data = []
+    files.each do |in_xml|
+      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      xml.remove_namespaces!
+      xml.xpath('//record').each do |record|
+        record.xpath("datafield[@tag=260]/subfield[@code='a']").each do |place|
+          data << place.text
         end
-
-        header = %w{name name_agr source_authority_uri}
-        CSV.open out_file, 'wb' do |csv|
-          csv << header
-          data.each do |row|
-            csv << row
-          end
-        end
-        puts "Wrote: #{out_file}"
-      rescue NotImplementedError, StandardError
-        STDERR.puts $!.backtrace if options[:verbose]
-        abort "#{$!}"
       end
-
-      true
     end
-
+    data
   end
 
+  def self.from_mets files
+    data = []
+    files.each do |in_xml|
+      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+
+      DS::DS10.extract_production_place(xml).split('|').each do |place|
+        data << place
+      end
+
+    end
+    data.uniq!
+    data.sort
+  end
+
+  def self.from_tei files
+    data = []
+    files.each do |in_xml|
+      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      xml.remove_namespaces!
+      # binding.pry
+      xml.xpath('//origPlace/text()').each do |place|
+        data << place.text
+      end
+    end
+    data.uniq!
+    data.sort
+  end
 
 end
 
-ReconCLI::Names.start ARGV
+class Recon < Thor
+  def self.exit_on_failure?
+    true
+  end
+
+  class_option :tag, :banner => "TAG", desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
+  class_option :directory, :banner => "PATH", desc: "Output directory", aliases: '-o', default: '.'
+  class_option :'source-type', :banner => "TYPE", desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
+  class_option :verbose, :banner => "TYPE", desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
+
+  desc "names FILES", "Extract names from one or more FILEs"
+  long_desc <<-LONGDESC
+    Extract names from one or more FILEs.
+  LONGDESC
+
+  def names *files
+    # TODO: Add role column to names
+    return false unless validate_args files
+
+    out_csv = out_file 'names', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = ReconNames.from_marc files
+      when 'mets'
+        data = ReconNames.from_mets files
+      when 'tei'
+        data = ReconNames.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{name role name_agr source_authority_uri}
+      CSV.open out_csv, 'wb' do |csv|
+        csv << header
+        data.each do |row|
+          csv << row
+        end
+      end
+      puts "Wrote: #{out_csv}"
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  desc "places FILES", "Extract place names from one or more FILEs"
+  long_desc <<-LONGDESC
+    Extract place names from one or more FILEs.
+  LONGDESC
+  def places *files
+    return false unless validate_args files
+
+    out_csv = out_file 'places', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = ReconPlaces.from_marc files
+      when 'mets'
+        data = ReconPlaces.from_mets files
+      when 'tei'
+        data = ReconPlaces.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{place_as_recorded}
+      CSV.open out_csv, 'wb' do |csv|
+        csv << header
+        data.each do |row|
+          csv << [row]
+        end
+      end
+      puts "Wrote: #{out_csv}"
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  protected
+  def validate_args files
+    cannot_find = files.reject { |f| File.exist?(f) }
+    return true if cannot_find.empty?
+
+    puts "Can't find input file(s): #{cannot_find.join '; ' }"
+    false
+  end
+
+  def out_file base, options
+    csv_name = options[:tag] ? "#{base}-#{options[:tag]}.csv" : "#{base}.csv"
+    File.join options[:directory], csv_name
+  end
+
+end
+
+Recon.start ARGV
