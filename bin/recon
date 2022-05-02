@@ -15,8 +15,7 @@ class ReconNames
         data += DS::MarcXML.extract_name_sets record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
       end
     end
-    data.uniq!
-    data.sort { |a,b| a.first <=> b.first }
+    data.sort { |a,b| a.first <=> b.first }.uniq
   end
 
   def self.from_mets files
@@ -26,8 +25,7 @@ class ReconNames
 
       data += DS::DS10.extract_recon_names xml
     end
-    data.uniq!
-    data.sort { |a,b| a.first <=> b.first }
+    data.sort { |a,b| a.first <=> b.first }.uniq
   end
 
   def self.from_tei files
@@ -38,8 +36,7 @@ class ReconNames
       nodes = xml.xpath('//msContents/msItem')
       data += DS::OPennTEI.extract_recon_names xml
     end
-    data.uniq!
-    data.sort { |a, b| a.first <=> b.first }
+    data.sort { |a, b| a.first <=> b.first }.uniq
   end
 end
 
@@ -55,7 +52,7 @@ class ReconPlaces
         end
       end
     end
-    data
+    data.sort.uniq
   end
 
   def self.from_mets files
@@ -68,8 +65,7 @@ class ReconPlaces
       end
 
     end
-    data.uniq!
-    data.sort
+    data.sort.uniq
   end
 
   def self.from_tei files
@@ -77,13 +73,11 @@ class ReconPlaces
     files.each do |in_xml|
       xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
       xml.remove_namespaces!
-      # binding.pry
       xml.xpath('//origPlace/text()').each do |place|
         data << place.text
       end
     end
-    data.uniq!
-    data.sort
+    data.sort.uniq
   end
 
 end
