@@ -11,10 +11,10 @@ class ReconCLI < Thor
     true
   end
 
-  class_option :tag, :banner => "TAG", desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
-  class_option :directory, :banner => "PATH", desc: "Output directory", aliases: '-o', default: '.'
-  class_option :'source-type', :banner => "TYPE", desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
-  class_option :verbose, :banner => "TYPE", desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
+  class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
+  class_option :directory, banner: 'PATH', desc: "Output directory", aliases: '-o', default: '.'
+  class_option :'source-type', banner: 'TYPE', desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
+  class_option :verbose, desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
 
   desc "names FILES", "Extract names from one or more FILEs"
   long_desc <<-LONGDESC
