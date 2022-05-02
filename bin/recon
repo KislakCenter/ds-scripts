@@ -3,86 +3,10 @@
 require 'thor'
 require 'csv'
 require_relative '../lib/ds'
+require_relative '../lib/ds/recon'
 
-class ReconNames
-  def self.from_marc files
-    data = []
-    files.each do |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-      xml.remove_namespaces!
-      xml.xpath('//record').each do |record|
-        data += DS::MarcXML.extract_name_sets record, tags: [100, 110, 111]
-        data += DS::MarcXML.extract_name_sets record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
-      end
-    end
-    data.sort { |a,b| a.first <=> b.first }.uniq
-  end
-
-  def self.from_mets files
-    data = []
-    files.each do |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-
-      data += DS::DS10.extract_recon_names xml
-    end
-    data.sort { |a,b| a.first <=> b.first }.uniq
-  end
-
-  def self.from_tei files
-    data = []
-    files.each do |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-      xml.remove_namespaces!
-      nodes = xml.xpath('//msContents/msItem')
-      data += DS::OPennTEI.extract_recon_names xml
-    end
-    data.sort { |a, b| a.first <=> b.first }.uniq
-  end
-end
-
-class ReconPlaces
-  def self.from_marc files
-    data = []
-    files.each do |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-      xml.remove_namespaces!
-      xml.xpath('//record').each do |record|
-        record.xpath("datafield[@tag=260]/subfield[@code='a']").each do |place|
-          data << place.text
-        end
-      end
-    end
-    data.sort.uniq
-  end
-
-  def self.from_mets files
-    data = []
-    files.each do |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-
-      DS::DS10.extract_production_place(xml).split('|').each do |place|
-        data << place
-      end
-
-    end
-    data.sort.uniq
-  end
-
-  def self.from_tei files
-    data = []
-    files.each do |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-      xml.remove_namespaces!
-      xml.xpath('//origPlace/text()').each do |place|
-        data << place.text
-      end
-    end
-    data.sort.uniq
-  end
-
-end
-
-class Recon < Thor
+class ReconCLI < Thor
+  include Recon
   def self.exit_on_failure?
     true
   end
@@ -105,11 +29,11 @@ class Recon < Thor
     begin
       case options[:'source-type']
       when 'marc'
-        data = ReconNames.from_marc files
+        data = Names.from_marc files
       when 'mets'
-        data = ReconNames.from_mets files
+        data = Names.from_mets files
       when 'tei'
-        data = ReconNames.from_tei files
+        data = Names.from_tei files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
@@ -141,11 +65,11 @@ class Recon < Thor
     begin
       case options[:'source-type']
       when 'marc'
-        data = ReconPlaces.from_marc files
+        data = Places.from_marc files
       when 'mets'
-        data = ReconPlaces.from_mets files
+        data = Places.from_mets files
       when 'tei'
-        data = ReconPlaces.from_tei files
+        data = Places.from_tei files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
@@ -182,4 +106,4 @@ class Recon < Thor
 
 end
 
-Recon.start ARGV
+ReconCLI.start ARGV
