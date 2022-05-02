@@ -90,6 +90,48 @@ class ReconCLI < Thor
     true
   end
 
+  desc "subjects FILES", "Extract LC subjects (650, 651 or 600, 610)"
+  long_desc <<-LONGDESC
+  Extract LC subjects from one or more FILEs.
+
+  By default extract 650, 651 are extracted, but fields 600, 610 are extracted if `--named-subjects` is given.
+
+LONGDESC
+  option :'named-subjects', desc: 'LCSH named subjects 600, 610', aliases: '-n', type: :boolean, default: false
+  def subjects *files
+    return false unless validate_args files
+
+    base = options[:'named-subjects'] ? 'subjects-named' : 'subjects'
+    tags = options[:'named-subjects'] ? [600, 610] : [650, 651]
+    out_csv = out_file base, options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = Subjects.from_marc files, tags: tags
+      when 'mets'
+        data = Subjects.from_mets files
+      when 'tei'
+        data = Subjects.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{subject_as_recorded source_authority_uri}
+      CSV.open out_csv, 'wb' do |csv|
+        csv << header
+        data.each do |row|
+          csv << row
+        end
+      end
+      puts "Wrote: #{out_csv}"
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
   protected
   def validate_args files
     cannot_find = files.reject { |f| File.exist?(f) }

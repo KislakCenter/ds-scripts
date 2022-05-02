@@ -62,7 +62,7 @@ module DS
       # @see #build_name_query for details on query construction
       #
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
-      # @param [Array<String>] tags the MARC field code[s]
+      # @param [Array<String>] tags the MARC field tag[s]
       # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
@@ -224,10 +224,37 @@ module DS
         extract_pn datafield.xpath(xpath)
       end
 
+
+      ##
+      # Extract datafields with authority numbers (URL) when present.
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC datafield tag(s)
+      # @param [Array<String>] codes the MARC subfield code(s)
+      # @param [String] sub_sep separator for joining subfield values
+      # @return [Array<Array>] an array of arrays of values
+      def collect_datafield_sets record, tags: [], codes: [], sub_sep: ' '
+        _tags        = [tags].flatten.map &:to_s
+        tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
+        record.xpath("datafield[#{tag_query}]").map { |datafield|
+          value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          number = datafield.xpath('subfield[@tag="0"]').text
+          [value, number]
+        }
+      end
+
+      ##
+      # Extract subfield values specified by +tags+
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC datafield tag(s)
+      # @param [Array<String>] codes the MARC subfield code(s)
+      # @param [String] field_sep separator for joining multiple datafield values
+      # @param [String] sub_sep separator for joining subfield values
+      # @return [Array<Array>] an array of arrays of values
       def collect_datafields record, tags: [], codes: [], field_sep:  '|', sub_sep: ' '
         _tags        = [tags].flatten.map &:to_s
         tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
-        # binding.pry
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           collect_subfields datafield, codes: codes, sub_sep: sub_sep
         }.join field_sep
