@@ -46,7 +46,7 @@ header = CSV.readlines(csvs.first).first
 
 data = []
 csvs.each do |in_file|
-  data += CSV.readlines in_file
+  data += CSV.readlines(in_file)[1..-1]
 end
 
 data.sort_by! &:first
