@@ -41,11 +41,11 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  marc
+  marc (~> 1.1.1)
   nokogiri (~> 1.10.4)
-  pry
-  rspec
-  thor
+  pry (~> 0.14.1)
+  rspec (~> 3.8.0)
+  thor (~> 1.2.1)
 
 BUNDLED WITH
    2.2.0
