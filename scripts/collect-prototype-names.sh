@@ -64,9 +64,6 @@ done
 # list of all of the CSVs: legacy.csv penn.csv [...]
 CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS}; do echo "${TMP_DIR}/names-${x}.csv"; done)
 
-#(
-#  cd $TMP_DIR
-  ruby ${SCRIPT_DIR}/csv_cat.rb -o ${TMP_DIR}/names-combined.csv $CSVS
-#)
+ruby ${SCRIPT_DIR}/csv_cat.rb --sort --uniq -o ${TMP_DIR}/names-combined.csv $CSVS
 
 echo "Wrote: ${TMP_DIR}/names-combined.csv"

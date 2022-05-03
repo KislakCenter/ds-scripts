@@ -29,4 +29,4 @@ done
 #######################
 CSVS=$(for x in ${MARC_INSTS}; do echo "${TMP_DIR}/genres-${x}.csv"; done)
 
-ruby ${SCRIPT_DIR}/csv_cat.rb -o ${TMP_DIR}/genres-combined.csv $CSVS
+ruby ${SCRIPT_DIR}/csv_cat.rb --sort --uniq -o ${TMP_DIR}/genres-combined.csv $CSVS
