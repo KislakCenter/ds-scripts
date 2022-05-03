@@ -39,13 +39,8 @@ class ReconCLI < Thor
       end
 
       header = %w{name role name_agr source_authority_uri}
-      CSV.open out_csv, 'wb' do |csv|
-        csv << header
-        data.each do |row|
-          csv << row
-        end
-      end
-      puts "Wrote: #{out_csv}"
+      write_csv out_csv, header, data
+
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
       abort "#{$!}"
@@ -75,13 +70,8 @@ class ReconCLI < Thor
       end
 
       header = %w{place_as_recorded}
-      CSV.open out_csv, 'wb' do |csv|
-        csv << header
-        data.each do |row|
-          csv << row
-        end
-      end
-      puts "Wrote: #{out_csv}"
+      write_csv out_csv, header, data
+
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
       abort "#{$!}"
@@ -109,21 +99,14 @@ LONGDESC
       when 'marc'
         data = Subjects.from_marc files, tags: tags
       when 'mets'
-        data = Subjects.from_mets files
       when 'tei'
-        data = Subjects.from_tei files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
       header = %w{subject_as_recorded source_authority_uri}
-      CSV.open out_csv, 'wb' do |csv|
-        csv << header
-        data.each do |row|
-          csv << row
-        end
-      end
-      puts "Wrote: #{out_csv}"
+      write_csv out_csv, header, data
+
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
       abort "#{$!}"
@@ -146,21 +129,14 @@ LONGDESC
       when 'marc'
         data = GenreTerms.from_marc files
       when 'mets'
-        data = GenreTerms.from_mets files
       when 'tei'
-        data = GenreTerms.from_tei files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
       header = %w{term vocabulary source_authority_uri}
-      CSV.open out_csv, 'wb' do |csv|
-        csv << header
-        data.each do |row|
-          csv << row
-        end
-      end
-      puts "Wrote: #{out_csv}"
+      write_csv out_csv, header, data
+
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
       abort "#{$!}"
@@ -181,6 +157,16 @@ LONGDESC
   def out_file base, options
     csv_name = options[:tag] ? "#{base}-#{options[:tag]}.csv" : "#{base}.csv"
     File.join options[:directory], csv_name
+  end
+
+  def write_csv out_file, header, data
+    CSV.open out_file, 'wb' do |csv|
+      csv << header
+      data.each do |row|
+        csv << row
+      end
+    end
+    puts "Wrote: #{out_file}"
   end
 
 end
