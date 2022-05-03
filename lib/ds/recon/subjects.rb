@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 module Recon
   class Subjects
     def self.from_marc files, tags: []
