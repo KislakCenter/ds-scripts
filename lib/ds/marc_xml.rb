@@ -64,6 +64,7 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
       # @param [Array<String>] tags the MARC field tag[s]
       # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
+      # @return [String] pipe-separated list of names
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
@@ -81,6 +82,10 @@ module DS
       #
       # Each returned sub array will have three values: name, name AGR, URI.
       #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC field tag[s]
+      # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
+      # @return [Array<Array<String>>]
       def extract_recon_names record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
