@@ -19,6 +19,17 @@ EOF
     options[:out_file] = path
   end
 
+  # sort
+  sort_help = "Sort combined records by first item"
+  opts.on '-s', '--sort', sort_help do |sort|
+    options[:sort] = sort
+  end
+
+  uniq_help = 'Return only uniq values'
+  opts.on '-u', '--uniq', uniq_help do |uniq|
+    options[:uniq] = uniq
+  end
+
   # verbose
   verb_help = "Print full error messages"
   opts.on('-v', '--verbose', TrueClass, verb_help) do |verbose|
@@ -49,8 +60,8 @@ csvs.each do |in_file|
   data += CSV.readlines(in_file)[1..-1]
 end
 
-data.sort_by! &:first
-data.uniq!
+data.sort_by! &:first if options[:sort]
+data.uniq! &:join     if options[:uniq]
 
 CSV.open options[:out_file], 'wb', headers: true do |csv|
   csv << header
