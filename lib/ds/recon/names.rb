@@ -1,7 +1,4 @@
 require 'nokogiri'
-require_relative '../../ds/ds10'
-require_relative '../../ds/marc_xml'
-require_relative '../../ds/openn_tei'
 
 module Recon
   class Names
