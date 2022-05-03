@@ -65,5 +65,3 @@ done
 CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS}; do echo "${TMP_DIR}/places-${x}.csv"; done)
 
 ruby ${SCRIPT_DIR}/csv_cat.rb --sort --uniq -o ${TMP_DIR}/places-combined.csv $CSVS
-
-echo "Wrote: ${TMP_DIR}/places-combined.csv"
