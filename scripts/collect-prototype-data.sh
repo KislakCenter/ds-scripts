@@ -38,7 +38,7 @@ fi
 # the first 100 records for each of the legacy institutions
 files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100; done)
 # Convert CSV format
-bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/legacy.csv $files
+bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/ds-legacy.csv $files
 
 ##########
 # MARC XML
@@ -46,11 +46,11 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/legacy.csv
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution ${inst} -o ${TMP_DIR}/${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 # Run Princeton with Holdings information
-bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton -o ${TMP_DIR}/princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
+bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
 
 ##########
 # FLP TEI
@@ -58,21 +58,13 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton 
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/openn-tei-to-ds.rb -o ${TMP_DIR}/${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  bundle exec ruby ${SCRIPT_DIR}/../bin/openn-tei-to-ds.rb -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 #######################
 # Combine in single CSV
 #######################
 # list of all of the CSVs: legacy.csv penn.csv [...]
-CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS} princeton; do echo "${x}.csv"; done)
-(
-  cd $TMP_DIR
+CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS} princeton; do echo "${TMP_DIR}/ds-${x}.csv"; done)
 
-  # create a file with the header (=first line of legacy.csv)
-  head -1 legacy.csv > combined-ds.csv
-  # append all but first line of all the CSVs to combined-ds.csv
-  tail -q -n +2 ${CSVS} >> combined-ds.csv
-)
-
-echo "Wrote: ${TMP_DIR}/combined-ds.csv"
+ruby ${SCRIPT_DIR}/csv_cat.rb -o ${TMP_DIR}/ds-combined.csv $CSVS
