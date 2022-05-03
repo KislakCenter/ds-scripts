@@ -8,7 +8,7 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
-          data += DS::MarcXML.extract_genre_sets record, sub_sep: '--'
+          data += DS::MarcXML.extract_recon_genres record, sub_sep: '--'
         end
       end
       Recon.sort_and_dedupe data

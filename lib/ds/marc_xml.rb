@@ -233,7 +233,7 @@ module DS
       # @param [Array<String>] codes the MARC subfield code(s)
       # @param [String] sub_sep separator for joining subfield values
       # @return [Array<Array>] an array of arrays of values
-      def collect_datafield_sets record, tags: [], codes: [], sub_sep: ' '
+      def collect_recon_datafields record, tags: [], codes: [], sub_sep: ' '
         _tags        = [tags].flatten.map &:to_s
         tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
@@ -276,7 +276,7 @@ module DS
         }.join field_sep
       end
 
-      def extract_genre_sets record, sub_sep: '--'
+      def extract_recon_genres record, sub_sep: '--'
         xpath = %q{datafield[@tag = 655 ]}
         record.xpath(xpath).map { |datafield|
           value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep

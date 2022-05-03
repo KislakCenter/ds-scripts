@@ -8,7 +8,7 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
-          data += DS::MarcXML.collect_datafield_sets record, tags: tags, codes: ('a'..'z').to_a, sub_sep: '--'
+          data += DS::MarcXML.collect_recon_datafields record, tags: tags, codes: ('a'..'z').to_a, sub_sep: '--'
         end
       end
       data.sort.uniq
