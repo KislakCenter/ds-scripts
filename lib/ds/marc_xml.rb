@@ -81,7 +81,7 @@ module DS
       #
       # Each returned sub array will have three values: name, name AGR, URI.
       #
-      def extract_name_sets record, tags: [], relators: []
+      def extract_recon_names record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
 

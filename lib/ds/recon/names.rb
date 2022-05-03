@@ -8,8 +8,8 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
-          data += DS::MarcXML.extract_name_sets record, tags: [100, 110, 111]
-          data += DS::MarcXML.extract_name_sets record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
+          data += DS::MarcXML.extract_recon_names record, tags: [100, 110, 111]
+          data += DS::MarcXML.extract_recon_names record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
         end
       end
       data.sort { |a,b| a.first <=> b.first }.uniq
