@@ -8,25 +8,19 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
-          record.xpath("datafield[@tag=260]/subfield[@code='a']").each do |place|
-            data << place.text
-          end
+          data += DS::MarcXML.extract_recon_places record
         end
       end
-      data.sort.uniq
+      Recon.sort_and_dedupe data
     end
 
     def self.from_mets files
       data = []
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-
-        DS::DS10.extract_production_place(xml).split('|').each do |place|
-          data << place
-        end
-
+        data += DS::DS10.extract_recon_places xml
       end
-      data.sort.uniq
+      Recon.sort_and_dedupe data
     end
 
     def self.from_tei files
@@ -34,11 +28,9 @@ module Recon
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
-        xml.xpath('//origPlace/text()').each do |place|
-          data << place.text
-        end
+        data += DS::OPennTEI.extract_recon_places xml
       end
-      data.sort.uniq
+      Recon.sort_and_dedupe data
     end
   end
 end

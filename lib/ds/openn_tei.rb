@@ -83,6 +83,22 @@ module DS
       end
 
       ##
+      # Extract the places of production for reconciliation CSV output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # one column: place name; for example:
+      #
+      #     [["Austria"],
+      #      ["Germany"],
+      #      ["France (?)"]]
+      #
+      # @param [Nokogiri::XML:Node] record a +<TEI>+ node
+      # @return [Array<Array>] an array of arrays of values
+      def extract_recon_places xml
+        xml.xpath('//origPlace/text()').map { |place| [place.text] }
+      end
+
+      ##
       # Extract +extent+ element and prefix with <tt>'Extent: '</tt>, return +''+
       # (empty string) if +extent+ is not present or empty.
       #

@@ -1,6 +1,12 @@
 require 'nokogiri'
 
 module Recon
+  ##
+  # Extract subjects for reconciliation CSV output.
+  #
+  # Return a two-dimensional array, each row is a term; and each row has
+  # two columns: subject and authority number.
+  #
   class Subjects
     def self.from_marc files, tags: []
       data = []
@@ -11,7 +17,7 @@ module Recon
           data += DS::MarcXML.collect_recon_datafields record, tags: tags, codes: ('a'..'z').to_a, sub_sep: '--'
         end
       end
-      data.sort.uniq
+      Recon.sort_and_dedupe data
     end
 
     def self.from_mets files

@@ -1,6 +1,12 @@
 require 'nokogiri'
 
 module Recon
+  ##
+  # Extract genre terms for reconciliation CSV output.
+  #
+  # Return a two-dimensional array, each row is a term; and each row has
+  # three columns: term, vocabulary, and authority number.
+  #
   class GenreTerms
     def self.from_marc files
       data = []

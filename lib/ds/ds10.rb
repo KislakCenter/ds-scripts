@@ -107,6 +107,28 @@ module DS
         }.uniq.join '|'
       end
 
+      ##
+      # Extract the places of production for reconciliation CSV output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # one column: place name; for example:
+      #
+      #     [["Austria"],
+      #      ["Germany"],
+      #      ["France (?)"]]
+      #
+      # @param [Nokogiri::XML:Node] record a +<METS_XML>+ node
+      # @return [Array<Array>] an array of arrays of values
+      def extract_recon_places xml
+        parts = find_parts xml
+        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:place/mods:placeTerm'
+        parts.map { |node|
+          node.xpath(xpath).map { |place|
+            place.text.split(%r{;;}).reject(&:empty?).join ', '
+          }
+        }.uniq.reject &:empty? # some parts have no placeTerm
+      end
+
       def extract_recon_names xml
         data = []
         %w{author artist scribe}.each do |role|

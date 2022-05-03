@@ -226,7 +226,8 @@ module DS
 
 
       ##
-      # Extract datafields with authority numbers (URL) when present.
+      # Extract datafields values with authority numbers (URL) when present
+      # for reconciliation CSV output.
       #
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
       # @param [Array<String>] tags the MARC datafield tag(s)
@@ -240,6 +241,25 @@ module DS
           value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
           number = datafield.xpath('subfield[@tag="0"]').text
           [value, number]
+        }
+      end
+
+      ##
+      # Extract the places of production MARC +260$a+ for reconciliation CSV
+      # output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # one column: place name; for example:
+      #
+      #     [["Austria"],
+      #      ["Germany"],
+      #      ["France (?)"]]
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @return [Array<Array>] an array of arrays of values
+      def extract_recon_places record
+        record.xpath("datafield[@tag=260]/subfield[@code='a']").map { |value|
+          [value.text]
         }
       end
 
@@ -276,6 +296,14 @@ module DS
         }.join field_sep
       end
 
+      ##
+      # Extract genre terms for reconciliation CSV output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # three columns: term, vocabulary, and authority number.
+      #
+      # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
+      # @return [Array<Array>] an array of arrays of values
       def extract_recon_genres record, sub_sep: '--'
         xpath = %q{datafield[@tag = 655 ]}
         record.xpath(xpath).map { |datafield|

@@ -78,7 +78,7 @@ class ReconCLI < Thor
       CSV.open out_csv, 'wb' do |csv|
         csv << header
         data.each do |row|
-          csv << [row]
+          csv << row
         end
       end
       puts "Wrote: #{out_csv}"
