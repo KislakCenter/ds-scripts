@@ -276,6 +276,17 @@ module DS
         }.join field_sep
       end
 
+      def extract_genre_sets record, sub_sep: '--'
+        xpath = %q{datafield[@tag = 655 ]}
+        record.xpath(xpath).map { |datafield|
+          value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
+          vocab  = datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
+          number = datafield.xpath('subfield[@tag="0"]').text
+
+          [ value, vocab, number ]
+        }
+      end
+
       def extract_genre_as_recorded_lcsh record, field_sep: '|', sub_sep: '--'
         xpath = %q{datafield[@tag = 655 and @ind2 = '0']}
         record.xpath(xpath).map { |datafield|

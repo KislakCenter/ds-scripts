@@ -132,6 +132,43 @@ LONGDESC
     true
   end
 
+  desc "genres FILES", "Extract genre terms (655)"
+  long_desc <<-LONGDESC
+  Extract genre terms from one or more FILEs.
+
+  LONGDESC
+  def genres *files
+    return false unless validate_args files
+
+    out_csv = out_file 'genres', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = GenreTerms.from_marc files
+      when 'mets'
+        data = GenreTerms.from_mets files
+      when 'tei'
+        data = GenreTerms.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{term vocabulary source_authority_uri}
+      CSV.open out_csv, 'wb' do |csv|
+        csv << header
+        data.each do |row|
+          csv << row
+        end
+      end
+      puts "Wrote: #{out_csv}"
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
   protected
   def validate_args files
     cannot_find = files.reject { |f| File.exist?(f) }
