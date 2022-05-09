@@ -48,6 +48,7 @@ language
 former_owner_as_recorded
 former_owner_as_recorded_agr
 former_owner
+former_owner_instance_of
 material
 material_placeholder
 physical_description
