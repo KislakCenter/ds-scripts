@@ -136,7 +136,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{term vocabulary source_authority_uri}
+      header = %w{term vocabulary source_authority_uri recon_uri}
       write_csv out_csv, header, data
 
     rescue NotImplementedError, StandardError

@@ -7,3 +7,7 @@ recon:
     - name: names
       repo_path: reconciled/names.csv
       key_column: name
+    - name: genres
+      repo_path: reconciled/genres.csv
+      key_column: term
+      subset_column: vocabulary
