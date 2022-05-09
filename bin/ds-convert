@@ -49,6 +49,7 @@ class DSConvertCLI < Thor
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
         production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
+        production_place                   = Recon::Places.lookup production_place_as_recorded.split('|')
         production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
         uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
         uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
@@ -98,6 +99,7 @@ class DSConvertCLI < Thor
           century:                            century,
           century_aat:                        century_aat,
           production_place_as_recorded:       production_place_as_recorded,
+          production_place:                   production_place,
           production_date_as_recorded:        production_date_as_recorded,
           uniform_title_as_recorded:          uniform_title_as_recorded,
           uniform_title_agr:                  uniform_title_agr,
@@ -159,7 +161,7 @@ class DSConvertCLI < Thor
       holding_institution_id_number      = DS::DS10.extract_institution_id xml
       link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
       production_place_as_recorded       = DS::DS10.extract_production_place xml
-      production_place                   = ''
+      production_place                   = Recon::Places.lookup production_place_as_recorded.split('|')
       production_date_as_recorded        = DS::DS10.extract_date_as_recorded xml
       production_date                    = DS::DS10.transform_production_date xml
       century                            = DS.transform_dates_to_centuries production_date
@@ -264,6 +266,7 @@ class DSConvertCLI < Thor
       holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
       link_to_holding_institution_record = xml.xpath('//altIdentifier[@type="resource"][1]').text.strip
       production_place_as_recorded       = xml.xpath('//origPlace/text()').map(&:to_s).join '|'
+      production_place                   = Recon::Places.lookup production_place_as_recorded.split('|')
       production_date_as_recorded        = DS::OPennTEI.extract_production_date xml, range_sep: '-'
       production_date                    = DS::OPennTEI.extract_production_date xml, range_sep: '^'
       century                            = DS.transform_dates_to_centuries production_date
@@ -308,6 +311,7 @@ class DSConvertCLI < Thor
         holding_institution_id_number:      holding_institution_id_number,
         link_to_holding_institution_record: link_to_holding_institution_record,
         production_place_as_recorded:       production_place_as_recorded,
+        production_place:                   production_place,
         production_date_as_recorded:        production_date_as_recorded,
         production_date:                    production_date,
         century:                            century,
