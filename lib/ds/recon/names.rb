@@ -2,6 +2,14 @@ require 'nokogiri'
 
 module Recon
   class Names
+    def self.add_recon_values rows
+      rows.each do |row|
+        name = row.first
+        row << Recon.look_up('names', key: name, column: 'name_wikidata')
+        row << Recon.look_up('names', key: name, column: 'name_instance_of')
+      end
+    end
+
     def self.from_marc files
       data = []
       files.each do |in_xml|
@@ -12,6 +20,7 @@ module Recon
           data += DS::MarcXML.extract_recon_names record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
         end
       end
+      add_recon_values data
       data.sort { |a,b| a.first <=> b.first }.uniq
     end
 
@@ -22,6 +31,7 @@ module Recon
 
         data += DS::DS10.extract_recon_names xml
       end
+      add_recon_values data
       data.sort { |a,b| a.first <=> b.first }.uniq
     end
 
@@ -33,6 +43,7 @@ module Recon
         nodes = xml.xpath('//msContents/msItem')
         data += DS::OPennTEI.extract_recon_names xml
       end
+      add_recon_values data
       data.sort { |a, b| a.first <=> b.first }.uniq
     end
   end

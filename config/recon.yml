@@ -1,0 +1,9 @@
+---
+recon:
+  git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
+  git_branch: 'feature/1-directory-for-reconciliations'
+  git_local_name: 'ds-data'
+  sets:
+    - name: names
+      repo_path: reconciled/names.csv
+      key_column: name

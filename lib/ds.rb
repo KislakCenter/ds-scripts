@@ -1,11 +1,28 @@
-require_relative './ds/constants'
-require_relative './ds/ds10'
-require_relative './ds/openn_tei'
-require_relative './ds/marc_xml'
-require_relative './ds/csv_util'
+require 'config'
+
+require_relative 'ds/constants'
+require_relative 'ds/ds10'
+require_relative 'ds/openn_tei'
+require_relative 'ds/marc_xml'
+require_relative 'ds/csv_util'
+require_relative 'ds/recon'
+
 
 module DS
   include DS::Constants
+
+  def self.root
+    File.expand_path '../..', __FILE__
+  end
+
+  def self.config_dir
+    File.join root, 'config'
+  end
+
+  def self.configure!
+    yaml_files = Dir["#{config_dir}/*.yml"]
+    Config.load_and_set_settings *yaml_files
+  end
 
   module ClassMethods
     ##

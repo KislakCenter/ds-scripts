@@ -229,7 +229,6 @@ module DS
         extract_pn datafield.xpath(xpath)
       end
 
-
       ##
       # Extract datafields values with authority numbers (URL) when present
       # for reconciliation CSV output.
