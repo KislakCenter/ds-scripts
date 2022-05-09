@@ -61,12 +61,10 @@ module Recon
     raise "Could not find CSV for set #{set_name}: #{csv_file}" unless File.exist? csv_file
 
     key_column = set_config['key_column']
-    subset_column = set_config['subset_column']
     data = {}
     CSV.foreach csv_file, headers: true do |row|
       data[row[key_column]] = OpenStruct.new row.to_h
     end
-    # TODO Need to implement set load and return for subsets
     @@reconciliations[set_name] = data
   end
 end

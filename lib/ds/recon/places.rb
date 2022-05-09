@@ -2,6 +2,14 @@ require 'nokogiri'
 
 module Recon
   class Places
+    def self.add_recon_values rows
+      rows.each do |row|
+        place_as_recorded = row.first
+        place_uris = Recon.look_up('places', key: place_as_recorded, column: 'place_tgn')
+        row << place_uris.gsub('|', ';')
+      end
+    end
+
     def self.from_marc files
       data = []
       files.each do |in_xml|
@@ -11,6 +19,7 @@ module Recon
           data += DS::MarcXML.extract_recon_places record
         end
       end
+      add_recon_values data
       Recon.sort_and_dedupe data
     end
 
@@ -20,6 +29,7 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         data += DS::DS10.extract_recon_places xml
       end
+      add_recon_values data
       Recon.sort_and_dedupe data
     end
 
@@ -30,6 +40,7 @@ module Recon
         xml.remove_namespaces!
         data += DS::OPennTEI.extract_recon_places xml
       end
+      add_recon_values data
       Recon.sort_and_dedupe data
     end
   end

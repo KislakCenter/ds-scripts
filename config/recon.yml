@@ -11,3 +11,6 @@ recon:
       repo_path: reconciled/genres.csv
       key_column: term
       subset_column: vocabulary
+    - name: places
+      repo_path: reconciled/places.csv
+      key_column: place_as_recorded
