@@ -6,31 +6,45 @@ Scriptorium.
 
 ## Transformation scripts
 
-There are three transformation scripts:
+There are three main scripts:
 
     bin/
-    ├── ds1-mets-to-ds.rb    # Convert Digital Scriptorium METS XML
-    ├── marc-mrc-to-xml.rb   # Extract MARC XML from MARC MRC/DAT
-    ├── marc-xml-to-ds.rb    # Convert MARC XML
-    └── openn-tei-to-ds.rb   # Convert OPenn TEI XML
+    ├── ds-convert          # Convert catalog files to DS CSV
+    ├── marc-mrc-to-xml.rb  # Extract MARC XML from MARC MRC/DAT
+    └── recon               # Extract conciliation CSVs from catalog file
 
-All scripts take a list of XML files as arguments and output a CSV file with
-standard columns. By default the name of the output file is `output.csv`, but an
-alternate name and path can be specified with the `-o, --output-csv=` option.
+Here `catalog file` is any set of XML or CSV input files from a DS member
+institution: MARC XML, OPenn TEI XML, DS 1.0 legacy METS XMl, or CSV
+(forthcoming).
 
-All output CSV files have the same columns in the same order. Columns names and
-order are set in `lib/ds/constants.rb` and can be access via `DS::HEADINGS`.
+The `ds-convert` script outputs a standard DS CSV. All output CSV files have
+the same columns in the same order. Columns names and order are set in
+`lib/ds/constants.rb` and can be access via `DS::HEADINGS`.
 
-## Legacy Digital Scriptorium data scripts
+The `recon` script outputs a number of CSV with extracted values for names
+(authors, artists, scribe, former owners), places, subjects, and genres (from
+various vocabularies). CSVs output by `recon` have different columns according
+the content type.
 
-There are three scripts for working with Digital Scriptorium images. They parse
-METS files and scrape the current DS for _only those institutions that depend on
-DS for cataloging and image hosting_. For this list, see below.
+## Scripts folder
 
-    ├── collect-protoptype-data.sh  # Pull together all the prototype CSV
-    ├── ds-image-counts.rb          # Count online images for dependent org's
-    ├── locate_ds10_jpegs.rb        # From METS files locate JPEG images
-    └── sheet.rb                    # From METS files locate TIFF images
+The `/scripts` directory contains utility scripts for managing DS data.
+
+        scripts
+        ├── collect-prototype-data.sh           # Pull together the prototype data CSV
+        ├── collect-prototype-genres.sh         # Pull together all the prototype genres
+        ├── collect-prototype-names.sh          # Pull together all the prototype names
+        ├── collect-prototype-places.sh         # Pull together all the prototype places
+        ├── collect-prototype-subjects-named.sh # Pull together all the prototype named subjects
+        ├── collect-prototype-subjects.sh       # Pull together all the prototype subjects
+        ├── csv_cat.rb                          # Concatenate _n_ CSVs having the same columns
+        ├── ds-image-counts.rb                  # Count online images for dependent org's
+        ├── get_bibids.rb                       # Grab UPenn MMSIDs from OPenn TEI files
+        ├── locate-ds10-jpegs.rb                # From METS files locate JPEG images
+        ├── locate-ds10-tiffs.rb                # From METS files locate TIFF images
+        ├── merge-jpeg-tiff-locations.rb        # Merge JPEG and TIFF CSVS; TODO: delete?
+        ├── princeton_update_bib2.rb            # Prototype data: Create a Bib2 file to match IslamicGarrettBIB1-trim.xml
+        └── princeton_update_holdings.rb        # Prototype data: Create a holdings file to match IslamicGarrettBIB1-trim.xml
 
 Locate scripts rely on METS files and image lists found in the gzipped tarball
 `data/digitassets-lib-berkeley-edu.tgz`.
