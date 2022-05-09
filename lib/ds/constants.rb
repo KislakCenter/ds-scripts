@@ -38,6 +38,7 @@ author_instance_of
 artist_as_recorded
 artist_as_recorded_agr
 artist
+artist_instance_of
 scribe_as_recorded
 scribe_as_recorded_agr
 scribe

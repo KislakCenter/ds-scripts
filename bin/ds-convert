@@ -65,6 +65,8 @@ class DSConvertCLI < Thor
         author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
         artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
         artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['artist', 'illuminator']
+        artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
         scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
         scribe_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['scribe']
         language_as_recorded               = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
@@ -110,6 +112,8 @@ class DSConvertCLI < Thor
           author_instance_of:                 author_instance_of,
           artist_as_recorded:                 artist_as_recorded,
           artist_as_recorded_agr:             artist_as_recorded_agr,
+          artist:                             artist,
+          artist_instance_of:                 artist_instance_of,
           scribe_as_recorded:                 scribe_as_recorded,
           scribe_as_recorded_agr:             scribe_as_recorded_agr,
           language_as_recorded:               language_as_recorded,
@@ -167,6 +171,8 @@ class DSConvertCLI < Thor
       author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
       artist_as_recorded                 = DS::DS10.extract_part_name xml, 'artist'
       artist_as_recorded_agr             = ''
+      artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
       scribe_as_recorded                 = DS::DS10.extract_part_name xml, 'scribe'
       scribe_as_recorded_agr             = ''
       language_as_recorded               = DS::DS10.extract_language xml
@@ -205,6 +211,8 @@ class DSConvertCLI < Thor
         author_instance_of:                 author_instance_of,
         artist_as_recorded:                 artist_as_recorded,
         artist_as_recorded_agr:             artist_as_recorded_agr,
+        artist:                             artist,
+        artist_instance_of:                 artist_instance_of,
         scribe_as_recorded:                 scribe_as_recorded,
         scribe_as_recorded_agr:             scribe_as_recorded_agr,
         language_as_recorded:               language_as_recorded,
@@ -250,7 +258,8 @@ class DSConvertCLI < Thor
       author                             = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
       author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
       artist_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
-      artist                             = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
+      artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
       scribe_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
       scribe                             = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
       language_as_recorded               = xml.xpath '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
@@ -292,6 +301,7 @@ class DSConvertCLI < Thor
         author_instance_of:                 author_instance_of,
         artist_as_recorded:                 artist_as_recorded,
         artist:                             artist,
+        artist_instance_of:                 artist_instance_of,
         scribe_as_recorded:                 scribe_as_recorded,
         scribe:                             scribe,
         language_as_recorded:               language_as_recorded,
