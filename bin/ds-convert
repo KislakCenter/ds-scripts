@@ -201,6 +201,8 @@ class DSConvertCLI < Thor
         subject_as_recorded:                subject_as_recorded,
         author_as_recorded:                 author_as_recorded,
         author_as_recorded_agr:             author_as_recorded_agr,
+        author:                             author,
+        author_instance_of:                 author_instance_of,
         artist_as_recorded:                 artist_as_recorded,
         artist_as_recorded_agr:             artist_as_recorded_agr,
         scribe_as_recorded:                 scribe_as_recorded,
@@ -245,7 +247,8 @@ class DSConvertCLI < Thor
       century_aat                        = DS.transform_centuries_to_aat century
       title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
       author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
-      author                             = xml.xpath('//msItem/author').map { |a| a['ref'] }.join '|'
+      author                             = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
       artist_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
       artist                             = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'artist'
       scribe_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
@@ -286,6 +289,7 @@ class DSConvertCLI < Thor
         title_as_recorded_245:              title_as_recorded_245,
         author_as_recorded:                 author_as_recorded,
         author:                             author,
+        author_instance_of:                 author_instance_of,
         artist_as_recorded:                 artist_as_recorded,
         artist:                             artist,
         scribe_as_recorded:                 scribe_as_recorded,
