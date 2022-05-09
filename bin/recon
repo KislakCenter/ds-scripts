@@ -129,7 +129,7 @@ LONGDESC
     begin
       case options[:'source-type']
       when 'marc'
-        data = GenreTerms.from_marc files
+        data = Genres.from_marc files
       when 'mets'
       when 'tei'
       else

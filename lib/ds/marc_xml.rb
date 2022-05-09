@@ -154,7 +154,7 @@ module DS
         tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
         query_string = "(#{tag_query})"
 
-        _relators    = [relators].flatten.map { |r| r.to_s.strip.downcase == 'none' ? :none : r }
+        _relators = [relators].flatten.map { |r| r.to_s.strip.downcase == 'none' ? :none : r }
         return "datafield[#{query_string}]" if _relators.empty?
 
         if _relators.include? :none
@@ -239,10 +239,10 @@ module DS
       # @param [String] sub_sep separator for joining subfield values
       # @return [Array<Array>] an array of arrays of values
       def collect_recon_datafields record, tags: [], codes: [], sub_sep: ' '
-        _tags        = [tags].flatten.map &:to_s
-        tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
+        _tags     = [tags].flatten.map &:to_s
+        tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
-          value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          value  = collect_subfields datafield, codes: codes, sub_sep: sub_sep
           number = datafield.xpath('subfield[@tag="0"]').text
           [value, number]
         }
@@ -276,9 +276,9 @@ module DS
       # @param [String] field_sep separator for joining multiple datafield values
       # @param [String] sub_sep separator for joining subfield values
       # @return [Array<Array>] an array of arrays of values
-      def collect_datafields record, tags: [], codes: [], field_sep:  '|', sub_sep: ' '
-        _tags        = [tags].flatten.map &:to_s
-        tag_query    = _tags.map { |t| "@tag = #{t}" }.join " or "
+      def collect_datafields record, tags: [], codes: [], field_sep: '|', sub_sep: ' '
+        _tags     = [tags].flatten.map &:to_s
+        tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           collect_subfields datafield, codes: codes, sub_sep: sub_sep
         }.join field_sep
@@ -288,13 +288,19 @@ module DS
       # Extract genre and form terms from MARC datafield 655 values, where the
       # 655$2 value can be specified; e.g., +rbprov+, +aat+, +lcgft+.
       #
+      # Set +sub2+ to +:all+ to extract all 655 terms
+      #
       # @param [Nokogiri::XML::Node] record the MARC record
       # @param [String] sub2 the value of the 655$2 subfield +rbprov+, +aat+, etc.
       # @param [String] field_sep separator for multiple 655 datafields
       # @param [String] sub_sep separator for keywords
       # @return [String] concatenated field value(s)
       def extract_genre_as_recorded record, sub2:, field_sep: '|', sub_sep: '--'
-        xpath = %Q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = '#{sub2}']}
+        if sub2 == :all
+          xpath = %Q{datafield[@tag = 655]}
+        else
+          xpath = %Q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = '#{sub2}']}
+        end
         record.xpath(xpath).map { |datafield|
           collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
         }.join field_sep
@@ -309,14 +315,21 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_genres record, sub_sep: '--'
-        xpath = %q{datafield[@tag = 655 ]}
+        xpath = %q{datafield[@tag = 655]}
         record.xpath(xpath).map { |datafield|
           value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
           vocab  = datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
           number = datafield.xpath('subfield[@tag="0"]').text
 
-          [ value, vocab, number ]
+          [value, vocab, number]
         }
+      end
+
+      def extract_genre_vocabulary record
+        xpath = %q{datafield[@tag = 655]}
+        record.xpath(xpath).map { |datafield|
+          datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
+        }.join '|'
       end
 
       def extract_genre_as_recorded_lcsh record, field_sep: '|', sub_sep: '--'
@@ -432,13 +445,13 @@ module DS
         # Cornell call number; Cornell sometimes uses the 710 field; the records
         # are not consistent
         # TODO: Determine if this the best way to get this
-        xpath = "datafield[@tag=710 and contains(subfield[@code='a']/text(), 'Cornell University')]/subfield[@code='n']"
+        xpath  = "datafield[@tag=710 and contains(subfield[@code='a']/text(), 'Cornell University')]/subfield[@code='n']"
         callno = record.xpath(xpath).text
         return DS.clean_string callno unless callno.strip.empty?
 
         # Princeton call number
         # Some records mistakenly have two 852$b = 'hsvm' values; get the firsto
-        xpath = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
+        xpath  = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
         callno = record.xpath(xpath).text
         return DS.clean_string callno unless callno.strip.empty?
 
@@ -449,7 +462,6 @@ module DS
         # U. Penn uses the 099$a subfield
         callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
         return DS.clean_string callno unless callno.strip.empty?
-
 
         # return empty string if we get this far
         ''

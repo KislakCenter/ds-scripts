@@ -1,7 +1,7 @@
 require_relative 'recon/names'
 require_relative 'recon/places'
 require_relative 'recon/subjects'
-require_relative 'recon/genre_terms'
+require_relative 'recon/genres'
 require 'git'
 require 'logger'
 require 'csv'

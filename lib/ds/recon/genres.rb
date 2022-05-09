@@ -7,12 +7,18 @@ module Recon
   # Return a two-dimensional array, each row is a term; and each row has
   # three columns: term, vocabulary, and authority number.
   #
-  class GenreTerms
+  class Genres
     def self.add_recon_values rows
       rows.each do |row|
         term, vocab, _ = row
         row << _lookup_single(term, vocab)
       end
+    end
+
+    def self.lookup genres, vocabs
+      genres.zip(vocabs).map { |term, vocab|
+        _lookup_single term, vocab
+      }.join '|'
     end
 
     def self.from_marc files
