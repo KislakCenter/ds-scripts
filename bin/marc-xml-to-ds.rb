@@ -65,6 +65,9 @@ output_csv = options[:output_csv] || 'output.csv'
 holdings_file = File.open(options[:holdings_file]) { |f| Nokogiri::XML(f) } unless options[:holdings_file].nil?
 timestamp = DS.timestamp
 
+DS.configure!
+Recon.update!
+
 CSV.open output_csv, "w", headers: true do |row|
   row << DS::HEADINGS
 
@@ -100,6 +103,8 @@ CSV.open output_csv, "w", headers: true do |row|
       subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [650, 651], codes: ('a'..'z').to_a, sub_sep: '--'
       author_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [100, 110, 111]
       author_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [100, 110, 111]
+      author                             = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
       artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
       artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['artist', 'illuminator']
       scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
@@ -143,6 +148,8 @@ CSV.open output_csv, "w", headers: true do |row|
                subject_as_recorded:                 subject_as_recorded,
                author_as_recorded:                  author_as_recorded,
                author_as_recorded_agr:              author_as_recorded_agr,
+               author:                              author,
+               author_instance_of:                  author_instance_of,
                artist_as_recorded:                  artist_as_recorded,
                artist_as_recorded_agr:              artist_as_recorded_agr,
                scribe_as_recorded:                  scribe_as_recorded,

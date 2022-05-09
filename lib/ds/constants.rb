@@ -34,6 +34,7 @@ subject
 author_as_recorded
 author_as_recorded_agr
 author
+author_instance_of
 artist_as_recorded
 artist_as_recorded_agr
 artist

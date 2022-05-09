@@ -10,6 +10,14 @@ module Recon
       end
     end
 
+    def self.lookup names, column:
+      # binding.pry unless names.grep(/Sacro Bosco, Joannes de, active 1230./).empty?
+      names.map do|name|
+        # binding.pry
+        Recon.look_up 'names', key: name, column: column
+      end
+    end
+
     def self.from_marc files
       data = []
       files.each do |in_xml|
