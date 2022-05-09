@@ -63,3 +63,4 @@ build-iPhoneSimulator/
 *.bak
 
 .nova/
+/data/ds-data
