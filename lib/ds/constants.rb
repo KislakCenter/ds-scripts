@@ -42,6 +42,7 @@ artist_instance_of
 scribe_as_recorded
 scribe_as_recorded_agr
 scribe
+scribe_instance_of
 language_as_recorded
 language
 former_owner_as_recorded

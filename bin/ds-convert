@@ -4,6 +4,8 @@ require 'thor'
 require 'csv'
 require_relative '../lib/ds'
 
+# TODO: No prototype URIs for Scribes; need test data
+
 class DSConvertCLI < Thor
   include Recon
   DS.configure!
@@ -69,6 +71,8 @@ class DSConvertCLI < Thor
         artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
         scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
         scribe_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['scribe']
+        scribe                             = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_instance_of').join '|'
         language_as_recorded               = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
         language                           = DS::MarcXML.extract_langs record
         former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['former owner']
@@ -116,6 +120,8 @@ class DSConvertCLI < Thor
           artist_instance_of:                 artist_instance_of,
           scribe_as_recorded:                 scribe_as_recorded,
           scribe_as_recorded_agr:             scribe_as_recorded_agr,
+          scribe:                             scribe,
+          scribe_instance_of:                 scribe_instance_of,
           language_as_recorded:               language_as_recorded,
           language:                           language,
           former_owner_as_recorded:           former_owner_as_recorded,
@@ -175,6 +181,8 @@ class DSConvertCLI < Thor
       artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
       scribe_as_recorded                 = DS::DS10.extract_part_name xml, 'scribe'
       scribe_as_recorded_agr             = ''
+      scribe                             = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_instance_of').join '|'
       language_as_recorded               = DS::DS10.extract_language xml
       language                           = ''
       former_owner_as_recorded           = DS::DS10.extract_ownership xml
@@ -215,6 +223,8 @@ class DSConvertCLI < Thor
         artist_instance_of:                 artist_instance_of,
         scribe_as_recorded:                 scribe_as_recorded,
         scribe_as_recorded_agr:             scribe_as_recorded_agr,
+        scribe:                             scribe,
+        scribe_instance_of:                 scribe_instance_of,
         language_as_recorded:               language_as_recorded,
         language:                           language,
         former_owner_as_recorded:           former_owner_as_recorded,
@@ -261,7 +271,8 @@ class DSConvertCLI < Thor
       artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
       artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
       scribe_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
-      scribe                             = DS::OPennTEI.extract_resp_ids nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
+      scribe                             = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_instance_of').join '|'
       language_as_recorded               = xml.xpath '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
       language                           = DS::OPennTEI.extract_language_codes xml
       illuminated_initials               = ''
@@ -284,7 +295,7 @@ class DSConvertCLI < Thor
 
       # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
 
-      data = {
+      {
         source_type:                        source_type,
         holding_institution:                holding_institution,
         holding_institution_as_recorded:    holding_institution_as_recorded,
@@ -304,6 +315,7 @@ class DSConvertCLI < Thor
         artist_instance_of:                 artist_instance_of,
         scribe_as_recorded:                 scribe_as_recorded,
         scribe:                             scribe,
+        scribe_instance_of:                 scribe_instance_of,
         language_as_recorded:               language_as_recorded,
         language:                           language,
         illuminated_initials:               illuminated_initials,
