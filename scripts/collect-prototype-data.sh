@@ -38,7 +38,7 @@ fi
 # the first 100 records for each of the legacy institutions
 files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100; done)
 # Convert CSV format
-bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/ds-legacy.csv $files
+bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv $files
 
 ##########
 # MARC XML
@@ -46,11 +46,11 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds1-mets-to-ds.rb -o ${TMP_DIR}/ds-legacy.
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 # Run Princeton with Holdings information
-bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
+bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
 
 ##########
 # FLP TEI
@@ -58,7 +58,7 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/marc-xml-to-ds.rb --institution princeton 
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/openn-tei-to-ds.rb -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert openn -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 #######################
