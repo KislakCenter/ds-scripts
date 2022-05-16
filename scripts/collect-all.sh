@@ -10,8 +10,9 @@ done
 
 dstamp=$(date +%Y%m%d)
 dir=tmp/ds-data-${dstamp}
-mkdir ${dir}
-mkdir ${dir}/archive
+
+[[ ! -d ${dir} ]] && mkdir ${dir}
+[[ ! -d ${dir}/archive ]] && mkdir ${dir}/archive
 mv -v tmp/*-combined.csv ${dir}/
 mv -v tmp/*.csv ${dir}/archive
 
