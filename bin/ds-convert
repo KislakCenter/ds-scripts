@@ -62,21 +62,25 @@ class DSConvertCLI < Thor
         subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [650, 651], codes: ('a'..'z').to_a, sub_sep: '--'
         author_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [100, 110, 111]
         author_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [100, 110, 111]
-        author                             = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        author                             = ''
         author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
         artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['artist', 'illuminator']
         artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['artist', 'illuminator']
-        artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        artist                             = ''
         artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
         scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['scribe']
         scribe_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['scribe']
-        scribe                             = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_instance_of').join '|'
         language_as_recorded               = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
         language                           = DS::MarcXML.extract_langs record
         former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710], relators: ['former owner']
         former_owner_as_recorded_agr       = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710], relators: ['former owner']
-        former_owner                       = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_wikidata').join '|'
+        former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_instance_of').join '|'
         material_placeholder               = DS::MarcXML.collect_datafields record, tags: 300, codes: 'b'
         physical_description               = DS::MarcXML.extract_physical_description record
@@ -112,20 +116,24 @@ class DSConvertCLI < Thor
           subject_as_recorded:                subject_as_recorded,
           author_as_recorded:                 author_as_recorded,
           author_as_recorded_agr:             author_as_recorded_agr,
+          author_wikidata:                    author_wikidata,
           author:                             author,
           author_instance_of:                 author_instance_of,
           artist_as_recorded:                 artist_as_recorded,
           artist_as_recorded_agr:             artist_as_recorded_agr,
+          artist_wikidata:                    artist_wikidata,
           artist:                             artist,
           artist_instance_of:                 artist_instance_of,
           scribe_as_recorded:                 scribe_as_recorded,
           scribe_as_recorded_agr:             scribe_as_recorded_agr,
+          scribe_wikidata:                    scribe_wikidata,
           scribe:                             scribe,
           scribe_instance_of:                 scribe_instance_of,
           language_as_recorded:               language_as_recorded,
           language:                           language,
           former_owner_as_recorded:           former_owner_as_recorded,
           former_owner_as_recorded_agr:       former_owner_as_recorded_agr,
+          former_owner_wikidata:              former_owner_wikidata,
           former_owner:                       former_owner,
           former_owner_instance_of:           former_owner_instance_of,
           material_placeholder:               material_placeholder,
@@ -175,22 +183,26 @@ class DSConvertCLI < Thor
       subject_as_recorded                = ''
       author_as_recorded                 = DS::DS10.extract_text_name xml, 'author'
       author_as_recorded_agr             = ''
-      author                             = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      author                             = ''
       author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
       artist_as_recorded                 = DS::DS10.extract_part_name xml, 'artist'
       artist_as_recorded_agr             = ''
-      artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      artist                             = ''
       artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
       scribe_as_recorded                 = DS::DS10.extract_part_name xml, 'scribe'
       scribe_as_recorded_agr             = ''
-      scribe                             = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      scribe                             = ''
       scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_instance_of').join '|'
       language_as_recorded               = DS::DS10.extract_language xml
       language                           = ''
       former_owner_as_recorded           = DS::DS10.extract_ownership xml
       former_owner_as_recorded_agr       = ''
       # TODO: Legacy XML doesn't have former owner names; the following can't be tested
-      former_owner                       = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      former_owner                       = ''
       former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_instance_of').join '|'
       material                           = ''
       material_placeholder               = DS::DS10.extract_support xml
@@ -220,20 +232,24 @@ class DSConvertCLI < Thor
         subject_as_recorded:                subject_as_recorded,
         author_as_recorded:                 author_as_recorded,
         author_as_recorded_agr:             author_as_recorded_agr,
+        author_wikidata:                    author_wikidata,
         author:                             author,
         author_instance_of:                 author_instance_of,
         artist_as_recorded:                 artist_as_recorded,
         artist_as_recorded_agr:             artist_as_recorded_agr,
+        artist_wikidata:                    artist_wikidata,
         artist:                             artist,
         artist_instance_of:                 artist_instance_of,
         scribe_as_recorded:                 scribe_as_recorded,
         scribe_as_recorded_agr:             scribe_as_recorded_agr,
+        scribe_wikidata:                    scribe_wikidata,
         scribe:                             scribe,
         scribe_instance_of:                 scribe_instance_of,
         language_as_recorded:               language_as_recorded,
         language:                           language,
         former_owner_as_recorded:           former_owner_as_recorded,
         former_owner_as_recorded_agr:       former_owner_as_recorded_agr,
+        former_owner_wikidata:              former_owner_wikidata,
         former_owner:                       former_owner,
         former_owner_instance_of:           former_owner_instance_of,
         material_placeholder:               material_placeholder,
@@ -273,20 +289,24 @@ class DSConvertCLI < Thor
       century_aat                        = DS.transform_centuries_to_aat century
       title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
       author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
-      author                             = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      author                             = ''
       author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'name_instance_of').join '|'
       artist_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'artist'
-      artist                             = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      artist                             = ''
       artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'name_instance_of').join '|'
       scribe_as_recorded                 = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'scribe'
-      scribe                             = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      scribe                             = ''
       scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'name_instance_of').join '|'
       language_as_recorded               = xml.xpath '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
       language                           = DS::OPennTEI.extract_language_codes xml
       illuminated_initials               = ''
       miniatures                         = ''
       former_owner_as_recorded           = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
-      former_owner                       = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_wikidata').join '|'
+      former_owner                       = ''
       former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'name_instance_of').join '|'
       material                           = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/@material').text
       material_placeholder               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
@@ -318,12 +338,15 @@ class DSConvertCLI < Thor
         century_aat:                        century_aat,
         title_as_recorded_245:              title_as_recorded_245,
         author_as_recorded:                 author_as_recorded,
+        author_wikidata:                    author_wikidata,
         author:                             author,
         author_instance_of:                 author_instance_of,
         artist_as_recorded:                 artist_as_recorded,
+        artist_wikidata:                    artist_wikidata,
         artist:                             artist,
         artist_instance_of:                 artist_instance_of,
         scribe_as_recorded:                 scribe_as_recorded,
+        scribe_wikidata:                    scribe_wikidata,
         scribe:                             scribe,
         scribe_instance_of:                 scribe_instance_of,
         language_as_recorded:               language_as_recorded,
@@ -331,6 +354,7 @@ class DSConvertCLI < Thor
         illuminated_initials:               illuminated_initials,
         miniatures:                         miniatures,
         former_owner_as_recorded:           former_owner_as_recorded,
+        former_owner_wikidata:              former_owner_wikidata,
         former_owner:                       former_owner,
         former_owner_instance_of:           former_owner_instance_of,
         material:                           material,
