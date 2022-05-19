@@ -25,7 +25,7 @@ module Recon
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
           data += DS::MarcXML.extract_recon_names record, tags: [100, 110, 111]
-          data += DS::MarcXML.extract_recon_names record, tags: [700, 710], relators: ['artist', 'illuminator', 'scribe', 'former owner']
+          data += DS::MarcXML.extract_recon_names record, tags: [700, 710, 790, 791], relators: ['artist', 'illuminator', 'scribe', 'former owner']
         end
       end
       add_recon_values data
