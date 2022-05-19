@@ -15,7 +15,7 @@ TMP_DIR=${SCRIPT_DIR}/../tmp
 # Legacy METS for institutions dependent on DS for cataloging; the folder names in data/digitalassets.lib.berkeley.edu/ds/
 LEGACY_INSTS="conception csl cuny grolier gts indiana kansas nelsonatkins nyu providence rutgers ucb wellesley"
 # These are the folders in data/prototype-data/ containing MARC XML
-MARC_INSTS="penn cornell columbia burke oregon"
+MARC_INSTS="penn cornell columbia burke oregon hrc"
 # TEI
 TEI_INSTS="flp"
 
@@ -65,6 +65,6 @@ done
 # Combine in single CSV
 #######################
 # list of all of the CSVs: legacy.csv penn.csv [...]
-CSVS=$(for x in legacy ${MARC_INSTS} ${TEI_INSTS} princeton; do echo "${TMP_DIR}/ds-${x}.csv"; done)
+CSVS=$(for x in ${MARC_INSTS} ${TEI_INSTS} princeton legacy; do echo "${TMP_DIR}/ds-${x}.csv"; done)
 
 ruby ${SCRIPT_DIR}/csv_cat.rb -o ${TMP_DIR}/ds-combined.csv $CSVS
