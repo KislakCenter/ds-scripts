@@ -13,7 +13,7 @@ TMP_DIR=${SCRIPT_DIR}/../tmp
 # CONFIGURATION VARS
 ####################
 # These are the folders in data/prototype-data/ containing MARC XML
-MARC_INSTS="penn cornell columbia burke oregon princeton"
+MARC_INSTS="penn cornell columbia burke oregon princeton hrc"
 
 ##########
 # MARC XML

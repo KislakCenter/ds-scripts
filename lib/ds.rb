@@ -51,7 +51,7 @@ module DS
       return normal if terminator.nil?
 
       # terminator is present; append it after any removing trailing whitespace and punctuation
-      "#{normal.sub(%r{[[:punct:][:space:]]+$}, '').strip}#{terminator}"
+      "#{normal.sub(%r{[,.:!?;[:space:]]+$}, '').strip}#{terminator}"
     end
 
     def find_qid inst_alias

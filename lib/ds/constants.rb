@@ -74,6 +74,7 @@ source_file
       'Q5021042'  => ['State of California', 'California State Library', 'csl'],
       'Q49088'    => ['Columbia University', 'columbia'],
       'Q49115'    => ['Cornell University', 'cornell'],
+      'Q5671855'  => ['Harry Ransom Center', 'hrc'],
       'Q3087288'  => ['Free Library of Philadelphia', 'flp'],
       'Q1501676'  => ['General Theological Seminary', 'gts'],
       'Q5174002'  => ['Grolier Club', 'grolier'],
