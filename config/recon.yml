@@ -1,0 +1,16 @@
+---
+recon:
+  git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
+  git_branch: 'feature/1-directory-for-reconciliations'
+  git_local_name: 'ds-data'
+  sets:
+    - name: names
+      repo_path: terms/names.csv
+      key_column: name
+    - name: genres
+      repo_path: terms/genres.csv
+      key_column: term
+      subset_column: vocabulary
+    - name: places
+      repo_path: terms/places.csv
+      key_column: place_as_recorded

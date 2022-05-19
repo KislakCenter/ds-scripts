@@ -23,10 +23,7 @@ uniform_title_agr
 title_as_recorded_245
 title_as_recorded_245_agr
 genre_as_recorded
-genre_as_recorded_lcsh
-genre_as_recorded_aat
-genre_as_recorded_rbprov
-genre_as_recorded_lcgft
+genre_vocabulary
 genre
 named_subject_as_recorded
 subject_as_recorded
@@ -34,17 +31,25 @@ subject
 author_as_recorded
 author_as_recorded_agr
 author
+author_wikidata
+author_instance_of
 artist_as_recorded
 artist_as_recorded_agr
 artist
+artist_wikidata
+artist_instance_of
 scribe_as_recorded
 scribe_as_recorded_agr
 scribe
+scribe_wikidata
+scribe_instance_of
 language_as_recorded
 language
 former_owner_as_recorded
 former_owner_as_recorded_agr
 former_owner
+former_owner_wikidata
+former_owner_instance_of
 material
 material_placeholder
 physical_description
@@ -86,7 +91,7 @@ source_file
       'Q499451'   => ['Rutgers, The State University of New Jersey', 'rutgers'],
       'Q5090408'  => ['Science History Institute', 'Chemical Heritage Foundation', 'shi'],
       'Q1378320'  => ['Swarthmore College', 'swarthmore'],
-      'Q168756'   => ['University of California, Berkeley'],
+      'Q168756'   => ['University of California, Berkeley', 'ucb'],
       'Q579968'   => ['University of Missouri', 'mizzou', 'missouri'],
       'Q766145'   => ['University of Oregon', 'oregon'],
       'Q49117'    => ['University of Pennsylvania', 'upenn', 'penn'],
@@ -141,5 +146,11 @@ source_file
     }.freeze
 
     INSTITUTIONS = INSTITUTION_DS_IDS.values.uniq.freeze
+
+    MARC_XML = :marc
+    METS_XML = :mets
+    TEI_XML  = :tei
+    CSV      = :csv
+    SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, CSV ].freeze
   end
 end

@@ -1,0 +1,176 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'csv'
+require_relative '../lib/ds'
+
+class ReconCLI < Thor
+  include Recon
+  DS.configure!
+  Recon.update!
+
+  def self.exit_on_failure?
+    true
+  end
+
+  class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
+  class_option :directory, banner: 'PATH', desc: "Output directory", aliases: '-o', default: '.'
+  class_option :'source-type', banner: 'TYPE', desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
+  class_option :verbose, desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
+
+  desc "names FILES", "Extract names from one or more FILEs"
+  long_desc <<-LONGDESC
+    Extract names from one or more FILEs.
+  LONGDESC
+
+  def names *files
+    # TODO: Add role column to names
+    return false unless validate_args files
+
+    out_csv = out_file 'names', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = Names.from_marc files
+      when 'mets'
+        data = Names.from_mets files
+      when 'tei'
+        data = Names.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{name role name_agr source_authority_uri name_wikidata name_instance_of}
+      write_csv out_csv, header, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  desc "places FILES", "Extract place names from one or more FILEs"
+  long_desc <<-LONGDESC
+    Extract place names from one or more FILEs.
+  LONGDESC
+  def places *files
+    return false unless validate_args files
+
+    out_csv = out_file 'places', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = Places.from_marc files
+      when 'mets'
+        data = Places.from_mets files
+      when 'tei'
+        data = Places.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{place_as_recorded recon_uri}
+      write_csv out_csv, header, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  desc "subjects FILES", "Extract LC subjects (650, 651 or 600, 610)"
+  long_desc <<-LONGDESC
+  Extract LC subjects from one or more FILEs.
+
+  By default extract 650, 651 are extracted, but fields 600, 610 are extracted if `--named-subjects` is given.
+
+LONGDESC
+  option :'named-subjects', desc: 'LCSH named subjects 600, 610', aliases: '-n', type: :boolean, default: false
+  def subjects *files
+    return false unless validate_args files
+
+    base = options[:'named-subjects'] ? 'subjects-named' : 'subjects'
+    tags = options[:'named-subjects'] ? [600, 610] : [650, 651]
+    out_csv = out_file base, options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = Subjects.from_marc files, tags: tags
+      when 'mets'
+      when 'tei'
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{subject_as_recorded source_authority_uri}
+      write_csv out_csv, header, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  desc "genres FILES", "Extract genre terms (655)"
+  long_desc <<-LONGDESC
+  Extract genre terms from one or more FILEs.
+
+  LONGDESC
+  def genres *files
+    return false unless validate_args files
+
+    out_csv = out_file 'genres', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = Genres.from_marc files
+      when 'mets'
+      when 'tei'
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{term vocabulary source_authority_uri recon_uri}
+      write_csv out_csv, header, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  protected
+  def validate_args files
+    cannot_find = files.reject { |f| File.exist?(f) }
+    return true if cannot_find.empty?
+
+    puts "Can't find input file(s): #{cannot_find.join '; ' }"
+    false
+  end
+
+  def out_file base, options
+    csv_name = options[:tag] ? "#{base}-#{options[:tag]}.csv" : "#{base}.csv"
+    File.join options[:directory], csv_name
+  end
+
+  def write_csv out_file, header, data
+    CSV.open out_file, 'wb' do |csv|
+      csv << header
+      data.each do |row|
+        csv << row
+      end
+    end
+    puts "Wrote: #{out_file}"
+  end
+
+end
+
+ReconCLI.start ARGV

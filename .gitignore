@@ -62,3 +62,5 @@ build-iPhoneSimulator/
 # don't track backup files
 *.bak
 
+.nova/
+/data/ds-data
