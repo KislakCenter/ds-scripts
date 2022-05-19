@@ -174,7 +174,8 @@ module DS
       # @return [String]
       def extract_pn datafield
         codes = %w{ a b c d }
-        collect_subfields datafield, codes: codes
+        value = collect_subfields datafield, codes: codes
+        DS.clean_string value, terminator: ''
       end
 
       ###
@@ -243,6 +244,7 @@ module DS
         tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           value  = collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          value  = DS.clean_string value, terminator: ''
           number = datafield.xpath('subfield[@tag="0"]').text
           [value, number]
         }
@@ -263,7 +265,7 @@ module DS
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places record
         record.xpath("datafield[@tag=260]/subfield[@code='a']").map { |value|
-          [value.text]
+          [DS.clean_string(value.text, terminator: '')]
         }
       end
 
@@ -280,7 +282,8 @@ module DS
         _tags     = [tags].flatten.map &:to_s
         tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
-          collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          DS.clean_string value, terminator: ''
         }.join field_sep
       end
 
@@ -302,7 +305,8 @@ module DS
           xpath = %Q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = '#{sub2}']}
         end
         record.xpath(xpath).map { |datafield|
-          collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
+          value = collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
+          DS.clean_string value, terminator: ''
         }.join field_sep
       end
 
@@ -318,6 +322,7 @@ module DS
         xpath = %q{datafield[@tag = 655]}
         record.xpath(xpath).map { |datafield|
           value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
+          value  = DS.clean_string value, terminator: ''
           vocab  = datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
           number = datafield.xpath('subfield[@tag="0"]').text
 
