@@ -5,12 +5,12 @@ recon:
   git_local_name: 'ds-data'
   sets:
     - name: names
-      repo_path: reconciled/names.csv
+      repo_path: terms/names.csv
       key_column: name
     - name: genres
-      repo_path: reconciled/genres.csv
+      repo_path: terms/genres.csv
       key_column: term
       subset_column: vocabulary
     - name: places
-      repo_path: reconciled/places.csv
+      repo_path: terms/places.csv
       key_column: place_as_recorded
