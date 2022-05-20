@@ -95,12 +95,14 @@ source_file
       50 => 'wellesley',
     }.freeze
 
+    TRAILING_PUNCTUATION_RE = %r{[,.:!?;[:space:]]+$}
+
     INSTITUTIONS = INSTITUTION_DS_IDS.values.uniq.freeze
 
     MARC_XML = :marc
     METS_XML = :mets
     TEI_XML  = :tei
-    CSV      = :csv
-    SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, CSV ].freeze
+    DS_CSV   = :csv
+    SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, DS_CSV ].freeze
   end
 end
