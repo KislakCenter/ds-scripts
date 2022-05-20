@@ -84,6 +84,6 @@ module Recon
   end
 
   def self.build_key value, subset
-    "#{value}$$#{subset}"
+    "#{value}$$#{subset}".downcase
   end
 end
