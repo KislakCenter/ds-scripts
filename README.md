@@ -103,33 +103,69 @@ $ bundle exec ruby scripts/ds-image-counts.rb
 
 ### Configuration
 
+#### Institution/QID mappings
+
 Several of the scripts rely on mappings from institution names to Wikidata QIDs
-for CSV output. These have be entered manually in `lib/ds/constants.rb`.
+for CSV output. These have to be entered manually in `config/institutions.yml`.
 
 Wikidata QIDs for institutions are mapped to institution names in
-`lib/ds/constants.rb` in `QID_TO_INSTITUTION_NAMES`. This hash is used to create
-a reverse hash, `INSTITUTION_NAMES_TO_QID`, which maps institution names and the
+`config/institutions.yml`. These values are used to create a reverse hash,
+`Constants::INSTITUTION_NAMES_TO_QID`, which maps institution names and the
 one-word aliases to Wikidata QID URLs.
 
-        # Hash from QID to array of institution names, preferred name is first;
-        # alias is last
-        # primarily useful as a non repeating configuration for other hashes
-        QID_TO_INSTITUTION_NAMES = {
-          'Q814779'   => ['Beinecke Rare Book & Manuscript Library', 'beinecke'],
-          'Q995265'   => ['Bryn Mawr College', 'brynmawr'],
-          'Q63969940' => ['Burke Library at Union Theological Seminary', 'burke'],
-          'Q5146808'  => ['The College of Physicians of Philadelphia'],
-          'Q30257935' => ['Conception Abbey and Seminary', 'Conception Seminary College', 'conception'],
-          'Q1093910'  => ['City College of New York', 'cuny', 'ccny'],
-          'Q5021042'  => ['State of California', 'California State Library', 'csl'],
-        # ... etc.
-        }
+`config/institutions.yml`:
 
-To modify values for a QID already in the list, edit the array contents.
+```yaml
+---
+institutions:
+  Q814779:
+    - Beinecke Rare Book & Manuscript Library
+    - beinecke
+  Q995265:
+    - Bryn Mawr College
+    - brynmawr
+  Q63969940:
+    - Burke Library at Union Theological Seminary
+    - burke
+```
 
-To add a new QID, create a new key-value pair. Make sure the new QID is not a
-duplicate.
+Lists can be any length to allow for a number of variant names. The
+preferred name for the institution should be first in the list, and
+alias(es) should come at the end. The last item in each list should
+be the preferred short name for the institution; e.g., 'beinecke',
+'burke', 'penn'.
 
-Arrays can be any length to allow for a number of variant names. The preferred
-name for the institution should be first in the list, and alias(es) should come
-at the end.
+#### Reconciliation values
+
+Reconciliation CSVs are maintained in git and loaded at runtime from a git
+repository in the `/data` directory.
+
+The file `config/recon.yml` defines the location of the git repository,
+path to each reconciliation CSV, and key columns:
+
+```yaml
+---
+recon:
+  git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
+  git_branch: 'feature/1-directory-for-reconciliations'
+  git_local_name: 'ds-data'
+  sets:
+    - name: names
+      repo_path: terms/names.csv
+      key_column: name
+    - name: genres
+      repo_path: terms/genres.csv
+      key_column: term
+      subset_column: vocabulary
+    - name: places
+      repo_path: terms/places.csv
+      key_column: place_as_recorded
+```
+
+Values are:
+
+- `sets`: each CSV set loaded by the `Recon` module
+- `name`: name of each set, used by `Recon.find_set(name)`
+- `repo_path`: path of the CSV file in the repository
+- `key_column`: column containing the reconciled values; e.g., personal names, place names, subject terms
+- `subset_column`: name of the column for subsets within the data; e.g., the vocabulary column for genres
