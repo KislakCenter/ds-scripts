@@ -37,13 +37,13 @@
   <marc:subfield code="c">47 x 47 (33 x 33) mm bound to 47 x 47 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in thin red leather over card, cut in an octagonal shape with a gilt stamped, teardrop-shaped medallion with a flower motif, and gilt frame. Spine is loose from covers, but has been repaired by paper hinges from the doublure. Endbands in white and blue stripe in chevron pattern.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Probably copied in the mid-18th to mid-19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Western numeral foliation in pencil added, upper left recto; no catchwords.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 19 long lines, border-ruled.</marc:subfield>
@@ -52,13 +52,13 @@
   <marc:subfield code="a">Script: Written in naskh using black ink; pointed and vocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Western numeral foliation in pencil added, upper left recto; no catchwords.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: First opening has dual page illuminations of flowers in red, blue, and gold around al-Fa&#x304;tih&#x323;ah and the beginning of al-Baqarah (f. 1v-2r). On all other pages, the textblock has a cirucular border rule in gold, black, blue; su&#x304;rah titles are in gold ink; verse endings marked by a gold dot.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in thin red leather over card, cut in an octagonal shape with a gilt stamped, teardrop-shaped medallion with a flower motif, and gilt frame. Spine is loose from covers, but has been repaired by paper hinges from the doublure. Endbands in white and blue stripe in chevron pattern.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Probably copied in the mid-18th to mid-19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Miniature, octagonal copy of the Qur'a&#x304;n for use as an amulet.</marc:subfield>
@@ -73,6 +73,15 @@
   <marc:subfield code="a">Gift of Gordon A. Block, Jr., 1966.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
@@ -81,17 +90,8 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
@@ -107,12 +107,12 @@
   <marc:subfield code="j">Ms. Codex 1909</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1909.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3rv0d67g</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1909.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">130-01//r</marc:subfield>

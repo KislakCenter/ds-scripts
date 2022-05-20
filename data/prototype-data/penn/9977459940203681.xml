@@ -37,7 +37,19 @@
   <marc:subfield code="c">113 x 70 (85 x 41) mm bound to 116 x 75 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Brown leather over pasteboard (Type III). Outside covers have gilt stamped frame, mostly effaced. Doublure in thin, reddish leather. Endbands in purple and white thread with a chevron pattern.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Item is not dated, but an inscription has the date 22 Ramadan [1]135 (June 26, 1723) (f. 68r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Polychrome decoration in vivid red, blue, and gold. Dual-page illumination with knotwork design text border and page frame on first opening (f. 1v-2r). Su&#x304;rah titles in red on gold background with red and blue accents; gold diamonds with red crosses mark verse endings; polychrome medallions in the margins mark text divisions (juz&#x2BC;). The entire text is written in the suggestion of cloudbands, gold between each line. Textblock has double border-rules in gold and black; page opening is framed in black.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: 20 long lines, border-ruled.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
@@ -46,19 +58,7 @@
   <marc:subfield code="a">Foliation: Western numeral foliation in pencil added, upper left recto; catchwords on verso, lower left.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: 20 long lines, border-ruled.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script:  Written in naskh in black ink; pointed, vocalized. A few marginal notes in nasta&#x2BB;liq in black ink.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Polychrome decoration in vivid red, blue, and gold. Dual-page illumination with knotwork design text border and page frame on first opening (f. 1v-2r). Su&#x304;rah titles in red on gold background with red and blue accents; gold diamonds with red crosses mark verse endings; polychrome medallions in the margins mark text divisions (juz&#x2BC;). The entire text is written in the suggestion of cloudbands, gold between each line. Textblock has double border-rules in gold and black; page opening is framed in black.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Brown leather over pasteboard (Type III). Outside covers have gilt stamped frame, mostly effaced. Doublure in thin, reddish leather. Endbands in purple and white thread with a chevron pattern.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Item is not dated, but an inscription has the date 22 Ramadan [1]135 (June 26, 1723) (f. 68r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Small, complete copy of the Qur'a&#x304;n in very good condition.</marc:subfield>
@@ -73,21 +73,21 @@
   <marc:subfield code="a">Gift of Gordon A. Block, Jr. (bookplate inside upper cover), 1966.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Illuminations (painting)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Block, Gordon A.,</marc:subfield>
@@ -102,12 +102,12 @@
   <marc:subfield code="j">Ms. Codex 1907</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1907.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3n29pd33</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1907.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">130-01//r</marc:subfield>

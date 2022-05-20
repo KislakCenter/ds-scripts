@@ -48,10 +48,16 @@
   <marc:subfield code="c">178 x 135 (143 x 95) mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Ms. codex.</marc:subfield>
+  <marc:subfield code="a">Title supplied by cataloger; opening rubric uses title Aureole Arnaldi de Nova Villa novorum medicorum peritissimi (p. 1).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title supplied by cataloger; opening rubric uses title Aureole Arnaldi de Nova Villa novorum medicorum peritissimi (p. 1).</marc:subfield>
+  <marc:subfield code="a">Decoration:  2-line initials, rubrication, and paragraph marks in red, with later additions of blue, green, or black penwork; concluding lists (p. 1-4 [=p. 35-38]) are also decorated with these later colors.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Spain between 1350 and 1380.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Collation:  Parchment, 21 leaves; 1&#xB9;&#x2078;(-1) 2&#x2074;; [1-34, 1-8], modern pagination in pencil, lower inner corners.</marc:subfield>
@@ -61,12 +67,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script:  Written in Gothic script by a single hand.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  2-line initials, rubrication, and paragraph marks in red, with later additions of blue, green, or black penwork; concluding lists (p. 1-4 [=p. 35-38]) are also decorated with these later colors.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in Spain between 1350 and 1380.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -82,20 +82,19 @@
   <marc:subfield code="a">Latin.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold by Les Enluminures (Paris and Chicago), cat. 2 (1993), no. 23, to  John D. Stanitz (Cleveland, Ohio), Ms. 29.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, Sept. 1997.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Materia medica, Vegetable</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+  <marc:subfield code="a">Medicine, Medieval.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Medicinal plants</marc:subfield>
@@ -106,7 +105,8 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Medicine, Medieval.</marc:subfield>
+  <marc:subfield code="a">Materia medica, Vegetable</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices.</marc:subfield>
@@ -117,11 +117,11 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
-  <marc:subfield code="y">14th century.</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">14th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
@@ -144,8 +144,16 @@
   <marc:subfield code="j">LJS 198</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs198.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5316107</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3jg62</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
@@ -154,14 +162,6 @@
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3jg62</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs198.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

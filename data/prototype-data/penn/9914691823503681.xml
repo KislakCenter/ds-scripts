@@ -9,7 +9,7 @@
   <marc:subfield code="a">(OCoLC)86167193</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="035">
-  <marc:subfield code="a">(OCoLC)ocm86167193 </marc:subfield>
+  <marc:subfield code="a">(OCoLC)ocm86167193</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(PU)1469182-penndb-Voyager</marc:subfield>
@@ -62,6 +62,18 @@
   <marc:subfield code="2">rdacarrier</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Item is not dated, but likely written between the second half of the 18th and the first half of the 19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">On the page facing the above note by Dr. Jastrow is the (Roman) alphabet in German cursive script capitals, written in pencil and upside down in relation to the book.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Watermarks: Trelune.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Inside front cover is the following note, signed by Morris Jastrow, Jr. and dated Feb. 1890 in Philadelphia: "It was used by a Turkish soldier during the recent Russo-Turkish War (187- ) &amp; upon his death in battle fell into the hands of a physician of Austrian origin. Presented to me by Dr. Adolf Brecher of Olmu&#x308;tz (Moravia) in 1888."</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from margin of opening page (f. 1v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -79,18 +91,6 @@
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding: Bound in dark brown leather with flap (Type II); blind stamped central mandorla and blind ruled frame; flap has smaller, matching blind stamped mandorla.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Item is not dated, but likely written between the second half of the 18th and the first half of the 19th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Watermarks: Trelune.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Inside front cover is the following note, signed by Morris Jastrow, Jr. and dated Feb. 1890 in Philadelphia: "It was used by a Turkish soldier during the recent Russo-Turkish War (187- ) &amp; upon his death in battle fell into the hands of a physician of Austrian origin. Presented to me by Dr. Adolf Brecher of Olmu&#x308;tz (Moravia) in 1888."</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">On the page facing the above note by Dr. Jastrow is the (Roman) alphabet in German cursive script capitals, written in pencil and upside down in relation to the book.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Complete copy of part 30 of the Qur&#x2BC;a&#x304;n, from al-Naba&#x304;&#x2BC; (78) to the end.</marc:subfield>
 </marc:datafield>
@@ -105,6 +105,14 @@
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly owned by Morris Jastrow, Jr.; gift of Morris Jastrow, Jr. (plate inside front cover).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Blind tooled (decoration)</marc:subfield>
+  <marc:subfield code="2">lobt</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Envelope flaps (features)</marc:subfield>
+  <marc:subfield code="2">lobt</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
@@ -124,14 +132,6 @@
   <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Blind tooled (decoration)</marc:subfield>
-  <marc:subfield code="2">lobt</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Envelope flaps (features)</marc:subfield>
-  <marc:subfield code="2">lobt</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Brecher, Adolf,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
@@ -149,12 +149,12 @@
   <marc:subfield code="j">Ms. Codex 24</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex24.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3gh9bg67</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex24.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">130-01//r</marc:subfield>

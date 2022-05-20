@@ -41,13 +41,13 @@
   <marc:subfield code="c">170 x 100 (120 x 66) mm bound to 174 x 111 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Black leather cover over thin pasteboard with faint blind-stamped frame. Endbands in blue and white and tan and white thread in a chevron pattern.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: The copy is undated, but an owner's note places it before A.H. 1041 (1631) (Flyleaf 1r and 1v, in the front).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from introduction (f. 2r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 12 long lines; border-ruled.</marc:subfield>
@@ -56,13 +56,13 @@
   <marc:subfield code="a">Script:  Written in small, neat naskh; pointed, unvocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from introduction (f. 2r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Rubrications in red including some marginal headers. Textblock border-ruled in blue.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Black leather cover over thin pasteboard with faint blind-stamped frame. Endbands in blue and white and tan and white thread in a chevron pattern.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: The copy is undated, but an owner's note places it before A.H. 1041 (1631) (Flyleaf 1r and 1v, in the front).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Work on Shi&#x304;&#x2BB;ite daily religious customs and practices. This copy is very neatly written; some minor page repairs, a portion of the pages are stained, but still legible.</marc:subfield>
@@ -74,10 +74,10 @@
   <marc:subfield code="a">Arabic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Partially effaced purple owner's stamp with the name Terbiet visible (f. 150v). Probably Tarbiyat Library in Tabriz, in service from 1898-1908 and run by Muh&#x323;ammad &#x2BB;Ali&#x304; Kha&#x304;n (1877 or 1878-1940&#x200F;).</marc:subfield>
+  <marc:subfield code="a">Sold on eBay July 2014; accessioned 2018.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold on eBay July 2014; accessioned 2018.</marc:subfield>
+  <marc:subfield code="a">Partially effaced purple owner's stamp with the name Terbiet visible (f. 150v). Probably Tarbiyat Library in Tabriz, in service from 1898-1908 and run by Muh&#x323;ammad &#x2BB;Ali&#x304; Kha&#x304;n (1877 or 1878-1940&#x200F;).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Acquired for the Penn Libraries with assistance from the Anne and Joseph Trachtman Memorial Book Fund.</marc:subfield>
@@ -98,13 +98,13 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">17th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Anne and Joseph Trachtman Memorial Book Fund.</marc:subfield>
@@ -119,10 +119,6 @@
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Ms. Codex 1959</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="4" ind2="2" tag="856">
-  <marc:subfield code="3">The Anne and Joseph Trachtman Memorial Book Fund Home Page</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366327</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1959.html</marc:subfield>
@@ -131,14 +127,18 @@
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3sq8qq3z</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="880">
-  <marc:subfield code="6">100-01//r</marc:subfield>
-  <marc:subfield code="a">&#x639;&#x627;&#x645;&#x644;&#x64A;&#x60C; &#x628;&#x647;&#x627;&#x621; &#x627;&#x644;&#x62F;&#x64A;&#x646; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x62D;&#x633;&#x64A;&#x646;&#x60C;</marc:subfield>
-  <marc:subfield code="d">1547-1621</marc:subfield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Anne and Joseph Trachtman Memorial Book Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366327</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-02//r</marc:subfield>
   <marc:subfield code="a">&#x645;&#x641;&#x62A;&#x627;&#x62D; &#x627;&#x644;&#x641;&#x644;&#x627;&#x62D;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x639;&#x627;&#x645;&#x644;&#x64A;&#x60C; &#x628;&#x647;&#x627;&#x621; &#x627;&#x644;&#x62F;&#x64A;&#x646; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x62D;&#x633;&#x64A;&#x646;&#x60C;</marc:subfield>
+  <marc:subfield code="d">1547-1621</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="996">
   <marc:subfield code="a">hinge-right</marc:subfield>

@@ -32,10 +32,19 @@
   <marc:subfield code="c">170 x 105 (115 x 65) mm bound to 170 x 120 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Dark brown leather over pasteboard (Type III); blind stamped mandorla with two pendants on both outside covers, along with gilded, embossed paper inlays and gilt stamped corners and frame; mandorla and frame gilt-stamped on inside covers as well.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Copied by Ah&#x323;mad al-Ma&#x2BB;aru&#x304;f bi-H&#x323;a&#x304;fiz&#x323; al-Qur&#x2BC;an (f. 97r), likely in the mid to late 1800s.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Paper: Different types of paper make up the volume, including machine-made Ottoman.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Foliation: Modern Western foliation added in pencil, upper left recto; catchwords most versos, lower left.</marc:subfield>
@@ -48,15 +57,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Titles in white ink, framed in gold and floriated designs; textblock ruled in gold, red, black; gold roundels with red, blue, and green dots punctuate the text; polychrome and gold medallions in the margins; double page illuminations in polychrome and gold with text on cloudbands (f. 1v-2r, 5v-6,); full page illuminations of the name Alla&#x304;h (f. 97v) and Muh&#x323;ammad (f. 98r), two seals: muhr nubbu&#x304;t (f. 98v), muhr Sulayma&#x304;n (f. 99r) and a dual page illumination that includes the names of the first four Caliphs and H&#x323;usayn and H&#x323;asan (f. 99v-100r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Dark brown leather over pasteboard (Type III); blind stamped mandorla with two pendants on both outside covers, along with gilded, embossed paper inlays and gilt stamped corners and frame; mandorla and frame gilt-stamped on inside covers as well.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Paper: Different types of paper make up the volume, including machine-made Ottoman.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Copied by Ah&#x323;mad al-Ma&#x2BB;aru&#x304;f bi-H&#x323;a&#x304;fiz&#x323; al-Qur&#x2BC;an (f. 97r), likely in the mid to late 1800s.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Funeral announcement for H&#x323;usayn Rushdi&#x304; Pasha (1863-1928), prime minister of Egypt (1914-1919), laid in.</marc:subfield>
@@ -81,12 +81,12 @@
   <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Islam</marc:subfield>
-  <marc:subfield code="v">Prayers and devotions.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Prayer</marc:subfield>
   <marc:subfield code="x">Islam.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Islam</marc:subfield>
+  <marc:subfield code="v">Prayers and devotions.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
@@ -102,12 +102,12 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">18th century.</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
@@ -127,12 +127,12 @@
   <marc:subfield code="j">Ms. Codex 1902</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1902.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3416t56x</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1902.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">700-01//r</marc:subfield>

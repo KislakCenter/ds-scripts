@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>03560ctd a2200529Ia 4500</marc:leader>
+    <marc:leader>03676ctd a2200541Ia 4500</marc:leader>
     <marc:controlfield tag="001">9962991893503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131938.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025111123.0</marc:controlfield>
     <marc:controlfield tag="008">141112q17001850ii            000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn895034542</marc:subfield>
@@ -46,6 +46,15 @@
   <marc:subfield code="c">12 x 28 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins, some of it in a second scribal hand; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Manuscript was part of a larger work that included Ms. Coll. 390 Item 1019, Item 1020, Item 1021, Item 1022, Item 1023, Item 1024, and Item 1025.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Colophon: iti s&#x301;ri&#x304;matparamaham&#x323;saparivra&#x304;jaka&#x304;ca&#x304;rya&#x304;kham&#x323;d&#x323;a&#x304;nubhu&#x304;tis&#x301;is&#x323;yen&#x323;a&#x304;kham&#x323;d&#x323;a&#x304;nadamunina&#x304;viracite vivaran&#x323;atatvadi&#x304;pane prathamavarn&#x323;akam&#x323; sama&#x304;ptam // (f. 185r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from colophon (f. 185r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -53,15 +62,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">185 leaves foliated 1-185, upper left and lower right verso.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Colophon: iti s&#x301;ri&#x304;matparamaham&#x323;saparivra&#x304;jaka&#x304;ca&#x304;rya&#x304;kham&#x323;d&#x323;a&#x304;nubhu&#x304;tis&#x301;is&#x323;yen&#x323;a&#x304;kham&#x323;d&#x323;a&#x304;nadamunina&#x304;viracite vivaran&#x323;atatvadi&#x304;pane prathamavarn&#x323;akam&#x323; sama&#x304;ptam // (f. 185r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins, some of it in a second scribal hand; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Manuscript was part of a larger work that included Ms. Coll. 390 Item 1019, Item 1020, Item 1021, Item 1022, Item 1023, Item 1024, and Item 1025.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Listed in H.I. Poleman, Census of Indic Manuscripts in the United States and Canada (New Haven, Conn.:  American Oriental Society, 1938), Poleman</marc:subfield>
@@ -81,16 +81,21 @@
   <marc:subfield code="a">Formerly owned by H.H. Maharaja Aditya Bahadur Dinha, L.C.S.I, who lived in Ramnagar (a district of the well known Hindu pilgrimage center of Vara&#x304;n&#x323;asi&#x304;) (from particle board supporting Ms. Coll. 390, Item 1021, at the time of sale).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Advaita.</marc:subfield>
+  <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Vedanta.</marc:subfield>
+  <marc:subfield code="a">Advaita.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Hindu philosophy.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
+  <marc:subfield code="a">Vedanta.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
@@ -101,7 +106,8 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
@@ -109,14 +115,8 @@
   <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="700">
   <marc:subfield code="a">Aditya Bahadur Dinha,</marc:subfield>
@@ -136,6 +136,10 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/6299189</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p38k74x8m</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-01</marc:subfield>

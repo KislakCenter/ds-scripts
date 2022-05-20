@@ -68,7 +68,19 @@
   <marc:subfield code="2">rdacarrier</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Copied completed on 4 Rajab 986 A.H. (September 16, 1578) by Ibra&#x304;hi&#x304;m ibn Qa&#x304;sim ibn &#x2BB;Ali&#x304; ibn Yu&#x304;suf.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications in red, some now faded to brown; tables in red and black (f. 85r, 106r, 107r, 110r, 113-114r), simple geometrical diagrams in black (126r-127r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">A leaf laid into the manuscript contains notes made in March 1939 by Rev. Peter Barsoum, pastor of the Assyrian-Apostolic Church in Worcester, Mass. He notes that an inscription on the last page indicates that the manuscript was donated by Hadji Ab-Bassim to the school (possibly the school of Bekikhan in the city of Jazir). This leaf of notes is on file in the Library.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in brown leather over pasteboard with flap (Type II). Covers have been reinforced with burlap sacking over the spine and around the foredge hinge. Back cover and flap are blind stamped with mandorla and frame. Front cover stamped section seems to have been cut out; the leather that is left is cracked and worn.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
@@ -83,18 +95,6 @@
   <marc:subfield code="a">Script: Written in naskh with some marginal notations in nasta&#x2BB;liq.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications in red, some now faded to brown; tables in red and black (f. 85r, 106r, 107r, 110r, 113-114r), simple geometrical diagrams in black (126r-127r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in brown leather over pasteboard with flap (Type II). Covers have been reinforced with burlap sacking over the spine and around the foredge hinge. Back cover and flap are blind stamped with mandorla and frame. Front cover stamped section seems to have been cut out; the leather that is left is cracked and worn.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Copied completed on 4 Rajab 986 A.H. (September 16, 1578) by Ibra&#x304;hi&#x304;m ibn Qa&#x304;sim ibn &#x2BB;Ali&#x304; ibn Yu&#x304;suf.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">A leaf laid into the manuscript contains notes made in March 1939 by Rev. Peter Barsoum, pastor of the Assyrian-Apostolic Church in Worcester, Mass. He notes that an inscription on the last page indicates that the manuscript was donated by Hadji Ab-Bassim to the school (possibly the school of Bekikhan in the city of Jazir). This leaf of notes is on file in the Library.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Forms part of the Edgar F. Smith Memorial Collection.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
@@ -107,10 +107,10 @@
   <marc:subfield code="a">Arabic; some notes in Persian.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by H&#x323;a&#x304;ji&#x304; &#x2BB;Izz al-Di&#x304;n Shi&#x304;r Bi&#x304;k al-&#x2BB;Abba&#x304;si&#x304; and donated to his school (note on f. 127v).</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Edgar F. Smith.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Edgar F. Smith.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by H&#x323;a&#x304;ji&#x304; &#x2BB;Izz al-Di&#x304;n Shi&#x304;r Bi&#x304;k al-&#x2BB;Abba&#x304;si&#x304; and donated to his school (note on f. 127v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="600">
   <marc:subfield code="a">Qazwi&#x304;ni&#x304;, &#x2BB;Ali&#x304; ibn &#x2BB;Umar,</marc:subfield>
@@ -122,14 +122,23 @@
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst01916868</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Logic</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="650">
   <marc:subfield code="a">Logic.</marc:subfield>
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst01002014</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Logic</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Tables (documents)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Early works.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">(OCoLC)fst01411636</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
@@ -145,18 +154,19 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Tables (documents)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Criticism, interpretation, etc.</marc:subfield>
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst01411635</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Early works.</marc:subfield>
-  <marc:subfield code="2">fast</marc:subfield>
-  <marc:subfield code="0">(OCoLC)fst01411636</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="6">880-05</marc:subfield>
+  <marc:subfield code="a">&#x2BB;Abba&#x304;si&#x304;, H&#x323;a&#x304;ji&#x304; &#x2BB;Izz al-Di&#x304;n Shi&#x304;r Bi&#x304;k,</marc:subfield>
+  <marc:subfield code="e">former owner</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="6">880-04</marc:subfield>
+  <marc:subfield code="a">Ibra&#x304;hi&#x304;m ibn Qa&#x304;sim ibn &#x2BB;Ali&#x304; ibn Yu&#x304;suf,</marc:subfield>
+  <marc:subfield code="e">scribe.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="700">
   <marc:subfield code="6">880-03</marc:subfield>
@@ -164,16 +174,6 @@
   <marc:subfield code="d">1203 or 1204-1276 or 1277.</marc:subfield>
   <marc:subfield code="t">Shamsi&#x304;yah.</marc:subfield>
   <marc:subfield code="k">Selections.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="700">
-  <marc:subfield code="6">880-04</marc:subfield>
-  <marc:subfield code="a">Ibra&#x304;hi&#x304;m ibn Qa&#x304;sim ibn &#x2BB;Ali&#x304; ibn Yu&#x304;suf,</marc:subfield>
-  <marc:subfield code="e">scribe.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="6">880-05</marc:subfield>
-  <marc:subfield code="a">&#x2BB;Abba&#x304;si&#x304;, H&#x323;a&#x304;ji&#x304; &#x2BB;Izz al-Di&#x304;n Shi&#x304;r Bi&#x304;k,</marc:subfield>
-  <marc:subfield code="e">former owner</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Smith, Edgar F.</marc:subfield>
@@ -188,21 +188,16 @@
   <marc:subfield code="j">Ms. Codex 41</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex41.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3707wv6p</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="880">
-  <marc:subfield code="6">100-01//r</marc:subfield>
-  <marc:subfield code="a">&#x642;&#x637;&#x628; &#x627;&#x644;&#x62A;&#x62D;&#x62A;&#x627;&#x646;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x645;&#x62D;&#x645;&#x62F;&#x60C;</marc:subfield>
-  <marc:subfield code="d">1294 &#x623;&#x648; 1295-1364 &#x623;&#x648; 1365.</marc:subfield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex41.html</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2="1" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">[&#x62A;&#x62D;&#x631;&#x64A;&#x631; &#x627;&#x644;&#x642;&#x648;&#x627;&#x639;&#x62F; &#x627;&#x644;&#x645;&#x646;&#x637;&#x642;&#x64A;&#x629; &#x641;&#x64A; &#x634;&#x631;&#x62D; &#x627;&#x644;&#x631;&#x633;&#x627;&#x644;&#x629; &#x627;&#x644;&#x634;&#x645;&#x633;&#x64A;&#x629;].</marc:subfield>
+    <marc:datafield ind1="0" ind2=" " tag="880">
+  <marc:subfield code="6">700-04//r</marc:subfield>
+  <marc:subfield code="a">&#x627;&#x628;&#x631;&#x627;&#x647;&#x64A;&#x645; &#x628;&#x646; &#x642;&#x627;&#x633;&#x645; &#x628;&#x646; &#x639;&#x644;&#x64A; &#x628;&#x646; &#x64A;&#x648;&#x633;&#x641;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="880">
   <marc:subfield code="6">700-03//r</marc:subfield>
@@ -211,9 +206,14 @@
   <marc:subfield code="t">&#x634;&#x645;&#x633;&#x64A;&#x629;.</marc:subfield>
   <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="880">
-  <marc:subfield code="6">700-04//r</marc:subfield>
-  <marc:subfield code="a">&#x627;&#x628;&#x631;&#x627;&#x647;&#x64A;&#x645; &#x628;&#x646; &#x642;&#x627;&#x633;&#x645; &#x628;&#x646; &#x639;&#x644;&#x64A; &#x628;&#x646; &#x64A;&#x648;&#x633;&#x641;.</marc:subfield>
+    <marc:datafield ind1="1" ind2="1" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">[&#x62A;&#x62D;&#x631;&#x64A;&#x631; &#x627;&#x644;&#x642;&#x648;&#x627;&#x639;&#x62F; &#x627;&#x644;&#x645;&#x646;&#x637;&#x642;&#x64A;&#x629; &#x641;&#x64A; &#x634;&#x631;&#x62D; &#x627;&#x644;&#x631;&#x633;&#x627;&#x644;&#x629; &#x627;&#x644;&#x634;&#x645;&#x633;&#x64A;&#x629;].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x642;&#x637;&#x628; &#x627;&#x644;&#x62A;&#x62D;&#x62A;&#x627;&#x646;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x645;&#x62D;&#x645;&#x62F;&#x60C;</marc:subfield>
+  <marc:subfield code="d">1294 &#x623;&#x648; 1295-1364 &#x623;&#x648; 1365.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">700-05//r</marc:subfield>

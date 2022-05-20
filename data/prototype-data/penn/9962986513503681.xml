@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>03965ctd a2200553Ia 4500</marc:leader>
+    <marc:leader>04078ctd a2200565Ia 4500</marc:leader>
     <marc:controlfield tag="001">9962986513503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131927.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025110909.0</marc:controlfield>
     <marc:controlfield tag="008">141111q17001850ii            000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn895003307</marc:subfield>
@@ -44,19 +44,19 @@
   <marc:subfield code="c">12 x 31 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from colophon (Part 1, f. 11r); title of second work Bhedadhikka&#x304;rasatkriya&#x304; from colophon (Part 2, f. 44r); alternate title of second work Bhedadhikka&#x304;rat&#x323;i&#x304;ka&#x304; from final title page (Part 2, f. 44v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Written in 13 lines per leaf.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">55 leaves foliated (Part 1) 1-11; (Part 2) 1-44, upper left and lower right verso.</marc:subfield>
+  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; some significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Colophon: iti s&#x301;ri&#x304;matparamaham&#x323;saparivra&#x304;jaka&#x304;ca&#x304;ryabhagavannr&#x323;sim&#x323;ha&#x304;s&#x301;ramas&#x301;ri&#x304;caran&#x323;aparicaran&#x323;aniratana&#x304;ra&#x304;yan&#x323;a&#x304;s&#x301;ramaviracitabhedadhikka&#x304;rasatkriya&#x304;sama&#x304;pta&#x304; // s&#x301;ri&#x304;gurubhyo namah&#x323; // s&#x301;ri&#x304;haraye namah&#x323; // (Part 2, f. 44r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; some significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
+  <marc:subfield code="a">55 leaves foliated (Part 1) 1-11; (Part 2) 1-44, upper left and lower right verso.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Written in 13 lines per leaf.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from colophon (Part 1, f. 11r); title of second work Bhedadhikka&#x304;rasatkriya&#x304; from colophon (Part 2, f. 44r); alternate title of second work Bhedadhikka&#x304;rat&#x323;i&#x304;ka&#x304; from final title page (Part 2, f. 44v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="505">
   <marc:subfield code="a">(Part 1) Bhedadhikka&#x304;ra (f. 1-11) -- (Part 2) Bhedadhikka&#x304;rasatkriya&#x304; (f. 1-44).</marc:subfield>
@@ -79,6 +79,9 @@
   <marc:subfield code="a">Formerly owned by Jana&#x304;rdan Kon&#x323;d&#x323;adeva (f. 30r). This owner is from the village of Ga&#x304;d&#x323;agi&#x304; (or Ga&#x304;d&#x323;gi&#x304;la&#x304;ya), possibly in present day Jarakhand, India (Part 2, f. 44r); the item is written by the same scribe as Item 845, Item 930, Item 931, Item 932, Item 934, Item 1001, Item 1002, and Item 2387.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Advaita.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
@@ -87,8 +90,10 @@
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Hindu philosophy.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
@@ -111,18 +116,13 @@
   <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Ga&#x304;d&#x323;agi&#x304;la, Jana&#x304;rdana Kon&#x323;d&#x323;adeva,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="700">
   <marc:subfield code="a">Na&#x304;ra&#x304;yan&#x323;a&#x304;s&#x301;rama.</marc:subfield>
   <marc:subfield code="t">Bhedadhikka&#x304;rasatkriya&#x304;.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Ga&#x304;d&#x323;agi&#x304;la, Jana&#x304;rdana Kon&#x323;d&#x323;adeva,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="740">
   <marc:subfield code="a">Bhedadhikka&#x304;rat&#x323;i&#x304;ka&#x304;.</marc:subfield>
@@ -136,6 +136,10 @@
   <marc:subfield code="a">University of Pennsylvania</marc:subfield>
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3zg41</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>

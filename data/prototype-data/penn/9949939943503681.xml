@@ -51,7 +51,7 @@
   <marc:subfield code="a">UPenn Oversize LJS 238</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Sir John Fenn, editor of the Paston Letters.</marc:subfield>
+  <marc:subfield code="a">Sold by Sam Fogg Ltd. (London) to Lawrence J. Schoenberg, Feb. 1998.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly owned by Sir Thomas Phillipps (ms. no. 33859); sold at auction at Sotheby's in a sale of part of his library (New Series, 7th Part), 14 June 1971, to Chas. J. Sawyer Ltd. (London).</marc:subfield>
@@ -60,13 +60,13 @@
   <marc:subfield code="a">Formerly owned by Mark Lansburgh (bookplate inside former binding).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Previously handled by dealer Bruce Ferrini (Akron, Oh.).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by Sam Fogg Ltd. (London) to Lawrence J. Schoenberg, Feb. 1998.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Gift of Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Sir John Fenn, editor of the Paston Letters.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Bakers</marc:subfield>
@@ -74,12 +74,12 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Bread</marc:subfield>
+  <marc:subfield code="a">Weights and measures</marc:subfield>
   <marc:subfield code="z">England</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Weights and measures</marc:subfield>
+  <marc:subfield code="a">Bread</marc:subfield>
   <marc:subfield code="z">England</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
@@ -100,9 +100,7 @@
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Phillipps, Thomas,</marc:subfield>
-  <marc:subfield code="c">Sir,</marc:subfield>
-  <marc:subfield code="d">1792-1872,</marc:subfield>
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
@@ -110,7 +108,9 @@
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="a">Phillipps, Thomas,</marc:subfield>
+  <marc:subfield code="c">Sir,</marc:subfield>
+  <marc:subfield code="d">1792-1872,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
@@ -126,13 +126,9 @@
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Oversize LJS 238</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="4" ind2="2" tag="856">
-  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4993994</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs238.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
@@ -143,8 +139,12 @@
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3v07d</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs238.html</marc:subfield>
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4993994</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

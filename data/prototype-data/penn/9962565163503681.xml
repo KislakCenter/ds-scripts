@@ -33,10 +33,10 @@
   <marc:subfield code="a">H&#x323;all al-t&#x323;ilsam wa-kashf al-sirr al-mubham</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="3" ind2=" " tag="246">
-  <marc:subfield code="a">H&#x323;all al-t&#x323;ilasm wa-kashf al-sirr al-mubham</marc:subfield>
+  <marc:subfield code="a">H&#x323;all al-t&#x323;illasm wa-kashf al-sirr al-mubham</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="3" ind2=" " tag="246">
-  <marc:subfield code="a">H&#x323;all al-t&#x323;illasm wa-kashf al-sirr al-mubham</marc:subfield>
+  <marc:subfield code="a">H&#x323;all al-t&#x323;ilasm wa-kashf al-sirr al-mubham</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="260">
   <marc:subfield code="c">A.H. 1186 (1772)</marc:subfield>
@@ -50,10 +50,10 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from introduction (f. 2r); alternate titles supplied by cataloger.</marc:subfield>
+  <marc:subfield code="a">Origin: The copy was finished on 18 Sha&#x2BB;ba&#x304;n 1186 (13 November 1772).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Contemporary foliation in Hindu-Arabic numerals in black ink, upper left recto. Later pagination also in Hindu-Arabic numerals added in pencil, lower center.</marc:subfield>
+  <marc:subfield code="a">Binding: Quarter covers with the remnants of blue paper over card; brown leather spine.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 26 long lines.</marc:subfield>
@@ -62,13 +62,13 @@
   <marc:subfield code="a">Script:  Written in informal naskh; pointed, unvocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from introduction (f. 2r); alternate titles supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Contemporary foliation in Hindu-Arabic numerals in black ink, upper left recto. Later pagination also in Hindu-Arabic numerals added in pencil, lower center.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Rubrications in red including some marginal headers. Medallions in a different red also appear in the margins, though these may be a later addition. Four leaves of modern handmade paper added to the ends when the text was rebound.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Quarter covers with the remnants of blue paper over card; brown leather spine.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: The copy was finished on 18 Sha&#x2BB;ba&#x304;n 1186 (13 November 1772).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Work on alchemy.</marc:subfield>
@@ -86,21 +86,8 @@
   <marc:subfield code="a">Acquired for the Penn Libraries with assistance from the Alumni and Friends Memorial Book Fund.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Divination</marc:subfield>
-  <marc:subfield code="x">Religious aspects</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Islamic magic</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Talismans</marc:subfield>
   <marc:subfield code="x">Religious aspects</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Alchemy</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="650">
@@ -110,14 +97,27 @@
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst00895750</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Divination</marc:subfield>
+  <marc:subfield code="x">Religious aspects</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Islamic magic</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Alchemy</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Alumni and Friends Memorial Book Fund.</marc:subfield>
@@ -133,25 +133,25 @@
   <marc:subfield code="j">Ms. Codex 1963</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3bv7b23v</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1963.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Alumni and Friends Memorial Book Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366295</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1963.html</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3bv7b23v</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x62D;&#x644; &#x627;&#x644;&#x637;&#x644;&#x633;&#x645; &#x648;&#x643;&#x634;&#x641; &#x627;&#x644;&#x633;&#x631; &#x627;&#x644;&#x645;&#x628;&#x647;&#x645;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>
   <marc:subfield code="a">&#x63A;&#x645;&#x631;&#x64A;&#x60C; &#x627;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x645;&#x62D;&#x645;&#x62F;&#x60C;</marc:subfield>
   <marc:subfield code="d">-1499 &#x623;&#x648; 1500.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">&#x62D;&#x644; &#x627;&#x644;&#x637;&#x644;&#x633;&#x645; &#x648;&#x643;&#x634;&#x641; &#x627;&#x644;&#x633;&#x631; &#x627;&#x644;&#x645;&#x628;&#x647;&#x645;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="996">
   <marc:subfield code="a">hinge-right</marc:subfield>

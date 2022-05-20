@@ -80,25 +80,25 @@
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Paper, viii + 68 + viii; [1-68].</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: Written in 2 columns of 17 lines, with additional text written diagonally in margins ruled on the top, outer, and bottom edges of the columns on each page.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script: Written in neat nasta&#x2BB;li&#x304;q script; pointed.</marc:subfield>
+  <marc:subfield code="a">Fragile; worm damage, particularly in gutters; oxidation causing long, straight cuts at the ruled margins of several leaves.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Illuminated headpiece (f. 1v); ; columns and diagonal sections in margins outlined in gold; outer margin of text block framed in gold, green, and blue; headings in red ink.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Red Morocco with blue painted frame and tooled design of circles along the frame, detached. Doublure same as board covers.</marc:subfield>
+  <marc:subfield code="a">Script: Written in neat nasta&#x2BB;li&#x304;q script; pointed.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: Written in 2 columns of 17 lines, with additional text written diagonally in margins ruled on the top, outer, and bottom edges of the columns on each page.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Written in Iran in the 16th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Fragile; worm damage, particularly in gutters; oxidation causing long, straight cuts at the ruled margins of several leaves.</marc:subfield>
+  <marc:subfield code="a">Foliation: Paper, viii + 68 + viii; [1-68].</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Red Morocco with blue painted frame and tooled design of circles along the frame, detached. Doublure same as board covers.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Lacunose 16th-century copy of a 12th-century romance about the life of Bahra&#x304;m Gu&#x304;r, a 5th-century king of Iran; its title (in English, Seven beauties or Seven images) refers to the seven princesses that Bahra&#x304;m marries, each of whom tells the king a story as part of the narrative.</marc:subfield>
@@ -110,16 +110,16 @@
   <marc:subfield code="a">Persian.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by bookseller Thomas Thorpe (London) to Sir Thomas Phillipps, ms. 10465 (stamp, first flyleaf; paper label on spine).</marc:subfield>
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2016.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold at auction at Sotheby's by the Trustees of the Robinson Trust as part of a collection of Persian, Turkish, and Arabic manuscripts owned by Sir Thomas Phillipps, 25 November 1968, lot 233, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2016.</marc:subfield>
+  <marc:subfield code="a">Sold by bookseller Thomas Thorpe (London) to Sir Thomas Phillipps, ms. 10465 (stamp, first flyleaf; paper label on spine).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
@@ -159,6 +159,20 @@
   <marc:subfield code="0">(OCoLC)fst01204889</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Romances (document genre)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">History.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">(OCoLC)fst01411628</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Fiction.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">(OCoLC)fst01423787</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Persian</marc:subfield>
   <marc:subfield code="y">16th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
@@ -169,20 +183,6 @@
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Romances (document genre)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Fiction.</marc:subfield>
-  <marc:subfield code="2">fast</marc:subfield>
-  <marc:subfield code="0">(OCoLC)fst01423787</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">History.</marc:subfield>
-  <marc:subfield code="2">fast</marc:subfield>
-  <marc:subfield code="0">(OCoLC)fst01411628</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Phillipps, Thomas,</marc:subfield>
@@ -212,12 +212,12 @@
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p39w0954n</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs422.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p39w0954n</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>

@@ -46,10 +46,16 @@
   <marc:subfield code="c">210 x 153 (144 x 80) mm. bound to 220 x 160 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Ms. codex.</marc:subfield>
+  <marc:subfield code="a">Decoration:  7-line illuminated opening initial in blue and red on a gold ground with extensions (f. 2r); 18 astronomical diagrams in red and black (f. 38r, 39v, 40v, 41r, 42r, 45r, 46r, 46v, 47r, 86v, 90r, 91v, 93r, 94v, 128r); first initials of sections alternate between red with purple flourishing and blue with red flourishing; first initials of page often enlarged and decorated, sometimes with red or blue pigment added, sometimes with faces (f. 14r-15v) or hands (f. 28v, 47v, 69r, 111v) or zoomorphic forms (dragons, f. 24r, 64r, 99r, 121r; storks or cranes, f. 71r, 119v, 127v; snake, f. 78v; wolves' or dragons' heads, f. 66r, 82r, 126v; geese, f. 49r, 120v, 130r); rubrics in red; initials touched with yellow; ascenders of top line and descenders of bottom line elongated and decorated; most catchwords enclosed in decorative frames, mostly touched with yellow, sometimes with additions in red ink (f. 8v, 16v, 22v, 30v, 38v, 46v, 50v, 54v, 62v, 70v, 78v, 86v, 94v, 102v, 110v, 118v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from opening rubric (f. 2r); title Mapemonde in caption title (f. 2r) and closing rubric (f. 130r).</marc:subfield>
+  <marc:subfield code="a">Origin:  Written in France, ca. 1400.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  16th-century calf over boards, blind-stamped and -tooled, center armorial medallion of Benoi&#x302;t de Court (3 5-pointed stars on a shield enclosed by a wreath).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Collation:  Parchment, i (16th-century paper) + 132; 1-2&#x2078; 3&#x2076; 4-5&#x2078; 6-7&#x2074; 8-17&#x2078; 18&#x2074;(+2).  Horizontal catchwords, lower center.</marc:subfield>
@@ -61,13 +67,7 @@
   <marc:subfield code="a">Script:  Written in a French hybrid script by at least 2 hands.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  7-line illuminated opening initial in blue and red on a gold ground with extensions (f. 2r); 18 astronomical diagrams in red and black (f. 38r, 39v, 40v, 41r, 42r, 45r, 46r, 46v, 47r, 86v, 90r, 91v, 93r, 94v, 128r); first initials of sections alternate between red with purple flourishing and blue with red flourishing; first initials of page often enlarged and decorated, sometimes with red or blue pigment added, sometimes with faces (f. 14r-15v) or hands (f. 28v, 47v, 69r, 111v) or zoomorphic forms (dragons, f. 24r, 64r, 99r, 121r; storks or cranes, f. 71r, 119v, 127v; snake, f. 78v; wolves' or dragons' heads, f. 66r, 82r, 126v; geese, f. 49r, 120v, 130r); rubrics in red; initials touched with yellow; ascenders of top line and descenders of bottom line elongated and decorated; most catchwords enclosed in decorative frames, mostly touched with yellow, sometimes with additions in red ink (f. 8v, 16v, 22v, 30v, 38v, 46v, 50v, 54v, 62v, 70v, 78v, 86v, 94v, 102v, 110v, 118v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  16th-century calf over boards, blind-stamped and -tooled, center armorial medallion of Benoi&#x302;t de Court (3 5-pointed stars on a shield enclosed by a wreath).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in France, ca. 1400.</marc:subfield>
+  <marc:subfield code="a">Title from opening rubric (f. 2r); title Mapemonde in caption title (f. 2r) and closing rubric (f. 130r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -83,19 +83,19 @@
   <marc:subfield code="a">Middle French.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Benoi&#x302;t le Court (binding, note of price on upper pastedown) and his son Antoine (signature Antonius Curtius Simphorianus on front flyleaf and lower pastedown, later notes in ink, f. 132v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly owned by Jehan de Gaignie&#x300;res (or Jean, Johannus in manuscript), procurator of the court of the Primate of Lyon (signature, f. 130r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by Librairie Thomas-Scheler (Paris), cat. Un Choix (1998), no. 1, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2012.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2019.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Benoi&#x302;t le Court (binding, note of price on upper pastedown) and his son Antoine (signature Antonius Curtius Simphorianus on front flyleaf and lower pastedown, later notes in ink, f. 132v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Librairie Thomas-Scheler (Paris), cat. Un Choix (1998), no. 1, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
@@ -116,20 +116,19 @@
   <marc:subfield code="a">Geography, Medieval.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="a">Diagrams.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Diagrams.</marc:subfield>
+  <marc:subfield code="a">Codices.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Illuminations.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Poems.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts, French</marc:subfield>
@@ -142,8 +141,9 @@
     <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Poems.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="700">
   <marc:subfield code="a">Gautier,</marc:subfield>
@@ -151,7 +151,8 @@
   <marc:subfield code="d">active 1245.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Court, Benoi&#x302;t de,</marc:subfield>
+  <marc:subfield code="a">Gaignie&#x300;res, Jehan de,</marc:subfield>
+  <marc:subfield code="d">16th cent.,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
@@ -160,8 +161,7 @@
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Gaignie&#x300;res, Jehan de,</marc:subfield>
-  <marc:subfield code="d">16th cent.,</marc:subfield>
+  <marc:subfield code="a">Court, Benoi&#x302;t de,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
@@ -181,24 +181,24 @@
   <marc:subfield code="j">LJS 264</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs264.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5760743</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Video orientation</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/2025259</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3p26q433</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3p26q433</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs264.html</marc:subfield>
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/2025259</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

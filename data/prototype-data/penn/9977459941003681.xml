@@ -57,6 +57,18 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Watermarks: Two watermarks. In upper corner, initials A B over a small trefoil. Centrally placed, a circle pointed on one end with an anchor in the middle.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Copy completed on the 5th of Dhu&#x304; al-Qa&#x2BB;dah in the year A.H. 1015 (March 4, 1607) (f. 174v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in brown leather over pasteboard with flap, now detached (Type II). Blind stamped and gilded central mandorla with two pendants on the vertical axis with mostly effaced gold-tooled frame. Flap has coordinating stamp and tooling. Pastedowns on boards silver stamped with repeating floral motif; other, faded, flower motifs are also visible under the silver stamps. Marbled paper pastedown on flap. Front cover detached from the spine.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications in red; headers sometimes set off by rules. Border-rules in double red.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from introduction (f. 1v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -67,18 +79,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script: Written in naskh in black ink; pointed, vocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications in red; headers sometimes set off by rules. Border-rules in double red.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in brown leather over pasteboard with flap, now detached (Type II). Blind stamped and gilded central mandorla with two pendants on the vertical axis with mostly effaced gold-tooled frame. Flap has coordinating stamp and tooling. Pastedowns on boards silver stamped with repeating floral motif; other, faded, flower motifs are also visible under the silver stamps. Marbled paper pastedown on flap. Front cover detached from the spine.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Copy completed on the 5th of Dhu&#x304; al-Qa&#x2BB;dah in the year A.H. 1015 (March 4, 1607) (f. 174v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Watermarks: Two watermarks. In upper corner, initials A B over a small trefoil. Centrally placed, a circle pointed on one end with an anchor in the middle.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="506">
   <marc:subfield code="a">Access to this item is subject to staff review.</marc:subfield>
@@ -96,25 +96,25 @@
   <marc:subfield code="a">Acquired for the libraries from Luzac and Co. (London, England), 1910.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Hanafites</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Islamic law</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Hanafites</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic,</marc:subfield>
-  <marc:subfield code="y">17th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
+  <marc:subfield code="a">Blind tooled (decoration)</marc:subfield>
+  <marc:subfield code="2">lobt</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Blind tooled (decoration)</marc:subfield>
-  <marc:subfield code="2">lobt</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Arabic,</marc:subfield>
+  <marc:subfield code="y">17th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>

@@ -62,6 +62,18 @@
   <marc:subfield code="2">rdacarrier</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: The item is not dated, but likely copied in the 18th century, probably in North Africa.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script: Written in maghribi script in brown ink by at least two different hands; pointed, unvocalized.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: The body of the book is completely detached from the leather cover. This cover does not appear ever to have been bound onto the book, but is wrapped around it to give the appearance of a bound volume. The covers are brown leather with flap (Type II) with blind tooled frames and edging around a blind stamped red onlay central mandorla on front, back, and flap. Foredge hinge doublure is red leather.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications in red. One table (f. 72v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from introduction (f. 1r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -69,18 +81,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 25-27 long lines.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script: Written in maghribi script in brown ink by at least two different hands; pointed, unvocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications in red. One table (f. 72v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: The body of the book is completely detached from the leather cover. This cover does not appear ever to have been bound onto the book, but is wrapped around it to give the appearance of a bound volume. The covers are brown leather with flap (Type II) with blind tooled frames and edging around a blind stamped red onlay central mandorla on front, back, and flap. Foredge hinge doublure is red leather.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: The item is not dated, but likely copied in the 18th century, probably in North Africa.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Watermarks: Centrally positioned, cross inside pointed oval with vegetal motifs on either side over the initial C in a circle over another circle.</marc:subfield>
@@ -118,6 +118,18 @@
   <marc:subfield code="0">(OCoLC)fst00812341</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Tables (documents)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Envelope flaps (features)</marc:subfield>
+  <marc:subfield code="2">lobt</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Onlays.</marc:subfield>
+  <marc:subfield code="2">lobt</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
@@ -130,34 +142,22 @@
   <marc:subfield code="a">Commentaries.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Tables (documents)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Onlays.</marc:subfield>
-  <marc:subfield code="2">lobt</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Envelope flaps (features)</marc:subfield>
-  <marc:subfield code="2">lobt</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="700">
-  <marc:subfield code="6">880-04</marc:subfield>
-  <marc:subfield code="a">Ibn Ma&#x304;lik, Muh&#x323;ammad ibn &#x2BB;Abd Alla&#x304;h,</marc:subfield>
-  <marc:subfield code="d">-1274.</marc:subfield>
-  <marc:subfield code="t">Alfi&#x304;yah.</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
+  <marc:subfield code="c">Jr.,</marc:subfield>
+  <marc:subfield code="d">1861-1921,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Jastrow, Marcus,</marc:subfield>
   <marc:subfield code="d">1829-1903,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
-  <marc:subfield code="c">Jr.,</marc:subfield>
-  <marc:subfield code="d">1861-1921,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1="1" ind2="2" tag="700">
+  <marc:subfield code="6">880-04</marc:subfield>
+  <marc:subfield code="a">Ibn Ma&#x304;lik, Muh&#x323;ammad ibn &#x2BB;Abd Alla&#x304;h,</marc:subfield>
+  <marc:subfield code="d">-1274.</marc:subfield>
+  <marc:subfield code="t">Alfi&#x304;yah.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
@@ -173,15 +173,6 @@
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p31j97f2x</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="880">
-  <marc:subfield code="6">100-01//r</marc:subfield>
-  <marc:subfield code="a">&#x645;&#x643;&#x648;&#x62F;&#x64A;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x631;&#x62D;&#x645;&#x646; &#x628;&#x646; &#x639;&#x644;&#x64A;&#x60C;</marc:subfield>
-  <marc:subfield code="d">-1404 &#x623;&#x648;  1405.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">&#x634;&#x631;&#x62D; &#x645;&#x62E;&#x62A;&#x635;&#x631; &#x639;&#x644;&#x649; &#x623;&#x644;&#x641;&#x64A;&#x629; &#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="1" ind2="4" tag="880">
   <marc:subfield code="6">600-03//r</marc:subfield>
   <marc:subfield code="a">&#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647;&#x60C;</marc:subfield>
@@ -193,6 +184,15 @@
   <marc:subfield code="a">&#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647;&#x60C;</marc:subfield>
   <marc:subfield code="d">-1274.</marc:subfield>
   <marc:subfield code="t">&#x623;&#x644;&#x641;&#x64A;&#x629;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x634;&#x631;&#x62D; &#x645;&#x62E;&#x62A;&#x635;&#x631; &#x639;&#x644;&#x649; &#x623;&#x644;&#x641;&#x64A;&#x629; &#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x645;&#x643;&#x648;&#x62F;&#x64A;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x631;&#x62D;&#x645;&#x646; &#x628;&#x646; &#x639;&#x644;&#x64A;&#x60C;</marc:subfield>
+  <marc:subfield code="d">-1404 &#x623;&#x648;  1405.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="950">
   <marc:subfield code="l">PAUR</marc:subfield>

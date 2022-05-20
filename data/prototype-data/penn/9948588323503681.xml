@@ -51,13 +51,19 @@
   <marc:subfield code="c">320 x 210 (215 x 115) mm. bound to 323 x 230 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Ms. codex.</marc:subfield>
+  <marc:subfield code="a">Collation:  Paper, 285; 1&#xB9;&#x2070;(-2) 2&#xB9;&#x2070; 3&#x2078; 4-8&#xB9;&#x2070; 9&#xB9;&#x2070;(-8) 10&#xB9;&#x2070;(-1) 11&#xB9;&#x2070; 12&#xB9;&#x2070;(-4) 13&#xB9;&#x2070;(-2) 14&#xB9;&#x2070; 15&#xB9;&#x2070;(-1) 16&#xB9;&#x2070;(-1) 17&#xB9;&#x2070;(-4) 18-20&#xB9;&#x2070; 21&#xB9;&#x2070;(-2) 22&#xB9;&#x2070;(-2) 23-26&#xB9;&#x2070; 27&#xB9;&#x2070;(-1) 28&#xB9;&#x2070; 29&#xB9;&#x2070;(-3) 30&#xB9;&#x2070;(-1) 31&#x2078; 32&#xB9;&#x2070;(-6?); [i-xxvi], 1-52, 61-83, 88-92, 94, 96-111, 113-129, 131-133, 138-174, 177-186, 188-189, 191-238, 240-252, 254-255, 258-262, 264-270, [271-282]; contemporary foliation in ink, upper right recto; gatherings 4-29 signed A-I, K-T, V-Z, Z, a; catchwords on the last lower left verso of each gathering except for gatherings 3-4, 9 (leaf missing), 16 (leaf missing), 22 (leaf missing), and 29-32 (blank).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Limp parchment.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in southeast Germany, perhaps Cham, after 1562 (later note, f. i recto; title page, f. ii recto; added note, f. 265r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Collation:  Paper, 285; 1&#xB9;&#x2070;(-2) 2&#xB9;&#x2070; 3&#x2078; 4-8&#xB9;&#x2070; 9&#xB9;&#x2070;(-8) 10&#xB9;&#x2070;(-1) 11&#xB9;&#x2070; 12&#xB9;&#x2070;(-4) 13&#xB9;&#x2070;(-2) 14&#xB9;&#x2070; 15&#xB9;&#x2070;(-1) 16&#xB9;&#x2070;(-1) 17&#xB9;&#x2070;(-4) 18-20&#xB9;&#x2070; 21&#xB9;&#x2070;(-2) 22&#xB9;&#x2070;(-2) 23-26&#xB9;&#x2070; 27&#xB9;&#x2070;(-1) 28&#xB9;&#x2070; 29&#xB9;&#x2070;(-3) 30&#xB9;&#x2070;(-1) 31&#x2078; 32&#xB9;&#x2070;(-6?); [i-xxvi], 1-52, 61-83, 88-92, 94, 96-111, 113-129, 131-133, 138-174, 177-186, 188-189, 191-238, 240-252, 254-255, 258-262, 264-270, [271-282]; contemporary foliation in ink, upper right recto; gatherings 4-29 signed A-I, K-T, V-Z, Z, a; catchwords on the last lower left verso of each gathering except for gatherings 3-4, 9 (leaf missing), 16 (leaf missing), 22 (leaf missing), and 29-32 (blank).</marc:subfield>
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout:  Written in 22-25 long lines; left vertical bounding line made by folding (giving each leaf 2 folds, with only one being used on each side as the left margin).</marc:subfield>
@@ -70,12 +76,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Watermarks:  Briquet Armoiries 1242 (Vienna, 1566, with variations in southern Germany 1573-1599); Briquet Lettre P 8880 (Prague, 1558, with variations in Austria and southern Germany, 1543-1576), and a coat of arms containing a turret, supported by griffins rampant.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  Limp parchment.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in southeast Germany, perhaps Cham, after 1562 (later note, f. i recto; title page, f. ii recto; added note, f. 265r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -91,13 +91,13 @@
   <marc:subfield code="a">German.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2019.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold at auction at Sotheby's, 21 May 1998, lot 40, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2019.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Artillery</marc:subfield>
@@ -119,16 +119,16 @@
   <marc:subfield code="a">Paintings (visual works)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Treatises.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts, German</marc:subfield>
   <marc:subfield code="y">16th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Treatises.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Ganser, Georg,</marc:subfield>
@@ -148,8 +148,12 @@
   <marc:subfield code="j">Oversize LJS 254</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4858832</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3222r66r</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">Unique at Penn blog post</marc:subfield>
+  <marc:subfield code="u">https://repository.upenn.edu/uniqueatpenn/6/</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
@@ -159,13 +163,9 @@
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="4" ind2="2" tag="856">
-  <marc:subfield code="3">Unique at Penn blog post</marc:subfield>
-  <marc:subfield code="u">https://repository.upenn.edu/uniqueatpenn/6/</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3222r66r</marc:subfield>
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4858832</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>

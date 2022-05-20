@@ -65,15 +65,6 @@
   <marc:subfield code="2">rdacarrier</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: 24 long lines.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script: Written in maghribi in brown ink; pointed, unvocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -84,6 +75,15 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Item is undated, but an owner's note says the copy was purchased in 1226 A.H. (1811) (f. 1r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: 24 long lines.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="506">
   <marc:subfield code="a">Access to this item is subject to staff review.</marc:subfield>
@@ -115,6 +115,16 @@
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst01363458</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="650">
+  <marc:subfield code="a">Malikites.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">(OCoLC)fst01006724</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="650">
+  <marc:subfield code="a">Islamic law.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">(OCoLC)fst00979949</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Islamic law</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
@@ -123,15 +133,9 @@
   <marc:subfield code="a">Malikites</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="650">
-  <marc:subfield code="a">Islamic law.</marc:subfield>
-  <marc:subfield code="2">fast</marc:subfield>
-  <marc:subfield code="0">(OCoLC)fst00979949</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="650">
-  <marc:subfield code="a">Malikites.</marc:subfield>
-  <marc:subfield code="2">fast</marc:subfield>
-  <marc:subfield code="0">(OCoLC)fst01006724</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
@@ -142,22 +146,18 @@
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1="0" ind2="2" tag="700">
+  <marc:subfield code="6">880-04</marc:subfield>
+  <marc:subfield code="a">Khali&#x304;l ibn Ish&#x323;a&#x304;q al-Jundi&#x304;,</marc:subfield>
+  <marc:subfield code="d">-1365?</marc:subfield>
+  <marc:subfield code="t">Mukhtas&#x323;ar.</marc:subfield>
+  <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="700">
   <marc:subfield code="6">880-03</marc:subfield>
   <marc:subfield code="a">Zurqa&#x304;ni&#x304;, &#x2BB;Abd al-Ba&#x304;qi&#x304; ibn Yu&#x304;suf,</marc:subfield>
   <marc:subfield code="d">1611-1688.</marc:subfield>
   <marc:subfield code="t">Sharh&#x323; Mukhtas&#x323;ar Khali&#x304;l.</marc:subfield>
-  <marc:subfield code="k">Selections.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2="2" tag="700">
-  <marc:subfield code="6">880-04</marc:subfield>
-  <marc:subfield code="a">Khali&#x304;l ibn Ish&#x323;a&#x304;q al-Jundi&#x304;,</marc:subfield>
-  <marc:subfield code="d">-1365?</marc:subfield>
-  <marc:subfield code="t">Mukhtas&#x323;ar.</marc:subfield>
   <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
@@ -179,10 +179,12 @@
   <marc:subfield code="a">&#x628;&#x646;&#x627;&#x646;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x627;&#x644;&#x62D;&#x633;&#x646;&#x60C;</marc:subfield>
   <marc:subfield code="d">1720 &#x623;&#x648; 1721-1780.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2="3" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">[&#x627;&#x644;&#x641;&#x62A;&#x62D; &#x627;&#x644;&#x631;&#x628;&#x627;&#x646;&#x64A; &#x641;&#x64A;&#x645;&#x627; &#x630;&#x647;&#x644; &#x639;&#x646;&#x647; &#x627;&#x644;&#x632;&#x631;&#x642;&#x627;&#x646;&#x64A;.</marc:subfield>
-  <marc:subfield code="n">&#x627;&#x644;&#x645;&#x62C;&#x644;&#x62F; &#x627;&#x644;&#x62B;&#x627;&#x646;&#x64A;].</marc:subfield>
+    <marc:datafield ind1="0" ind2="2" tag="880">
+  <marc:subfield code="6">700-04//r</marc:subfield>
+  <marc:subfield code="a">&#x62E;&#x644;&#x64A;&#x644; &#x628;&#x646; &#x627;&#x633;&#x62D;&#x627;&#x642; &#x627;&#x644;&#x62C;&#x646;&#x62F;&#x64A;&#x60C;</marc:subfield>
+  <marc:subfield code="d">-1365&#x61F;</marc:subfield>
+  <marc:subfield code="t">&#x645;&#x62E;&#x62A;&#x635;&#x631;.</marc:subfield>
+  <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="880">
   <marc:subfield code="6">700-03//r</marc:subfield>
@@ -191,12 +193,10 @@
   <marc:subfield code="t">&#x634;&#x631;&#x62D; &#x645;&#x62E;&#x62A;&#x635;&#x631; &#x62E;&#x644;&#x64A;&#x644;.</marc:subfield>
   <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="0" ind2="2" tag="880">
-  <marc:subfield code="6">700-04//r</marc:subfield>
-  <marc:subfield code="a">&#x62E;&#x644;&#x64A;&#x644; &#x628;&#x646; &#x627;&#x633;&#x62D;&#x627;&#x642; &#x627;&#x644;&#x62C;&#x646;&#x62F;&#x64A;&#x60C;</marc:subfield>
-  <marc:subfield code="d">-1365&#x61F;</marc:subfield>
-  <marc:subfield code="t">&#x645;&#x62E;&#x62A;&#x635;&#x631;.</marc:subfield>
-  <marc:subfield code="k">Selections.</marc:subfield>
+    <marc:datafield ind1="1" ind2="3" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">[&#x627;&#x644;&#x641;&#x62A;&#x62D; &#x627;&#x644;&#x631;&#x628;&#x627;&#x646;&#x64A; &#x641;&#x64A;&#x645;&#x627; &#x630;&#x647;&#x644; &#x639;&#x646;&#x647; &#x627;&#x644;&#x632;&#x631;&#x642;&#x627;&#x646;&#x64A;.</marc:subfield>
+  <marc:subfield code="n">&#x627;&#x644;&#x645;&#x62C;&#x644;&#x62F; &#x627;&#x644;&#x62B;&#x627;&#x646;&#x64A;].</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="950">
   <marc:subfield code="l">PAUR</marc:subfield>

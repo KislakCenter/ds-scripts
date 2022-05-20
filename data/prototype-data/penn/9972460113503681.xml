@@ -49,25 +49,25 @@
   <marc:subfield code="c">300 x 180 (210 x 110) mm bound to 308 x 190 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from incipit (f. 1r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 15 long lines, border-ruled.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script: Written in nasta&#x2BB;liq in black ink; pointed.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Textblock is border-ruled in green, beige, red, and blue with the page-opening ruled in blue. Rubrications in red. The first opening has two polychrome and gold miniatures and the text in cloudbands (f. 1v-2r). Nine other miniatures in bright, primary colors also appear (f. 4v, 31r, 34v, 42v, 48v, 63v, 77v, 96v, 126r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: The copy is not dated, but likely produced in the first half of the 19th century, in India.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from incipit (f. 1r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script: Written in nasta&#x2BB;liq in black ink; pointed.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding: Papier-ma&#x302;che&#x301;&#x301; covers painted and lacquered with a flowering tree within a polylobed arch on exteriors and doublures. Exterior cover trees are on a green background with yellow arch and orange frame; doublure trees are on an orange background with yellow arch and green frame. A piece of bright blue textile embroidered with white thread covers the spine.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: The copy is not dated, but likely produced in the first half of the 19th century, in India.</marc:subfield>
+  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Copy of selections from the Vis&#x323;n&#x323;u Pura&#x304;n&#x323;a translated into Persian. Eleven images including avata&#x304;rs of Vis&#x323;n&#x323;u.</marc:subfield>
@@ -79,10 +79,15 @@
   <marc:subfield code="a">Persian.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Franc&#x327;oise and Claude Bourelier.</marc:subfield>
+  <marc:subfield code="a">Sold by Sam Fogg Rare Books &amp; Manuscripts (London), 2016.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by Sam Fogg Rare Books &amp; Manuscripts (London), 2016.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Franc&#x327;oise and Claude Bourelier.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="650">
+  <marc:subfield code="a">Hindu mythology.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">(OCoLC)fst01729920</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Vishnu (Hindu deity)</marc:subfield>
@@ -99,14 +104,13 @@
   <marc:subfield code="0">(OCoLC)fst01429828</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="650">
-  <marc:subfield code="a">Hindu mythology.</marc:subfield>
-  <marc:subfield code="2">fast</marc:subfield>
-  <marc:subfield code="0">(OCoLC)fst01729920</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="650">
   <marc:subfield code="a">Vishnu (Hindu deity)</marc:subfield>
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst01167831</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Persian</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Poems.</marc:subfield>
@@ -115,14 +119,6 @@
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Paintings (visual works)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Miniatures (paintings)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Persian</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts</marc:subfield>
@@ -135,12 +131,16 @@
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst01424060</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Bourelier, Franc&#x327;oise,</marc:subfield>
-  <marc:subfield code="e">former owner</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Miniatures (paintings)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Bourelier, Claude,</marc:subfield>
+  <marc:subfield code="e">former owner</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Bourelier, Franc&#x327;oise,</marc:subfield>
   <marc:subfield code="e">former owner</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
@@ -154,12 +154,12 @@
   <marc:subfield code="j">Ms. Indic 6</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/msindic6.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3t14tw1c</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/msindic6.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-01//r</marc:subfield>

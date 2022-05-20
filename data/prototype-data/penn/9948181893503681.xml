@@ -55,7 +55,16 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Florence after 1539 (f. 2v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Parchment wrapper formed from a leaf of a 14th-century register of the commune of Florence, with stubs of 2 pairs of ties; a madrigal by Petrarch (Or vedi, Amor...) is written on the upper cover.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from caption titles (f. 3r, 26v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in an italic script in the hand of Marchiono de Marchioni (f. iii recto).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Collation:  Paper, 60 + 1 loose diagram; 1&#x2074; 2-4&#xB9;&#x2076; 5-6&#x2074;; [i-iv], 1-15, [16], 17, [18-23], 24, [25-56]; contemporary foliation in ink, modern foliation in pencil, upper right recto.</marc:subfield>
@@ -64,28 +73,19 @@
   <marc:subfield code="a">Layout:  Written in 22-24 long lines.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in an italic script in the hand of Marchiono de Marchioni (f. iii recto).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration:  6 diagrams and drawings of arrangements of numbers or shapes on grids (f. 18r, 30v, 33v, 35v, 36r, 1 loose); 1 small marginal diagram (f. 3r); later sketches in pastel of faces in profile (f. ii verso-iii recto); red initials and rubrics in red with occasional blue initials throughout.  Diagrams are very fragile due to oxidation.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  Parchment wrapper formed from a leaf of a 14th-century register of the commune of Florence, with stubs of 2 pairs of ties; a madrigal by Petrarch (Or vedi, Amor...) is written on the upper cover.</marc:subfield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.46v-51r: Richimimachia.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in Florence after 1539 (f. 2v).</marc:subfield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.26v-46r: Dialogo sopra la particolare dichiaratione del giuoco di Pitagora inter locutori Carlo Strozzi, Cosimo Rucellai, et Iacopo Vettori / [Carlo Strozzi]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">1. f.1r-2v: [Letter from Benedetto Varchi to Luca Martini] / Benedetto Varchi.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">2. f.3r-26r: Trattato delle proportioni et proportionalita&#x300; / [Benedetto Varchi]</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">3. f.26v-46r: Dialogo sopra la particolare dichiaratione del giuoco di Pitagora inter locutori Carlo Strozzi, Cosimo Rucellai, et Iacopo Vettori / [Carlo Strozzi]</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">4. f.46v-51r: Richimimachia.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="506">
   <marc:subfield code="a">Access to this item is subject to staff review.</marc:subfield>
@@ -104,22 +104,22 @@
   <marc:subfield code="a">Italian with a short section in Latin (f. 49r-49v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Early ownership inscription without full name (Hic liber est mei Marci Antonii, f. i recto).</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Giannalisa Feltrinelli (bookplate, inside upper cover and inside case).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly in the Bibliotheca Bardi-Serzelli, in Pelago, east of Florence (19th-century (?) bookplate, inside upper cover).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Giannalisa Feltrinelli (bookplate, inside upper cover and inside case).</marc:subfield>
+  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2019.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Early ownership inscription without full name (Hic liber est mei Marci Antonii, f. i recto).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold at auction at Christie's in Part 2 of the sale of the Feltrinelli collection, 3 Dec. 1997, lot 220, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Gift of Barbara Brizdle Schoenberg, 2019.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="600">
   <marc:subfield code="a">Martini, Luca.</marc:subfield>
@@ -145,9 +145,8 @@
   <marc:subfield code="a">Diagrams.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Dialogues.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Treatises.</marc:subfield>
@@ -161,20 +160,21 @@
   <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
   <marc:subfield code="y">16th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Dialogues.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Strozzi, Carlo,</marc:subfield>
-  <marc:subfield code="d">1517-</marc:subfield>
+  <marc:subfield code="a">Feltrinelli, Giannalisa,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Marchioni, Marchiono de,</marc:subfield>
   <marc:subfield code="e">scribe.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Feltrinelli, Giannalisa,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+  <marc:subfield code="a">Strozzi, Carlo,</marc:subfield>
+  <marc:subfield code="d">1517-</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
@@ -190,12 +190,16 @@
   <marc:subfield code="j">LJS 232</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4818189</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs232.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/2025254</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4818189</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
@@ -204,10 +208,6 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3c95d</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs232.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

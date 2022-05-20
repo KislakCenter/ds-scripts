@@ -46,25 +46,25 @@
   <marc:subfield code="c">207 x 133 (130 x 66) mm bound to 207 x 133 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Ms. codex.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from introduction (f. 6v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern foliation in pencil added, upper left recto; catchwords on every verso, lower left.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: 11 long lines, border-ruled.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in naskh in black ink; pointed and vocalized. Burdah selections in nasta&#x2BB;liq in black ink; pointed.</marc:subfield>
+  <marc:subfield code="a">Binding: Lacquered red paper over pasteboard (Type III) with gilt paper inlays on a central medallion and two pendants on the vertical axis, with a blind stamped frame. The central medallion is embossed with the binder's name and a formula of humility: al-&#x2BB;abd al-h&#x323;aqi&#x304;r Haki&#x304;m Mulla&#x304; Khawa&#x304;jah Sah&#x323;h&#x323;a&#x304;f. Marbled paper doublure. Green leather spine.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Polychrome headpieces in blue, yellow, gold, red, and green over text on first opening (f. 5v-6r); full page polychrome illustrations of the mosque at Mecca (f. 17v) and the Rawd&#x323;ah at Medina (f.18r); textblock is gold sprinkled and bordered in blue, red, and gold rules; gold roundels punctuate text. Rubrications in red. Page-opening ruled in blue and gold.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Lacquered red paper over pasteboard (Type III) with gilt paper inlays on a central medallion and two pendants on the vertical axis, with a blind stamped frame. The central medallion is embossed with the binder's name and a formula of humility: al-&#x2BB;abd al-h&#x323;aqi&#x304;r Haki&#x304;m Mulla&#x304; Khawa&#x304;jah Sah&#x323;h&#x323;a&#x304;f. Marbled paper doublure. Green leather spine.</marc:subfield>
+  <marc:subfield code="a">Foliation: Modern foliation in pencil added, upper left recto; catchwords on every verso, lower left.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in naskh in black ink; pointed and vocalized. Burdah selections in nasta&#x2BB;liq in black ink; pointed.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: 11 long lines, border-ruled.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from introduction (f. 6v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Copied in 1295 A.H. (1878) (f. 126r).</marc:subfield>
@@ -101,21 +101,12 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="651">
-  <marc:subfield code="a">Mecca (Saudi Arabia)</marc:subfield>
-  <marc:subfield code="v">Pictorial works.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="651">
   <marc:subfield code="a">Medina (Saudi Arabia)</marc:subfield>
   <marc:subfield code="v">Pictorial works.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="651">
+  <marc:subfield code="a">Mecca (Saudi Arabia)</marc:subfield>
+  <marc:subfield code="v">Pictorial works.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Illuminations (painting)</marc:subfield>
@@ -129,18 +120,27 @@
   <marc:subfield code="a">Prayers (literary works)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="700">
-  <marc:subfield code="6">880-04</marc:subfield>
-  <marc:subfield code="a">Bu&#x304;s&#x323;i&#x304;ri&#x304;, Sharaf al-Di&#x304;n Muh&#x323;ammad ibn Sa&#x2BB;i&#x304;d,</marc:subfield>
-  <marc:subfield code="d">1213?-1296?</marc:subfield>
-  <marc:subfield code="t">Burdah,</marc:subfield>
-  <marc:subfield code="k">Selections.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Block, Gordon A.,</marc:subfield>
   <marc:subfield code="c">Jr.,</marc:subfield>
   <marc:subfield code="d">1914-1973,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="2" tag="700">
+  <marc:subfield code="6">880-04</marc:subfield>
+  <marc:subfield code="a">Bu&#x304;s&#x323;i&#x304;ri&#x304;, Sharaf al-Di&#x304;n Muh&#x323;ammad ibn Sa&#x2BB;i&#x304;d,</marc:subfield>
+  <marc:subfield code="d">1213?-1296?</marc:subfield>
+  <marc:subfield code="t">Burdah,</marc:subfield>
+  <marc:subfield code="k">Selections.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
@@ -149,25 +149,17 @@
   <marc:subfield code="j">Ms. Codex 1910</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1910.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3wh2dm7d</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1910.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>
   <marc:subfield code="a">&#x62C;&#x632;&#x648;&#x644;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x633;&#x644;&#x64A;&#x645;&#x627;&#x646;&#x60C;</marc:subfield>
   <marc:subfield code="d">-1465.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">240-02//r</marc:subfield>
-  <marc:subfield code="a">&#x62F;&#x644;&#x627;&#x626;&#x644; &#x627;&#x644;&#x62E;&#x64A;&#x631;&#x627;&#x62A;.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">245-03//r</marc:subfield>
-  <marc:subfield code="a">&#x62F;&#x644;&#x627;&#x626;&#x644; &#x627;&#x644;&#x62E;&#x64A;&#x631;&#x627;&#x62A; &#x648; &#x634;&#x648;&#x627;&#x631;&#x642; &#x627;&#x644;&#x627;&#x646;&#x648;&#x627;&#x631; &#x641;&#x64A; &#x630;&#x643;&#x631; &#x627;&#x644;&#x635;&#x644;&#x648;&#x629; &#x639;&#x644;&#x649; &#x627;&#x644;&#x646;&#x628;&#x64A; &#x627;&#x644;&#x645;&#x62E;&#x62A;&#x627;&#x631;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="880">
   <marc:subfield code="6">700-04//r</marc:subfield>
@@ -175,6 +167,14 @@
   <marc:subfield code="d">1213&#x61F; -1296&#x61F;</marc:subfield>
   <marc:subfield code="t">&#x628;&#x631;&#x62F;&#x629;&#x60C;</marc:subfield>
   <marc:subfield code="k">Selections.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-03//r</marc:subfield>
+  <marc:subfield code="a">&#x62F;&#x644;&#x627;&#x626;&#x644; &#x627;&#x644;&#x62E;&#x64A;&#x631;&#x627;&#x62A; &#x648; &#x634;&#x648;&#x627;&#x631;&#x642; &#x627;&#x644;&#x627;&#x646;&#x648;&#x627;&#x631; &#x641;&#x64A; &#x630;&#x643;&#x631; &#x627;&#x644;&#x635;&#x644;&#x648;&#x629; &#x639;&#x644;&#x649; &#x627;&#x644;&#x646;&#x628;&#x64A; &#x627;&#x644;&#x645;&#x62E;&#x62A;&#x627;&#x631;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">240-02//r</marc:subfield>
+  <marc:subfield code="a">&#x62F;&#x644;&#x627;&#x626;&#x644; &#x627;&#x644;&#x62E;&#x64A;&#x631;&#x627;&#x62A;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="948">
   <marc:subfield code="h">HELD BY PAU - 0 OTHER HOLDINGS</marc:subfield>
