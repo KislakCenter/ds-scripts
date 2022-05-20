@@ -25,9 +25,9 @@ class DSConvertCLI < Thor
   option :'holdings-file', banner: 'FILE', desc: 'Associated Holdings File (if separate from records)', aliases: '-f'
   def marc *files
     return false unless validate_args files
-    inst_qid = DS.find_qid options[:institution]
+    inst_qid = DS::Institutions.find_qid options[:institution]
     abort "Not a known institution: #{options[:institution]}" unless inst_qid
-    preferred_name = DS.preferred_inst_name options[:institution]
+    preferred_name = DS::Institutions.preferred_name options[:institution]
     holdings_file = File.open(options[:'holdings-file']) { |f| Nokogiri::XML(f) } unless options[:'holdings-file'].nil?
     timestamp = DS.timestamp
 
@@ -165,7 +165,7 @@ class DSConvertCLI < Thor
 
       source_type                        = 'digital-scriptorium'
       holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
-      holding_institution                = DS::INSTITUTION_NAMES_TO_QID.fetch holding_institution_as_recorded, ''
+      holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
       holding_institution_id_number      = DS::DS10.extract_institution_id xml
       link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
       production_place_as_recorded       = DS::DS10.extract_production_place xml
@@ -278,7 +278,7 @@ class DSConvertCLI < Thor
 
       source_type                        = 'openn-tei'
       holding_institution_as_recorded    = xml.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
-      holding_institution                = DS::INSTITUTION_NAMES_TO_QID.fetch holding_institution_as_recorded, ''
+      holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
       holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
       link_to_holding_institution_record = xml.xpath('//altIdentifier[@type="resource"][1]').text.strip
       production_place_as_recorded       = xml.xpath('//origPlace/text()').map(&:to_s).join '|'
