@@ -2,12 +2,14 @@ require_relative 'recon/names'
 require_relative 'recon/places'
 require_relative 'recon/subjects'
 require_relative 'recon/genres'
+require_relative 'constants'
 require 'git'
 require 'logger'
 require 'csv'
 require 'ostruct'
 
 module Recon
+  # include DS::Constants
   def self.update!
     data_dir = File.join DS.root, 'data'
     repo_name = Settings.recon.git_local_name
@@ -33,20 +35,16 @@ module Recon
     end
   end
 
-  def self.look_up set_name, subset: nil, key:, column:
-    recon_set = find_set set_name, subset: subset
+  def self.look_up set_name, subset: nil, value:, column:
+    recon_set = find_set set_name
+    key = build_key value, subset
     return unless recon_set.include? key
     recon_set.dig key, column
   end
 
-  @@reconciliations = {}
-  def self.find_set set_name, subset: nil
-    load_set set_name unless @@reconciliations.include? set_name
-    return @@reconciliations[set_name] unless subset
-
-    set_config = Settings.recon.sets.find { |s| s.name == set_name }
-    subset_column = set_config.subset_column
-    @@reconciliations[set_name].select { |value,row| row[subset_column] = subset }
+  def self.find_set set_name
+    @@reconciliations ||= {}
+    @@reconciliations[set_name] ||= load_set set_name
   end
 
   def self.recon_repo
@@ -60,11 +58,32 @@ module Recon
     csv_file = File.join recon_repo, set_config['repo_path']
     raise "Could not find CSV for set #{set_name}: #{csv_file}" unless File.exist? csv_file
 
-    key_column = set_config['key_column']
     data = {}
     CSV.foreach csv_file, headers: true do |row|
-      data[row[key_column]] = OpenStruct.new row.to_h
+      struct        = OpenStruct.new row.to_h
+      key_column    = set_config['key_column']
+      subset_column = set_config['subset_column']
+      value         = row[key_column]
+      subset        = subset_column ? row[subset_column] : ''
+      key           = build_key(value, subset)
+      data[key]     = struct
     end
-    @@reconciliations[set_name] = data
+    add_alt_keys data
+    data
+  end
+
+  def self.add_alt_keys data
+    data.keys.each do |key|
+      value, subset = key.split '$$'
+      next unless value =~ DS::TRAILING_PUNCTUATION_RE
+      alt_value = value.sub DS::TRAILING_PUNCTUATION_RE, ''
+      alt_key = build_key alt_value, subset
+      next if data.include? alt_key
+      data[alt_key] = data[key]
+    end
+  end
+
+  def self.build_key value, subset
+    "#{value}$$#{subset}"
   end
 end

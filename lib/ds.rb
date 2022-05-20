@@ -50,7 +50,8 @@ module DS
       return normal if terminator.nil?
 
       # terminator is present; append it after any removing trailing whitespace and punctuation
-      "#{normal.sub(%r{[,.:!?;[:space:]]+$}, '').strip}#{terminator}"
+      # "#{normal.sub(%r{[,.:!?;[:space:]]+$}, '').strip}#{terminator}"
+      "#{normal.sub(DS::TRAILING_PUNCTUATION_RE, '').strip}#{terminator}"
     end
 
     ##
