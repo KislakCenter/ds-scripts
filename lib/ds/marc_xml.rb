@@ -382,17 +382,11 @@ module DS
         "Extent: #{DS.clean_string phys_desc, terminator: '.'}" unless phys_desc.strip.empty?
       end
 
-      # We don't have a good way to look these up, so I'm hard-coding the addresses.
-      # TODO: Make IIIF manifest mapping configurable or dynamic
-      IIIF_MANIFESTS = {
-        '9947675343503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3k649t48/manifest',
-        '9947675343503681-test' => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3k649t48/manifest',
-        '9950569233503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3zm0w/manifest',
-        '9952666523503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p37w6764x/manifest',
-        '9959647633503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3mp74/manifest',
-        '9965025663503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3h00n/manifest',
-        '9976106713503681'      => 'https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3n29p909/manifest',
-      }
+      # TODO: This CSV is a stopgap; find a more sustainable solution
+      IIIF_CSV = File.join(__dir__, 'data/iiif_manifests.csv')
+      IIIF_MANIFESTS = CSV.readlines(IIIF_CSV, headers: true).inject({}) { |h,row|
+        h.merge(row['mmsid'] => row['iiif_manifest_url'])
+      }.freeze
 
       def find_iiif_manifest record
         mmsid = extract_mmsid record
