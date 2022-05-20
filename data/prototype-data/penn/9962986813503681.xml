@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>04211ctd a2200589Ia 4500</marc:leader>
+    <marc:leader>04324ctd a2200601Ia 4500</marc:leader>
     <marc:controlfield tag="001">9962986813503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131929.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025110511.0</marc:controlfield>
     <marc:controlfield tag="008">141111q17001850ii            000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn895003433</marc:subfield>
@@ -49,25 +49,25 @@
   <marc:subfield code="c">12 x 31 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Manuscript was formerly part of a larger manuscript along with Ms. Coll. 390 Item 1004, Item 1006, and Item 1007.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Machine-made paper with watermarks through many folios of the manuscript, the watermark is a crest with a crown and some wording as well as a crest with some vegetation (?) and an animal of some kind.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from colophon (f. 78v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Written in 7-17 lines per leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">78 leaves foliated 1-78, lower right verso; also foliated 169-246, upper left verso, which indicates its placement within a larger manuscript.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Colophon: iti s&#x301;ri&#x304;sarvajn&#x303;a&#x304;sa[maha&#x304;]muniviracite sam&#x323;ks&#x323;epas&#x301;a&#x304;ri&#x304;rake virodhalaks&#x323;an&#x323;am&#x323; dviti&#x304;yodhya&#x304;yah&#x323; // (f. 78v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Machine-made paper with watermarks through many folios of the manuscript, the watermark is a crest with a crown and some wording as well as a crest with some vegetation (?) and an animal of some kind.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Manuscript was formerly part of a larger manuscript along with Ms. Coll. 390 Item 1004, Item 1006, and Item 1007.</marc:subfield>
+  <marc:subfield code="a">78 leaves foliated 1-78, lower right verso; also foliated 169-246, upper left verso, which indicates its placement within a larger manuscript.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Listed in H.I. Poleman, Census of Indic Manuscripts in the United States and Canada (New Haven, Conn.:  American Oriental Society, 1938), Poleman</marc:subfield>
@@ -92,16 +92,21 @@
   <marc:subfield code="t">S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;bha&#x304;s&#x323;ya.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Hindu philosophy.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Advaita.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Vedanta.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Hindu philosophy.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Poems.</marc:subfield>
@@ -120,7 +125,8 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
@@ -128,14 +134,8 @@
   <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="700">
   <marc:subfield code="a">Madhusu&#x304;dana Sarasvati&#x304;.</marc:subfield>
@@ -154,6 +154,10 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/6298681</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3gb15</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-01</marc:subfield>

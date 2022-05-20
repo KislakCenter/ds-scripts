@@ -65,9 +65,8 @@
   <marc:subfield code="a">Fragments.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Decretals.</marc:subfield>
@@ -77,8 +76,9 @@
   <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
   <marc:subfield code="y">14th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
@@ -86,11 +86,11 @@
 </marc:datafield>
     <marc:datafield ind1="2" ind2="2" tag="710">
   <marc:subfield code="a">Catholic Church.</marc:subfield>
-  <marc:subfield code="b">Pope (1159-1181 : Alexander III)</marc:subfield>
+  <marc:subfield code="b">Pope (1181-1185 : Lucius III)</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2="2" tag="710">
   <marc:subfield code="a">Catholic Church.</marc:subfield>
-  <marc:subfield code="b">Pope (1181-1185 : Lucius III)</marc:subfield>
+  <marc:subfield code="b">Pope (1159-1181 : Alexander III)</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2="2" tag="710">
   <marc:subfield code="a">Catholic Church.</marc:subfield>
@@ -114,16 +114,16 @@
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4996777</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3zw5j</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs119.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4996777</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

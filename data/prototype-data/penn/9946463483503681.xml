@@ -50,25 +50,25 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title for manuscript from caption title of first work and incipit of second work (f. 1r, 9v); second work is also known as Sphaera mundi.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation:  Parchment, 30; [1-30] ; modern foliation in pencil, upper right recto.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout:  Written in 25-26 lines; prickings visible on many leaves.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in Gothic script.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  7 astronomical diagrams in black and red ink (f. 10r, 12r, 12v, 25v, 28r, 28v, 29r), 2 astronomical diagrams in black ink (f. 29v, 30r), and 2 illustrations in red and black ink (f. 13r), all in second work; 2-line initial in red and blue with faded penwork extensions (f. 1r); 5-line divided initial in red (f. 9v); caption title (f. 1r) and marginal rubrics in first work (f. 1r-9v) in red, 2-line initials and paragraph marks throughout in red.</marc:subfield>
+  <marc:subfield code="a">Origin:  Written in Italy in the mid-13th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding:  20th-century morocco with gilt (rebound in 1997).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in Italy in the mid-13th century.</marc:subfield>
+  <marc:subfield code="a">Title for manuscript from caption title of first work and incipit of second work (f. 1r, 9v); second work is also known as Sphaera mundi.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in Gothic script.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 25-26 lines; prickings visible on many leaves.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation:  Parchment, 30; [1-30] ; modern foliation in pencil, upper right recto.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  7 astronomical diagrams in black and red ink (f. 10r, 12r, 12v, 25v, 28r, 28v, 29r), 2 astronomical diagrams in black ink (f. 29v, 30r), and 2 illustrations in red and black ink (f. 13r), all in second work; 2-line initial in red and blue with faded penwork extensions (f. 1r); 5-line divided initial in red (f. 9v); caption title (f. 1r) and marginal rubrics in first work (f. 1r-9v) in red, 2-line initials and paragraph marks throughout in red.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">1. f.1r-9v: Algorismus.</marc:subfield>
@@ -120,9 +120,8 @@
   <marc:subfield code="a">Codices.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Diagrams.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Treatises.</marc:subfield>
@@ -132,8 +131,9 @@
   <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
   <marc:subfield code="y">13th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Diagrams.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="700">
   <marc:subfield code="a">Sacro Bosco, Joannes de,</marc:subfield>
@@ -157,8 +157,8 @@
   <marc:subfield code="j">LJS 26</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4646348</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3f92w</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
@@ -169,12 +169,12 @@
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3f92w</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs26.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4646348</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>04180ctd a2200541Ia 4500</marc:leader>
+    <marc:leader>04296ctd a2200553Ia 4500</marc:leader>
     <marc:controlfield tag="001">9951882013503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131621.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025111135.0</marc:controlfield>
     <marc:controlfield tag="008">111109s1830    pau           000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn760111284</marc:subfield>
@@ -47,6 +47,15 @@
   <marc:subfield code="a">Title supplied by cataloger; alternate title Somera&#x304;ma&#x304;m&#x323;d&#x323;a&#x304;rabha&#x304;s&#x323;ya from colophon (f. 287v); title abbreviated as Prayoga throughout, upper right verso.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Mistakes covered over in yellow, white, or blacked out; some corrections in margins.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Dated Sam&#x323;vat 1887 and S&#x301;aka 1752 (1830) (f. 287v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Colophon: saptamah&#x323; pat&#x323;alah&#x323; // sama&#x304;ptah&#x323; pras&#x301;nah&#x323; // somera&#x304;ma&#x304;m&#x323;d&#x323;a&#x304;rabha&#x304;s&#x323;yam&#x323; // idam&#x323; pustakam&#x323; ra&#x304;ja&#x304;ra&#x304;mabhat&#x323;t&#x323;am&#x323; nagara[m&#x323;] // va&#x304;stavyam&#x323; s&#x301;ri&#x304;ka&#x304;[s&#x301;]iks&#x323;etram&#x323; ase // paropaka&#x304;ra&#x304;rtha // madhubhat&#x323;t&#x323;ena ca&#x304;tudha&#x304;ren&#x323;a likhitam&#x323; sam&#x323;nya&#x304;sim&#x323; // s&#x301;ri&#x304;ra&#x304;ma&#x304;rpan&#x323;amm&#x323;astu // 5694 // sam&#x323;[va]t 1887 // vikrama&#x304;s&#x301;ake pravam&#x323;gana&#x304;mam&#x323; savato uttara&#x304;yan&#x323;e caim&#x323;tras&#x301;udha 5 pacami&#x304;traddani sama&#x304;m&#x323;pta s&#x301;ubhabhavatu // s&#x301;aka 1752 // (f. 287v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Scribe is Madhubhat&#x323;t&#x323;a Ca&#x304;tudha&#x304;ra (f. 287v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -54,15 +63,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">287 leaves foliated 1-287, upper left and lower right verso, often with hundred numeral dropped.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Colophon: saptamah&#x323; pat&#x323;alah&#x323; // sama&#x304;ptah&#x323; pras&#x301;nah&#x323; // somera&#x304;ma&#x304;m&#x323;d&#x323;a&#x304;rabha&#x304;s&#x323;yam&#x323; // idam&#x323; pustakam&#x323; ra&#x304;ja&#x304;ra&#x304;mabhat&#x323;t&#x323;am&#x323; nagara[m&#x323;] // va&#x304;stavyam&#x323; s&#x301;ri&#x304;ka&#x304;[s&#x301;]iks&#x323;etram&#x323; ase // paropaka&#x304;ra&#x304;rtha // madhubhat&#x323;t&#x323;ena ca&#x304;tudha&#x304;ren&#x323;a likhitam&#x323; sam&#x323;nya&#x304;sim&#x323; // s&#x301;ri&#x304;ra&#x304;ma&#x304;rpan&#x323;amm&#x323;astu // 5694 // sam&#x323;[va]t 1887 // vikrama&#x304;s&#x301;ake pravam&#x323;gana&#x304;mam&#x323; savato uttara&#x304;yan&#x323;e caim&#x323;tras&#x301;udha 5 pacami&#x304;traddani sama&#x304;m&#x323;pta s&#x301;ubhabhavatu // s&#x301;aka 1752 // (f. 287v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Dated Sam&#x323;vat 1887 and S&#x301;aka 1752 (1830) (f. 287v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered over in yellow, white, or blacked out; some corrections in margins.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Non-Latin script record.</marc:subfield>
@@ -92,13 +92,18 @@
   <marc:subfield code="a">A&#x304;pastambas&#x301;rautasu&#x304;tra.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Sacrifice</marc:subfield>
+  <marc:subfield code="x">Hinduism.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Hinduism</marc:subfield>
   <marc:subfield code="x">Rituals</marc:subfield>
   <marc:subfield code="x">Texts.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Sacrifice</marc:subfield>
-  <marc:subfield code="x">Hinduism.</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
@@ -108,18 +113,13 @@
   <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="a">Ra&#x304;ja&#x304;ra&#x304;mabhat&#x323;t&#x323;a,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="700">
   <marc:subfield code="a">Madhubhat&#x323;t&#x323;a Ca&#x304;tudha&#x304;ra,</marc:subfield>
   <marc:subfield code="e">scribe.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="700">
-  <marc:subfield code="a">Ra&#x304;ja&#x304;ra&#x304;mabhat&#x323;t&#x323;a,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="740">
   <marc:subfield code="a">Somera&#x304;ma&#x304;m&#x323;d&#x323;a&#x304;rabha&#x304;s&#x323;ya.</marc:subfield>
@@ -133,6 +133,10 @@
   <marc:subfield code="a">University of Pennsylvania</marc:subfield>
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p37659g80</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>

@@ -50,6 +50,18 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Modern rebinding in green leather with flap.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Copied in A.H. 956 (1549) by &#x2BB;Abd al-Fatta&#x304;h&#x323; ibn Bari&#x304; Kha&#x304;n (f. 203v); likely in Turkey.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Red overlines and red section headings.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in nasta&#x2BB;liq in black ink. Marginal comments also in nasta&#x2BB;liq.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="6">880-03</marc:subfield>
   <marc:subfield code="a">Title from text: "aradtu an ajma&#x2BB;a minha&#x304; fi&#x304; tilka al-risa&#x304;lah bi-iltima&#x304;s ba&#x2BB;d&#x323; al-ikhwa&#x304;n kalima&#x304;t &#x2BB;arabi&#x304;yah &#x2BB;ala&#x301; tarti&#x304;b h&#x323;uru&#x304;f al-tahajji&#x304;" (f. 1v).</marc:subfield>
 </marc:datafield>
@@ -58,18 +70,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 17 long lines with additions in the margins added at angles.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in nasta&#x2BB;liq in black ink. Marginal comments also in nasta&#x2BB;liq.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Red overlines and red section headings.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Modern rebinding in green leather with flap.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Copied in A.H. 956 (1549) by &#x2BB;Abd al-Fatta&#x304;h&#x323; ibn Bari&#x304; Kha&#x304;n (f. 203v); likely in Turkey.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Dictionary of Arabic terms defined in Ottoman Turkish; introduction also in Arabic.</marc:subfield>
@@ -89,10 +89,6 @@
   <marc:subfield code="x">Turkish.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Dictionaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
@@ -105,6 +101,10 @@
   <marc:subfield code="a">Manuscripts, Turkish</marc:subfield>
   <marc:subfield code="y">16th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Dictionaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="6">880-04</marc:subfield>
@@ -128,14 +128,6 @@
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3qv3c96r</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="880">
-  <marc:subfield code="6">100-01//r</marc:subfield>
-  <marc:subfield code="a">&#x627;&#x62E;&#x62A;&#x631;&#x64A;&#x60C; &#x645;&#x635;&#x637;&#x641;&#x649; &#x628;&#x646; &#x627;&#x62D;&#x645;&#x62F;.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">&#x643;&#x644;&#x645;&#x627;&#x62A; &#x639;&#x631;&#x628;&#x64A;&#x629; &#x639;&#x644;&#x649; &#x62A;&#x631;&#x62A;&#x64A;&#x628; &#x62D;&#x631;&#x648;&#x641; &#x627;&#x644;&#x62A;&#x647;&#x62C;&#x64A;.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="880">
   <marc:subfield code="6">500-03//r</marc:subfield>
   <marc:subfield code="a">"&#x623;&#x631;&#x62F;&#x62A; &#x623;&#x646; &#x627;&#x62C;&#x645;&#x639; &#x645;&#x646;&#x647;&#x627; &#x641;&#x64A; &#x62A;&#x644;&#x643; &#x627;&#x644;&#x631;&#x633;&#x627;&#x644;&#x629; &#x628;&#x627;&#x644;&#x62A;&#x645;&#x627;&#x633; &#x628;&#x639;&#x636; &#x627;&#x644;&#x627;&#x62E;&#x648;&#x627;&#x646; &#x643;&#x644;&#x645;&#x627;&#x62A; &#x639;&#x631;&#x628;&#x64A;&#x629; &#x639;&#x644;&#x649; &#x62A;&#x631;&#x62A;&#x64A;&#x628; &#x62D;&#x631;&#x648;&#x641; &#x627;&#x644;&#x62A;&#x647;&#x62C;&#x64A;".</marc:subfield>
@@ -143,6 +135,14 @@
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">700-04//r</marc:subfield>
   <marc:subfield code="a">&#x627;&#x628;&#x646; &#x628;&#x631;&#x64A; &#x62E;&#x627;&#x646;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x641;&#x62A;&#x627;&#x62D;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x627;&#x62E;&#x62A;&#x631;&#x64A;&#x60C; &#x645;&#x635;&#x637;&#x641;&#x649; &#x628;&#x646; &#x627;&#x62D;&#x645;&#x62F;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x643;&#x644;&#x645;&#x627;&#x62A; &#x639;&#x631;&#x628;&#x64A;&#x629; &#x639;&#x644;&#x649; &#x62A;&#x631;&#x62A;&#x64A;&#x628; &#x62D;&#x631;&#x648;&#x641; &#x627;&#x644;&#x62A;&#x647;&#x62C;&#x64A;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="996">
   <marc:subfield code="a">hinge-right</marc:subfield>

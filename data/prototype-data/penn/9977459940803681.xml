@@ -42,28 +42,28 @@
   <marc:subfield code="c">215 x 130 (140 x 68) mm bound to 217 x 135 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Ms. codex.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from caption title (f. 1v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: 15 long lines; border ruled.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in nasta&#x2BB;li&#x304;q using black ink; pointed, unvocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications in red; headings in red set off by gold rules. Illuminated headpiece in gold, purple and green on opening page (f. 1v); textblock border-ruled in gold and black, with an additional red rule on the first opening (f. 1v-2r).</marc:subfield>
+  <marc:subfield code="a">Origin: Copied in A.H. 1124 (1712) (f. 219r), likely in Turkey.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding: Bound in brown leather over pasteboard with flap on the right side as the book opens (Type II); gilded paper central mandorla onlay with gold tooled pendants and frame. Gilded paper onlay on the flap as well.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Copied in A.H. 1124 (1712) (f. 219r), likely in Turkey.</marc:subfield>
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications in red; headings in red set off by gold rules. Illuminated headpiece in gold, purple and green on opening page (f. 1v); textblock border-ruled in gold and black, with an additional red rule on the first opening (f. 1v-2r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in nasta&#x2BB;li&#x304;q using black ink; pointed, unvocalized.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from caption title (f. 1v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: 15 long lines; border ruled.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Copies of official correspondence written by Na&#x304;bi&#x304;.</marc:subfield>
@@ -87,23 +87,15 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="651">
   <marc:subfield code="a">Turkey</marc:subfield>
-  <marc:subfield code="x">History</marc:subfield>
-  <marc:subfield code="y">1683-1829</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="651">
-  <marc:subfield code="a">Turkey</marc:subfield>
   <marc:subfield code="x">Politics and government</marc:subfield>
   <marc:subfield code="y">17th century</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Letters (correspondence)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="651">
+  <marc:subfield code="a">Turkey</marc:subfield>
+  <marc:subfield code="x">History</marc:subfield>
+  <marc:subfield code="y">1683-1829</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Illuminations (painting)</marc:subfield>
@@ -114,10 +106,13 @@
   <marc:subfield code="y">18th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="6">880-03</marc:subfield>
-  <marc:subfield code="a">Z&#x324;ama&#x304;qavi&#x304;, Ah&#x323;mad Rif&#x2BB;at ibn al-H&#x323;a&#x304;jj Muh&#x323;ammad Fa&#x304;khir,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Letters (correspondence)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="700">
   <marc:subfield code="6">880-04</marc:subfield>
@@ -125,6 +120,11 @@
   <marc:subfield code="c">Damad,</marc:subfield>
   <marc:subfield code="d">1667?-1716,</marc:subfield>
   <marc:subfield code="e">patron.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="6">880-03</marc:subfield>
+  <marc:subfield code="a">Z&#x324;ama&#x304;qavi&#x304;, Ah&#x323;mad Rif&#x2BB;at ibn al-H&#x323;a&#x304;jj Muh&#x323;ammad Fa&#x304;khir,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Swarthmore College,</marc:subfield>
@@ -148,18 +148,13 @@
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3vm4340h</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="880">
-  <marc:subfield code="6">100-01//r</marc:subfield>
-  <marc:subfield code="a">&#x646;&#x627;&#x628;&#x6CC;&#x60C;</marc:subfield>
-  <marc:subfield code="d">1641 &#x64A;&#x627;&#x62E;&#x648;&#x62F;  1642-1712.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-02//r</marc:subfield>
   <marc:subfield code="a">&#x645;&#x646;&#x634;&#x626;&#x627;&#x62A; &#x62D;&#x636;&#x631;&#x62A; &#x646;&#x627;&#x628;&#x649; &#x627;&#x641;&#x646;&#x62F;&#x649;.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="880">
-  <marc:subfield code="6">700-03//r</marc:subfield>
-  <marc:subfield code="a">&#x636;&#x645;&#x627;&#x642;&#x648;&#x649;&#x60C; &#x627;&#x62D;&#x645;&#x62F; &#x631;&#x641;&#x639;&#x62A; &#x628;&#x646; &#x627;&#x644;&#x62D;&#x627;&#x62C; &#x645;&#x62D;&#x645;&#x62F; &#x641;&#x627;&#x62E;&#x631;.</marc:subfield>
+    <marc:datafield ind1="3" ind2="0" tag="880">
+  <marc:subfield code="6">246-00//r</marc:subfield>
+  <marc:subfield code="a">&#x645;&#x646;&#x634;&#x622;&#x62A; &#x646;&#x627;&#x628;&#x649; &#x627;&#x641;&#x646;&#x62F;&#x649;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">700-04//r</marc:subfield>
@@ -167,9 +162,14 @@
   <marc:subfield code="c">&#x62F;&#x627;&#x645;&#x627;&#x62F; &#x200E;&#x60C;</marc:subfield>
   <marc:subfield code="d">-1667 &#x61F;1716.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="3" ind2="0" tag="880">
-  <marc:subfield code="6">246-00//r</marc:subfield>
-  <marc:subfield code="a">&#x645;&#x646;&#x634;&#x622;&#x62A; &#x646;&#x627;&#x628;&#x649; &#x627;&#x641;&#x646;&#x62F;&#x649;.</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">700-03//r</marc:subfield>
+  <marc:subfield code="a">&#x636;&#x645;&#x627;&#x642;&#x648;&#x649;&#x60C; &#x627;&#x62D;&#x645;&#x62F; &#x631;&#x641;&#x639;&#x62A; &#x628;&#x646; &#x627;&#x644;&#x62D;&#x627;&#x62C; &#x645;&#x62D;&#x645;&#x62F; &#x641;&#x627;&#x62E;&#x631;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x646;&#x627;&#x628;&#x6CC;&#x60C;</marc:subfield>
+  <marc:subfield code="d">1641 &#x64A;&#x627;&#x62E;&#x648;&#x62F;  1642-1712.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="948">
   <marc:subfield code="h">HELD BY PAU - 0 OTHER HOLDINGS</marc:subfield>

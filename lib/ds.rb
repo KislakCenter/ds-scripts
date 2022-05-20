@@ -6,6 +6,7 @@ require_relative 'ds/openn_tei'
 require_relative 'ds/marc_xml'
 require_relative 'ds/csv_util'
 require_relative 'ds/recon'
+require_relative 'ds/institutions'
 
 
 module DS
@@ -15,14 +16,12 @@ module DS
     File.expand_path '../..', __FILE__
   end
 
-  def self.config_dir
-    File.join root, 'config'
-  end
-
   def self.configure!
+    config_dir = File.join root, 'config'
     yaml_files = Dir["#{config_dir}/*.yml"]
     Config.load_and_set_settings *yaml_files
   end
+  configure!
 
   module ClassMethods
     ##
@@ -52,20 +51,6 @@ module DS
 
       # terminator is present; append it after any removing trailing whitespace and punctuation
       "#{normal.sub(%r{[,.:!?;[:space:]]+$}, '').strip}#{terminator}"
-    end
-
-    def find_qid inst_alias
-      # try without changes; and then normalize
-      DS::INSTITUTION_NAMES_TO_QID[inst_alias] or
-        DS::INSTITUTION_NAMES_TO_QID[inst_alias.to_s.strip] or
-        DS::INSTITUTION_NAMES_TO_QID[inst_alias.to_s.strip.downcase]
-    end
-
-    def preferred_inst_name inst_alias
-      url = find_qid inst_alias
-      return unless url =~ %r{Q\d+$}
-      qid = Regexp.last_match[0]
-      DS::QID_TO_INSTITUTION_NAMES[qid].first
     end
 
     ##

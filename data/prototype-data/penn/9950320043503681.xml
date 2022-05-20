@@ -53,10 +53,16 @@
   <marc:subfield code="c">190 x 140 (170 x 112) mm bound to 197 x 150 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in England, ca. 1496 (f. 8v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">The first part of Bute MS 13 (f. 1r-46v), including a copy of Chaucer's Treatise on the astrolabe, was purchased after 1988 by Shozo Asahata (Nara, Japan), current location unknown (Kurtz and Voigts).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title supplied by cataloger (Kurtz and Voigts).</marc:subfield>
+  <marc:subfield code="a">Binding:  Modern calf, formerly stab-sewn.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Foliation:  Paper, ii (modern) + ii + 18 + ii + ii (modern); 1&#xB9;&#x2076; 2&#xB2;; 1-18, contemporary foliation in ink, lower right recto.</marc:subfield>
@@ -68,13 +74,7 @@
   <marc:subfield code="a">Script:  Written in a secretary script.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  Modern calf, formerly stab-sewn.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in England, ca. 1496 (f. 8v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">The first part of Bute MS 13 (f. 1r-46v), including a copy of Chaucer's Treatise on the astrolabe, was purchased after 1988 by Shozo Asahata (Nara, Japan), current location unknown (Kurtz and Voigts).</marc:subfield>
+  <marc:subfield code="a">Title supplied by cataloger (Kurtz and Voigts).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -93,25 +93,25 @@
   <marc:subfield code="a">Middle English.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by James Alleyn (signature in another part of parent manuscript).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Parent manuscript formerly held in the library of the Marquesses of Bute, Ms. 13.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold at auction at Sotheby's as part of the Bute collection, 13 June 1983, lot 32 (part 7).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Appears in H. P. Kraus's cat. 180 (1988), no. 133.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 22.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by James Alleyn (signature in another part of parent manuscript).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, Sept. 1997.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold at auction at Sotheby's as part of the Bute collection, 13 June 1983, lot 32 (part 7).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 22.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="581">
   <marc:subfield code="a">Patricia Deery Kurtz and Linda Ehrsam Voigts. "The significance of now-dispersed Bute 13: a mixed-language scientific manuscript." In Communicating early English manuscripts, edited by P&#xE4;ivi Pahta and Andreas H. Jucker, 38-54. Cambridge: Cambridge University Press, 2011.</marc:subfield>
@@ -135,9 +135,8 @@
   <marc:subfield code="a">codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">commentaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">tables (documents)</marc:subfield>
@@ -152,15 +151,16 @@
   <marc:subfield code="y">15th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Alleyn, James,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Alleyn, James,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
@@ -177,12 +177,16 @@
   <marc:subfield code="j">LJS 191</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5032004</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs191.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333436</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5032004</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
@@ -191,10 +195,6 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3g63j</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs191.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

@@ -67,28 +67,28 @@
   <marc:subfield code="2">rdacarrier</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from introduction (f. 1r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper right verso; catchwords every verso, lower left.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 23 long lines.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script: Written in maghribi in brown ink; pointed, partially vocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications chiefly in red, but also in green and purple.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: The covers are brown leather over pasteboard with flap (Type II) with a blind stamped and tinted central mandorla and blind tooled frames. The flap has a coordinating blind stamped, tinted medallion. The pastedowns on the inside covers and the flap have been trimmed in a scalloped pattern along one edge. The covers are not bound to the text. Endbands in crimson and white are visible along the bottom edge of the spine.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Copy completed on 23 Safar 822 A.H. (March 30, 1419), though that may be copied from another manuscript (f. 140v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Two leaves have been laid into the volume.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications chiefly in red, but also in green and purple.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script: Written in maghribi in brown ink; pointed, partially vocalized.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from introduction (f. 1r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper right verso; catchwords every verso, lower left.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: The covers are brown leather over pasteboard with flap (Type II) with a blind stamped and tinted central mandorla and blind tooled frames. The flap has a coordinating blind stamped, tinted medallion. The pastedowns on the inside covers and the flap have been trimmed in a scalloped pattern along one edge. The covers are not bound to the text. Endbands in crimson and white are visible along the bottom edge of the spine.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Lacunose copy of Abu&#x304; al-Layth al-Samarqandi&#x304;'s work on ethics and advice. The leaves are unbound and pages are missing, particularly from the beginning. Some pages have been rewritten in another hand and replaced.</marc:subfield>
@@ -100,27 +100,13 @@
   <marc:subfield code="a">Arabic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Marcus Jastrow and Morris Jastrow, Jr.</marc:subfield>
+  <marc:subfield code="a">Accessioned, 1934.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Accessioned, 1934.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Marcus Jastrow and Morris Jastrow, Jr.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Religious ethics</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Religious life</marc:subfield>
-  <marc:subfield code="x">Islam</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Islamic ethics</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Islam</marc:subfield>
-  <marc:subfield code="x">Doctrines</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="650">
@@ -128,19 +114,19 @@
   <marc:subfield code="2">fast</marc:subfield>
   <marc:subfield code="0">(OCoLC)fst00915833</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">17th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Islam</marc:subfield>
+  <marc:subfield code="x">Doctrines</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">18th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Islamic ethics</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Religious life</marc:subfield>
+  <marc:subfield code="x">Islam</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Blind tooled (decoration)</marc:subfield>
@@ -150,15 +136,29 @@
   <marc:subfield code="a">Envelope flaps (features)</marc:subfield>
   <marc:subfield code="2">lobt</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Jastrow, Marcus,</marc:subfield>
-  <marc:subfield code="d">1829-1903,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">17th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
   <marc:subfield code="c">Jr.,</marc:subfield>
   <marc:subfield code="d">1861-1921,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Jastrow, Marcus,</marc:subfield>
+  <marc:subfield code="d">1829-1903,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
@@ -168,12 +168,12 @@
   <marc:subfield code="j">Oversize Ms. Codex 25</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex25.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3ws8hs7x</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex25.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>
@@ -181,12 +181,12 @@
   <marc:subfield code="d">-983&#x61F;</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">240-02//r</marc:subfield>
-  <marc:subfield code="a">&#x62A;&#x646;&#x628;&#x64A;&#x647; &#x627;&#x644;&#x63A;&#x627;&#x641;&#x644;&#x64A;&#x646;.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-03//r</marc:subfield>
   <marc:subfield code="a">&#x62A;&#x646;&#x628;&#x64A;&#x647; &#x627;&#x644;&#x63A;&#x627;&#x641;&#x644;&#x64A;&#x646; &#x648;&#x627;&#x64A;&#x636;&#x627;&#x62D; &#x633;&#x628;&#x64A;&#x644; &#x627;&#x644;&#x645;&#x631;&#x634;&#x62F;&#x64A;&#x646;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">240-02//r</marc:subfield>
+  <marc:subfield code="a">&#x62A;&#x646;&#x628;&#x64A;&#x647; &#x627;&#x644;&#x63A;&#x627;&#x641;&#x644;&#x64A;&#x646;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="950">
   <marc:subfield code="l">PAUR</marc:subfield>

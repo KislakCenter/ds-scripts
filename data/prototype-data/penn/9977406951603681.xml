@@ -37,25 +37,25 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title for the manuscript from title of predominant work (f. 46v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Modern western foliation added in pencil, top left recto; catchwords every verso, lower left.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: 15-19 lines per page; one column for prose, poetry in two columns; frame-ruled.</marc:subfield>
+  <marc:subfield code="a">Binding: Brown leather with flap (Type II); blind stamped with central mandorla and frame on front and back covers; envelope flap and foredge flap blind stamped; leather and paper doublure on back inside cover and flap.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script:  Written in maghribi script in dark brown and red inks; pointed and partially vocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications and headers in larger script.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Brown leather with flap (Type II); blind stamped with central mandorla and frame on front and back covers; envelope flap and foredge flap blind stamped; leather and paper doublure on back inside cover and flap.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Likely copied in North Africa. One work is dated A.H. 1106 (1695) (f. 134r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title for the manuscript from title of predominant work (f. 46v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: 15-19 lines per page; one column for prose, poetry in two columns; frame-ruled.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Modern western foliation added in pencil, top left recto; catchwords every verso, lower left.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications and headers in larger script.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">1. f. 1v-40r: Wasi&#x304;lat al-ghari&#x304;q bi-a&#x2BC;immat al-t&#x323;ari&#x304;q [and other poems] / Abu&#x304; Sa&#x304;lim &#x2BB;Abd Alla&#x304;h ibn Muh&#x323;ammad al&#x2BB;Ayya&#x304;shi&#x304; -- 2. f. 41v-45v: [Ra&#x304;mizah al-sha&#x304;fiyah fi&#x304; &#x2BB;ilmay al-&#x2BB;aru&#x304;d&#x323; wa-al-qa&#x304;fiyah] / D&#x323;iya&#x304;&#x2BC; al-Di&#x304;n Abu&#x304; &#x2BB;Abd Alla&#x304;h &#x2BB;Ali&#x304; ibn Muh&#x323;ammad al-Khazraji&#x304; al-Andalusi&#x304; -- 3. f. 46v-134r: Sharh&#x323; al-muqaddimah al-Qurt&#x323;ubi&#x304;yah / Zarru&#x304;q, Ah&#x323;mad ibn Ah&#x323;mad -- 4. f. 134v-141v: Various fragments.</marc:subfield>
@@ -76,8 +76,7 @@
   <marc:subfield code="a">Accessioned, 1934.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Arabic language</marc:subfield>
-  <marc:subfield code="x">Versification</marc:subfield>
+  <marc:subfield code="a">Arabic poetry</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
@@ -85,8 +84,13 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Arabic poetry</marc:subfield>
+  <marc:subfield code="a">Arabic language</marc:subfield>
+  <marc:subfield code="x">Versification</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Commentries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
@@ -97,24 +101,9 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">17th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="6">880-02</marc:subfield>
-  <marc:subfield code="a">&#x2BB;Ayya&#x304;shi&#x304;, Abu&#x304; Sa&#x304;lim &#x2BB;Abd Alla&#x304;h ibn Muh&#x323;ammad,</marc:subfield>
-  <marc:subfield code="d">1628-1679</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="700">
-  <marc:subfield code="6">880-03</marc:subfield>
-  <marc:subfield code="a">Khazraji&#x304;, &#x2BB;Abd Alla&#x304;h ibn &#x2BB;Uthma&#x304;n,</marc:subfield>
-  <marc:subfield code="d">active 12th century-13th century.</marc:subfield>
-  <marc:subfield code="t">Ra&#x304;mizah al-sha&#x304;fiyah fi&#x304; &#x2BB;ilmay al-&#x2BB;aru&#x304;d&#x323; wa-al-qa&#x304;fiyah.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="700">
   <marc:subfield code="6">880-04</marc:subfield>
@@ -123,15 +112,26 @@
   <marc:subfield code="t">Sharh&#x323; al-muqaddimah al-Qurt&#x323;ubi&#x304;yah.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
-  <marc:subfield code="c">Jr.,</marc:subfield>
-  <marc:subfield code="d">1861-1921,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+  <marc:subfield code="6">880-02</marc:subfield>
+  <marc:subfield code="a">&#x2BB;Ayya&#x304;shi&#x304;, Abu&#x304; Sa&#x304;lim &#x2BB;Abd Alla&#x304;h ibn Muh&#x323;ammad,</marc:subfield>
+  <marc:subfield code="d">1628-1679</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Jastrow, Marcus,</marc:subfield>
   <marc:subfield code="d">1829-1903,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
+  <marc:subfield code="c">Jr.,</marc:subfield>
+  <marc:subfield code="d">1861-1921,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="2" tag="700">
+  <marc:subfield code="6">880-03</marc:subfield>
+  <marc:subfield code="a">Khazraji&#x304;, &#x2BB;Abd Alla&#x304;h ibn &#x2BB;Uthma&#x304;n,</marc:subfield>
+  <marc:subfield code="d">active 12th century-13th century.</marc:subfield>
+  <marc:subfield code="t">Ra&#x304;mizah al-sha&#x304;fiyah fi&#x304; &#x2BB;ilmay al-&#x2BB;aru&#x304;d&#x323; wa-al-qa&#x304;fiyah.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
@@ -140,12 +140,24 @@
   <marc:subfield code="j">Ms. Codex 1914</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3183482d</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1914.html</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3183482d</marc:subfield>
+    <marc:datafield ind1="1" ind2="2" tag="880">
+  <marc:subfield code="6">700-04//r</marc:subfield>
+  <marc:subfield code="a">&#x632;&#x631;&#x648;&#x642;&#x60C; &#x627;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x627;&#x62D;&#x645;&#x62F;&#x60C;</marc:subfield>
+  <marc:subfield code="d">1493.</marc:subfield>
+  <marc:subfield code="t">&#x634;&#x631;&#x62D; &#x627;&#x644;&#x645;&#x642;&#x62F;&#x645;&#x629; &#x627;&#x644;&#x642;&#x631;&#x637;&#x628;&#x64A;&#x629;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="2" tag="880">
+  <marc:subfield code="6">700-03//r</marc:subfield>
+  <marc:subfield code="a">&#x62E;&#x632;&#x631;&#x62C;&#x64A;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647; &#x628;&#x646; &#x639;&#x62B;&#x645;&#x627;&#x646;&#x60C;</marc:subfield>
+  <marc:subfield code="d">active 12th century-13th century .</marc:subfield>
+  <marc:subfield code="t">&#x631;&#x627;&#x645;&#x632;&#x629; &#x627;&#x644;&#x634;&#x627;&#x641;&#x64A;&#x629; &#x641;&#x64A; &#x639;&#x644;&#x645;&#x64A; &#x627;&#x644;&#x639;&#x631;&#x648;&#x636; &#x648;&#x627;&#x644;&#x642;&#x627;&#x641;&#x64A;&#x629;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="0" tag="880">
   <marc:subfield code="6">245-01//r</marc:subfield>
@@ -154,18 +166,6 @@
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">700-02//r</marc:subfield>
   <marc:subfield code="a">&#x639;&#x64A;&#x627;&#x634;&#x64A;&#x60C; &#x627;&#x628;&#x648; &#x633;&#x627;&#x644; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647; &#x628;&#x646; &#x645;&#x62D;&#x645;&#x62F;.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="880">
-  <marc:subfield code="6">700-03//r</marc:subfield>
-  <marc:subfield code="a">&#x62E;&#x632;&#x631;&#x62C;&#x64A;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647; &#x628;&#x646; &#x639;&#x62B;&#x645;&#x627;&#x646;&#x60C;</marc:subfield>
-  <marc:subfield code="d">active 12th century-13th century .</marc:subfield>
-  <marc:subfield code="t">&#x631;&#x627;&#x645;&#x632;&#x629; &#x627;&#x644;&#x634;&#x627;&#x641;&#x64A;&#x629; &#x641;&#x64A; &#x639;&#x644;&#x645;&#x64A; &#x627;&#x644;&#x639;&#x631;&#x648;&#x636; &#x648;&#x627;&#x644;&#x642;&#x627;&#x641;&#x64A;&#x629;.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="880">
-  <marc:subfield code="6">700-04//r</marc:subfield>
-  <marc:subfield code="a">&#x632;&#x631;&#x648;&#x642;&#x60C; &#x627;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x627;&#x62D;&#x645;&#x62F;&#x60C;</marc:subfield>
-  <marc:subfield code="d">1493.</marc:subfield>
-  <marc:subfield code="t">&#x634;&#x631;&#x62D; &#x627;&#x644;&#x645;&#x642;&#x62F;&#x645;&#x629; &#x627;&#x644;&#x642;&#x631;&#x637;&#x628;&#x64A;&#x629;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="948">
   <marc:subfield code="h">HELD BY PAU - 0 OTHER HOLDINGS</marc:subfield>

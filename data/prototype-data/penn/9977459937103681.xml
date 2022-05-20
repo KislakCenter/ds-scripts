@@ -35,6 +35,12 @@
   <marc:subfield code="a">Ms. leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in clear maghribi in black ink, pointed, partially vocalized.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Textblock is border-ruled in double red and blue. Rubrications in purple and green. Purple and black decoration sets off the lines of the source-text.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -42,12 +48,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 21 long lines, border-ruled.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in clear maghribi in black ink, pointed, partially vocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Textblock is border-ruled in double red and blue. Rubrications in purple and green. Purple and black decoration sets off the lines of the source-text.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Probably produced in North Africa in the 16th or 17th century.</marc:subfield>
@@ -73,17 +73,17 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">16th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Detached leaves.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Excerpts.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">16th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
@@ -108,12 +108,12 @@
   <marc:subfield code="j">Misc Mss Box 24 Folder 3</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/misc_mss_box24_fldr3.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3br8mp1m</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/misc_mss_box24_fldr3.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="4" tag="880">
   <marc:subfield code="6">600-01//r</marc:subfield>

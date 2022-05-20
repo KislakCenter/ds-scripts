@@ -51,7 +51,16 @@
   <marc:subfield code="c">278 x 196 (188 x 125-127) mm. bound to 293 x 211 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Paris in the mid-13th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Early 18th-century mottled calf, gilt with Dysart arms on covers and spine label Theorica practica.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  1 8-line miniature of a Dominican doctor teaching clerics (f. 1r); 11 inhabited initials (Dominican doctor taking a pulse, f. 6r; Dominican doctor at a table, f. 7v; laymen at a feast, f. 16r; Dominican doctor, servant, and patient, f. 65r; Dominican doctor teaching laymen, f. 91r; Dominican doctor reading, f. 92v; man covering patient with cloak, f. 94v; Dominican doctor and layman, f. 98r; man bringing poultice to patient, f. 103v; Dominican doctor with urine flask and patient, f. 121v; Dominican doctor reading, f. 137r); 4 faint guide sketches for initials in lower margin (f. 65r, 94v, 103v, 121v); 3 illuminated initials (7-line, f. 51v, 52r; 11-line, f. 70r); 2- and 3-line initials alternating between red flourished with turquoise and blue flourished with red throughout; alternating red and blue paragraph marks throughout; unusual manicules in the form of a tongue extended from a hooded head throughout.  The miniatures are attributed to the Johannes Grusch atelier of Paris.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
@@ -60,31 +69,13 @@
   <marc:subfield code="a">Collation:  Parchment, ii (18th-century paper) + 149 + ii (18th-century paper); 1&#xB9;&#x2074;(-1) 2&#xB2; 3&#xB9;&#x2070; 4-7&#xB9;&#xB2; 8&#xB9;&#xB2;(-1) 9&#xB9;&#xB2;(-2) 10-13&#xB9;&#xB2; 14&#xB9;&#x2070;(-3); gatherings 3, 6, and 12 have horizontal catchwords (f. 25v, 61v, 130v); gatherings 3, 4, and 8 have letters on the rectos in the first half of each gathering (starting f. 16r, 26r, 75r); gathering 4 is signed II (f. 37v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout:  Written in 2 columns of 44-47 lines; frame-ruled in faint ink with double vertical bounding lines.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script:  Written in Gothic script.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  1 8-line miniature of a Dominican doctor teaching clerics (f. 1r); 11 inhabited initials (Dominican doctor taking a pulse, f. 6r; Dominican doctor at a table, f. 7v; laymen at a feast, f. 16r; Dominican doctor, servant, and patient, f. 65r; Dominican doctor teaching laymen, f. 91r; Dominican doctor reading, f. 92v; man covering patient with cloak, f. 94v; Dominican doctor and layman, f. 98r; man bringing poultice to patient, f. 103v; Dominican doctor with urine flask and patient, f. 121v; Dominican doctor reading, f. 137r); 4 faint guide sketches for initials in lower margin (f. 65r, 94v, 103v, 121v); 3 illuminated initials (7-line, f. 51v, 52r; 11-line, f. 70r); 2- and 3-line initials alternating between red flourished with turquoise and blue flourished with red throughout; alternating red and blue paragraph marks throughout; unusual manicules in the form of a tongue extended from a hooded head throughout.  The miniatures are attributed to the Johannes Grusch atelier of Paris.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  Early 18th-century mottled calf, gilt with Dysart arms on covers and spine label Theorica practica.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in Paris in the mid-13th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">1. f.1r-5v: [Isagoge ad artem parvam Galeni] / Johannicii.</marc:subfield>
+  <marc:subfield code="a">Layout:  Written in 2 columns of 44-47 lines; frame-ruled in faint ink with double vertical bounding lines.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">2. f.6r-7r: Liber Philareti de pulsu.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">3. f.7v-15r: Liber de pulsu / [Gilles de Corbeil]</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">4. f.16r-51r: Diete universales / [Isaac Israeli]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">5. f.51v-84v: Diete particulares / [Isaac Israeli]</marc:subfield>
@@ -97,6 +88,15 @@
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">8. f.137r-149v: Liber elementorum / Ysaac Ysraelite, filii Salomonis.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r-5v: [Isagoge ad artem parvam Galeni] / Johannicii.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.16r-51r: Diete universales / [Isaac Israeli]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.7v-15r: Liber de pulsu / [Gilles de Corbeil]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -115,22 +115,22 @@
   <marc:subfield code="a">Latin.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Lionel Tollemache, Earl of Dysart (Helmingham Hall, Suffolk, arms on covers; Dysart armorial stamp, f. 15v) in the 18th century and by his descendants through Bentley Lyonel John Tollemache (third Baron Tollemache).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold privately to the Robinson Brothers after the death of Baron Tollemache in 1955 and held in the private library of Philip Robinson.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold at auction at Sotheby's, 6 Dec. 1993, lot 53.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Appears in Jo&#x308;rn Gu&#x308;nther Antiquariat's Mittelalterliche Handschriften und Miniaturen (1995), no. 4.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by Sam Fogg Ltd., cat. 16 (1995), no. 46, to Lawrence J. Schoenberg.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Lionel Tollemache, Earl of Dysart (Helmingham Hall, Suffolk, arms on covers; Dysart armorial stamp, f. 15v) in the 18th century and by his descendants through Bentley Lyonel John Tollemache (third Baron Tollemache).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold at auction at Sotheby's, 6 Dec. 1993, lot 53.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Sam Fogg Ltd., cat. 16 (1995), no. 46, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="581">
   <marc:subfield code="a">Mountford, Angela. "'Brothers who have studied medicine': Dominican friars in thirteenth-century Paris." Social History of Medicine 24, number 3 (December 2011): 535-553.</marc:subfield>
@@ -197,11 +197,9 @@
   <marc:subfield code="d">ca. 832-ca. 932.</marc:subfield>
   <marc:subfield code="t">Diete particulares.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="700">
-  <marc:subfield code="a">Israeli, Isaac,</marc:subfield>
-  <marc:subfield code="d">ca. 832-ca. 932.</marc:subfield>
-  <marc:subfield code="t">Kita&#x304;b al-h&#x323;ummaya&#x304;t.</marc:subfield>
-  <marc:subfield code="l">Latin.</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Robinson, Philip,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="700">
   <marc:subfield code="a">Israeli, Isaac,</marc:subfield>
@@ -226,9 +224,11 @@
   <marc:subfield code="d">1883-1955,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Robinson, Philip,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1="1" ind2="2" tag="700">
+  <marc:subfield code="a">Israeli, Isaac,</marc:subfield>
+  <marc:subfield code="d">ca. 832-ca. 932.</marc:subfield>
+  <marc:subfield code="t">Kita&#x304;b al-h&#x323;ummaya&#x304;t.</marc:subfield>
+  <marc:subfield code="l">Latin.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
@@ -244,12 +244,16 @@
   <marc:subfield code="j">Oversize LJS 24</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5266652</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs24.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333024</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5266652</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
@@ -258,10 +262,6 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p37w6764x</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs24.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

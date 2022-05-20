@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>03607ctd a2200493Ia 4500</marc:leader>
+    <marc:leader>03723ctd a2200505Ia 4500</marc:leader>
     <marc:controlfield tag="001">9962984263503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131929.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025111226.0</marc:controlfield>
     <marc:controlfield tag="008">141111s1860    ii            000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn894996881</marc:subfield>
@@ -45,10 +45,7 @@
   <marc:subfield code="c">13 x 28 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from colophon (f. 116r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Written in 9-10 lines per leaf.</marc:subfield>
+  <marc:subfield code="a">Dated s&#x301;aka 1782 (1860) (f. 116r), written in a second hand.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">118 leaves foliated 1-15, 15-67, 67-116, upper left and lower right verso.</marc:subfield>
@@ -57,7 +54,10 @@
   <marc:subfield code="a">Colophon: iti s&#x301;ri&#x304;matparamaham&#x323;saparijn&#x303;a&#x304;jaka&#x304;ca&#x304;ryapadava&#x304;kyaprama&#x304;n&#x323;apa&#x304;ra&#x304;va&#x304;rapa&#x304;ri&#x304;ta&#x304; s&#x301;ri&#x304;madra&#x304;ghava&#x304;nam&#x323;dasarasvati&#x304;pu&#x304;jyapa&#x304;das&#x301;is&#x323;yaih&#x323; s&#x301;ri&#x304;madra&#x304;mabhadrasarasvati&#x304;pu&#x304;jayapa&#x304;dy anugr&#x323;hi&#x304;tas&#x301;ri&#x304;madra&#x304;ma&#x304;nam&#x323;dasarasvati&#x304;s&#x301;ri&#x304;caran&#x323;air viracita&#x304;s&#x301;ri&#x304;bhagavatpa&#x304;di&#x304;yalaghuva&#x304;kyavr&#x323;ttipraka&#x304;s&#x301;ika&#x304;sam&#x323;pu&#x304;rn&#x323;a&#x304; // s&#x301;rubham&#x323; bhavatu // (f. 116r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Dated s&#x301;aka 1782 (1860) (f. 116r), written in a second hand.</marc:subfield>
+  <marc:subfield code="a">Title from colophon (f. 116r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Written in 9-10 lines per leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
@@ -81,33 +81,33 @@
   <marc:subfield code="t">Laghuva&#x304;kyavr&#x325;tti.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Advaita.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Vedanta.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Hindu philosophy.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Vedanta.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Treatises.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Advaita.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts</marc:subfield>
   <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Treatises.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="773">
   <marc:subfield code="t">Collection of Indic Manuscripts.</marc:subfield>
@@ -118,6 +118,10 @@
   <marc:subfield code="a">University of Pennsylvania</marc:subfield>
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p32805318</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>

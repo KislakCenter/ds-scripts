@@ -39,7 +39,19 @@
   <marc:subfield code="c">215 x 160 (140 x 95) mm bound to 215 x 170 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: The body of the book is completely detached from the cover. This cover does not appear ever to have been bound onto the book, but is wrapped around it to give the appearance of a bound volume. The covers are light grayish-brown textile over pasteboard with flap (Type II); pastedowns on inside covers and flap are reused leaves from another text.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Some leaves have been replaced and copied in different hands; the work is written on several different types of paper and in at least three hands, all using maghribi script.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in maghribi script using brown ink.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications mostly in red, but also in blue, green and purple.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from introduction (f. 1v).</marc:subfield>
@@ -49,18 +61,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: 22-27 long lines; some pages frame-ruled; many marginal notations.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in maghribi script using brown ink.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications mostly in red, but also in blue, green and purple.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: The body of the book is completely detached from the cover. This cover does not appear ever to have been bound onto the book, but is wrapped around it to give the appearance of a bound volume. The covers are light grayish-brown textile over pasteboard with flap (Type II); pastedowns on inside covers and flap are reused leaves from another text.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Some leaves have been replaced and copied in different hands; the work is written on several different types of paper and in at least three hands, all using maghribi script.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Likely copied in North Africa; copy completed in A.H. 29 Rajab 1206 (March 23, 1792) (f. 214r); another date in the colophon states that the writing was completed on 22 Rajab 999, but this is likely the date of completion of an earlier version from which this copyist worked.</marc:subfield>
@@ -75,10 +75,10 @@
   <marc:subfield code="a">Arabic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Marcus Jastrow and Morris Jastrow, Jr.</marc:subfield>
+  <marc:subfield code="a">Accessioned, 1934.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Accessioned, 1934.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Marcus Jastrow and Morris Jastrow, Jr.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="600">
   <marc:subfield code="6">880-03</marc:subfield>
@@ -92,6 +92,11 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
@@ -99,27 +104,22 @@
   <marc:subfield code="a">Commentaries.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">18th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="700">
-  <marc:subfield code="6">880-04</marc:subfield>
-  <marc:subfield code="a">Ibn Ma&#x304;lik, Muh&#x323;ammad ibn &#x2BB;Abd Alla&#x304;h,</marc:subfield>
-  <marc:subfield code="d">-1274.</marc:subfield>
-  <marc:subfield code="t">Alfi&#x304;yah.</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
+  <marc:subfield code="c">Jr.,</marc:subfield>
+  <marc:subfield code="d">1861-1921,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Jastrow, Marcus,</marc:subfield>
   <marc:subfield code="d">1829-1903,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Jastrow, Morris,</marc:subfield>
-  <marc:subfield code="c">Jr.,</marc:subfield>
-  <marc:subfield code="d">1861-1921,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1="1" ind2="2" tag="700">
+  <marc:subfield code="6">880-04</marc:subfield>
+  <marc:subfield code="a">Ibn Ma&#x304;lik, Muh&#x323;ammad ibn &#x2BB;Abd Alla&#x304;h,</marc:subfield>
+  <marc:subfield code="d">-1274.</marc:subfield>
+  <marc:subfield code="t">Alfi&#x304;yah.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
@@ -135,15 +135,6 @@
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p38s4jw06</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="880">
-  <marc:subfield code="6">100-01//r</marc:subfield>
-  <marc:subfield code="a">&#x645;&#x643;&#x648;&#x62F;&#x64A;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x631;&#x62D;&#x645;&#x646; &#x628;&#x646; &#x639;&#x644;&#x64A;&#x60C;</marc:subfield>
-  <marc:subfield code="d">-1404 &#x623;&#x648;  1405.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">&#x634;&#x631;&#x62D; &#x645;&#x62E;&#x62A;&#x635;&#x631; &#x639;&#x644;&#x649; &#x623;&#x644;&#x641;&#x64A;&#x629; &#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;.</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">600-03//r</marc:subfield>
   <marc:subfield code="a">&#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647;&#x60C;</marc:subfield>
@@ -155,6 +146,15 @@
   <marc:subfield code="a">&#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x644;&#x647;&#x60C;</marc:subfield>
   <marc:subfield code="d">-1274.</marc:subfield>
   <marc:subfield code="t">&#x623;&#x644;&#x641;&#x64A;&#x629;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x634;&#x631;&#x62D; &#x645;&#x62E;&#x62A;&#x635;&#x631; &#x639;&#x644;&#x649; &#x623;&#x644;&#x641;&#x64A;&#x629; &#x627;&#x628;&#x646; &#x645;&#x627;&#x644;&#x643;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">&#x645;&#x643;&#x648;&#x62F;&#x64A;&#x60C; &#x639;&#x628;&#x62F; &#x627;&#x644;&#x631;&#x62D;&#x645;&#x646; &#x628;&#x646; &#x639;&#x644;&#x64A;&#x60C;</marc:subfield>
+  <marc:subfield code="d">-1404 &#x623;&#x648;  1405.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="948">
   <marc:subfield code="h">HELD BY PAU - 0 OTHER HOLDINGS</marc:subfield>

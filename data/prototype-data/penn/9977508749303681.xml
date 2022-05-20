@@ -39,28 +39,28 @@
   <marc:subfield code="c">230 x 170 (170 x 90) mm bound to 235 x 187 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in reddish brown leather over pasteboard with flap (Type II). Embossed paper onlay central mandorla and blind tooled intersecting lines and frame on both covers and flap.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Likely copied in Morocco in the second half of the 18th or first half of the 19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation: Contemporary foliation in Western Arabic numerals in black ink, upper left recto (unnumbered, 4-100; 1[00]-[1]32). Modern foliation added in pencil to continue the sequence, upper left recto (133-164). A loose quire of 4 bifolia on machine-made paper, paginated (1-7), is laid in at the front of the copy. The first few leaves of the copy are damaged around the edges; the number is missing from one. Catchwords every verso, lower left, perpendicular to text.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout: Chiefly 19 long lines; loose quire in 14 long lines.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in maghribi in brown ink; pointed, vocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Rubrications in red.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in reddish brown leather over pasteboard with flap (Type II). Embossed paper onlay central mandorla and blind tooled intersecting lines and frame on both covers and flap.</marc:subfield>
+  <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Likely copied in Morocco in the second half of the 18th or first half of the 19th century.</marc:subfield>
+  <marc:subfield code="a">Script:  Written in maghribi in brown ink; pointed, vocalized.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation: Contemporary foliation in Western Arabic numerals in black ink, upper left recto (unnumbered, 4-100; 1[00]-[1]32). Modern foliation added in pencil to continue the sequence, upper left recto (133-164). A loose quire of 4 bifolia on machine-made paper, paginated (1-7), is laid in at the front of the copy. The first few leaves of the copy are damaged around the edges; the number is missing from one. Catchwords every verso, lower left, perpendicular to text.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">A prayer, to be said four times in the morning and the evening, has been inscribed on the last flyleaf verso by a later owner.</marc:subfield>
@@ -81,8 +81,17 @@
   <marc:subfield code="a">Tashelhit / Shilha.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Islam</marc:subfield>
-  <marc:subfield code="x">Customs and practices</marc:subfield>
+  <marc:subfield code="a">Berber poetry</marc:subfield>
+  <marc:subfield code="z">Morocco</marc:subfield>
+  <marc:subfield code="v">Texts.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Tamazight poetry</marc:subfield>
+  <marc:subfield code="z">Morocco</marc:subfield>
+  <marc:subfield code="v">Texts.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Islamic law</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
@@ -91,18 +100,9 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Islamic law</marc:subfield>
+  <marc:subfield code="a">Islam</marc:subfield>
+  <marc:subfield code="x">Customs and practices</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Tamazight poetry</marc:subfield>
-  <marc:subfield code="z">Morocco</marc:subfield>
-  <marc:subfield code="v">Texts.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Berber poetry</marc:subfield>
-  <marc:subfield code="z">Morocco</marc:subfield>
-  <marc:subfield code="v">Texts.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
@@ -110,19 +110,18 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Tashelhit</marc:subfield>
-  <marc:subfield code="y">18th century.</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Tashelhit</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2="2" tag="700">
-  <marc:subfield code="6">880-03</marc:subfield>
-  <marc:subfield code="a">Hawza&#x304;li&#x304;, Muh&#x323;ammad ibn &#x2BB;Ali&#x304;,</marc:subfield>
-  <marc:subfield code="d">-1748 or 1749.</marc:subfield>
-  <marc:subfield code="t">H&#x323;awd&#x323;.</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Williams, Talcott,</marc:subfield>
+  <marc:subfield code="d">1849-1928,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="700">
   <marc:subfield code="6">880-04</marc:subfield>
@@ -130,10 +129,11 @@
   <marc:subfield code="d">-1748 or 1749.</marc:subfield>
   <marc:subfield code="t">Bah&#x323;r al-dumu&#x304;&#x2BB;.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Williams, Talcott,</marc:subfield>
-  <marc:subfield code="d">1849-1928,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+    <marc:datafield ind1="1" ind2="2" tag="700">
+  <marc:subfield code="6">880-03</marc:subfield>
+  <marc:subfield code="a">Hawza&#x304;li&#x304;, Muh&#x323;ammad ibn &#x2BB;Ali&#x304;,</marc:subfield>
+  <marc:subfield code="d">-1748 or 1749.</marc:subfield>
+  <marc:subfield code="t">H&#x323;awd&#x323;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
@@ -142,12 +142,12 @@
   <marc:subfield code="j">Ms. Codex 1911</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1911.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p34b2xb60</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1911.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>
@@ -155,8 +155,10 @@
   <marc:subfield code="d">1748 &#x623;&#x648; 1749.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">&#x627;&#x644;&#x62D;&#x648;&#x636;. &#x628;&#x62D;&#x631; &#x627;&#x644;&#x62F;&#x645;&#x648;&#x639;.</marc:subfield>
+  <marc:subfield code="6">700-04//r</marc:subfield>
+  <marc:subfield code="a">&#x647;&#x648;&#x632;&#x627;&#x644;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x639;&#x644;&#x64A;&#x60C;</marc:subfield>
+  <marc:subfield code="d">-1748 &#x623;&#x648; 1749&#x60C;</marc:subfield>
+  <marc:subfield code="t">&#x628;&#x62D;&#x631; &#x627;&#x644;&#x62F;&#x645;&#x648;&#x639;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="880">
   <marc:subfield code="6">700-03//r</marc:subfield>
@@ -165,10 +167,8 @@
   <marc:subfield code="t">&#x62D;&#x648;&#x636;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="2" tag="880">
-  <marc:subfield code="6">700-04//r</marc:subfield>
-  <marc:subfield code="a">&#x647;&#x648;&#x632;&#x627;&#x644;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x628;&#x646; &#x639;&#x644;&#x64A;&#x60C;</marc:subfield>
-  <marc:subfield code="d">-1748 &#x623;&#x648; 1749&#x60C;</marc:subfield>
-  <marc:subfield code="t">&#x628;&#x62D;&#x631; &#x627;&#x644;&#x62F;&#x645;&#x648;&#x639;.</marc:subfield>
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x627;&#x644;&#x62D;&#x648;&#x636;. &#x628;&#x62D;&#x631; &#x627;&#x644;&#x62F;&#x645;&#x648;&#x639;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="948">
   <marc:subfield code="h">HELD BY PAU - 0 OTHER HOLDINGS</marc:subfield>

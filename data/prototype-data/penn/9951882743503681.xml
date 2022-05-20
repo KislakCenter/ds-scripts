@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>02541ctd a2200469Ia 4500</marc:leader>
+    <marc:leader>02654ctd a2200481Ia 4500</marc:leader>
     <marc:controlfield tag="001">9951882743503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131625.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025110606.0</marc:controlfield>
     <marc:controlfield tag="008">111110q17001850pau           000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn760179354</marc:subfield>
@@ -43,22 +43,22 @@
   <marc:subfield code="c">11 x 23 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">95 leaves foliated 2-96, upper left and lower right verso; missing first folio.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Non-Latin script record.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Colophon:  iti bodha&#x304;yanam&#x323; cayanaprayogah&#x323; sama&#x304;ptah&#x323; // (f. 96r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from colophon (f. 96r); alternate title from title abbreviation throughout, upper left verso.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Written in 10 lines per leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">95 leaves foliated 2-96, upper left and lower right verso; missing first folio.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Colophon:  iti bodha&#x304;yanam&#x323; cayanaprayogah&#x323; sama&#x304;ptah&#x323; // (f. 96r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections in margins; significant syllables, words, or phrases highlighted in red throughout; vertical margins marked with double black line.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Non-Latin script record.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Listed in H. I. Poleman, Census of Indic Manuscripts in the United States and Canada (New Haven, Conn.:  American Oriental Society, 1938), Poleman</marc:subfield>
@@ -84,6 +84,11 @@
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
@@ -95,11 +100,6 @@
   <marc:subfield code="a">Manuscripts</marc:subfield>
   <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="740">
   <marc:subfield code="a">Cayanaprayoga.</marc:subfield>
@@ -117,6 +117,10 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5188274</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3rv5b</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="0" tag="880">
   <marc:subfield code="6">245-01</marc:subfield>

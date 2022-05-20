@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>04097ctd a2200553Ia 4500</marc:leader>
+    <marc:leader>04210ctd a2200565Ia 4500</marc:leader>
     <marc:controlfield tag="001">9951866203503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131634.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025110935.0</marc:controlfield>
     <marc:controlfield tag="008">111107s1814    pau           000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn759865004</marc:subfield>
@@ -45,7 +45,22 @@
   <marc:subfield code="c">11 x 25 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Non-Latin script record.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections in margins; significant syllables, words, or phrases highlighted in red throughout; vertical margins marked with double red line.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">43 leaves foliated 1-43, upper left and lower right verso.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Dated sam&#x323;vat 1871 (1814) in the dark half of Phalguna (February-March) (f. 43r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Colophon: iti tororudradevakr&#x323;te prata&#x304;pana&#x304;rasim&#x323;he agnihotradars&#x301;apu&#x304;rn&#x323;ama&#x304;sa&#x304;gnayan&#x323;a&#x304;dha&#x304;napra&#x304;yas&#x301;citta&#x304;ni sama&#x304;pta&#x304;ni // sam&#x323;vat 1871 pha&#x304;lgunakr&#x323;s&#x323;n&#x323;ah&#x323; 4 cam&#x323;dra- (f. 43v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Section title A&#x304;s&#x301;vala&#x304;yana&#x304;na&#x304;magnihotraprava&#x304;savidhi from section colophon (f. 11v); section title Agnayan&#x323;a&#x304;dha&#x304;nara&#x304;yas&#x301;citta&#x304;ni from final colophon (f. 43v), with alternate section title Anuddharan&#x323;apra&#x304;yas&#x301;cita from section rubric (f. 11v), and with second alternate section title Agnihotrahomapra&#x304;tyas&#x301;citta&#x304;ni from section colophon (f. 28r); section title Agnihotradars&#x301;apu&#x304;rn&#x323;ama&#x304;sa from final colophon (f. 43v), with alternate section title Prasan&#x307;ga&#x304;d dars&#x301;apu&#x304;rn&#x323;ama&#x304;sa from rubric (f. 28r).</marc:subfield>
@@ -54,22 +69,7 @@
   <marc:subfield code="a">Written in 7 lines per leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">43 leaves foliated 1-43, upper left and lower right verso.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Colophon: iti tororudradevakr&#x323;te prata&#x304;pana&#x304;rasim&#x323;he agnihotradars&#x301;apu&#x304;rn&#x323;ama&#x304;sa&#x304;gnayan&#x323;a&#x304;dha&#x304;napra&#x304;yas&#x301;citta&#x304;ni sama&#x304;pta&#x304;ni // sam&#x323;vat 1871 pha&#x304;lgunakr&#x323;s&#x323;n&#x323;ah&#x323; 4 cam&#x323;dra- (f. 43v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Dated sam&#x323;vat 1871 (1814) in the dark half of Phalguna (February-March) (f. 43r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Text possibly in the hand of the author.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections in margins; significant syllables, words, or phrases highlighted in red throughout; vertical margins marked with double red line.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Non-Latin script record.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">A&#x304;s&#x301;vala&#x304;yana&#x304;na&#x304;magnihotraprava&#x304;savidhi -- Agnayan&#x323;a&#x304;dha&#x304;nara&#x304;yas&#x301;citta&#x304;ni -- Agnihotradars&#x301;apu&#x304;rn&#x323;ama&#x304;sa.</marc:subfield>
@@ -96,6 +96,11 @@
   <marc:subfield code="x">Rituals</marc:subfield>
   <marc:subfield code="v">Texts.</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuals (instructional materials)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
@@ -104,13 +109,11 @@
   <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
+    <marc:datafield ind1="0" ind2="2" tag="740">
+  <marc:subfield code="a">Agnayan&#x323;a&#x304;dha&#x304;nara&#x304;yas&#x301;citta&#x304;ni.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="740">
-  <marc:subfield code="a">A&#x304;s&#x301;vala&#x304;yana&#x304;na&#x304;magnihotraprava&#x304;savidhi.</marc:subfield>
+  <marc:subfield code="a">Agnihotradars&#x301;apu&#x304;rn&#x323;ama&#x304;sa.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="740">
   <marc:subfield code="a">Anuddharan&#x323;apra&#x304;yas&#x301;cita.</marc:subfield>
@@ -119,10 +122,7 @@
   <marc:subfield code="a">Agnihotrahomapra&#x304;tyas&#x301;citta&#x304;ni.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="740">
-  <marc:subfield code="a">Agnihotradars&#x301;apu&#x304;rn&#x323;ama&#x304;sa.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2="2" tag="740">
-  <marc:subfield code="a">Agnayan&#x323;a&#x304;dha&#x304;nara&#x304;yas&#x301;citta&#x304;ni.</marc:subfield>
+  <marc:subfield code="a">A&#x304;s&#x301;vala&#x304;yana&#x304;na&#x304;magnihotraprava&#x304;savidhi.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="773">
   <marc:subfield code="t">Collection of Indic Manuscripts.</marc:subfield>
@@ -133,6 +133,10 @@
   <marc:subfield code="a">University of Pennsylvania</marc:subfield>
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3c57s</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>

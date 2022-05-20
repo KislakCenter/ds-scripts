@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>03212ntm a2200481Ia 4500</marc:leader>
+    <marc:leader>03263ntm a2200493Ia 4500</marc:leader>
     <marc:controlfield tag="001">9977406953003681</marc:controlfield>
-    <marc:controlfield tag="005">20210929170158.0</marc:controlfield>
+    <marc:controlfield tag="005">20220223104028.0</marc:controlfield>
     <marc:controlfield tag="008">181031q18301899xx            000 0 ara d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)1059578305</marc:subfield>
@@ -37,7 +37,19 @@
   <marc:subfield code="c">295 x 185 (212 x 106) mm bound to 295 x 195 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Manuscript is in poor condition; many leaves are loose; binding is off; worm damage; water and fire damage throughout.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in reddish brown leather over pasteboard (Type III); headband in black and brown thread; seperate marbled paper pastedowns inside both covers; detached reddish textile wrapper; blind stamped and gilded mandorlas on front and back covers with four pendants along vertical axis and cornerpieces; covers are badly water and fire damaged.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Likely copied in South Asia in the mid- to late-19th century; machine made paper.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in naskh using black ink; pointed and vocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">First folio missing; first full a&#x304;yah is verse 12 in Su&#x304;rat al-Baqarah (2:12).</marc:subfield>
@@ -49,19 +61,10 @@
   <marc:subfield code="a">Layout: 11 long lines, border-ruled.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Manuscript is in poor condition; many leaves are loose; binding is off; worm damage; water and fire damage throughout.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in naskh using black ink; pointed and vocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Readings in red, su&#x304;rah titles rubricated and framed; gold roundels at end of each verse; gold roundels outlined in black double line with a black vertical line underneath accompanied by a red letter &#x2BB;ayn in margins to indicate ruku&#x2BB;. Juz&#x2BC; markers in red ink in margins; gold non-circular medallions indicating other text partitions. Some decorations finished by another hand; textblock border-ruled in red; page openings framed in faded black.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in reddish brown leather over pasteboard (Type III); headband in black and brown thread; seperate marbled paper pastedowns inside both covers; detached reddish textile wrapper; blind stamped and gilded mandorlas on front and back covers with four pendants along vertical axis and cornerpieces; covers are badly water and fire damaged.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Likely copied in South Asia in the mid- to late-19th century; machine made paper.</marc:subfield>
+    <marc:datafield ind1=" " ind2=" " tag="506">
+  <marc:subfield code="a">Access to this item is restricted.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Qur'a&#x304;n; complete except for first folio.</marc:subfield>
@@ -73,18 +76,10 @@
   <marc:subfield code="a">Arabic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Col. Offley Shore.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Gift of Offley Shore.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Col. Offley Shore.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
@@ -95,6 +90,14 @@
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">19th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Shore, Offley Bohun Stovin Fairless,</marc:subfield>
@@ -108,12 +111,12 @@
   <marc:subfield code="j">Oversize Ms. Codex 1897</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1897.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3tq5rm36</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1897.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">130-01//r</marc:subfield>

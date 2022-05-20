@@ -41,7 +41,19 @@
   <marc:subfield code="c">207 x 135 (145 x 75) mm bound to 212 x 150 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: Chiefly 16 long lines; some pages with 23 lines written diagonally.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: The item is undated, but an owner's stamp places the copy before A.H. 1162 (1749) (f. 1v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Rubrications in red.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in informal naskh in black ink, pointed.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from introdution (f. 2r).</marc:subfield>
@@ -50,19 +62,7 @@
   <marc:subfield code="a">Foliation: Modern foliation added in pencil, upper left recto; catchwords every verso, lower left.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: Chiefly 16 long lines; some pages with 23 lines written diagonally.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in informal naskh in black ink, pointed.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Rubrications in red.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding: Rebound in modern grey cover with transliterated title stamped on the spine.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: The item is undated, but an owner's stamp places the copy before A.H. 1162 (1749) (f. 1v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Commentary on a statement in the preface of al-Fawa&#x304;&#x2BC;id al-Fana&#x304;ri&#x304;yah of Muh&#x323;ammad ibn H&#x323;amzah al-Fana&#x304;ri&#x304; (d. 834/1431).</marc:subfield>
@@ -95,12 +95,13 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="a">Commentaries.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
@@ -108,9 +109,8 @@
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">18th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Class of 1924 Book Fund.</marc:subfield>
@@ -125,26 +125,26 @@
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206</marc:subfield>
   <marc:subfield code="j">Ms. Codex 1961</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1961.html</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Class of 1924 Book Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366301</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1961.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3610vz60</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">&#x62C;&#x647;&#x629; &#x627;&#x644;&#x648;&#x62D;&#x62F;&#x629;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>
   <marc:subfield code="a">&#x634;&#x631;&#x648;&#x627;&#x646;&#x64A;&#x60C; &#x645;&#x62D;&#x645;&#x62F; &#x627;&#x644;&#x627;&#x645;&#x64A;&#x646; &#x628;&#x646; &#x635;&#x62F;&#x631; &#x627;&#x644;&#x62F;&#x64A;&#x646;&#x60C;</marc:subfield>
   <marc:subfield code="d">-1626 &#x623;&#x648; 1627.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2="0" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">&#x62C;&#x647;&#x629; &#x627;&#x644;&#x648;&#x62D;&#x62F;&#x629;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">600-03//r</marc:subfield>

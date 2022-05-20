@@ -52,10 +52,16 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Contemporary (15th-century) half calf over boards, with remnants of 2 pairs of clasps; rebacked.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Italy, possibly Verona (contemporary ownership inscription, f. 1r), in the mid-15th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from later inscription (f. 1v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Foliation:  Paper, 150; 1&#xB9;&#x2074;(-1, pastedown) 2-3&#xB9;&#x2070; 4-6&#xB9;&#xB2; 7-11&#xB9;&#x2070; 12-13&#xB9;&#xB2; 14&#x2078;(-1, pastedown).  Catchwords on the last verso of each gathering except the first, ninth, and last (f. 23v, 33v, 45v, 57v, 69v, 79v, 89v, 109v, 119v, 131v, 143v).  Some signatures visible in later gatherings, lower right recto.</marc:subfield>
+  <marc:subfield code="a">Decoration:  7 geometric diagrams in red and black (inside upper cover); 21-line drawing of Christ in the tomb in black and red ink in first column of text, surrounded by the opening words of the text in calligraphic letters (f. 2r); several 2-line to 7-line initials in red ink and red paragraph marks and initials touched with red in first 3 gatherings (f. 1r-45v). 4-line to 8-line initials in red ink with red penwork, or blue ink with red penwork; 14-line blue initial with red penwork and display lettering for the first words of the section (f. 100r); alternating blue and red paragraph marks in remaining gatherings.  Correction for erroneous decorated initial (f. 74v).  Drawing in ink of a head in profile (inside lower cover).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout:  Written in 2 columns of 43-60 lines; frame-ruled in lead.</marc:subfield>
@@ -64,13 +70,7 @@
   <marc:subfield code="a">Script:  Written in Gothic cursive script by at least 3 hands, with the first line of text in some sections in larger calligraphic script.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  7 geometric diagrams in red and black (inside upper cover); 21-line drawing of Christ in the tomb in black and red ink in first column of text, surrounded by the opening words of the text in calligraphic letters (f. 2r); several 2-line to 7-line initials in red ink and red paragraph marks and initials touched with red in first 3 gatherings (f. 1r-45v). 4-line to 8-line initials in red ink with red penwork, or blue ink with red penwork; 14-line blue initial with red penwork and display lettering for the first words of the section (f. 100r); alternating blue and red paragraph marks in remaining gatherings.  Correction for erroneous decorated initial (f. 74v).  Drawing in ink of a head in profile (inside lower cover).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  Contemporary (15th-century) half calf over boards, with remnants of 2 pairs of clasps; rebacked.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in Italy, possibly Verona (contemporary ownership inscription, f. 1r), in the mid-15th century.</marc:subfield>
+  <marc:subfield code="a">Foliation:  Paper, 150; 1&#xB9;&#x2074;(-1, pastedown) 2-3&#xB9;&#x2070; 4-6&#xB9;&#xB2; 7-11&#xB9;&#x2070; 12-13&#xB9;&#xB2; 14&#x2078;(-1, pastedown).  Catchwords on the last verso of each gathering except the first, ninth, and last (f. 23v, 33v, 45v, 57v, 69v, 79v, 89v, 109v, 119v, 131v, 143v).  Some signatures visible in later gatherings, lower right recto.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="506">
   <marc:subfield code="a">Access to this item is subject to staff review.</marc:subfield>
@@ -92,10 +92,10 @@
   <marc:subfield code="a">Formerly owned by Brother John of the Chapel of Verona (contemporary inscription, Iste liber est fratris Johannis a capello Veronensis, f. 1r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold at auction at Butterfield &amp; Butterfield (San Francisco), 21 October 1997, lot 3750, to Lawrence J. Schoenberg.</marc:subfield>
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2013.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2013.</marc:subfield>
+  <marc:subfield code="a">Sold at auction at Butterfield &amp; Butterfield (San Francisco), 21 October 1997, lot 3750, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
@@ -106,28 +106,27 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="0" tag="600">
+  <marc:subfield code="a">Jesus Christ</marc:subfield>
+  <marc:subfield code="v">Art.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="600">
   <marc:subfield code="a">Aristotle</marc:subfield>
   <marc:subfield code="x">Criticism and interpretation</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2="0" tag="600">
-  <marc:subfield code="a">Jesus Christ</marc:subfield>
-  <marc:subfield code="v">Art.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Logic</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Diagrams.</marc:subfield>
+  <marc:subfield code="a">Codices.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
@@ -138,8 +137,9 @@
   <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
   <marc:subfield code="y">15th century.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Diagrams.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
@@ -155,12 +155,16 @@
   <marc:subfield code="j">LJS 224</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5938734</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs224.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1338704</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5938734</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
@@ -169,10 +173,6 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3h98zd74</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs224.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

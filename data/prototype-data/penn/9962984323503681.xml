@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>02788ctd a2200505Ia 4500</marc:leader>
+    <marc:leader>02904ctd a2200517Ia 4500</marc:leader>
     <marc:controlfield tag="001">9962984323503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131931.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025111108.0</marc:controlfield>
     <marc:controlfield tag="008">141111q16501799ii            000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn894997079</marc:subfield>
@@ -45,16 +45,16 @@
   <marc:subfield code="c">13 x 29 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from title page (f. 1r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Written in 10-12 lines per leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">126 leaves foliated 1-20, 22-127, lower right verso.</marc:subfield>
+  <marc:subfield code="a">Mistakes covered in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout; vertical margins marked with quadruple black line.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout; vertical margins marked with quadruple black line.</marc:subfield>
+  <marc:subfield code="a">Title from title page (f. 1r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">126 leaves foliated 1-20, 22-127, lower right verso.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Listed in H.I. Poleman, Census of Indic Manuscripts in the United States and Canada (New Haven, Conn.:  American Oriental Society, 1938), Poleman</marc:subfield>
@@ -74,6 +74,10 @@
   <marc:subfield code="a">Formerly owned by Gan&#x307;ga&#x304;ra&#x304;ma (f. 1r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Philosophy, Indic</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Advaita</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
@@ -85,9 +89,10 @@
   <marc:subfield code="a">Hindu philosophy</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Philosophy, Indic</marc:subfield>
-  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
@@ -102,17 +107,12 @@
   <marc:subfield code="y">17th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
-  <marc:subfield code="y">18th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts</marc:subfield>
   <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">17th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="700">
@@ -132,6 +132,10 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/6298432</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p33b5w832</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2="0" tag="880">
   <marc:subfield code="6">245-01</marc:subfield>

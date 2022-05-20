@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>04230ctm a2200661Ia 4500</marc:leader>
+    <marc:leader>04476ctm a2200673Ia 4500</marc:leader>
     <marc:controlfield tag="001">9954084983503681</marc:controlfield>
-    <marc:controlfield tag="005">20211011114818.0</marc:controlfield>
-    <marc:controlfield tag="008">120113s1470    paup          000 0 lat d</marc:controlfield>
+    <marc:controlfield tag="005">20211222111941.0</marc:controlfield>
+    <marc:controlfield tag="008">120113s1470    fr p          000 0 lat d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn772645214</marc:subfield>
 </marc:datafield>
@@ -16,8 +16,9 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="040">
   <marc:subfield code="a">PAULM</marc:subfield>
-  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
   <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
   <marc:subfield code="d">PAULM</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="041">
@@ -42,31 +43,13 @@
   <marc:subfield code="h">[manuscript].</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="260">
-  <marc:subfield code="a">[Paris],</marc:subfield>
+  <marc:subfield code="a">[Paris, France],</marc:subfield>
   <marc:subfield code="c">1470.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="300">
   <marc:subfield code="a">20 leaves :</marc:subfield>
   <marc:subfield code="b">parchment ;</marc:subfield>
-  <marc:subfield code="c">198 x 138 (138 x 75) mm. bound to 205 x 148 mm.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Ms. codex.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from rubric (f. 1v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Collation:  Parchment, ii (19th-century paper) + 20 + i (19th-century paper); 1-2&#xB9;&#x2070;; [1-20], modern foliation in pencil, upper right recto.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout:  Written in 36 long lines; frame-ruled in red lead; double vertical and upper horizontal bounding lines.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in a humanistic script by Guillaume Tardif (signature, f. 20v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  2 4-line initials, 1 filled with pink and a coat of arms on a blue background (f. 1r), 1 filled with blue on a pink background (f. 11r); 2- to 3-line initials in gold, alternating between filled with pink on a blue background and filled with blue on a pink background, throughout; paragraph marks in gold with the same alternation of infill and background throughout; rubrication in red.</marc:subfield>
+  <marc:subfield code="c">198 x 138 (138 x 75) mm bound to 205 x 148 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding:  19th-century quarter leather with shagreen covers; marbled endpapers.</marc:subfield>
@@ -74,17 +57,35 @@
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin:  Written in Paris in 1470 (f. 1v).</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">1. f.1r-1v: Guillermus Tardivus Aniciensis Karolo Mariete Parisiensi litterarum amorem optat [dedicatory epistle]</marc:subfield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Collation:  Parchment, ii (19th-century paper) + 20 + i (19th-century paper); 1-2&#xB9;&#x2070;; [1-20], modern foliation in pencil, upper right recto.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  2 4-line initials, 1 filled with pink and a coat of arms on a blue background (f. 1r), 1 filled with blue on a pink background (f. 11r); 2- to 3-line initials in gold, alternating between filled with pink on a blue background and filled with blue on a pink background, throughout; paragraph marks in gold with the same alternation of infill and background throughout; rubrication in red.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in a humanistic script by Guillaume Tardif (signature, f. 20v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 36 long lines; frame-ruled in red lead; double vertical and upper horizontal bounding lines.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from rubric (f. 1v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">2. f.2r-7v: [Summary of Latin grammar]</marc:subfield>
+  <marc:subfield code="a">4. f.11r-20v: [Commentary on the summary]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">3. f.8r-10v: [Conjugation tables]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">4. f.11r-20v: [Commentary on the summary]</marc:subfield>
+  <marc:subfield code="a">2. f.2r-7v: [Summary of Latin grammar]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r-1v: Guillermus Tardivus Aniciensis Karolo Mariete Parisiensi litterarum amorem optat [dedicatory epistle]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -94,22 +95,25 @@
   <marc:subfield code="a">Summary of Latin grammar arranged in 8 sections for 8 parts of speech, followed by conjugation tables for the 4 conjugations and a commentary on the summary, with the lemmata from the earlier part in red.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="524">
-  <marc:subfield code="a">LJS 242</marc:subfield>
+  <marc:subfield code="a">LJS 242.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="546">
   <marc:subfield code="a">Latin, with some French translations in the first conjugation table (f. 8r-9r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Gift of the author to his pupil Charles Marriette (f. 20v).</marc:subfield>
+  <marc:subfield code="a">Appears in E. K. Schreiber's cat. 21 (1989), no. 94.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Appears in E. K. Schreiber's cat. 21 (1989), no. 94.</marc:subfield>
+  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold by Librairie Thomas-Scheler (Paris), catalog titled Un choix (Apr. 1998), no. 3, to Lawrence J. Schoenberg.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+  <marc:subfield code="a">Gift of the author to his pupil Charles Marriette (f. 20v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="581">
+  <marc:subfield code="a">Herman, Nicholas. Making the Renaissance Manuscript: Discoveries from Philadelphia Libraries (exh. cat.). Philadelphia: University of Pennsylvania Libraries, 2020. 46, 214&#x2013;15 (cat. 62).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="581">
   <marc:subfield code="a">Beltran, Evencio.  "Un manuscrit autographe de la Grammatice basis de Guillaume Tardif."  In Bibliothe&#x302;que d'humanisme et Renaissance 61 (1999), no. 2, 495-508.</marc:subfield>
@@ -123,23 +127,24 @@
   <marc:subfield code="v">Early works to 1500.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="a">codices (bound manuscripts)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentaries.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Treatises.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
-  <marc:subfield code="y">15th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts, Renaissance.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">treatises.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
+  <marc:subfield code="y">15th century.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">commentaries.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Marriette, Charles,</marc:subfield>
@@ -160,8 +165,8 @@
   <marc:subfield code="j">LJS 242</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Facsimile</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5408498</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p35644</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Video orientation</marc:subfield>
@@ -172,12 +177,12 @@
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p35644</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs242.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Facsimile</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5408498</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

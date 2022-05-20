@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>04554ctd a2200553Ia 4500</marc:leader>
+    <marc:leader>04670ctd a2200565Ia 4500</marc:leader>
     <marc:controlfield tag="001">9962987793503681</marc:controlfield>
-    <marc:controlfield tag="005">20191003131937.0</marc:controlfield>
+    <marc:controlfield tag="005">20211025111110.0</marc:controlfield>
     <marc:controlfield tag="008">141111q17001850ii            000 0 san d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn895003832</marc:subfield>
@@ -45,22 +45,22 @@
   <marc:subfield code="c">17 x 31 cm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Title from colophon (f. 123v); title of super-commentary Bha&#x304;s&#x323;yaratnaprabha&#x304; from commentary colophon (f. 123v); alternate titles of super-commentary, S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;vya&#x304;khya&#x304;ya&#x304; and S&#x301;a&#x304;ri&#x304;rakabhagavatpa&#x304;dabha&#x304;s&#x323;yavibha&#x304;ga, supplied by cataloger.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Written in 10-21 lines per leaf.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">123 leaves foliated 1-123, upper right verso.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Colophon (commentary): iti s&#x301;ri&#x304;matparamaham&#x323;saparivra&#x304;jaka&#x304;ca&#x304;rya s&#x301;ri&#x304;govim&#x323;da&#x304;nam&#x323;dabhagavatkr&#x323;tau s&#x301;a&#x304;ri&#x304;raka[mi&#x304;ma&#x304;m&#x323;sa&#x304;]vya&#x304;khya&#x304;ya&#x304;m&#x323; bha&#x304;s&#x323;yaratnaprabha&#x304;ya&#x304;m&#x323; tr&#x323;ti&#x304;ya&#x304;dhya&#x304;yasya caturthah&#x323; pa&#x304;dah&#x323; // tr&#x323;ti&#x304;ya&#x304;dhya&#x304;yah&#x323; sama&#x304;ptah&#x323; // s&#x301;ri&#x304;s&#x301;am&#x323;kara&#x304;ca&#x304;ryebhyo namah&#x323; // (f. 123v).</marc:subfield>
+  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Manuscript was part of a larger work along with Ms. Coll. 390, Item 1010.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Mistakes covered over in yellow or blacked out; some corrections and additions in margins; significant syllables, words, or phrases highlighted in red throughout.</marc:subfield>
+  <marc:subfield code="a">Colophon (commentary): iti s&#x301;ri&#x304;matparamaham&#x323;saparivra&#x304;jaka&#x304;ca&#x304;rya s&#x301;ri&#x304;govim&#x323;da&#x304;nam&#x323;dabhagavatkr&#x323;tau s&#x301;a&#x304;ri&#x304;raka[mi&#x304;ma&#x304;m&#x323;sa&#x304;]vya&#x304;khya&#x304;ya&#x304;m&#x323; bha&#x304;s&#x323;yaratnaprabha&#x304;ya&#x304;m&#x323; tr&#x323;ti&#x304;ya&#x304;dhya&#x304;yasya caturthah&#x323; pa&#x304;dah&#x323; // tr&#x323;ti&#x304;ya&#x304;dhya&#x304;yah&#x323; sama&#x304;ptah&#x323; // s&#x301;ri&#x304;s&#x301;am&#x323;kara&#x304;ca&#x304;ryebhyo namah&#x323; // (f. 123v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">123 leaves foliated 1-123, upper right verso.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from colophon (f. 123v); title of super-commentary Bha&#x304;s&#x323;yaratnaprabha&#x304; from commentary colophon (f. 123v); alternate titles of super-commentary, S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;vya&#x304;khya&#x304;ya&#x304; and S&#x301;a&#x304;ri&#x304;rakabhagavatpa&#x304;dabha&#x304;s&#x323;yavibha&#x304;ga, supplied by cataloger.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Written in 10-21 lines per leaf.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">Prathama pa&#x304;da (f. 1-18) -- [Dviti&#x304;ya] pa&#x304;da (f. 19-47r) --  Tr&#x323;ti&#x304;ya pa&#x304;da (f. 47v-99v)-- Caturti&#x304;ya pa&#x304;da (f.100r-123v).</marc:subfield>
@@ -80,6 +80,9 @@
   <marc:subfield code="t">Brahmasu&#x304;tra.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Advaita.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Philosophy, Indic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
@@ -88,8 +91,10 @@
     <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Vedanta.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Advaita.</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts</marc:subfield>
+  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
@@ -104,17 +109,12 @@
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts</marc:subfield>
   <marc:subfield code="z">India</marc:subfield>
   <marc:subfield code="y">18th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts</marc:subfield>
-  <marc:subfield code="z">India</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Sanskrit</marc:subfield>
   <marc:subfield code="y">19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="700">
@@ -122,10 +122,10 @@
   <marc:subfield code="t">Bha&#x304;s&#x323;yaratnaprabha&#x304;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="740">
-  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;vya&#x304;khya&#x304;ya&#x304;.</marc:subfield>
+  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakabhagavatpa&#x304;dabha&#x304;s&#x323;yavibha&#x304;ga.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="740">
-  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakabhagavatpa&#x304;dabha&#x304;s&#x323;yavibha&#x304;ga.</marc:subfield>
+  <marc:subfield code="a">S&#x301;a&#x304;ri&#x304;rakami&#x304;ma&#x304;m&#x323;sa&#x304;vya&#x304;khya&#x304;ya&#x304;.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="773">
   <marc:subfield code="t">Collection of Indic Manuscripts.</marc:subfield>
@@ -136,6 +136,10 @@
   <marc:subfield code="a">University of Pennsylvania</marc:subfield>
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Ms. Coll. 390</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3p843w68</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>06400ctm a2200853Ia 4500</marc:leader>
+    <marc:leader>06614ctm a2200865Ia 4500</marc:leader>
     <marc:controlfield tag="001">9948120243503681</marc:controlfield>
-    <marc:controlfield tag="005">20211011114819.0</marc:controlfield>
+    <marc:controlfield tag="005">20211221114942.0</marc:controlfield>
     <marc:controlfield tag="008">100817q11251175au a          000 0 lat d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn784992921</marc:subfield>
@@ -16,8 +16,9 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="040">
   <marc:subfield code="a">PAULM</marc:subfield>
-  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
   <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
   <marc:subfield code="d">PAULM</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="049">
@@ -41,16 +42,25 @@
   <marc:subfield code="c">Geberti.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="260">
-  <marc:subfield code="a">[Austria?,</marc:subfield>
-  <marc:subfield code="c">between 1125 and 1175]</marc:subfield>
+  <marc:subfield code="a">[Austria?],</marc:subfield>
+  <marc:subfield code="c">[between 1125 and 1175]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="300">
   <marc:subfield code="a">56 leaves :</marc:subfield>
   <marc:subfield code="b">parchment, ill. ;</marc:subfield>
-  <marc:subfield code="c">155 x 106 (121 x 78) mm. bound to 163 x 113 mm.</marc:subfield>
+  <marc:subfield code="c">155 x 106 (121 x 78) mm bound to 163 x 113 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in Bavaria, probably in modern northern Austria, in the mid-12th century, based on similarity of the script to that used at the Benedictine abbey of Saint Lambrecht (Lisa Fagin Davis)..</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  18th-century blind-stamped calf; rebacked with spine laid on; GEOMETRIA written on head edge.  Some loss to marginal notes and diagrams due to trimming.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  Geometric diagrams throughout, including one that is an attempt to represent a cube in three dimensions (f. 4v; Charles Burnett); 4 large (3-line to 10-line) white-vine initials in red ink (f. 1r, 2r, 5r, 8r), 1 zoomorphic 5-line initial formed from a winged dragon (f. 7r), and 1 5-line initial drawn in brown ink (f. 22v);  1-, 3-, and 4-line painted initials in red throughout; some capitals touched in red; rubrics in red; a few manicules early in the manuscript (f. 2r-5v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
@@ -59,37 +69,28 @@
   <marc:subfield code="a">Foliation:  Parchment, i (18th-century paper) + 56 leaves + i (18th-century paper); 1-7&#x2078;; one gathering lacking after gathering 6 and perhaps some material at end also lacking; modern foliation in pencil, [1-56], upper right recto.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout:  Written in 24-25 long lines; ruled in drypoint.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Script:  Written in transitional script (or protogothic script) by two hands.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  Geometric diagrams throughout, including one that is an attempt to represent a cube in three dimensions (f. 4v; Charles Burnett); 4 large (3-line to 10-line) white-vine initials in red ink (f. 1r, 2r, 5r, 8r), 1 zoomorphic 5-line initial formed from a winged dragon (f. 7r), and 1 5-line initial drawn in brown ink (f. 22v);  1-, 3-, and 4-line painted initials in red throughout; some capitals touched in red; rubrics in red; a few manicules early in the manuscript (f. 2r-5v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  18th-century blind-stamped calf; rebacked with spine laid on; GEOMETRIA written on head edge.  Some loss to marginal notes and diagrams due to trimming.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in Bavaria, probably in modern northern Austria, in the mid-12th century, based on similarity of the script to that used at the Benedictine abbey of Saint Lambrecht (Lisa Fagin Davis)..</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">1. f.1r-48v: [Sections from the first four chapters of Isagoge geometriae]</marc:subfield>
+  <marc:subfield code="a">Layout:  Written in 24-25 long lines; ruled in drypoint.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">2. f.49r-51v: [Letter from Gebert to Adelbaldus on the area of triangles, lacking beginning]</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">3. f.51v-52v: [Response from Adelbaldus to Gebert]</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="0" ind2=" " tag="505">
-  <marc:subfield code="a">4. f.52v-53v: [Geometrical treatise]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">5. f.53v-56r: [Treatise on construction of astrolabe]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="505">
   <marc:subfield code="a">6. f.56r-56v: [Additions in other hands, including a repetition of text on f. 22v-23r and a passage on measurement of distance]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r-48v: [Sections from the first four chapters of Isagoge geometriae]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">3. f.51v-52v: [Response from Adelbaldus to Gebert]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">4. f.52v-53v: [Geometrical treatise]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -99,7 +100,7 @@
   <marc:subfield code="a">Collection of geometrical texts, including material from four chapters of the Isagoge geometriae; correspondence with Adelbaldus (also known as Adelbold or Albaldus, of Utrecht) about the area of isosceles triangles; and a treatise on the construction of astrolabes, in which the instrument is referred to by the latinized term astrolapsus.  Annotated in the 12th century and also by an unknown late 15th- or early 16th-century humanist who collated the text with other manuscripts and noted the classical sources in the text.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="524">
-  <marc:subfield code="a">LJS 194</marc:subfield>
+  <marc:subfield code="a">LJS 194.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="545">
   <marc:subfield code="a">Mathematician and educator known as Gerbert of Auvergne (or Alvernia or Aurillac), elected Pope Sylvester II in 999.</marc:subfield>
@@ -108,16 +109,10 @@
   <marc:subfield code="a">Latin.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by M. Haimmiller (inscription, f. 1r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Hieronymus Wilhelm Ebner von Eschenbach, sold at auction in Nuremberg as part of his library, 2 Aug. 1813, lot 311.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly owned by John Bohn and then Sir Thomas Phillipps (Ms. 4437, label on spine).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Probably sold by Robinson Brothers (London), 1945.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Hieronymus Wilhelm Ebner von Eschenbach, sold at auction in Nuremberg as part of his library, 2 Aug. 1813, lot 311.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly owned by Harrison D. Horblit (Ridgefield, Conn.).</marc:subfield>
@@ -126,13 +121,22 @@
   <marc:subfield code="a">Appeared in H. P. Kraus' cat. 155 (1979), no. 18; also handled by book and manuscript dealer Bruce Ferrini (Akron, Ohio); also appeared in Sam Fogg Ltd. cat. 14 (1991), no. 1.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 25.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by M. Haimmiller (inscription, f. 1r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Acquired by Lawrence J. Schoenberg with other Stanitz manuscripts, Sept. 1997.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2011.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Probably sold by Robinson Brothers (London), 1945.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by John D. Stanitz (Cleveland, Ohio), Ms. 25.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="581">
+  <marc:subfield code="a">Herman, Nicholas. Making the Renaissance Manuscript: Discoveries from Philadelphia Libraries (exh. cat.). Philadelphia: University of Pennsylvania Libraries, 2020. 46, 76&#x2013;77 (cat. 8).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="581">
   <marc:subfield code="a">Gerberti postea Silvestri II papae Opera Mathematica, edited by Nicolaus Bubnov.  Berlin: R. Friedl&#xE4;nder und Sohn, 1899:  Volume 1, 41-97.  Critical edition of the Isagoge geometriae and letter to Adelbaldus, with LJS 194 denoted as Chl, for Cheltenham, where it was housed by Phillipps (Lisa Fagin Davis).</marc:subfield>
@@ -160,17 +164,17 @@
   <marc:subfield code="a">diagrams.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">treatises.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
   <marc:subfield code="y">12th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">treatises.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="2" tag="700">
   <marc:subfield code="a">Adelboldus,</marc:subfield>
@@ -187,8 +191,7 @@
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Bohn, John,</marc:subfield>
-  <marc:subfield code="d">1757-1843,</marc:subfield>
+  <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
@@ -202,7 +205,8 @@
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
-  <marc:subfield code="a">Stanitz, John D.,</marc:subfield>
+  <marc:subfield code="a">Bohn, John,</marc:subfield>
+  <marc:subfield code="d">1757-1843,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
@@ -222,24 +226,24 @@
   <marc:subfield code="j">LJS 194</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs194.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/4812024</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Video orientation</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333437</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3h37b</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3h37b</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs194.html</marc:subfield>
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1333437</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

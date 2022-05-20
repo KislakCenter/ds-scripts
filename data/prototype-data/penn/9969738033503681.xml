@@ -38,6 +38,12 @@
   <marc:subfield code="a">Ms. codex.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Watermarks: Trefoil above initials G/V or 6/V on some leaves. Venetian tre lune on some leaves.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in blind stamped red leather with flap (Type II) over pasteboard; endbands in yellow thread; front and back covers have embossed frames and contain blind stamped mandorla of green leather onlay with two pendants on the vertical axis; flap also holds two green leather blind stamped onlay pendants; doublure of thin, brown leather, scored in a regular pattern along inside foredge flap; doublure of envelope flap covered over with pinkish paper cut in a pattern along the long edge and two cutaways colored blue; pastedowns have been sloppily replaced by modern, white paper.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
@@ -51,12 +57,6 @@
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Decoration: Minimal decoration; some rubrications and larger text present to highlight quotations and names; ink colors become more varied in the latter folios and include green and purple inks.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Watermarks: Trefoil above initials G/V or 6/V on some leaves. Venetian tre lune on some leaves.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in blind stamped red leather with flap (Type II) over pasteboard; endbands in yellow thread; front and back covers have embossed frames and contain blind stamped mandorla of green leather onlay with two pendants on the vertical axis; flap also holds two green leather blind stamped onlay pendants; doublure of thin, brown leather, scored in a regular pattern along inside foredge flap; doublure of envelope flap covered over with pinkish paper cut in a pattern along the long edge and two cutaways colored blue; pastedowns have been sloppily replaced by modern, white paper.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Origin: Likely copied in North Africa, in the latter half of the 17th century.</marc:subfield>
@@ -74,34 +74,34 @@
   <marc:subfield code="a">Arabic.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Mohamed Makiya.</marc:subfield>
+  <marc:subfield code="a">Sold at auction at Christie's (South Kensington) as part of the Mohamed Makiya collection, 18 April 2016, lot 145.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold at auction at Christie's (South Kensington) as part of the Mohamed Makiya collection, 18 April 2016, lot 145.</marc:subfield>
+  <marc:subfield code="a">Formerly owned by Mohamed Makiya.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Acquired for the Penn Libraries with assistance from the Constance L. Rosenthal Book Fund.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="651">
   <marc:subfield code="a">Islamic Empire</marc:subfield>
-  <marc:subfield code="x">History.</marc:subfield>
+  <marc:subfield code="x">Kings and rulers.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="651">
   <marc:subfield code="a">Islamic Empire</marc:subfield>
-  <marc:subfield code="x">Kings and rulers.</marc:subfield>
+  <marc:subfield code="x">History.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Codices (bound manuscripts).</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Abridgements.</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
   <marc:subfield code="y">17th century.</marc:subfield>
   <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Abridgements.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Makiya, Mohamed,</marc:subfield>
@@ -120,6 +120,10 @@
   <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
   <marc:subfield code="j">Oversize Ms. Codex 1892</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Constance L. Rosenthal Book Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366271</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
   <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1892.html</marc:subfield>
@@ -127,10 +131,6 @@
     <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3pz51t0x</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="2" tag="856">
-  <marc:subfield code="3">The Constance L. Rosenthal Book Fund Home Page</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366271</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="996">
   <marc:subfield code="a">hinge-right</marc:subfield>

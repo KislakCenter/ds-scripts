@@ -39,7 +39,19 @@
   <marc:subfield code="c">230 x 180 (150 x 105) mm bound to 230 x 185 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding: Bound in red leather (Type III); blind stamped mandorlas with paper onlay on front and back covers; gilt stamped frame and central line on front and back covers. Endbands in purple and white thread. Leaves are detached from spine.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in maghribi script in black ink; headers in larger script.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Likely copied in North Africa in the mid- to late-19th century.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Polychrome ink in blue, green, red, black; colors used for overlining and section headers.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title from colophon (f. 317v).</marc:subfield>
@@ -51,19 +63,7 @@
   <marc:subfield code="a">Layout: 25 long lines, frame-ruled; notations and finding aids in the margins.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in maghribi script in black ink; headers in larger script.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Polychrome ink in blue, green, red, black; colors used for overlining and section headers.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding: Bound in red leather (Type III); blind stamped mandorlas with paper onlay on front and back covers; gilt stamped frame and central line on front and back covers. Endbands in purple and white thread. Leaves are detached from spine.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Machine made paper.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Likely copied in North Africa in the mid- to late-19th century.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">First volume (of 4) of a commentary on a work about Maliki&#x304; law called al-Mukhtas&#x323;ar by Khali&#x304;l ibn Ish&#x323;a&#x304;q al-Jundi&#x304; (d. 1365?).</marc:subfield>
@@ -86,24 +86,24 @@
   <marc:subfield code="t">Mukhtas&#x323;ar.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
-  <marc:subfield code="a">Malikites.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="650">
   <marc:subfield code="a">Islamic law</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Malikites.</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Commentaries.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Jastrow, Marcus,</marc:subfield>
@@ -123,12 +123,12 @@
   <marc:subfield code="j">Ms. Codex 1915</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1915.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3513v265</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1915.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">100-01//r</marc:subfield>

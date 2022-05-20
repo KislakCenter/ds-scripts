@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
   <marc:record>
-    <marc:leader>05097ctm a2200733Ia 4500</marc:leader>
+    <marc:leader>05320ctm a2200745Ia 4500</marc:leader>
     <marc:controlfield tag="001">9959419423503681</marc:controlfield>
-    <marc:controlfield tag="005">20211011114817.0</marc:controlfield>
-    <marc:controlfield tag="008">130423s1349    pauap         000 0 lat d</marc:controlfield>
+    <marc:controlfield tag="005">20211222111638.0</marc:controlfield>
+    <marc:controlfield tag="008">130423s1349    fr ap         000 0 lat d</marc:controlfield>
     <marc:datafield ind1=" " ind2=" " tag="035">
   <marc:subfield code="a">(OCoLC)ocn840505739</marc:subfield>
 </marc:datafield>
@@ -17,8 +17,8 @@
     <marc:datafield ind1=" " ind2=" " tag="040">
   <marc:subfield code="a">PAULM</marc:subfield>
   <marc:subfield code="b">eng</marc:subfield>
-  <marc:subfield code="c">PAULM</marc:subfield>
   <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
   <marc:subfield code="d">PAULM</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="049">
@@ -43,13 +43,19 @@
   <marc:subfield code="h">[manuscript].</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="260">
-  <marc:subfield code="a">[France,</marc:subfield>
-  <marc:subfield code="c">before 1349]</marc:subfield>
+  <marc:subfield code="a">[France],</marc:subfield>
+  <marc:subfield code="c">[before 1349]</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="300">
   <marc:subfield code="a">94 leaves :</marc:subfield>
   <marc:subfield code="b">parchment ;</marc:subfield>
-  <marc:subfield code="c">320 x 225 (242 x 170) mm. bound to 325 x 235 mm.</marc:subfield>
+  <marc:subfield code="c">320 x 225 (242 x 170) mm bound to 325 x 235 mm.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  Contemporary (14th-century) leather over boards, blind-tooled, with remnants of 2 pairs of clasps; worm damage.  Marginal notes, especially in the lower margins, show signs of trimming.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in northern France, in the region historically known as Flanders, before 1349 (erased inscription recording purchase in 1349, inside upper cover).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
@@ -58,7 +64,7 @@
   <marc:subfield code="a">Title from opening rubric (f. 1r).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Collation:  Parchment, i + 94; 1-7&#xB9;&#xB2; 8&#xB9;&#xB2;(-2); 1-92, [93-94], early foliation in ink, modern foliation in pencil, upper right recto.  Catchwords, lower right last verso of gatherings 1-7, horizontal, framed in red ink.</marc:subfield>
+  <marc:subfield code="a">Decoration:  Opening illuminated initial in gold, pink, blue, and yellow, with extensions forming a three-quarters border, somewhat damaged by flaking or rubbing (f. 1r); 6 3-line initials and 1 marginal initial, in pink, blue, and yellow, with extensions sometimes including blue dragons, marking the beginning of Books 2-8 (f. 13r, 24r, 33r, 50v, 57v with dragon, 69v, 75v with dragon); numerous initials in red with blue penwork or red with blue penwork; rubrication and paragraph marks in red.  Occasional manicules (for example, f. 34v-35r, 72r)</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Layout:  Written in 2 columns of 71 lines; faintly ruled in lead.</marc:subfield>
@@ -67,13 +73,7 @@
   <marc:subfield code="a">Script:  Written in Gothic script by 2 hands (f. 1r-84v, 85r-92v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration:  Opening illuminated initial in gold, pink, blue, and yellow, with extensions forming a three-quarters border, somewhat damaged by flaking or rubbing (f. 1r); 6 3-line initials and 1 marginal initial, in pink, blue, and yellow, with extensions sometimes including blue dragons, marking the beginning of Books 2-8 (f. 13r, 24r, 33r, 50v, 57v with dragon, 69v, 75v with dragon); numerous initials in red with blue penwork or red with blue penwork; rubrication and paragraph marks in red.  Occasional manicules (for example, f. 34v-35r, 72r)</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Binding:  Contemporary (14th-century) leather over boards, blind-tooled, with remnants of 2 pairs of clasps; worm damage.  Marginal notes, especially in the lower margins, show signs of trimming.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin:  Written in northern France, in the region historically known as Flanders, before 1349 (erased inscription recording purchase in 1349, inside upper cover).</marc:subfield>
+  <marc:subfield code="a">Collation:  Parchment, i + 94; 1-7&#xB9;&#xB2; 8&#xB9;&#xB2;(-2); 1-92, [93-94], early foliation in ink, modern foliation in pencil, upper right recto.  Catchwords, lower right last verso of gatherings 1-7, horizontal, framed in red ink.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2=" " tag="510">
   <marc:subfield code="a">Described in Transformation of knowledge:  early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
@@ -87,25 +87,16 @@
   <marc:subfield code="a">Commentary on Aristotle's Physics, divided into 8 books.  Occasional marginal notes.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="524">
-  <marc:subfield code="a">LJS 234</marc:subfield>
+  <marc:subfield code="a">LJS 234.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="546">
   <marc:subfield code="a">Latin.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by Benost for 4 Parisian pounds, possibly to Mg. Nicholaus Pons, 7 October 1349 (erased inscription inside upper cover).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Owned in northern Italy later in the 14th-century (inscription concerning a financial transaction at Sant' Arcangelo di Romagna, near Forli, in 1355, inside lower cover).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold for 4 pounds to Johannes a Toscanella, possibly at Marola, in 1452 (erased inscription at end of text, f. 92v).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Formerly owned by Otto H. F. Vollbehr (Washington, D.C.).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Formerly owned by Robert B. Honeyman (San Juan Capistrano, California).</marc:subfield>
+  <marc:subfield code="a">Sold for 4 pounds to Johannes a Toscanella, possibly at Marola, in 1452 (erased inscription at end of text, f. 92v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Sold at auction at Sotheby's in Part III of the Honeyman collection, 2 May 1979, lot 1093.</marc:subfield>
@@ -114,22 +105,34 @@
   <marc:subfield code="a">Formerly held in the Bergendal Collection, Ms. 10.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
-  <marc:subfield code="a">Sold by Sam Fogg Ltd. (London) to Lawrence J. Schoenberg, February 1998.</marc:subfield>
+  <marc:subfield code="a">Owned in northern Italy later in the 14th-century (inscription concerning a financial transaction at Sant' Arcangelo di Romagna, near Forli, in 1355, inside lower cover).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="561">
   <marc:subfield code="a">Deposit by Lawrence J. Schoenberg and Barbara Brizdle, 2013.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Benost for 4 Parisian pounds, possibly to Mg. Nicholaus Pons, 7 October 1349 (erased inscription inside upper cover).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly owned by Robert B. Honeyman (San Juan Capistrano, California).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Sam Fogg Ltd. (London) to Lawrence J. Schoenberg, February 1998.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="581">
+  <marc:subfield code="a">Herman, Nicholas. Making the Renaissance Manuscript: Discoveries from Philadelphia Libraries (exh. cat.). Philadelphia: University of Pennsylvania Libraries, 2020. 52 n. 157.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="590">
   <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="0" tag="600">
-  <marc:subfield code="a">Aristotle</marc:subfield>
-  <marc:subfield code="x">Criticism and interpretation</marc:subfield>
+  <marc:subfield code="a">Aristotle.</marc:subfield>
+  <marc:subfield code="t">Physics</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2="0" tag="600">
-  <marc:subfield code="a">Aristotle.</marc:subfield>
-  <marc:subfield code="t">Physics</marc:subfield>
+  <marc:subfield code="a">Aristotle</marc:subfield>
+  <marc:subfield code="x">Criticism and interpretation</marc:subfield>
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="0" tag="650">
@@ -141,23 +144,25 @@
   <marc:subfield code="v">Early works to 1800.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">commentaries.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Commentaries.</marc:subfield>
+  <marc:subfield code="a">illuminations (paintings)</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Illuminations (visual works)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
   <marc:subfield code="a">Manuscripts, Latin</marc:subfield>
   <marc:subfield code="y">14th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1=" " ind2="0" tag="655">
-  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="a">Vollbehr, Otto H. F.</marc:subfield>
@@ -187,24 +192,24 @@
   <marc:subfield code="j">LJS 234</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs234.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Facsimile</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017/d/medren/5941942</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Video orientation</marc:subfield>
-  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1338709</marc:subfield>
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3p843w7r</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="2" tag="856">
   <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
   <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
-  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3p843w7r</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs234.html</marc:subfield>
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/1338709</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="994">
   <marc:subfield code="a">C0</marc:subfield>

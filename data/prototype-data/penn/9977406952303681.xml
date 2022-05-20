@@ -39,7 +39,19 @@
   <marc:subfield code="c">160 x 105 (102 x 52) mm bound to 162 x 115 mm.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout: 15 long lines with border rules.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin: Copied by al-Sayyid al-Ha&#x304;jj Khali&#x304;l al-S&#x323;idqi&#x304;, one of Isma&#x304;&#x2BB;i&#x304;l Zuhri&#x304;'s students. The copy was likely completed in 1258 (1842), though date is somewhat effaced, probably in Turkey (f. 301v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration: Su&#x304;rah titles in white ink, framed in gold; textblock ruled in gold, black, red; gold roundels at end of each verse; readings marked in red; text partitions (juz&#x2BC;) noted in the margins in purple by a later hand; double page illumination in gold, pink, blue, orange with text on cloudbands in first opening (f. 1v-2r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in naskh using black ink; pointed, vocalized.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Title supplied by cataloger.</marc:subfield>
@@ -48,19 +60,7 @@
   <marc:subfield code="a">Foliation: Western numeral foliation in pencil added on every 25th leaf, upper left recto; catchwords on every verso, lower left.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Layout: 15 long lines with border rules.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Script:  Written in naskh using black ink; pointed, vocalized.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Decoration: Su&#x304;rah titles in white ink, framed in gold; textblock ruled in gold, black, red; gold roundels at end of each verse; readings marked in red; text partitions (juz&#x2BC;) noted in the margins in purple by a later hand; double page illumination in gold, pink, blue, orange with text on cloudbands in first opening (f. 1v-2r).</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
   <marc:subfield code="a">Binding: Brown leather over pasteboard with flap (Type II); stamped with floriated central design and frame on both covers and flap; embossed bright orange paper doublure with dark green textile foredge flap lining.</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2=" " tag="500">
-  <marc:subfield code="a">Origin: Copied by al-Sayyid al-Ha&#x304;jj Khali&#x304;l al-S&#x323;idqi&#x304;, one of Isma&#x304;&#x2BB;i&#x304;l Zuhri&#x304;'s students. The copy was likely completed in 1258 (1842), though date is somewhat effaced, probably in Turkey (f. 301v).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="520">
   <marc:subfield code="a">Nearly complete copy of the Qur'a&#x304;n. Su&#x304;rat al-Layl is missing, though the heading is there as are some of the verse-end decorations (f. 297v).</marc:subfield>
@@ -75,21 +75,21 @@
   <marc:subfield code="a">Formerly owned by Swarthmore College, given to the University of Pennsylvania in 1967 (note in pencil inside front cover).</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Illuminations (painting)</marc:subfield>
-  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
+  <marc:subfield code="y">19th century.</marc:subfield>
+  <marc:subfield code="2">local</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
   <marc:subfield code="a">Qur&#x2BC;ans.</marc:subfield>
   <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2="7" tag="655">
-  <marc:subfield code="a">Manuscripts, Arabic</marc:subfield>
-  <marc:subfield code="y">19th century.</marc:subfield>
-  <marc:subfield code="2">local</marc:subfield>
+  <marc:subfield code="a">Codices (bound manuscripts)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Illuminations (painting)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="700">
   <marc:subfield code="6">880-03</marc:subfield>
@@ -98,11 +98,11 @@
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Swarthmore College,</marc:subfield>
-  <marc:subfield code="e">former owner.</marc:subfield>
+  <marc:subfield code="e">donor.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Swarthmore College,</marc:subfield>
-  <marc:subfield code="e">donor.</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="852">
   <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
@@ -111,24 +111,24 @@
   <marc:subfield code="j">Ms. Codex 1901</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="4" ind2="1" tag="856">
-  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
-  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1901.html</marc:subfield>
-</marc:datafield>
-    <marc:datafield ind1="4" ind2="1" tag="856">
   <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
   <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p30863c25</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/mscodex1901.html</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1="0" ind2=" " tag="880">
   <marc:subfield code="6">130-01//r</marc:subfield>
   <marc:subfield code="a">&#x642;&#x631;&#x622;&#x646;.</marc:subfield>
 </marc:datafield>
-    <marc:datafield ind1="1" ind2="3" tag="880">
-  <marc:subfield code="6">245-02//r</marc:subfield>
-  <marc:subfield code="a">[&#x627;&#x644;&#x642;&#x631;&#x622;&#x646;].</marc:subfield>
-</marc:datafield>
     <marc:datafield ind1="1" ind2=" " tag="880">
   <marc:subfield code="6">700-03//r</marc:subfield>
   <marc:subfield code="a">&#x635;&#x62F;&#x642;&#x64A;&#x60C; &#x62E;&#x644;&#x64A;&#x644;.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="3" tag="880">
+  <marc:subfield code="6">245-02//r</marc:subfield>
+  <marc:subfield code="a">[&#x627;&#x644;&#x642;&#x631;&#x622;&#x646;].</marc:subfield>
 </marc:datafield>
     <marc:datafield ind1=" " ind2=" " tag="948">
   <marc:subfield code="h">HELD BY PAU - 0 OTHER HOLDINGS</marc:subfield>
