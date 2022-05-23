@@ -6,7 +6,6 @@ module DS
       def zip_columns csv_file, *columns
         data = []
         CSV.foreach csv_file, headers: true do |row|
-          # binding.pry if columns.any? {|c| row[c] =~ /Stanitz/ }
           row_map = columns.map { |c| row[c].to_s.split '|' }
 
           first = row_map.shift

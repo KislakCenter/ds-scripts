@@ -11,9 +11,7 @@ module Recon
     end
 
     def self.lookup names, column:
-      # binding.pry unless names.grep(/Sacro Bosco, Joannes de, active 1230./).empty?
       names.map do|name|
-        # binding.pry
         Recon.look_up 'names', value: name, column: column
       end
     end
