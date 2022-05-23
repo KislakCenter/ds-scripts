@@ -1,6 +1,7 @@
 require_relative 'recon/names'
 require_relative 'recon/places'
 require_relative 'recon/subjects'
+require_relative 'recon/named_subjects'
 require_relative 'recon/genres'
 require_relative 'constants'
 require 'git'
@@ -38,6 +39,7 @@ module Recon
   def self.look_up set_name, subset: nil, value:, column:
     recon_set = find_set set_name
     key = build_key value, subset
+    # require 'pry'; binding.pry
     return unless recon_set.include? key
     recon_set.dig key, column
   end

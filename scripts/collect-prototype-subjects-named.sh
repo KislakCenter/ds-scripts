@@ -27,6 +27,6 @@ done
 #######################
 # Combine in single CSV
 #######################
-CSVS=$(for x in ${MARC_INSTS}; do echo "${TMP_DIR}/subjects-named-${x}.csv"; done)
+CSVS=$(for x in ${MARC_INSTS}; do echo "${TMP_DIR}/named-subjects-${x}.csv"; done)
 
 ruby ${SCRIPT_DIR}/csv_cat.rb --sort --uniq -o ${TMP_DIR}/subjects-named-combined.csv $CSVS

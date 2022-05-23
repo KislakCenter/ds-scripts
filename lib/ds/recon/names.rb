@@ -5,8 +5,8 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first
-        row << Recon.look_up('names', value: name, column: 'name_wikidata')
-        row << Recon.look_up('names', value: name, column: 'name_instance_of')
+        row << Recon.look_up('names', value: name, column: 'instance_of')
+        row << Recon.look_up('names', value: name, column: 'structured_value')
       end
     end
 
