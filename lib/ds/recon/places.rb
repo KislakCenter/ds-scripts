@@ -5,14 +5,14 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         place_as_recorded = row.first
-        place_uris = Recon.look_up 'places', value: place_as_recorded, column: 'place_tgn'
+        place_uris = Recon.look_up 'places', value: place_as_recorded, column: 'structured_value'
         row << place_uris.to_s.gsub('|', ';')
       end
     end
 
     def self.lookup places
       places.map { |place|
-        place_uris = Recon.look_up 'places', value: place, column: 'place_tgn'
+        place_uris = Recon.look_up 'places', value: place, column: 'structured_value'
         place_uris.to_s.gsub '|', ';'
       }.join '|'
     end

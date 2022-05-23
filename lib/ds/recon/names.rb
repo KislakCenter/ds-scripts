@@ -5,15 +5,13 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first
-        row << Recon.look_up('names', value: name, column: 'name_wikidata')
-        row << Recon.look_up('names', value: name, column: 'name_instance_of')
+        row << Recon.look_up('names', value: name, column: 'instance_of')
+        row << Recon.look_up('names', value: name, column: 'structured_value')
       end
     end
 
     def self.lookup names, column:
-      # binding.pry unless names.grep(/Sacro Bosco, Joannes de, active 1230./).empty?
       names.map do|name|
-        # binding.pry
         Recon.look_up 'names', value: name, column: column
       end
     end

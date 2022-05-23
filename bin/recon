@@ -40,7 +40,7 @@ class ReconCLI < Thor
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{name role name_agr source_authority_uri name_wikidata name_instance_of}
+      header = %w{name_as_recorded role name_agr source_authority_uri instance_of structured_value}
       write_csv out_csv, header, data
 
     rescue NotImplementedError, StandardError
@@ -71,7 +71,7 @@ class ReconCLI < Thor
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{place_as_recorded recon_uri}
+      header = %w{place_as_recorded structured_value}
       write_csv out_csv, header, data
 
     rescue NotImplementedError, StandardError
@@ -93,20 +93,21 @@ LONGDESC
   def subjects *files
     return false unless validate_args files
 
-    base = options[:'named-subjects'] ? 'subjects-named' : 'subjects'
-    tags = options[:'named-subjects'] ? [600, 610] : [650, 651]
+    base    = options[:'named-subjects'] ? 'named-subjects' : 'subjects'
+    klass   = options[:'named-subjects'] ? NamedSubjects : Subjects
+    tags    = options[:'named-subjects'] ? [600, 610] : [650, 651]
     out_csv = out_file base, options
     begin
       case options[:'source-type']
       when 'marc'
-        data = Subjects.from_marc files, tags: tags
+        data = klass.from_marc files, tags: tags
       when 'mets'
       when 'tei'
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{subject_as_recorded source_authority_uri}
+      header = %w{subject_as_recorded source_authority_uri structured_value}
       write_csv out_csv, header, data
 
     rescue NotImplementedError, StandardError
@@ -136,7 +137,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{term vocabulary source_authority_uri recon_uri}
+      header = %w{genre_as_recorded vocabulary source_authority_uri structured_value}
       write_csv out_csv, header, data
 
     rescue NotImplementedError, StandardError

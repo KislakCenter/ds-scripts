@@ -41,15 +41,12 @@ EOF
 
   EOF
   opts.on("-h", "--help", help_help) do
-    # binding.pry
     puts opts
     exit
   end
 end
 
 parser.parse!
-
-rows = []
 
 csvs = ARGV.dup
 
