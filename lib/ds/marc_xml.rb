@@ -1,3 +1,5 @@
+require 'csv'
+
 module DS
   module MarcXML
     module ClassMethods
