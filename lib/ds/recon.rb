@@ -59,6 +59,8 @@ module Recon
     csv_file = File.join recon_repo, set_config['repo_path']
     raise "Could not find CSV for set #{set_name}: #{csv_file}" unless File.exist? csv_file
 
+    validate! set_config, csv_file
+
     data = {}
     CSV.foreach csv_file, headers: true do |row|
       struct        = OpenStruct.new row.to_h
@@ -71,6 +73,22 @@ module Recon
     end
     add_alt_keys data
     data
+  end
+
+  def self.validate! set_config, csv_file
+
+    headers = CSV.readlines(csv_file).first
+    required_columns = []
+    required_columns << set_config['key_column']
+    required_columns << (set_config['structured_data_column'] || 'structured_value')
+    required_columns << set_config['subset_column'] if set_config.include?('subset_column')
+    required_columns << set_config['authorized_label_column'] if set_config.include?('authorized_label_column')
+    required_columns << 'instance_of' if set_config['name'] == 'names'
+
+    missing = required_columns.reject { |c| headers.include? c }
+    return if missing.empty?
+
+    raise "Could not find required columns (#{missing.join ', '}) in #{csv_file}"
   end
 
   def self.add_alt_keys data

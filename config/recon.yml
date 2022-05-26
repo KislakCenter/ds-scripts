@@ -6,7 +6,7 @@ recon:
   sets:
     - name: names
       repo_path: terms/names.csv
-      key_column: name
+      key_column: name_as_recorded
       structured_data_column: structured_value
     - name: genres
       repo_path: terms/genres.csv
