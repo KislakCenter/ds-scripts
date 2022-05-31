@@ -1,20 +1,19 @@
 require 'nokogiri'
 
 module Recon
-  class Places
+  class Materials
     def self.add_recon_values rows
       rows.each do |row|
-        place_as_recorded = row.first
-        place_uris = Recon.look_up 'places', value: place_as_recorded, column: 'structured_value'
-        row << place_uris.to_s.gsub('|', ';')
+        material_as_recorded = row.first
+        material_uris = Recon.look_up 'materials', value: material_as_recorded, column: 'structured_value'
+        row << material_uris.to_s.gsub('|', ';')
       end
     end
 
-    def self.lookup places
-      places.map { |place|
-        place_cleaned = DS.clean_string place, terminator: ''
-        place_uris = Recon.look_up 'places', value: place_cleaned, column: 'structured_value'
-        place_uris.to_s.gsub '|', ';'
+    def self.lookup materials
+      materials.map { |material|
+        material_uris = Recon.look_up 'places', value: material, column: 'structured_value'
+        material_uris.to_s.gsub '|', ';'
       }.join '|'
     end
 
@@ -24,7 +23,7 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
-          data += DS::MarcXML.extract_recon_places record
+          data << [DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b')]
         end
       end
       add_recon_values data
@@ -35,7 +34,7 @@ module Recon
       data = []
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        data += DS::DS10.extract_recon_places xml
+        data << [DS::DS10.extract_support(xml)]
       end
       add_recon_values data
       Recon.sort_and_dedupe data
@@ -43,10 +42,11 @@ module Recon
 
     def self.from_tei files
       data = []
+      xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
-        data += DS::OPennTEI.extract_recon_places xml
+        data << [xml.xpath(xpath).text]
       end
       add_recon_values data
       Recon.sort_and_dedupe data

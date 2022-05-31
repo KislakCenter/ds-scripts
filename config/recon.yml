@@ -13,6 +13,10 @@ recon:
       key_column: genre_as_recorded
       subset_column: vocabulary
       structured_data_column: structured_value
+    - name: materials
+      repo_path: terms/materials.csv
+      key_column: material_as_recorded
+      structured_data_column: structured_value
     - name: places
       repo_path: terms/places.csv
       key_column: place_as_recorded
