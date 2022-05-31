@@ -138,6 +138,40 @@ LONGDESC
       end
 
       header = %w{genre_as_recorded vocabulary source_authority_uri structured_value}
+
+      write_csv out_csv, header, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
+  desc "materials FILES", "Extract materials"
+  long_desc <<-LONGDESC
+  Extract materials terms from one or more FILEs.
+
+  LONGDESC
+  def materials *files
+    return false unless validate_args files
+
+    out_csv = out_file 'materials', options
+    begin
+
+      case options[:'source-type']
+      when 'marc'
+        data = Materials.from_marc files
+      when 'mets'
+        data = Materials.from_mets files
+      when 'tei'
+        data = Materials.from_tei files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      header = %w{material_as_recorded structured_value}
       write_csv out_csv, header, data
 
     rescue NotImplementedError, StandardError
