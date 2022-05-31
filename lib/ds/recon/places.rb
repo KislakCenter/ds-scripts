@@ -12,7 +12,8 @@ module Recon
 
     def self.lookup places
       places.map { |place|
-        place_uris = Recon.look_up 'places', value: place, column: 'structured_value'
+        place_cleaned = DS.clean_string place, terminator: ''
+        place_uris = Recon.look_up 'places', value: place_cleaned, column: 'structured_value'
         place_uris.to_s.gsub '|', ';'
       }.join '|'
     end
