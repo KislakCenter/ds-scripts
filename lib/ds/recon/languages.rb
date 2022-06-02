@@ -3,14 +3,14 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         lang = row.first
-        row << Recon.look_up('languages', value: lang, column: 'authorized_label')
-        row << Recon.look_up('languages', value: lang, column: 'structured_value')
+        row << Recon.lookup('languages', value: lang, column: 'authorized_label')
+        row << Recon.lookup('languages', value: lang, column: 'structured_value')
       end
     end
 
     def self.lookup languages, from_column: 'structured_value'
       clean_languages = DS.clean_string languages, terminator: ''
-      Recon.look_up('languages', value: clean_languages, column: from_column)
+      Recon.lookup('languages', value: clean_languages, column: from_column)
     end
 
     ##

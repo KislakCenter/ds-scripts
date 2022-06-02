@@ -5,14 +5,14 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         material_as_recorded = row.first
-        material_uris = Recon.look_up 'materials', value: material_as_recorded, column: 'structured_value'
+        material_uris = Recon.lookup 'materials', value: material_as_recorded, column: 'structured_value'
         row << material_uris.to_s.gsub('|', ';')
       end
     end
 
     def self.lookup materials
       materials.map { |material|
-        material_uris = Recon.look_up 'materials', value: material, column: 'structured_value'
+        material_uris = Recon.lookup 'materials', value: material, column: 'structured_value'
         material_uris.to_s.gsub '|', ';'
       }.join '|'
     end

@@ -5,14 +5,14 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first
-        row << Recon.look_up('names', value: name, column: 'instance_of')
-        row << Recon.look_up('names', value: name, column: 'structured_value')
+        row << Recon.lookup('names', value: name, column: 'instance_of')
+        row << Recon.lookup('names', value: name, column: 'structured_value')
       end
     end
 
     def self.lookup names, column:
       names.map do|name|
-        Recon.look_up 'names', value: name, column: column
+        Recon.lookup 'names', value: name, column: column
       end
     end
 

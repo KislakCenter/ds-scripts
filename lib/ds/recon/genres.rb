@@ -45,7 +45,7 @@ module Recon
     protected
 
     def self._lookup_single term, vocab
-      uris = Recon.look_up('genres', subset: vocab, value: term, column: 'structured_value')
+      uris = Recon.lookup('genres', subset: vocab, value: term, column: 'structured_value')
       uris.to_s.gsub('|', ';')
     end
   end

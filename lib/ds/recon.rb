@@ -38,7 +38,7 @@ module Recon
     end
   end
 
-  def self.look_up set_name, subset: nil, value:, column:
+  def self.lookup set_name, subset: nil, value:, column:
     recon_set = find_set set_name
     key = build_key value, subset
     return unless recon_set.include? key

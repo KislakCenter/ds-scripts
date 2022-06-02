@@ -41,7 +41,7 @@ module Recon
     end
 
     def self._lookup_single term
-      uris = Recon.look_up('subjects', value:  term, column: 'structured_value')
+      uris = Recon.lookup('subjects', value: term, column: 'structured_value')
       uris.to_s.gsub '|', ';'
     end
   end
