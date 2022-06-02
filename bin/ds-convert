@@ -62,6 +62,7 @@ class DSConvertCLI < Thor
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
         named_subject_as_recorded          = DS::MarcXML.collect_datafields record, tags: [610, 600], codes: ('a'..'z').to_a, sub_sep: '--'
         named_subject                      = Recon::NamedSubjects.lookup named_subject_as_recorded.split('|'), from_column: 'structured_value'
+        named_subject_label                = Recon::NamedSubjects.lookup named_subject_as_recorded.split('|'), from_column: 'authorized_label'
         subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [650, 651], codes: ('a'..'z').to_a, sub_sep: '--'
         subject                            = Recon::Subjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
         subject_label                      = Recon::Subjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
@@ -127,6 +128,7 @@ class DSConvertCLI < Thor
           genre_label:                        genre_label,
           named_subject_as_recorded:          named_subject_as_recorded,
           named_subject:                      named_subject,
+          named_subject_label:                named_subject_label,
           subject_as_recorded:                subject_as_recorded,
           subject:                            subject,
           subject_label:                      subject_label,
