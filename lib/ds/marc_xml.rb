@@ -22,6 +22,20 @@ module DS
         langs.uniq.join '|'
       end
 
+      ##
+      # Extract the language as record; default to the 546$a field; otheriwse
+      # return the code values from controlfield 008 and 041$a.
+      #
+      # @param [Nokogiri::XML::Node] record the marc:record node
+      # @return [String]
+      def extract_language_as_recorded record
+        xpath = "datafield[@tag=546]/subfield[@code='a']"
+        langs = record.xpath(xpath).map { |val| DS.clean_string val.text }
+        return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
+
+        extract_langs record
+      end
+
       def extract_institution_name record, default: nil
         val = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
         return default if val.to_s.strip.empty?
