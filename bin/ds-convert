@@ -9,7 +9,7 @@ require_relative '../lib/ds'
 class DSConvertCLI < Thor
   include Recon
   DS.configure!
-  Recon.update!
+  Recon.update! unless ENV['SKIP_RECON_UPDATE'] # in case no network
 
   def self.exit_on_failure?
     true
