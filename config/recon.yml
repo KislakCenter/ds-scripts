@@ -17,6 +17,10 @@ recon:
       repo_path: terms/materials.csv
       key_column: material_as_recorded
       structured_data_column: structured_value
+    - name: languages
+      repo_path: terms/languages.csv
+      key_column: language_as_recorded
+      structured_data_column: structured_value
     - name: places
       repo_path: terms/places.csv
       key_column: place_as_recorded

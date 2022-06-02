@@ -12,7 +12,7 @@ module Recon
 
     def self.lookup materials
       materials.map { |material|
-        material_uris = Recon.look_up 'places', value: material, column: 'structured_value'
+        material_uris = Recon.look_up 'materials', value: material, column: 'structured_value'
         material_uris.to_s.gsub '|', ';'
       }.join '|'
     end
