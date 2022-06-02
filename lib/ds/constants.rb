@@ -46,6 +46,7 @@ scribe_wikidata
 scribe_instance_of
 language_as_recorded
 language
+language_label
 former_owner_as_recorded
 former_owner_as_recorded_agr
 former_owner
