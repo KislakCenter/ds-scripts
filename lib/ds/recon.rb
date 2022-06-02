@@ -12,7 +12,6 @@ require 'csv'
 require 'ostruct'
 
 module Recon
-  # include DS::Constants
   def self.update!
     data_dir = File.join DS.root, 'data'
     repo_name = Settings.recon.git_local_name
@@ -38,7 +37,7 @@ module Recon
     end
   end
 
-  def self.look_up set_name, subset: nil, value:, column:
+  def self.lookup set_name, subset: nil, value:, column:
     recon_set = find_set set_name
     key = build_key value, subset
     return unless recon_set.include? key

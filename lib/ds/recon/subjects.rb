@@ -11,7 +11,7 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         term, _ = row
-        row << _lookup_single(term)
+        row << _lookup_single(term, from_column: 'structured_value')
       end
     end
 
@@ -28,8 +28,8 @@ module Recon
       Recon.sort_and_dedupe data
     end
 
-    def self.lookup terms
-      terms.map { |term| _lookup_single term }.join '|'
+    def self.lookup terms, from_column: 'structured_value'
+      terms.map { |term| _lookup_single term, from_column: from_column }.join '|'
     end
 
     def self.from_mets files
@@ -40,8 +40,8 @@ module Recon
       raise NotImplementedError
     end
 
-    def self._lookup_single term
-      uris = Recon.look_up('subjects', value:  term, column: 'structured_value')
+    def self._lookup_single term, from_column:
+      uris = Recon.lookup('subjects', value: term, column: from_column)
       uris.to_s.gsub '|', ';'
     end
   end

@@ -11,13 +11,13 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         term, vocab, _ = row
-        row << _lookup_single(term, vocab)
+        row << _lookup_single(term, vocab, from_column: 'structured_value')
       end
     end
 
-    def self.lookup genres, vocabs
+    def self.lookup genres, vocabs, from_column: 'structured_value'
       genres.zip(vocabs).map { |term, vocab|
-        _lookup_single term, vocab
+        _lookup_single term, vocab, from_column: from_column
       }.join '|'
     end
 
@@ -44,8 +44,8 @@ module Recon
 
     protected
 
-    def self._lookup_single term, vocab
-      uris = Recon.look_up('genres', subset: vocab, value: term, column: 'structured_value')
+    def self._lookup_single term, vocab, from_column:
+      uris = Recon.lookup('genres', subset: vocab, value: term, column: from_column)
       uris.to_s.gsub('|', ';')
     end
   end
