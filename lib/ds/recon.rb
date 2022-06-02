@@ -12,7 +12,6 @@ require 'csv'
 require 'ostruct'
 
 module Recon
-  # include DS::Constants
   def self.update!
     data_dir = File.join DS.root, 'data'
     repo_name = Settings.recon.git_local_name
