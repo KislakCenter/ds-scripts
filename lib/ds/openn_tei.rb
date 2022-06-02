@@ -66,6 +66,13 @@ module DS
         xml.xpath(xpath).flat_map { |lang| lang.value.split }.join '|'
       end
 
+      def extract_language_as_recorded xml
+        xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
+        as_recorded = xml.xpath(xpath).text()
+        as_recorded = DS::OPennTEI.extract_language_codes xml if as_recorded.to_s.strip.empty?
+        as_recorded
+      end
+
       ##
       # Extract the collation formula and catchwords description from +supportDesc+,
       # returning those values that are present.

@@ -96,9 +96,8 @@ module Recon
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
-        as_recorded = xml.xpath(xpath).text()
-        codes = DS::OPennTEI.extract_language_codes xml
-        as_recorded = codes if as_recorded.to_s.strip.empty?
+        as_recorded = DS::OPennTEI.extract_language_as_recorded xml
+        codes       = DS::OPennTEI.extract_language_codes xml
         data << [as_recorded,codes]
       end
       expand_codes data
