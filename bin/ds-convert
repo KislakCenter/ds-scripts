@@ -77,8 +77,9 @@ class DSConvertCLI < Thor
         scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
         scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
-        language_as_recorded               = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
-        language                           = DS::MarcXML.extract_langs record
+        language_as_recorded               = DS::MarcXML.extract_language_as_recorded record
+        language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
+        language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
         former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded record,      tags: [700, 710, 790, 791], relators: ['former owner']
         former_owner_as_recorded_agr       = DS::MarcXML.extract_names_as_recorded_agr record,  tags: [700, 710, 790, 791], relators: ['former owner']
         former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
@@ -136,6 +137,7 @@ class DSConvertCLI < Thor
           scribe_instance_of:                 scribe_instance_of,
           language_as_recorded:               language_as_recorded,
           language:                           language,
+          language_label:                     language_label,
           former_owner_as_recorded:           former_owner_as_recorded,
           former_owner_as_recorded_agr:       former_owner_as_recorded_agr,
           former_owner_wikidata:              former_owner_wikidata,
@@ -203,7 +205,8 @@ class DSConvertCLI < Thor
       scribe                             = ''
       scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
       language_as_recorded               = DS::DS10.extract_language xml
-      language                           = ''
+      language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
+      language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
       former_owner_as_recorded           = DS::DS10.extract_ownership xml
       former_owner_as_recorded_agr       = ''
       # TODO: Legacy XML doesn't have former owner names; the following can't be tested
@@ -253,6 +256,7 @@ class DSConvertCLI < Thor
         scribe_instance_of:                 scribe_instance_of,
         language_as_recorded:               language_as_recorded,
         language:                           language,
+        language_label:                     language_label,
         former_owner_as_recorded:           former_owner_as_recorded,
         former_owner_as_recorded_agr:       former_owner_as_recorded_agr,
         former_owner_wikidata:              former_owner_wikidata,
@@ -306,8 +310,9 @@ class DSConvertCLI < Thor
       scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
       scribe                             = ''
       scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
-      language_as_recorded               = xml.xpath '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-      language                           = DS::OPennTEI.extract_language_codes xml
+      language_as_recorded               = DS::OPennTEI.extract_language_as_recorded xml
+      language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
+      language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
       illuminated_initials               = ''
       miniatures                         = ''
       former_owner_as_recorded           = DS::OPennTEI.extract_resp_names nodes: xml.xpath('//msContents/msItem'), types: 'former owner'
@@ -357,6 +362,7 @@ class DSConvertCLI < Thor
         scribe_instance_of:                 scribe_instance_of,
         language_as_recorded:               language_as_recorded,
         language:                           language,
+        language_label:                     language_label,
         illuminated_initials:               illuminated_initials,
         miniatures:                         miniatures,
         former_owner_as_recorded:           former_owner_as_recorded,
