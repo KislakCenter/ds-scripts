@@ -182,6 +182,38 @@ LONGDESC
     true
   end
 
+  desc "languages FILES", "Extract languages"
+  long_desc <<-LONGDESC
+  Extract languages from one or more files
+
+  LONGDESC
+  def languages *files
+    return false unless validate_args files
+
+    out_csv = out_file 'languages', options
+    begin
+      case options[:'source-type']
+      when 'marc'
+        data = Languages.from_marc files
+      when 'tei'
+        data = Languages.from_tei files
+      when 'mets'
+        data = Languages.from_mets files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
+      end
+
+      header =%w{ language_as_recorded language_code authorized_label structured_value }
+      write_csv out_csv, header, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
   protected
   def validate_args files
     cannot_find = files.reject { |f| File.exist?(f) }
