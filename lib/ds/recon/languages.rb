@@ -1,5 +1,12 @@
 module Recon
   class Languages
+    CSV_HEADERS = %w{
+      language_as_recorded
+      language_code
+      authorized_label
+      structured_value
+    }
+
     def self.add_recon_values rows
       rows.each do |row|
         lang = row.first

@@ -2,11 +2,15 @@ require 'nokogiri'
 
 module Recon
   class Places
+    CSV_HEADERS = %w{ place_as_recorded authorized_label structured_value }
+
     def self.add_recon_values rows
       rows.each do |row|
         place_as_recorded = row.first
-        place_uris = Recon.lookup 'places', value: place_as_recorded, column: 'structured_value'
-        row << place_uris.to_s.gsub('|', ';')
+        labels            = Recon.lookup 'places', value: place_as_recorded, column: 'authorized_label'
+        place_uris        = Recon.lookup 'places', value: place_as_recorded, column: 'structured_value'
+        row << labels.to_s.gsub('|',';')
+        row << place_uris.to_s.gsub('|',';')
       end
     end
 

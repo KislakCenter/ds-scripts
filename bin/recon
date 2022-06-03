@@ -40,8 +40,7 @@ class ReconCLI < Thor
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{name_as_recorded role name_agr source_authority_uri instance_of structured_value}
-      write_csv out_csv, header, data
+      write_csv out_csv, Names::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
@@ -71,8 +70,7 @@ class ReconCLI < Thor
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{place_as_recorded structured_value}
-      write_csv out_csv, header, data
+      write_csv out_csv, Places::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
@@ -107,8 +105,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{subject_as_recorded source_authority_uri structured_value}
-      write_csv out_csv, header, data
+      write_csv out_csv, Subjects::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
@@ -137,9 +134,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{genre_as_recorded vocabulary source_authority_uri structured_value}
-
-      write_csv out_csv, header, data
+      write_csv out_csv, Genres::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
@@ -171,8 +166,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
-      header = %w{material_as_recorded structured_value}
-      write_csv out_csv, header, data
+      write_csv out_csv, Materials::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]
@@ -203,8 +197,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
       end
 
-      header =%w{ language_as_recorded language_code authorized_label structured_value }
-      write_csv out_csv, header, data
+      write_csv out_csv, Languages::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
       STDERR.puts $!.backtrace if options[:verbose]

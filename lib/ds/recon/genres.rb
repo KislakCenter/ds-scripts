@@ -8,9 +8,18 @@ module Recon
   # three columns: term, vocabulary, and authority number.
   #
   class Genres
+    CSV_HEADERS = %w{
+      genre_as_recorded
+      vocabulary
+      source_authority_uri
+      authorized_label
+      structured_value
+    }
+
     def self.add_recon_values rows
       rows.each do |row|
         term, vocab, _ = row
+        row << _lookup_single(term, vocab, from_column: 'authorized_label')
         row << _lookup_single(term, vocab, from_column: 'structured_value')
       end
     end

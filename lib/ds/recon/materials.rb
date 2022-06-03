@@ -2,10 +2,14 @@ require 'nokogiri'
 
 module Recon
   class Materials
+    CSV_HEADERS = %w{material_as_recorded authorized_label structured_value}
+
     def self.add_recon_values rows
       rows.each do |row|
         material_as_recorded = row.first
-        material_uris = Recon.lookup 'materials', value: material_as_recorded, column: 'structured_value'
+        material_labels      = Recon.lookup 'materials', value: material_as_recorded, column: 'authorized_label'
+        material_uris        = Recon.lookup 'materials', value: material_as_recorded, column: 'structured_value'
+        row << material_labels.to_s.gsub('|', ';')
         row << material_uris.to_s.gsub('|', ';')
       end
     end

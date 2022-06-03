@@ -8,9 +8,15 @@ module Recon
   # two columns: subject and authority number.
   #
   class Subjects
+    CSV_HEADERS = %w{ subject_as_recorded
+                      source_authority_uri
+                      authorized_label
+                      structured_value }.freeze
+
     def self.add_recon_values rows
       rows.each do |row|
         term, _ = row
+        row << _lookup_single(term, from_column: 'authorized_label')
         row << _lookup_single(term, from_column: 'structured_value')
       end
     end

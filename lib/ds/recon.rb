@@ -13,12 +13,11 @@ require 'ostruct'
 
 module Recon
   def self.update!
-    data_dir = File.join DS.root, 'data'
-    repo_name = Settings.recon.git_local_name
-    url = Settings.recon.git_repo
-    branch = Settings.recon.git_branch || 'main'
-    git_dir = File.join data_dir, repo_name
-    logger = Logger.new STDOUT
+    data_dir     = File.join DS.root, 'data'
+    repo_name    = Settings.recon.git_local_name
+    url          = Settings.recon.git_repo
+    branch       = Settings.recon.git_branch || 'main'
+    logger       = Logger.new STDOUT
     logger.level = Logger::WARN
     Dir.chdir data_dir do
       unless File.exist? repo_name
