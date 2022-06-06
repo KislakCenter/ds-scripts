@@ -68,7 +68,7 @@ output_file = 'ds-image-counts.csv'
 CSV.open(output_file, 'w') do |csv|
   csv << %w{ inst callno count }
   DS::INSTITUTION_DS_IDS.each do |id, inst|
-    uri = "https://digital-scriptorium.org/xtf3/search?rmode=digscript&smode=bid&bid=#{id}&docsPerPage=1000"
+    uri = "https://digital-scriptorium.org/xtf3/search?rmode=digscript&smode=bid&bid=#{id}&docsPerPage=2000"
     ms_list = URI.open(uri) { |f| Nokogiri::HTML f }
     ms_list.xpath('//td/table[descendant::td/a[@class="headLink1"]]').each do |table|
       # call number is the fifth value in the a.headLink1 text
