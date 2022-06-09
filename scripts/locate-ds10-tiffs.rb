@@ -67,7 +67,7 @@ end
 # loop through each institution
 DEPENDENT_ON_DS.each do |institution|
   puts "working on #{institution}..."
-  mets_dir = "/Volumes/sceti-completed-4/DS-Legacy-Data/METS/digitalassets.lib.berkeley.edu/ds/#{institution}/mets/*.xml"
+  mets_dir = "/Users/emeryr/NoBackup/ds/digitalassets.lib.berkeley.edu/ds/#{institution}/mets/*.xml"
   raise 'METS directory not found.' unless Dir[mets_dir].any?
 
   # loop through an institution's METS XMLs
