@@ -46,7 +46,7 @@ ${SCRIPT_DIR}/../bin/recon names -o ${TMP_DIR} -a legacy -t mets $files
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  ${SCRIPT_DIR}/../bin/recon names -o ${TMP_DIR} -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  ${SCRIPT_DIR}/../bin/recon names -v -o ${TMP_DIR} -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 ##########
