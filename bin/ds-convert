@@ -94,7 +94,8 @@ class DSConvertCLI < Thor
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
         material_as_recorded               = DS::MarcXML.collect_datafields record, tags: 300, codes: 'b'
-        material                           = Recon::Materials.lookup material_as_recorded.split('|')
+        material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
+        material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::MarcXML.extract_physical_description record
         binding_description                = DS::MarcXML.extract_named_500 record,  name: 'Binding'
         extent_as_recorded                 = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
@@ -161,6 +162,7 @@ class DSConvertCLI < Thor
           former_owner_label:                 former_owner_label,
           material_as_recorded:               material_as_recorded,
           material:                           material,
+          material_label:                     material_label,
           physical_description:               physical_description,
           binding:                            binding_description,
           folios:                             folios,
@@ -235,7 +237,8 @@ class DSConvertCLI < Thor
       former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
       former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
       material_as_recorded               = DS::DS10.extract_support xml
-      material                           = Recon::Materials.lookup material_as_recorded.split('|')
+      material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
+      material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
       physical_description               = DS::DS10.extract_physical_description xml
       acknowledgements                   = DS::DS10.extract_acknowledgements xml
       data_processed_at                  = timestamp
@@ -290,6 +293,7 @@ class DSConvertCLI < Thor
         former_owner_label:                 former_owner_label,
         material_as_recorded:               material_as_recorded,
         material:                           material,
+        material_label:                     material_label,
         physical_description:               physical_description,
         acknowledgements:                   acknowledgements,
         data_processed_at:                  data_processed_at,
@@ -351,7 +355,8 @@ class DSConvertCLI < Thor
       former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
       former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
       material_as_recorded               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
-      material                           = Recon::Materials.lookup material_as_recorded.split('|')
+      material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
+      material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
       physical_description               = DS::OPennTEI.extract_physical_description xml
       acknowledgements                   = ''
       binding_description                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
@@ -407,6 +412,7 @@ class DSConvertCLI < Thor
         former_owner_label:                 former_owner_label,
         material:                           material,
         material_as_recorded:               material_as_recorded,
+        material_label:                     material_label,
         physical_description:               physical_description,
         acknowledgements:                   acknowledgements,
         binding:                            binding_description,
