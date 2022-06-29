@@ -64,6 +64,12 @@ require_relative '../lib/ds'
 # For each of these we extract the call number and the value of 'Number of
 # Images Available'.
 
+ALL_INSTS = %w{
+  beinecke columbia conception csl cuny fordham freelib grolier gts harvard
+  huntington indiana jhopkins jtsa kansas missouri nelsonatkins notredame
+  nypl nyu oberlin penn pittsburgh providence rome rutgers sfu slu smith
+  tufts txaustin ucb ucd ucr uvm walters wellesley
+}
 
 options = {
   out_file: 'ds-image-counts.csv'
@@ -150,14 +156,19 @@ def find_image_urls ms_page
 end
 
 output_file = options[:out_file]
-SKIPS = %w{penn beneicke freelib}.freeze
-headings = %w{ inst callno direct_link image_count }
+SKIPS = %w{}.freeze
+headings = %w{ inst callno direct_link image_count full_link }
 headings << 'image_url' if options[:image_urls]
+
+def skip? inst
+  return true if SKIPS.include? inst
+end
 
 CSV.open(output_file, 'w') do |csv|
   csv << headings
   DS::INSTITUTION_DS_IDS.each do |id, inst|
-    next if SKIPS.include? inst
+    next if skip? inst
+
     uri = "https://digital-scriptorium.org/xtf3/search?rmode=digscript&smode=bid&bid=#{id}&docsPerPage=2000"
     ms_list = URI.open(uri) { |f| Nokogiri::HTML f }
     ms_list.xpath('//td/table[descendant::td/a[@class="headLink1"]]').each do |table|
@@ -169,10 +180,10 @@ CSV.open(output_file, 'w') do |csv|
       perma_link       = find_direct_link page
       if options[:image_urls]
         find_image_urls(page).each do |image_url|
-          csv << [inst, callno.strip, perma_link.strip, images_available, image_url]
+          csv << [inst, callno.strip, perma_link.strip, images_available, link, image_url]
         end
       else
-        csv << [inst, callno.strip, perma_link.strip, images_available]
+        csv << [inst, callno.strip, perma_link.strip, images_available, link]
       end
     end
   end

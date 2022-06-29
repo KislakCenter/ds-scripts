@@ -61,7 +61,7 @@ former_owner_label
 former_owner_wikidata
 former_owner_instance_of
 material
-material_placeholder
+material_as_recorded
 physical_description
 acknowledgements
 data_processed_at
