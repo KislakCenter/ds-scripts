@@ -72,6 +72,7 @@ indiana
 kansas
 nelsonatkins
 nyu
+nypl
 providence
 rutgers
 ucb

@@ -3,6 +3,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'csv'
+require 'optparse'
 
 require_relative '../lib/ds'
 
@@ -63,18 +64,127 @@ require_relative '../lib/ds'
 # For each of these we extract the call number and the value of 'Number of
 # Images Available'.
 
-output_file = 'ds-image-counts.csv'
+ALL_INSTS = %w{
+  beinecke columbia conception csl cuny fordham freelib grolier gts harvard
+  huntington indiana jhopkins jtsa kansas missouri nelsonatkins notredame
+  nypl nyu oberlin penn pittsburgh providence rome rutgers sfu slu smith
+  tufts txaustin ucb ucd ucr uvm walters wellesley
+}
+
+options = {
+  out_file: 'ds-image-counts.csv'
+}
+parser = OptionParser.new do |opts|
+
+  opts.banner = <<EOF
+Usage: #{File.basename __FILE__} [options]
+
+Scrape the DS website for data.
+
+EOF
+  out_help = "The output file [default '#{options[:out_file]}']"
+  opts.on('-o file', '--outfile=FILE', out_help) do |path|
+    options[:out_file] = path
+  end
+
+  image_help = 'Output image URLs (one line per image)'
+  opts.on '-i', '--image-urls', image_help do
+    options[:image_urls] = true
+  end
+
+  # # verbose
+  # verb_help = "Print full error messages"
+  # opts.on('-v', '--verbose', TrueClass, verb_help) do |verbose|
+  #   options[:verbose] = verbose
+  # end
+
+  help_help = <<~EOF
+    Prints this help
+
+  EOF
+  opts.on("-h", "--help", help_help) do
+    puts opts
+    exit
+  end
+end
+
+parser.parse!
+
+##
+# Get the search results link, something like:
+#
+#    http://digital-scriptorium.org/xtf3/search?rmode=digscript;smode=bid;bid=37;docsPerPage=1;startDoc=1;fullview=yes
+#
+# This pulls up the page with the direct link and images
+#
+# @param [Nokogiri::HTML::Element] table table element for an MS listing
+# @return [String] the +ms_link+ to the manuscript page
+def link_to_ms_page table
+  table.xpath('./descendant::td/a[@class="headLink1"]/@href').text
+end
+
+##
+# @param [Nokogiri::HTML::Element] table table element for an MS listing
+# @return [String] the manuscript's +callno+
+def find_callno table
+  # call number is the fifth value in the a.headLink1 text
+  table.xpath('./descendant::td/a[@class="headLink1"]').text.split(/,/, 5).last
+end
+
+##
+# @param [Nokogiri::HTML::Element] table table element for an MS listing
+# @return [Integer] the listed number of images
+def get_image_count table
+  xpath = './descendant::span[starts-with(text(), "Number of Images")]/following-sibling::text()'
+  table.xpath(xpath).text.to_i
+end
+
+##
+# @param [Nokogiri::HTML::Document] ms_page the parsed HTML manuscript page
+# @return [String]
+def find_direct_link ms_page
+  xpath = '//tr/td/span[contains(., "Direct Link")]/following-sibling::text()'
+  ms_page.xpath(xpath).text
+end
+
+##
+# @param [Nokogiri::HTML::Document] ms_page the parsed HTML manuscript page
+# @return [Array<String>]
+def find_image_urls ms_page
+  xpath = '//p/a[contains(., "Download image")]/@href'
+  ms_page.xpath(xpath).map &:text
+end
+
+output_file = options[:out_file]
+SKIPS = %w{}.freeze
+headings = %w{ inst callno direct_link image_count full_link }
+headings << 'image_url' if options[:image_urls]
+
+def skip? inst
+  return true if SKIPS.include? inst
+end
 
 CSV.open(output_file, 'w') do |csv|
-  csv << %w{ inst callno count }
+  csv << headings
   DS::INSTITUTION_DS_IDS.each do |id, inst|
-    uri = "https://digital-scriptorium.org/xtf3/search?rmode=digscript&smode=bid&bid=#{id}&docsPerPage=1000"
+    next if skip? inst
+
+    uri = "https://digital-scriptorium.org/xtf3/search?rmode=digscript&smode=bid&bid=#{id}&docsPerPage=2000"
     ms_list = URI.open(uri) { |f| Nokogiri::HTML f }
     ms_list.xpath('//td/table[descendant::td/a[@class="headLink1"]]').each do |table|
-      # call number is the fifth value in the a.headLink1 text
-      callno           = table.xpath('./descendant::td/a[@class="headLink1"]').text.split(/,/, 5).last
-      number_available = table.xpath('./descendant::span[starts-with(text(), "Number of Images")]/following-sibling::text()')
-      csv << [inst, callno.strip, number_available]
+
+      images_available = get_image_count table
+      link             = link_to_ms_page table
+      callno           = find_callno table
+      page             = URI.open(link) { |f| Nokogiri::HTML f }
+      perma_link       = find_direct_link page
+      if options[:image_urls]
+        find_image_urls(page).each do |image_url|
+          csv << [inst, callno.strip, perma_link.strip, images_available, link, image_url]
+        end
+      else
+        csv << [inst, callno.strip, perma_link.strip, images_available, link]
+      end
     end
   end
 end

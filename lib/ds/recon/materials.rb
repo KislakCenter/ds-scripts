@@ -14,9 +14,9 @@ module Recon
       end
     end
 
-    def self.lookup materials
+    def self.lookup materials, column:
       materials.map { |material|
-        material_uris = Recon.lookup 'materials', value: material, column: 'structured_value'
+        material_uris = Recon.lookup 'materials', value: material, column: column
         material_uris.to_s.gsub '|', ';'
       }.join '|'
     end

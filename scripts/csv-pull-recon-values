@@ -65,7 +65,7 @@ sets = {
     %w{ language_as_recorded language}
   ],
   'material' => [
-    %w{ material_placeholder material }
+    %w{ material_as_recorded material }
   ]
 }
 

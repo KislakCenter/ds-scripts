@@ -60,8 +60,9 @@ former_owner
 former_owner_label
 former_owner_wikidata
 former_owner_instance_of
+material_as_recorded
 material
-material_placeholder
+material_label
 physical_description
 acknowledgements
 data_processed_at
@@ -86,23 +87,59 @@ source_file
     # ucb            1, 8, 11
     # wellesley     50
 
+
+
     INSTITUTION_DS_IDS = {
-      15 => 'conception',
-      12 => 'csl',
-      9  => 'csl',
-      5  => 'cuny',
-      24 => 'grolier',
-      23 => 'gts',
-      40 => 'indiana',
-      30 => 'kansas',
-      46 => 'nelsonatkins',
-      25 => 'nyu',
-      28 => 'providence',
-      6  => 'rutgers',
       1  => 'ucb',
+      2  => 'harvard',
+      3  => 'fordham',
+      4  => 'freelib',
+      5  => 'cuny',
+      6  => 'rutgers',
+      7  => 'ucd',
       8  => 'ucb',
+      9  => 'csl',
+      10 => 'ucr',
       11 => 'ucb',
+      12 => 'csl',
+      13 => 'sfu',
+      14 => 'notredame',
+      15 => 'conception',
+      16 => 'columbia',
+      17 => 'columbia',
+      18 => 'columbia',
+      19 => 'columbia',
+      20 => 'columbia',
+      21 => 'columbia',
+      22 => 'columbia',
+      23 => 'gts',
+      24 => 'grolier',
+      25 => 'nyu',
+      26 => 'oberlin',
+      27 => 'penn',
+      28 => 'providence',
+      29 => 'rome',
+      30 => 'kansas',
+      31 => 'jhopkins',
+      32 => 'jhopkins',
+      33 => 'jhopkins',
+      34 => 'jhopkins',
+      35 => 'walters',
+      36 => 'pittsburgh',
+      37 => 'txaustin',
+      38 => 'uvm',
+      39 => 'jtsa',
+      40 => 'indiana',
+      41 => 'nypl',
+      42 => 'nypl',
+      43 => 'huntington',
+      44 => 'slu',
+      45 => 'missouri',
+      46 => 'nelsonatkins',
+      47 => 'beinecke',
+      48 => 'smith',
       50 => 'wellesley',
+      52 => 'tufts'
     }.freeze
 
     TRAILING_PUNCTUATION_RE = %r{[,.:!?;[:space:]]+$}
