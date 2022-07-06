@@ -73,12 +73,12 @@ module DS
         DS.clean_string find_ms(xml).xpath(xpath).text
       end
 
-      def extract_language xml
+      def extract_language xml, separator: '|'
         # /mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:note
         xpath = './descendant::mods:note[starts-with(text(), "lang:")]'
         find_texts(xml).flat_map { |text|
           text.xpath(xpath).map{ |note| note.text.sub(%r{^lang:\s*}, '') }
-        }.join '|'
+        }.join separator
       end
 
       def extract_name node, name_type

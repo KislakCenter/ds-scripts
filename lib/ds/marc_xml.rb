@@ -16,10 +16,21 @@ module DS
       #
       # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
-      def extract_langs record
-        (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
+      def extract_langs record, separator: '|'
+        control_008 = record.xpath("controlfield[@tag='008']/text()").text
+        # Lang is the 5th to 3rd character from the right end of the string
+        #
+        #  len 008
+        #  --- -----------------------------------------
+        #  26  '180302s1380 gw 000 0 lat d'
+        #  27  '180427s1434 enk 000 0 eng d'
+        #  28  '040129s1490 fr p 000 0 fro d'
+        #  29  '180301q14011425it 000 0 lat d'
+        #  31  '180301q11601170fr p 000 0 lat d'
+        #  40  '210324q18301899xx            000 0 ara d'
+        (langs ||= []) << control_008[-5, 3]
         langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
-        langs.uniq.join '|'
+        langs.uniq.join separator
       end
 
       ##
