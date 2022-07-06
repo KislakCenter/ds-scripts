@@ -1,294 +1,377 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>06881ctm a2200757Ii 4500</leader>
-    <controlfield tag="001">99900477831501852</controlfield>
-    <controlfield tag="005">20200328113315.2</controlfield>
-    <controlfield tag="008">180301q14011450it 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026484798</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026484798</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887735701451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCO</subfield>
-        <subfield code="d">OCLCF</subfield>
-        <subfield code="d">OCL</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="100">
-        <subfield code="a">Cicero, Marcus Tullius,</subfield>
-        <subfield code="e">author.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">De Officiis.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Italy,</subfield>
-        <subfield code="c">between 1401 and 1450.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">181 leaves :</subfield>
-        <subfield code="b">paper ;</subfield>
-        <subfield code="c">148 x 215 mm bound to 150 x 220 mm.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="561">
-        <subfield code="a">Three inscriptions of ownership: 1. Jacobo Baptista, an Augustinian of
-            Prato, in 1454. &quot;The manuscript therefore is earlier by some years than the first
-            printed editions (Anderson Co.)&quot; of 1465 and 1470. 2. Typed label on cover in
-            Italian: &quot;1. Cicerone de officiiis. 2. Sallustio, Catilinaria et jugurtina. Ms.
-            cart. Lat. del sec. XV, non num. in carattere gotico con numerose note marginali, in 4.
-            50,00.&quot; 3. Edward Sandford Burgess purchased from booksellers Davis and Orioli,
-            London, in 1919.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
-            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="540">
-        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
-            submitted in writing to the Head of Special Collections &amp; University
-            Archives.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: Quires of 12. No signatures or catchwords. Penciled folio
-            numbers.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout: Single column, 25-26 lines per page, ruled in lead or graphite.
-            Pricking at some outer margins, penciled ruling, wide margins. Numerous interlinear and
-            marginal annotations.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Rounded semi-Gothic minuscule in brown ink, annotations in 15th
-            c. bookhand, and some in italic cursive.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Paper: Watermarked wire-laid rag paper, poorly sized (some ink bleed).
-            Watermark: a long cross bisecting two circles arranged vertically.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: Lombardic capitals in same ink as text; occasional sketches
-            in margins (pointing hand, sword). Some spaces left for initial letters that were not
-            executed.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Half parchment, covers have tan paper diapered with crescents
-            and dots in brown. 5 sewing stations, sewn in very heavy thread.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 032.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">With poems between the books.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Extensive marginal notes. The &quot;early annotations&quot; on f. 1r
-            include: Scribbles in red pencil; a smudged contemporary Latin cursive paragraph in
-            brown ink, apparently a scribal colophon: &quot;este liber est mei...Philipoa
-            Castri&quot;?; a geometric monogram in brown ink with the letters &quot;A, S, S[?], N,
-            L, E, V&quot;; other assorted notes and doodles in brown ink. On f. 1v, four lines in a
-            different hand in black ink, which have been crossed out with brown ink. Begins
-            &quot;Hic liber est mei All... pedagogi filippi scritiorum ...&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">On first flyleaf, pasted newsprint description from &quot;Davis and
-            Orioli, Booksellers, 24 Museum Street, London&quot;: &quot;1. Cicero--De Officiis,
-            Salus, Bellum Catilinarium, Bellum Jugurthinum, MS XVth Century, £8. 4t. 181 leaves of
-            paper. Italian MS. legibly written in semi-Gothic letters; long lines, twnety-five to
-            the page, with numerous interlineal and marginal annotations in a minute 15th c. hand.
-            Poems are prefixed to each of the works of Sallust. There are three inscriptions of
-            ownership, from which it appeared that the volume belonged to Jacobo Baptista, an
-            Augustinian of Prato in 1454. The manuscript therefore is earlier by some years than the
-            first printed editions.&quot; With pencil notes &quot;In Venice 1470&quot; and &quot;1st
-            sent Mainz 1465&quot;, which refer to the first print publication dates and locations of
-            Sallust&apos;s De Conjuratione Catilinae and Bellum Jugurthinum, and Cicero&apos;s De
-            Officiis, respectively.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Inside front cover pasted label: written in black ink, &quot;Description
-            for Catalogue made by New York Co: American Art Association, Anderson Galleries Inc.,
-            1936.&quot; Typed description: &quot;CICERO AND SALLUS. De officiis (by Cicero); de
-            conjuratione Catilinae, bellum Jugurthinum (by Sallust). Manuscript written on 181
-            leaves of paper, (8 1/2 by 5 3/4 inches), in rounded semi-gothic minuscules. Small 4to,
-            old half vellum; some leaves slightly discolored or faintly waterstained, a few other
-            trifling defects. XV Century. AN INTERESTING MANUSCRIPT. On the first fly-leaf are
-            several early inscriptions, and on the margins throughout are a number of early
-            annotations.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="505">
-        <subfield code="a">I. De Officiis, ff. 1-86. -- II De Conjuratione Catilinae ff. 86-118.
-            Explicit liber catalinarius, f. 118. -- III. Incipit iugurthinus, f. 118.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Ethics</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Jugurthine War, 111-105 B.C</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Ethics.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst00915833</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="651">
-        <subfield code="a">Rome</subfield>
-        <subfield code="x">History</subfield>
-        <subfield code="y">Conspiracy of Catiline, 65-62 B.C.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Rome (Empire)</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01204885</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Early works.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411636</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">History.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411628</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Manicules.</subfield>
-        <subfield code="2">rbprov</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="647">
-        <subfield code="a">Conspiracy of Catiline</subfield>
-        <subfield code="c">(Rome :</subfield>
-        <subfield code="d">65-62 B.C.)</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01352536</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="647">
-        <subfield code="a">Jugurthine War</subfield>
-        <subfield code="d">(111-105 B.C.)</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst00984778</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="648">
-        <subfield code="a">111-62 B.C.</subfield>
-        <subfield code="2">fast</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 032.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="2" tag="700">
-        <subfield code="a">Cicero, Marcus Tullius.</subfield>
-        <subfield code="t">De officiis.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="2" tag="700">
-        <subfield code="a">Sallust,</subfield>
-        <subfield code="d">86 B.C.-34 B.C.</subfield>
-        <subfield code="t">Bellum Catilinae.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="2" tag="700">
-        <subfield code="a">Sallust,</subfield>
-        <subfield code="d">86 B.C.-34 B.C.</subfield>
-        <subfield code="t">Bellum Jugurthinum.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22329397280001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 032</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >06881ctm a2200757Ii 4500</leader
+  ><controlfield tag='001'
+  >99900477831501852</controlfield
+  ><controlfield tag='005'
+  >20200328113315.2</controlfield
+  ><controlfield tag='008'
+  >180301q14011450it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026484798</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026484798</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324887735701451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCO</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ><subfield code='d'
+    >OCL</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Cicero, Marcus Tullius,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >De Officiis.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Italy,</subfield
+    ><subfield code='c'
+    >between 1401 and 1450.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >181 leaves :</subfield
+    ><subfield code='b'
+    >paper ;</subfield
+    ><subfield code='c'
+    >148 x 215 mm bound to 150 x 220 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Three inscriptions of ownership: 1. Jacobo Baptista, an Augustinian of Prato, in 1454. &quot;The manuscript therefore is earlier by some years than the first printed editions (Anderson Co.)&quot; of 1465 and 1470. 2. Typed label on cover in Italian: &quot;1. Cicerone de officiiis. 2. Sallustio, Catilinaria et jugurtina. Ms. cart. Lat. del sec. XV, non num. in carattere gotico con numerose note marginali, in 4. 50,00.&quot; 3. Edward Sandford Burgess purchased from booksellers Davis and Orioli, London, in 1919.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='540'
+  ><subfield code='a'
+    >All requests for permission to quote or publish from manuscripts must be submitted in writing to the Head of Special Collections &amp; University Archives.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: Quires of 12. No signatures or catchwords. Penciled folio numbers.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Single column, 25-26 lines per page, ruled in lead or graphite. Pricking at some outer margins, penciled ruling, wide margins. Numerous interlinear and marginal annotations.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Rounded semi-Gothic minuscule in brown ink, annotations in 15th c. bookhand, and some in italic cursive.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Paper: Watermarked wire-laid rag paper, poorly sized (some ink bleed). Watermark: a long cross bisecting two circles arranged vertically.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Lombardic capitals in same ink as text; occasional sketches in margins (pointing hand, sword). Some spaces left for initial letters that were not executed.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Half parchment, covers have tan paper diapered with crescents and dots in brown. 5 sewing stations, sewn in very heavy thread.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 032.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >With poems between the books.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Extensive marginal notes. The &quot;early annotations&quot; on f. 1r include: Scribbles in red pencil; a smudged contemporary Latin cursive paragraph in brown ink, apparently a scribal colophon: &quot;este liber est mei...Philipoa Castri&quot;?; a geometric monogram in brown ink with the letters &quot;A, S, S[?], N, L, E, V&quot;; other assorted notes and doodles in brown ink. On f. 1v, four lines in a different hand in black ink, which have been crossed out with brown ink. Begins &quot;Hic liber est mei All... pedagogi filippi scritiorum ...&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >On first flyleaf, pasted newsprint description from &quot;Davis and Orioli, Booksellers, 24 Museum Street, London&quot;: &quot;1. Cicero--De Officiis, Salus, Bellum Catilinarium, Bellum Jugurthinum, MS XVth Century, £8. 4t. 181 leaves of paper. Italian MS. legibly written in semi-Gothic letters; long lines, twnety-five to the page, with numerous interlineal and marginal annotations in a minute 15th c. hand. Poems are prefixed to each of the works of Sallust. There are three inscriptions of ownership, from which it appeared that the volume belonged to Jacobo Baptista, an Augustinian of Prato in 1454. The manuscript therefore is earlier by some years than the first printed editions.&quot; With pencil notes &quot;In Venice 1470&quot; and &quot;1st sent Mainz 1465&quot;, which refer to the first print publication dates and locations of Sallust&apos;s De Conjuratione Catilinae and Bellum Jugurthinum, and Cicero&apos;s De Officiis, respectively.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Inside front cover pasted label: written in black ink, &quot;Description for Catalogue made by New York Co: American Art Association, Anderson Galleries Inc., 1936.&quot; Typed description: &quot;CICERO AND SALLUS. De officiis (by Cicero); de conjuratione Catilinae, bellum Jugurthinum (by Sallust). Manuscript written on 181 leaves of paper, (8 1/2 by 5 3/4 inches), in rounded semi-gothic minuscules. Small 4to, old half vellum; some leaves slightly discolored or faintly waterstained, a few other trifling defects. XV Century. AN INTERESTING MANUSCRIPT. On the first fly-leaf are several early inscriptions, and on the margins throughout are a number of early annotations.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >I. De Officiis, ff. 1-86. -- II De Conjuratione Catilinae ff. 86-118. Explicit liber catalinarius, f. 118. -- III. Incipit iugurthinus, f. 118.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Ethics</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Jugurthine War, 111-105 B.C</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Ethics.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00915833</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='651'
+  ><subfield code='a'
+    >Rome</subfield
+    ><subfield code='x'
+    >History</subfield
+    ><subfield code='y'
+    >Conspiracy of Catiline, 65-62 B.C.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Rome (Empire)</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01204885</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >History.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411628</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Manicules.</subfield
+    ><subfield code='2'
+    >rbprov</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='647'
+  ><subfield code='a'
+    >Conspiracy of Catiline</subfield
+    ><subfield code='c'
+    >(Rome :</subfield
+    ><subfield code='d'
+    >65-62 B.C.)</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01352536</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='647'
+  ><subfield code='a'
+    >Jugurthine War</subfield
+    ><subfield code='d'
+    >(111-105 B.C.)</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00984778</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='648'
+  ><subfield code='a'
+    >111-62 B.C.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 032.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='2' tag='700'
+  ><subfield code='a'
+    >Cicero, Marcus Tullius.</subfield
+    ><subfield code='t'
+    >De officiis.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='2' tag='700'
+  ><subfield code='a'
+    >Sallust,</subfield
+    ><subfield code='d'
+    >86 B.C.-34 B.C.</subfield
+    ><subfield code='t'
+    >Bellum Catilinae.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='2' tag='700'
+  ><subfield code='a'
+    >Sallust,</subfield
+    ><subfield code='d'
+    >86 B.C.-34 B.C.</subfield
+    ><subfield code='t'
+    >Bellum Jugurthinum.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22329397280001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 032</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

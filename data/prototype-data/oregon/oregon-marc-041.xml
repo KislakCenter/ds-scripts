@@ -1,229 +1,281 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>05879ctm a2200589Ki 4500</leader>
-    <controlfield tag="001">99900477834701852</controlfield>
-    <controlfield tag="005">20200308062223.9</controlfield>
-    <controlfield tag="008">180302q14011500it 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026501484</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026501484</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324896105801451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="0" tag="245">
-        <subfield code="a">Compendium of Logic ;</subfield>
-        <subfield code="b">Commentary on the Organon ; Compendium of Moral Philosophy and Commentary
-            on Aristotle&apos;s Moral Philosophy (Nichomachean Ethics).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Italy ;</subfield>
-        <subfield code="c">between 1401 and 1500?</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">326 leaves :</subfield>
-        <subfield code="b">rag paper ;</subfield>
-        <subfield code="c">228 x 175 mm.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="561">
-        <subfield code="a">Edward Burgess, from Reginald Atkinson, London, April 1920. Inscription
-            on Flyleaf: &quot;Cita Sagitta fid(e)l(e),(...) tibi (...) amor arcus, sityZ tibi Calui,
-            pu(.)ta, SropusgZ divs&quot; [an arrow set in motion (is) true (...) for you (...) love
-            of the bow. The selection (autograph) I have kindled for you, consider, (...ibus)
-            divine.]</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
-            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="540">
-        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
-            submitted in writing to the Head of Special Collections &amp; University
-            Archives.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="520">
-        <subfield code="a">Scholastic philosophy is at first influenced by Platonism through the
-            mediation of St. Augustine from the 13th Century... by Aristotle&apos;s philosophy...
-            The Stagirite became the official philosopher... Toward the middle of the fifteenth
-            century [scholasticism] succumbs to the secular and liberal reaction inaugurated by the
-            Renaissance.&quot; Weber&apos;s History of Philosophy, pp. 202, 239. The Organon, or
-            instrument of philosophy was earnestly studied before and after the dominance of
-            Aristotelian metaphysics under scholasticism. Aristotle is &quot;the real founder of
-            logic,&quot; and his system of deductive logic, in the opinion of Weber,
-            &quot;constitutes his... claim to fame.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: Quarto (228 x 175 mm) in quires of 8 (except vii^4, viii^2,
-            xi^6, xv-xvii^6, xviii^10, xix^6, xxiii^6, xxiv^10, xxv-vi^6, xxv-vi^6, xxviii^4,
-            xxxv^1, xxxvii^4, xli-ii^4, xlvi^10)(to compliment these exceptions ff. 171-172, ff.
-            187-188, f245 had been removed before writing). No rubrication; no signatures.
-            Catchwords only before missing pages. Four sets of numeration, to reflect the four books
-            in this volume.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy, 15th century.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout: 32-42 4 mm lines in a single column, upon a writing area of 145 x
-            110 mm. With much variety to number of lines due to boldly emphasized initial words of
-            each section. No visible ruling.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Humanistic cursive in a single hand.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: Line diagrams in same black ink on f21v (Diagram describing
-            the rules of argument oppositions) &amp; f32r (Matrix concerning the methods of forming
-            an arguement).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Vellum over boards 235 x 176 mm, showing 3 raised bands labelled
-            &quot;Aristotles XVe siede MSS.&quot; With page edges dressed en rouge. Attempted
-            binding repair with at least 4 bands of reused parchment, with text, strapped between
-            interior board and spine.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Notes: [Books I, II, III] I. (f1r) page 1, Organi Logici Praefatio; p.
-            60, de Argumentatione. p. 93, de Speciebus sy[logis]mi.; p. 101, finis; Compendii Logici
-            Charts on p. 46, p. 67, pp 69-74, p.84; II. (f52r) p.1 In Universam ar[ticu]lis
-            Philosophiam Com[m]entarii; p.2 De Nomine et existentia philosophiae/ About the Name and
-            existence of philosophiae; p.23 Prolegomena Logicae/ A primer of logic; p.90 In
-            Introductionem Porphirii/ In introduction to Porphiry; p.97 Quomodo Probent Perpatetici
-            Platonem Idaeas Externas Cogitasse / In what way the Aristotelians prove Plato Have been
-            thought external ideas; p.296 In Librum Catagoriarum Aristotelis disputationes...; p.319
-            de Priori Analisi; p.329 de Posteriori Analisi; p.365 In Libros Topirorum; p.382 Totius
-            Logicae Finis; IIIa (f.247r) p.1 Moralis Phi(losophi)ae Compendium IIIb. (f.255) p.1 In
-            Moralem Philosophiam Aristotoles; p.11 In decem libros eticorum; p.46 de Principiis
-            Actionis; p.66 de Actibus Humanis; p.88 de Passionibus Animi; pp. 105-132 de
-            Virtutibus.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 037.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Logic</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Ethics</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Ethics.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst00915833</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Logic.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01002014</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Early works.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411636</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 037.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22329398240001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 037</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >05879ctm a2200589Ki 4500</leader
+  ><controlfield tag='001'
+  >99900477834701852</controlfield
+  ><controlfield tag='005'
+  >20200308062223.9</controlfield
+  ><controlfield tag='008'
+  >180302q14011500it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026501484</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026501484</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324896105801451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Compendium of Logic ;</subfield
+    ><subfield code='b'
+    >Commentary on the Organon ; Compendium of Moral Philosophy and Commentary on Aristotle&apos;s Moral Philosophy (Nichomachean Ethics).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Italy ;</subfield
+    ><subfield code='c'
+    >between 1401 and 1500?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >326 leaves :</subfield
+    ><subfield code='b'
+    >rag paper ;</subfield
+    ><subfield code='c'
+    >228 x 175 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Edward Burgess, from Reginald Atkinson, London, April 1920. Inscription on Flyleaf: &quot;Cita Sagitta fid(e)l(e),(...) tibi (...) amor arcus, sityZ tibi Calui, pu(.)ta, SropusgZ divs&quot; [an arrow set in motion (is) true (...) for you (...) love of the bow. The selection (autograph) I have kindled for you, consider, (...ibus) divine.]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='540'
+  ><subfield code='a'
+    >All requests for permission to quote or publish from manuscripts must be submitted in writing to the Head of Special Collections &amp; University Archives.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Scholastic philosophy is at first influenced by Platonism through the mediation of St. Augustine from the 13th Century... by Aristotle&apos;s philosophy... The Stagirite became the official philosopher... Toward the middle of the fifteenth century [scholasticism] succumbs to the secular and liberal reaction inaugurated by the Renaissance.&quot; Weber&apos;s History of Philosophy, pp. 202, 239. The Organon, or instrument of philosophy was earnestly studied before and after the dominance of Aristotelian metaphysics under scholasticism. Aristotle is &quot;the real founder of logic,&quot; and his system of deductive logic, in the opinion of Weber, &quot;constitutes his... claim to fame.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: Quarto (228 x 175 mm) in quires of 8 (except vii^4, viii^2, xi^6, xv-xvii^6, xviii^10, xix^6, xxiii^6, xxiv^10, xxv-vi^6, xxv-vi^6, xxviii^4, xxxv^1, xxxvii^4, xli-ii^4, xlvi^10)(to compliment these exceptions ff. 171-172, ff. 187-188, f245 had been removed before writing). No rubrication; no signatures. Catchwords only before missing pages. Four sets of numeration, to reflect the four books in this volume.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy, 15th century.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: 32-42 4 mm lines in a single column, upon a writing area of 145 x 110 mm. With much variety to number of lines due to boldly emphasized initial words of each section. No visible ruling.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Humanistic cursive in a single hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Line diagrams in same black ink on f21v (Diagram describing the rules of argument oppositions) &amp; f32r (Matrix concerning the methods of forming an arguement).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Vellum over boards 235 x 176 mm, showing 3 raised bands labelled &quot;Aristotles XVe siede MSS.&quot; With page edges dressed en rouge. Attempted binding repair with at least 4 bands of reused parchment, with text, strapped between interior board and spine.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Notes: [Books I, II, III] I. (f1r) page 1, Organi Logici Praefatio; p. 60, de Argumentatione. p. 93, de Speciebus sy[logis]mi.; p. 101, finis; Compendii Logici Charts on p. 46, p. 67, pp 69-74, p.84; II. (f52r) p.1 In Universam ar[ticu]lis Philosophiam Com[m]entarii; p.2 De Nomine et existentia philosophiae/ About the Name and existence of philosophiae; p.23 Prolegomena Logicae/ A primer of logic; p.90 In Introductionem Porphirii/ In introduction to Porphiry; p.97 Quomodo Probent Perpatetici Platonem Idaeas Externas Cogitasse / In what way the Aristotelians prove Plato Have been thought external ideas; p.296 In Librum Catagoriarum Aristotelis disputationes...; p.319 de Priori Analisi; p.329 de Posteriori Analisi; p.365 In Libros Topirorum; p.382 Totius Logicae Finis; IIIa (f.247r) p.1 Moralis Phi(losophi)ae Compendium IIIb. (f.255) p.1 In Moralem Philosophiam Aristotoles; p.11 In decem libros eticorum; p.46 de Principiis Actionis; p.66 de Actibus Humanis; p.88 de Passionibus Animi; pp. 105-132 de Virtutibus.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 037.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Logic</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Ethics</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Ethics.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00915833</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Logic.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01002014</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 037.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22329398240001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 037</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>
