@@ -1,1 +1,139 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02310ntm a2200325Ii 4500</leader><controlfield tag='001'>991058301963706011</controlfield><controlfield tag='005'>20220506125445.0</controlfield><controlfield tag='008'>220506s1666    ie            000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385875h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385875h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 78</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Charter and expenses, 1666 February 19, for the Royal Hospital in Dublin :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>Ireland ;</subfield><subfield code='c'>1666 February 19</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>54 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>18 x 13 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>Foundation charter for hospital for injured or aged soldiers, followed by a list of thirty-six governors and six elected alternates, and detailed annual expense accounts for the hospital.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 78: Armorial bookplate of L. H. King Harman, of Newcastle, Ballymahon, County Longford, Ireland; blue label of The Brick Row Book Shop, Austin, Texas, on inside back cover; acquired by the Ransom Center in 1964. Binding: Full brown tanned calfskin over paper boards. Straight caps, tight back over sewing supports, cut-solid edges, all gilded. Stain decoration (red/black mottled/spattered); gold-tooled (i) two-line border intersecting corners, (ii) concentric two-line and decorative roll frames, (iii) cornerpieces, (iv) additional motifs, front and back covers; gold-tooled decorative roll board edges; gold-tooled two-line panel frames; no title.  No endbands.  Endleaf components, all same off-white handmade laid paper as text block:  front   four (of ten leaves) integral endleaves making pastedown and three free endleaves; back   final nine (of twelve) leaves of penultimate gathering text blanks, final gathering of eight leaves, integral endleaves, making pastedown and seven free endleaves.  (England/Ireland? 17th c?)</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Charters.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>King-Harman, L. H.,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Brick Row Book Shop (Austin, Tex.),</subfield><subfield code='e'>seller.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>Ireland,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02531ntm a2200337Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310383406011</controlfield
+  ><controlfield tag='005'
+  >20220527141338.0</controlfield
+  ><controlfield tag='008'
+  >220525q14301433it            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1319877579h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1319877579h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 99</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Prothocolus abreuiatura, copies of notarial instruments documenting purchases, sales, debts, and last wills and testaments, etc :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Italy (or Spain?) (Feltro) ;</subfield
+    ><subfield code='c'
+    >1430-1433</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >54 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >29 x 22 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Tres coline watermark on paper.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use, but coach user: tight binding.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Most entries end with his notarial formula Ego tacius siluis quondam [Ser?] Stephani de Muffonibus de Feltro publicus Imperiali auctoritate notarius his omnibus et singullis suprascriptis [inter?] et Rogatus scriptsi, generally accompanied by his notarial tabellum. Includes original opening page (fol. i. verso); crossed-out section under the original title records oath he made in 1432; index of people mentioned in the documents added at the front at a later date; loose note (inserted between fol. 30-31) includes the date 1460; loose leaf of accounts is dated 1493.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 99: A near contemporary ownership inscription of Jacobus de Muffoni is on the inside front cover; acquired by the Ransom Center in 1973 (R5374) from Jenkins and Company. Binding (Italy 15th c): Limp parchment. Two dark brown tanned calfskin overbands; three fore edge tackets front cover. Three gatherings sewn unsupported, all-along. Six parchment secondary tackets twisted outside on spine (head/tail ends of each of three gatherings), attaching case and overbands. Overbands laced onto covers with red-colored alum-tawed animal skin thongs. No decoration, no title (writing in ink front cover), no fastenings. Red-colored alum-tawed animal skin endbands laced through outer joints. No endleaves.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Notarial documents.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >de Muffoni, Jacobus,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Italy,Spain,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >de Muffoni, Jacobus,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

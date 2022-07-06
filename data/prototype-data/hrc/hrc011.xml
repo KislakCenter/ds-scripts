@@ -1,1 +1,161 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01016ntm a2200277 i 4500</leader><controlfield tag='001'>991058292171106011</controlfield><controlfield tag='005'>20220413123614.0</controlfield><controlfield tag='008'>220406s1733    xx            000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1309089767h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1309089767h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 234</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>De arte rhetorica :</subfield><subfield code='b'>vol II :</subfield><subfield code='k'>manuscript draft.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>Italy :</subfield><subfield code='b'>Producer unknown,</subfield><subfield code='c'>after 1733</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>112 leaves ; 20 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Date conjecuted from watermark 1378 dated in Mosin, Anchor watermarks.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title from spine of binding.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>A treatise on rhetoric.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 234: Bound in parchment over boards. Gift of Kathy Henderson, 1992. Slip with pencil manuscript &apos;64&apos; laid in.</subfield></datafield><datafield ind1=' ' ind2='0' tag='650'><subfield code='a'>Rhetoric.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Treatises.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1='2' ind2=' ' tag='979'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02407ntm a2200385Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310285706011</controlfield
+  ><controlfield tag='005'
+  >20220527140601.0</controlfield
+  ><controlfield tag='008'
+  >220525s1644    au a          000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1319876594h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1319876594h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 95</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Document conferring nobility upon Iacobo Gianotti, 1644 February 10, Vienna :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Vienna ;</subfield
+    ><subfield code='c'
+    >1644 February 10</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >8 leaves :</subfield
+    ><subfield code='b'
+    >parchment,</subfield
+    ><subfield code='c'
+    >23 x 28 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration includes two full-page miniatures, one of an enthroned king with surrounding kings and giant seal below, and another of two knights jousting. Bordered text with decorative blue and gold corners, some letters in gold leaf.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout varies, mostly about 17 lines.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted in reading room, but coach reader; available for class room use in exhibit case only.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 95: Stamp on first flyleaf: Collection R. Tolentino - Rome; stamp on last page: Registr Georgius Rudolpus a Fridenreich. Unrestricted in reading room, but coach reader; available for class room use in exhibit case only. Binding (17th c?) : Full red/gold patterned cloth (brocade) over paper boards. No caps. Single gathering textblock, two outer wrappers, sewn through spinefold with gold cord in figure-8 pattern over head end of spine; lengths of gold cord at tail attached to large wax seal. Slits at head, tail, fore edge of covers for four paired ties (textile). Endleaf components: front   outer wrappers (off-white handmade laid paper) making pastedown, free endleaf; back same. Metal presentation case contemporary with binding (?) is housed separately as HRC 95a.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Kings and rulers.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Illuminated manuscripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Seals.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Tolentino, R.,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >a Fridenreich, Georgius Rudolpus,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Austria,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Tolentino, R.,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >a Fridenreich, Georgius Rudolpus,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

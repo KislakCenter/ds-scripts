@@ -1,1 +1,105 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02683ntm a2200397Ii 4500</leader><controlfield tag='001'>991058301966706011</controlfield><controlfield tag='005'>20220506120232.0</controlfield><controlfield tag='008'>220506q14251475fr a          000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385394h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385394h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>fre</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 48</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Chroniques (Book I) :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>France ;</subfield><subfield code='c'>between 1425 and 1475</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>2 vols. (162, 225 leaves) :</subfield><subfield code='b'>parchment, illustrations,</subfield><subfield code='c'>36 x 29 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Decoration includes large miniature of battle scene; two smaller miniatures, one of mounted knights, the other of a funeral procession. Numerous capitals in gold on colored grounds. In the style of the Bedford Master.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Layout is 2 columns of 49, 53, or 54 lines ruled in ink.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Bastarda script</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted in reading room; available for classroom use in exhibit case only.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Cornell, Regine Reynolds. Vicissitudes of a Fifteenth-Century French Manuscript. The Library Chronicle, N.S. no.22 (1983), 50-65.Taylor, Mark N. Manuscript Description, 1988.Nalle, David F. Manuscript Description, 1983.Curlee, Kendall A. Manuscript Description, 1989.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Regine Reynolds Cornell, Vicissitudes of a Fifteenth-Century French Manuscript, Library Chronicle N.S. no.22 (1983):50-65.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 48: St. Martin of Tournai monastery; Augustins DeÌ¹chausseÌ¹es de la Croix-Rousse; Thomas Hobart (d. 1728); Sir Roger Mostyn (1675-1739); John Barrymore; Elliot Nugent; Edward A. Parsons (1878-1962). Bibliography: Regine Reynolds Cornell, Vicissitudes of a Fifteenth-Century French Manuscript, Library Chronicle N.S. no.22 (1983):50-65. Binding: Rebound in full beige-toned alum tawed pigskin over boards, in two volumes, by Bruce Levy, 1980s; previous binding quarter tawed sheepskin nailed to wood boards with red (now faded) velvet covers (retained as HRC 48a). DIDB record: 5988.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Illuminated manuscripts.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Saint-Martin Of Tournai, Abbey,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>D chauss es de la Croix-Rousse, Augustins,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Hobart, Thomas, -1728,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Mostyn, Roger, Sir, 1675-1739,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Barrymore, John,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Nugent, Elliott,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Parsons, Edward Alexander, 1878-1962,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>France,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1='4' ind2='0' tag='856'><subfield code='u'>http://ds.lib.berkeley.edu/HRC048_37</subfield><subfield code='y'>Digital copy for MS 3327, Container 48</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01496ntm a2200265Ii 4500</leader
+  ><controlfield tag='001'
+  >991058323003606011</controlfield
+  ><controlfield tag='005'
+  >20220610142536.0</controlfield
+  ><controlfield tag='008'
+  >220610s1686    enk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1328053774h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1328053774h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 129</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Excerpts possibly made by Sir Isaac Newton (1642-1727) from Dickinson&apos;s alchemical tract, Epistola Edmundi Dickinson MD. &amp; medici regii ad Theodorum Mundanum philosophum adeptum: De quintessentia philosophorum et De vera physiologia, una cum quaestionibus aliquot de secreta materia physica (Oxford: Sheldonian Theatre, 1686) :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >England ;</subfield
+    ><subfield code='c'
+    >1686 or later</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >8 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >22 x 17 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The correspondence between Dickinson and Theodore Mundanus took place in 1683 and 1684, but the letter and response were not printed until 1686.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 129: Catherine Conduitt, Viscountess Lymington (great-niece of Sir Isaac Newton); by descent to the Viscount Lymington, who sold the collection of Newton manuscripts at Sothebys, London, in July 1936, lot 52. DIDB record: 21967</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Alchemy.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Wallop (Conduit), Catherine,</subfield
+    ><subfield code='c'
+    >Viscountess Lymington,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Lymington,</subfield
+    ><subfield code='c'
+    >Viscount,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >England,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

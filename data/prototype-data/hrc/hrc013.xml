@@ -1,1 +1,147 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01895ntm a2200313Ii 4500</leader><controlfield tag='001'>991058301963506011</controlfield><controlfield tag='005'>20220506125703.0</controlfield><controlfield tag='008'>220506s1646    enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385841h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385841h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield><subfield code='a'>gre</subfield><subfield code='a'>heb</subfield><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 80</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Miscellany of theological material concerning biblical translation, liturgical matters, laws of the land, and commentary on the Anglican/Catholic divide :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>1646 or later</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>77 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>20 x 15 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>Includes an extract from The motives of the conversion of Thomas Vane to the Catholic faith, published by Vane as A Lost Sheep Returned Home (Paris, 1646).</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 80: frequent blurring of iron-gall ink, possibly resulting from a chemical reaction. Binding: Full red cloth case binding, paper boards. Straight caps, smooth spine, natural hollow, edges cut before sewing. Blind-tooled two-line fillets parallel to spine and across corners (as for half cover) front and back covers; title gold-tooled on spine, two gold-tooled lines across spine at head and tail. No endbands. Sewn on three tapes adhered to inside of covers over spine lining extensions (mull and paper). Endleaf components: front tipped fold off-white machine-made paper making pastedown, free endleaf; back same. (20th c)</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Commonplace books.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Miscellanies.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >03007ntm a2200361Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310362606011</controlfield
+  ><controlfield tag='005'
+  >20220623103553.0</controlfield
+  ><controlfield tag='008'
+  >220602s1609    sp            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1322550746h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1322550746h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >spa</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 111</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Carta ejecutoria de Hidalguia granted in favor of Diego de Alarcón Quintana de la Villa de la Torre and his sons, unnamed :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Spain (Granada) ;</subfield
+    ><subfield code='c'
+    >1609</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >140 leaves :</subfield
+    ><subfield code='b'
+    >parchment,</subfield
+    ><subfield code='c'
+    >31 x 21 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The opening formula (Don Phelipe / por la gracia de dios / rey de Castilla / de Leon de Aragon de las) is incorporated into four full-page miniatures: the first depicting a male figure and his two sons kneeling in prayer beneath the crucified Christ, four saints in the frame (fol. 1v); the second depicting his wife with four daughters kneeling in prayer before the Virgin Mary, who is surrounded by symbols of her attributes (hortus, fons, speculum, civitas, etc.), four saints in the frame (fol. 2r); the third shows St. George in battle against the Saracens (fol. 2v); the fourth is presumably the full coat of arms of the grantee, Don Diego (fol. 3v); several 9- to 10-line decorated initials throughout, the final one historiated with a male figure holding a sceptre (fol. 139r); each leaf is ruled in slate blue and surrounded by a 4 mm. frame of gold and dark brown; three red silk covering leaves sewn-in to protect the miniatures.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted in reading room, but coach user: tight binding, open only to 90°, use book supports; available for classroom use in exhibit case only.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The first document mentioned was given in 1598, and the final section, written by the notary Salvador Rico (fol. 140v) is dated 1609. A note (fol. 1r) may give prices for the production of the manuscript, including the seda y plomo.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 111: Edward A. Parsons (1878-1962) of New Orleans, Louisiana; bookplate on the inside front cover but not listed in De Ricci; a note in pencil on the back pastedown indicates it was purchased in Granada on 4 August 1926. Binding: faded blue velvet over wood boards; velvet is probably mid-20th century. A white, green, yellow, blue, and red silk cord of authentication is incorporated into the binding, but the lead seal is lacking.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Kings and rulers.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Letters patent.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Parsons, Edward Alexander, 1878-1962,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Spain,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Parsons, Edward Alexander, 1878-1962,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>
