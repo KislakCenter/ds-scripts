@@ -1,140 +1,189 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02654ctmaa2200469 a 4500</leader>
-  <controlfield tag="001">3817793</controlfield>
-  <controlfield tag="005">20141223210351.0</controlfield>
-  <controlfield tag="008">000420q14001450it a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00A43</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00-A43</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(NIC)notisATD7776</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">3817793</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64755213</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">amremm</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="240">
-    <subfield code="a">Antiphonal</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">[Antiphonarium].</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Northern Italy,</subfield>
-    <subfield code="c">between ca. 1400 and ca. 1450.]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">123 leaves :</subfield>
-    <subfield code="b">parchment, ill. ;</subfield>
-    <subfield code="c">131 x 98 (105 x 70) mm. bound to 141 x 113 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Begins imperfectly. Original foliation in rubricated Roman numerals appears
-      on the verso side of fols. 1-24 and 56-109. The numerals have been trimmed in rebinding, which
-      may explain the absence of original foliation for fols. 25-55 and 110-122. The remnants of the
-      original foliation indicate that a quire of 8 leaves preceded the text as it exists
-      today.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">A note on fol. 122v in Italian is dated 1600.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 19 long lines; ruled in red ink, framed in
-      lead.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Round Gothic (littera Bononiensis), several hands.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Historiated initials with burnished background (f. 25r, Virgin
-      and Child; f. 80r, Christ Child), foliated initial with burnished background (f. 105r), red
-      and blue decorative initials throughout (with or without flourishes), numerous black pen
-      scrolls touched with green and yellow wash (fols. 1r-109v).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Music: Contains musical notation.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 20th cent. calf.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in northern Italy, probably earlier half of the 15th
-      century.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Alessandro Rivarola(?), before 1600 (fol. 122v). Bought in Europe
-      in 1885 by A.D. White.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare BX C36 A637</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.21 (De Ricci)</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
-      States and Canada,</subfield>
-    <subfield code="c">II, p. 1232; Calkins, R.G. Illuminated Manuscripts, p. 55, no. 29.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Divine office.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Divine office</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00895757</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">White, Andrew Dickson,</subfield>
-    <subfield code="d">1832-1918.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 16.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 16.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="899">
-    <subfield code="a">med</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141223</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">1c2b3edb-e3af-41cc-b3d3-3252ae0fdefd</subfield>
-    <subfield code="s">d68ae9aa-8fe5-461b-82de-00bd3f98b532</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02654ctmaa2200469 a 4500</leader
+  ><controlfield tag='001'
+  >3817793</controlfield
+  ><controlfield tag='005'
+  >20141223210351.0</controlfield
+  ><controlfield tag='008'
+  >000420q14001450it a          000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00A43</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00-A43</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(NIC)notisATD7776</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >3817793</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)64755213</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >amremm</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='240'
+  ><subfield code='a'
+    >Antiphonal</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >[Antiphonarium].</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >[Northern Italy,</subfield
+    ><subfield code='c'
+    >between ca. 1400 and ca. 1450.]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >123 leaves :</subfield
+    ><subfield code='b'
+    >parchment, ill. ;</subfield
+    ><subfield code='c'
+    >131 x 98 (105 x 70) mm. bound to 141 x 113 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Ms. codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >Text in Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Begins imperfectly. Original foliation in rubricated Roman numerals appears on the verso side of fols. 1-24 and 56-109. The numerals have been trimmed in rebinding, which may explain the absence of original foliation for fols. 25-55 and 110-122. The remnants of the original foliation indicate that a quire of 8 leaves preceded the text as it exists today.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >A note on fol. 122v in Italian is dated 1600.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Written in 19 long lines; ruled in red ink, framed in lead.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Round Gothic (littera Bononiensis), several hands.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Historiated initials with burnished background (f. 25r, Virgin and Child; f. 80r, Christ Child), foliated initial with burnished background (f. 105r), red and blue decorative initials throughout (with or without flourishes), numerous black pen scrolls touched with green and yellow wash (fols. 1r-109v).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Music: Contains musical notation.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: 20th cent. calf.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Written in northern Italy, probably earlier half of the 15th century.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Provenance: Alessandro Rivarola(?), before 1600 (fol. 122v). Bought in Europe in 1885 by A.D. White.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Former shelfmark: MSS Bd. Rare BX C36 A637</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Related shelfmark: MS B.21 (De Ricci)</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >De Ricci, S.  Census of Medieval and Renaissance Manuscripts in the United States and Canada,</subfield
+    ><subfield code='c'
+    >II, p. 1232; Calkins, R.G.  Illuminated Manuscripts, p. 55, no. 29.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Divine office.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Divine office</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00895757</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >White, Andrew Dickson,</subfield
+    ><subfield code='d'
+    >1832-1918.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >Cornell University.</subfield
+    ><subfield code='b'
+    >Library.</subfield
+    ><subfield code='b'
+    >Division of Rare and Manuscript Collections.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >Misc. Bd. Ms. 16.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Italy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 16.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='899'
+  ><subfield code='a'
+    >med</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141223</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >1c2b3edb-e3af-41cc-b3d3-3252ae0fdefd</subfield
+    ><subfield code='s'
+    >d68ae9aa-8fe5-461b-82de-00bd3f98b532</subfield
+    ></datafield
+  ></record
+>

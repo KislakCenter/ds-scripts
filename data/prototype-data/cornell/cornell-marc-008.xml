@@ -1,215 +1,281 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>04743ctmaa2200625 a 4500</leader>
-  <controlfield tag="001">3959623</controlfield>
-  <controlfield tag="005">20141225212224.0</controlfield>
-  <controlfield tag="008">000731q14531483gw a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00A119</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00-A119</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">3959623</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758086</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="d">NIC</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Miscellany.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Tractatus de horis canonicis [...et al.]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Germany,</subfield>
-    <subfield code="d">between ca. 1453 and ca. 1483]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">138 leaves :</subfield>
-    <subfield code="b">paper, ill. ;</subfield>
-    <subfield code="c">290 x 200 (215-40 x 145-160) mm., unbound.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">1. ff. 1ra-11vb: Tractatus de horis canonicis; ends with inscription:
-      &quot;Franciscus Zabarellis quondam cardinalis florentinus me pandue repetinit &amp;c.&quot;
-      -- 2. ff. 12ra-43vb: Summa confessionis / Thomas Aquinas -- 3. ff. 44r-66r: [Stella
-      clericorum]; dated 1466 (f. 66r) -- 4 ff. 67v: [Notes] -- 5. ff. 68ra-70rb: [De horis
-      canonicis] -- 6. ff. 70rb-74vb: Tractatus de tribus sacramentis --</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">(continued) 7. ff. 74vb-99va: Quatuor extrema [or De quatuor novissimis] --
-      8. ff. 99va-100vb: Epistola de vita religiosa / [Gerard Groote] -- 9. ff. 100vb-107rb:
-      [Exhortatorium spirituale / Joannes de Schonhovia] -- 10. ff. 108r-112r: Epistola sancti
-      Augustini ad Cyrillum de laude beati Ieronymi (Apocryphal) -- 11. ff. 112v-116v: [Cyrilli
-      responsio] -- 12. f. 116v: De huius vite fallacia et brevitate / Gregorius --</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">(continued) 13. ff. 117r-126v: [Stella clericorum] -- 14. ff. 127v-137r: [De
-      arte moriendi]; dated 1453 (f. 137r) -- 15. ff. 137r-138v: [Varied texts on deteriorated
-      paper; the last folio is partly glued onto a sheet of parchment covered with musical
-      notation]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Foliation has been revised, which results in a discrepancy with the numbers
-      cited by De Ricci (two consecutive folios were numbered &quot;51&quot;).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Badly water-damaged; the last two folios have crumbled into fragments. Small
-      leaves from a shrub are found in some of the gutters.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The manuscript contains two dates: 1466 on f. 66r, and 1453 on f.
-      137r.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">One of the scribes identifies himself as Conradus Sifridus (ff. 74vb, 94rb,
-      99va).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Irregularly written in long lines or double columns of about 25-60
-      lines.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic cursive; several hands.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Large red initials with blue flourishes, rather poorly executed.
-      Several initials are incomplete. Crude drawing of a water vessel (f. 54r).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: unbound, although the quires are stitched together; the manuscript
-      is stored in a modern slip-case. Formerly bound with Johannes Nider, Praeceptorium
-      (Strassburg, 1483), which is now also stored in a modern slip-case, under the call-number: +
-      Rare BV 4655 N65 1483.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in Germany, between ca. 1453 (the earliest date noted in the
-      manuscript) and ca. 1483, the date of the printing of Joannes Nider&apos;s Praeceptorium, with
-      which the manuscript was once bound, and in which there is an inscription: Liber Sancte Marie
-      in monasterio Munster prope Swalenberch (f. 192v).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Belonged to the monastery of Sancta Maria in Münster, near
-      Schwalenberg, Lippe. Purchased in 1892 by George William Harris, who bequeathed it to Cornell
-      in 1917.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library, 4600
-      Bd. Ms. 53.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare BX T76+</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.65 (De Ricci)</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
-      States and Canada,</subfield>
-    <subfield code="c">II, pp. 1240-41.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="x">Early works to 1800.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01149559</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Zabarella, Francesco,</subfield>
-    <subfield code="d">1360-1417.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Thomas,</subfield>
-    <subfield code="c">Aquinas, Saint,</subfield>
-    <subfield code="d">1225?-1274.</subfield>
-    <subfield code="t">Summa confessionis.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Groote, Gerard,</subfield>
-    <subfield code="d">1340-1384.</subfield>
-    <subfield code="t">Epistola.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Joannes,</subfield>
-    <subfield code="c">de Schonhovia.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Augustine,</subfield>
-    <subfield code="c">Saint, Bishop of Hippo.</subfield>
-    <subfield code="t">Spurious and doubtful works.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Cyril,</subfield>
-    <subfield code="c">Saint, Bishop of Jerusalem,</subfield>
-    <subfield code="d">approximately 315-386.</subfield>
-    <subfield code="t">Spurious and doubtful works.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Conradus Sifridus,</subfield>
-    <subfield code="c">presbyter.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 53.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Germany.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 53 +</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="899">
-    <subfield code="a">med</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20111111</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">arc3</subfield>
-    <subfield code="e">rmc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141225</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">54b7c4f1-e89e-4dd1-9603-889a26da6088</subfield>
-    <subfield code="s">6cd0ecc9-6b6d-4ae1-a715-19f9dd35f2a4</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >04743ctmaa2200625 a 4500</leader
+  ><controlfield tag='001'
+  >3959623</controlfield
+  ><controlfield tag='005'
+  >20141225212224.0</controlfield
+  ><controlfield tag='008'
+  >000731q14531483gw a          000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00A119</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00-A119</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >3959623</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)64758086</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >amremm</subfield
+    ><subfield code='d'
+    >NIC</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='240'
+  ><subfield code='a'
+    >Miscellany.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Tractatus de horis canonicis [...et al.]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >[Germany,</subfield
+    ><subfield code='d'
+    >between ca. 1453 and ca. 1483]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >138 leaves :</subfield
+    ><subfield code='b'
+    >paper, ill. ;</subfield
+    ><subfield code='c'
+    >290 x 200 (215-40 x 145-160) mm., unbound.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Ms. codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >Text in Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >1. ff. 1ra-11vb: Tractatus de horis canonicis; ends with inscription: &quot;Franciscus Zabarellis quondam cardinalis florentinus me pandue repetinit &amp;c.&quot; -- 2. ff. 12ra-43vb: Summa confessionis / Thomas Aquinas -- 3. ff. 44r-66r: [Stella clericorum]; dated 1466 (f. 66r) -- 4 ff. 67v: [Notes] -- 5. ff. 68ra-70rb: [De horis canonicis] -- 6. ff. 70rb-74vb: Tractatus de tribus sacramentis --</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >(continued) 7. ff. 74vb-99va: Quatuor extrema [or De quatuor novissimis] -- 8. ff. 99va-100vb: Epistola de vita religiosa / [Gerard Groote] -- 9. ff. 100vb-107rb: [Exhortatorium spirituale / Joannes de Schonhovia] -- 10. ff. 108r-112r: Epistola sancti Augustini ad Cyrillum de laude beati Ieronymi (Apocryphal) -- 11. ff. 112v-116v: [Cyrilli responsio] -- 12. f. 116v: De huius vite fallacia et brevitate / Gregorius --</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >(continued) 13. ff. 117r-126v: [Stella clericorum] -- 14. ff. 127v-137r: [De arte moriendi]; dated 1453 (f. 137r) -- 15. ff. 137r-138v: [Varied texts on deteriorated paper; the last folio is partly glued onto a sheet of parchment covered with musical notation]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Foliation has been revised, which results in a discrepancy with the numbers cited by De Ricci (two consecutive folios were numbered &quot;51&quot;).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Badly water-damaged; the last two folios have crumbled into fragments. Small leaves from a shrub are found in some of the gutters.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The manuscript contains two dates: 1466 on f. 66r, and 1453 on f. 137r.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >One of the scribes identifies himself as Conradus Sifridus (ff. 74vb, 94rb, 99va).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Irregularly written in long lines or double columns of about 25-60 lines.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Gothic cursive; several hands.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Large red initials with blue flourishes, rather poorly executed. Several initials are incomplete. Crude drawing of a water vessel (f. 54r).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: unbound, although the quires are stitched together; the manuscript is stored in a modern slip-case. Formerly bound with Johannes Nider, Praeceptorium (Strassburg, 1483), which is now also stored in a modern slip-case, under the call-number: + Rare BV 4655 N65 1483.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Written in Germany, between ca. 1453 (the earliest date noted in the manuscript) and ca. 1483, the date of the printing of Joannes Nider&apos;s Praeceptorium, with which the manuscript was once bound, and in which there is an inscription: Liber Sancte Marie in monasterio Munster prope Swalenberch (f. 192v).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Provenance: Belonged to the monastery of Sancta Maria in Münster, near Schwalenberg, Lippe. Purchased in 1892 by George William Harris, who bequeathed it to Cornell in 1917.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Division of Rare and Manuscript Collections, Cornell University Library, 4600 Bd. Ms. 53.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Former shelfmark: MSS Bd. Rare BX T76+</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Related shelfmark: MS B.65 (De Ricci)</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >De Ricci, S.  Census of Medieval and Renaissance Manuscripts in the United States and Canada,</subfield
+    ><subfield code='c'
+    >II, pp. 1240-41.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Theology</subfield
+    ><subfield code='x'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Gothic scripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Theology</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01149559</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Zabarella, Francesco,</subfield
+    ><subfield code='d'
+    >1360-1417.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Thomas,</subfield
+    ><subfield code='c'
+    >Aquinas, Saint,</subfield
+    ><subfield code='d'
+    >1225?-1274.</subfield
+    ><subfield code='t'
+    >Summa confessionis.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Groote, Gerard,</subfield
+    ><subfield code='d'
+    >1340-1384.</subfield
+    ><subfield code='t'
+    >Epistola.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Joannes,</subfield
+    ><subfield code='c'
+    >de Schonhovia.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Augustine,</subfield
+    ><subfield code='c'
+    >Saint, Bishop of Hippo.</subfield
+    ><subfield code='t'
+    >Spurious and doubtful works.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Cyril,</subfield
+    ><subfield code='c'
+    >Saint, Bishop of Jerusalem,</subfield
+    ><subfield code='d'
+    >approximately 315-386.</subfield
+    ><subfield code='t'
+    >Spurious and doubtful works.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Conradus Sifridus,</subfield
+    ><subfield code='c'
+    >presbyter.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >Cornell University.</subfield
+    ><subfield code='b'
+    >Library.</subfield
+    ><subfield code='b'
+    >Division of Rare and Manuscript Collections.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >Misc. Bd. Ms. 53.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Germany.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 53 +</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='899'
+  ><subfield code='a'
+    >med</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20111111</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >arc3</subfield
+    ><subfield code='e'
+    >rmc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141225</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >54b7c4f1-e89e-4dd1-9603-889a26da6088</subfield
+    ><subfield code='s'
+    >6cd0ecc9-6b6d-4ae1-a715-19f9dd35f2a4</subfield
+    ></datafield
+  ></record
+>

@@ -1,148 +1,201 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02728ctmaa2200481 a 4500</leader>
-  <controlfield tag="001">3977168</controlfield>
-  <controlfield tag="005">20141225215258.0</controlfield>
-  <controlfield tag="008">000622q13001400it a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00A84</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00-A84</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">3977168</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64758420</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">amremm</subfield>
-    <subfield code="d">NIC</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Miscellany</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">[Sermones]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy,</subfield>
-    <subfield code="c">between ca. 1300 and ca. 1400]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">160 leaves :</subfield>
-    <subfield code="b">parchment ;</subfield>
-    <subfield code="c">210 x 145 (162 x 98) mm. bound to 219 x 159 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">A collection of sermons on various subjects, organized for the most part
-      around the feast-days of the Saints. There is a detailed table of contents on the rear
-      pastedown listing 59 entries (based mainly on the medieval rubrics occurring in the
-      manuscript), by Dr. Eric Millar.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The manuscript begins and ends imperfectly. Quires are missing after ff. 60,
-      84, and 120, and some of the existing quires are bound in the incorrect order. See the note by
-      Dr. Eric Millar tipped into the first flyleaf, and the annotations penciled into the
-      manuscript itself by a modern hand.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 28 long lines; frame-ruled.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic textual.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Red and blue initials with flourishes.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 19th cent., rebacked; spine reads &quot;M.S. / Sermons / 14th
-      Cent.&quot;</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying Materials: Description of the manuscript in a modern hand on
-      lined paper tipped into the recto side of the first flyleaf; note in a different modern hand
-      pasted onto the verso of the rear flyleaf, which identifies the author of the description (and
-      of the table of contents that follows) as Dr. Eric Millar; table of contents glued to the rear
-      pastedown.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in Italy, 14th century.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Purchased from C.A. Stonehill, Inc.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 49.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare BX S47</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="v">Early works to 1800.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Parchment.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Theology</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01149559</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Millar, Eric George.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 49.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 49</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="899">
-    <subfield code="a">med</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141225</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">cf1a2cea-d44d-49d0-8707-a0ed6395fc9e</subfield>
-    <subfield code="s">ca8f8531-a7b8-49d1-8995-1dd7cd202f96</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02728ctmaa2200481 a 4500</leader
+  ><controlfield tag='001'
+  >3977168</controlfield
+  ><controlfield tag='005'
+  >20141225215258.0</controlfield
+  ><controlfield tag='008'
+  >000622q13001400it a          000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00A84</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00-A84</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >3977168</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)64758420</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >amremm</subfield
+    ><subfield code='d'
+    >NIC</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='240'
+  ><subfield code='a'
+    >Miscellany</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >[Sermones]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >[Italy,</subfield
+    ><subfield code='c'
+    >between ca. 1300 and ca. 1400]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >160 leaves :</subfield
+    ><subfield code='b'
+    >parchment ;</subfield
+    ><subfield code='c'
+    >210 x 145 (162 x 98) mm. bound to 219 x 159 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Ms. codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >Text in Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >A collection of sermons on various subjects, organized for the most part around the feast-days of the Saints. There is a detailed table of contents on the rear pastedown listing 59 entries (based mainly on the medieval rubrics occurring in the manuscript), by Dr. Eric Millar.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The manuscript begins and ends imperfectly. Quires are missing after ff. 60, 84, and 120, and some of the existing quires are bound in the incorrect order. See the note by Dr. Eric Millar tipped into the first flyleaf, and the annotations penciled into the manuscript itself by a modern hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Written in 28 long lines; frame-ruled.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Gothic textual.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Red and blue initials with flourishes.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: 19th cent., rebacked; spine reads &quot;M.S. / Sermons / 14th Cent.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Accompanying Materials: Description of the manuscript in a modern hand on lined paper tipped into the recto side of the first flyleaf; note in a different modern hand pasted onto the verso of the rear flyleaf, which identifies the author of the description (and of the table of contents that follows) as Dr. Eric Millar; table of contents glued to the rear pastedown.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Written in Italy, 14th century.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Provenance: Purchased from C.A. Stonehill, Inc.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Division of Rare and Manuscript Collections, Cornell University Library, Misc. Bd. Ms. 49.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Former shelfmark: MSS Bd. Rare BX S47</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Theology</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Gothic scripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Parchment.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Theology</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01149559</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Millar, Eric George.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >Cornell University.</subfield
+    ><subfield code='b'
+    >Library.</subfield
+    ><subfield code='b'
+    >Division of Rare and Manuscript Collections.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >Misc. Bd. Ms. 49.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Italy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 49</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='899'
+  ><subfield code='a'
+    >med</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141225</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >cf1a2cea-d44d-49d0-8707-a0ed6395fc9e</subfield
+    ><subfield code='s'
+    >ca8f8531-a7b8-49d1-8995-1dd7cd202f96</subfield
+    ></datafield
+  ></record
+>

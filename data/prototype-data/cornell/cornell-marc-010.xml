@@ -1,133 +1,197 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02136ctmaa2200385 a 4500</leader>
-  <controlfield tag="001">5779397</controlfield>
-  <controlfield tag="005">20141229171256.0</controlfield>
-  <controlfield tag="008">060417q11001135it 000|0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV06B71</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV06-B71</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)68051413</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">5779397</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">appm</subfield>
-    <subfield code="d">NIC</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="130">
-    <subfield code="a">Bible.</subfield>
-    <subfield code="p">Epistles of Paul.</subfield>
-    <subfield code="l">Latin.</subfield>
-    <subfield code="s">Vulgate</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">Epistles of St. Paul, with commentary,</subfield>
-    <subfield code="f">[ca. 1100-1135]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 v. ([60] leaves) ;</subfield>
-    <subfield code="c">26 cm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Manuscript on vellum, in Latin, written in Italian Caroline miniscule,
-      rubricated and glossed. The text contains a few large decorated initials. Many leaves are
-      lacking. The text begins: Domino non manducat (from Romans 14:6) and ends: Homines enim per
-      majorem (from Hebrews 6:16). The volume is housed in a cloth case, together with several
-      handwritten bibliographical descriptions of the manuscript, including one description by E.S.
-      Buchanan, and another in a letter from George Lincoln Burr to E.C. Mitchell.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="506">
-    <subfield code="a">By appointment only.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="530">
-    <subfield code="a">Also on microfilm.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="561">
-    <subfield code="a">Provenance: Andrew Dickson White (bookplate).</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">Calkins, R.G. Medieval and Renaissance Illuminated Manuscripts in the Cornell
-      University Library, 2003 rev.,</subfield>
-    <subfield code="c">23; de Ricci, II, 1245.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Epistles of St. Paul, With Commentary, #4600. Division of Rare and Manuscript
-      Collections, Cornell University Library.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="630">
-    <subfield code="a">Bible.</subfield>
-    <subfield code="p">Epistles of Paul</subfield>
-    <subfield code="v">Commentaries.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="630">
-    <subfield code="a">Bible.</subfield>
-    <subfield code="p">Epistles of Paul</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01808029</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Commentaries</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01423723</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">White, Andrew Dickson,</subfield>
-    <subfield code="d">1832-1918.</subfield>
-    <subfield code="4">fmo</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Burr, George Lincoln,</subfield>
-    <subfield code="d">1857-1938.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Mitchell, E. C.</subfield>
-    <subfield code="q">(Edward Cushing),</subfield>
-    <subfield code="d">1829-1900.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Buchanan, E. S.</subfield>
-    <subfield code="q">(Edgar Simmons),</subfield>
-    <subfield code="d">1872-1932.</subfield>
-  </datafield>
-  <datafield ind1="8" ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 576+</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="948">
-    <subfield code="a">20060417</subfield>
-    <subfield code="b">o</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">rmc</subfield>
-    <subfield code="f">?</subfield>
-    <subfield code="h">?</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20120802</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">lts</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141229</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">5e50bdf7-bb54-48af-a68c-8c6b416c0b5e</subfield>
-    <subfield code="s">33d651f1-db67-4dce-b17b-cc97aedc948c</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02136ctmaa2200385 a 4500</leader
+  ><controlfield tag='001'
+  >5779397</controlfield
+  ><controlfield tag='005'
+  >20141229171256.0</controlfield
+  ><controlfield tag='008'
+  >060417q11001135it            000|0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV06B71</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV06-B71</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)68051413</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >5779397</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >appm</subfield
+    ><subfield code='d'
+    >NIC</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='130'
+  ><subfield code='a'
+    >Bible.</subfield
+    ><subfield code='p'
+    >Epistles of Paul.</subfield
+    ><subfield code='l'
+    >Latin.</subfield
+    ><subfield code='s'
+    >Vulgate</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Epistles of St. Paul, with commentary,</subfield
+    ><subfield code='f'
+    >[ca. 1100-1135]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 v. ([60] leaves) ;</subfield
+    ><subfield code='c'
+    >26 cm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Manuscript on vellum, in Latin, written in Italian Caroline miniscule, rubricated and glossed. The text contains a few large decorated initials. Many leaves are lacking. The text begins: Domino non manducat (from Romans 14:6) and ends: Homines enim per majorem (from Hebrews 6:16). The volume is housed in a cloth case, together with several handwritten bibliographical descriptions of the manuscript, including one description by E.S. Buchanan, and another in a letter from George Lincoln Burr to E.C. Mitchell.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='506'
+  ><subfield code='a'
+    >By appointment only.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='530'
+  ><subfield code='a'
+    >Also on microfilm.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Provenance: Andrew Dickson White (bookplate).</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >Calkins, R.G.  Medieval and Renaissance Illuminated Manuscripts in the Cornell University Library, 2003 rev.,</subfield
+    ><subfield code='c'
+    >23; de Ricci, II, 1245.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Epistles of St. Paul, With Commentary, #4600. Division of Rare and Manuscript Collections, Cornell University Library.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='630'
+  ><subfield code='a'
+    >Bible.</subfield
+    ><subfield code='p'
+    >Epistles of Paul</subfield
+    ><subfield code='v'
+    >Commentaries.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='630'
+  ><subfield code='a'
+    >Bible.</subfield
+    ><subfield code='p'
+    >Epistles of Paul</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01808029</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Commentaries</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01423723</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >White, Andrew Dickson,</subfield
+    ><subfield code='d'
+    >1832-1918.</subfield
+    ><subfield code='4'
+    >fmo</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burr, George Lincoln,</subfield
+    ><subfield code='d'
+    >1857-1938.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Mitchell, E. C.</subfield
+    ><subfield code='q'
+    >(Edward Cushing),</subfield
+    ><subfield code='d'
+    >1829-1900.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Buchanan, E. S.</subfield
+    ><subfield code='q'
+    >(Edgar Simmons),</subfield
+    ><subfield code='d'
+    >1872-1932.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 576+</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20060417</subfield
+    ><subfield code='b'
+    >o</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >rmc</subfield
+    ><subfield code='f'
+    >?</subfield
+    ><subfield code='h'
+    >?</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20120802</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141229</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >5e50bdf7-bb54-48af-a68c-8c6b416c0b5e</subfield
+    ><subfield code='s'
+    >33d651f1-db67-4dce-b17b-cc97aedc948c</subfield
+    ></datafield
+  ></record
+>

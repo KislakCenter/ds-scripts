@@ -1,219 +1,279 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>04986ctmaa2200637 a 4500</leader>
-  <controlfield tag="001">3963933</controlfield>
-  <controlfield tag="005">20141225213003.0</controlfield>
-  <controlfield tag="008">000724q14701520it 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00A115</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00-A115</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">3963933</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)48791446</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">amremm</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="100">
-    <subfield code="a">Eutropius.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Breviarium historiae Romanae</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Historia Romana.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[Italy,</subfield>
-    <subfield code="d">between ca. 1470 and ca. 1520]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">135 leaves :</subfield>
-    <subfield code="b">paper ;</subfield>
-    <subfield code="c">206 x 154 (137-165 x 95-120) mm. bound to 216 x 165 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">1. ff. 1r-60r: Historia Romana / Eutropius -- 2. ff. 61r-71v: Etates temporum
-      iuxta Testamentum Vetus / Anon. -- 3. ff. 72r-76v: [Brief entries on religious and moral
-      themes, focusing on iconographical and mythographical features] -- 4. f. 76r: Carmen
-      extemporaneum / Antonii Grottae [signed, and dated &quot;1556 Maij diei 8&quot;] -- 5. f. 78r:
-      [Alphabet; in the hand of Antonius Grotta] -- 6. ff. 81r-93r: Compendium rethorice / Anon.
-      --</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="505">
-    <subfield code="a">(continued) 7. ff. 95r-108r: De nobilitate in modum declamandi / Bonacursus
-      Posteriensis [i.e., Bonaccursius Pistoiensis, or Buonaccorso da Montemagno] -- 8. ff.
-      109r-109v: [Excerpts from classical authors] -- 9. ff. 111r-122r: [Unidentified collection of
-      epistles] -- 10. ff. 123r-135r: [Quaternary lists on varied subjects] -- 11. f. 135v: Deus
-      punit hominem ex quinque causis.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The text of Eutropius corresponds to pp. 6-182 of Droysen&apos;s edition in
-      the Monumenta Germaniae Historica, vol. 2 (1879); it follows the version of Paul the Deacon,
-      which appears in Droyen&apos;s apparatus. Although the version in Misc. Bd. Ms. 131 includes
-      Paul the Deacon&apos;s summary of Roman prehistory (&quot;Primus in Italia...&quot;, pp. 6-7),
-      it omits Paul&apos;s additions to Eutropius (Books 11-16, pp. 183-224); it also lacks
-      Paul&apos;s preface (&quot;Dominae Adelpergae...&quot;, pp. 4-5) and Eutropius&apos;s preface
-      (&quot;Res Romanas...&quot;, p. 3).</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">The bottom margin of fol. 1 has been cut away.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">A note in pencil by George Lincoln Burr draws attention to the date
-      &quot;1556 Maij diei 8&quot; which accompanies Antonius Grotta&apos;s &quot;Carmen
-      extemporaneum&quot; (consisting of a mere couplet) on fol. 76r. It should be observed that
-      Antonius&apos;s hand differs from the rest of the manuscript (apart from the alphabet on f.
-      78r), and that his writing appears in a blank space within a larger text. Hence, the date
-      provides a terminus ante quem. Watermarks suggest that the paper was made ca. 1470. There may
-      be a date at the top of f. 1r, but it has been mutilated by trimming; the surviving bottom
-      half of the four digits may be reconstructed to read &quot;1490&quot;.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in 21-33 long lines.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic cursive with humanistic elements.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 18th cent., Italian vellum wrapper.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: Partial transcription of the &quot;Compendium
-      rethorice&quot; (f. 81r) in a modern hand, on a single sheet inserted in the back of the
-      codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in Italy, between ca. 1470 and ca. 1520, possibly in
-      1490.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Purchased in 1891 from a European bookseller, for the White
-      Library.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 131.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Former shelfmark: MSS Bd. Rare P E91</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Related shelfmark: MS B.8 (De Ricci)</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">De Ricci, S. Census of Medieval and Renaissance Manuscripts in the United
-      States and Canada,</subfield>
-    <subfield code="c">II, p. 1226.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="581">
-    <subfield code="a">H. Droysen, ed., Eutropi Breviarium ab urbe condita cum versionibus Graecis
-      et Pauli Landolfique additamentis (Berlin: Weidmann, 1879; reprinted 1961), pp. 6-182. --
-      Prose e rime de&apos; due Buonaccorsi da Montemagno, con annotazioni, ed alcune rime di
-      Niccolò Tinucci... (Firenze: Stamperia di G. Manni, 1718), pp. 1-97.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Latin literature</subfield>
-    <subfield code="x">History.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Latin literature</subfield>
-    <subfield code="x">Rhetoric.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="651">
-    <subfield code="a">Rome</subfield>
-    <subfield code="x">History</subfield>
-    <subfield code="x">Early works to 1800.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Humanistic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Latin literature</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00993331</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="651">
-    <subfield code="a">Rome (Empire)</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01204885</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Early works</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411636</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">History</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01411628</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Eutropius,</subfield>
-    <subfield code="d">active 4th century.</subfield>
-    <subfield code="t">Breviarium ab urbe condita</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Buonaccorso,</subfield>
-    <subfield code="c">da Montemagno,</subfield>
-    <subfield code="d">approximately 1391-1429.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">Burr, George Lincoln,</subfield>
-    <subfield code="d">1857-1938.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="700">
-    <subfield code="a">White, Andrew Dickson,</subfield>
-    <subfield code="d">1832-1918.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 131.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">Italy.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 131</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="899">
-    <subfield code="a">med</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141225</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">7b606292-1fa5-4021-ae98-757c090e9246</subfield>
-    <subfield code="s">1eac5450-9a70-4c3f-923e-66c2355a2791</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >04986ctmaa2200637 a 4500</leader
+  ><controlfield tag='001'
+  >3963933</controlfield
+  ><controlfield tag='005'
+  >20141225213003.0</controlfield
+  ><controlfield tag='008'
+  >000724q14701520it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00A115</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00-A115</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >3963933</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)48791446</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >amremm</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Eutropius.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='240'
+  ><subfield code='a'
+    >Breviarium historiae Romanae</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Historia Romana.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >[Italy,</subfield
+    ><subfield code='d'
+    >between ca. 1470 and ca. 1520]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >135 leaves :</subfield
+    ><subfield code='b'
+    >paper ;</subfield
+    ><subfield code='c'
+    >206 x 154 (137-165 x 95-120) mm. bound to 216 x 165 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Ms. codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >Text in Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >1. ff. 1r-60r: Historia Romana / Eutropius -- 2. ff. 61r-71v: Etates temporum iuxta Testamentum Vetus / Anon. -- 3. ff. 72r-76v: [Brief entries on religious and moral themes, focusing on iconographical and mythographical features] -- 4. f. 76r: Carmen extemporaneum / Antonii Grottae [signed, and dated &quot;1556 Maij diei 8&quot;] -- 5. f. 78r: [Alphabet; in the hand of Antonius Grotta] -- 6. ff. 81r-93r: Compendium rethorice / Anon. --</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >(continued) 7. ff. 95r-108r: De nobilitate in modum declamandi / Bonacursus Posteriensis [i.e., Bonaccursius Pistoiensis, or Buonaccorso da Montemagno] -- 8. ff. 109r-109v: [Excerpts from classical authors] -- 9. ff. 111r-122r: [Unidentified collection of epistles] -- 10. ff. 123r-135r: [Quaternary lists on varied subjects] -- 11. f. 135v: Deus punit hominem ex quinque causis.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The text of Eutropius corresponds to pp. 6-182 of Droysen&apos;s edition in the Monumenta Germaniae Historica, vol. 2 (1879); it follows the version of Paul the Deacon, which appears in Droyen&apos;s apparatus. Although the version in Misc. Bd. Ms. 131 includes Paul the Deacon&apos;s summary of Roman prehistory (&quot;Primus in Italia...&quot;, pp. 6-7), it omits Paul&apos;s additions to Eutropius (Books 11-16, pp. 183-224); it also lacks Paul&apos;s preface (&quot;Dominae Adelpergae...&quot;, pp. 4-5) and Eutropius&apos;s preface (&quot;Res Romanas...&quot;, p. 3).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The bottom margin of fol. 1 has been cut away.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >A note in pencil by George Lincoln Burr draws attention to the date &quot;1556 Maij diei 8&quot; which accompanies Antonius Grotta&apos;s &quot;Carmen extemporaneum&quot; (consisting of a mere couplet) on fol. 76r. It should be observed that Antonius&apos;s hand differs from the rest of the manuscript (apart from the alphabet on f. 78r), and that his writing appears in a blank space within a larger text. Hence, the date provides a terminus ante quem. Watermarks suggest that the paper was made ca. 1470. There may be a date at the top of f. 1r, but it has been mutilated by trimming; the surviving bottom half of the four digits may be reconstructed to read &quot;1490&quot;.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Written in 21-33 long lines.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Gothic cursive with humanistic elements.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: 18th cent., Italian vellum wrapper.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Accompanying materials: Partial transcription of the &quot;Compendium rethorice&quot; (f. 81r) in a modern hand, on a single sheet inserted in the back of the codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Written in Italy, between ca. 1470 and ca. 1520, possibly in 1490.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Provenance: Purchased in 1891 from a European bookseller, for the White Library.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Division of Rare and Manuscript Collections, Cornell University Library, Misc. Bd. Ms. 131.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Former shelfmark: MSS Bd. Rare P E91</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Related shelfmark: MS B.8 (De Ricci)</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >De Ricci, S.  Census of Medieval and Renaissance Manuscripts in the United States and Canada,</subfield
+    ><subfield code='c'
+    >II, p. 1226.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='581'
+  ><subfield code='a'
+    >H. Droysen, ed., Eutropi Breviarium ab urbe condita cum versionibus Graecis et Pauli Landolfique additamentis (Berlin: Weidmann, 1879; reprinted 1961), pp. 6-182. -- Prose e rime de&apos; due Buonaccorsi da Montemagno, con annotazioni, ed alcune rime di Niccolò Tinucci... (Firenze: Stamperia di G. Manni, 1718), pp. 1-97.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Latin literature</subfield
+    ><subfield code='x'
+    >History.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Latin literature</subfield
+    ><subfield code='x'
+    >Rhetoric.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='651'
+  ><subfield code='a'
+    >Rome</subfield
+    ><subfield code='x'
+    >History</subfield
+    ><subfield code='x'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Gothic scripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Humanistic scripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Latin literature</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00993331</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Rome (Empire)</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01204885</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >History</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411628</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Eutropius,</subfield
+    ><subfield code='d'
+    >active 4th century.</subfield
+    ><subfield code='t'
+    >Breviarium ab urbe condita</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Buonaccorso,</subfield
+    ><subfield code='c'
+    >da Montemagno,</subfield
+    ><subfield code='d'
+    >approximately 1391-1429.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burr, George Lincoln,</subfield
+    ><subfield code='d'
+    >1857-1938.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >White, Andrew Dickson,</subfield
+    ><subfield code='d'
+    >1832-1918.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >Cornell University.</subfield
+    ><subfield code='b'
+    >Library.</subfield
+    ><subfield code='b'
+    >Division of Rare and Manuscript Collections.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >Misc. Bd. Ms. 131.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Italy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 131</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='899'
+  ><subfield code='a'
+    >med</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141225</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >7b606292-1fa5-4021-ae98-757c090e9246</subfield
+    ><subfield code='s'
+    >1eac5450-9a70-4c3f-923e-66c2355a2791</subfield
+    ></datafield
+  ></record
+>

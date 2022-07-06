@@ -1,131 +1,161 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>03203ctmaa2200421 a 4500</leader>
-  <controlfield tag="001">3864181</controlfield>
-  <controlfield tag="005">20140801215037.0</controlfield>
-  <controlfield tag="008">000816q12501300enk 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00A136</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV00-A136</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">3864181</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)64755979</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">amremm</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Latin Bible, with prologues attributed to St. Jerome and the interpretation
-      of Hebrew names.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="260">
-    <subfield code="a">[England,</subfield>
-    <subfield code="c">between ca. 1250 and ca. 1300]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">429 (of 448) leaves :</subfield>
-    <subfield code="b">parchment ;</subfield>
-    <subfield code="c">303 x 220 (223 x 141) mm. bound to 322 x 241 mm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Ms. codex.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">Text in Latin.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">This Latin Bible embodies several characteristics of the standard Vulgate
-      text developed in the schools of Paris during the thirteenth century, in particular the order
-      of the books, the division into chapters established by Stephen Langon and still used, the
-      interpretation of Hebrew names copied at the end, and several of the prologues that became
-      standard.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Some lacunae due to the loss of leaves; missing Genesis 1:1-22:13 after f. 3,
-      II Chronicles 34:18-Tobit 4:9 after f. 139, Jeremiah 25:4-41:10 after f. 237.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Occasional marginal glosses in a later cursive hand (15th century), often
-      trimmed.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Layout: Written in double columns of 46 lines.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Script: Gothic textual.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Decoration: Red and blue Lombard initials of 3 to 5 lines in height with red
-      and blue pen-flourishing often extending the height of the page (introducing each book and
-      most prologues); red or blue Lombards of 2 lines in height with contrasting pen-flourishing;
-      1-line red or blue Lombards as chapter initials and versal intials in the Psalms; headlines
-      and chapter numbers in alternating red and blue Lombards; some capitals touched in yellow or
-      red; some rubrics in red, most rubrics not executed.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Binding: 19th cent., brown morocco, edges gilt. Spine: &quot;Biblia Latina /
-      Ms. Saec. XIV&quot;.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Accompanying materials: Copy of a detailed printed description (1 page), no.
-      94 from an unidentified source, in an envelope labeled &quot;Rare Bd.
-      Mss...K-221-A-3-B&quot;.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Origin: Written in England in the latter half of the 13th century.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="561">
-    <subfield code="a">Provenance: Possibly at Lanthony Priory near Gloucester (although it is not
-      listed in the 13th-century catalogue of the Lanthony library). Matthew Hale of Alderley,
-      Gloucestershire, 1686. Edward Sherwood Hale (sale, Christie&apos;s, 17 June 1946, lot 45).
-      Brian Douglas Stilwell (bookplate). An unidentified owner has pencilled a note on the flyleaf,
-      dated 1 Feb. 1960, with illegible signature.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Division of Rare and Manuscript Collections, Cornell University Library,
-      Misc. Bd. Ms. 616.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="630">
-    <subfield code="a">Bible.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Gothic scripts.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Parchment.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Cornell University.</subfield>
-    <subfield code="b">Library.</subfield>
-    <subfield code="b">Division of Rare and Manuscript Collections.</subfield>
-    <subfield code="k">Manuscript.</subfield>
-    <subfield code="n">Misc. Bd. Ms. 616.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="752">
-    <subfield code="a">England.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 616 ++</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="899">
-    <subfield code="a">med</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">f4c349bc-b73b-4c7b-a849-85412e2bf79a</subfield>
-    <subfield code="s">4f49151a-3124-45f4-a1f8-a0b56af6093c</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >03203ctmaa2200421 a 4500</leader
+  ><controlfield tag='001'
+  >3864181</controlfield
+  ><controlfield tag='005'
+  >20140801215037.0</controlfield
+  ><controlfield tag='008'
+  >000816q12501300enk           000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00A136</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV00-A136</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >3864181</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)64755979</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >amremm</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Latin Bible, with prologues attributed to St. Jerome and the interpretation of Hebrew names.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >[England,</subfield
+    ><subfield code='c'
+    >between ca. 1250 and ca. 1300]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >429 (of 448) leaves :</subfield
+    ><subfield code='b'
+    >parchment ;</subfield
+    ><subfield code='c'
+    >303 x 220 (223 x 141) mm. bound to 322 x 241 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Ms. codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >Text in Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >This Latin Bible embodies several characteristics of the standard Vulgate text developed in the schools of Paris during the thirteenth century, in particular the order of the books, the division into chapters established by Stephen Langon and still used, the interpretation of Hebrew names copied at the end, and several of the prologues that became standard.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Some lacunae due to the loss of leaves; missing Genesis 1:1-22:13 after f. 3, II Chronicles 34:18-Tobit 4:9 after f. 139, Jeremiah 25:4-41:10 after f. 237.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Occasional marginal glosses in a later cursive hand (15th century), often trimmed.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Written in double columns of 46 lines.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Gothic textual.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Red and blue Lombard initials of 3 to 5 lines in height with red and blue pen-flourishing often extending the height of the page (introducing each book and most prologues); red or blue Lombards of 2 lines in height with contrasting pen-flourishing; 1-line red or blue Lombards as chapter initials and versal intials in the Psalms; headlines and chapter numbers in alternating red and blue Lombards; some capitals touched in yellow or red; some rubrics in red, most rubrics not executed.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: 19th cent., brown morocco, edges gilt. Spine: &quot;Biblia Latina / Ms. Saec. XIV&quot;.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Accompanying materials: Copy of a detailed printed description (1 page), no. 94 from an unidentified source, in an envelope labeled &quot;Rare Bd. Mss...K-221-A-3-B&quot;.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Written in England in the latter half of the 13th century.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Provenance: Possibly at Lanthony Priory near Gloucester (although it is not listed in the 13th-century catalogue of the Lanthony library). Matthew Hale of Alderley, Gloucestershire, 1686. Edward Sherwood Hale (sale, Christie&apos;s, 17 June 1946, lot 45). Brian Douglas Stilwell (bookplate). An unidentified owner has pencilled a note on the flyleaf, dated 1 Feb. 1960, with illegible signature.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Division of Rare and Manuscript Collections, Cornell University Library, Misc. Bd. Ms. 616.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='630'
+  ><subfield code='a'
+    >Bible.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Gothic scripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Parchment.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >Cornell University.</subfield
+    ><subfield code='b'
+    >Library.</subfield
+    ><subfield code='b'
+    >Division of Rare and Manuscript Collections.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >Misc. Bd. Ms. 616.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >England.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 616 ++</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='899'
+  ><subfield code='a'
+    >med</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >f4c349bc-b73b-4c7b-a849-85412e2bf79a</subfield
+    ><subfield code='s'
+    >4f49151a-3124-45f4-a1f8-a0b56af6093c</subfield
+    ></datafield
+  ></record
+>

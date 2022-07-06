@@ -1,98 +1,145 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>01489ctmaa2200289 a 4500</leader>
-  <controlfield tag="001">5829109</controlfield>
-  <controlfield tag="005">20141229203449.0</controlfield>
-  <controlfield tag="008">060717s13uu xx 001|0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)70687032</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">5829109</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">appm</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">Sermones,</subfield>
-    <subfield code="f">[13--]</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 v. ([143] leaves) ;</subfield>
-    <subfield code="c">37 cm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Manuscript on paper, in Latin. Written in double columns, with 51 lines to a
-      page, in a small, neat script with many scribal abbreviations. The text is preceded by an
-      index. Damp-staining on the first few leaves renders the incipit illegible. Some worming in
-      the lower margins, with minimal effect on the text. Bound in undressed sheep over oak boards,
-      very worn. The remains of clasps are present on the upper board. The spine is lacking,
-      exposing the three cords. </subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Sermones, #4600 Bd. Ms. 228. Division of Rare and Manuscript Collections,
-      Cornell University Library.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Sermons, Latin.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Sermons, Medieval.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Sermons</subfield>
-    <subfield code="y">14th century.</subfield>
-    <subfield code="2">rbgenr</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Cords.</subfield>
-    <subfield code="2">rbbin</subfield>
-    <subfield code="5">NIC</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Sermons, Latin</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01113283</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Sermons, Medieval</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01113290</subfield>
-  </datafield>
-  <datafield ind1="8" ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 228++</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="948">
-    <subfield code="a">20060717</subfield>
-    <subfield code="b">o</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">rmc</subfield>
-    <subfield code="f">?</subfield>
-    <subfield code="h">?</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20140616</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addsubf5_NIC</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141229</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">5344a771-be86-4b4d-9f38-604e3d48e85c</subfield>
-    <subfield code="s">cfc0313a-9df3-4a19-a03e-0f55b8e811aa</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01489ctmaa2200289 a 4500</leader
+  ><controlfield tag='001'
+  >5829109</controlfield
+  ><controlfield tag='005'
+  >20141229203449.0</controlfield
+  ><controlfield tag='008'
+  >060717s13uu    xx            001|0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)70687032</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >5829109</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >appm</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Sermones,</subfield
+    ><subfield code='f'
+    >[13--]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 v. ([143] leaves) ;</subfield
+    ><subfield code='c'
+    >37 cm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Manuscript on paper, in Latin. Written in double columns, with 51 lines to a page, in a small, neat script with many scribal abbreviations. The text is preceded by an index. Damp-staining on the first few leaves renders the incipit illegible. Some worming in the lower margins, with minimal effect on the text. Bound in undressed sheep over oak boards, very worn. The remains of clasps are present on the upper board. The spine is lacking, exposing the three cords. </subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Sermones, #4600 Bd. Ms. 228. Division of Rare and Manuscript Collections, Cornell University Library.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Sermons, Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Sermons, Medieval.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Sermons</subfield
+    ><subfield code='y'
+    >14th century.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Cords.</subfield
+    ><subfield code='2'
+    >rbbin</subfield
+    ><subfield code='5'
+    >NIC</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Sermons, Latin</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01113283</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Sermons, Medieval</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01113290</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 228++</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20060717</subfield
+    ><subfield code='b'
+    >o</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >rmc</subfield
+    ><subfield code='f'
+    >?</subfield
+    ><subfield code='h'
+    >?</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20140616</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addsubf5_NIC</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141229</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >5344a771-be86-4b4d-9f38-604e3d48e85c</subfield
+    ><subfield code='s'
+    >cfc0313a-9df3-4a19-a03e-0f55b8e811aa</subfield
+    ></datafield
+  ></record
+>
