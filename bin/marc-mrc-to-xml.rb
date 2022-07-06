@@ -8,6 +8,7 @@
 require 'marc'
 require 'csv'
 require 'optionparser'
+require 'rexml'
 require_relative '../lib/ds'
 
 options = {}
@@ -70,7 +71,10 @@ marc_mrc.each do |mrc|
   reader.each_with_index do |record,ndx|
     base     = sprintf '%s%03d.xml', options[:prefix], ndx
     marc_out = File.join options[:directory], base
-    File.open(marc_out, 'w+') { |f| f.puts record.to_xml }
+    # Use REXML::Document to format and preserve whitespace in outputs
+    doc = REXML::Document.new(record.to_xml.to_s)
+    # transitive: true prevents the formatter compressing whitespace
+    doc.write(output: File.open(marc_out, 'w+'), indent: 2, transitive: true)
     puts "Wrote #{marc_out}"
   end
 end
