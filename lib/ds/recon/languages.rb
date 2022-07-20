@@ -18,7 +18,8 @@ module Recon
     def self.lookup languages, from_column: 'structured_value', separator: '|'
       clean_languages = DS.clean_string languages, terminator: ''
       clean_languages.split(separator).map { |lang|
-        Recon.lookup('languages', value: lang, column: from_column)
+        # make sure each group of languages is separated by ';'
+        Recon.lookup('languages', value: lang, column: from_column).gsub('|', ';')
       }.join separator
     end
 
