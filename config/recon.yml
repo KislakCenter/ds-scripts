@@ -33,3 +33,9 @@ recon:
       repo_path: terms/named-subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
+    - name: all-subjects
+      repo_path:
+        - terms/subjects.csv
+        - terms/named-subjects.csv
+      key_column: subject_as_recorded
+      structured_data_column: structured_value

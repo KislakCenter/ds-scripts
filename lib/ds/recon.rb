@@ -2,6 +2,7 @@ require_relative 'recon/names'
 require_relative 'recon/places'
 require_relative 'recon/subjects'
 require_relative 'recon/named_subjects'
+require_relative 'recon/all_subjects'
 require_relative 'recon/genres'
 require_relative 'recon/materials'
 require_relative 'recon/languages'
@@ -56,28 +57,42 @@ module Recon
     set_config = Settings.recon.sets.find { |s| s.name == set_name }
     raise "No configured set found for: '#{set_name}'" unless set_config
 
-    csv_file = File.join recon_repo, set_config['repo_path']
-    raise "Could not find CSV for set #{set_name}: #{csv_file}" unless File.exist? csv_file
-
-    validate! set_config, csv_file
-
     data = {}
-    CSV.foreach csv_file, headers: true do |row|
-      struct        = OpenStruct.new row.to_h
-      key_column    = set_config['key_column']
-      subset_column = set_config['subset_column']
-      value         = row[key_column]
-      subset        = subset_column ? row[subset_column] : ''
-      key           = build_key(value, subset)
-      data[key]     = struct
+    params = {
+      key_column:    set_config['key_column'],
+      subset_column: set_config['subset_column'],
+      data:          data
+    }
+
+    # Path may be a single value or an array. Make sure it's an array.
+    repo_paths = [set_config['repo_path']].flatten
+    repo_paths.each do |path|
+      params[:csv_file] = File.join recon_repo, path
+
+      validate! set_config, params[:csv_file]
+      read_csv **params
     end
+
     add_alt_keys data
     data
   end
 
-  def self.validate! set_config, csv_file
+  def self.read_csv csv_file:, key_column:, subset_column:, data:
+    CSV.foreach csv_file, headers: true do |row|
+      struct    = OpenStruct.new row.to_h
+      value     = row[key_column]
+      subset    = subset_column ? row[subset_column] : ''
+      key       = build_key value, subset
+      data[key] = struct
+    end
+    data
+  end
 
-    headers = CSV.readlines(csv_file).first
+  def self.validate! set_config, csv_file
+    unless File.exist? csv_file
+      raise "Could not find CSV for set #{set_config['name']}: #{csv_file}"
+    end
+
     required_columns = []
     required_columns << set_config['key_column']
     required_columns << (set_config['structured_data_column'] || 'structured_value')
@@ -85,6 +100,7 @@ module Recon
     required_columns << set_config['authorized_label_column'] if set_config.include?('authorized_label_column')
     required_columns << 'instance_of' if set_config['name'] == 'names'
 
+    headers = CSV.readlines(csv_file).first
     missing = required_columns.reject { |c| headers.include? c }
     return if missing.empty?
 
