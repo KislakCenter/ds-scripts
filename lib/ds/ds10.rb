@@ -162,9 +162,16 @@ module DS
         data
       end
 
-      def extract_institution_id xml
+      ##
+      # For the legacy DS METS, this value is the value of
+      # +mods:identifier[@type="local"]+ is the shelf mark. If there are other
+      # ID types, we can't distinguish them from shelfmarks.
+      #
+      # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
+      # @return [String] the shelfmark
+      def extract_shelfmark xml
         ms = find_ms xml
-        ms.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="local"]/text()')
+        ms.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="local"]/text()').text
       end
 
       def extract_link_to_inst_record xml

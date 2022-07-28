@@ -219,7 +219,7 @@ CSV.open output_file, 'w+', headers: true do |csv|
       xml             = File.open(mets_xml) { |f| Nokogiri::XML f }
       row                       = {}
       row[:inst]                = inst
-      row[:callno]              = DS::DS10.extract_institution_id xml
+      row[:callno]              = DS::DS10.extract_shelfmark xml
       row[:folio]               = 'None'
       row[:mets_path]           = rel_path mets_xml
       row[:mets_basename]       = File.basename mets_xml
