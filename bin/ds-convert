@@ -42,6 +42,7 @@ class DSConvertCLI < Thor
         holding_institution                = inst_qid
         holding_institution_as_recorded    = preferred_name
         holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record, holdings_file
+        holding_institution_shelfmark      = DS::MarcXML.extract_holding_institution_shelfmark record, holdings_file
         link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, options[:institution]
         iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
@@ -107,6 +108,7 @@ class DSConvertCLI < Thor
           holding_institution:                holding_institution,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,
+          holding_institution_shelfmark:      holding_institution_shelfmark,
           link_to_holding_institution_record: link_to_holding_institution_record,
           iiif_manifest:                      iiif_manifest,
           production_date:                    production_date,
