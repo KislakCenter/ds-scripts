@@ -429,7 +429,7 @@ module DS
         shelfmarks.reject(&:empty?).join '|'
       end
 
-      def extract_holding_institution_ids record, holdings_file = nil
+      def extract_001_control_number record, holdings_file = nil
         ids = []
         # add the MMS ID
         ids << extract_mmsid(record)

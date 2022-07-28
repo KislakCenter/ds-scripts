@@ -41,7 +41,7 @@ class DSConvertCLI < Thor
         source_type                        = 'marc-xml'
         holding_institution                = inst_qid
         holding_institution_as_recorded    = preferred_name
-        holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record, holdings_file
+        holding_institution_id_number      = DS::MarcXML.extract_001_control_number record, holdings_file
         holding_institution_shelfmark      = DS::MarcXML.extract_holding_institution_shelfmark record, holdings_file
         link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, options[:institution]
         iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
