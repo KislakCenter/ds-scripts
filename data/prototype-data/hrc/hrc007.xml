@@ -1,1 +1,153 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01275ntm a2200325 i 4500</leader><controlfield tag='001'>991058289865206011</controlfield><controlfield tag='005'>20220331112038.0</controlfield><controlfield tag='008'>220323q16001650ne            000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1305030843h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1305030843h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 231</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Draft of addenda et supplenda ad librum XVI taciti and Finis Neronis et initium Galba</subfield><subfield code='k'>manuscript</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>Amsterdam ;</subfield><subfield code='c'>between 1600-1650</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>1 volume (15 leaves) ;</subfield><subfield code='c'>35 x 24 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title from caption.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Paginated 27-57.</subfield></datafield><datafield ind1='0' ind2=' ' tag='505'><subfield code='a'>Addenda et supplenda ad librum XVI taciti. -- Finis Neronis et initium Galba</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 231: Inside folder titled: &quot;Roman History VOT - 16&apos;. Finis Neronis et initium Galba is inserted after leaf 5, in a slightly later hand.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Translations.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Weinberger, Adam, $e seller.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='942'><subfield code='a'>18-02-004-P</subfield><subfield code='b'>MS 3327, Container 231</subfield></datafield><datafield ind1=' ' ind2=' ' tag='945'><subfield code='a'>blw</subfield></datafield><datafield ind1='2' ind2=' ' tag='979'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1='1' ind2=' ' tag='979'><subfield code='a'>Weinberger, Adam, $e seller.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02770ntm a2200349Ii 4500</leader
+  ><controlfield tag='001'
+  >991058302169906011</controlfield
+  ><controlfield tag='005'
+  >20220506144203.0</controlfield
+  ><controlfield tag='008'
+  >220506q16431658enk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1314389374h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1314389374h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >eng</subfield
+    ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 89</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Institutions, or Advice to his Grandson, in Three Parts :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >England (Dixton, Gloucester?) ;</subfield
+    ><subfield code='c'
+    >approximately 1643-1658</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >82 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >25 x 19 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Use: Unrestricted, for either reading room or classroom use</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Higford&apos;s text was published as Institution of a Gentleman in III Parts in 1658 and 1660. Also included are several Latin anagrams on the names John Higford (the grandson) and three Scudamores, none of which is included in the printed editions of this text. At the end is a prayer beginning O Lord God prepare my unprepared heart to pray unto thee...  signed Jo[hn] Porter. One leaf removed at the end with loss of text.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 89: Presumably from the collection of Sir Henry St. George (1581-1644), Garter King of Arms; no. 295 or 293 written on a round paper spine label; acquired by Sir Thomas Phillipps (1792-1872) in 1852, his square label (Ph. 13098) is on the spine; the initials of Phillipps&apos; grandson, Thomas FitzRoy Fenwick, dated 1893, are on the back pastedown; acquired by the Ransom Center in 1966 from the Cline Collection. Binding (England?  17th c?): Full brown tanned sheepskin over paper boards. Straight caps, cut edges brush-colored yellow, tight back over sewing supports. Blind-tooled double-line border (intersecting corners) front and back covers, double-line blind tooling across spine (six panels), decorative roll blind-tooled board edges. Remnant paper label at head end of spine.  Sewn on three cords (?) laced on boards. No endbands. Endleaf components: front integral pastedown; back same.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Porter, John,</subfield
+    ><subfield code='e'
+    >signer.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >St. George, Henry, 1581-1644,</subfield
+    ><subfield code='e'
+    >former owner.; Phillipps, Thomas, Sir, 1792-1872,</subfield
+    ><subfield code='e'
+    >former owner.; Fenwick, Thomas FitzRoy Phillipps, 1856-1938,</subfield
+    ><subfield code='e'
+    >former owner.; Cline Collection.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Phillipps, Thomas, Sir, 1792-1872,</subfield
+    ><subfield code='e'
+    >former owner.; Fenwick, Thomas FitzRoy Phillipps, 1856-1938,</subfield
+    ><subfield code='e'
+    >former owner.; Cline Collection.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Fenwick, Thomas FitzRoy Phillipps, 1856-1938,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Cline Collection.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >England,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

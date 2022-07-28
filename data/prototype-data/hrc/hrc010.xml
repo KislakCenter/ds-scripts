@@ -1,1 +1,137 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01133ntm a2200313 i 4500</leader><controlfield tag='001'>991058292064406011</controlfield><controlfield tag='005'>20220413123541.0</controlfield><controlfield tag='008'>220408q16001699enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1309896721h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1309896721h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 236</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Chronological list of events in the life of Roger Ascham :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>17th century</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>1 volume (1 leaf, folded) ;</subfield><subfield code='c'>20 x 16 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 236: Red cloth folder with bookplate on inner cover: Robert S. Pirie.</subfield></datafield><datafield ind1='1' ind2='0' tag='600'><subfield code='a'>Ascham, Roger,</subfield><subfield code='d'>1515-1568.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Biographies.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Pirie, Robert S.,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>Great Britain</subfield><subfield code='b'>England,</subfield><subfield code='e'>production place.</subfield><subfield code='2'>naf</subfield></datafield><datafield ind1=' ' ind2=' ' tag='942'><subfield code='a'>15-12-007-P</subfield><subfield code='b'>MS 3327, Container 236</subfield></datafield><datafield ind1=' ' ind2=' ' tag='945'><subfield code='a'>blw</subfield></datafield><datafield ind1='1' ind2=' ' tag='979'><subfield code='a'>Pirie, Robert S.,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='979'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02275ntm a2200337Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310285606011</controlfield
+  ><controlfield tag='005'
+  >20220527140633.0</controlfield
+  ><controlfield tag='008'
+  >220525s1674    ne            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1319876863h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1319876863h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >gre</subfield
+    ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 96</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Extensive handwritten marginal notes in a printed book containing three texts :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Netherlands (Leyden?) ;</subfield
+    ><subfield code='c'
+    >after 1674?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >105 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >16 x 10 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Contents include:1. Abraham van Berkel (1630-1688). Edition and commentary on Genuina Stephani Byzantini de Urbibus et Populis Fragmenta [Leyden, 1674?];2. Konrad Gesner (1516-1565) and Samuel Bochart (1599-1667). Commentaries on Hannonis Carthaginensium regis periplus;3. Leone Allacci (Leo Allatius, 1586-1669), translator. Ptolemaei Evergetae III. Aegypt. regis Monumentum adulitanum (Leyden: apud Danielem aÌ⁰ Gaesbeeck, 1674).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 96: Acquired by the Ransom Center in 1961 from Peter Eaton. Binding (Netherlands? 17th c): Full parchment over paper boards. Reverse caps, tight back (?) over sewing supports, cut edges black/red sprinkled. Single line blind-tooled border, front and back covers; writing in ink on spine partly obscured by modern paper label. Sewn on four parchment slips laced through outer joints and adhered under pastedown. Sewn endbands (green?), front bead, on parchment cores laced through outer joints. Endleaf components: front sewn folds (two nested) off-white handmade laid paper making stub, pastedown, two free endleaves; back same.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Eaton, Peter,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Netherlands,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Eaton, Peter,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

@@ -1,1 +1,131 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01602ntm a2200325Ii 4500</leader><controlfield tag='001'>991058301965006011</controlfield><controlfield tag='005'>20220506123551.0</controlfield><controlfield tag='008'>220506q16001699enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385701h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385701h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 65</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Auntient fathers for the doctrine of the Church of England, written by W. I. and dedicated to Sir Robert Howerd :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>17th century</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>43 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>15 x 10 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title from caption.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Frame ruled in red.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>The author, a Protestant preacher, claims he was formerly imprisoned by the Spanish in America where he lost all his books and notes; he is connected with the Earl of Salisbury whom he calls my most noble lorde. Includes patristic, medieval, and early modern arguments in support of the Protestant position of thirteen key topics, including transubstantiation, marriage of priests, use of vernacular language, etc.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 65: Recusant Collection. DIDB record: B1046. Binding: dark calf; traces of original spine leather remain.</subfield></datafield><datafield ind1=' ' ind2='0' tag='650'><subfield code='a'>Church history.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Recusant Collection.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01787ntc a2200313Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310586106011</controlfield
+  ><controlfield tag='005'
+  >20220603160213.0</controlfield
+  ><controlfield tag='008'
+  >220602k15121716fr            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1322488469h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1322488469h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >fre</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 106</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Documents concerning the seigniory of Basville-en-Roumois :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >France (Normandy) ;</subfield
+    ><subfield code='c'
+    >1512-1716</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >Circa 352 items :</subfield
+    ><subfield code='b'
+    >parchment and paper,</subfield
+    ><subfield code='c'
+    >40 x 26 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Basville-en-Roumois = Berville en Roumois?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Includes table of contents. Items of varying size, leaves numbered, many with tax stamp, Gen de Rouen.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 106: Acquired by the Ransom Center in 1972. Binding (French 18th c): Full goatskin (?) parchment over paper boards. Straight caps, natural hollow, paper spine piece, non-adhesive spine (assemblage of different sized documents attached individually to the sewing supports or (with tackets) to other documents so attached). Writing in ink on spine and front cover. No endbands.  Sewn on four alum-tawed thongs laced on boards. Tie fastenings: two pairs alum-tawed thongs laced through fore edge of each cover. Endleaf components: front sewn outer-hook endleaf fold making folded stub, pastedown, free endleaf; back same.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Kings and rulers.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Lamoignon de Basville,</subfield
+    ><subfield code='c'
+    >M. de</subfield
+    ><subfield code='q'
+    >(Nicolas),</subfield
+    ><subfield code='d'
+    >1648-1724.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >France,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

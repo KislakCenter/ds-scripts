@@ -1,1 +1,133 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01690ntm a2200337Ii 4500</leader><controlfield tag='001'>991058301964906011</controlfield><controlfield tag='005'>20220506123649.0</controlfield><controlfield tag='008'>220506s1635    enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385741h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385741h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 66</subfield></datafield><datafield ind1='0' ind2='2' tag='245'><subfield code='a'>A carrier to a kinge and three poems by Francis Quarles :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>1635</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>150 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>12 x 7 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 66: Early ownership marks, W. Lloyd his book and Wil Bingley (fol. 1r); Recusant Collection, A666. Binding (England 17th c): Full brown tanned calfskin over paper boards. Pulled-over caps, cut edges red spinkled. Gold-tooled double line border front and back covers; spine decoration indiscernible. Sewn endbands (color indeterminate). Sewn on three alum-tawed thongs laced on boards. Endleaf components: front off-white handmade laid paper (i) separate pastedown, (ii) outer hook sewn inserted fold making stub, free endleaf; back no endleaves, leaves of final gathering may be missing.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Poems.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='700'><subfield code='a'>Quarles, Francis,</subfield><subfield code='e'>contributor.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Lloyd, W.,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Bingley, Wil,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Recusant Collection.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02179ntm a2200313Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310585806011</controlfield
+  ><controlfield tag='005'
+  >20220603155320.0</controlfield
+  ><controlfield tag='008'
+  >220602s1661    fr            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1322516076h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1322516076h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >fre</subfield
+    ><subfield code='a'
+    >gre</subfield
+    ><subfield code='a'
+    >heb</subfield
+    ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 110</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Medititations sainctes and Meditationes chretiennes de I. C. :</subfield
+    ><subfield code='k'
+    >manuscript</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >France ;</subfield
+    ><subfield code='c'
+    >1661</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >175 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >11 x 8 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title taken from resource.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Source citations from biblical books, patristic authors, philosophical and historical texts, and short glosses in margins throughout.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The [author?], listed as A. I. C. on the first title page and I. C. on the second, has not been identified, but may be Jean Crasset, S. J. (1618-1692), whose Considerations ou meditations chretiennes sur les plus importantes veritez de l&apos;evangile pour l&apos;entretien de l&apos;ame was first published in Paris by Estienne Michallet in 1691 and was reprinted widely over the next twenty years.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 110: Acquired by the Ransom Center in 1969 (R4998). A pen trial on the rear flyleaf reads Monsieur [Couraid?]. Binding (England? 17th c): Full dark brown tanned sheepskin over paper boards. Head cap missing, tail cap straight; tight back, smooth spine, cut-solid edges brown (?) sprinkled. Blind-tooled two-line border, additional two-line roll parallel to spine, front and back covers; two-line roll blind-tooled across spine; no title. Sewn on three recessed tawed thongs laced on boards. No endbands. Endleaf components: front - sewn fold off-white handmade laid paper (same as textblock) making pastedown, free endleaf; back, same. HRC repairs to head and tail of spine.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Glosses (annotations)</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >France,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

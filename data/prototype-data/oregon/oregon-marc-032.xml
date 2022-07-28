@@ -1,227 +1,277 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>05637ctm a2200613Ki 4500</leader>
-    <controlfield tag="001">99900477831601852</controlfield>
-    <controlfield tag="005">20200520073635.7</controlfield>
-    <controlfield tag="008">180301q14011425it 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026484692</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026484692</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887610701451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="100">
-        <subfield code="a">Cicero, Marcus Tullius,</subfield>
-        <subfield code="e">author.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">Argumenta.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Italy,</subfield>
-        <subfield code="c">between 1401 and 1425?</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">119 leaves :</subfield>
-        <subfield code="b">paper ;</subfield>
-        <subfield code="c">220 x 288 mm. bound to 225 x 300 mm.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1="4" ind2=" " tag="510">
-        <subfield code="a">Bond, W., and Faye, C. Supplement to the Census of Medieval and
-            Renaissance manuscripts in the United States and Canada,</subfield>
-        <subfield code="c">page 432, item 9.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="561">
-        <subfield code="a">Ownership and custodial history: 1. Round pasted label with &quot;Ex
-            libris Gualteri [Walter] Sneyd&quot; and armorial achievement: shield with scythe and
-            fleur de lis, surmounted by helm to dexter crested with a lion passant guardant.
-            Reverend Walter Sneyd (1809-1888), was a noted painter and collector, of Denton House,
-            Cuddeston. His manuscripts were sold at Sotheby&apos;s, December 16-19,1903. First
-            flyleaf: Bookplate with aster design and motto &quot;inter asteres, inter astra, Edward
-            Sandford Burgess&quot;. Note in ink on inside back cover: &quot;Edward Sandford Burgess.
-            Sale of Dr. Leonard I. Gordon Apr. 27 1905.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
-            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="540">
-        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
-            submitted in writing to the Head of Special Collections &amp; University
-            Archives.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation (Cicero): 50 leaves, Quires of 10 + 2 front flyleaves. No page
-            headings, numbers, signatures. Catchwords in middle lower margin at end of
-            quires.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation (Justinus): 69 leaves, quires of 10 except last of 9.
-            Catchwords in middle lower margin at end of quires. No page headings, numbers,
-            signatures.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy, early 15th century.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout (Cicero): Double columns of 44-45 lines each. Little ruling, done
-            in lead or graphite. Blank spaces for initial letters. Paper watermarked.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout (Justinus): 2. Lightly ruled, single column, 40-43 lines per page.
-            Paragraphs separated by line space and marginal headings. Blank spaces for initial
-            letters.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Paper: the two manuscripts use different paper stocks, with different
-            watermarks. In the Justinus manuscript, there is a shears watermark on f. 69.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Cicero manuscript written in Humanistic minuscule in brown ink;
-            smaller script in Justinus manuscript.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: None.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Both works bound together in grained brown morocco over heavy
-            boards. Spine has six panels with gold stamped letters: &quot;Argumenta Tullii&quot;,
-            &quot;Justini Historia&quot;, &quot;M. S. in chart&quot;. Interior covers have gold
-            fillet border with fleurons at corners. Flyleaves have watermark &quot;J. Whatman,
-            1833.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">&quot;Justinus the historian [was] of unknown date, but not later than
-            300 or 400 AD. His work is taken from the Historiae Philippicae of Progus
-            Pompeius...writing the history of Macedonian monarchy....Justin&apos;s work is not so
-            much an abridgment as a selection of those parts [of Trogus&apos; history] which seemed
-            to him most worthy of being generally known&quot;--Edward Sandford Burgess
-            notes.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Includes two pages of written notes by Edward Sandford Burgess on
-            Justinus and his text, and notes on the veneration of Cicero&apos;s texts by later
-            scholars.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 040.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="505">
-        <subfield code="a">First page verso: list of Italian cities, connected with Zodiac signs:
-            Padua, Verona, Cremona, Venice, etc. -- Cicero: Argumenta: Pompeiana ff. 1-7v, Clodiana
-            ff. 7v-17v, Planciana ff. 17v-24r, Pro Silla ff. 24v-27v, Pro Archia Poeta ff. 27v-29v,
-            Pro Marcello ff. 29v-27v, Pro Ligario 31r-35r, Pro Rege Deiotaro, ff. 35-38r, Pro
-            Cluentio Abito ff. 38r-44v, Pro Quintio ff. 44v-47v, Pro L. Flacco ff. 47v-49v. --
-            Justinus: Begins f. 51: &quot;Cum militi ex roanis...&quot; and ends f. 119:
-            &quot;Explicit [com]pilacio Justini qui tuit abrediator 44 libror[um] Trogi
-            pompey.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 040.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Justinus, Marcus Junianus.</subfield>
-        <subfield code="t">Historiae Philippicae.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22329397310001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 040</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >05637ctm a2200613Ki 4500</leader
+  ><controlfield tag='001'
+  >99900477831601852</controlfield
+  ><controlfield tag='005'
+  >20200520073635.7</controlfield
+  ><controlfield tag='008'
+  >180301q14011425it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026484692</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026484692</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324887610701451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Cicero, Marcus Tullius,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Argumenta.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Italy,</subfield
+    ><subfield code='c'
+    >between 1401 and 1425?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >119 leaves :</subfield
+    ><subfield code='b'
+    >paper ;</subfield
+    ><subfield code='c'
+    >220 x 288 mm. bound to 225 x 300 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >Bond, W., and Faye, C. Supplement to the Census of Medieval and Renaissance manuscripts in the United States and Canada,</subfield
+    ><subfield code='c'
+    >page 432, item 9.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Ownership and custodial history: 1. Round pasted label with &quot;Ex libris Gualteri [Walter] Sneyd&quot; and armorial achievement: shield with scythe and fleur de lis, surmounted by helm to dexter crested with a lion passant guardant. Reverend Walter Sneyd (1809-1888), was a noted painter and collector, of Denton House, Cuddeston. His manuscripts were sold at Sotheby&apos;s, December 16-19,1903. First flyleaf: Bookplate with aster design and motto &quot;inter asteres, inter astra, Edward Sandford Burgess&quot;. Note in ink on inside back cover: &quot;Edward Sandford Burgess. Sale of Dr. Leonard I. Gordon Apr. 27 1905.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='540'
+  ><subfield code='a'
+    >All requests for permission to quote or publish from manuscripts must be submitted in writing to the Head of Special Collections &amp; University Archives.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation (Cicero): 50 leaves, Quires of 10 + 2 front flyleaves. No page headings, numbers, signatures. Catchwords in middle lower margin at end of quires.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation (Justinus): 69 leaves, quires of 10 except last of 9. Catchwords in middle lower margin at end of quires. No page headings, numbers, signatures.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy, early 15th century.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout (Cicero): Double columns of 44-45 lines each. Little ruling, done in lead or graphite. Blank spaces for initial letters. Paper watermarked.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout (Justinus): 2. Lightly ruled, single column, 40-43 lines per page. Paragraphs separated by line space and marginal headings. Blank spaces for initial letters.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Paper: the two manuscripts use different paper stocks, with different watermarks. In the Justinus manuscript, there is a shears watermark on f. 69.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Cicero manuscript written in Humanistic minuscule in brown ink; smaller script in Justinus manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: None.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Both works bound together in grained brown morocco over heavy boards. Spine has six panels with gold stamped letters: &quot;Argumenta Tullii&quot;, &quot;Justini Historia&quot;, &quot;M. S. in chart&quot;. Interior covers have gold fillet border with fleurons at corners. Flyleaves have watermark &quot;J. Whatman, 1833.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >&quot;Justinus the historian [was] of unknown date, but not later than 300 or 400 AD. His work is taken from the Historiae Philippicae of Progus Pompeius...writing the history of Macedonian monarchy....Justin&apos;s work is not so much an abridgment as a selection of those parts [of Trogus&apos; history] which seemed to him most worthy of being generally known&quot;--Edward Sandford Burgess notes.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Includes two pages of written notes by Edward Sandford Burgess on Justinus and his text, and notes on the veneration of Cicero&apos;s texts by later scholars.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 040.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >First page verso: list of Italian cities, connected with Zodiac signs: Padua, Verona, Cremona, Venice, etc. -- Cicero: Argumenta: Pompeiana ff. 1-7v, Clodiana ff. 7v-17v, Planciana ff. 17v-24r, Pro Silla ff. 24v-27v, Pro Archia Poeta ff. 27v-29v, Pro Marcello ff. 29v-27v, Pro Ligario 31r-35r, Pro Rege Deiotaro, ff. 35-38r, Pro Cluentio Abito ff. 38r-44v, Pro Quintio ff. 44v-47v, Pro L. Flacco ff. 47v-49v. -- Justinus: Begins f. 51: &quot;Cum militi ex roanis...&quot; and ends f. 119: &quot;Explicit [com]pilacio Justini qui tuit abrediator 44 libror[um] Trogi pompey.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 040.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Justinus, Marcus Junianus.</subfield
+    ><subfield code='t'
+    >Historiae Philippicae.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22329397310001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 040</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

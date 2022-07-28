@@ -1,222 +1,261 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>06065ctm a2200565Ki 4500</leader>
-    <controlfield tag="001">99900467282401852</controlfield>
-    <controlfield tag="005">20200308062213.2</controlfield>
-    <controlfield tag="008">180301q14011425it 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026484739</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026484739</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887610201451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="100">
-        <subfield code="a">Macer,</subfield>
-        <subfield code="c">Floridus.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">De Viribus Herbarum /</subfield>
-        <subfield code="c">Macer Floridus.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Italy,</subfield>
-        <subfield code="c">between 1401 and 1425?</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">24 leaves :</subfield>
-        <subfield code="b">parchment ;</subfield>
-        <subfield code="c">185 x 260 mm bound to 190 x 268 mm.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="561">
-        <subfield code="a">1. Label on inside front cover &quot;William Wesley &amp; Son,
-            Booksellers &amp; Publishers, 22 Essex St., Strand, London.&quot; William Wesley
-            (1814-1885) was a publisher and exporter of scientific books and instruments. The
-            business became William Wesley &amp; Son in 1885. 2. Bookplate with aster design and
-            motto &quot;inter asteres, inter astra, Edward Sandford Burgess&quot; on first
-            flyleaf.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
-            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="540">
-        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
-            submitted in writing to the Head of Special Collections &amp; University
-            Archives.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="520">
-        <subfield code="a">The properties of herbs: hexameter poem on medicinal uses of herbs,
-            written in the late 11th century under the pseudonym of Macer (with reference to the
-            Roman poet and naturalist Aemilius Licinius Macer, d. 16 BC). The French physician Odo
-            de Meung-sur-Loire, known as Odo Magdunensis, has been suggested as the real author, as
-            his name is mentioned in a 12th-century copy of the text (Dresden, Sächsische
-            Landesbibliothek - Staats- und Universitätsbibliothek, Dc. 160, f. 37v, explicit) and a
-            number of later manuscripts. The epithet &apos;Floridus&apos; was added to the name by
-            scribes from the 13th century onwards (Wellcome Library). The text draws from classical
-            and early medieval sources, Pliny (23-79 AD) and Walafrid Strabo (d. 849) in particular.
-            Cited for the first time by Sigebertus Gemblacensis (d. 1112), the poem circulated
-            widely in Europe, both in Latin and in vernacular translations, for the following five
-            centuries, with the number of hexameter lines varying greatly (Wellcome library). The
-            poem is one of the earliest Western documents proving a medieval revival of interest in
-            botany.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Opening line: &quot;Liber macer incipit et p[ri]mo de
-            artemisia.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: Three quires of 8. Catchwords on f. 8b, f. 16b. No
-            signatures.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout: Single column, lines ruled in ink, every 5th line numbered in
-            pencil, varying number of lines per page, 1278 lines total.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Rounded Gothic book minuscule in brown ink with
-            rubrication.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: Illuminated capital &apos;H&apos; on first recto:
-            Brownish-purple with white highlights on raised gold square, filled with foliage in blue
-            and pink, with green foliate extensions and 9 scattered raised gold dots outlined with
-            ink. Four Lombardic capitals, three in red and four in blue; some unfilled capital
-            spaces. Gothic ornamental capitals (same ink and size as script) starts each line. First
-            five divisions have headings in red.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Gray-green paper and brown morocco leather spine over boards.
-            Leather is blind-tooled with four pairs of horizontal lines, each bracketed by a small
-            gold dot. Spine labeled &quot;MACER&quot; lengthwise in gold. Paper pastedowns and four
-            paper flyleaves at front and back. Eight sewing stations.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Notes on former owner Edward Sandford Burgess: &quot;Submitting this MS
-            of Macer to Mr. G.[iuseppe] Marini Apr 16 1904 he says of it: &apos;It is a very fine
-            MS, all in one hand, the work of an artist in MS work, done in Italy, in the 14th
-            c.&apos; ... Ends with the papaver and de capis. ... Perhaps a variation of
-            Cornarius&apos; edn. of 1540, presented Macer in 5 books... Arturinianus in 1530 was the
-            first edition to divide Macer&apos;s poem into chapters.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 034.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="505">
-        <subfield code="a">Typed label pasted to inside front cover lists contents: &quot;Artemisia
-            [line] 1, Aprotano 30, Abscintho 51, Urtica 114, Alea 159, Plantago 194, Ruta 265, Viola
-            311, Aristolochia 363, Marrubium 405, Hysopus 420, Gris 449, Enulla 482, Apium 512,
-            Lucea 546, Malvia 575, Anetum 587, Betonica 620, Savina 683, Porrum 698, Camomilla 740,
-            Nepita 783, Pulegium 816, Feniculum 858, Accidula 891, Semperviva 918, Portuluca 940,
-            Rosa 950, Lilia 982, Saturgia 1016, Thimus 1034, Azgurum 1040, Ostrucion 1065,
-            Cerifolium 1085, Aetriplex 1104, Coriander 1114, Nasturtium 1145, Eruca 1173, Papever
-            1194, Cepa 1241.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 034.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22329748950001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 034</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >06065ctm a2200565Ki 4500</leader
+  ><controlfield tag='001'
+  >99900467282401852</controlfield
+  ><controlfield tag='005'
+  >20200308062213.2</controlfield
+  ><controlfield tag='008'
+  >180301q14011425it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026484739</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026484739</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324887610201451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Macer,</subfield
+    ><subfield code='c'
+    >Floridus.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >De Viribus Herbarum /</subfield
+    ><subfield code='c'
+    >Macer Floridus.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Italy,</subfield
+    ><subfield code='c'
+    >between 1401 and 1425?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >24 leaves :</subfield
+    ><subfield code='b'
+    >parchment ;</subfield
+    ><subfield code='c'
+    >185 x 260 mm bound to 190 x 268 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >1. Label on inside front cover &quot;William Wesley &amp; Son, Booksellers &amp; Publishers, 22 Essex St., Strand, London.&quot; William Wesley (1814-1885) was a publisher and exporter of scientific books and instruments. The business became William Wesley &amp; Son in 1885. 2. Bookplate with aster design and motto &quot;inter asteres, inter astra, Edward Sandford Burgess&quot; on first flyleaf.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='540'
+  ><subfield code='a'
+    >All requests for permission to quote or publish from manuscripts must be submitted in writing to the Head of Special Collections &amp; University Archives.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >The properties of herbs: hexameter poem on medicinal uses of herbs, written in the late 11th century under the pseudonym of Macer (with reference to the Roman poet and naturalist Aemilius Licinius Macer, d. 16 BC). The French physician Odo de Meung-sur-Loire, known as Odo Magdunensis, has been suggested as the real author, as his name is mentioned in a 12th-century copy of the text (Dresden, Sächsische Landesbibliothek - Staats- und Universitätsbibliothek, Dc. 160, f. 37v, explicit) and a number of later manuscripts. The epithet &apos;Floridus&apos; was added to the name by scribes from the 13th century onwards (Wellcome Library). The text draws from classical and early medieval sources, Pliny (23-79 AD) and Walafrid Strabo (d. 849) in particular. Cited for the first time by Sigebertus Gemblacensis (d. 1112), the poem circulated widely in Europe, both in Latin and in vernacular translations, for the following five centuries, with the number of hexameter lines varying greatly (Wellcome library). The poem is one of the earliest Western documents proving a medieval revival of interest in botany.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Opening line: &quot;Liber macer incipit et p[ri]mo de artemisia.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: Three quires of 8. Catchwords on f. 8b, f. 16b. No signatures.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Single column, lines ruled in ink, every 5th line numbered in pencil, varying number of lines per page, 1278 lines total.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Rounded Gothic book minuscule in brown ink with rubrication.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Illuminated capital &apos;H&apos; on first recto: Brownish-purple with white highlights on raised gold square, filled with foliage in blue and pink, with green foliate extensions and 9 scattered raised gold dots outlined with ink. Four Lombardic capitals, three in red and four in blue; some unfilled capital spaces. Gothic ornamental capitals (same ink and size as script) starts each line. First five divisions have headings in red.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Gray-green paper and brown morocco leather spine over boards. Leather is blind-tooled with four pairs of horizontal lines, each bracketed by a small gold dot. Spine labeled &quot;MACER&quot; lengthwise in gold. Paper pastedowns and four paper flyleaves at front and back. Eight sewing stations.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Notes on former owner Edward Sandford Burgess: &quot;Submitting this MS of Macer to Mr. G.[iuseppe] Marini Apr 16 1904 he says of it: &apos;It is a very fine MS, all in one hand, the work of an artist in MS work, done in Italy, in the 14th c.&apos; ... Ends with the papaver and de capis. ... Perhaps a variation of Cornarius&apos; edn. of 1540, presented Macer in 5 books... Arturinianus in 1530 was the first edition to divide Macer&apos;s poem into chapters.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 034.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >Typed label pasted to inside front cover lists contents: &quot;Artemisia [line] 1, Aprotano 30, Abscintho 51, Urtica 114, Alea 159, Plantago 194, Ruta 265, Viola 311, Aristolochia 363, Marrubium 405, Hysopus 420, Gris 449, Enulla 482, Apium 512, Lucea 546, Malvia 575, Anetum 587, Betonica 620, Savina 683, Porrum 698, Camomilla 740, Nepita 783, Pulegium 816, Feniculum 858, Accidula 891, Semperviva 918, Portuluca 940, Rosa 950, Lilia 982, Saturgia 1016, Thimus 1034, Azgurum 1040, Ostrucion 1065, Cerifolium 1085, Aetriplex 1104, Coriander 1114, Nasturtium 1145, Eruca 1173, Papever 1194, Cepa 1241.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 034.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22329748950001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 034</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

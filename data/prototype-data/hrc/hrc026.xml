@@ -1,1 +1,117 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01228ntm a2200301Ii 4500</leader><controlfield tag='001'>991058301964806011</controlfield><controlfield tag='005'>20220506123843.0</controlfield><controlfield tag='008'>220506s1700    enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385735h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385735h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 67</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Compendiosa conjurationis nitrati pulveris narratio, a Jesuitis eorumque sequacibus in Britannia contra Regis, Regnique salutem machinata et fabricata :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England? ;</subfield><subfield code='c'>approximately 1700</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>9 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>21 x 17 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title from caption?</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>A narrative of the Gunpowder Plot of 1605 placing the blame on the Jesuit Order.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 67: Recusant Collection. DIDB record: B1033. Leaves are joined with adhesive and stab sewing.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Recusant Collection.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01991ntm a2200289Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310491906011</controlfield
+  ><controlfield tag='005'
+  >20220527140525.0</controlfield
+  ><controlfield tag='008'
+  >220525s1663    gw            000 0 ger d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1319876385h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1319876385h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >ger</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 94</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Register of families serving as members of the Nuremberg Council (eighty-five), other office-holding families (twenty-three), and other influential families (twenty-eight), with descriptions of their coats of arms and other information culled from annals, church memorials, and other archival records from the 12th-17th centuries :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Germany (Nuremberg?) ;</subfield
+    ><subfield code='c'
+    >after 1663</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >211 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >32 x 19 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 94: Acquired by the Ransom Center in 1969 (R4998). Binding (Zaehnsdorf, late 19th c): Full brown tanned calfskin over paper boards. Pulled-over caps, cut-solid edges gilded, tight back over sewing supports. Stain decoration (sprinkled); gold-tooled double-line border with gold-tooled rosettes at corners, front and back covers; gold-tooled decorative rolls board edges, turn-ins; heavily gold-tooled spine; gold-tooled dark green and brown tanned goatskin title labels (2d/3d panels). Sewn on five supports (not visible) laced on boards. Sewn endbands (green/red/white) over parchment/laminate (?) cores, front bead. Endleaf components: front tipped folds (two nested) off-white handmade paper making stub, pastedown, two free endleaves; back same.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Heraldry.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Germany,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

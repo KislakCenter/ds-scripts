@@ -1,1 +1,137 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01181ntm a2200253 i 4500</leader><controlfield tag='001'>991058290253506011</controlfield><controlfield tag='005'>20220413123842.0</controlfield><controlfield tag='008'>220401q16201623enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1308515760h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1308515760h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3277, Container 233</subfield></datafield><datafield ind1='1' ind2=' ' tag='100'><subfield code='a'>Talbot, Francis,</subfield><subfield code='e'>author.</subfield></datafield><datafield ind1='1' ind2='0' tag='245'><subfield code='a'>Francis Talbot account book :</subfield><subfield code='k'>autograph manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>after 1646</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>1 volume (14 leaves) ;</subfield><subfield code='c'>13 x 9 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Ownership inscription on leaf 1 verso indicates majority of book is in the hand of Francis Talbot; leaf 1 recto is in a different early hand.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>Leaf 1 recto records birth, baptism, and marriage dates. Leaf 1 verso records ownership inscription and prayer. Leaves 2-7 recto are a transcription of some lines from The mirror of mans miserie. Leaves 8-9 are a transcription of The second elegie of judgment. Leaves 9-14 consist of records of payments.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Account books.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01783ntm a2200325Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310285306011</controlfield
+  ><controlfield tag='005'
+  >20220527141557.0</controlfield
+  ><controlfield tag='008'
+  >220525s1620    it            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1319892458h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1319892458h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >ita</subfield
+    ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 101</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Poems based on the Seven Penitential Psalms :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Italy ;</subfield
+    ><subfield code='c'
+    >1620 July 7</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >49 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >20 x 15 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Use: Unrestricted, for either reading room or classroom use</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Verse in ottava rima. Prefatory prose dedication to Cardinal Carlo de Medici (1595-1666).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 101: Edward A. Parsons of New Orleans, Louisiana, bookplate on inside front cover, his no. [54?]. Condition: Some water damage and ink corrosion throughout. Binding (US? 20th c?): Full tan/ochre printed paper over thin paper boards. Straight caps, cut edges, smooth spine. No decoration, no title. Single gathering and two off-white machine-made wove paper wrappers and textile spine strip with extensions sewn together through spine fold, unsupported, three-hole pamphlet stitch. No endbands. Endleaf components: front two leaves of wrappers making pastedown, free endleaf; back same.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Poems.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Parsons, Edward Alexander, 1878-1962,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Italy,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Parsons, Edward Alexander, 1878-1962,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

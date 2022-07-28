@@ -1,1 +1,143 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01454ntm a2200313Ii 4500</leader><controlfield tag='001'>991058301965906011</controlfield><controlfield tag='005'>20220506121705.0</controlfield><controlfield tag='008'>220506s1574    enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385740h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385740h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>fre</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 56</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Three letters, 1574 February 20, March 10, and April 15, Sheffield to M. Bertrand de Salignac, seigneur de la Mothe FeÌ¹nelon, ambassador of Charles IX :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England (Sheffield) ;</subfield><subfield code='c'>1574 February 20, March 10, and April 15</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>8 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>21 x 21 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted in reading room; available for classroom use in exhibit case only.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 56: William H. and Miriam Lutcher Stark Library; see De Ricci, Texas nos. 13-15. DIDB record: 3101. Disbound in 1984; formerly bound in a olive green morocco Riviere binding together with 22 prints of or related to Mary Stuart.</subfield></datafield><datafield ind1=' ' ind2='0' tag='650'><subfield code='a'>Kings and rulers.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Correspondence.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Stark, Miriam Lutcher, 1859-1936,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Stark, William Henry, 1851-1936,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01250ntm a2200325Ii 4500</leader
+  ><controlfield tag='001'
+  >991058321205406011</controlfield
+  ><controlfield tag='005'
+  >20220606101825.0</controlfield
+  ><controlfield tag='008'
+  >220606s1627    fr            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1325198909h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1325198909h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >fre</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 118</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Étampes-Valençay, Léonor d&apos;,</subfield
+    ><subfield code='d'
+    >approximately 1585-1651,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Harangue de Monsieur l&apos;Evêque de Chartres prononcée devant le Roy :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >France ;</subfield
+    ><subfield code='c'
+    >1627 February 3</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >6 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >32 x 22 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title from caption?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Advice to Louis XIII, King of France (1601-1643) to expand the French navy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 118: Acquired by the Ransom Center in 1973 (R5374) from Jenkins and Company. DIDB record: 21965</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='610'
+  ><subfield code='a'
+    >France.</subfield
+    ><subfield code='b'
+    >Marine</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Louis</subfield
+    ><subfield code='b'
+    >XIII,</subfield
+    ><subfield code='c'
+    >King of France,</subfield
+    ><subfield code='d'
+    >1601-1643.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Jenkins and Company,</subfield
+    ><subfield code='e'
+    >seller.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >France,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

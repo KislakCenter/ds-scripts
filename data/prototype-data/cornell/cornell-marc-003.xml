@@ -1,76 +1,111 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>01066ctm a2200265 a 4500</leader>
-  <controlfield tag="001">6382455</controlfield>
-  <controlfield tag="005">20170418150315.0</controlfield>
-  <controlfield tag="008">081104s16uu nyua 000 0 per d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)268932040</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">6382455</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="e">dacs</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="9" tag="099">
-    <subfield code="a">4600 Bd. Ms. 176</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="100">
-    <subfield code="a">Firdawsī.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Shāhnāmah</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">Shah-nameh,</subfield>
-    <subfield code="f">1600s.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 v. (395 leaves) :</subfield>
-    <subfield code="b">col. ill. ;</subfield>
-    <subfield code="c">30 cm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Persian manuscript illustrated with about 40 color miniatures and numerous
-      small decorations in gold and colors. Lacks front and final pages. Rebound in cloth and housed
-      in cloth box.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">In Persian.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Firdawsī. Shah nameh, #4600. Division of Rare and Manuscript Collections,
-      Cornell University Library.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Epic poetry, Persian.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Epic poetry, Persian</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01741636</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 176</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="948">
-    <subfield code="a">20081104</subfield>
-    <subfield code="b">o</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">lts</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20141230</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">addfast</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">36a35407-cc40-4708-a606-acac22334341</subfield>
-    <subfield code="s">14de088f-fc5c-45ab-ac21-807788c992b6</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01066ctm a2200265 a 4500</leader
+  ><controlfield tag='001'
+  >6382455</controlfield
+  ><controlfield tag='005'
+  >20170418150315.0</controlfield
+  ><controlfield tag='008'
+  >081104s16uu    nyua          000 0 per d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)268932040</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >6382455</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='e'
+    >dacs</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >4600 Bd. Ms. 176</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Firdawsī.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='240'
+  ><subfield code='a'
+    >Shāhnāmah</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Shah-nameh,</subfield
+    ><subfield code='f'
+    >1600s.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 v. (395 leaves) :</subfield
+    ><subfield code='b'
+    >col. ill. ;</subfield
+    ><subfield code='c'
+    >30 cm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Persian manuscript illustrated with about 40 color miniatures and numerous small decorations in gold and colors. Lacks front and final pages. Rebound in cloth and housed in cloth box.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Persian.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Firdawsī. Shah nameh, #4600. Division of Rare and Manuscript Collections, Cornell University Library.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Epic poetry, Persian.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Epic poetry, Persian</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01741636</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 176</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20081104</subfield
+    ><subfield code='b'
+    >o</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20141230</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >addfast</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >36a35407-cc40-4708-a606-acac22334341</subfield
+    ><subfield code='s'
+    >14de088f-fc5c-45ab-ac21-807788c992b6</subfield
+    ></datafield
+  ></record
+>

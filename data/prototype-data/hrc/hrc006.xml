@@ -1,1 +1,115 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02037ntm a2200409Ii 4500</leader><controlfield tag='001'>991058289861806011</controlfield><controlfield tag='005'>20220407114629.0</controlfield><controlfield tag='008'>220324q14251475fr  ap        000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1305313728h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1305313728h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>fre</subfield><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 5</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Book of hours</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>France;</subfield><subfield code='c'>between 1425 and 1475</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>176 leaves:</subfield><subfield code='b'>parchment, illustrations,</subfield><subfield code='c'>16 x 18 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Decorated with fourteen full-page miniatures, borders and 1- to 4-line initials.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Gothic textualis formata script; Layout is 14 long lines ruled in red ink.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Restricted from reading room use due to condition; available for classroom use in exhibit case only, use cradle.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Haynes, Douglas. Manuscript description, nd.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Ruppert, Nancy. Manuscript description, 1988.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 5: Edward A. Parsons (1878-1962) of New Orleans, Louisiana; see De Ricci, Parsons no. 7. Available on RVR portal. DIDB Record Number: 13691. Binding: Full brown calfskin over paper boards. (French?)  Extensively repaired (late 19th c?), including overback.  Re-used covers? 16th c?</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>A digital surrogate of Ransom Center copy MS 3327, Container 5 is available through the Digital Scriptorium.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Books of hours.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Decorated initials.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Illuminated manuscripts.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Miniatures (paintings)</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Parsons, Edward Alexander, 1878-1962,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>France,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1='4' ind2='0' tag='856'><subfield code='u'>http://ds.lib.berkeley.edu/HRC005_37</subfield><subfield code='y'>Digital copy for MS 3327, Container 5</subfield></datafield><datafield ind1=' ' ind2=' ' tag='945'><subfield code='a'>blw</subfield></datafield><datafield ind1='1' ind2=' ' tag='979'><subfield code='a'>Parsons, Edward Alexander, 1878-1962,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='979'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01976ntm a2200301Ii 4500</leader
+  ><controlfield tag='001'
+  >991058302169606011</controlfield
+  ><controlfield tag='005'
+  >20220527140242.0</controlfield
+  ><controlfield tag='008'
+  >220506s1647    stk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1314389419h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1314389419h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >eng</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 90</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Practicks of the law of Scotland :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Scotland? ;</subfield
+    ><subfield code='c'
+    >1647 October 20 to November 26</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >148 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >19 x 15 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >An alphabetical arrangement of legal subjects with commentary and several marginal glosses.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 90: From the Auchinleck Library penciled on the front flyleaf verso; possibly belonged to Alexander Boswell, Lord Auchinleck (1707-1782), who donated several manuscripts to the Advocates&apos; Library in Edinburgh in 1744, and was the father of James Boswell; F.1 and 265 also in pencil (fol. i verso); number on spine not visible under ultraviolet light; acquired by the Ransom Center (R4998) in 1969. Binding: Limp calfskin (?) parchment, fore edge cover extensions. Straight caps, cut edges. Partial cleaning of dirty, discolored cover material, title written in ink at head end of spine. Sewn on three tawed thongs adhered under pastedowns. Two fore edge fastenings, tawed ties front and back covers. No endbands. Endleaf components: front separate pastedown, pieced green coated paper, integral free endleaf; back separate pastedown, pieced green coated paper.  (Scotland? 17th c?) Repairs.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Law.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Glosses (annotations)</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Auchinleck Library,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Scotland,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Auchinleck Library,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

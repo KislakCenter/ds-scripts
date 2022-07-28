@@ -1,1 +1,151 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>01229ntm a2200277Ii 4500</leader><controlfield tag='001'>991058301964406011</controlfield><controlfield tag='005'>20220506124451.0</controlfield><controlfield tag='008'>220506s1653    enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385873h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385873h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 71</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Treatise on the Roman court :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1='1' ind2=' ' tag='246'><subfield code='i'>Caption title:</subfield><subfield code='a'>The question. What force, validity, or obligation have the Decrees of the Roman Court, Independent of ye Ratification or Promulgation of the Respective Princes to whom they are directed</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>after 1653</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>20 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>20 x 15 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Date conjectured from last date on the material.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted in reading room; available for classroom use in exhibit case only.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 71: Recusant Collection. DIDB record: B1047. Stitched binding (England 17th c): without cover (stabbed, four holes, replacement thread).</subfield></datafield><datafield ind1=' ' ind2='0' tag='650'><subfield code='a'>Church history.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Recusant Collection.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02700ntm a2200373Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310481506011</controlfield
+  ><controlfield tag='005'
+  >20220603160312.0</controlfield
+  ><controlfield tag='008'
+  >220602s1640    it            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1322487599h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1322487599h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 105</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Life and Miracles of St. Simeon of Padolirone :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >Italy ;</subfield
+    ><subfield code='c'
+    >approximately 1640?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >20 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >28 x 21 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >With rubrication in red.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Use: Unrestricted, for either reading room or classroom use</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Contents include: 1. fol. 1: prologue; 2. fol. 2r-15v: vita in twenty-seven chapters; 3. fol. 15v-19v: post-mortem miracles in thirteen chapters; 4. fol. 20r: letter of Pope Benedict VII authorizing the building of a church in honor of St. Simeon; 5. fol. 20v: letter of Pope Leo authorizing the dedication of the church by the Bishop of Mantua.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='581'
+  ><subfield code='a'
+    >Paolo Golinelli, La &apos;vita&apos; di S. Simeone monaco, Studi Medievali, 3d ser., 20 (1979): 734-36.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 105: Notes of content in German on the inside front cover; acquired by the Ransom Center (R5374) in 1973 from Jenkins and Company. Bibliography: The text of the vita was printed in the Acta Sanctorum. Binding (Italy 17th c): Full brown tanned goatskin over paper boards. Pulled-over caps, cut-solid edges gilded, tight back over sewing supports, transverse spine linings with extensions adhered to inside of boards. Blind-tooled border of fillet lines, concentric frame, small and large arabesques gold-tooled in border and frame corners and combined in gold-tooled centerpiece, front and back covers; gold tooling on spine; title written in ink above centerpiece front cover.  Four fastenings (pairs of ribbon ties) centered head and tail and two on fore edge.  Sewn on six tanned animal skin thongs laced on boards. Sewn endbands (blue/pink) over alum-tawed cores adhered to inside of boards, front bead. Endleaf components: front   text-hook off-white handmade laid paper endleaves (two nested), sewn with gathering, making pastedown, free endleaf; back same.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Saints.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Biographies.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Jenkins and Company,</subfield
+    ><subfield code='e'
+    >seller.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Italy,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Jenkins and Company,</subfield
+    ><subfield code='e'
+    >seller.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

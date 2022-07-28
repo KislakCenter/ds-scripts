@@ -1,134 +1,193 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02328ctmaa22003971a 4500</leader>
-  <controlfield tag="001">3313577</controlfield>
-  <controlfield tag="005">20170913155853.0</controlfield>
-  <controlfield tag="008">981020s14uu it a 000 0 lat d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV98A100</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(CStRLIN)NYCV98-A100</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(NIC)notisARA3908</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)63890538</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">3313577</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">NIC</subfield>
-    <subfield code="c">NIC</subfield>
-    <subfield code="d">NIC</subfield>
-    <subfield code="d">NIC</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="110">
-    <subfield code="a">Catholic Church.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Office of the Blessed Virgin Mary</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="245">
-    <subfield code="a">Incipit officium beate Marie Virginis secundum cursum roman ...</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 v. (187 p.) ;</subfield>
-    <subfield code="c">10 cm.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Manuscript on vellum, written in a 15th century hand; 9-1/2 x 7 cm.; single
-      column, 11 lines per page. Thirteen pages with illuminations. Borders and miniatures, 132
-      large illuminated initials, 722 small.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">[Begins fol. 1,a] Incipit officium beate / marie virginis secun/dum cursum
-      roman... [Illuminated initial D] ne labia mea aperies et/. [Ends fol. 102, 6] ora pro nobis
-      deum/ alleluia. [Ff. 103, 104, vacant.] Septem psalmi penitentiales [Begin, fol. 105,a]
-      Incipiunt septem psalmi pe/nitentiales. [Ends fol. 130,b] Finis laus deo-Officium mortuorum
-      [Ff. 140, 141, 142 vacant] [Begins fol. 143,a] Incipit officium mortu/orum [Ends, fol. 187,b]
-      Orationes vero ut supra in vesperis.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Bound in full calf, inlaid with red and blue. Clasp gone; no
-      lettering.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="530">
-    <subfield code="a">Selected illustrations are included in the Images from Cornell&apos;s Rare
-      Book and Manuscript Collections digital collection.</subfield>
-  </datafield>
-  <datafield ind1="4" ind2=" " tag="510">
-    <subfield code="a">Calkins, R. Catalogue, 1971,</subfield>
-    <subfield code="c">no. 28.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2="0" tag="610">
-    <subfield code="a">Catholic Church</subfield>
-    <subfield code="v">Prayers and devotions</subfield>
-    <subfield code="x">Italian.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2="0" tag="610">
-    <subfield code="a">Catholic Church</subfield>
-    <subfield code="v">Prayers and devotions</subfield>
-    <subfield code="x">Latin.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Miniatures (Illuminations)</subfield>
-    <subfield code="z">Italy</subfield>
-    <subfield code="y">15th century.</subfield>
-    <subfield code="2">gmgpc</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Marginal illustrations</subfield>
-    <subfield code="z">Italy</subfield>
-    <subfield code="y">15th century.</subfield>
-    <subfield code="2">aat</subfield>
-  </datafield>
-  <datafield ind1="2" ind2="7" tag="610">
-    <subfield code="a">Catholic Church</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00531720</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="655">
-    <subfield code="a">Prayers</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01423909</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">4600 Bd. Ms. 286, tiny</subfield>
-  </datafield>
-  <datafield ind1="4" ind2="2" tag="856">
-    <subfield code="3">Selected illustrations</subfield>
-    <subfield code="u">http://resolver.library.cornell.edu/misc/5862713</subfield>
-  </datafield>
-  <datafield ind1="3" ind2=" " tag="948">
-    <subfield code="a">20070525</subfield>
-    <subfield code="h">RLINAMC</subfield>
-    <subfield code="i">RLINAMC1.mrc</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20160627</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">fix530fix856</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20170818</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">lts</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20170906</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">add899forArchivesSpace</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">41f08a5c-5e60-4327-99c4-1e201316ef1b</subfield>
-    <subfield code="s">043163d2-3858-4029-b920-64809d6d1727</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02328ctmaa22003971a 4500</leader
+  ><controlfield tag='001'
+  >3313577</controlfield
+  ><controlfield tag='005'
+  >20170913155853.0</controlfield
+  ><controlfield tag='008'
+  >981020s14uu    it a          000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV98A100</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(CStRLIN)NYCV98-A100</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(NIC)notisARA3908</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)63890538</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >3313577</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='c'
+    >NIC</subfield
+    ><subfield code='d'
+    >NIC</subfield
+    ><subfield code='d'
+    >NIC</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='110'
+  ><subfield code='a'
+    >Catholic Church.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='240'
+  ><subfield code='a'
+    >Office of the Blessed Virgin Mary</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Incipit officium beate Marie Virginis secundum cursum roman ...</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 v. (187 p.) ;</subfield
+    ><subfield code='c'
+    >10 cm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Manuscript on vellum, written in a 15th century hand; 9-1/2 x 7 cm.; single column, 11 lines per page. Thirteen pages with illuminations. Borders and miniatures, 132 large illuminated initials, 722 small.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >[Begins fol. 1,a] Incipit officium beate / marie virginis secun/dum cursum roman... [Illuminated initial D] ne labia mea aperies et/. [Ends fol. 102, 6] ora pro nobis deum/ alleluia. [Ff. 103, 104, vacant.] Septem psalmi penitentiales [Begin, fol. 105,a] Incipiunt septem psalmi pe/nitentiales. [Ends fol. 130,b] Finis laus deo-Officium mortuorum [Ff. 140, 141, 142 vacant] [Begins fol. 143,a] Incipit officium mortu/orum [Ends, fol. 187,b] Orationes vero ut supra in vesperis.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Bound in full calf, inlaid with red and blue. Clasp gone; no lettering.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='530'
+  ><subfield code='a'
+    >Selected illustrations are included in the Images from Cornell&apos;s Rare Book and Manuscript Collections digital collection.</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >Calkins, R.  Catalogue, 1971,</subfield
+    ><subfield code='c'
+    >no. 28.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2='0' tag='610'
+  ><subfield code='a'
+    >Catholic Church</subfield
+    ><subfield code='v'
+    >Prayers and devotions</subfield
+    ><subfield code='x'
+    >Italian.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2='0' tag='610'
+  ><subfield code='a'
+    >Catholic Church</subfield
+    ><subfield code='v'
+    >Prayers and devotions</subfield
+    ><subfield code='x'
+    >Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Miniatures (Illuminations)</subfield
+    ><subfield code='z'
+    >Italy</subfield
+    ><subfield code='y'
+    >15th century.</subfield
+    ><subfield code='2'
+    >gmgpc</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Marginal illustrations</subfield
+    ><subfield code='z'
+    >Italy</subfield
+    ><subfield code='y'
+    >15th century.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='2' ind2='7' tag='610'
+  ><subfield code='a'
+    >Catholic Church</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00531720</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Prayers</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01423909</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >4600 Bd. Ms. 286, tiny</subfield
+    ></datafield
+  ><datafield ind1='4' ind2='2' tag='856'
+  ><subfield code='3'
+    >Selected illustrations</subfield
+    ><subfield code='u'
+    >http://resolver.library.cornell.edu/misc/5862713</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20070525</subfield
+    ><subfield code='h'
+    >RLINAMC</subfield
+    ><subfield code='i'
+    >RLINAMC1.mrc</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20160627</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >fix530fix856</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20170818</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20170906</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >add899forArchivesSpace</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >41f08a5c-5e60-4327-99c4-1e201316ef1b</subfield
+    ><subfield code='s'
+    >043163d2-3858-4029-b920-64809d6d1727</subfield
+    ></datafield
+  ></record
+>

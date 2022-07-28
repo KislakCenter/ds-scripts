@@ -1,233 +1,309 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>04819ctm a2200637Ii 4500</leader>
-    <controlfield tag="001">99900477830901852</controlfield>
-    <controlfield tag="005">20200115084337.6</controlfield>
-    <controlfield tag="008">180301q14011500it 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026484813</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026484813</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887735201451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="100">
-        <subfield code="a">Bernard,</subfield>
-        <subfield code="c">of Clairvaux, Saint,</subfield>
-        <subfield code="d">1090 or 1091-1153,</subfield>
-        <subfield code="e">author.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">De Consideratione.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="246">
-        <subfield code="a">Treatise Addressed to Pope Eugenius III</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Italy</subfield>
-        <subfield code="c">between 1401 and 1500.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">86 leaves :</subfield>
-        <subfield code="b">paper ;</subfield>
-        <subfield code="c">120 x 202 mm bound to 124 x 210 mm</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1="3" ind2=" " tag="510">
-        <subfield code="a">Frederick W. Morris. The Publishers Weekly, 100 (2). North Hollywood, CA:
-            Publishers Weekly.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="561">
-        <subfield code="a">Purchased by Edward Sanford Burgess in 1898 from Frederick W. Morris
-            (1850-1921), rare book expert and bookseller, and purchasing agent for many New York
-            libraries and collectors (Publisher&apos;s Weekly, p. 1471). Bookplate with aster design
-            and motto &quot;inter asteres, inter astra, Edward Sandford Burgess&quot; on front and
-            back inside covers.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Action Note: Item cataloged from existing description by C. Pierce and J.
-            Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="540">
-        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
-            submitted in writing to the Head of Special Collections &amp; University
-            Archives.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="520">
-        <subfield code="a">De Consideratione, Libri, V.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: Quires of 10, the last with 3 blank leaves. Vertical
-            catchwords at end of quire. No signatures or pagination. Leaves lightly numbered in
-            pencil in upper outer corner of recto. 8 sewing stations.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout: Single column, 23 lines per page. Vertical margin rulings done
-            with hardpoint stylus.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Semi-slanting Italic Humanistic hand with long ascenders and
-            descenders and occasional swashes, in brown ink with black or purplish-blue headings.
-            Comments in yellow or black ink, occasional corrections in same hand in black
-            ink.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: Initials at beginning of each book. Occasional outer margin
-            vertical penwork designs in black or yellow ink. Leaf 1r: Initial &apos;S&apos; with
-            whitework interlaced vines extending along upper left margin, spaces filled with brown
-            ink wash. Leaf 14r: Yellow initial &apos;M&apos; with interlaced vines in white or with
-            yellow ink wash, background in brown ink. Leaf 32r: Decorative &apos;F&apos;, same as
-            previous. Leaf 47r: Decorative &apos;S&apos;. Leaf 126r: Decorative
-            &apos;L&apos;.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Black morocco leather over boards, impressed with fine diaper
-            pattern and blind-stamped twisted stem border. Gilt title lengthwise on spine:
-            &quot;Mss. S. Bernardi De Consideratione.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 014.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="505">
-        <subfield code="a">Formatted Content Note: First book heading: &quot;Beatissimi Bernardi ad
-            eugenium papum. Liber primus de consideratione incipit.&quot; Book V (last page of book)
-            ends with colophon in broken lines of capital letters: &quot;Beatissimi Bernar/ di Ad
-            Eu/ geni /um Papum De Conside/ ratione Liber V Et/ Ultimus Feliciter /
-            Finit.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Popes</subfield>
-        <subfield code="x">Primacy</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Papacy</subfield>
-        <subfield code="x">History</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Papacy.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01052284</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Popes</subfield>
-        <subfield code="x">Primacy.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01071284</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Early works.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411636</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">History.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411628</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 014.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22329397100001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 014</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >04819ctm a2200637Ii 4500</leader
+  ><controlfield tag='001'
+  >99900477830901852</controlfield
+  ><controlfield tag='005'
+  >20200115084337.6</controlfield
+  ><controlfield tag='008'
+  >180301q14011500it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026484813</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026484813</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324887735201451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Bernard,</subfield
+    ><subfield code='c'
+    >of Clairvaux, Saint,</subfield
+    ><subfield code='d'
+    >1090 or 1091-1153,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >De Consideratione.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='246'
+  ><subfield code='a'
+    >Treatise Addressed to Pope Eugenius III</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Italy</subfield
+    ><subfield code='c'
+    >between 1401 and 1500.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >86 leaves :</subfield
+    ><subfield code='b'
+    >paper ;</subfield
+    ><subfield code='c'
+    >120 x 202 mm bound to 124 x 210 mm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='510'
+  ><subfield code='a'
+    >Frederick W. Morris. The Publishers Weekly, 100 (2). North Hollywood, CA: Publishers Weekly.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Purchased by Edward Sanford Burgess in 1898 from Frederick W. Morris (1850-1921), rare book expert and bookseller, and purchasing agent for many New York libraries and collectors (Publisher&apos;s Weekly, p. 1471). Bookplate with aster design and motto &quot;inter asteres, inter astra, Edward Sandford Burgess&quot; on front and back inside covers.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Action Note: Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='540'
+  ><subfield code='a'
+    >All requests for permission to quote or publish from manuscripts must be submitted in writing to the Head of Special Collections &amp; University Archives.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >De Consideratione, Libri, V.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: Quires of 10, the last with 3 blank leaves. Vertical catchwords at end of quire. No signatures or pagination. Leaves lightly numbered in pencil in upper outer corner of recto. 8 sewing stations.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Single column, 23 lines per page. Vertical margin rulings done with hardpoint stylus.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Semi-slanting Italic Humanistic hand with long ascenders and descenders and occasional swashes, in brown ink with black or purplish-blue headings. Comments in yellow or black ink, occasional corrections in same hand in black ink.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Initials at beginning of each book. Occasional outer margin vertical penwork designs in black or yellow ink. Leaf 1r: Initial &apos;S&apos; with whitework interlaced vines extending along upper left margin, spaces filled with brown ink wash. Leaf 14r: Yellow initial &apos;M&apos; with interlaced vines in white or with yellow ink wash, background in brown ink. Leaf 32r: Decorative &apos;F&apos;, same as previous. Leaf 47r: Decorative &apos;S&apos;. Leaf 126r: Decorative &apos;L&apos;.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Black morocco leather over boards, impressed with fine diaper pattern and blind-stamped twisted stem border. Gilt title lengthwise on spine: &quot;Mss. S. Bernardi De Consideratione.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 014.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >Formatted Content Note: First book heading: &quot;Beatissimi Bernardi ad eugenium papum. Liber primus de consideratione incipit.&quot; Book V (last page of book) ends with colophon in broken lines of capital letters: &quot;Beatissimi Bernar/ di Ad Eu/ geni /um Papum De Conside/ ratione Liber V Et/ Ultimus Feliciter / Finit.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Popes</subfield
+    ><subfield code='x'
+    >Primacy</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Papacy</subfield
+    ><subfield code='x'
+    >History</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Papacy.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01052284</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Popes</subfield
+    ><subfield code='x'
+    >Primacy.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01071284</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >History.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411628</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 014.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22329397100001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 014</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

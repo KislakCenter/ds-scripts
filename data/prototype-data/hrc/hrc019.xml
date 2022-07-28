@@ -1,1 +1,175 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02072ntm a2200313Ii 4500</leader><controlfield tag='001'>991058301964106011</controlfield><controlfield tag='005'>20220506124833.0</controlfield><controlfield tag='008'>220506q16581659enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385793h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385793h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>eng</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 74</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Sermon collection, with lists of contributors and several medicinal recipes at front and back :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>1658-1659</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>Approximately 351 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>19 x 15 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted in reading room, but coach user: fragile binding and deteriorated ink, open to 90℗ʻ only, use book supports; user warning: mold was detected and treated; available for classroom use in exhibit case only.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 74: Most sermons end Finis I. C. Gloria Deo, and the initials I. C. are stamped on both front and back boards; from the collection of George A. Aitken (1860-1917). DIDB record: 21886. Binding: Full dark brown tanned sheepskin over paper boards.  Caps missing, tight back over sewing supports, edges cut before sewing.  Blind-tooled (i) two-line border, intersecting corners, (ii) additional two-line vertical line parallel to spine, front and back covers, (iii) two-line fillets across spine; gold-tooled letters  I C  centered front and back covers.  No endbands.  Sewn on four alum-tawed thongs laced on boards.  Evidence of fore edge fastenings (two holes at fore edge front and back covers, remnant of red textile upper hole inside back cover).  No endleaves.  (England 17th c?) Repaired.  (HRC, 2010, 2016)</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Sermons.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>C., I.,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Aitken, George Atherton, 1860-1917,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >03361ntm a2200409Ii 4500</leader
+  ><controlfield tag='001'
+  >991058310479306011</controlfield
+  ><controlfield tag='005'
+  >20220603155139.0</controlfield
+  ><controlfield tag='008'
+  >220603s1630    enk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1322993722h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1322993722h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >eng</subfield
+    ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 112</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Treatise of forest law :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='260'
+  ><subfield code='a'
+    >England ;</subfield
+    ><subfield code='c'
+    >approximately 1630</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >73 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >32 x 20 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use, but coach user: fragile, use care in handling.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Contents include:1. pp. 1-140: Treatise of fforest Law. What doth make a fforrest, and who may make a fforrest, and howe a fforrest is made, what things are incydent to a fforest, who may haue a fforrest, what difference is betweene a fforrest, chase, warren and Parke.2. pp. 141-146: forest-related excerpts from the Libro rubro de saccario (Red book of the Exchequer).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Includes two notes in pencil written by Thomas Fitzroy Fenwick. On front pastedown: From p. 65 to the end is Peter Le Neve&apos;s Autog (Le Neve was a 17th-century Norfolk antiquary). Below the O 17 pressmark and title on the second flyleaf, Fenwick has written This is autog. of Anstis, Garter. TFF, presumably intending the antiquary John Anstis (1669-1744), who was appointed Garter King of Arms in 1714, but the first half of the treatise is not by the same hand. Paper dated by Eric Poole (1981) to the 1630s, based on watermarks similar to Tromonin nos. 1122, 1177, and Heawood 3528.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 112: John Topham (1746-1803), Esq. FRS &amp; AS, possibly acquired in 1787, date in pencil inside front cover on his heraldic bookplate; Sir Thomas Phillipps (1792-1872), his spine label lacking, and no indication of no. inside, but it was later sold by his grandson, Thomas Fitzroy Fenwick (1856-1938), Thirlestane House, Cheltenham, who initialled the rear flyleaf TFF X 1893; possibly sold at Sotheby&apos;s, London on 21 March 1895 as lot 714; also on inside front cover is an unidentified small square coat of arms with motto victoria concordia crescit supported by two waterbirds; later owned by Vernon James Watney (1860-1928) of Cornbury Hall, Cornwall, his oval gilt green leather bookplate on front pastedown; acquired by the Ransom Center (R5374) in 1973 from Jenkins and Company. Binding: Half-bound in brown tanned calfskin with marbled paper sides over pasteboards.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Law.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Topham, John, 1746-1803,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Phillipps, Thomas, Sir, 1792-1872,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Fenwick, Thomas FitzRoy Phillipps, 1856-1938,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Watney, Vernon James, 1860-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >England,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Topham, John, 1746-1803,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Phillipps, Thomas, Sir, 1792-1872,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Fenwick, Thomas FitzRoy Phillipps, 1856-1938,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Watney, Vernon James, 1860-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

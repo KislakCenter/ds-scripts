@@ -1,1 +1,147 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02631ntm a2200421Ii 4500</leader><controlfield tag='001'>991058301966806011</controlfield><controlfield tag='005'>20220506120142.0</controlfield><controlfield tag='008'>220506s1450    it            000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385533h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385533h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>ita</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 47</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Sonetti, Canzioni, Trionfi :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>Italy ;</subfield><subfield code='c'>approximately 1450</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>176 leaves :</subfield><subfield code='b'>parchment,</subfield><subfield code='c'>29 x 17 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Decoration includes angels supporting a coat of arms (fol. 1r). Over 300 2- to 4-line illuminated initials on red and blue grounds; one full and one partial border with floral design.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Humanistic cursive script</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Layout is 30 long lines ruled in hardpoint.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use, but coach user: use cradle.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Pasch, Carol Pulin. Manuscript description, 1976.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Cho, Hanook. Manuscript description, nd.Leubner, Jason. Presentation Handout, The last thirty-one poems of Vat. Lat. 3195, 2007.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Leubner, Jason. Presentation Handout, The last thirty-one poems of Vat. Lat. 3195, 2007.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 47: Robert Hoe (1839-1909); subsequently acquired by Edward A. Parsons (1878-1962) of New Orleans, Louisiana; see De Ricci, Parsons no. 5. DIDB record: 18397. Binding: Limp parchment. Straight caps, smooth spine, natural hollow, fore edge cover extensions, edges cut. Sewn on five cords, transverse parchment spine lining. Primary endbands sewn on alum-tawed thongs laced through outer joints; evidence of secondary endbands (gold/purple thread). Rolled alum-tawed skin toggles laced on fore edge back cover; remnants alum-tawed thongs laced on fore edge front cover opposite toggles. Endleaf components: front sewn fold heavy parchment making pastedown, free endleaf; back same.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>A digital surrogate of Ransom Center copy MS 3327, Container 47 is available through the Digital Scriptorium.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Illuminated manuscripts.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Poems.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Hoe, Robert, 1839-1909,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Parsons, Edward Alexander, 1878-1962,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>Italy,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1='4' ind2='0' tag='856'><subfield code='u'>http://ds.lib.berkeley.edu/HRC047_37</subfield><subfield code='y'>Digital copy for MS 3327, Container 47</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01402ntm a2200349 i 4500</leader
+  ><controlfield tag='001'
+  >991058323700606011</controlfield
+  ><controlfield tag='005'
+  >20220613143402.0</controlfield
+  ><controlfield tag='008'
+  >220613s1500    sp            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1329331240h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1329331240h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ><subfield code='a'
+    >spa</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 147</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Antiphonal, Temporal (Winter) :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Spain ;</subfield
+    ><subfield code='c'
+    >after 1500</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >142 leaves :</subfield
+    ><subfield code='b'
+    >parchment, illustrations,</subfield
+    ><subfield code='c'
+    >58 x 38 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Includes illuminations, decorations, musical notations with 5-line stave layout.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Rotunda script</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 147: Binding: Bound in full brown calfskin over wood boards with blind stamped panels; overback (spine) of thick vellum removed (retained as MS 3327, Container 147a). Belonged to Martin J. Cooper.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Antiphonaries.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Decorated initials.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Illuminated manuscripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Cooper, Martin J.,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Spain,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

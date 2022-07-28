@@ -1,1 +1,135 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02072ntm a2200313Ii 4500</leader><controlfield tag='001'>991058301966406011</controlfield><controlfield tag='005'>20220506120926.0</controlfield><controlfield tag='008'>220506q15341546it a          000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385636h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385636h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>ita</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 51</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Historia Indiae Occidentalis, excerpts, translated by Gian Battista Sassetti di Teodoro, Summario della generale storia delle Indie occidentali; Peter Martyr&apos;s account of the New World, accounts of Magellan&apos;s voyage, and other works :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>Italy ;</subfield><subfield code='c'>1534-1546</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>283 leaves :</subfield><subfield code='b'>paper, illustrations,</subfield><subfield code='c'>29 x 22 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Cursive script</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Includes two printed illustrations and several drawings of flora.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 51: Sir Thomas Phillipps (1792-1872), Catalogus, no. 11721; acquired in 1973 by the Ransom Center (R5374) from Jenkins Company. Binding (England 19th c): Full red-brown tanned calfskin over paper boards. Straight caps; bookblock rounded and backed; hollow tube, smooth spine; edges cut before sewing.  No cover decoration, blind tooling on spine, title gold-tooled on second panel. No endbands. Sewn on three flattened (?) cords laced on boards. Endleaf components: front tipped trimmed fold lightweight handmade laid paper making pastedown, free endleaf, plus sewn folds (three nested) undersized heavier deckle-edge off-white handmade laid paper making six additional free endleaves; back -  two text blanks, plus tipped trimmed fold lightweight handmade laid paper making pastedown, free endleaf.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Phillipps, Thomas, Sir, 1792-1872,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>Italy,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02185ntm a2200325Ii 4500</leader
+  ><controlfield tag='001'
+  >991058321305706011</controlfield
+  ><controlfield tag='005'
+  >20220606090537.0</controlfield
+  ><controlfield tag='008'
+  >220606q16001699gw a          000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1325189784h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1325189784h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >fre</subfield
+    ><subfield code='a'
+    >ger</subfield
+    ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 113</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Notebook of texts concerning armaments and ballistics, their production and construction, with plans of fortifications and several charts and diagrams of trajectories :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Germany ;</subfield
+    ><subfield code='c'
+    >17th century</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >110 leaves :</subfield
+    ><subfield code='b'
+    >paper, illustration,</subfield
+    ><subfield code='c'
+    >31 x 20 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Drawings in ink or lead point, occasionally in red pencil.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted, for either reading room or classroom use.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The years 1609 and 1602 are noted internally (fol. 1r and 32r). A near-contemporary note on the back pastedown reads grand art d&apos;artillerie par le Sieur Casimir Siemienowicz. This treatise on gunpowder and artillery by Kazimierz Simienowicz (d. 1651?) was published in Amsterdam in 1651.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 113: Used for calligraphic practice by Johannes zu Reitheim [=Rietheim?], probably in the 17th or early 18th century (Rietheim is in the southern part of Baden-Württemberg, Germany, near the Swiss border); written in pencil on the front pastedown Purchased from Haten, Geneva 1959?; acquired by the Ransom Center in 1967. Binding: reused parchment bifolium with three laced in sewing supports, tawed thongs, and two tawed animal skin fore-edge ties. The bifolium is from a 12th or 13th-century lectionary, possibly from France; 25 long lines in Proto-Gothic scripts; rubrics and penwork intials in red. Printers waste adhered to spine. (OP, MCB 2008, Sidney Tibbets 2007 )</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Military weapons.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >zu Reitheim, Johannes,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Germany,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

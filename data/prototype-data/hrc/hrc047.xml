@@ -1,1 +1,149 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>03948ntm a2200457Ii 4500</leader><controlfield tag='001'>991058301966906011</controlfield><controlfield tag='005'>20220506115955.0</controlfield><controlfield tag='008'>220506q14501470enk           000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385284h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385284h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>enm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 46</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Canterbury Tales, two fragments (Manly and Rickert Ph1) :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>England ;</subfield><subfield code='c'>between 1450 and 1470</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>48 leaves :</subfield><subfield code='b'>paper,</subfield><subfield code='c'>28 x 21 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Layout is 2 columns of 41-48 lines on fol. 1-12, long lines thereafter.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Anglicana script</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use, but coach user: turn interleaving instead of manuscript pages.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>Tales of the Pardoner (begins incomplete line 831), Shipman, Prioress, Sir Thopas, and the Tale of Melibee (lacks lines 2252-53 and ends incomplete line 2543); the second fragment includes the end of the Parson&apos;s Tale (beginning line 587) and the Retracciouns (Manly and Rickert C, 831-968; B2 119-2543; I 587-1092).</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>John M. Manly and Edith Rickert, The Text of the Canterbury Tales, 1940, vol. 1, pp. 415-420. Constance Wright, On the Eighteenth-Century Ownership of a MS of the Canterbury Tales, Phillipps 6570, ANQ 2 (1989): 134.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Samuels, Alix Thayer. Manuscript description, 1986.Leiter, Karen R. Manuscript description, 1988.Wright, Constance. On the 18th century ownership of a ms of the Canterbury Tales, Phillipps 6570. ANQ 2 (1989): 134.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 46: 16th-century signatures of Thomas Devynysh (fol. 16r) and John Eglysfelld (fol. 20v); owned by Morell Thurston (d. 1747) of Rochester; Samuel Pegge the elder (1704-1796); Joseph Haslewood (1769-1833), bookplate; Sir Thomas Phillipps (1792-1872), no. 6570; Louis H. Silver (1902-1963) of Wilmette, Illinois, bookplate; Newberry Library, Chicago (1964); sold at Sotheby&apos;s on 9 November 1965, lot 357; acquired by the Ransom Center (R2762) through the bookseller Lew David Feldman (House of El Dieff). See also: For other Chaucer manuscripts, see MS 3327, Container 143 and q PR 1850 1532 cop. 1. DIDB record: 18283. Available on RVR portal. In the 18th century, these fragments of the Canterbury Tales were bound together with a fragment of Chaucer&apos;s Legend of Good Women (now British Library Ms. Additional 9832); the two works were separated by Joseph Haslewood, who sold them as two manuscripts in 1833. Binding (England 19th c): Full brown tanned calfskin over paper boards. Cut solid edges, tight back over sewing supports. Gold- and blind-tooled border front and back covers, gold tooling on board edges, turn-ins, and spine; title gold-tooled on spine (2d panel). Sewing not visible, five supports laced on boards. Sewn endbands (red/white). Endleaf components: front made endleaves (Stormont pattern marbled paper), making pastedown, two free endleaves; back same. Rebacked.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>A digital surrogate of Ransom Center copy MS 3327, Container 46 is available through the Digital Scriptorium.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Devynysh, Thomas,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Eglysfelld, John,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Thurston, Morell, -1747,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Pegge, Samuel, 1704-1796,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Haslewood, Joseph, 1769-1833,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Phillipps, Thomas, Sir, 1792-1872,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Silver, Louis H., 1902-1963,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Feldman, Lew David,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>England,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1='4' ind2='0' tag='856'><subfield code='u'>http://ds.lib.berkeley.edu/HRC046_37</subfield><subfield code='y'>Digital copy for MS 3327, Container 46</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >01509ntm a2200361Ii 4500</leader
+  ><controlfield tag='001'
+  >991058323700706011</controlfield
+  ><controlfield tag='005'
+  >20220613142552.0</controlfield
+  ><controlfield tag='008'
+  >220613q15001599sp            000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1329331244h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1329331244h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 146</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Antiphonal, Temporal (Summer) :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Spain ;</subfield
+    ><subfield code='c'
+    >16th century</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >127 leaves :</subfield
+    ><subfield code='b'
+    >parchment, illustrations,</subfield
+    ><subfield code='c'
+    >56 x 37 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Includes illuminations, decorations, musical notations with 5-line stave layout.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Rotunda script</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Unrestricted in reading room; available for classroom use: show flat on table, no page turning.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 146 : Belonged to Martin J. Cooper. Binding: full brown calfskin over wood boards with an overback (spine) of thick vellum; with bosses, corners, and evidence of clasps on fore-edge head and tail.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Antiphonaries.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Decorated initials.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Cooper, Martin J.,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >Spain,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Cooper, Martin J.,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='979'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

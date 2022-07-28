@@ -15,9 +15,12 @@ module Recon
       end
     end
 
-    def self.lookup languages, from_column: 'structured_value'
+    def self.lookup languages, from_column: 'structured_value', separator: '|'
       clean_languages = DS.clean_string languages, terminator: ''
-      Recon.lookup('languages', value: clean_languages, column: from_column)
+      clean_languages.split(separator).map { |lang|
+        # make sure each group of languages is separated by ';'
+        Recon.lookup('languages', value: lang, column: from_column).gsub('|', ';')
+      }.join separator
     end
 
     ##
@@ -61,50 +64,52 @@ module Recon
     #       # etc.
     #     ]
     # @param [Array<Array<String>>] data an array of pairs language names and codes
-    def self.expand_codes data
+    def self.expand_codes data, separator: '|'
       data.uniq.map(&:last).flat_map { |codes|
-        codes.split '|'
+        codes.split separator
       }.sort.uniq.each do|code|
         data << [code,code]
       end
     end
 
-    def self.from_marc files
+    def self.from_marc files, separator: '|'
       data = []
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
           as_recorded = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
-          codes = DS::MarcXML.extract_langs record
-          as_recorded = codes if as_recorded.to_s =~ %r{^[|[:space:]]*$}
+          codes = DS::MarcXML.extract_langs record, separator: separator
+          as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
           data << [as_recorded, codes]
         end
       end
-      expand_codes data
+      expand_codes data, separator: separator
       add_recon_values data
       Recon.sort_and_dedupe data
     end
 
-    def self.from_mets files
+    def self.from_mets files, separator: '|'
       data = []
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        data << [DS::DS10.extract_language(xml), nil]
+        DS::DS10.extract_language(xml, separator: separator).split(separator).each do |lang|
+          data << [lang, nil]
+        end
       end
       # the Mets files don't have codes; so no need for expand_codes
       add_recon_values data
       Recon.sort_and_dedupe data
     end
 
-    def self.from_tei files
+    def self.from_tei files, separator: '|'
       data = []
       xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         as_recorded = DS::OPennTEI.extract_language_as_recorded xml
-        codes       = DS::OPennTEI.extract_language_codes xml
+        codes       = DS::OPennTEI.extract_language_codes xml, separator: separator
         data << [as_recorded,codes]
       end
       expand_codes data

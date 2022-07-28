@@ -188,9 +188,9 @@ LONGDESC
     begin
       case options[:'source-type']
       when 'marc'
-        data = Languages.from_marc files
+        data = Languages.from_marc files, separator: ';'
       when 'tei'
-        data = Languages.from_tei files
+        data = Languages.from_tei files, separator: ';'
       when 'mets'
         data = Languages.from_mets files
       else

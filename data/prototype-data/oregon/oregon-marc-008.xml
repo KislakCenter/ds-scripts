@@ -1,230 +1,279 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>06260ctm a2200577Ii 4500</leader>
-    <controlfield tag="001">99900468584201852</controlfield>
-    <controlfield tag="005">20200115084337.5</controlfield>
-    <controlfield tag="008">180301s1450 it 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026484799</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026484799</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887735601451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="100">
-        <subfield code="a">Cicero, Marcus Tullius,</subfield>
-        <subfield code="e">author.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">De Oratore.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Italy ;</subfield>
-        <subfield code="c">approximately 1450.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">150 leaves :</subfield>
-        <subfield code="b">parchment ;</subfield>
-        <subfield code="c">180 x 260 mm bound to 190 x 268 mm.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Action Note: Item cataloged from existing description by C. Pierce and J.
-            Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: In quires of 8 (except 1 of 6, 8 of 7, and last of 1). F. 8
-            first leaf missing. Folio numbers added in brown ink; partially cut off, indicating
-            pages were trimmed. Two blank flyleaves of handmade paper at front and back added in
-            2011 rebind.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy. Date of creation from American Art Association, Anderson
-            galleries, New York, 1936.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout: Margins lightly ruled in ink, single column, 33 lines to page.
-            Catchwords on last page of each quire. No signatures or page-titles</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Rounded Humanistic book hand. A few lines rubricated. Long
-            &apos;s&apos; throughout, short &apos;s&apos; at start of sentence.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: First page has elaborate illuminated initial and border on
-            three sides with gilding over raised gesso. Large initial &quot;C&quot; in pink with
-            architectural motif, filled with vines in wash of green, red, and blue, on a background
-            of blue with whitework scrolls, all surrounded by gilding with tiny dotted punch-work.
-            Along left margin, a bar in blue and gold sprouts vines and leaves on three sides. Vines
-            in red or blue ink with painted leaves in pink, green, blue, gold, and red. Scattered
-            raised gold dots outlined with black ink curlicues. Along top, a green acanthus leaf.
-            Along base, a grotesque dragon in red, blue, pink, gold, and green, and a now illegible
-            coat of arms, including red and blue. The document describes &quot;a dark brown shield
-            ... across the center a broad fess azure; above rays gules; below, metallic brown.&quot;
-            These details may have been more visible in the past than they are now. However, brown
-            is not a normal heraldic color, so this may be discoloration or a bole (clay) wash under
-            gold which has rubbed off. Above the shield are initials &quot;M. A.&quot; with red
-            penwork flourishes.Throughout, numerous red and blue initial letters, embellished with
-            delicate penwork in alternating purple or red.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Illuminated letters: Leaf 33r: Initial letter &apos;M&apos; in yellow and
-            red, framed in blue, with whitework vines and leaves, on a background of red and white
-            penwork. Green ink sprays with leaves in yellow, green, red, or blue. Leaf 84r: Initial
-            &apos;I&apos; in yellow with red highlights, on a rectangular background of blue, pink,
-            and dark green with white highlights, and white vines and leaves in an &apos;X&apos;
-            shape. A spray of green stems with pink and blue flowers emerges from upper and lower
-            left corners of the rectangle. Leaf 113r: initial &apos;V&apos; made of two curved fish
-            in yellow and orange wash with brown ink; outer background quartered in red and blue
-            with white linework; inner background green with whitework vines and leaves, sprouting
-            two sprays of leaves in green, blue, or red.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: 2011 binding by Etherington Conservation Services. Dark brown
-            calf over beveled boards. Blind-tooled in 15th century style: front and back covers have
-            border with small rosettes; within this a frame of larger rosettes; within this a cross
-            motif made up of small and large rosettes. Five-paneled spine with raised cords laced
-            into boards. White linen head and tail bands. Pastedowns and 2 flyleaves of modern
-            handmade paper at front and back. Interrupted borders of frontispiece indicate the
-            manuscript was trimmed. The manuscript was previously bound in a 20th century velvet
-            binding.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 012.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="505">
-        <subfield code="a">De Oratore, Libri ff. 1-115. Liber I, f. 1, begins: &quot;Cogitanti mihi
-            sepenumero et memoria vetera repententi per beati fuisse. Quinte frater. illi videri
-            solent...&quot; Liber II, f. 33: &quot;agna nobis pueris. Q. frater si memoria
-            tenes...&quot; Liber III, f. 84: &quot;Institutendi mihi Quinte te frater.&quot; Orator
-            ff. 115-150v, begins: &quot;Vtruiii Dificilius aut Maius e[ss]et (negare) tibi s[a]epius
-            idem roganti un effice[re] id quod rogares diu multum q: Brute dubitavi.&quot; Ends:
-            &quot;Marcii Tullii Ciceronis Oratoris Liber Explet LXXXDI-[?]XII.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="7" tag="630">
-        <subfield code="a">Speeches (Cicero, Marcus Tullius)</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01357310</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Early works.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411636</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Speeches.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01774286</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Speeches.</subfield>
-        <subfield code="2">lcgft</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Cicero, Marcus Tullius.</subfield>
-        <subfield code="t">Speeches</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 012.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22330899520001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 012</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >06260ctm a2200577Ii 4500</leader
+  ><controlfield tag='001'
+  >99900468584201852</controlfield
+  ><controlfield tag='005'
+  >20200115084337.5</controlfield
+  ><controlfield tag='008'
+  >180301s1450    it            000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026484799</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026484799</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324887735601451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Cicero, Marcus Tullius,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >De Oratore.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Italy ;</subfield
+    ><subfield code='c'
+    >approximately 1450.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >150 leaves :</subfield
+    ><subfield code='b'
+    >parchment ;</subfield
+    ><subfield code='c'
+    >180 x 260 mm bound to 190 x 268 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Action Note: Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: In quires of 8 (except 1 of 6, 8 of 7, and last of 1). F. 8 first leaf missing. Folio numbers added in brown ink; partially cut off, indicating pages were trimmed. Two blank flyleaves of handmade paper at front and back added in 2011 rebind.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy. Date of creation from American Art Association, Anderson galleries, New York, 1936.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Margins lightly ruled in ink, single column, 33 lines to page. Catchwords on last page of each quire. No signatures or page-titles</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Rounded Humanistic book hand. A few lines rubricated. Long &apos;s&apos; throughout, short &apos;s&apos; at start of sentence.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: First page has elaborate illuminated initial and border on three sides with gilding over raised gesso. Large initial &quot;C&quot; in pink with architectural motif, filled with vines in wash of green, red, and blue, on a background of blue with whitework scrolls, all surrounded by gilding with tiny dotted punch-work. Along left margin, a bar in blue and gold sprouts vines and leaves on three sides. Vines in red or blue ink with painted leaves in pink, green, blue, gold, and red. Scattered raised gold dots outlined with black ink curlicues. Along top, a green acanthus leaf. Along base, a grotesque dragon in red, blue, pink, gold, and green, and a now illegible coat of arms, including red and blue. The document describes &quot;a dark brown shield ... across the center a broad fess azure; above rays gules; below, metallic brown.&quot; These details may have been more visible in the past than they are now. However, brown is not a normal heraldic color, so this may be discoloration or a bole (clay) wash under gold which has rubbed off. Above the shield are initials &quot;M. A.&quot; with red penwork flourishes.Throughout, numerous red and blue initial letters, embellished with delicate penwork in alternating purple or red.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Illuminated letters: Leaf 33r: Initial letter &apos;M&apos; in yellow and red, framed in blue, with whitework vines and leaves, on a background of red and white penwork. Green ink sprays with leaves in yellow, green, red, or blue. Leaf 84r: Initial &apos;I&apos; in yellow with red highlights, on a rectangular background of blue, pink, and dark green with white highlights, and white vines and leaves in an &apos;X&apos; shape. A spray of green stems with pink and blue flowers emerges from upper and lower left corners of the rectangle. Leaf 113r: initial &apos;V&apos; made of two curved fish in yellow and orange wash with brown ink; outer background quartered in red and blue with white linework; inner background green with whitework vines and leaves, sprouting two sprays of leaves in green, blue, or red.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: 2011 binding by Etherington Conservation Services. Dark brown calf over beveled boards. Blind-tooled in 15th century style: front and back covers have border with small rosettes; within this a frame of larger rosettes; within this a cross motif made up of small and large rosettes. Five-paneled spine with raised cords laced into boards. White linen head and tail bands. Pastedowns and 2 flyleaves of modern handmade paper at front and back. Interrupted borders of frontispiece indicate the manuscript was trimmed. The manuscript was previously bound in a 20th century velvet binding.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 012.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >De Oratore, Libri ff. 1-115. Liber I, f. 1, begins: &quot;Cogitanti mihi sepenumero et memoria vetera repententi per beati fuisse. Quinte frater. illi videri solent...&quot; Liber II, f. 33: &quot;agna nobis pueris. Q. frater si memoria tenes...&quot; Liber III, f. 84: &quot;Institutendi mihi Quinte te frater.&quot; Orator ff. 115-150v, begins: &quot;Vtruiii Dificilius aut Maius e[ss]et (negare) tibi s[a]epius idem roganti un effice[re] id quod rogares diu multum q: Brute dubitavi.&quot; Ends: &quot;Marcii Tullii Ciceronis Oratoris Liber Explet LXXXDI-[?]XII.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='7' tag='630'
+  ><subfield code='a'
+    >Speeches (Cicero, Marcus Tullius)</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01357310</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Speeches.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01774286</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Speeches.</subfield
+    ><subfield code='2'
+    >lcgft</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Cicero, Marcus Tullius.</subfield
+    ><subfield code='t'
+    >Speeches</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 012.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22330899520001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 012</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

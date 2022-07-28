@@ -27,9 +27,6 @@ genre_as_recorded
 genre_vocabulary
 genre
 genre_label
-named_subject_as_recorded
-named_subject
-named_subject_label
 subject_as_recorded
 subject
 subject_label

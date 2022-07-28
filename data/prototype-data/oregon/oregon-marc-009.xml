@@ -1,255 +1,325 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>05930ctm a2200661Ii 4500</leader>
-    <controlfield tag="001">99900468584301852</controlfield>
-    <controlfield tag="005">20200115084347.3</controlfield>
-    <controlfield tag="008">180302q12501300it p 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026502058</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026502058</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324896053801451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="130">
-        <subfield code="a">Bible.</subfield>
-        <subfield code="l">Latin.</subfield>
-        <subfield code="s">Vulgate.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">Biblia Sacra Latina.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="246">
-        <subfield code="a">Vulgate Bible</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Northern Italy ;</subfield>
-        <subfield code="c">between 1250 and 1300?</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">347 leaves :</subfield>
-        <subfield code="b">parchment ;</subfield>
-        <subfield code="c">124 x 166 mm bound to 125 x 174 mm</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1="4" ind2=" " tag="510">
-        <subfield code="a">Catalogue of the splendid and valuable library of the Rev. Theodore
-            Williams,</subfield>
-        <subfield code="c">483.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="561">
-        <subfield code="a">Cover monogram &quot;TW&quot; (Theodore Williams). The name I. N. Bagnall
-            is written in pencil on the front flyleaf. Obtained by Edward Sandford Burgess from
-            Thomas Thorp, London.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
-            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="540">
-        <subfield code="a">All requests for permission to quote or publish from manuscripts must be
-            submitted in writing to the Head of Special Collections &amp; University
-            Archives.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase ;</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Note on inside front cover: &quot;This beautiful MS. is written in very
-            minute characters upon the most delicate abortive vellum. The initials are illuminated
-            and embellished with grotesque ornaments. It is a monument of the skill and patience of
-            the writer.&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: &quot;On the leaf before the MS. commences is a note in a 14th c.
-            hand, 9 lines, in red and black, giving rules for finding the date of Easter from 1350
-            onward. Also on this leaf the 14th c. owner&apos;s name apparently appeared, but has
-            been erased; there remains a note that the MS. cost him 19 florins...Also a further note
-            for finding the date of Easter occurs on the last leaf...repeating the words
-            &apos;mill&apos;io C.C.C. quinquagesimo.&quot; This shows the book is earlier than 1350
-            (Thomas Thorp, bookseller, London).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout: Double columns of 57 lines each, ruled by lead point. Page titles
-            in alternate red and blue above text; chapter indicated at side by Roman numerals. No
-            signatures or catchwords.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Minute (1 mm high) Gothic script in brown ink with rubrication.
-            The size is typical of the 13th century, versus the large works of the 12th century (per
-            Sir Edward Maunde Thompson (1840-1929) in Introduction to Greek and Latin Paleography).
-            Includes corrections by another scribe. The uncrossed &apos;7&apos; for &apos;et&apos;
-            indicates Italian origin. However, the script also shows French influence. The
-            appearance of some rounded letterforms points to an early date for this manuscript
-            showing its strong Carolingian influence.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: Illuminated with large initials in gold paint (not leaf) and
-            tarnished silver leaf, blue, red, and green with white tracery. Designs include human
-            faces, grotesque animals, and interlaced vines and strapwork. Capital letters in red and
-            blue. Text pages have runner in alternating letters of blue and red.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Dark green morocco over boards, blind-stamped in diagonal mesh.
-            Gold tooled paneling with corner fleurons inside covers. Deeply tooled gilt crest with
-            monogram TW (Theodore Williams) on front cover; armorial design on back. On six-paneled
-            spine: &apos;S. S. BIBLIA LATINA. CODEX ANTIQUUS. SUPRA MEMBRANIS&apos;. Gilt and
-            gauffered edges. Two flyleaves of newer, heavier parchment. Text has been
-            trimmed.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 028.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="505">
-        <subfield code="a">Prologus, Genesis, Exodus, Leviticus, Numeri, Deuteronomiu, Iosue,
-            Iudicu, Ruth, Regu I, II, III, IV. Paralip I, II. Esdras I, II, III. Tobit, Iudith,
-            Hester, Iob, Psalms. Parabole salomonis, Eclesiastes. Cantica, Sapientie,
-            Ecclesiasticus, Ysayis, Iherentia, Lamtatios. Baruch, Ezechihel, Daniel, Osee, Ioel,
-            Amos, Abdia, Ionas, Micheas, Naum, Abacuch, Sophonias, Aggeus, Zachaias, Malachias,
-            Machabeor[um] I, II. Titum, Philemone, Hebraos, Actus, Iacobus, Petrus I, II. Iohannes
-            I, II, III. Iude, Apocalipsis, Interpretations (Hebrew Names), Concordance or Subject
-            Index.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or electronically:</subfield>
-        <subfield code="u"
-            >https://library.uoregon.edu/special-collections/research-assistance.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Theology</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Theology.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01149559</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="0" tag="630">
-        <subfield code="a">Bible.</subfield>
-        <subfield code="l">Latin.</subfield>
-        <subfield code="s">Vulgate.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="7" tag="630">
-        <subfield code="a">Bible.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01356024</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Illuminated manuscripts.</subfield>
-        <subfield code="2">aat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Grotesques.</subfield>
-        <subfield code="2">aat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Early works.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411636</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 028.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2=" " tag="700">
-        <subfield code="a">Jerome,</subfield>
-        <subfield code="c">Saint,</subfield>
-        <subfield code="d">-419 or 420,</subfield>
-        <subfield code="e">translator.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Williams, Theodore,</subfield>
-        <subfield code="c">Rev.,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22330899580001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 028</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >05930ctm a2200661Ii 4500</leader
+  ><controlfield tag='001'
+  >99900468584301852</controlfield
+  ><controlfield tag='005'
+  >20200115084347.3</controlfield
+  ><controlfield tag='008'
+  >180302q12501300it p          000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026502058</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026502058</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324896053801451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='130'
+  ><subfield code='a'
+    >Bible.</subfield
+    ><subfield code='l'
+    >Latin.</subfield
+    ><subfield code='s'
+    >Vulgate.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Biblia Sacra Latina.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='246'
+  ><subfield code='a'
+    >Vulgate Bible</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Northern Italy ;</subfield
+    ><subfield code='c'
+    >between 1250 and 1300?</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >347 leaves :</subfield
+    ><subfield code='b'
+    >parchment ;</subfield
+    ><subfield code='c'
+    >124 x 166 mm bound to 125 x 174 mm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1='4' ind2=' ' tag='510'
+  ><subfield code='a'
+    >Catalogue of the splendid and valuable library of the Rev. Theodore Williams,</subfield
+    ><subfield code='c'
+    >483.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='561'
+  ><subfield code='a'
+    >Cover monogram &quot;TW&quot; (Theodore Williams). The name I. N. Bagnall is written in pencil on the front flyleaf. Obtained by Edward Sandford Burgess from Thomas Thorp, London.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='540'
+  ><subfield code='a'
+    >All requests for permission to quote or publish from manuscripts must be submitted in writing to the Head of Special Collections &amp; University Archives.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase ;</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Note on inside front cover: &quot;This beautiful MS. is written in very minute characters upon the most delicate abortive vellum. The initials are illuminated and embellished with grotesque ornaments. It is a monument of the skill and patience of the writer.&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: &quot;On the leaf before the MS. commences is a note in a 14th c. hand, 9 lines, in red and black, giving rules for finding the date of Easter from 1350 onward. Also on this leaf the 14th c. owner&apos;s name apparently appeared, but has been erased; there remains a note that the MS. cost him 19 florins...Also a further note for finding the date of Easter occurs on the last leaf...repeating the words &apos;mill&apos;io C.C.C. quinquagesimo.&quot; This shows the book is earlier than 1350 (Thomas Thorp, bookseller, London).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout: Double columns of 57 lines each, ruled by lead point. Page titles in alternate red and blue above text; chapter indicated at side by Roman numerals. No signatures or catchwords.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Minute (1 mm high) Gothic script in brown ink with rubrication. The size is typical of the 13th century, versus the large works of the 12th century (per Sir Edward Maunde Thompson (1840-1929) in Introduction to Greek and Latin Paleography). Includes corrections by another scribe. The uncrossed &apos;7&apos; for &apos;et&apos; indicates Italian origin. However, the script also shows French influence. The appearance of some rounded letterforms points to an early date for this manuscript showing its strong Carolingian influence.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Illuminated with large initials in gold paint (not leaf) and tarnished silver leaf, blue, red, and green with white tracery. Designs include human faces, grotesque animals, and interlaced vines and strapwork. Capital letters in red and blue. Text pages have runner in alternating letters of blue and red.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Dark green morocco over boards, blind-stamped in diagonal mesh. Gold tooled paneling with corner fleurons inside covers. Deeply tooled gilt crest with monogram TW (Theodore Williams) on front cover; armorial design on back. On six-paneled spine: &apos;S. S. BIBLIA LATINA. CODEX ANTIQUUS. SUPRA MEMBRANIS&apos;. Gilt and gauffered edges. Two flyleaves of newer, heavier parchment. Text has been trimmed.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 028.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='505'
+  ><subfield code='a'
+    >Prologus, Genesis, Exodus, Leviticus, Numeri, Deuteronomiu, Iosue, Iudicu, Ruth, Regu I, II, III, IV. Paralip I, II. Esdras I, II, III. Tobit, Iudith, Hester, Iob, Psalms. Parabole salomonis, Eclesiastes. Cantica, Sapientie, Ecclesiasticus, Ysayis, Iherentia, Lamtatios. Baruch, Ezechihel, Daniel, Osee, Ioel, Amos, Abdia, Ionas, Micheas, Naum, Abacuch, Sophonias, Aggeus, Zachaias, Malachias, Machabeor[um] I, II. Titum, Philemone, Hebraos, Actus, Iacobus, Petrus I, II. Iohannes I, II, III. Iude, Apocalipsis, Interpretations (Hebrew Names), Concordance or Subject Index.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ORIGINAL. USE DIGITAL COPY ONLY:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or electronically:</subfield
+    ><subfield code='u'
+    >https://library.uoregon.edu/special-collections/research-assistance.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Theology</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Theology.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01149559</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='630'
+  ><subfield code='a'
+    >Bible.</subfield
+    ><subfield code='l'
+    >Latin.</subfield
+    ><subfield code='s'
+    >Vulgate.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='7' tag='630'
+  ><subfield code='a'
+    >Bible.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01356024</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Illuminated manuscripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Grotesques.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 028.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Jerome,</subfield
+    ><subfield code='c'
+    >Saint,</subfield
+    ><subfield code='d'
+    >-419 or 420,</subfield
+    ><subfield code='e'
+    >translator.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Williams, Theodore,</subfield
+    ><subfield code='c'
+    >Rev.,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22330899580001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 028</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

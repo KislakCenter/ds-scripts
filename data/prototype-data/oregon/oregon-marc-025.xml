@@ -1,196 +1,279 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>03039ctm a2200589Ii 4500</leader>
-    <controlfield tag="001">99900470482601852</controlfield>
-    <controlfield tag="005">20200514074707.5</controlfield>
-    <controlfield tag="008">180124s1434 enk 000 0 eng d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1020290378</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1020290378</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324669484001451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-        <subfield code="d">OCLCQ</subfield>
-        <subfield code="d">OCLCO</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="043">
-        <subfield code="a">e-uk-en</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="0" tag="245">
-        <subfield code="a">Deed, 1434 June 29, declaring that William Bokenham, Alexander Webster,
-            and John Golle give to John Costyn, et al, land in Weasenham.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">Weasenham, Norfolk, England,</subfield>
-        <subfield code="c">1434</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">1 sheet :</subfield>
-        <subfield code="b">parchment ;</subfield>
-        <subfield code="c">93 x 308 mm</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">sheet</subfield>
-        <subfield code="b">nb</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Purchase;</subfield>
-        <subfield code="a">Phillip J. Pirages Fine Books and Manuscripts, McMinnville,
-            OR;</subfield>
-        <subfield code="d">2017.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="520">
-        <subfield code="a">Deed declaring that William Bokenham of Weasenham, Alexander Webster of
-            Weasenham and John Golle of Beeston give land in fief to John Costyn, a dyer, Geoffey
-            Heye and Thomas Wryghte and their heirs, in Weasenham, Norfolk. Witnesses include
-            William Ede, Roger Wylkyn, Thomas Heye, John Wylkyn, Richard Coup, and
-            others.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript document.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Dated: 12 Henry VI.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: Parchment, single sheet with one horizontal and three vertical
-            fold creases.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Unbound.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Seals: Three red wax seals, two damaged, with a third seal well
-            preserved.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Written in Weasenham, Norfolk, England on the feast of Saints
-            Peter and Paul, June 29, 1434 A.D.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Lettering: Single column, nine lines in an Anglicana hand.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, Deed 1.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">In Latin.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ITEM:</subfield>
-        <subfield code="b">use only by permission of the appropriate curator. Inquiries concerning
-            this item should be directed, in writing, to the Public Services of the Special
-            Collections Department.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Bokenham, William.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Costyn, John.</subfield>
-        <subfield code="c">(Dyer)</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Golle, John.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Webster, Alexander.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Wryghte, Thomas.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="600">
-        <subfield code="a">Ede, William,</subfield>
-        <subfield code="e">witness.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Manuscripts (documents)</subfield>
-        <subfield code="2">aat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Deeds</subfield>
-        <subfield code="z">England</subfield>
-        <subfield code="z">Norfolk</subfield>
-        <subfield code="y">15th century.</subfield>
-        <subfield code="2">rbgenr</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript</subfield>
-        <subfield code="n">(Deed 1st)</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Wylkyn, Roger,</subfield>
-        <subfield code="e">witness.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Heye, Thomas,</subfield>
-        <subfield code="e">witness.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Wylkyn, John,</subfield>
-        <subfield code="e">witness.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Coup, Richard,</subfield>
-        <subfield code="e">witness.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22328058500001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvaultxxx</subfield>
-        <subfield code="h">Deed 001</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >03039ctm a2200589Ii 4500</leader
+  ><controlfield tag='001'
+  >99900470482601852</controlfield
+  ><controlfield tag='005'
+  >20200514074707.5</controlfield
+  ><controlfield tag='008'
+  >180124s1434    enk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1020290378</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1020290378</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324669484001451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ><subfield code='d'
+    >OCLCQ</subfield
+    ><subfield code='d'
+    >OCLCO</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='043'
+  ><subfield code='a'
+    >e-uk-en</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Deed, 1434 June 29, declaring that William Bokenham, Alexander Webster, and John Golle give to John Costyn, et al, land in Weasenham.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Weasenham, Norfolk, England,</subfield
+    ><subfield code='c'
+    >1434</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 sheet :</subfield
+    ><subfield code='b'
+    >parchment ;</subfield
+    ><subfield code='c'
+    >93 x 308 mm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >sheet</subfield
+    ><subfield code='b'
+    >nb</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Purchase;</subfield
+    ><subfield code='a'
+    >Phillip J. Pirages Fine Books and Manuscripts, McMinnville, OR;</subfield
+    ><subfield code='d'
+    >2017.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Deed declaring that William Bokenham of Weasenham, Alexander Webster of Weasenham and John Golle of Beeston give land in fief to John Costyn, a dyer, Geoffey Heye and Thomas Wryghte and their heirs, in Weasenham, Norfolk. Witnesses include William Ede, Roger Wylkyn, Thomas Heye, John Wylkyn, Richard Coup, and others.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript document.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Dated: 12 Henry VI.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: Parchment, single sheet with one horizontal and three vertical fold creases.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Unbound.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Seals: Three red wax seals, two damaged, with a third seal well preserved.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Written in Weasenham, Norfolk, England on the feast of Saints Peter and Paul, June 29, 1434 A.D.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Lettering: Single column, nine lines in an Anglicana hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, Deed 1.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Latin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ITEM:</subfield
+    ><subfield code='b'
+    >use only by permission of the appropriate curator. Inquiries concerning this item should be directed, in writing, to the Public Services of the Special Collections Department.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Bokenham, William.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Costyn, John.</subfield
+    ><subfield code='c'
+    >(Dyer)</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Golle, John.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Webster, Alexander.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Wryghte, Thomas.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='600'
+  ><subfield code='a'
+    >Ede, William,</subfield
+    ><subfield code='e'
+    >witness.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Manuscripts (documents)</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Deeds</subfield
+    ><subfield code='z'
+    >England</subfield
+    ><subfield code='z'
+    >Norfolk</subfield
+    ><subfield code='y'
+    >15th century.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript</subfield
+    ><subfield code='n'
+    >(Deed 1st)</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Wylkyn, Roger,</subfield
+    ><subfield code='e'
+    >witness.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Heye, Thomas,</subfield
+    ><subfield code='e'
+    >witness.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Wylkyn, John,</subfield
+    ><subfield code='e'
+    >witness.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Coup, Richard,</subfield
+    ><subfield code='e'
+    >witness.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22328058500001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvaultxxx</subfield
+    ><subfield code='h'
+    >Deed 001</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

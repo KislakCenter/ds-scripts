@@ -1,1 +1,141 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02333ntm a2200361Ii 4500</leader><controlfield tag='001'>991058301965306011</controlfield><controlfield tag='005'>20220506123017.0</controlfield><controlfield tag='008'>220506q13001499fr            000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1314385715h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1314385715h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 62</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Codex Math :</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>France ;</subfield><subfield code='c'>14th or 15th century</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>101 leaves :</subfield><subfield code='b'>paper and parchment,</subfield><subfield code='c'>22 x 15 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title from binding.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted in reading room, but coach user: tight binding, open only to 90°; available for classroom use in exhibit case only.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Johannes Kepler, 1571-1630 Quadricentennial Celebration: An Exhibit of Books, Manuscripts, and Related Material (exhibit catalog, 1972).</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Johannes Kepler, 1571-1630: Quadricentennial Celebration: An Exhibit of Books, Manuscripts, and Related Material (Humanities Research Center: Austin 1972), #30, p. 14.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>At least three different hands present. Charts and diagrams are included, some in margins. Tables include lists of solar and lunar eclipses.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='520'><subfield code='a'>Collection of treatises on astronomy and mathematics, including tabulae astronomicae for finding solar and lunar eclipses, mnemonic devices for computistical purposes including a cisiojanus text and the Tractatus quadrantes secundum modernos, Ad habendum ortum solarem secundum garlandiam, Johannes of Sacrobosco&apos;s De sphaera mundi, and Algorismus.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 62: Walter Emile van Wijk (1887-1961), square bookplate. DIDB record 53698. Binding: Full calf(?) skin parchment (re-used material) over heavy paper spine stiffener.  Straight caps, cut edges, natural hollow. Title written in ink on spine. Sewing not visible. Textile spine lining. Endleaf components: front [tipped] fold ecru modern [machine-made?] paper, making pastedown, free endleaf; back same.</subfield></datafield><datafield ind1=' ' ind2='0' tag='650'><subfield code='a'>Astronomy.</subfield></datafield><datafield ind1=' ' ind2='0' tag='650'><subfield code='a'>Mathematics.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Wijk, W. E. van (Walter Emile), 1887-,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>France,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >02127ntm a2200337Ii 4500</leader
+  ><controlfield tag='001'
+  >991058321104306011</controlfield
+  ><controlfield tag='005'
+  >20220606135047.0</controlfield
+  ><controlfield tag='008'
+  >220606s1624    enk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1325582716h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1325582716h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 127</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Academic exercise (prolusion) on rising early, including an essay on the saying mane citus lectum fuge, and two poems, Surge, age surge, leves, iam convenit arcere somnes ; and Ignavus satrapam dedecet inclytum :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >England (London) ;</subfield
+    ><subfield code='c'
+    >1624</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 leaf :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >33 x 21 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Academic exercise (prolusion) on rising early, including an essay on the saying mane citus lectum fuge, and two poems, Surge, age surge, leves, iam convenit arcere somnes (20 lines) ; Ignavus satrapam dedecet inclytum (8 lines)</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='581'
+  ><subfield code='a'
+    >Published with translation in Merritt Yerkes Hughes, ed., Complete Poems and Major Prose of John Milton (Hackett Publishing, 2003), p. 6; see also Gordon Campbell, Roy Flannagan, and Mario A. DiCesare, The Weather in Autumn 1634, Milton Quarterly 19:4 (December, 1985), pp. 116-120.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 127: Discovered by Alfred J. Horwood in 1874 with Milton&apos;s Commonplace Book (British Library Add. MS. 36354) in the papers of Sir Frederick Graham of Netherby Hall, Cumberland; sold by Sir Fergus Graham at Sotheby&apos;s, London on 27 November 1967, lot 189; acquired by the Ransom Center (R4031) in 1967 through the New York bookseller Lew David Feldman (House of El Dieff). DIDB record: 21956.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Poems.</subfield
+    ><subfield code='2'
+    >rbgenr</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Horwood, Alfred J. (Alfred John), 1821-1881,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Graham, Fergus, Sir,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Feldman, Lew David,</subfield
+    ><subfield code='e'
+    >seller.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >England,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

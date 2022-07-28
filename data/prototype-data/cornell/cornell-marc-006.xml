@@ -1,185 +1,265 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>03086ctm a2200529 a 4500</leader>
-  <controlfield tag="001">13128691</controlfield>
-  <controlfield tag="005">20210118044053.0</controlfield>
-  <controlfield tag="008">201203s1712 ic 000 0 dan d</controlfield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">(OCoLC)1225205325</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="035">
-    <subfield code="a">13128691</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="040">
-    <subfield code="a">COO</subfield>
-    <subfield code="b">eng</subfield>
-    <subfield code="c">COO</subfield>
-    <subfield code="e">dcrmmss</subfield>
-    <subfield code="d">COO</subfield>
-    <subfield code="d">NIC</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="041">
-    <subfield code="a">dan</subfield>
-    <subfield code="h">ice</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="043">
-    <subfield code="a">e-ic---</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="110">
-    <subfield code="a">Iceland.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2="0" tag="240">
-    <subfield code="a">Jónsbók.</subfield>
-    <subfield code="l">Danish.</subfield>
-    <subfield code="f">1712?</subfield>
-  </datafield>
-  <datafield ind1="0" ind2="0" tag="245">
-    <subfield code="a">Islaendernes lovbog :</subfield>
-    <subfield code="k">manuscript fair copy.</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="246">
-    <subfield code="i">Spine title:</subfield>
-    <subfield code="a">Islanske lovboog</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="264">
-    <subfield code="a">Iceland?,</subfield>
-    <subfield code="c">circa 1712.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="300">
-    <subfield code="a">1 volume ([2], 596 pages, some blank) ;</subfield>
-    <subfield code="c">22 cm</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="336">
-    <subfield code="a">text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="337">
-    <subfield code="a">unmediated</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="338">
-    <subfield code="a">volume</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="545">
-    <subfield code="a">Jónsbók is a law code developed by King Haakon IV Haakonsson of Norway, who
-      gained sovereignty over Iceland and Greenland in 1261-1262. The existing laws were
-      subsequently compiled by Jón Einarsson (hence the name Jónsbók) at the request of King
-      Magnus Hakonsson (Magnus VI Lagabœtir, son of Haakon IV). The Alþing, the Icelandic
-      parliament, accepted Jónsbók as its legal code in 1281. It was in force until the 17th
-      century, and some of its provisions remain in force today.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="520">
-    <subfield code="a">Manuscript fair copy of a Danish translation of Jónsbók. Additional
-      sections from page 451 onward contain information on churches and priestly vocations in the
-      Skalholt diocese, and on revenue from taxes in Iceland. Bound in worn calf, with spine
-      lettering and decorations in black.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="546">
-    <subfield code="a">In Danish.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Title transcribed from title page.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Blank pages: 395-450, 469-564, 583-585, 592-596.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Specification paa kirkerne og prieste-kaldene údi Skalholts stift paa
-      Island, saa vel som deres indkomst baade anno 1706: for smaa pokker, og 1709, efter pokkerne:
-      pages 451-460.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Extract af Landstings Bogen 1712 no. 29: fortegnelse paa kongelig maÿffs
-      visse indkomster udi Island, af closterne, syslerne, og ombuds iorderne, som aarligen til
-      sancte Hansdag betales bor, i reede penge, vadmel og hoeser: pages 461-464.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Tiendens afgift af iorde-gods i Island: pages 465-468.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="500">
-    <subfield code="a">Table of contents at end.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="524">
-    <subfield code="a">Islaendernes lovbog, #8765 Bd. Ms. 3. Division of Rare and Manuscript
-      Collections, Cornell University Library.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Law</subfield>
-    <subfield code="z">Iceland.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="0" tag="650">
-    <subfield code="a">Internal revenue</subfield>
-    <subfield code="z">Iceland.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Internal revenue.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00976615</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="650">
-    <subfield code="a">Law.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst00993678</subfield>
-  </datafield>
-  <datafield ind1=" " ind2="7" tag="651">
-    <subfield code="a">Iceland.</subfield>
-    <subfield code="2">fast</subfield>
-    <subfield code="0">(OCoLC)fst01210572</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Jón Einarsson,</subfield>
-    <subfield code="e">compiler.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Haakon</subfield>
-    <subfield code="b">IV Haakonsson,</subfield>
-    <subfield code="c">King of Norway,</subfield>
-    <subfield code="d">1204-1263.</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="700">
-    <subfield code="a">Magnus</subfield>
-    <subfield code="b">VI Lagabœtir,</subfield>
-    <subfield code="c">King of Norway,</subfield>
-    <subfield code="d">1238-1280.</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="710">
-    <subfield code="a">Fiske Icelandic Collection.</subfield>
-  </datafield>
-  <datafield ind1=" " ind2=" " tag="852">
-    <subfield code="a">NIC</subfield>
-    <subfield code="j">8765 Bd. Ms. 3</subfield>
-  </datafield>
-  <datafield ind1="0" ind2=" " tag="948">
-    <subfield code="a">20201202</subfield>
-    <subfield code="b">i</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="h">?</subfield>
-  </datafield>
-  <datafield ind1="1" ind2=" " tag="948">
-    <subfield code="a">20201202</subfield>
-    <subfield code="b">o</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">lts</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20201208</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">mnr1</subfield>
-    <subfield code="e">lts</subfield>
-  </datafield>
-  <datafield ind1="2" ind2=" " tag="948">
-    <subfield code="a">20210118</subfield>
-    <subfield code="b">m</subfield>
-    <subfield code="d">batch</subfield>
-    <subfield code="e">lts</subfield>
-    <subfield code="x">WorldShare</subfield>
-  </datafield>
-  <datafield ind1="f" ind2="f" tag="999">
-    <subfield code="i">4621e9e0-fa94-4d74-b175-dba10c3489a5</subfield>
-    <subfield code="s">26855775-a625-41bb-ab77-c9c165802174</subfield>
-  </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >03086ctm a2200529 a 4500</leader
+  ><controlfield tag='001'
+  >13128691</controlfield
+  ><controlfield tag='005'
+  >20210118044053.0</controlfield
+  ><controlfield tag='008'
+  >201203s1712    ic            000 0 dan d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1225205325</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >13128691</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >COO</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='c'
+    >COO</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='d'
+    >COO</subfield
+    ><subfield code='d'
+    >NIC</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='041'
+  ><subfield code='a'
+    >dan</subfield
+    ><subfield code='h'
+    >ice</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='043'
+  ><subfield code='a'
+    >e-ic---</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='110'
+  ><subfield code='a'
+    >Iceland.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='240'
+  ><subfield code='a'
+    >Jónsbók.</subfield
+    ><subfield code='l'
+    >Danish.</subfield
+    ><subfield code='f'
+    >1712?</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Islaendernes lovbog :</subfield
+    ><subfield code='k'
+    >manuscript fair copy.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='246'
+  ><subfield code='i'
+    >Spine title:</subfield
+    ><subfield code='a'
+    >Islanske lovboog</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >Iceland?,</subfield
+    ><subfield code='c'
+    >circa 1712.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >1 volume ([2], 596 pages, some blank) ;</subfield
+    ><subfield code='c'
+    >22 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='545'
+  ><subfield code='a'
+    >Jónsbók is a law code developed by King Haakon IV Haakonsson of Norway, who gained sovereignty over Iceland and Greenland in 1261-1262. The existing laws were subsequently compiled by Jón Einarsson (hence the name Jónsbók) at the request of King Magnus Hakonsson (Magnus VI Lagabœtir, son of Haakon IV). The Alþing, the Icelandic parliament, accepted Jónsbók as its legal code in 1281. It was in force until the 17th century, and some of its provisions remain in force today.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Manuscript fair copy of a Danish translation of Jónsbók. Additional sections from page 451 onward contain information on churches and priestly vocations in the Skalholt diocese, and on  revenue from taxes in Iceland. Bound in worn calf, with spine lettering and decorations in black.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >In Danish.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title transcribed from title page.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Blank pages: 395-450, 469-564, 583-585, 592-596.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Specification paa kirkerne og prieste-kaldene údi Skalholts stift paa Island, saa vel som deres indkomst baade anno 1706: for smaa pokker, og 1709, efter pokkerne: pages 451-460.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Extract af Landstings Bogen 1712 no. 29: fortegnelse paa kongelig maÿffs visse indkomster udi Island, af closterne, syslerne, og ombuds iorderne, som aarligen til sancte Hansdag betales bor, i reede penge, vadmel og hoeser: pages 461-464.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Tiendens afgift af iorde-gods i Island: pages 465-468.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Table of contents at end.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='524'
+  ><subfield code='a'
+    >Islaendernes lovbog, #8765 Bd. Ms. 3. Division of Rare and Manuscript Collections, Cornell University Library.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Law</subfield
+    ><subfield code='z'
+    >Iceland.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Internal revenue</subfield
+    ><subfield code='z'
+    >Iceland.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Internal revenue.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00976615</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Law.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00993678</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Iceland.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01210572</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Jón Einarsson,</subfield
+    ><subfield code='e'
+    >compiler.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Haakon</subfield
+    ><subfield code='b'
+    >IV Haakonsson,</subfield
+    ><subfield code='c'
+    >King of Norway,</subfield
+    ><subfield code='d'
+    >1204-1263.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Magnus</subfield
+    ><subfield code='b'
+    >VI Lagabœtir,</subfield
+    ><subfield code='c'
+    >King of Norway,</subfield
+    ><subfield code='d'
+    >1238-1280.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >Fiske Icelandic Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='852'
+  ><subfield code='a'
+    >NIC</subfield
+    ><subfield code='j'
+    >8765 Bd. Ms. 3</subfield
+    ></datafield
+  ><datafield ind1='0' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20201202</subfield
+    ><subfield code='b'
+    >i</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='h'
+    >?</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20201202</subfield
+    ><subfield code='b'
+    >o</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20201208</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >mnr1</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='948'
+  ><subfield code='a'
+    >20210118</subfield
+    ><subfield code='b'
+    >m</subfield
+    ><subfield code='d'
+    >batch</subfield
+    ><subfield code='e'
+    >lts</subfield
+    ><subfield code='x'
+    >WorldShare</subfield
+    ></datafield
+  ><datafield ind1='f' ind2='f' tag='999'
+  ><subfield code='i'
+    >4621e9e0-fa94-4d74-b175-dba10c3489a5</subfield
+    ><subfield code='s'
+    >26855775-a625-41bb-ab77-c9c165802174</subfield
+    ></datafield
+  ></record
+>

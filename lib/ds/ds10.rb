@@ -73,12 +73,19 @@ module DS
         DS.clean_string find_ms(xml).xpath(xpath).text
       end
 
-      def extract_language xml
+      ##
+      # Return a list of unique languages from the text-level <mods:note>s
+      # that start with "lang:" (case -insensitive), joined with separator;
+      # so, "Latin", rather than "Latin|Latin|Latin", etc.
+      #
+      # @return [String]
+      def extract_language xml, separator: '|'
         # /mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:note
-        xpath = './descendant::mods:note[starts-with(text(), "lang:")]'
+        # Can be Lang: or lang: or ???, so down case the text with translate()
+        xpath = './descendant::mods:note[starts-with(translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), "lang:")]'
         find_texts(xml).flat_map { |text|
-          text.xpath(xpath).map{ |note| note.text.sub(%r{^lang:\s*}, '') }
-        }.join '|'
+          text.xpath(xpath).map{ |note| note.text.sub(%r{^lang:\s*}i, '') }
+        }.uniq.join separator
       end
 
       def extract_name node, name_type

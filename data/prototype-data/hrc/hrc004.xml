@@ -1,1 +1,149 @@
-<record xmlns='http://www.loc.gov/MARC21/slim'><leader>02822ntm a2200469Ii 4500</leader><controlfield tag='001'>991058289658406011</controlfield><controlfield tag='005'>20220407114102.0</controlfield><controlfield tag='008'>220324q14001900fr  a         000 0 eng d</controlfield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)1305306771h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='035'><subfield code='a'>(OCoLC)on1305306771h</subfield></datafield><datafield ind1=' ' ind2=' ' tag='040'><subfield code='a'>HRH</subfield><subfield code='b'>eng</subfield><subfield code='e'>dcrmmss</subfield><subfield code='c'>HRH</subfield></datafield><datafield ind1=' ' ind2=' ' tag='041'><subfield code='a'>lat</subfield></datafield><datafield ind1=' ' ind2=' ' tag='049'><subfield code='a'>HRHH</subfield></datafield><datafield ind1=' ' ind2='9' tag='099'><subfield code='a'>MS 3327, Container 2</subfield></datafield><datafield ind1='0' ind2='0' tag='245'><subfield code='a'>Book of hours, use of Rome</subfield><subfield code='k'>manuscript.</subfield></datafield><datafield ind1=' ' ind2='0' tag='264'><subfield code='a'>France;</subfield><subfield code='c'>15th and 19th/20th century</subfield></datafield><datafield ind1=' ' ind2=' ' tag='300'><subfield code='a'>98 leaves:</subfield><subfield code='b'>parchment, illustrations</subfield><subfield code='c'>19 x 18 cm</subfield></datafield><datafield ind1=' ' ind2=' ' tag='336'><subfield code='a'>text</subfield><subfield code='b'>txt</subfield><subfield code='2'>rdacontent</subfield></datafield><datafield ind1=' ' ind2=' ' tag='337'><subfield code='a'>unmediated</subfield><subfield code='b'>n</subfield><subfield code='2'>rdamedia</subfield></datafield><datafield ind1=' ' ind2=' ' tag='338'><subfield code='a'>volume</subfield><subfield code='b'>nc</subfield><subfield code='2'>rdacarrier</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Title devised by cataloger.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Decorated with thirteen full-page miniatures, one half-page miniature, and 144 bas de page vignettes, the majority depicting animals; all or most miniatures overpainted or modern fabrications, using gold paint and lacquer.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='500'><subfield code='a'>Gothic textualis formata script; Layout is 19 long lines ruled in faint red ink.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='506'><subfield code='a'>Unrestricted, for either reading room or classroom use, but coach user: use cradle.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='581'><subfield code='a'>Mauck, Marchita Bradford. The Problems of Texas Ms Misc. Hours 2. A Book of Hours of the Virgin. Tulane University: Thesis, 1967.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>MS 3327, Container 2: From the William H. and Miriam Lutcher Stark Collection; see De Ricci, University of Texas no. 6. Bibliography: Marchita Bradford Mauck, The Problems of Texas Ms Misc. Hours 2. A Book of Hours of the Virgin. Master&apos;s thesis, Tulane University, 1967. DIDB Record Number: 3094. Binding: Bookblock resewn, rebound. K118 binding structure (full off-white tawed goatskin over wood boards; sewn all-along over five raised bands; sewn endbands; 2 brass fore-edge catchplates, tawed clasps). (HRC 1980s) Previous binding: Full brown tanned goatskin binding by Riviere 20th c. Binding and housing retained as HRC 2a.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='590'><subfield code='a'>A digital surrogate of Ransom Center copy MS 3327, Container 2 is available through the Digital Scriptorium.</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Books of hours.</subfield><subfield code='2'>rbgenr</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Decorated initials.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Illuminated manuscripts.</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1=' ' ind2='7' tag='655'><subfield code='a'>Miniatures (paintings)</subfield><subfield code='2'>aat</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Stark, Miriam Lutcher, 1859-1936,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='790'><subfield code='a'>Stark, William Henry, 1851-1936,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='791'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='752'><subfield code='a'>France,</subfield><subfield code='e'>producation place.</subfield></datafield><datafield ind1='4' ind2='0' tag='856'><subfield code='u'>http://ds.lib.berkeley.edu/HRC002_37</subfield><subfield code='y'>Digital copy for MS 3327, Container 2</subfield></datafield><datafield ind1=' ' ind2=' ' tag='945'><subfield code='a'>blw</subfield></datafield><datafield ind1='2' ind2=' ' tag='979'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1='1' ind2=' ' tag='979'><subfield code='a'>Stark, Miriam Lutcher, 1859-1936,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='1' ind2=' ' tag='979'><subfield code='a'>Stark, William Henry, 1851-1936,</subfield><subfield code='e'>former owner.</subfield></datafield><datafield ind1='2' ind2=' ' tag='979'><subfield code='a'>Medieval and Early Modern Manuscripts Collection.</subfield></datafield><datafield ind1=' ' ind2=' ' tag='994'><subfield code='a'>C0</subfield><subfield code='b'>HRH</subfield></datafield></record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >03540ntm a2200361Ii 4500</leader
+  ><controlfield tag='001'
+  >991058302069806011</controlfield
+  ><controlfield tag='005'
+  >20220506135548.0</controlfield
+  ><controlfield tag='008'
+  >220506s1706    enk           000 0 eng d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1314389137h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1314389137h</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >HRH</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >dcrmmss</subfield
+    ><subfield code='c'
+    >HRH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >eng</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >HRHH</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='9' tag='099'
+  ><subfield code='a'
+    >MS 3327, Container 85</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='0' tag='245'
+  ><subfield code='a'
+    >Anthems; known as the Gostling manuscript :</subfield
+    ><subfield code='k'
+    >manuscript.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >England ;</subfield
+    ><subfield code='c'
+    >1670-1706</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >209 leaves :</subfield
+    ><subfield code='b'
+    >paper,</subfield
+    ><subfield code='c'
+    >42 x 26 cm</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >Use: Unrestricted, for either reading room or classroom use</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='581'
+  ><subfield code='a'
+    >Franklin B. Zimmerman, Anthems of Purcell and Contemporaries in a Newly Rediscovered &apos;Gostling Manuscript,&apos; Acta Musicologica Sonderdruck I-II, vol. XLI (Basel: BaÌ⁸renreiter-Verlag, 1969), pp. 55-70 (with plate, and full list of contents). For a facsimile, see The Gostling Manuscript (Austin: University of Texas Press, 1977).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='581'
+  ><subfield code='a'
+    >Purcell Society subscription flyer, December 1901. Handwritten Letters. Articles and tearsheets from Musical News. Thematic index to Gostling Ms.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Contains sixty-four anthems by Henry Purcell, John Blow, and their contemporaries, principally for solo voices and mixed chorus with string orchestra, orchestra, or continuo. Handwritten Letters. Articles and tearsheets from Musical News. Thematic index to Gostling Ms. Compiled by bass soloist John Gostling, a friend of Purcell. The first twenty-six items are on pp. 1-205 counting from the front of the manuscript; another thirty-eight items are on pp. 1-213 numbered from the back of the volume; pp. 205 and 213 share a leaf. Contemporary alphabetical indexes of each half are written on the respective front pastedown.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='590'
+  ><subfield code='a'
+    >MS 3327, Container 85: William Gostling (1696-1777) from his father; owned in the early 20th century by William Kennedy Gostling, and a Miss Gostling of Folkestone, Kent; sold at Sotheby&apos;s, London, 24 July 1935 to an anonymous owner; acquired by New York booksellers James F. Drake, Inc.; purchased by the University of Texas in 1967. Bibliography: Franklin B. Zimmerman, Anthems of Purcell and Contemporaries in a Newly Rediscovered &apos;Gostling Manuscript,&apos; Acta Musicologica Sonderdruck I-II, vol. XLI (Basel: BaÌ⁸renreiter-Verlag, 1969), pp. 55-70 (with plate, and full list of contents). Binding (England 17th /18th c): Full medium-brown tanned calfskin over paper boards. Straight (?) caps, tight back over sewing supports, edges deckle. Blind-tooled concentric frames (three), front and back covers, stain decoration (sprinkling) outer- and innermost areas (f/k/a Cambridge panels or Cambridge binding), blind-tooled corner pieces, three-line blind tooling across spine; no title. Sewn on raised cords laced on boards (six bands, four laced on supports discernible, sewing not visible). Endleaf components:  front tipped fold off-white handmade laid paper making pastedown, free endleaf; back same. Repaired (reback, brown tanned goatskin, machine-made endbands stuck on, inner joint repairs).</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Gostling, William, 1696-1777,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Gostling, William Kennedy,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='790'
+  ><subfield code='a'
+    >Gostling, Miss,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >James F. Drake, Inc.,</subfield
+    ><subfield code='e'
+    >seller.</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='791'
+  ><subfield code='a'
+    >Medieval and Early Modern Manuscripts Collection.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='752'
+  ><subfield code='a'
+    >England,</subfield
+    ><subfield code='e'
+    >producation place.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >C0</subfield
+    ><subfield code='b'
+    >HRH</subfield
+    ></datafield
+  ></record
+>

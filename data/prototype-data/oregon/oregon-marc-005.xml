@@ -1,288 +1,365 @@
-<record xmlns="http://www.loc.gov/MARC21/slim">
-    <leader>06868ctm a2200781Ii 4500</leader>
-    <controlfield tag="001">99900467282901852</controlfield>
-    <controlfield tag="005">20200115084337.5</controlfield>
-    <controlfield tag="008">180301q14011500it p 000 0 lat d</controlfield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)1026484738</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(OCoLC)on1026484738</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="035">
-        <subfield code="a">(EXLNZ-01ALLIANCE_NETWORK)99324887610301451</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="040">
-        <subfield code="a">ORU</subfield>
-        <subfield code="b">eng</subfield>
-        <subfield code="e">rda</subfield>
-        <subfield code="c">ORU</subfield>
-        <subfield code="d">ORU</subfield>
-        <subfield code="d">OCLCF</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="041">
-        <subfield code="a">lat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="049">
-        <subfield code="a">MAIN</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="100">
-        <subfield code="a">Florus, Lucius Annaeus,</subfield>
-        <subfield code="e">author.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2="0" tag="245">
-        <subfield code="a">Epitome Rerum Romanorum: Libri IV.</subfield>
-    </datafield>
-    <datafield ind1="3" ind2=" " tag="246">
-        <subfield code="a">Epitome de Tito Livio Bellorum Omnium Annorum DCO</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="264">
-        <subfield code="a">[Italy] ;</subfield>
-        <subfield code="c">[between 1401 and 1500]</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="300">
-        <subfield code="a">164 unnumbered leaves :</subfield>
-        <subfield code="b">parchment, illustrations ;</subfield>
-        <subfield code="c">25 x 16 mm, bound to 26 x 17 mm.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="336">
-        <subfield code="a">text</subfield>
-        <subfield code="b">txt</subfield>
-        <subfield code="2">rdacontent</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="337">
-        <subfield code="a">unmediated</subfield>
-        <subfield code="b">n</subfield>
-        <subfield code="2">rdamedia</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="338">
-        <subfield code="a">volume</subfield>
-        <subfield code="b">nc</subfield>
-        <subfield code="2">rdacarrier</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="583">
-        <subfield code="a">Item cataloged from existing description by C. Pierce and J. Fox, and in
-            hand by Erika Milo and Ian Scott, July/August 2018.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="541">
-        <subfield code="c">Donation/Purchase</subfield>
-        <subfield code="a">Julia Burgess,</subfield>
-        <subfield code="d">1935-1942.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="520">
-        <subfield code="a">Item consists of two summaries of Livy&apos;s History of Rome.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">The variant title, Epitome de Tito Livio Bellorum Omnium Annorum DCO, is
-            from Loeb.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Manuscript codex.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Title devised by cataloger.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Collation: Parchment, fol. i (parchment) + 164 + i (ruled but blank) ;
-            1-9¹⁰ 10⁴ 11-16¹⁰ ; vertical catchwords at foot of the final verso of each quire.
-            Penciled folio numeration in later hand.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Origin: Italy. Coat of Arms has been described as of the De Haye
-            family.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout, Epitome Rerum Romanorum: Written in 1 column of 24 lines
-            (dimensions of written space: 16 x 9 mm); vertical rulings, prickings absent,
-            corrections and marginalia in an early hand.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Layout, Ex T. Livy ab urbe condita: Written in 2 columns in 52 lines
-            (dimensions of written space: 280 x 165 mm); ruling in crayon in places; prickings in
-            outer margin; corrections and marginalia in an early modern hand.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Script: Humanistic book hand.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: 3 levels. I. f1r: full page border in green, blue, gold, red,
-            fuchsia, brown and flesh. With illuminated capitals containing profile image of each
-            Author; 5 scene medallions of the Foundation of Rome &amp; 7 portrait medallions with
-            profiles of Roman Kings, 1 additional medallion showing frontal bust of Jesus. II. f19v,
-            42r, 67r contain 4x3 cm illuminated capital with extensive flourishing decoration and
-            golden orbs. III. Gilt Capital for each chapter upon azure, green and fuchsia square,
-            with white highlights, each with a single vine extending up to 9 cm vertically and
-            accompanied by a single orb with black spindles in the margin.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Decoration: Rubrication throughout; gold illuminations; presence of lapis
-            lazuli.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Binding: Original brown morocco over wooden boards, 6x3 cm arabesque
-            centerpiece and paneled by a 25 mm rectangular border at a margin of 2 cm, as well as an
-            outer border of blind fillets, the backstrip is in 7 panels, crossed by diagonal lines
-            extended into point on each cover. Remnants of four hasps, 2 on front edge, and one on
-            top and bottom. Silk head and tailbands.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives,
-            University of Oregon, MS 001.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="500">
-        <subfield code="a">Former shelfmark: The Burgess Collection, the University of Oregon
-            Library, 16.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="546">
-        <subfield code="a">Language: Latin. Cover flyleaf and rear board contain notes written in
-            Italian.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="505">
-        <subfield code="a">f1r [RUBRIC]&quot;_Annei Flori continentie libroru iiij (super ^or)/
-            factorum memorabilium ab urbe conditae/ usq ab tempora cesaris augusti secundi
-            im/peratoris. liber primus foeliciter incipit.// nacephaleosis Septem Regum .S. Romuli:/
-            I lume pompilly Tulli hostilly Anci mar/ tii. Tarquini prisct. Servii tullii &amp; Tar/
-            quini superbi. Probemium.&quot; [TEXT] &quot;POPULUS ROMANUS/ a Rege Romulo in Cesa/rem
-            Augustum Septingen/tos per annos tantum ope/rum pace...&quot;</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="505">
-        <subfield code="a">f19v [RUBRIC] &quot;Lucii annei flori de memorabilibus factis Ro/manorum
-            liber primus finit. Eiusdem x/ liber secundus incipit. Et tertia etas popu/li Romani
-            iuventus. Ante omnia vero ex/italiam comissum est belli^- Siculum.&quot; [TEXT]
-            &quot;DOMITA Subastaq italia/ populus Romanus prope Quin/ gentesimum annum agens cu^-/
-            bone fide adoleuiss&amp; : Si quod robur est si qua vuientus tum vero ille robu/stus ac
-            vvienis &amp; par orbi terrarum esse coepit./...</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="505">
-        <subfield code="a">f42r [RUBRIC line7] &quot;L / ucii Annei Flori liber secundus finit./I /
-            ncipit Liber Tertius/_/Bellum Iugurthinum./ [TEXT] HAEC AD orientem: x/sed non ad
-            occidentem plagam/[...](Cataloger&apos;s note: contemporary liber numeration begins book
-            II following chapter XLVII Anacephalaeosis)</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="505">
-        <subfield code="a">f67r [RUBRIC] &quot;L / ucii annei flori liber tertius finit./ E/uisdem
-            quartus &amp; ultimus liber incipit./ Coniuratio Catiline.&quot;/[TEXT] CATALINAM
-            luxuria primum. Tum hinc/ conflata egastas rei familiaris/ simul occasio quod in
-            extre/mis mundi finibus arma Romana peregrina.&quot;</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="505">
-        <subfield code="a">f89r [RUBRIC] &quot;Sexti ruffi ex .T. Livy ab urbe condita/ primo libra
-            incipit foeliciter.&quot; [TEXT] &quot;ADVENTUS/ enee initialiam &amp; res geste/
-            Africanius. Regnum albe ita/ lie &amp; deinceps Sylviorum /[...]&quot;</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="506">
-        <subfield code="a">RESTRICTED ITEM:</subfield>
-        <subfield code="b">Use of original only by permission of the rare books curator. Inquiries
-            concerning this item should be directed, in writing, to the Public Services Librarian,
-            Special Collections Department, UO Libraries, or through the online form:
-            https://library.uoregon.edu/special-collections/research-assistance</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="650">
-        <subfield code="a">Manuscripts, Medieval</subfield>
-        <subfield code="z">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Antiquities.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst00810745</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="650">
-        <subfield code="a">Manuscripts, Medieval.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01008422</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="651">
-        <subfield code="a">Rome</subfield>
-        <subfield code="x">History</subfield>
-        <subfield code="y">Republic, 510-30 B.C.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="651">
-        <subfield code="a">Rome (Italy)</subfield>
-        <subfield code="x">Antiquities</subfield>
-        <subfield code="v">Early works to 1800.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="651">
-        <subfield code="a">Rome</subfield>
-        <subfield code="x">History</subfield>
-        <subfield code="y">Kings, 753-510 B.C.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Italy</subfield>
-        <subfield code="z">Rome.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01204500</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Oregon</subfield>
-        <subfield code="z">Eugene.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01205922</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="651">
-        <subfield code="a">Rome (Empire)</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01204885</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="0" tag="655">
-        <subfield code="a">Manuscripts, Latin (medieval and modern).</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Illuminated manuscripts.</subfield>
-        <subfield code="2">aat</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">Early works.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411636</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="655">
-        <subfield code="a">History.</subfield>
-        <subfield code="2">fast</subfield>
-        <subfield code="0">(OCoLC)fst01411628</subfield>
-    </datafield>
-    <datafield ind1=" " ind2="7" tag="648">
-        <subfield code="a">753-30 B.C.</subfield>
-        <subfield code="2">fast</subfield>
-    </datafield>
-    <datafield ind1="2" ind2=" " tag="710">
-        <subfield code="a">University of Oregon.</subfield>
-        <subfield code="b">Libraries.</subfield>
-        <subfield code="b">Special Collections &amp; University Archives.</subfield>
-        <subfield code="k">Manuscript.</subfield>
-        <subfield code="n">MS 001.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="2" tag="740">
-        <subfield code="a">Ex T. Livy ab urbe condita.</subfield>
-    </datafield>
-    <datafield ind1="0" ind2="2" tag="740">
-        <subfield code="a">Breviarium Rerum Gestarum Populi Romani.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Rufus, Sextus,</subfield>
-        <subfield code="e">author.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Edward Sandford,</subfield>
-        <subfield code="d">1855-1928,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1="1" ind2=" " tag="700">
-        <subfield code="a">Burgess, Julia,</subfield>
-        <subfield code="e">former owner.</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="851">
-        <subfield code="a">Special Collections and University Archives,</subfield>
-        <subfield code="c">University of Oregon, Eugene, OR 97403.</subfield>
-    </datafield>
-    <datafield ind1="8" ind2=" " tag="852">
-        <subfield code="8">22330899490001852</subfield>
-        <subfield code="b">SpecColl</subfield>
-        <subfield code="c">spvault</subfield>
-        <subfield code="h">MS 001</subfield>
-    </datafield>
-    <datafield ind1=" " ind2=" " tag="994">
-        <subfield code="a">92</subfield>
-        <subfield code="b">OCACL</subfield>
-    </datafield>
-</record>
+<record xmlns='http://www.loc.gov/MARC21/slim'
+><leader
+  >06868ctm a2200781Ii 4500</leader
+  ><controlfield tag='001'
+  >99900467282901852</controlfield
+  ><controlfield tag='005'
+  >20200115084337.5</controlfield
+  ><controlfield tag='008'
+  >180301q14011500it p          000 0 lat d</controlfield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)1026484738</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(OCoLC)on1026484738</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='035'
+  ><subfield code='a'
+    >(EXLNZ-01ALLIANCE_NETWORK)99324887610301451</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='040'
+  ><subfield code='a'
+    >ORU</subfield
+    ><subfield code='b'
+    >eng</subfield
+    ><subfield code='e'
+    >rda</subfield
+    ><subfield code='c'
+    >ORU</subfield
+    ><subfield code='d'
+    >ORU</subfield
+    ><subfield code='d'
+    >OCLCF</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='041'
+  ><subfield code='a'
+    >lat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='049'
+  ><subfield code='a'
+    >MAIN</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='100'
+  ><subfield code='a'
+    >Florus, Lucius Annaeus,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2='0' tag='245'
+  ><subfield code='a'
+    >Epitome Rerum Romanorum: Libri IV.</subfield
+    ></datafield
+  ><datafield ind1='3' ind2=' ' tag='246'
+  ><subfield code='a'
+    >Epitome de Tito Livio Bellorum Omnium Annorum DCO</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='264'
+  ><subfield code='a'
+    >[Italy] ;</subfield
+    ><subfield code='c'
+    >[between 1401 and 1500]</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='300'
+  ><subfield code='a'
+    >164 unnumbered leaves :</subfield
+    ><subfield code='b'
+    >parchment, illustrations ;</subfield
+    ><subfield code='c'
+    >25 x 16 mm, bound to 26 x 17 mm.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='336'
+  ><subfield code='a'
+    >text</subfield
+    ><subfield code='b'
+    >txt</subfield
+    ><subfield code='2'
+    >rdacontent</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='337'
+  ><subfield code='a'
+    >unmediated</subfield
+    ><subfield code='b'
+    >n</subfield
+    ><subfield code='2'
+    >rdamedia</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='338'
+  ><subfield code='a'
+    >volume</subfield
+    ><subfield code='b'
+    >nc</subfield
+    ><subfield code='2'
+    >rdacarrier</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='583'
+  ><subfield code='a'
+    >Item cataloged from existing description by C. Pierce and J. Fox, and in hand by Erika Milo and Ian Scott, July/August 2018.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='541'
+  ><subfield code='c'
+    >Donation/Purchase</subfield
+    ><subfield code='a'
+    >Julia Burgess,</subfield
+    ><subfield code='d'
+    >1935-1942.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='520'
+  ><subfield code='a'
+    >Item consists of two summaries of Livy&apos;s History of Rome.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >The variant title, Epitome de Tito Livio Bellorum Omnium Annorum DCO, is from Loeb.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Manuscript codex.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Title devised by cataloger.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Collation: Parchment, fol. i (parchment) + 164 + i (ruled but blank) ; 1-9¹⁰ 10⁴ 11-16¹⁰ ; vertical catchwords at foot of the final verso of each quire. Penciled folio numeration in later hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Origin: Italy. Coat of Arms has been described as of the De Haye family.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout, Epitome Rerum Romanorum: Written in 1 column of 24 lines (dimensions of written space: 16 x 9 mm); vertical rulings, prickings absent, corrections and marginalia in an early hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Layout, Ex T. Livy ab urbe condita: Written in 2 columns in 52 lines (dimensions of written space: 280 x 165 mm); ruling in crayon in places; prickings in outer margin; corrections and marginalia in an early modern hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Script: Humanistic book hand.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: 3 levels. I. f1r: full page border in green, blue, gold, red, fuchsia, brown and flesh. With illuminated capitals containing profile image of each Author; 5 scene medallions of the Foundation of Rome &amp; 7 portrait medallions with profiles of Roman Kings, 1 additional medallion showing frontal bust of Jesus. II. f19v, 42r, 67r contain 4x3 cm illuminated capital with extensive flourishing decoration and golden orbs. III. Gilt Capital for each chapter upon azure, green and fuchsia square, with white highlights, each with a single vine extending up to 9 cm vertically and accompanied by a single orb with black spindles in the margin.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Decoration: Rubrication throughout; gold illuminations; presence of lapis lazuli.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Binding: Original brown morocco over wooden boards, 6x3 cm arabesque centerpiece and paneled by a 25 mm rectangular border at a margin of 2 cm, as well as an outer border of blind fillets, the backstrip is in 7 panels, crossed by diagonal lines extended into point on each cover. Remnants of four hasps, 2 on front edge, and one on top and bottom. Silk head and tailbands.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 001.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='500'
+  ><subfield code='a'
+    >Former shelfmark: The Burgess Collection, the University of Oregon Library, 16.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='546'
+  ><subfield code='a'
+    >Language: Latin. Cover flyleaf and rear board contain notes written in Italian.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='505'
+  ><subfield code='a'
+    >f1r [RUBRIC]&quot;_Annei Flori continentie libroru iiij (super ^or)/ factorum memorabilium ab urbe conditae/ usq ab tempora cesaris augusti secundi im/peratoris. liber primus foeliciter incipit.// nacephaleosis Septem Regum .S. Romuli:/ I lume pompilly Tulli hostilly Anci mar/ tii. Tarquini prisct. Servii tullii &amp; Tar/ quini superbi. Probemium.&quot; [TEXT] &quot;POPULUS ROMANUS/ a Rege Romulo in Cesa/rem Augustum Septingen/tos per annos tantum ope/rum pace...&quot;</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='505'
+  ><subfield code='a'
+    >f19v [RUBRIC] &quot;Lucii annei flori de memorabilibus factis Ro/manorum liber primus finit. Eiusdem x/ liber secundus incipit. Et tertia etas popu/li Romani iuventus. Ante omnia vero ex/italiam comissum est belli^- Siculum.&quot; [TEXT] &quot;DOMITA Subastaq italia/ populus Romanus prope Quin/ gentesimum annum agens cu^-/ bone fide adoleuiss&amp; : Si quod robur est si qua vuientus tum vero ille robu/stus ac vvienis &amp; par orbi  terrarum esse coepit./...</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='505'
+  ><subfield code='a'
+    >f42r [RUBRIC line7]  &quot;L / ucii Annei Flori liber secundus finit./I / ncipit Liber Tertius/_/Bellum Iugurthinum./ [TEXT] HAEC AD orientem: x/sed non ad occidentem plagam/[...](Cataloger&apos;s note: contemporary liber numeration begins book II following chapter XLVII Anacephalaeosis)</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='505'
+  ><subfield code='a'
+    >f67r [RUBRIC] &quot;L / ucii annei flori liber tertius finit./ E/uisdem quartus &amp; ultimus liber incipit./ Coniuratio Catiline.&quot;/[TEXT] CATALINAM luxuria primum. Tum hinc/ conflata egastas rei familiaris/ simul occasio quod in extre/mis mundi finibus arma Romana peregrina.&quot;</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='505'
+  ><subfield code='a'
+    >f89r [RUBRIC] &quot;Sexti ruffi ex .T. Livy ab urbe condita/ primo libra incipit foeliciter.&quot; [TEXT] &quot;ADVENTUS/ enee initialiam &amp; res geste/ Africanius. Regnum albe ita/ lie &amp; deinceps Sylviorum /[...]&quot;</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='506'
+  ><subfield code='a'
+    >RESTRICTED ITEM:</subfield
+    ><subfield code='b'
+    >Use of original only by permission of the rare books curator. Inquiries concerning this item should be directed, in writing, to the Public Services Librarian, Special Collections Department, UO Libraries, or through the online form: https://library.uoregon.edu/special-collections/research-assistance</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval</subfield
+    ><subfield code='z'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Antiquities.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst00810745</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='650'
+  ><subfield code='a'
+    >Manuscripts, Medieval.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01008422</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='651'
+  ><subfield code='a'
+    >Rome</subfield
+    ><subfield code='x'
+    >History</subfield
+    ><subfield code='y'
+    >Republic, 510-30 B.C.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='651'
+  ><subfield code='a'
+    >Rome (Italy)</subfield
+    ><subfield code='x'
+    >Antiquities</subfield
+    ><subfield code='v'
+    >Early works to 1800.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='651'
+  ><subfield code='a'
+    >Rome</subfield
+    ><subfield code='x'
+    >History</subfield
+    ><subfield code='y'
+    >Kings, 753-510 B.C.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Italy</subfield
+    ><subfield code='z'
+    >Rome.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01204500</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Oregon</subfield
+    ><subfield code='z'
+    >Eugene.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01205922</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='651'
+  ><subfield code='a'
+    >Rome (Empire)</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01204885</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='0' tag='655'
+  ><subfield code='a'
+    >Manuscripts, Latin (medieval and modern).</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Illuminated manuscripts.</subfield
+    ><subfield code='2'
+    >aat</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >Early works.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411636</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='655'
+  ><subfield code='a'
+    >History.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ><subfield code='0'
+    >(OCoLC)fst01411628</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2='7' tag='648'
+  ><subfield code='a'
+    >753-30 B.C.</subfield
+    ><subfield code='2'
+    >fast</subfield
+    ></datafield
+  ><datafield ind1='2' ind2=' ' tag='710'
+  ><subfield code='a'
+    >University of Oregon.</subfield
+    ><subfield code='b'
+    >Libraries.</subfield
+    ><subfield code='b'
+    >Special Collections &amp; University Archives.</subfield
+    ><subfield code='k'
+    >Manuscript.</subfield
+    ><subfield code='n'
+    >MS 001.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='2' tag='740'
+  ><subfield code='a'
+    >Ex T. Livy ab urbe condita.</subfield
+    ></datafield
+  ><datafield ind1='0' ind2='2' tag='740'
+  ><subfield code='a'
+    >Breviarium Rerum Gestarum Populi Romani.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Rufus, Sextus,</subfield
+    ><subfield code='e'
+    >author.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Edward Sandford,</subfield
+    ><subfield code='d'
+    >1855-1928,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1='1' ind2=' ' tag='700'
+  ><subfield code='a'
+    >Burgess, Julia,</subfield
+    ><subfield code='e'
+    >former owner.</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='851'
+  ><subfield code='a'
+    >Special Collections and University Archives,</subfield
+    ><subfield code='c'
+    >University of Oregon, Eugene, OR 97403.</subfield
+    ></datafield
+  ><datafield ind1='8' ind2=' ' tag='852'
+  ><subfield code='8'
+    >22330899490001852</subfield
+    ><subfield code='b'
+    >SpecColl</subfield
+    ><subfield code='c'
+    >spvault</subfield
+    ><subfield code='h'
+    >MS 001</subfield
+    ></datafield
+  ><datafield ind1=' ' ind2=' ' tag='994'
+  ><subfield code='a'
+    >92</subfield
+    ><subfield code='b'
+    >OCACL</subfield
+    ></datafield
+  ></record
+>

@@ -61,15 +61,15 @@ module DS
       #
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
-      def extract_language_codes xml
+      def extract_language_codes xml, separator: '|'
         xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
-        xml.xpath(xpath).flat_map { |lang| lang.value.split }.join '|'
+        xml.xpath(xpath).flat_map { |lang| lang.value.split.reject(&:empty?) }.join separator
       end
 
-      def extract_language_as_recorded xml
+      def extract_language_as_recorded xml, separator: '|'
         xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
         as_recorded = xml.xpath(xpath).text()
-        as_recorded = DS::OPennTEI.extract_language_codes xml if as_recorded.to_s.strip.empty?
+        as_recorded = DS::OPennTEI.extract_language_codes xml, separator if as_recorded.to_s.strip.empty?
         as_recorded
       end
 
