@@ -420,14 +420,17 @@ module DS
         IIIF_MANIFESTS[mmsid.to_s]
       end
 
-      def extract_holding_institution_ids record, holdings_file = nil
-        # start with the shelfmark
-        ids = []
-        if !find_shelfmark(record).empty?
-          ids = [find_shelfmark(record)]
-        elsif !holdings_file.nil?
-          ids = [shelfmark_lookup(record, holdings_file)]
+      def extract_holding_institution_shelfmark record, holdings_file = nil
+        if holdings_file
+          shelfmarks = [shelfmark_lookup(record, holdings_file)]
+        else
+          shelfmarks = [find_shelfmark(record)]
         end
+        shelfmarks.reject(&:empty?).join '|'
+      end
+
+      def extract_001_control_number record, holdings_file = nil
+        ids = []
         # add the MMS ID
         ids << extract_mmsid(record)
 

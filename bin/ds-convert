@@ -41,7 +41,8 @@ class DSConvertCLI < Thor
         source_type                        = 'marc-xml'
         holding_institution                = inst_qid
         holding_institution_as_recorded    = preferred_name
-        holding_institution_id_number      = DS::MarcXML.extract_holding_institution_ids record, holdings_file
+        holding_institution_id_number      = DS::MarcXML.extract_001_control_number record, holdings_file
+        holding_institution_shelfmark      = DS::MarcXML.extract_holding_institution_shelfmark record, holdings_file
         link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, options[:institution]
         iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
@@ -107,6 +108,7 @@ class DSConvertCLI < Thor
           holding_institution:                holding_institution,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,
+          holding_institution_shelfmark:      holding_institution_shelfmark,
           link_to_holding_institution_record: link_to_holding_institution_record,
           iiif_manifest:                      iiif_manifest,
           production_date:                    production_date,
@@ -186,7 +188,8 @@ class DSConvertCLI < Thor
       source_type                        = 'digital-scriptorium'
       holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
       holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
-      holding_institution_id_number      = DS::DS10.extract_institution_id xml
+      holding_institution_id_number      = ''
+      holding_institution_shelfmark      = DS::DS10.extract_shelfmark xml
       link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
       production_place_as_recorded       = DS::DS10.extract_production_place xml
       production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
@@ -243,6 +246,7 @@ class DSConvertCLI < Thor
         holding_institution:                holding_institution,
         holding_institution_as_recorded:    holding_institution_as_recorded,
         holding_institution_id_number:      holding_institution_id_number,
+        holding_institution_shelfmark:      holding_institution_shelfmark,
         link_to_holding_institution_record: link_to_holding_institution_record,
         production_date:                    production_date,
         production_place_as_recorded:       production_place_as_recorded,
@@ -313,7 +317,8 @@ class DSConvertCLI < Thor
       source_type                        = 'openn-tei'
       holding_institution_as_recorded    = xml.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
       holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
-      holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
+      holding_institution_id_number      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno').text()
+      holding_institution_shelfmark      = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
       link_to_holding_institution_record = xml.xpath('//altIdentifier[@type="resource"][1]').text.strip
       production_place_as_recorded       = xml.xpath('//origPlace/text()').map(&:to_s).join '|'
       production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
@@ -370,6 +375,7 @@ class DSConvertCLI < Thor
         holding_institution:                holding_institution,
         holding_institution_as_recorded:    holding_institution_as_recorded,
         holding_institution_id_number:      holding_institution_id_number,
+        holding_institution_shelfmark:      holding_institution_shelfmark,
         link_to_holding_institution_record: link_to_holding_institution_record,
         production_place_as_recorded:       production_place_as_recorded,
         production_place:                   production_place,

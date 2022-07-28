@@ -8,6 +8,7 @@ source_type
 holding_institution
 holding_institution_as_recorded
 holding_institution_id_number
+holding_institution_shelfmark
 link_to_holding_institution_record
 iiif_manifest
 production_place_as_recorded
