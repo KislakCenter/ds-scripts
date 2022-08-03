@@ -17,8 +17,11 @@ module DS
       # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
       def extract_langs record, separator: '|'
+        # Language is in 008 at characters 35-37 (0-based indexing) 
         (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
+        # 041 is present if there's more than one language
         langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
+        # if there are 041 values, the lang from 008 is repeated; remove the duplicate
         langs.uniq.join separator
       end
 
