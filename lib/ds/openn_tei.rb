@@ -151,6 +151,20 @@ module DS
         }.reject(&:empty?).join '|'
       end
 
+      ##
+      # @param [Nokogiri::XML::Node] xml the TEI xml
+      # @return [Array<String>]
+      def extract_note xml
+        # skip_pattern = %r{^(Support|Extent|Collation):\s*}i
+        xpath = '/TEI/teiHeader/fileDesc/notesStmt/note[not(@type)]/text()'
+        terminal_punct = %r{[.,;:?!]"?$}
+        xml.xpath(xpath).map(&:text).map(&:strip).map { |note|
+          note.gsub(%r{\s+}, ' ')
+        }.map { |note|
+          DS.terminate note, terminator: '.', force: false
+        }
+      end
+
       def source_modified xml
         record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when').text
         return nil if record_date.empty?

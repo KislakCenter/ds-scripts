@@ -368,6 +368,7 @@ class DSConvertCLI < Thor
       dimensions                         = ''
       dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
       decoration                         = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
+      note                               = DS::OPennTEI.extract_note(xml).join ' '
       data_processed_at                  = timestamp
       data_source_modified               = DS::OPennTEI.source_modified xml
       source_file                        = in_xml
@@ -425,6 +426,7 @@ class DSConvertCLI < Thor
         dimensions:                         dimensions,
         dimensions_as_recorded:             dimensions_as_recorded,
         decoration:                         decoration,
+        note:                               note,
         data_processed_at:                  data_processed_at,
         data_source_modified:               data_source_modified,
         source_file:                        source_file,
