@@ -63,6 +63,7 @@ material
 material_label
 physical_description
 acknowledgements
+note
 data_processed_at
 data_source_modified
 source_file
