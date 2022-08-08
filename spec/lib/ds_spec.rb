@@ -132,4 +132,35 @@ RSpec.describe 'DS' do
       expect(DS.adjust_for_century '-1499^-1400').to eq '-1499^-1401'
     end
   end
+
+  context 'terminate' do
+    it %q{adds a period ('car' => 'car.')} do
+      expect(DS.terminate 'car').to eq 'car.'
+    end
+
+    it %q{adds a period before a double-quote ('car"' => 'car."')} do
+      expect(DS.terminate 'car"').to eq 'car."'
+    end
+
+    it %q{leaves in place final ','} do
+      expect(DS.terminate 'car,'). to eq 'car,'
+    end
+
+    it %q{leaves in place final ',"'} do
+      expect(DS.terminate 'car,"'). to eq 'car,"'
+    end
+
+    it %q{leaves in place final '?'} do
+      expect(DS.terminate 'car?'). to eq 'car?'
+    end
+
+    it %q{forces replacement of '?' with '.' ('car?' => 'car.')} do
+      expect(DS.terminate 'car?', force: true). to eq 'car.'
+    end
+
+    it %q{forces replacement of '?"' with '."' ('car?"' => 'car."') } do
+      expect(DS.terminate 'car?"', force: true). to eq 'car."'
+    end
+
+  end
 end

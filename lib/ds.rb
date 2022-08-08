@@ -55,6 +55,31 @@ module DS
     end
 
     ##
+    # Add termination to string if it lacks terminal punctuation.
+    # Terminal puncuation is one of
+    #
+    #     . , ; : ? or !
+    #
+    # @param [String] str the string to terminate
+    # @param [String] terminator the terminator to use
+    # @param [Boolean] force use exact termination with +terminator+
+    # @return [String]
+    def terminate str, terminator: '.', force: false
+      terminal_punct = %r{([.,;:?!])("?)$}
+
+      # str is already terminated
+      return str if str.end_with? terminator
+      return str if str.end_with? %Q{#{terminator}"}
+
+      # str lacks terminal punctuation; add it
+      return str.sub %r{("?)$}, "#{terminator}\\1" if str !~ terminal_punct
+      # str has to have exact terminal punctuation
+      return str.sub terminal_punct, "#{terminator}\\2" if force
+      # string has some terminal punctuation; return it
+      str
+    end
+
+    ##
     # Given a pipe separated list of single years or ranges of years, return
     # a pipe- and semicolon-separated list of century integers. Year ranges
     # should be separated by the +^+ character, so that +-+ can unambiguously
