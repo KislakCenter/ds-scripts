@@ -327,6 +327,35 @@ module DS
         fptr_addresses.map { |address| locate_filename address }
       end
 
+      ##
+      # Extract the notes at all level from the +xml+, and return
+      # an array of strings
+      #
+      # @param [Nokogiri::XML::Node] xml the document's xml
+      # @return [Array<String>] the note values
+      def extract_note xml
+        notes = []
+        # all notes that don't have type
+        xpath = %q{//mods:note[not(@type)]/text()}
+        notes += find_ms(xml).map { |node| node.xpath(xpath) }
+        notes += find_parts(xml).map { |node| node.xpath(xpath) }
+        notes += find_texts(xml).map { |node| node.xpath(xpath) }
+        notes += find_pages(xml).map { |node| node.xpath(xpath) }
+
+        prefixes       = %r{^lang:\s*}i
+        terminal_punct = %r{[.,;:?!]"?$}
+        notes.flatten.map { |note|
+          # get node text and clean whitespace
+          note.text.strip.gsub(%r{\s+}, ' ')
+        }.uniq.reject { |note|
+          # skip notes with prefixes like 'lang: '
+          note =~ prefixes
+        }.map { |note|
+          # add period to any note without terminal punctuation: .,;:? or !
+          note =~ terminal_punct ? note : "#{note}."
+        }
+      end
+
       def find_parts xml
         # /mets:mets/mets:structMap/mets:div/mets:div/@DMDID
         # manuscripts parts are two divs deep in the structMap
