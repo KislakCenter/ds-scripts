@@ -401,6 +401,26 @@ module DS
         "Extent: #{DS.clean_string phys_desc, terminator: '.'}" unless phys_desc.strip.empty?
       end
 
+      ##
+      # Extract notes from +record+.
+      #
+      # Extract values from `500$a` fields that do not begin with AMREMM
+      # tags for specific values like 'Binding:'. Specifically, this method
+      # ignores fields beginning with:
+      #
+      #    Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|\
+      #         Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark
+      #
+      # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
+      # @return [Array<String>] an array of note strings
+      def extract_note record
+        skip_pattern = %r{^\s*(Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark):\s*}
+        xpath = "datafield[@tag=500]/subfield[@code='a']/text()"
+        record.xpath(xpath).reject { |note|
+          note.text =~ skip_pattern
+        }
+      end
+
       # TODO: This CSV is a stopgap; find a more sustainable solution
       IIIF_CSV = File.join(__dir__, 'data/iiif_manifests.csv')
       IIIF_MANIFESTS = CSV.readlines(IIIF_CSV, headers: true).inject({}) { |h,row|
