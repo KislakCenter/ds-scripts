@@ -232,6 +232,25 @@ module DS
       end
       @@centuries[century.to_s]
     end
+
+    @@logger = nil
+    @@loggers = {}
+    def logger
+      return @@logger if @@logger
+      @@logger = DS.logger_for self.class.name
+    end
+
+
+    def logger_for(classname)
+      @@loggers[classname] ||= configure_logger_for(classname)
+    end
+
+    def configure_logger_for(classname)
+      logger = Logger.new(STDOUT)
+      logger.progname = classname
+      logger.level = Settings.ds.log_level || :warn
+      logger
+    end
   end
 
   self.extend ClassMethods

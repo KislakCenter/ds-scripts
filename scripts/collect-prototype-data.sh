@@ -32,6 +32,11 @@ else
   exit 1
 fi
 
+#################################
+# Update the recon files from git
+#################################
+${SCRIPT_DIR}/../bin/recon recon-update
+
 ################
 # DS legacy METS
 ################
@@ -46,11 +51,11 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.cs
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 # Run Princeton with Holdings information
-bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
+bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
 
 ##########
 # FLP TEI
@@ -58,7 +63,7 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --institution princeton -o
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert openn -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert openn --skip-recon-update -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 #######################

@@ -18,8 +18,8 @@ module Recon
     repo_name    = Settings.recon.git_local_name
     url          = Settings.recon.git_repo
     branch       = Settings.recon.git_branch || 'main'
-    logger       = Logger.new STDOUT
-    logger.level = Logger::WARN
+    logger       = DS.logger
+    # logger.level = Logger::WARN
     Dir.chdir data_dir do
       unless File.exist? repo_name
         Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger

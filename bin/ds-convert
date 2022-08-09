@@ -2,14 +2,12 @@
 
 require 'thor'
 require 'csv'
-require_relative '../lib/ds'
+require_relative '../lib/ds/cli'
 
 # TODO: No URIs for Scribes in prototype data set; need test data
 
-class DSConvertCLI < Thor
-  include Recon
+class DSConvertCLI < DS::CLI
   DS.configure!
-  Recon.update! unless ENV['SKIP_RECON_UPDATE'] # in case no network
 
   def self.exit_on_failure?
     true
@@ -25,6 +23,8 @@ class DSConvertCLI < Thor
   option :'holdings-file', banner: 'FILE', desc: 'Associated Holdings File (if separate from records)', aliases: '-f'
   def marc *files
     return false unless validate_args files
+    Recon.update! unless skip_git? options
+
     inst_qid = DS::Institutions.find_qid options[:institution]
     abort "Not a known institution: #{options[:institution]}" unless inst_qid
     preferred_name = DS::Institutions.preferred_name options[:institution]
@@ -182,6 +182,7 @@ class DSConvertCLI < Thor
   LONGDESC
   def mets *files
     return false unless validate_args files
+    Recon.update! unless skip_git? options
     timestamp = DS.timestamp
 
     rows = files.map { |in_xml|
@@ -313,6 +314,7 @@ class DSConvertCLI < Thor
   LONGDESC
   def openn *files
     return false unless validate_args files
+    Recon.update! unless skip_git? options
     timestamp = DS.timestamp
     rows = files.map { |in_xml|
       xml = File.open(in_xml) { |f| Nokogiri::XML(f) }

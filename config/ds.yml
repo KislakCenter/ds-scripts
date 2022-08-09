@@ -1,0 +1,3 @@
+---
+ds:
+  log_level: <%= ENV['DS_LOG_LEVEL'] || 'WARN' %>
