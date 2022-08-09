@@ -49,7 +49,7 @@ module DS
 
       return normal if terminator.nil?
 
-      terminate string, terminator: terminator, force: true
+      terminate normal, terminator: terminator, force: true
     end
 
     ##
