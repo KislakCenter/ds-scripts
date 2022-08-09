@@ -49,23 +49,34 @@ module DS
 
       return normal if terminator.nil?
 
-      # terminator is present; append it after any removing trailing whitespace and punctuation
-      # "#{normal.sub(%r{[,.:!?;[:space:]]+$}, '').strip}#{terminator}"
-      "#{normal.sub(DS::TRAILING_PUNCTUATION_RE, '').strip}#{terminator}"
+      terminate string, terminator: terminator, force: true
     end
 
     ##
     # Add termination to string if it lacks terminal punctuation.
     # Terminal punctuation is one of
     #
-    #     . , ; : ? or !
+    #     . , ; : ? !
+    #
+    # When +:terminator+ is +''+ or +nil+, trailing punctuation characters
+    # are *always* removed.
+    #
+    # Strings ending with ellipsis, '...' or '..."' are returned unaltered. This
+    # behavior cannot be overridden with `:force`.
     #
     # @param [String] str the string to terminate
-    # @param [String] terminator the terminator to use
+    # @param [String] terminator the terminator to use; default: +.+
     # @param [Boolean] force use exact termination with +terminator+
     # @return [String]
     def terminate str, terminator: '.', force: false
-      terminal_punct = %r{([.,;:?!])("?)$}
+      terminal_punct = %r{([.,;:?!]+)("?)$}
+      ellipsis = %r{\.\.\."?$}
+
+      # don't strip ellipses
+      return str if str.strip =~ ellipsis
+
+      # if :terminator is '' or nil, remove any terminal punctuation
+      return str.sub terminal_punct, '\2' if terminator.to_s.empty?
 
       # str is already terminated
       return str if str.end_with? terminator
