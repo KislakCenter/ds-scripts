@@ -68,7 +68,7 @@ module DS
 
       def extract_language_as_recorded xml, separator: '|'
         xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-        as_recorded = xml.xpath(xpath).text()
+        as_recorded = xml.xpath(xpath).text
         as_recorded = DS::OPennTEI.extract_language_codes xml, separator if as_recorded.to_s.strip.empty?
         as_recorded
       end

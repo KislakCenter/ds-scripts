@@ -33,7 +33,7 @@ module DS
       # @return [String]
       def extract_language_as_recorded record
         xpath = "datafield[@tag=546]/subfield[@code='a']"
-        langs = record.xpath(xpath).map { |val| DS.clean_string val.text }
+        langs = record.xpath(xpath).map { |val| DS.clean_string val.text, terminator: ''}
         return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
 
         extract_langs record
