@@ -21,8 +21,9 @@ module DS
         STDERR.puts 'WARNING: SKIP_RECON_UPDATE set; skipping git pull'
         return
       end
-      STDOUT.puts "Updating Recon CSVs from #{Settings.recon.git_repo}"
+      STDOUT.print "Updating Recon CSVs from #{Settings.recon.git_repo}..."
       Recon.update!
+      STDOUT.puts "done."
     end
 
     protected
