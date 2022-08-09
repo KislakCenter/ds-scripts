@@ -134,33 +134,160 @@ RSpec.describe 'DS' do
   end
 
   context 'terminate' do
-    it %q{adds a period ('car' => 'car.')} do
-      expect(DS.terminate 'car').to eq 'car.'
+    context %q{default terminator: '.' } do
+
+      it %q{adds a period ('car' => 'car.')} do
+        expect(DS.terminate 'car').to eq 'car.'
+      end
+
+      it %q{adds a '.' before a double-quote ('car"' => 'car."')} do
+        expect(DS.terminate 'car"').to eq 'car."'
+      end
+
+      it %q{leaves in place final ','} do
+        expect(DS.terminate 'car,').to eq 'car,'
+      end
+
+      it %q{leaves in place final ',"'} do
+        expect(DS.terminate 'car,"').to eq 'car,"'
+      end
+
+      it %q{leaves in place final '?'} do
+        expect(DS.terminate 'car?').to eq 'car?'
+      end
+
+      it %q{adds a '?' before a double-quote ('car"' => 'car?"')} do
+        expect(DS.terminate 'car"', terminator: '?').to eq 'car?"'
+      end
     end
 
-    it %q{adds a period before a double-quote ('car"' => 'car."')} do
-      expect(DS.terminate 'car"').to eq 'car."'
+    context %q{force: true} do
+      it %q{forces replacement of '?' with '.' ('car?' => 'car.')} do
+        expect(DS.terminate 'car?', force: true).to eq 'car.'
+      end
+
+      it %q{forces replacement of '?"' with '."' ('car?"' => 'car."') } do
+        expect(DS.terminate 'car?"', force: true).to eq 'car."'
+      end
     end
 
-    it %q{leaves in place final ','} do
-      expect(DS.terminate 'car,'). to eq 'car,'
+    context %q{terminator: ''} do
+      it %q{removes '.' from final '."' ('car."' => 'car"')} do
+        expect(DS.terminate %Q{car."}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes ',' from final ',"' ('car,"' => 'car"')} do
+        expect(DS.terminate %Q{car,"}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes ';' from final ';"' ('car;"' => 'car"')} do
+        expect(DS.terminate %Q{car;"}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes ':' from final ':"' ('car:"' => 'car"')} do
+        expect(DS.terminate %q{car:"}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes '?' from final '?"' ('car?"' => 'car"')} do
+        expect(DS.terminate %q{car?"}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes '!' from final '!"' ('car!"' => 'car"')} do
+        expect(DS.terminate %q{car!"}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes final '.'           ('car.'  => 'car')} do
+        expect(DS.terminate %q{car.}, terminator: '').to eq 'car'
+      end
+
+      it %q{removes final ','           ('car,'  => 'car')} do
+        expect(DS.terminate %q{car,}, terminator: '').to eq 'car'
+      end
+
+      it %q{removes final ';'           ('car;'  => 'car')} do
+        expect(DS.terminate %q{car;}, terminator: '').to eq 'car'
+      end
+
+      it %q{removes final ':'           ('car:'  => 'car')} do
+        expect(DS.terminate %q{car:}, terminator: '').to eq 'car'
+      end
+
+      it %q{removes final '?'           ('car?'  => 'car')} do
+        expect(DS.terminate %q{car?}, terminator: '').to eq 'car'
+      end
+
+      it %q{removes final '!'           ('car!'  => 'car')} do
+        expect(DS.terminate %q{car!}, terminator: '').to eq 'car'
+      end
     end
 
-    it %q{leaves in place final ',"'} do
-      expect(DS.terminate 'car,"'). to eq 'car,"'
+    context %q{terminator: nil} do
+      it %q{removes '.' from final '."' ('car,"' => 'car"')} do
+        expect(DS.terminate %q{car."}, terminator: nil).to eq 'car"'
+      end
+
+      it %q{removes ',' from final ',"' ('car,"' => 'car"')} do
+        expect(DS.terminate %q{car,"}, terminator: nil).to eq 'car"'
+      end
+
+      it %q{removes ';' from final ':"' ('car;"' => 'car"')} do
+        expect(DS.terminate %q{car;"}, terminator: nil).to eq 'car"'
+      end
+
+      it %q{removes ':' from final ':"' ('car:"' => 'car"')} do
+        expect(DS.terminate %q{car:"}, terminator: nil).to eq 'car"'
+      end
+
+      it %q{removes '?' from final '?"' ('car?"' => 'car"')} do
+        expect(DS.terminate %q{car?"}, terminator: nil).to eq 'car"'
+      end
+
+      it %q{removes '!' from final '!"' ('car!"' => 'car"')} do
+        expect(DS.terminate %q{car!"}, terminator: nil).to eq 'car"'
+      end
     end
 
-    it %q{leaves in place final '?'} do
-      expect(DS.terminate 'car?'). to eq 'car?'
-    end
+    context %q{ellipsis} do
+      it %q{ignores final '..."' with terminator: nil                             ('car..."'       => 'car..."')} do
+        expect(DS.terminate %q{car..."}, terminator: nil).to eq 'car..."'
+      end
 
-    it %q{forces replacement of '?' with '.' ('car?' => 'car.')} do
-      expect(DS.terminate 'car?', force: true). to eq 'car.'
-    end
+      it %q{ignores final '...'  with terminator: nil                             ('car...'        => 'car...')} do
+        expect(DS.terminate %q{car...}, terminator: nil).to eq 'car...'
+      end
 
-    it %q{forces replacement of '?"' with '."' ('car?"' => 'car."') } do
-      expect(DS.terminate 'car?"', force: true). to eq 'car."'
-    end
+      it %q{ignores final '..."' with terminator: ''                              ('car..."'       => 'car..."')} do
+        expect(DS.terminate %q{car..."}, terminator: '').to eq 'car..."'
+      end
 
+      it %q{ignores final '...'  with terminator: ''                              ('car...'        => 'car...')} do
+        expect(DS.terminate %q{car...}, terminator: '').to eq 'car...'
+      end
+
+      it %q{ignores final '..."' with default terminator                          ('car..."'       => 'car..."')} do
+        expect(DS.terminate %q{car..."}).to eq 'car..."'
+      end
+
+      it %q{ignores final '...'  with default terminator, force: true             ('car...'        => 'car...')} do
+        expect(DS.terminate %q{car...}, force: true).to eq 'car...'
+      end
+
+      it %q{ignores final '..."' with default terminator, force: true             ('car..."'       => 'car..."')} do
+        expect(DS.terminate %q{car..."}, force: true).to eq 'car..."'
+      end
+
+      it %q{removes final '.'    with terminator: '' and medial ellipsis          ('car... door.'  => 'car... door')} do
+        expect(DS.terminate %q{car... door.}, terminator: '').to eq 'car... door'
+      end
+
+      it %q{replaces final '.'   with medial '...', terminator: '?', force: true  ('car... door.'  => 'car... door?')} do
+        expect(DS.terminate %q{car... door.}, terminator: '?', force: true).to eq 'car... door?'
+      end
+
+      it %q{replaces final '."'  with medial '...', terminator: '?', force: true  ('car... door."' => 'car... door?'")} do
+        expect(DS.terminate %q{car... door."}, terminator: '?', force: true).to eq 'car... door?"'
+      end
+
+    end
   end
 end
