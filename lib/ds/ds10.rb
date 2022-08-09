@@ -335,15 +335,14 @@ module DS
       # @return [Array<String>] the note values
       def extract_note xml
         notes = []
-        # all notes that don't have type
+        # get all notes that don't have @type
         xpath = %q{//mods:note[not(@type)]/text()}
         notes += find_ms(xml).map { |node| node.xpath(xpath) }
         notes += find_parts(xml).map { |node| node.xpath(xpath) }
         notes += find_texts(xml).map { |node| node.xpath(xpath) }
         notes += find_pages(xml).map { |node| node.xpath(xpath) }
 
-        prefixes       = %r{^lang:\s*}i
-        terminal_punct = %r{[.,;:?!]"?$}
+        prefixes = %r{^lang:\s*}i
         notes.flatten.map { |note|
           # get node text and clean whitespace
           note.text.strip.gsub(%r{\s+}, ' ')
@@ -352,7 +351,7 @@ module DS
           note =~ prefixes
         }.map { |note|
           # add period to any note without terminal punctuation: .,;:? or !
-          note =~ terminal_punct ? note : "#{note}."
+          DS.terminate note, terminator: '.'
         }
       end
 
