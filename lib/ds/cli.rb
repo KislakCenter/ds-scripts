@@ -27,7 +27,7 @@ module DS
 
     protected
     def skip_git? options
-      return true if options[:'skip-git-update']
+      return true if options[:'skip-recon-update']
       return true if ENV['SKIP_RECON_UPDATE']
       false
     end
