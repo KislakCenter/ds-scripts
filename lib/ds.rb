@@ -56,7 +56,7 @@ module DS
 
     ##
     # Add termination to string if it lacks terminal punctuation.
-    # Terminal puncuation is one of
+    # Terminal punctuation is one of
     #
     #     . , ; : ? or !
     #
@@ -82,8 +82,8 @@ module DS
     ##
     # Given a pipe separated list of single years or ranges of years, return
     # a pipe- and semicolon-separated list of century integers. Year ranges
-    # should be separated by the +^+ character, so that +-+ can unambiguously
-    # be used for BCE years as negative integers (<tt>1099-1000 BCE</tt> =>
+    # are separated by the +^+ character, so that +-+ can unambiguously be
+    # used for BCE years as negative integers (<tt>1099-1000 BCE</tt> =>
     # <tt>-1099^-1000</tt>)
     #
     # For example,
