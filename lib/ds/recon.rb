@@ -46,7 +46,10 @@ module Recon
   def self.lookup set_name, subset: nil, value:, column:
     recon_set = find_set set_name
     key = build_key value, subset
-    return unless recon_set.include? key
+    return recon_set.dig key, column if recon_set.include? key
+
+    # try a key with a "cleaned" string
+    key = build_key DS.clean_string(value, terminator: ''), subset
     recon_set.dig key, column
   end
 
@@ -116,8 +119,8 @@ module Recon
   def self.add_alt_keys data
     data.keys.each do |key|
       value, subset = key.split '$$'
-      next unless value =~ DS::TRAILING_PUNCTUATION_RE
-      alt_value = value.sub DS::TRAILING_PUNCTUATION_RE, ''
+      # create a cleaned version of the value without final punctuation
+      alt_value = DS.clean_string value, terminator: ''
       alt_key = build_key alt_value, subset
       next if data.include? alt_key
       data[alt_key] = data[key]
