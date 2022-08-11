@@ -62,6 +62,7 @@ material_as_recorded
 material
 material_label
 physical_description
+note
 acknowledgements
 data_processed_at
 data_source_modified

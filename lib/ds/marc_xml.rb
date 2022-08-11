@@ -33,7 +33,7 @@ module DS
       # @return [String]
       def extract_language_as_recorded record
         xpath = "datafield[@tag=546]/subfield[@code='a']"
-        langs = record.xpath(xpath).map { |val| DS.clean_string val.text }
+        langs = record.xpath(xpath).map { |val| DS.clean_string val.text, terminator: ''}
         return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
 
         extract_langs record
@@ -399,6 +399,26 @@ module DS
         }.join ' '
         STDERR.puts "WARNING Value over 400 characters: '#{phys_desc}'" if phys_desc.size > 400
         "Extent: #{DS.clean_string phys_desc, terminator: '.'}" unless phys_desc.strip.empty?
+      end
+
+      ##
+      # Extract notes from +record+.
+      #
+      # Extract values from `500$a` fields that do not begin with AMREMM
+      # tags for specific values like 'Binding:'. Specifically, this method
+      # ignores fields beginning with:
+      #
+      #    Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|\
+      #         Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark
+      #
+      # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
+      # @return [Array<String>] an array of note strings
+      def extract_note record
+        skip_pattern = %r{^\s*(Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark):\s*}
+        xpath = "datafield[@tag=500]/subfield[@code='a']/text()"
+        record.xpath(xpath).reject { |note|
+          note.text =~ skip_pattern
+        }
       end
 
       # TODO: This CSV is a stopgap; find a more sustainable solution

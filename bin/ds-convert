@@ -2,14 +2,12 @@
 
 require 'thor'
 require 'csv'
-require_relative '../lib/ds'
+require_relative '../lib/ds/cli'
 
 # TODO: No URIs for Scribes in prototype data set; need test data
 
-class DSConvertCLI < Thor
-  include Recon
+class DSConvertCLI < DS::CLI
   DS.configure!
-  Recon.update! unless ENV['SKIP_RECON_UPDATE'] # in case no network
 
   def self.exit_on_failure?
     true
@@ -25,6 +23,8 @@ class DSConvertCLI < Thor
   option :'holdings-file', banner: 'FILE', desc: 'Associated Holdings File (if separate from records)', aliases: '-f'
   def marc *files
     return false unless validate_args files
+    Recon.update! unless skip_git? options
+
     inst_qid = DS::Institutions.find_qid options[:institution]
     abort "Not a known institution: #{options[:institution]}" unless inst_qid
     preferred_name = DS::Institutions.preferred_name options[:institution]
@@ -100,6 +100,7 @@ class DSConvertCLI < Thor
         folios                             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
         dimensions_as_recorded             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'c'
         decoration                         = DS::MarcXML.extract_named_500 record,  name: 'Decoration'
+        note                               = DS::MarcXML.extract_note(record).join ' '
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
         source_file                        = in_xml
@@ -165,6 +166,7 @@ class DSConvertCLI < Thor
           extent_as_recorded:                 extent_as_recorded,
           dimensions_as_recorded:             dimensions_as_recorded,
           decoration:                         decoration,
+          note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
           source_file:                        source_file,
@@ -180,6 +182,7 @@ class DSConvertCLI < Thor
   LONGDESC
   def mets *files
     return false unless validate_args files
+    Recon.update! unless skip_git? options
     timestamp = DS.timestamp
 
     rows = files.map { |in_xml|
@@ -237,6 +240,7 @@ class DSConvertCLI < Thor
       material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
       material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
       physical_description               = DS::DS10.extract_physical_description xml
+      note                               = DS::DS10.extract_note(xml).join ' '
       acknowledgements                   = DS::DS10.extract_acknowledgements xml
       data_processed_at                  = timestamp
       data_source_modified               = DS::DS10.source_modified
@@ -293,6 +297,7 @@ class DSConvertCLI < Thor
         material:                           material,
         material_label:                     material_label,
         physical_description:               physical_description,
+        note:                               note,
         acknowledgements:                   acknowledgements,
         data_processed_at:                  data_processed_at,
         data_source_modified:               data_source_modified,
@@ -309,6 +314,7 @@ class DSConvertCLI < Thor
   LONGDESC
   def openn *files
     return false unless validate_args files
+    Recon.update! unless skip_git? options
     timestamp = DS.timestamp
     rows = files.map { |in_xml|
       xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
@@ -364,6 +370,7 @@ class DSConvertCLI < Thor
       dimensions                         = ''
       dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
       decoration                         = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
+      note                               = DS::OPennTEI.extract_note(xml).join ' '
       data_processed_at                  = timestamp
       data_source_modified               = DS::OPennTEI.source_modified xml
       source_file                        = in_xml
@@ -421,6 +428,7 @@ class DSConvertCLI < Thor
         dimensions:                         dimensions,
         dimensions_as_recorded:             dimensions_as_recorded,
         decoration:                         decoration,
+        note:                               note,
         data_processed_at:                  data_processed_at,
         data_source_modified:               data_source_modified,
         source_file:                        source_file,

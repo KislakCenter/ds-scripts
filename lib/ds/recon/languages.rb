@@ -78,7 +78,7 @@ module Recon
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         xml.xpath('//record').each do |record|
-          as_recorded = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text
+          as_recorded = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
           codes = DS::MarcXML.extract_langs record, separator: separator
           as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
           data << [as_recorded, codes]
@@ -94,7 +94,7 @@ module Recon
       files.each do |in_xml|
         xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
         DS::DS10.extract_language(xml, separator: separator).split(separator).each do |lang|
-          data << [lang, nil]
+          data << [DS.terminate(lang, terminator: ''), nil]
         end
       end
       # the Mets files don't have codes; so no need for expand_codes

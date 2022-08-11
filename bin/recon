@@ -2,12 +2,10 @@
 
 require 'thor'
 require 'csv'
-require_relative '../lib/ds'
+require_relative '../lib/ds/cli'
 
-class ReconCLI < Thor
-  include Recon
+class ReconCLI < DS::CLI
   DS.configure!
-  Recon.update! unless ENV['SKIP_RECON_UPDATE'] # in case no network
 
   def self.exit_on_failure?
     true
@@ -15,7 +13,7 @@ class ReconCLI < Thor
 
   class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
   class_option :directory, banner: 'PATH', desc: "Output directory", aliases: '-o', default: '.'
-  class_option :'source-type', banner: 'TYPE', desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: true
+  class_option :'source-type', banner: 'TYPE', desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: (ARGV.size > 0 && ARGV[0] != 'recon-update')
   class_option :verbose, desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
 
   desc "names FILES", "Extract names from one or more FILEs"
@@ -29,6 +27,8 @@ class ReconCLI < Thor
 
     out_csv = out_file 'names', options
     begin
+      Recon.update! unless skip_git? options
+
       case options[:'source-type']
       when 'marc'
         data = Names.from_marc files
@@ -59,6 +59,8 @@ class ReconCLI < Thor
 
     out_csv = out_file 'places', options
     begin
+      Recon.update! unless skip_git? options
+
       case options[:'source-type']
       when 'marc'
         data = Places.from_marc files
@@ -96,6 +98,8 @@ LONGDESC
     tags    = options[:'named-subjects'] ? [600, 610] : [650, 651]
     out_csv = out_file base, options
     begin
+      Recon.update! unless skip_git? options
+
       case options[:'source-type']
       when 'marc'
         data = klass.from_marc files, tags: tags
@@ -125,6 +129,7 @@ LONGDESC
 
     out_csv = out_file 'genres', options
     begin
+      Recon.update! unless skip_git? options
       case options[:'source-type']
       when 'marc'
         data = Genres.from_marc files
@@ -154,6 +159,7 @@ LONGDESC
 
     out_csv = out_file 'materials', options
     begin
+      Recon.update! unless skip_git? options
 
       case options[:'source-type']
       when 'marc'
@@ -186,6 +192,8 @@ LONGDESC
 
     out_csv = out_file 'languages', options
     begin
+      Recon.update! unless skip_git? options
+
       case options[:'source-type']
       when 'marc'
         data = Languages.from_marc files, separator: ';'
@@ -230,7 +238,6 @@ LONGDESC
     end
     puts "Wrote: #{out_file}"
   end
-
 end
 
 ReconCLI.start ARGV

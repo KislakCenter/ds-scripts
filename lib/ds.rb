@@ -49,16 +49,52 @@ module DS
 
       return normal if terminator.nil?
 
-      # terminator is present; append it after any removing trailing whitespace and punctuation
-      # "#{normal.sub(%r{[,.:!?;[:space:]]+$}, '').strip}#{terminator}"
-      "#{normal.sub(DS::TRAILING_PUNCTUATION_RE, '').strip}#{terminator}"
+      terminate normal, terminator: terminator, force: true
+    end
+
+    ##
+    # Add termination to string if it lacks terminal punctuation.
+    # Terminal punctuation is one of
+    #
+    #     . , ; : ? !
+    #
+    # When +:terminator+ is +''+ or +nil+, trailing punctuation characters
+    # are *always* removed.
+    #
+    # Strings ending with ellipsis, '...' or '..."' are returned unaltered. This
+    # behavior cannot be overridden with `:force`.
+    #
+    # @param [String] str the string to terminate
+    # @param [String] terminator the terminator to use; default: +.+
+    # @param [Boolean] force use exact termination with +terminator+
+    # @return [String]
+    def terminate str, terminator: '.', force: false
+      terminal_punct = %r{([.,;:?!]+)("?)$}
+      ellipsis = %r{\.\.\."?$}
+
+      # don't strip ellipses
+      return str if str.strip =~ ellipsis
+
+      # if :terminator is '' or nil, remove any terminal punctuation
+      return str.sub terminal_punct, '\2' if terminator.to_s.empty?
+
+      # str is already terminated
+      return str if str.end_with? terminator
+      return str if str.end_with? %Q{#{terminator}"}
+
+      # str lacks terminal punctuation; add it
+      return str.sub %r{("?)$}, "#{terminator}\\1" if str !~ terminal_punct
+      # str has to have exact terminal punctuation
+      return str.sub terminal_punct, "#{terminator}\\2" if force
+      # string has some terminal punctuation; return it
+      str
     end
 
     ##
     # Given a pipe separated list of single years or ranges of years, return
     # a pipe- and semicolon-separated list of century integers. Year ranges
-    # should be separated by the +^+ character, so that +-+ can unambiguously
-    # be used for BCE years as negative integers (<tt>1099-1000 BCE</tt> =>
+    # are separated by the +^+ character, so that +-+ can unambiguously be
+    # used for BCE years as negative integers (<tt>1099-1000 BCE</tt> =>
     # <tt>-1099^-1000</tt>)
     #
     # For example,
@@ -206,6 +242,25 @@ module DS
         end.freeze
       end
       @@centuries[century.to_s]
+    end
+
+    @@logger = nil
+    @@loggers = {}
+    def logger
+      return @@logger if @@logger
+      @@logger = DS.logger_for self.class.name
+    end
+
+
+    def logger_for(classname)
+      @@loggers[classname] ||= configure_logger_for(classname)
+    end
+
+    def configure_logger_for(classname)
+      logger = Logger.new(STDOUT)
+      logger.progname = classname
+      logger.level = Settings.ds.log_level || :warn
+      logger
     end
   end
 

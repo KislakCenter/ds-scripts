@@ -18,14 +18,20 @@ module Recon
     repo_name    = Settings.recon.git_local_name
     url          = Settings.recon.git_repo
     branch       = Settings.recon.git_branch || 'main'
-    logger       = Logger.new STDOUT
-    logger.level = Logger::WARN
+    logger       = DS.logger
+    # logger.level = Logger::WARN
     Dir.chdir data_dir do
       unless File.exist? repo_name
         Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger
       end
       g = Git.open repo_name, log: logger
-      g.pull 'origin', branch
+      begin
+        g.pull 'origin', branch
+      rescue Git::GitExecuteError => e
+        logger.warn { "Error executing git command" }
+        logger.warn { e.message }
+        STDERR.puts e.backtrace if ENV['DS_VERBOSE']
+      end
     end
   end
 
@@ -40,7 +46,10 @@ module Recon
   def self.lookup set_name, subset: nil, value:, column:
     recon_set = find_set set_name
     key = build_key value, subset
-    return unless recon_set.include? key
+    return recon_set.dig key, column if recon_set.include? key
+
+    # try a key with a "cleaned" string
+    key = build_key DS.clean_string(value, terminator: ''), subset
     recon_set.dig key, column
   end
 
@@ -110,8 +119,8 @@ module Recon
   def self.add_alt_keys data
     data.keys.each do |key|
       value, subset = key.split '$$'
-      next unless value =~ DS::TRAILING_PUNCTUATION_RE
-      alt_value = value.sub DS::TRAILING_PUNCTUATION_RE, ''
+      # create a cleaned version of the value without final punctuation
+      alt_value = DS.clean_string value, terminator: ''
       alt_key = build_key alt_value, subset
       next if data.include? alt_key
       data[alt_key] = data[key]

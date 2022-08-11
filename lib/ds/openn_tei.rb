@@ -68,7 +68,7 @@ module DS
 
       def extract_language_as_recorded xml, separator: '|'
         xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-        as_recorded = xml.xpath(xpath).text()
+        as_recorded = xml.xpath(xpath).text
         as_recorded = DS::OPennTEI.extract_language_codes xml, separator if as_recorded.to_s.strip.empty?
         as_recorded
       end
@@ -149,6 +149,20 @@ module DS
         date_array = xml.xpath('//origDate').map { |orig|
           orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
         }.reject(&:empty?).join '|'
+      end
+
+      ##
+      # @param [Nokogiri::XML::Node] xml the TEI xml
+      # @return [Array<String>]
+      def extract_note xml
+        # skip_pattern = %r{^(Support|Extent|Collation):\s*}i
+        xpath = '/TEI/teiHeader/fileDesc/notesStmt/note[not(@type)]/text()'
+        terminal_punct = %r{[.,;:?!]"?$}
+        xml.xpath(xpath).map(&:text).map(&:strip).map { |note|
+          note.gsub(%r{\s+}, ' ')
+        }.map { |note|
+          DS.terminate note, terminator: '.', force: false
+        }
       end
 
       def source_modified xml
