@@ -100,7 +100,7 @@ class DSConvertCLI < DS::CLI
         folios                             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
         dimensions_as_recorded             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'c'
         decoration                         = DS::MarcXML.extract_named_500 record,  name: 'Decoration'
-        note                               = DS::MarcXML.extract_note(record).join ' '
+        note                               = DS::MarcXML.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
         source_file                        = in_xml
@@ -241,7 +241,7 @@ class DSConvertCLI < DS::CLI
       material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
       material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
       physical_description               = DS::DS10.extract_physical_description xml
-      note                               = DS::DS10.extract_note(xml).join ' '
+      note                               = DS::DS10.extract_note(xml).join '|'
       acknowledgements                   = DS::DS10.extract_acknowledgements xml
       data_processed_at                  = timestamp
       data_source_modified               = DS::DS10.source_modified
@@ -372,7 +372,7 @@ class DSConvertCLI < DS::CLI
       dimensions                         = ''
       dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
       decoration                         = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
-      note                               = DS::OPennTEI.extract_note(xml).join ' '
+      note                               = DS::OPennTEI.extract_note(xml).join '|'
       data_processed_at                  = timestamp
       data_source_modified               = DS::OPennTEI.source_modified xml
       source_file                        = in_xml
