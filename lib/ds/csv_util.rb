@@ -22,6 +22,8 @@ module DS
         data.uniq
       end
 
+      # Columns with two levels of subfields, separated by '|' and ';'
+      NESTED_COLUMNS = %w{ subject subject_label genre genre_label }
       ##
       # Check all rows for validation errors, including:
       #
@@ -33,7 +35,8 @@ module DS
         valid = true
         rows.each_with_index do |hash,index|
           hash.each do |column, value|
-            if value.to_s.split(/[|]/).any? { |sub| sub =~ %r{\s+$} }
+            split_chars = NESTED_COLUMNS.include?(column) ? %r{[;|]} : %r{\|}
+            if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
               valid = false
               STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
             end
