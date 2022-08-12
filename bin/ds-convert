@@ -173,6 +173,7 @@ class DSConvertCLI < DS::CLI
         }
       }
     }
+    validate! rows unless options[:'skip-validation']
     write_csv rows, options
   end
 
@@ -305,6 +306,7 @@ class DSConvertCLI < DS::CLI
       }
     }
 
+    validate! rows unless options[:'skip-validation']
     write_csv rows, options
   end
 
@@ -366,9 +368,9 @@ class DSConvertCLI < DS::CLI
       acknowledgements                   = ''
       binding_description                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
       folios                             = ''
-      extent_as_recorded                 = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
+      extent_as_recorded                 = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
       dimensions                         = ''
-      dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text
+      dimensions_as_recorded             = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
       decoration                         = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
       note                               = DS::OPennTEI.extract_note(xml).join ' '
       data_processed_at                  = timestamp
@@ -434,6 +436,7 @@ class DSConvertCLI < DS::CLI
         source_file:                        source_file,
       }
     }
+    validate! rows unless options[:'skip-validation']
     write_csv rows, options
   end
 

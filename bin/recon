@@ -40,6 +40,7 @@ class ReconCLI < DS::CLI
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
+      validate! data unless options[:'skip-validation']
       write_csv out_csv, Names::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
@@ -72,6 +73,7 @@ class ReconCLI < DS::CLI
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
+      validate! data unless options[:skip_validation]
       write_csv out_csv, Places::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
@@ -109,6 +111,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
+      validate! data unless options[:skip_validation]
       write_csv out_csv, Subjects::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
@@ -139,6 +142,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
+      validate! data unless options[:skip_validation]
       write_csv out_csv, Genres::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
@@ -172,6 +176,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
 
+      validate! data unless options[:skip_validation]
       write_csv out_csv, Materials::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError
@@ -205,6 +210,7 @@ LONGDESC
         raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
       end
 
+      validate! data unless options[:skip_validation]
       write_csv out_csv, Languages::CSV_HEADERS, data
 
     rescue NotImplementedError, StandardError

@@ -7,6 +7,7 @@ module DS
     DS.configure!
 
     class_option :'skip-recon-update', desc: "Skip CSV update from git; ignored by recon-update", aliases: '-G', type: :boolean, default: false
+    class_option :'skip-validation', desc: "Skip validation of CSV values [same as SKIP_OUTPUT_VALIDATION=true]", aliases: '-V', type: :boolean, default: false
 
     desc "recon-update", "Update Recon CSVs from git"
     long_desc <<-LONGDESC
@@ -31,6 +32,14 @@ module DS
       return true if options[:'skip-recon-update']
       return true if ENV['SKIP_RECON_UPDATE']
       false
+    end
+
+    def validate! rows
+      return if options[:'skip-validation']
+      return if ENV['SKIP_OUTPUT_VALIDATION']
+      return if CSVUtil.validate rows
+
+      raise StandardError, "Validation errors found in output"
     end
   end
 end
