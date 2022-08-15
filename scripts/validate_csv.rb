@@ -6,15 +6,17 @@ require 'optparse'
 require_relative '../lib/ds/csv_util'
 
 ##
-# Check all CSV values for trailing spaces
+# Check output CSV values for trailing whitespace.
 #
-
+# Trailing whitespace is not permitted in Wikibase values.
 parser = OptionParser.new do |opts|
 
   opts.banner = <<EOF
 Usage: #{File.basename __FILE__} CSV [CSV...]
 
-Check all values in CSV[s] for trailing spaces.
+Check output CSV values for trailing whitespace. 
+
+Trailing whitespace is not permitted in Wikibase values.
 
 EOF
   help_help = 'Prints this help'
