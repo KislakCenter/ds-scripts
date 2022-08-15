@@ -23,7 +23,7 @@ module DS
       end
 
       # Columns with two levels of subfields, separated by '|' and ';'
-      NESTED_COLUMNS = %w{ subject subject_label genre genre_label }
+      NESTED_COLUMNS = %w{ subject subject_label genre genre_label production_place production_place_label language language_label }
       ##
       # Check all rows for validation errors, including:
       #
