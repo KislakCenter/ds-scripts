@@ -8,7 +8,6 @@ require_relative 'ds/csv_util'
 require_relative 'ds/recon'
 require_relative 'ds/institutions'
 
-
 module DS
   include DS::Constants
 
@@ -45,7 +44,7 @@ module DS
       # handle DS legacy superscript encoding, whitespace, duplicate '.'
       # remove trailing punctuation only if a terminator is specified (see below)
       # %r{(?<!\.)\.{2}(?!\.)} => two periods `\.{2}` when not preceded by a period (?<!\.) and not followed by a period (?!\.)
-      normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{(?<!\.)\.\.(?!\.)}, '.').delete '[]'
+      normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{(?<!\.)\.\.(?!\.)}, '.').delete('[]').strip
 
       return normal if terminator.nil?
 
@@ -58,8 +57,8 @@ module DS
     #
     #     . , ; : ? !
     #
-    # When +:terminator+ is +''+ or +nil+, trailing punctuation characters
-    # are *always* removed.
+    # When +:terminator+ is +''+ or +nil+, trailing punctuation is*always*
+    # removed.
     #
     # Strings ending with ellipsis, '...' or '..."' are returned unaltered. This
     # behavior cannot be overridden with `:force`.
@@ -69,7 +68,12 @@ module DS
     # @param [Boolean] force use exact termination with +terminator+
     # @return [String]
     def terminate str, terminator: '.', force: false
-      terminal_punct = %r{([.,;:?!]+)("?)$}
+      str.strip!
+      # DE 2022.08.12 Note the \s* to match and replace whitespace before
+      #     punctuation; this addresses a bug where some strings were returned
+      #     with trailing whitespace: 'value :' => 'value '
+      # TODO: Refactor? Two functions: strip_punctuation(), terminate() ??
+      terminal_punct = %r{\s*([.,;:?!]+)("?)$}
       ellipsis = %r{\.\.\."?$}
 
       # don't strip ellipses
@@ -82,9 +86,11 @@ module DS
       return str if str.end_with? terminator
       return str if str.end_with? %Q{#{terminator}"}
 
-      # str lacks terminal punctuation; add it
+      # str lacks terminal punctuation; add it;
+      #  \\1 => keep final '"' (double-quote)
       return str.sub %r{("?)$}, "#{terminator}\\1" if str !~ terminal_punct
       # str has to have exact terminal punctuation
+      #  \\1 => keep final '"' (double-quote)
       return str.sub terminal_punct, "#{terminator}\\2" if force
       # string has some terminal punctuation; return it
       str

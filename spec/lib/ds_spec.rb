@@ -287,7 +287,32 @@ RSpec.describe 'DS' do
       it %q{replaces final '."'  with medial '...', terminator: '?', force: true  ('car... door."' => 'car... door?'")} do
         expect(DS.terminate %q{car... door."}, terminator: '?', force: true).to eq 'car... door?"'
       end
+    end
 
+    context %q{pre-punctuation white space} do
+      it %q{removes a space before trailing punctuation ('car :' => 'car')} do
+        expect(DS.terminate %q{car :}, terminator: '').to eq 'car'
+      end
+
+      it %q{removes a space before trailing punctuation and '"' ('car :"' => 'car"')} do
+        expect(DS.terminate %q{car :"}, terminator: '').to eq 'car"'
+      end
+
+      it %q{removes space and replaces before trailing punctuation, force: true ('car :' => 'car.')} do
+        expect(DS.terminate %q{car :}, terminator: '.', force: true).to eq 'car.'
+      end
+
+      it %q{removes a space and replaces before trailing punctuation and '"', force: true ('car :"' => 'car."')} do
+        expect(DS.terminate %q{car :"}, terminator: '.', force: true).to eq 'car."'
+      end
+
+      it %q{doesn't remove space or replace before trailing punctuation, force: false ('car :' => 'car.')} do
+        expect(DS.terminate %q{car :}, terminator: '.', force: true).to eq 'car.'
+      end
+
+      it %q{doesn't remove space or replace before trailing punctuation and '"', force: false ('car :"' => 'car."')} do
+        expect(DS.terminate %q{car :"}, terminator: '.', force: true).to eq 'car."'
+      end
     end
   end
 end
