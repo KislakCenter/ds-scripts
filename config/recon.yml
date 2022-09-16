@@ -5,37 +5,37 @@ recon:
   git_local_name: 'ds-data'
   sets:
     - name: names
-      repo_path: terms/names.csv
+      repo_path: terms/reconciled/names.csv
       key_column: name_as_recorded
       structured_data_column: structured_value
     - name: genres
-      repo_path: terms/genres.csv
+      repo_path: terms/reconciled/genres.csv
       key_column: genre_as_recorded
       subset_column: vocabulary
       structured_data_column: structured_value
     - name: materials
-      repo_path: terms/materials.csv
+      repo_path: terms/reconciled/materials.csv
       key_column: material_as_recorded
       structured_data_column: structured_value
     - name: languages
-      repo_path: terms/languages.csv
+      repo_path: terms/reconciled/languages.csv
       key_column: language_as_recorded
       structured_data_column: structured_value
     - name: places
-      repo_path: terms/places.csv
+      repo_path: terms/reconciled/places.csv
       key_column: place_as_recorded
       structured_data_column: structured_value
     - name: subjects
-      repo_path: terms/subjects.csv
+      repo_path: terms/reconciled/subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
     - name: named-subjects
-      repo_path: terms/named-subjects.csv
+      repo_path: terms/reconciled/named-subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
     - name: all-subjects
       repo_path:
-        - terms/subjects.csv
-        - terms/named-subjects.csv
+        - terms/reconciled/subjects.csv
+        - terms/reconciled/named-subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
