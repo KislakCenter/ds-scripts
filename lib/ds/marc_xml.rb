@@ -112,7 +112,7 @@ module DS
         record.xpath(xpath).map { |datafield|
           row = []
           row << extract_pn(datafield)
-          role = extract_role(datafield)
+          role = extract_role(datafield, relators: relators)
           row << (role.strip.empty? ? 'author' : role)
           row << extract_pn_agr(datafield)
           row << extract_authority_number(datafield)
@@ -202,9 +202,13 @@ module DS
       #
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
       # @return [String]
-      def extract_role datafield
+      def extract_role datafield, relators:
+        return '' if relators.nil?
+        return '' if relators.empty?
+        return '' if relators.include? :none
         xpath = "./subfield[@code='e']"
-        datafield.xpath(xpath).text
+        role = datafield.xpath(xpath).text.to_s.downcase
+        relators.find { |r| role.start_with? r.downcase }
       end
 
       ###
