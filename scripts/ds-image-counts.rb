@@ -92,12 +92,6 @@ EOF
     options[:image_urls] = true
   end
 
-  # # verbose
-  # verb_help = "Print full error messages"
-  # opts.on('-v', '--verbose', TrueClass, verb_help) do |verbose|
-  #   options[:verbose] = verbose
-  # end
-
   help_help = <<~EOF
     Prints this help
 
