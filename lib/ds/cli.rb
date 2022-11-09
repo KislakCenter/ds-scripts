@@ -13,8 +13,8 @@ module DS
     long_desc <<-LONGDESC
     Update Recon CSVs from #{Settings.recon.git_repo}.
 
-    Note: this command ignores `--skip-recon-update` set SKIP_RECON_UPDATE
-    environment variable to override.
+    NOTE: This command ignores all options, including `--skip-recon-update`; set
+          the SKIP_RECON_UPDATE environment variable to override.
 
     LONGDESC
     def recon_update
