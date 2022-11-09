@@ -3,6 +3,7 @@ require 'csv'
 module DS
   module CSVUtil
     module ClassMethods
+      # TODO: remove? zip_columns is called by a script that's no longer used
       def zip_columns csv_file, *columns
         data = []
         CSV.foreach csv_file, headers: true do |row|
