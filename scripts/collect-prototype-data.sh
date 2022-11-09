@@ -40,10 +40,10 @@ ${SCRIPT_DIR}/../bin/recon recon-update
 ################
 # DS legacy METS
 ################
-# the first 100 records for each of the legacy institutions
-files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100; done)
-# Convert CSV format
-bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv $files
+## the first 100 records for each of the legacy institutions
+for x in ${LEGACY_INSTS} do
+  find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100
+done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
 
 ##########
 # MARC XML
@@ -51,7 +51,7 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.cs
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  find ${SCRIPT_DIR}/../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv -
 done
 
 # Run Princeton with Holdings information
@@ -63,7 +63,7 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --inst
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert openn --skip-recon-update -o ${TMP_DIR}/ds-${inst}.csv ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  find ${SCRIPT_DIR}/../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-convert openn --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv -
 done
 
 #######################
