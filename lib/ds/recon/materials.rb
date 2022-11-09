@@ -3,9 +3,9 @@ require 'nokogiri'
 module Recon
   class Materials
 
-    extend Recon::Util
+    extend DS::Util
 
-    extend Recon::Util
+    extend DS::Util
     CSV_HEADERS = %w{material_as_recorded authorized_label structured_value}
 
     def self.add_recon_values rows

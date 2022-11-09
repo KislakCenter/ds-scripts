@@ -1,6 +1,6 @@
 require 'nokogiri'
 
-module Recon
+module DS
   module Util
     ##
     # Open and parse each XML file in +files+, optionally stripping namespaces

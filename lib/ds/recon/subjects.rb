@@ -9,7 +9,7 @@ module Recon
   #
   class Subjects
 
-    extend Recon::Util
+    extend DS::Util
 
     CSV_HEADERS = %w{ subject_as_recorded
                       source_authority_uri

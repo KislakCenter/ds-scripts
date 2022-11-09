@@ -3,7 +3,7 @@ require 'nokogiri'
 module Recon
   class Places
 
-    extend Recon::Util
+    extend DS::Util
 
     CSV_HEADERS = %w{ place_as_recorded authorized_label structured_value }
 

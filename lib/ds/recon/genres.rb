@@ -9,7 +9,7 @@ module Recon
   #
   class Genres
 
-    extend Recon::Util
+    extend DS::Util
     CSV_HEADERS = %w{
       genre_as_recorded
       vocabulary

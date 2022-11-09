@@ -3,7 +3,7 @@ require 'nokogiri'
 module Recon
   class Names
 
-    extend Recon::Util
+    extend DS::Util
 
     CSV_HEADERS = %w{
       name_as_recorded

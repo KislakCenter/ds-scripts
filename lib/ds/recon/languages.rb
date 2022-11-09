@@ -1,7 +1,7 @@
 module Recon
   class Languages
 
-    extend Recon::Util
+    extend DS::Util
 
     CSV_HEADERS = %w{
       language_as_recorded

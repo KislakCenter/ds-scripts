@@ -6,7 +6,7 @@ module Recon
   #
   class AllSubjects < Recon::Subjects
 
-    extend Recon::Util
+    extend DS::Util
 
     def self._lookup_single term, from_column:
       uris = Recon.lookup('all-subjects', value: term, column: from_column)
