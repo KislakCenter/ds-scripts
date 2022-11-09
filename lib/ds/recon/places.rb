@@ -2,6 +2,9 @@ require 'nokogiri'
 
 module Recon
   class Places
+
+    extend Recon::Util
+
     CSV_HEADERS = %w{ place_as_recorded authorized_label structured_value }
 
     def self.add_recon_values rows
@@ -24,9 +27,7 @@ module Recon
 
     def self.from_marc files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data += DS::MarcXML.extract_recon_places record
         end
@@ -37,8 +38,7 @@ module Recon
 
     def self.from_mets files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      process_xml files do |xml|
         data += DS::DS10.extract_recon_places xml
       end
       add_recon_values data
@@ -47,9 +47,7 @@ module Recon
 
     def self.from_tei files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files,remove_namespaces: true do |xml|
         data += DS::OPennTEI.extract_recon_places xml
       end
       add_recon_values data

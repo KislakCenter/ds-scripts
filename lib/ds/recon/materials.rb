@@ -2,6 +2,10 @@ require 'nokogiri'
 
 module Recon
   class Materials
+
+    extend Recon::Util
+
+    extend Recon::Util
     CSV_HEADERS = %w{material_as_recorded authorized_label structured_value}
 
     def self.add_recon_values rows
@@ -23,9 +27,8 @@ module Recon
 
     def self.from_marc files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+
+      process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data << [DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b')]
         end
@@ -36,8 +39,7 @@ module Recon
 
     def self.from_mets files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      process_xml files do |xml|
         data << [DS::DS10.extract_support(xml)]
       end
       add_recon_values data
@@ -47,9 +49,7 @@ module Recon
     def self.from_tei files
       data = []
       xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files,remove_namespaces: true do |xml|
         data << [xml.xpath(xpath).text]
       end
       add_recon_values data

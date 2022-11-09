@@ -2,6 +2,9 @@ require 'nokogiri'
 
 module Recon
   class Names
+
+    extend Recon::Util
+
     CSV_HEADERS = %w{
       name_as_recorded
       role name_agr
@@ -10,6 +13,13 @@ module Recon
       authorized_label
       structured_value
     }
+
+    def self.add_recon row
+      name = row.first
+      row << Recon.lookup('names', value: name, column: 'instance_of')
+      row << Recon.lookup('names', value: name, column: 'authorized_label')
+      row << Recon.lookup('names', value: name, column: 'structured_value')
+    end
 
     def self.add_recon_values rows
       rows.each do |row|
@@ -28,9 +38,7 @@ module Recon
 
     def self.from_marc files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data += DS::MarcXML.extract_recon_names record, tags: [100, 110, 111]
           data += DS::MarcXML.extract_recon_names record, tags: [700, 710, 790, 791], relators: ['artist', 'illuminator', 'scribe', 'former owner']
@@ -42,9 +50,7 @@ module Recon
 
     def self.from_mets files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-
+      process_xml files do |xml|
         data += DS::DS10.extract_recon_names xml
       end
       add_recon_values data
@@ -53,10 +59,7 @@ module Recon
 
     def self.from_tei files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
-        nodes = xml.xpath('//msContents/msItem')
+      process_xml files,remove_namespaces: true do |xml|
         data += DS::OPennTEI.extract_recon_names xml
       end
       add_recon_values data

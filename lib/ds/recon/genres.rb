@@ -8,6 +8,8 @@ module Recon
   # three columns: term, vocabulary, and authority number.
   #
   class Genres
+
+    extend Recon::Util
     CSV_HEADERS = %w{
       genre_as_recorded
       vocabulary
@@ -22,6 +24,7 @@ module Recon
         row << _lookup_single(term, vocab, from_column: 'authorized_label')
         row << _lookup_single(term, vocab, from_column: 'structured_value')
       end
+      rows
     end
 
     def self.lookup genres, vocabs, from_column: 'structured_value'
@@ -32,9 +35,7 @@ module Recon
 
     def self.from_marc files
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data += DS::MarcXML.extract_recon_genres record, sub_sep: '--'
         end

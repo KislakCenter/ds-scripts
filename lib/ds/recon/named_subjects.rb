@@ -9,6 +9,8 @@ module Recon
   #
   class NamedSubjects < Recon::Subjects
 
+    extend Recon::Util
+
     def self._lookup_single term, from_column:
       uris = Recon.lookup('named-subjects', value: term, column: from_column)
       uris.to_s.gsub '|', ';'

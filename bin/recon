@@ -19,6 +19,10 @@ class ReconCLI < DS::CLI
   desc "names FILES", "Extract names from one or more FILEs"
   long_desc <<-LONGDESC
     Extract names from one or more FILEs.
+
+    Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon names -t mets -
   LONGDESC
 
   def names *files
@@ -31,11 +35,11 @@ class ReconCLI < DS::CLI
 
       case options[:'source-type']
       when 'marc'
-        data = Names.from_marc files
+        data = Names.from_marc select_input files
       when 'mets'
-        data = Names.from_mets files
+        data = Names.from_mets select_input files
       when 'tei'
-        data = Names.from_tei files
+        data = Names.from_tei select_input files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
@@ -54,6 +58,10 @@ class ReconCLI < DS::CLI
   desc "places FILES", "Extract place names from one or more FILEs"
   long_desc <<-LONGDESC
     Extract place names from one or more FILEs.
+
+    Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon places -t mets -
   LONGDESC
   def places *files
     return false unless validate_args files
@@ -64,11 +72,11 @@ class ReconCLI < DS::CLI
 
       case options[:'source-type']
       when 'marc'
-        data = Places.from_marc files
+        data = Places.from_marc select_input files
       when 'mets'
-        data = Places.from_mets files
+        data = Places.from_mets select_input files
       when 'tei'
-        data = Places.from_tei files
+        data = Places.from_tei select_input files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
@@ -88,7 +96,13 @@ class ReconCLI < DS::CLI
   long_desc <<-LONGDESC
   Extract LC subjects from one or more FILEs.
 
-  By default extract 650, 651 are extracted, but fields 600, 610 are extracted if `--named-subjects` is given.
+  Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon subjects -t marc -
+
+  By default MARC fields 650, 651 are extracted, but fields 600, 610 are extracted if `--named-subjects` is given.
+
+  NOTE: Not implemented for mets or tei source types.
 
 LONGDESC
   option :'named-subjects', desc: 'LCSH named subjects 600, 610', aliases: '-n', type: :boolean, default: false
@@ -104,9 +118,11 @@ LONGDESC
 
       case options[:'source-type']
       when 'marc'
-        data = klass.from_marc files, tags: tags
+        data = klass.from_marc select_input(files), tags: tags
       when 'mets'
+        data = klass.from_mets select_input files
       when 'tei'
+        data = klass.from_tei select_input files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
@@ -126,16 +142,24 @@ LONGDESC
   long_desc <<-LONGDESC
   Extract genre terms from one or more FILEs.
 
+  Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon genres -t marc -
+
+  NOTE: Not implemented for mets or tei source types.
+
   LONGDESC
   def genres *files
     return false unless validate_args files
 
     out_csv = out_file 'genres', options
+
     begin
       Recon.update! unless skip_git? options
+      data = nil
       case options[:'source-type']
       when 'marc'
-        data = Genres.from_marc files
+        data = Genres.from_marc select_input files
       when 'mets'
       when 'tei'
       else
@@ -157,6 +181,9 @@ LONGDESC
   long_desc <<-LONGDESC
   Extract materials terms from one or more FILEs.
 
+  Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon materials -t mets -
   LONGDESC
   def materials *files
     return false unless validate_args files
@@ -167,11 +194,11 @@ LONGDESC
 
       case options[:'source-type']
       when 'marc'
-        data = Materials.from_marc files
+        data = Materials.from_marc select_input files
       when 'mets'
-        data = Materials.from_mets files
+        data = Materials.from_mets select_input files
       when 'tei'
-        data = Materials.from_tei files
+        data = Materials.from_tei select_input files
       else
         raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
       end
@@ -189,8 +216,11 @@ LONGDESC
 
   desc "languages FILES", "Extract languages"
   long_desc <<-LONGDESC
-  Extract languages from one or more files
+  Extract languages from one or more files.
 
+  Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon languages -t mets -
   LONGDESC
   def languages *files
     return false unless validate_args files
@@ -201,11 +231,11 @@ LONGDESC
 
       case options[:'source-type']
       when 'marc'
-        data = Languages.from_marc files, separator: ';'
+        data = Languages.from_marc select_input(files), separator: ';'
       when 'tei'
-        data = Languages.from_tei files, separator: ';'
+        data = Languages.from_tei select_input(files), separator: ';'
       when 'mets'
-        data = Languages.from_mets files
+        data = Languages.from_mets select_input files
       else
         raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
       end
@@ -222,7 +252,9 @@ LONGDESC
   end
 
   protected
+
   def validate_args files
+    return true if read_from_stdin? files
     cannot_find = files.reject { |f| File.exist?(f) }
     return true if cannot_find.empty?
 
