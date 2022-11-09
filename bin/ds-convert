@@ -31,8 +31,9 @@ class DSConvertCLI < DS::CLI
     holdings_file = File.open(options[:'holdings-file']) { |f| Nokogiri::XML(f) } unless options[:'holdings-file'].nil?
     timestamp = DS.timestamp
 
-    rows = files.flat_map { |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+    rows = select_input(files).flat_map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
       xml.remove_namespaces!
 
       records = xml.xpath '//record'
@@ -103,7 +104,6 @@ class DSConvertCLI < DS::CLI
         note                               = DS::MarcXML.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
-        source_file                        = in_xml
 
         { source_type:                        source_type,
           holding_institution:                holding_institution,
@@ -186,8 +186,9 @@ class DSConvertCLI < DS::CLI
     Recon.update! unless skip_git? options
     timestamp = DS.timestamp
 
-    rows = files.map { |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+    rows = select_input(files).map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
 
       source_type                        = 'digital-scriptorium'
       holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
@@ -245,7 +246,6 @@ class DSConvertCLI < DS::CLI
       acknowledgements                   = DS::DS10.extract_acknowledgements xml
       data_processed_at                  = timestamp
       data_source_modified               = DS::DS10.source_modified
-      source_file                        = in_xml
 
       { source_type:                        source_type,
         holding_institution:                holding_institution,
@@ -318,8 +318,9 @@ class DSConvertCLI < DS::CLI
     return false unless validate_args files
     Recon.update! unless skip_git? options
     timestamp = DS.timestamp
-    rows = files.map { |in_xml|
-      xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+    rows = select_input(files).map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
       xml.remove_namespaces!
 
       source_type                        = 'openn-tei'
@@ -375,7 +376,6 @@ class DSConvertCLI < DS::CLI
       note                               = DS::OPennTEI.extract_note(xml).join '|'
       data_processed_at                  = timestamp
       data_source_modified               = DS::OPennTEI.source_modified xml
-      source_file                        = in_xml
 
       # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
 
@@ -454,6 +454,8 @@ class DSConvertCLI < DS::CLI
   end
 
   def validate_args files
+    return true if read_from_stdin? files
+
     cannot_find = files.reject { |f| File.exist?(f) }
     return true if cannot_find.empty?
 
