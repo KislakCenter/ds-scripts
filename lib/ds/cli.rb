@@ -13,8 +13,8 @@ module DS
     long_desc <<-LONGDESC
     Update Recon CSVs from #{Settings.recon.git_repo}.
 
-    Note: this command ignores `--skip-recon-update` set SKIP_RECON_UPDATE
-    environment variable to override.
+    NOTE: This command ignores all options, including `--skip-recon-update`; set
+          the SKIP_RECON_UPDATE environment variable to override.
 
     LONGDESC
     def recon_update
@@ -32,6 +32,30 @@ module DS
       return true if options[:'skip-recon-update']
       return true if ENV['SKIP_RECON_UPDATE']
       false
+    end
+
+    ##
+    # See if the user has signaled input is coming from STDIN
+    #
+    # @param files [Enumerable<String>] the file list from ARGV
+    #     (by way of Thor)
+    # @return [Boolean]
+    def read_from_stdin? files
+      files == ['-']
+    end
+
+    ##
+    # Return the input to read from based on whether input is stdin.
+    # If `read_from_stdin?` returns true, return +ARGF+; otherwise,
+    # return +files+.
+    #
+    # @param files [Enumerable<String>] the file list from ARGV
+    #     (by way of Thor)
+    # @return [Enumerable] +files+ or +ARGF+
+    def select_input files
+      return files unless read_from_stdin? files
+      ARGV.clear
+      ARGF
     end
 
     def validate! rows

@@ -1,5 +1,8 @@
 module Recon
   class Languages
+
+    extend DS::Util
+
     CSV_HEADERS = %w{
       language_as_recorded
       language_code
@@ -74,12 +77,10 @@ module Recon
 
     def self.from_marc files, separator: '|'
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           as_recorded = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
-          codes = DS::MarcXML.extract_langs record, separator: separator
+          codes       = DS::MarcXML.extract_langs record, separator: separator
           as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
           data << [as_recorded, codes]
         end
@@ -91,8 +92,7 @@ module Recon
 
     def self.from_mets files, separator: '|'
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
+      process_xml files do |xml|
         DS::DS10.extract_language(xml, separator: separator).split(separator).each do |lang|
           data << [DS.terminate(lang, terminator: ''), nil]
         end
@@ -104,10 +104,8 @@ module Recon
 
     def self.from_tei files, separator: '|'
       data = []
-      xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
+      process_xml files,remove_namespaces: true do |xml|
         as_recorded = DS::OPennTEI.extract_language_as_recorded xml
         codes       = DS::OPennTEI.extract_language_codes xml, separator: separator
         data << [as_recorded,codes]

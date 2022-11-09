@@ -8,6 +8,9 @@ module Recon
   # two columns: subject and authority number.
   #
   class Subjects
+
+    extend DS::Util
+
     CSV_HEADERS = %w{ subject_as_recorded
                       source_authority_uri
                       authorized_label
@@ -23,9 +26,7 @@ module Recon
 
     def self.from_marc files, tags: []
       data = []
-      files.each do |in_xml|
-        xml = File.open(in_xml) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
+      process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data += DS::MarcXML.collect_recon_datafields record, tags: tags, codes: ('a'..'z').to_a, sub_sep: '--'
         end
