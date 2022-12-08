@@ -136,6 +136,14 @@ module DS
         }.uniq.reject &:empty? # some parts have no placeTerm
       end
 
+      def extract_recon_titles xml
+        data = []
+        extract_title(xml).split('|').each do |title|
+          data << [title, '', '', '']
+        end
+        data
+      end
+
       def extract_recon_names xml
         data = []
         %w{author artist scribe}.each do |role|

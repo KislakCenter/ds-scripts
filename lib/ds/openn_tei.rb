@@ -105,6 +105,12 @@ module DS
         xml.xpath('//origPlace/text()').map { |place| [place.text] }
       end
 
+      def extract_recon_titles xml
+        xml.xpath('//msItem[1]/title/text()').map do |title|
+          [title.text, '', '', '']
+        end
+      end
+
       ##
       # Extract +extent+ element and prefix with <tt>'Extent: '</tt>, return +''+
       # (empty string) if +extent+ is not present or empty.

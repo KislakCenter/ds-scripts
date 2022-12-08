@@ -251,6 +251,43 @@ LONGDESC
     true
   end
 
+  desc "titles FILES", "Extract titles"
+  long_desc <<-LONGDESC
+  Extract titles from one or more files.
+
+  Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon titles -t mets -
+  LONGDESC
+  def titles *files
+    return false unless validate_args files
+
+    out_csv = out_file 'titles', options
+    begin
+      Recon.update! unless skip_git? options
+
+      case options[:'source-type']
+      when 'marc'
+        data = Titles.from_marc select_input(files)
+      when 'tei'
+        data = Titles.from_tei select_input(files)
+      when 'mets'
+        data = Titles.from_mets select_input files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
+      end
+
+      validate! data unless options[:skip_validation]
+      write_csv out_csv, Titles::CSV_HEADERS, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
   protected
 
   def validate_args files
