@@ -463,14 +463,23 @@ module DS
         # get marks we're concerned with: ["h Islamic Manuscripts, Garrett no. 4084Y"]
         raw_marks = all_marks.select { |m| m =~ /^[hd] / }
         # make pretty: ["Islamic Manuscripts, Garrett no. 4084Y"]
-        shelfmarks = raw_marks.map { |m| format_shelfmark(m) }
+        shelfmarks = raw_marks.map { |m| m[1..-1].strip }
         shelfmarks
       end
 
-      def format_shelfmark s
-        # trim first character
-        m = s[1..-1]
-        m.strip
+      ##
+      # Add the content of the MARC 773$g subfield if it's present and not
+      # already part of the call number; otherwise, clean and return the call
+      # number string.
+      #
+      # @param [String] callno the call number
+      # @param [String] sub773g the value of the 773$g MARC subfield
+      def format_callnumber callno, sub773g
+        return callno if callno.nil?
+        return DS.clean_string callno if sub773g.to_s.strip.empty?  # nil or ''
+        return DS.clean_string callno if callno.downcase.include? sub773g.downcase.strip
+
+        %Q{#{DS.clean_string callno.strip} #{sub773g.strip}}
       end
 
       ##
@@ -481,32 +490,36 @@ module DS
       # shelfmarks. This method attempts to find the call number in a number of
       # common locations.
       def find_shelfmark record
+        # See if there's a 773$g subfield. For complex objects/collections,
+        # this will have detailed information like folder and/or item number
+        sub773g = record.xpath("data[@tag=773]/subfield[@code='g']").text
+
         # For Penn XML from Marmite, use the pseudo-marc holding data
         # Note that some MSS have more than one holding. This method will
         # break when this happens
         callno = record.xpath('holdings/holding/call_number').text
-        return DS.clean_string callno unless callno.strip.empty?
+        return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # Cornell call number; Cornell sometimes uses the 710 field; the records
         # are not consistent
         # TODO: Determine if this the best way to get this
         xpath  = "datafield[@tag=710 and contains(subfield[@code='a']/text(), 'Cornell University')]/subfield[@code='n']"
         callno = record.xpath(xpath).text
-        return DS.clean_string callno unless callno.strip.empty?
+        return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # Princeton call number
         # Some records mistakenly have two 852$b = 'hsvm' values; get the firsto
         xpath  = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
         callno = record.xpath(xpath).text
-        return DS.clean_string callno unless callno.strip.empty?
+        return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # AMREMM method of a 500$a starting with "Shelfmark: "
         callno = extract_named_500 record, name: 'Shelfmark'
-        return DS.clean_string callno unless callno.strip.empty?
+        return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # U. Penn uses the 099$a subfield
         callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
-        return DS.clean_string callno unless callno.strip.empty?
+        return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # return empty string if we get this far
         ''

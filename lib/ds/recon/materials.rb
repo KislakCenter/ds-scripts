@@ -28,7 +28,7 @@ module Recon
     def self.from_marc files
       data = []
 
-      process_xml files,remove_namespaces: true do |xml|
+      process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data << [DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b')]
         end
@@ -49,7 +49,7 @@ module Recon
     def self.from_tei files
       data = []
       xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
-      process_xml files,remove_namespaces: true do |xml|
+      process_xml files, remove_namespaces: true do |xml|
         data << [xml.xpath(xpath).text]
       end
       add_recon_values data
