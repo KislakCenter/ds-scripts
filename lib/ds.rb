@@ -19,6 +19,7 @@ module DS
   def self.configure!
     config_dir = File.join root, 'config'
     yaml_files = Dir["#{config_dir}/*.yml"]
+    # Set Settings, so you can do things like Settings.recon.key ...
     Config.load_and_set_settings *yaml_files
   end
   configure!
