@@ -13,11 +13,6 @@ module Recon
       generic_title
     }
 
-    def self.add_recon row
-      name = row.first
-      row << Recon.lookup('titles', value: name, column: 'generic_title')
-    end
-
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first
