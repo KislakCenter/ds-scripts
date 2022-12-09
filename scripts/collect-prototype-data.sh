@@ -52,6 +52,8 @@ done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
+  # Test version:
+  # ./bin/ds-convert marc --skip-recon-update --institution penn -o tmp/ds-penn.csv data/prototype-data/penn/*.xml
   find ${SCRIPT_DIR}/../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv -
 done
 
