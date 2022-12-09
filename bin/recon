@@ -268,9 +268,9 @@ LONGDESC
 
       case options[:'source-type']
       when 'marc'
-        data = Titles.from_marc select_input(files)
+        data = Titles.from_marc select_input files
       when 'tei'
-        data = Titles.from_tei select_input(files)
+        data = Titles.from_tei select_input files
       when 'mets'
         data = Titles.from_mets select_input files
       else
