@@ -35,7 +35,7 @@ fi
 #################################
 # Update the recon files from git
 #################################
-${SCRIPT_DIR}/../bin/recon recon-update
+${SCRIPT_DIR}/../bin/ds-recon recon-update
 
 # use the same output directory and skip the calls to git
 recon_opts=(--directory ${TMP_DIR} --skip-recon-update)
@@ -46,7 +46,7 @@ recon_opts=(--directory ${TMP_DIR} --skip-recon-update)
 # the first 100 records for each of the legacy institutions
 files=$(for x in ${LEGACY_INSTS}; do find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100; done)
 # Convert CSV format
-${SCRIPT_DIR}/../bin/recon places "${recon_opts[@]}" -a legacy -t mets $files
+${SCRIPT_DIR}/../bin/ds-recon places "${recon_opts[@]}" -a legacy -t mets $files
 
 ##########
 # MARC XML
@@ -54,7 +54,7 @@ ${SCRIPT_DIR}/../bin/recon places "${recon_opts[@]}" -a legacy -t mets $files
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  ${SCRIPT_DIR}/../bin/recon places "${recon_opts[@]}" -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  ${SCRIPT_DIR}/../bin/ds-recon places "${recon_opts[@]}" -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 ##########
@@ -63,7 +63,7 @@ done
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  ${SCRIPT_DIR}/../bin/recon places "${recon_opts[@]}" -a ${inst} -t tei ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  ${SCRIPT_DIR}/../bin/ds-recon places "${recon_opts[@]}" -a ${inst} -t tei ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 #######################

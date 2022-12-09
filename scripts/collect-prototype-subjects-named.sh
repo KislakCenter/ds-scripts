@@ -18,7 +18,7 @@ MARC_INSTS="penn cornell columbia burke oregon princeton hrc"
 #################################
 # Update the recon files from git
 #################################
-${SCRIPT_DIR}/../bin/recon recon-update
+${SCRIPT_DIR}/../bin/ds-recon recon-update
 
 # use the same output directory and skip the calls to git
 recon_opts=(--directory ${TMP_DIR} --skip-recon-update)
@@ -29,7 +29,7 @@ recon_opts=(--directory ${TMP_DIR} --skip-recon-update)
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
-  ${SCRIPT_DIR}/../bin/recon subjects --named-subjects "${recon_opts[@]}" -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
+  ${SCRIPT_DIR}/../bin/ds-recon subjects --named-subjects "${recon_opts[@]}" -a ${inst} -t marc ${SCRIPT_DIR}/../data/prototype-data/${inst}/*.xml
 done
 
 #######################

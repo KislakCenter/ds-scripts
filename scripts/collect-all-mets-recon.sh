@@ -79,9 +79,9 @@ OUT_DIR=${TMP_DIR}/mets_recon
 
 recon_opts=(--directory ${OUT_DIR} --skip-recon-update)
 
-${SCRIPT_DIR}/../bin/recon recon-update
+${SCRIPT_DIR}/../bin/ds-recon recon-update
 
-find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/recon names "${recon_opts[@]}" -v -a mets -t mets -
-find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/recon places "${recon_opts[@]}" -v -a mets -t mets -
-find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/recon languages "${recon_opts[@]}" -v -a mets -t mets -
-find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/recon materials "${recon_opts[@]}" -v -a mets -t mets -
+find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-recon names "${recon_opts[@]}" -v -a mets -t mets -
+find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-recon places "${recon_opts[@]}" -v -a mets -t mets -
+find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-recon languages "${recon_opts[@]}" -v -a mets -t mets -
+find ${paths} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-recon materials "${recon_opts[@]}" -v -a mets -t mets -
