@@ -35,7 +35,7 @@ fi
 #################################
 # Update the recon files from git
 #################################
-${SCRIPT_DIR}/../bin/recon recon-update
+${SCRIPT_DIR}/../bin/ds-recon recon-update
 
 ################
 # DS legacy METS
