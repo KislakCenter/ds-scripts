@@ -22,7 +22,7 @@ module Recon
 
     def self.lookup names, column:
       names.map do|name|
-        Recon.lookup 'names', value: name, column: column
+        Recon.lookup 'titles', value: name, column: column
       end
     end
 
@@ -52,7 +52,6 @@ module Recon
         data += DS::OPennTEI.extract_recon_titles xml
       end
       add_recon_values data
-      # require 'pry'; binding.pry
       data.sort { |a, b| a.first <=> b.first }.uniq
     end
   end
