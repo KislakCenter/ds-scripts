@@ -39,3 +39,7 @@ recon:
         - terms/reconciled/named-subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
+    - name: titles
+      repo_path: terms/reconciled/titles.csv
+      key_column: title_as_recorded
+      structured_data_column: generic_title

@@ -56,8 +56,9 @@ class DSConvertCLI < DS::CLI
         production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
         uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
         uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
-        title_as_recorded_245              = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text, terminator: ''
-        title_as_recorded_245_agr          = DS::MarcXML.extract_title_agr record, 245
+        title_as_recorded                  = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text, terminator: ''
+        title_as_recorded_agr              = DS::MarcXML.extract_title_agr record, 245
+        generic_title                      = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'generic_title').join('|')
         genre_as_recorded                  = DS::MarcXML.extract_genre_as_recorded record, sub2: :all, field_sep: '|', sub_sep: '--'
         genre_vocabulary                   = DS::MarcXML.extract_genre_vocabulary record
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
@@ -121,8 +122,9 @@ class DSConvertCLI < DS::CLI
           production_date_as_recorded:        production_date_as_recorded,
           uniform_title_as_recorded:          uniform_title_as_recorded,
           uniform_title_agr:                  uniform_title_agr,
-          title_as_recorded_245:              title_as_recorded_245,
-          title_as_recorded_245_agr:          title_as_recorded_245_agr,
+          title_as_recorded:                  title_as_recorded,
+          title_as_recorded_agr:              title_as_recorded_agr,
+          generic_title:                      generic_title,
           genre_as_recorded:                  genre_as_recorded,
           genre_vocabulary:                   genre_vocabulary,
           genre:                              genre,
@@ -206,8 +208,9 @@ class DSConvertCLI < DS::CLI
       dated                              = DS::DS10.dated_by_scribe? xml
       uniform_title_as_recorded          = ''
       uniform_title_agr                  = ''
-      title_as_recorded_245              = DS::DS10.extract_title xml
-      title_as_recorded_245_agr          = ''
+      title_as_recorded                  = DS::DS10.extract_title xml
+      title_as_recorded_agr              = ''
+      generic_title                      = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'generic_title').join('|')
       genre_as_recorded                  = ''
       subject_as_recorded                = ''
       author_as_recorded                 = DS::DS10.extract_text_name xml, 'author'
@@ -263,8 +266,9 @@ class DSConvertCLI < DS::CLI
         dated:                              dated,
         uniform_title_as_recorded:          uniform_title_as_recorded,
         uniform_title_agr:                  uniform_title_agr,
-        title_as_recorded_245:              title_as_recorded_245,
-        title_as_recorded_245_agr:          title_as_recorded_245_agr,
+        title_as_recorded:                  title_as_recorded,
+        title_as_recorded_agr:              title_as_recorded_agr,
+        generic_title:                      generic_title,
         genre_as_recorded:                  genre_as_recorded,
         subject_as_recorded:                subject_as_recorded,
         author_as_recorded:                 author_as_recorded,
@@ -336,7 +340,8 @@ class DSConvertCLI < DS::CLI
       production_date                    = DS::OPennTEI.extract_production_date xml, range_sep: '^'
       century                            = DS.transform_dates_to_centuries production_date
       century_aat                        = DS.transform_centuries_to_aat century
-      title_as_recorded_245              = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
+      title_as_recorded                  = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
+      generic_title                      = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'generic_title').join('|')
       author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
       author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'
       author                             = ''
@@ -393,7 +398,8 @@ class DSConvertCLI < DS::CLI
         production_date:                    production_date,
         century:                            century,
         century_aat:                        century_aat,
-        title_as_recorded_245:              title_as_recorded_245,
+        title_as_recorded:                  title_as_recorded,
+        generic_title:                      generic_title,
         author_as_recorded:                 author_as_recorded,
         author_wikidata:                    author_wikidata,
         author:                             author,

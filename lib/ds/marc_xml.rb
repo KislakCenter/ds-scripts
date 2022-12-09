@@ -120,6 +120,17 @@ module DS
         }
       end
 
+      def extract_recon_titles record
+        xpath = "datafield[@tag=245]/subfield[@code='a']"
+        tar = record.xpath(xpath).text
+        tar = DS.clean_string tar, terminator: ''
+        tar_agr = DS::MarcXML.extract_title_agr record, 245
+        utar = DS::MarcXML.extract_uniform_title_as_recorded record
+        utar_agr = DS::MarcXML.extract_uniform_title_agr record
+
+        [tar, tar_agr, utar, utar_agr]
+      end
+
       ##
       # Extract the alternate graphical representation of the name or return +''+.
       #

@@ -22,8 +22,9 @@ dated
 uniform_title
 uniform_title_as_recorded
 uniform_title_agr
-title_as_recorded_245
-title_as_recorded_245_agr
+title_as_recorded
+title_as_recorded_agr
+generic_title
 genre_as_recorded
 genre_vocabulary
 genre
