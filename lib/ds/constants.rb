@@ -24,7 +24,7 @@ uniform_title_as_recorded
 uniform_title_agr
 title_as_recorded
 title_as_recorded_agr
-generic_title
+standard_title
 genre_as_recorded
 genre_vocabulary
 genre

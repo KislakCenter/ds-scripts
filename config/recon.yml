@@ -42,4 +42,4 @@ recon:
     - name: titles
       repo_path: terms/reconciled/titles.csv
       key_column: title_as_recorded
-      structured_data_column: generic_title
+      structured_data_column: standard_title
