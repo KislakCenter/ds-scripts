@@ -52,7 +52,7 @@ module Recon
 
     # try a key with a "cleaned" string
     key = build_key DS.clean_string(value, terminator: ''), subset
-    recon_set.dig key, column
+    recon_set.dig(key, column) || ''
   end
 
   def self.find_set set_name
