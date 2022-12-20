@@ -19,7 +19,6 @@ production_date
 century
 century_aat
 dated
-uniform_title
 uniform_title_as_recorded
 uniform_title_agr
 title_as_recorded
