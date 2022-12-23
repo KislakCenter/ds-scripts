@@ -90,6 +90,7 @@ module Recon
 
   def self.read_csv csv_file:, key_column:, subset_column:, data:
     CSV.foreach csv_file, headers: true do |row|
+      next if %w{authorized_label structured_value}.all? { |k| row[k].to_s.empty? }
       struct    = OpenStruct.new row.to_h
       value     = row[key_column]
       subset    = subset_column ? row[subset_column] : ''
