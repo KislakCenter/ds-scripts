@@ -58,7 +58,7 @@ class DSConvertCLI < DS::CLI
         uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
         title_as_recorded                  = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text, terminator: ''
         title_as_recorded_agr              = DS::MarcXML.extract_title_agr record, 245
-        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'standard_title').join('|')
+        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = DS::MarcXML.extract_genre_as_recorded record, sub2: :all, field_sep: '|', sub_sep: '--'
         genre_vocabulary                   = DS::MarcXML.extract_genre_vocabulary record
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
@@ -210,7 +210,7 @@ class DSConvertCLI < DS::CLI
       uniform_title_agr                  = ''
       title_as_recorded                  = DS::DS10.extract_title xml
       title_as_recorded_agr              = ''
-      standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'standard_title').join('|')
+      standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
       genre_as_recorded                  = ''
       subject_as_recorded                = ''
       author_as_recorded                 = DS::DS10.extract_text_name xml, 'author'
@@ -341,7 +341,7 @@ class DSConvertCLI < DS::CLI
       century                            = DS.transform_dates_to_centuries production_date
       century_aat                        = DS.transform_centuries_to_aat century
       title_as_recorded                  = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
-      standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'standard_title').join('|')
+      standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
       author_as_recorded                 = xml.xpath('//msItem/author/text()').map(&:to_s).join '|'
       author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'
       author                             = ''

@@ -10,13 +10,13 @@ module Recon
       title_as_recorded_agr
       uniform_title_as_recorded
       uniform_title_as_recorded_agr
-      standard_title
+      authorized_label
     }
 
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first
-        row << Recon.lookup('titles', value: name, column: 'standard_title')
+        row << Recon.lookup('titles', value: name, column: 'authorize_label')
       end
     end
 
