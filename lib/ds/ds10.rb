@@ -1,5 +1,6 @@
 require 'net/http'
 require 'nokogiri'
+require 'date'
 
 ##
 # Module with class methods for working with DS10 METS XML.
@@ -11,6 +12,10 @@ module DS
         mods: 'http://www.loc.gov/mods/v3',
         mets: 'http://www.loc.gov/METS/',
       }
+
+      def extract_lastmoddate xml
+        xml.xpath('/mets:mets/mets:metsHdr/@LASTMODDATE', NS).text
+      end
 
       def extract_institution_name xml
         extract_mets_creator(xml).first
