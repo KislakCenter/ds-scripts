@@ -9,6 +9,7 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 TMP_DIR=${SCRIPT_DIR}/../tmp
 [[ -e ${TMP_DIR} ]] || mkdir -v ${TMP_DIR} # Create TMP_DIR if it doesn't exist
 
+
 ####################
 # CONFIGURATION VARS
 ####################
@@ -43,6 +44,7 @@ ${SCRIPT_DIR}/../bin/ds-recon recon-update
 ## the first 100 records for each of the legacy institutions
 for x in ${LEGACY_INSTS}
 do
+  echo "INFO: generating import CSV for ${x}" >&2
   find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100
 done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
 
@@ -52,6 +54,7 @@ done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
 # Run through the MARC_INSTS and output a CSV for each to TMP_DIR
 for inst in ${MARC_INSTS}
 do
+  echo "INFO: generating import CSV for ${inst}" >&2
   # Test version:
   # ./bin/ds-convert marc --skip-recon-update --institution penn -o tmp/ds-penn.csv data/prototype-data/penn/*.xml
   find ${SCRIPT_DIR}/../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv -
