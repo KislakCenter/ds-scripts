@@ -22,7 +22,7 @@ class DSConvertCLI < DS::CLI
   option :institution, banner: 'INSTITUTION', desc: "Short name of the institution to create this CSV for; REQUIRED", aliases: '-i'
   option :'holdings-file', banner: 'FILE', desc: 'Associated Holdings File (if separate from records)', aliases: '-f'
   def marc *files
-    return false unless validate_args files
+    return false unless validate_files files
     Recon.update! unless skip_git? options
 
     inst_qid = DS::Institutions.find_qid options[:institution]
@@ -184,7 +184,7 @@ class DSConvertCLI < DS::CLI
     Convert DS 1.0 METS XML to DS CSV
   LONGDESC
   def mets *files
-    return false unless validate_args files
+    return false unless validate_files files
     Recon.update! unless skip_git? options
     timestamp = DS.timestamp
 
@@ -319,7 +319,7 @@ class DSConvertCLI < DS::CLI
     Convert OPenn TEI XML to DS CSV
   LONGDESC
   def openn *files
-    return false unless validate_args files
+    return false unless validate_files files
     Recon.update! unless skip_git? options
     timestamp = DS.timestamp
     rows = select_input(files).map { |in_xml|
@@ -459,15 +459,6 @@ class DSConvertCLI < DS::CLI
     puts "Wrote: '#{out_csv}'"
   end
 
-  def validate_args files
-    return true if read_from_stdin? files
-
-    cannot_find = files.reject { |f| File.exist?(f) }
-    return true if cannot_find.empty?
-
-    puts "Can't find input file(s): #{cannot_find.join '; ' }"
-    false
-  end
 end
 
 DSConvertCLI.start ARGV

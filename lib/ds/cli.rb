@@ -58,11 +58,22 @@ module DS
       ARGF
     end
 
+    def validate_files files
+      return true if read_from_stdin? files
+
+      cannot_find = files.reject { |f| File.exist?(f) }
+      return true if cannot_find.empty?
+
+      puts "Can't find input file(s): #{cannot_find.join '; ' }"
+      false
+    end
+
     def validate! rows
       return if options[:'skip-validation']
       return if ENV['SKIP_OUTPUT_VALIDATION']
       return if CSVUtil.validate rows
 
+      puts CSV
       raise StandardError, "Validation errors found in output"
     end
   end
