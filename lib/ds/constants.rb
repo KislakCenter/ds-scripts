@@ -69,6 +69,20 @@ data_source_modified
 source_file
 }
 
+    MANIFEST_HEADINGS = %i{
+filename
+marc_001
+institutional_id
+marc_005
+institutional_record_date
+call_number
+title
+iiif_manifest
+catalog_url
+generated_at
+}
+
+
     # Institutions dependent on DS and their DS IDs
     # Some institutions have more than one collection
     #
