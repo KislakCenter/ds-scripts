@@ -540,6 +540,10 @@ module DS
         record.xpath("controlfield[@tag=001]").text
       end
 
+      def extract_marc_005_control_date record
+        record.xpath("controlfield[@tag=005]").text
+      end
+
       def extract_named_500 record, name:
         return '' if name.to_s.strip.empty?
 
