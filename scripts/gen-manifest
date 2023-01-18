@@ -103,21 +103,43 @@ class GenManifestCLI < DS::CLI
     write_csv rows, options
   end
 
-#   desc "openn XML [XML...]", "Extract input CSV from OPenn TEI XML"
-#   long_desc <<-LONGDESC
-#     Extract input CSV from OPenn TEI XML
-#   LONGDESC
-#
-#   def openn *files
-#     timestamp = DS.timestamp
-#     rows      = select_input(files).map { |in_xml|
-#       source_file = in_xml.chomp # remove newline in case input if from ARGF
-#       xml         = File.open(source_file) { |f| Nokogiri::XML(f) }
-#       xml.remove_namespaces!
-#   end
-#
-# end
+  desc "openn XML [XML...]", "Extract input CSV from OPenn TEI XML"
+  long_desc <<-LONGDESC
+    Extract input CSV from OPenn TEI XML
+  LONGDESC
 
+  def openn *files
+    return false unless validate_files files
+    Recon.update! unless skip_git? options
+    timestamp = DS.timestamp
+    rows = select_input(files).map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
+      xml.remove_namespaces!
+
+      filename                  = File.basename source_file
+      institutional_id          = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno').text()
+      institutional_record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date[@type="mod-date"]').text
+      call_number               = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
+      title                     = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
+      iiif_manifest             = ''
+      catalog_url               = ''
+      generated_at              = timestamp
+
+      {
+        filename:                  filename,
+        institutional_id:          institutional_id,
+        institutional_record_date: institutional_record_date,
+        call_number:               call_number,
+        title:                     title,
+        iiif_manifest:             iiif_manifest,
+        catalog_url:               catalog_url,
+        generated_at:              generated_at
+      }
+    }
+
+    write_csv rows, options
+  end
 
   protected
 
