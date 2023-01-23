@@ -10,6 +10,7 @@ require_relative 'ds/recon'
 require_relative 'ds/institutions'
 require_relative 'ds/marc_converter'
 require_relative 'ds/dsmets_converter'
+require_relative 'ds/openn_tei_converter'
 
 module DS
   include DS::Constants
