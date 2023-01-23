@@ -42,11 +42,11 @@ ${SCRIPT_DIR}/../bin/ds-recon recon-update
 # DS legacy METS
 ################
 ## the first 100 records for each of the legacy institutions
-# for x in ${LEGACY_INSTS}
-# do
-#   echo "INFO: generating import CSV for ${x}" >&2
-#   find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100
-# done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
+for x in ${LEGACY_INSTS}
+do
+ echo "INFO: generating import CSV for ${x}" >&2
+ find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100
+done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
 
 ##########
 # MARC XML
