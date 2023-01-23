@@ -35,12 +35,8 @@ class DSConvertCLI < DS::CLI
                                       timestamp: DS.timestamp,
                                       holdings_file: options[:'holdings-file']
 
-    rows = select_input(files).flat_map { |in_xml|
-      source_file = in_xml.chomp # remove newline in case input if from ARGF
-      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
+    rows = converter.process_records select_input(files)
 
-      converter.process_marc xml, source_file: source_file
-    }
     validate! rows unless options[:'skip-validation']
     write_csv rows, options
   end

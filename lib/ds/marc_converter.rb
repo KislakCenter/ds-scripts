@@ -28,13 +28,16 @@ module DS
     end
 
     ##
-    # @param [Nokogiri::XML::Node] xml parsed MARC XML
-    # @param [String] source_file path of the input file
-    # @return [Array]
-    def process_marc xml, source_file:
-      xml.remove_namespaces!
-      xml.xpath('//record').map { |record|
-        convert record, source_file: source_file, holdings_xml: parsed_holdings
+    # @param [Enumerable] files the files to process
+    # @return [Array<Hash>]
+    def process_records files
+      files.flat_map { |in_xml|
+        source_file = in_xml.chomp # remove newline in case input if from ARGF
+        xml = File.open(source_file) { |f| Nokogiri::XML(f) }
+        xml.remove_namespaces!
+        xml.xpath('//record').map { |record|
+          convert record, source_file: source_file, holdings_xml: parsed_holdings
+        }
       }
     end
     
