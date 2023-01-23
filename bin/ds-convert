@@ -59,13 +59,14 @@ class DSConvertCLI < DS::CLI
       source_file = in_xml.chomp # remove newline in case input if from ARGF
       xml = File.open(source_file) { |f| Nokogiri::XML(f) }
 
-      converter.convert_mets xml, source_file: source_file
+      converter.convert xml, source_file: source_file
 
     }
 
     validate! rows unless options[:'skip-validation']
     write_csv rows, options
   end
+
   desc "openn XML [XML...]", "Convert OPenn TEI XML to DS CSV"
   long_desc <<-LONGDESC
     Convert OPenn TEI XML to DS CSV
@@ -80,7 +81,7 @@ class DSConvertCLI < DS::CLI
       source_file = in_xml.chomp # remove newline in case input if from ARGF
       xml = File.open(source_file) { |f| Nokogiri::XML(f) }
 
-      converter.convert_openn_tei xml, source_file: source_file
+      converter.convert xml, source_file: source_file
 
     }
     validate! rows unless options[:'skip-validation']

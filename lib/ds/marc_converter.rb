@@ -34,7 +34,7 @@ module DS
     def process_marc xml, source_file:
       xml.remove_namespaces!
       xml.xpath('//record').map { |record|
-        convert_marc record, source_file: source_file, holdings_xml: parsed_holdings
+        convert record, source_file: source_file, holdings_xml: parsed_holdings
       }
     end
     
@@ -42,7 +42,7 @@ module DS
     # @param [Nokogiri::XML::Node] record the MARC record
     # @param [Nokogiri::XML::Node] holdings_xml parsed holdings XML from Princeton
     # @return [Hash]
-    def convert_marc record, source_file:, holdings_xml: nil
+    def convert record, source_file:, holdings_xml: nil
       source_type                        = 'marc-xml'
       holding_institution                = institution_qid
       holding_institution_as_recorded    = institution_name

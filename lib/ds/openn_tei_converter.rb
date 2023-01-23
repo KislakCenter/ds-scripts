@@ -9,7 +9,7 @@ module DS
     ##
     # @param [Nokogiri::XML::Node] xml the MARC record
     # @return [Hash]
-    def convert_openn_tei xml, source_file:
+    def convert xml, source_file:
       xml.remove_namespaces!
 
       source_type                        = 'openn-tei'

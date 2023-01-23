@@ -9,7 +9,7 @@ module DS
     ##
     # @param [Nokogiri::XML::Node] xml the MARC record
     # @return [Hash]
-    def convert_mets xml, source_file:
+    def convert xml, source_file:
       source_type                        = 'digital-scriptorium'
       holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
       holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
