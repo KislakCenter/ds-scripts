@@ -7,6 +7,18 @@ module DS
     end
 
     ##
+    # @param [Enumerable] files METS xml files to process
+    # @return [Array<Hash>] CSV row data
+    def process_records files
+      files.map { |in_xml|
+        source_file = in_xml.chomp # remove newline in case input if from ARGF
+        xml = File.open(source_file) { |f| Nokogiri::XML(f) }
+
+        convert xml, source_file: source_file
+      }
+    end
+
+    ##
     # @param [Nokogiri::XML::Node] xml the MARC record
     # @return [Hash]
     def convert xml, source_file:

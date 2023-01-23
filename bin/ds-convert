@@ -51,13 +51,7 @@ class DSConvertCLI < DS::CLI
 
     converter = DS::DSMETSConverter.new timestamp: DS.timestamp
 
-    rows = select_input(files).map { |in_xml|
-      source_file = in_xml.chomp # remove newline in case input if from ARGF
-      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
-
-      converter.convert xml, source_file: source_file
-
-    }
+    rows = converter.process_records select_input(files)
 
     validate! rows unless options[:'skip-validation']
     write_csv rows, options
