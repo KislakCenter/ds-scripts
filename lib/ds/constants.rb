@@ -70,18 +70,22 @@ source_file
 }
 
     MANIFEST_HEADINGS = %i{
+contributor_wikidata_qid
+contributor_name
+source_type
 filename
-marc_001
-institutional_id
-marc_005
-institutional_record_date
 call_number
 title
-iiif_manifest
+ds_id
+marc_001
+catalog_id
+catalog_id_field
+marc_005
+institutional_record_date
 catalog_url
+iiif_manifest
 generated_at
 }
-
 
     # Institutions dependent on DS and their DS IDs
     # Some institutions have more than one collection

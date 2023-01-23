@@ -1,0 +1,211 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+
+require 'thor'
+require 'nokogiri'
+require_relative '../lib/ds/cli'
+
+##
+# Sample CSV
+#
+# filename,marc_001,marc_005,call_number,title,iiif_manifest,catalog_url,generated_at
+# 9951865503503681_marc.xml,9951865503503681,20220803105830.0,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2022-12-06T14:48:52-0500
+#
+#
+
+class GenManifestCLI < DS::CLI
+
+  def self.exit_on_failure?
+    true
+  end
+
+  class_option :'output-csv', banner: 'FILE', desc: "Name of the output CSV file [default: STDOUT]", aliases: '-o'
+
+  desc "mets XML [XML...]", "Extract input CSV from DS METS"
+  long_desc <<-LONGDESC
+  Extract input CSV from DS legacy METS XML
+  LONGDESC
+
+  def mets *files
+    return false unless validate_files files
+    timestamp = DS.timestamp
+
+    rows = select_input(files).flat_map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml         = File.open(in_xml.chomp) { |f| Nokogiri::XML f }
+
+      contributor_name          = DS::DS10.extract_institution_name xml
+      contributor_wikidata_qid  = DS::Institutions.find_qid contributor_name
+      filename                  = File.basename source_file
+      source_type               = 'ds-mets'
+      ds_id                     = ''
+      marc_001                  = ''
+      catalog_id                = DS::DS10.extract_shelfmark xml
+      catalog_id_field          = 'mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="local"]/text()'
+      marc_005                  = ''
+      institutional_record_date = DS::DS10.extract_lastmoddate xml
+      call_number               = DS::DS10.extract_shelfmark xml
+      title                     = DS::DS10.extract_title(xml).split('|').join '; '
+      iiif_manifest             = ''
+      catalog_url               = ''
+      generated_at              = timestamp
+
+      {
+        contributor_wikidata_qid:  contributor_wikidata_qid,
+        contributor_name:          contributor_name,
+        source_type:               source_type,
+        filename:                  filename,
+        ds_id:                     ds_id,
+        marc_001:                  marc_001,
+        catalog_id:                catalog_id,
+        catalog_id_field:          catalog_id_field,
+        marc_005:                  marc_005,
+        institutional_record_date: institutional_record_date,
+        call_number:               call_number,
+        title:                     title,
+        iiif_manifest:             iiif_manifest,
+        catalog_url:               catalog_url,
+        generated_at:              generated_at,
+      }
+    }
+    write_csv rows, options
+  end
+
+  desc "marc XML [XML...]", "Extract input CSV from Penn MARC XML"
+  long_desc <<-LONGDESC
+  Extract input CSV from Penn MARC XML
+  LONGDESC
+
+  i_desc = 'Short name of the institution to create this CSV for; REQUIRED'
+  option :institution, banner: 'INSTITUTION', required: true,
+         desc: i_desc, aliases: '-i'
+  def marc *files
+    # FIXME: this method is insufficient for Penn IIIF manifests;
+    #   use J. Dummer's script for the Penn manuscripts
+
+    return false unless validate_files files
+    timestamp = DS.timestamp
+
+    rows = select_input(files).flat_map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml         = File.open(in_xml.chomp) { |f| Nokogiri::XML f }
+      xml.remove_namespaces!
+      records = xml.xpath '//record'
+
+      records.map { |record|
+
+        contributor_name          = DS::Institutions.preferred_name options[:institution]
+        contributor_wikidata_qid  = DS::Institutions.find_qid options[:institution]
+        filename                  = File.basename source_file
+        source_type               = 'marc-xml'
+        ds_id                     = ''
+        marc_001                  = DS::MarcXML.extract_001_control_number record
+        catalog_id                = ''
+        catalog_id_field          = ''
+        marc_005                  = DS::MarcXML.extract_marc_005_control_date record
+        institutional_record_date = ''
+        call_number               = DS::MarcXML.find_shelfmark record
+        title                     = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text, terminator: ''
+        iiif_manifest             = DS::MarcXML.find_iiif_manifest record
+        catalog_url               = "https://franklin.library.upenn.edu/catalog/FRANKLIN_#{marc_001}"
+        generated_at              = timestamp
+
+        {
+          contributor_wikidata_qid:  contributor_wikidata_qid,
+          contributor_name:          contributor_name,
+          source_type:               source_type,
+          filename:                  filename,
+          ds_id:                     ds_id,
+          marc_001:                  marc_001,
+          catalog_id:                catalog_id,
+          catalog_id_field:          catalog_id_field,
+          marc_005:                  marc_005,
+          institutional_record_date: institutional_record_date,
+          call_number:               call_number,
+          title:                     title,
+          iiif_manifest:             iiif_manifest,
+          catalog_url:               catalog_url,
+          generated_at:              generated_at,
+        }
+      }
+    }
+    write_csv rows, options
+  end
+
+  desc "openn XML [XML...]", "Extract input CSV from OPenn TEI XML"
+  long_desc <<-LONGDESC
+    Extract input CSV from OPenn TEI XML
+  LONGDESC
+
+  i_desc = 'Short name of the institution to create this CSV for; REQUIRED'
+  option :institution, banner: 'INSTITUTION', required: true,
+         desc: i_desc, aliases: '-i'
+
+  def openn *files
+    return false unless validate_files files
+    Recon.update! unless skip_git? options
+    timestamp = DS.timestamp
+    rows = select_input(files).map { |in_xml|
+      source_file = in_xml.chomp # remove newline in case input if from ARGF
+      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
+      xml.remove_namespaces!
+
+      contributor_name          = xml.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
+      contributor_wikidata_qid  = DS::Institutions.find_qid options[:institution]
+      filename                  = File.basename source_file
+      source_type               = 'openn-tei'
+      ds_id                     = ''
+      marc_001                  = ''
+      catalog_id                = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno').text()
+      catalog_id_field          = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno'
+      marc_005                  = ''
+      institutional_record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date[@type="mod-date"]').text
+      call_number               =  xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
+      title                     = xml.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
+      iiif_manifest             = ''
+      catalog_url               = ''
+      generated_at              = timestamp
+
+      {
+        contributor_wikidata_qid:  contributor_wikidata_qid,
+        contributor_name:          contributor_name,
+        source_type:               source_type,
+        filename:                  filename,
+        ds_id:                     ds_id,
+        marc_001:                  marc_001,
+        catalog_id:                catalog_id,
+        catalog_id_field:          catalog_id_field,
+        marc_005:                  marc_005,
+        institutional_record_date: institutional_record_date,
+        call_number:               call_number,
+        title:                     title,
+        iiif_manifest:             iiif_manifest,
+        catalog_url:               catalog_url,
+        generated_at:              generated_at,
+      }
+    }
+
+    write_csv rows, options
+  end
+
+  protected
+
+  def write_csv rows, options
+    out_csv = options[:'output-csv']
+    io = out_csv ? open(out_csv, 'w') : $stdout.dup
+    CSV io, headers: true do |csv|
+      csv << DS::Constants::MANIFEST_HEADINGS
+      rows.each do |row|
+        csv << row
+      end
+    end
+
+    if options[:'output-csv']
+      puts "Wrote: '#{out_csv}'"
+      io.close
+    end
+  end
+end
+
+GenManifestCLI.start ARGV
