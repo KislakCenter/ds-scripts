@@ -87,6 +87,15 @@ iiif_manifest
 generated_at
 }
 
+    REQUIRED_MANIFEST_VALUES = %i{
+contributor_wikidata_qid
+contributor_name
+source_type
+filename
+call_number
+generated_at
+}
+
     # Institutions dependent on DS and their DS IDs
     # Some institutions have more than one collection
     #

@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'csv'
+require_relative '../lib/ds/cli'
+
+class DSProcess < DS::CLI
+  DS.configure!
+
+  def self.exit_on_failure?
+    true
+  end
+
+  class_option :'output-csv', banner: 'FILE', desc: "Name of the output CSV file [default: output.csv]", default: 'output.csv', aliases: '-o'
+
+  desc "process MANIFEST", "Create DS import CSV for MANIFEST CSV"
+  long_desc <<-LONGDESC
+Create import CSV for manifest CSV. A manifest file should be in the same
+directory as the metadata files (MARC XML files, METS XML files, OPenn TEI XML 
+files, etc.).
+
+This script validates the manifest and data files, then generates the import 
+CSV.
+
+LONGDESC
+  def process manifest_csv
+    manifest = DS::ImportManifest.new manifest
+
+    manifest.validate_manifest
+    CSV.foreach manifest_csv, 'r', headers: true do |row|
+      puts row
+    end
+  end
+
+end
+
+DSProcess.start ARGV
