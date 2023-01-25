@@ -7,7 +7,7 @@ require 'tempfile'
 RECON_SCRIPT = File.join __dir__, '../bin/ds-recon'
 
 LOGGER = Logger.new STDOUT
-LOGGER.level = (ENV['DS_LOGLEVEL'] || Logger::DEBUG)
+LOGGER.level = (ENV['DS_LOGLEVEL'] || Logger::INFO)
 
 OUT_DIR = File.join __dir__, '../tmp'
 
@@ -89,7 +89,7 @@ system "#{RECON_SCRIPT} recon-update"
 
 sub_commands.each do |sub|
   cmd = "#{RECON_SCRIPT} #{sub} #{command_opts} -"
-  LOGGER.info "Running: #{cmd}"
+  LOGGER.debug "Running: #{cmd}"
   system %Q{cat #{tmpfile.path} | #{cmd} }
 end
 

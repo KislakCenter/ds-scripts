@@ -182,6 +182,51 @@ module DS
         ms.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="local"]/text()').text
       end
 
+      ##
+      # See the note for [Recon::Subjects]: Each source subject extraction
+      # method should return a two dimensional array:
+      #
+      #     [["Islamic law--Early works to 1800", ""],
+      #       ["Malikites--Early works to 1800", ""],
+      #       ["Islamic law", ""],
+      #       ["Malikites", ""],
+      #       ["Arabic language--Grammar--Early works to 1800", ""],
+      #       ["Arabic language--Grammar", ""],
+      #       ...
+      #       ]
+      #
+      # The second value is for those cases where the source provides an
+      # authority URI. The METS records don't give a URI so this method always
+      # returns the empty string for the second value.
+      #
+      # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
+      # @return [Array<String,String>] a two-dimenional array of subject and URI
+      def recon_subjects xml
+        extract_subjects(xml).map { |s| [s, ''] }
+      end
+
+      ##
+      # Extract subjects, the `mods:originInfo/mods:edition` values for each
+      # text. For example,
+      #
+      #    <mods:originInfo>
+      #      <mods:edition>Alexander, de Villa Dei.</mods:edition>
+      #      <mods:edition>Illumination of books and manuscripts, Medieval.</mods:edition>
+      #      <mods:edition>Latin language--Grammar.</mods:edition>
+      #      <mods:edition>Latin poetry, Medieval and modern.</mods:edition>
+      #      <mods:edition>Manuscripts, Medieval--Connecticut--New Haven.</mods:edition>
+      #    </mods:originInfo>
+      #
+      # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
+      # @return [Array<String>] an of subjects
+      def extract_subjects xml
+        xpath = '//mods:originInfo/mods:edition'
+        data = find_texts(xml).flat_map { |text|
+          text.xpath(xpath).map &:text
+        }
+        data
+      end
+
       def extract_link_to_inst_record xml
         ms = find_ms xml
         # xpath mets:mdWrap/mets:xmlData/mods:mods/mods:relatedItem/mods:location/mods:url
