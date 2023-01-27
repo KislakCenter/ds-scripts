@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Uncomment for noisy logging
+#export DS_LOGLEVEL=DEBUG
+
 members="rome
 conception
 csl
@@ -13,16 +16,12 @@ providence
 rutgers
 smith"
 
-members=smith
-
 this_dir=$(dirname $0)
 
 ds_dir=${this_dir}/../data/digitalassets.lib.berkeley.edu/ds
-dest_base=${this_dir}/../tmp/legacy-recon
+dest_base=${this_dir}/../tmp/mets-recon-$(date +%Y-%m-%d)
 
 [[ -e ${dest_base} ]] || mkdir "${dest_base}"
-
-export DS_LOGLEVEL=DEBUG
 
 for member in ${members}
 do
