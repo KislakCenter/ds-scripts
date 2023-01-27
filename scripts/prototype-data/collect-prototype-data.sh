@@ -6,7 +6,7 @@
 #
 ###############################################################################
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-TMP_DIR=${SCRIPT_DIR}/../tmp
+TMP_DIR=${SCRIPT_DIR}/../../tmp
 [[ -e ${TMP_DIR} ]] || mkdir -v ${TMP_DIR} # Create TMP_DIR if it doesn't exist
 
 ####################
@@ -22,20 +22,20 @@ TEI_INSTS="flp"
 ##############
 # Pre-run test
 ##############
-if [[ -e ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds ]]; then
+if [[ -e ${SCRIPT_DIR}/../../data/digitalassets.lib.berkeley.edu/ds ]]; then
   : # do nothing; we the METS files are available
 else
-  echo "ERROR: METS folders not found: '${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds'" >&2
-  echo "Please: unzip ${SCRIPT_DIR}/../data/digitalassets-lib-berkeley-edu.tgz to ${SCRIPT_DIR}/../data" >&2
+  echo "ERROR: METS folders not found: '${SCRIPT_DIR}/../../data/digitalassets.lib.berkeley.edu/ds'" >&2
+  echo "Please: unzip ${SCRIPT_DIR}/../../data/digitalassets-lib-berkeley-edu.tgz to ${SCRIPT_DIR}/../../data" >&2
   echo "Run: " >&2
-  echo "    tar xf ${SCRIPT_DIR}/../data/digitalassets-lib-berkeley-edu.tgz --directory ${SCRIPT_DIR}/../data" >&2
+  echo "    tar xf ${SCRIPT_DIR}/../../data/digitalassets-lib-berkeley-edu.tgz --directory ${SCRIPT_DIR}/../../data" >&2
   exit 1
 fi
 
 #################################
 # Update the recon files from git
 #################################
-${SCRIPT_DIR}/../bin/ds-recon recon-update
+${SCRIPT_DIR}/../../bin/ds-recon recon-update
 
 ################
 # DS legacy METS
@@ -43,8 +43,8 @@ ${SCRIPT_DIR}/../bin/ds-recon recon-update
 ## the first 100 records for each of the legacy institutions
 for x in ${LEGACY_INSTS}
 do
-  find ${SCRIPT_DIR}/../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100
-done | ${SCRIPT_DIR}/../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
+  find ${SCRIPT_DIR}/../../data/digitalassets.lib.berkeley.edu/ds/${x}/mets -maxdepth 1 -name \*.xml | sort | head -100
+done | ${SCRIPT_DIR}/../../bin/ds-convert mets -o ${TMP_DIR}/ds-legacy.csv -
 
 ##########
 # MARC XML
@@ -54,11 +54,11 @@ for inst in ${MARC_INSTS}
 do
   # Test version:
   # ./bin/ds-convert marc --skip-recon-update --institution penn -o tmp/ds-penn.csv data/prototype-data/penn/*.xml
-  find ${SCRIPT_DIR}/../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv -
+  find ${SCRIPT_DIR}/../../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../../bin/ds-convert marc --skip-recon-update --institution ${inst} -o ${TMP_DIR}/ds-${inst}.csv -
 done
 
 # Run Princeton with Holdings information
-bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
+bundle exec ruby ${SCRIPT_DIR}/../../bin/ds-convert marc --skip-recon-update --institution princeton -o ${TMP_DIR}/ds-princeton.csv ${SCRIPT_DIR}/../../data/prototype-data/princeton/IslamicGarrettBIB1-trim.xml -f ${SCRIPT_DIR}/../../data/prototype-data/princeton/IslamicGarrettHoldingsandMMSID-trim.xml
 
 ##########
 # FLP TEI
@@ -66,7 +66,7 @@ bundle exec ruby ${SCRIPT_DIR}/../bin/ds-convert marc --skip-recon-update --inst
 # Run through the TEI_INSTS and output a CSV for each to TMP_DIR
 for inst in ${TEI_INSTS}
 do
-  find ${SCRIPT_DIR}/../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../bin/ds-convert openn --skip-recon-update -o ${TMP_DIR}/ds-${inst}.csv -
+  find ${SCRIPT_DIR}/../../data/prototype-data/${inst} -maxdepth 1 -name \*.xml | ${SCRIPT_DIR}/../../bin/ds-convert openn --skip-recon-update -o ${TMP_DIR}/ds-${inst}.csv -
 done
 
 #######################

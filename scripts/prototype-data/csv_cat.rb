@@ -48,13 +48,18 @@ end
 
 parser.parse!
 
-csvs = ARGV.dup
+csvs = ARGV.select { |f| File.exist? f}
 
+abort "No input CSVs found #{ARGV.join ', '}" if csvs.empty?
 header = CSV.readlines(csvs.first).first
 
 data = []
 csvs.each do |in_file|
-  data += CSV.readlines(in_file)[1..-1]
+  if File.exist? in_file
+    data += CSV.readlines(in_file)[1..-1]
+  else
+    puts "WARNING: input file not found: #{in_file}"
+  end
 end
 
 data.sort_by! &:first if options[:sort]
