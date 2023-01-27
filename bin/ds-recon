@@ -116,11 +116,13 @@ LONGDESC
     begin
       Recon.update! unless skip_git? options
 
+      data = []
+
       case options[:'source-type']
       when 'marc'
         data = klass.from_marc select_input(files), tags: tags
       when 'mets'
-        data = klass.from_mets select_input files
+        data = klass.from_mets(select_input(files)) unless options[:'source-type'] == 'named-subjects'
       when 'tei'
         data = klass.from_tei select_input files
       else
@@ -156,7 +158,7 @@ LONGDESC
 
     begin
       Recon.update! unless skip_git? options
-      data = nil
+      data = []
       case options[:'source-type']
       when 'marc'
         data = Genres.from_marc select_input files
@@ -304,14 +306,18 @@ LONGDESC
     File.join options[:directory], csv_name
   end
 
-  def write_csv out_file, header, data
-    CSV.open out_file, 'wb' do |csv|
+  def write_csv out_csv, header, data
+    if data.nil? || data.empty?
+      puts "WARNING: No data for recon CSV; not writing: #{out_csv}"
+      return
+    end
+    CSV.open out_csv, 'wb' do |csv|
       csv << header
       data.each do |row|
         csv << row
       end
     end
-    puts "Wrote: #{out_file}"
+    puts "Wrote: #{out_csv}"
   end
 end
 

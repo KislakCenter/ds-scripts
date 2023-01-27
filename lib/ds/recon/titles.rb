@@ -16,7 +16,7 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first
-        row << Recon.lookup('titles', value: name, column: 'authorize_label')
+        row << Recon.lookup('titles', value: name, column: 'authorized_label')
       end
     end
 

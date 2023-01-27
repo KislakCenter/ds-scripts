@@ -212,7 +212,7 @@ class DSConvertCLI < DS::CLI
       title_as_recorded_agr              = ''
       standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
       genre_as_recorded                  = ''
-      subject_as_recorded                = ''
+      subject_as_recorded                = DS::DS10.extract_subjects(xml).join '|'
       author_as_recorded                 = DS::DS10.extract_text_name xml, 'author'
       author_as_recorded_agr             = ''
       author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'

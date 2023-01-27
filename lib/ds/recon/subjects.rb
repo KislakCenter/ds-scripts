@@ -4,8 +4,23 @@ module Recon
   ##
   # Extract subjects for reconciliation CSV output.
   #
-  # Return a two-dimensional array, each row is a term; and each row has
-  # two columns: subject and authority number.
+  # NOTE: Each source subject extraction method should return a two dimensional
+  # array:
+  #
+  #     [["Islamic law--Early works to 1800", ""],
+  #       ["Malikites--Early works to 1800", ""],
+  #       ["Islamic law", ""],
+  #       ["Malikites", ""],
+  #       ["Arabic language--Grammar--Early works to 1800", ""],
+  #       ["Arabic language--Grammar", ""],
+  #       ...
+  #       ]
+  #
+  # The two values are `subject_as_recorded` and `source_authority_uri`. The
+  # second of these is present when the source record provides an accompanying
+  # URI. This is rare. Sources the lack a URI should return the as recorded
+  # value and `""` (the empty string) for the `source_authority_uri` as shown
+  # above.
   #
   class Subjects
 
@@ -40,7 +55,12 @@ module Recon
     end
 
     def self.from_mets files
-      raise NotImplementedError
+      data = []
+      process_xml files do |xml|
+        data += DS::DS10.recon_subjects(xml)
+      end
+      add_recon_values data
+      Recon.sort_and_dedupe data
     end
 
     def self.from_tei files
