@@ -3,6 +3,7 @@ recon:
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
   git_branch: 'main'
   git_local_name: 'ds-data'
+  # TODO: make sets a hash so you can do Settings.recon.sets.genres
   sets:
     - name: names
       repo_path: terms/reconciled/names.csv

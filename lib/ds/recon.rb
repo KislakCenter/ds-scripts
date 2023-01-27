@@ -45,6 +45,8 @@ module Recon
     end
   end
 
+  ##
+  # TODO: `column` is ambiguous; clarify
   def self.lookup set_name, subset: nil, value:, column:
     recon_set = find_set set_name
     key = build_key value, subset
