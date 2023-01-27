@@ -116,11 +116,13 @@ LONGDESC
     begin
       Recon.update! unless skip_git? options
 
+      data = []
+
       case options[:'source-type']
       when 'marc'
         data = klass.from_marc select_input(files), tags: tags
       when 'mets'
-        data = klass.from_mets select_input files
+        data = klass.from_mets(select_input(files)) unless options[:'source-type'] == 'named-subjects'
       when 'tei'
         data = klass.from_tei select_input files
       else
