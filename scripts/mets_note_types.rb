@@ -19,6 +19,8 @@ HEADERS = %i{
   part_phys_desc
   number_of_texts
   text_note_types
+  number_of_pages
+  page_notes
 }
 
 def count_notes nodes, look: false, phys_desc: false
@@ -32,7 +34,9 @@ def count_notes nodes, look: false, phys_desc: false
       (note_types[note_type] ||= 0)
       note_types[note_type] += 1
     end
-    note_types[:untyped] += node.xpath(path, NS).size
+    untyped_path = './descendant::mods:mods/mods:note[not(@type)]'
+    untyped_path = './mods:note[not(@type)]' if phys_desc
+    note_types[:untyped] += node.xpath(untyped_path, NS).size
   }
   note_types.reject{ |k,v| v == 0 }.map { |k, v| "#{k}:#{v}" }.join ', '
 end
@@ -58,10 +62,14 @@ CSV do |csv|
     texts = DS::DS10.find_texts xml
     number_of_texts = texts.size
     text_note_types = count_notes texts
+    pages = DS::DS10.find_pages xml
+    number_of_pages = pages.size
+    page_notes = count_notes pages
     csv << [
       source_file, shelfmark, ms_note_types, ms_phys_desc,
       number_of_parts, part_note_types, part_phys_desc,
-      number_of_texts, text_note_types
+      number_of_texts, text_note_types,
+      number_of_pages, page_notes
     ]
   end
 end
