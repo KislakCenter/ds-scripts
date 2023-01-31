@@ -66,11 +66,11 @@ module DS
       #
       #   Accounted for
       #   - ownership -- accounted for, former owner
-      #   - action -- skip
+      #   - action -- skip; administrative note: "Inputter ...."
       #   - admin -- acknowledgements
-      #   - untyped
-      #   - bibliography
-      #   - source note
+      #   - untyped -- 'Manuscript Note'
+      #   - bibliography -- 'Bibliography'
+      #   - source note -- skip; not present on DS legacy pages
       #
       #
       # # MS Note Phys desc
@@ -81,38 +81,38 @@ module DS
       #
       #   - date - already accounted for
       #   - content - skip
-      #   - admin - Acknowledgment
+      #   - admin - Acknowledgments
       #
       #   - untyped
       #
       # # MS Part phys description
       #
-      #   - support -- accounted for
+      #   - support -- accounted for as support
       #
-      #   - marks
-      #   - medium -> Music
-      #   - physical description
-      #   - physical details
-      #   - script
-      #   - technique
+      #   - marks - 'Watermarks'
+      #   - medium -> 'Music'
+      #   - physical description -> 'Other decoration'
+      #   - physical details -> 'Figurative details'
+      #   - script -> 'Script'
+      #   - technique -> 'Layout'
       #
       #  # Text note types
       #
       #   Accounted for
-      #   - admin
+      #   - admin - acknowledgements
       #
-      #   - condition
-      #   - content
-      #   - untyped
+      #   - condition -> 'Status of text'
+      #   - content -> handled as Text Incipit
+      #   - untyped -> 'Text note'
       #
       #  # Page note types
       #
       #   Accounted for
       #     None
       #
-      #   - content
-      #   - date
-      #   - untyped
+      #   - content -> Folio Incipit
+      #   - date -- skip
+      #   - untyped -> 'Folio note'
       #
       def note_by_type node, note_type, tag: nil
         if note_type == :none
@@ -451,13 +451,12 @@ module DS
         fptr_addresses.map { |address| locate_filename address }
       end
 
-      def extract_ms_notes xml
+      def extract_ms_note xml
         #  untyped notes
         notes = []
         ms = find_ms xml
         notes += note_by_type ms, :none, tag: 'Manuscript note'
         notes += note_by_type ms, 'bibliography', tag: 'Bibliography'
-        notes += note_by_type ms, 'source note', tag: 'Source note'
         notes
       end
 
@@ -472,7 +471,10 @@ module DS
       def extract_text_note xml
         find_texts(xml).flat_map { |text|
           extent = extract_extent text
-          note_by_type text, :none, tag: extent
+          notes = []
+          notes += note_by_type text, :none, tag: extent
+          notes += note_by_type text, 'condition', tag: "Status of text, #{extent}"
+          notes
         }
       end
 
@@ -493,8 +495,10 @@ module DS
         notes = []
         # get all notes that don't have @type
         xpath = %q{//mods:note[not(@type)]/text()}
-        notes += extract_ms_notes xml
-
+        notes += extract_ms_note xml
+        notes += extract_part_note xml
+        notes += extract_text_note xml
+        notes += extract_page_note xml
 
         prefixes = %r{^lang:\s*}i
         notes.flatten.map { |note|
@@ -502,18 +506,11 @@ module DS
           note.to_s.strip.gsub(%r{\s+}, ' ')
         }.uniq.reject { |note|
           # skip notes with prefixes like 'lang: '
-          note =~ prefixes
+          note.to_s =~ prefixes
         }.map { |note|
           # add period to any note without terminal punctuation: .,;:? or !
           DS.mark_long DS.terminate(note, terminator: '.')
         }
-      end
-
-      def extract_all_notes xml
-        notes = []
-        notes += extract_note xml
-        notes += extract_incipit_explicit xml
-        notes.flatten
       end
 
       ##

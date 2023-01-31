@@ -115,6 +115,7 @@
           </mods:physicalDescription>
           <mods:note>lang: Latin</mods:note>
           <mods:note>Untyped text note</mods:note>
+          <mods:note type="condition">Condition note</mods:note>
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
           </mods:location>
