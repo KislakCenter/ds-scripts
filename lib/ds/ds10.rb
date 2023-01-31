@@ -40,21 +40,21 @@ module DS
       # @param [Nokogiri::XML::Node] xml the document's xml
       # @return [String] the physical description; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
       def extract_physical_description xml
-        parts = find_parts xml
-        use_extent = parts.size > 1
-        find_parts(xml).flat_map { |part|
-          phys_desc = []
+        physdesc = []
+        physdesc += extract_ms_phys_desc xml
+        physdesc += extract_part_phys_desc xml
+        physdesc.flatten!
 
-          node = part.xpath('./descendant::mods:physicalDescription')
-
-          extent    = extract_extent(part).join ' '
-          extent_prefix = use_extent ? ", #{extent}" : ''
-          phys_desc << "Description#{extent_prefix}: #{node.text}"
-          phys_desc << "Extent: #{extent}"
-
-
-          DS.clean_string extent, terminator: '.'
-        }.join ' '
+        physdesc.flat_map { |desc|
+          # get node text and clean whitespace
+          desc.to_s.strip.gsub(%r{\s+}, ' ')
+        }.uniq.reject { |desc|
+          # skip notes with prefixes like 'lang: '
+          desc.to_s =~ %r{^lang:\s*}i
+        }.map { |desc|
+          # add period to any note without terminal punctuation: .,;:? or !
+          DS.mark_long DS.terminate(desc, terminator: '.')
+        }
       end
 
       def physdesc_note node, note_type, tag: nil

@@ -23,6 +23,18 @@ describe DS::DS10 do
     ].sort
   }
 
+  let(:all_phys_descs) {
+    [
+      'Binding: Not bound.',
+      'Figurative details, One leaf: Physical details note.',
+      'Other decoration, One leaf: Physical description note.',
+      'Script, One leaf: Script note.',
+      'Music, One leaf: Medium note.',
+      'Layout, One leaf: Technique note.',
+      'Watermarks, One leaf: Marks note.',
+    ]
+  }
+
   context "notes" do
     context 'extract_ms_note' do
       it 'formats an untyped ms note' do
@@ -99,5 +111,13 @@ describe DS::DS10 do
       end
 
     end # context: extract_part_phys_desc
+
+    context 'extract_physical_description' do
+      it 'formats all the phys desc notes' do
+        all_phys_descs.each do |desc|
+          expect(DS::DS10.extract_physical_description na_ds_xml).to include desc
+        end
+      end
+    end
   end # context: physical description
 end
