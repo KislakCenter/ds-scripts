@@ -85,9 +85,13 @@
           </mods:originInfo>
           <mods:physicalDescription>
             <mods:extent>One leaf;;132 x 87</mods:extent>
-            <mods:note type="technique">Text block and border 70 x 60mm. 14.70.45 x 11.47.13 (border).16</mods:note>
-            <mods:note type="script">Lettre Batard</mods:note>
+            <mods:note type="technique">Technique note</mods:note>
+            <mods:note type="marks">Marks note</mods:note>
+            <mods:note type="script">Script note</mods:note>
             <mods:note type="support">Parchment, semi-translucent</mods:note>
+            <mods:note type="medium">Medium note</mods:note>
+            <mods:note type="physical details">Physical details note</mods:note>
+            <mods:note type="physical description">Physical description note</mods:note>
             <mods:note type="physical description">Border 70 x 37 mm gold background. Fifteen lettered lines in Latin in brown ink with rubricated capitals. Recto, right margin: narcissus, 2 strawberries, violet, 2 strawberries. Verso, left margin: quadrifoliate blue flower, red and pink quadrifoliate flower, sweet pea(?), narcissus, sweet pea, pink and red blossom. Two 2-line initials (recto, verso) with light blue ground, dark blue letter with gold flourishing. Two 1-line initials on verso; gold letter on red ground.;;1</mods:note>
           </mods:physicalDescription>
           <mods:note>Top margin, recto and verso: Of. de la Croix</mods:note>

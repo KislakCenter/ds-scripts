@@ -47,8 +47,6 @@ module DS
 
           node = part.xpath('./descendant::mods:physicalDescription')
 
-
-
           extent    = extract_extent(part).join ' '
           extent_prefix = use_extent ? ", #{extent}" : ''
           phys_desc << "Description#{extent_prefix}: #{node.text}"
@@ -57,6 +55,45 @@ module DS
 
           DS.clean_string extent, terminator: '.'
         }.join ' '
+      end
+
+      def physdesc_note node, note_type, tag: nil
+        if note_type == :none
+          xpath = %q{mods:mods/mods:physicalDescription/mods:note[not(@type)]}
+        else
+          xpath = %Q{mods:mods/mods:physicalDescription/mods:note[@type = '#{note_type}']}
+        end
+
+        node.xpath(xpath).map { |x|
+          tag.nil? ? x.text : "#{tag}: #{x.text}"
+        }
+      end
+
+      def extract_ms_phys_desc xml
+        ms = find_ms xml
+        physdesc_note ms, 'presentation', tag: 'Binding'
+      end
+
+      def extract_part_phys_desc xml
+        parts = find_parts xml
+        parts.flat_map { |part|
+          extent = extract_extent part
+          notes = []
+
+          tag = "Figurative details, #{extent}"
+          notes += physdesc_note part, 'physical details', tag: tag
+          tag = "Other decoration, #{extent}"
+          notes += physdesc_note part, 'physical description', tag: tag
+          tag = "Script, #{extent}"
+          notes += physdesc_note part, 'script', tag: tag
+          tag = "Music, #{extent}"
+          notes += physdesc_note part, 'medium', tag: tag
+          tag = "Layout, #{extent}"
+          notes += physdesc_note part, 'technique', tag: tag
+          tag = "Watermarks, #{extent}"
+          notes += physdesc_note part, 'marks', tag: tag
+          notes
+        }
       end
 
       ##
@@ -452,7 +489,6 @@ module DS
       end
 
       def extract_ms_note xml
-        #  untyped notes
         notes = []
         ms = find_ms xml
         notes += note_by_type ms, :none, tag: 'Manuscript note'
@@ -462,7 +498,6 @@ module DS
 
       def extract_part_note xml
         find_parts(xml).flat_map { |part|
-          phys_desc_node = part.xpath 'mods:mods/mods:physicalDescription'
           extent = extract_extent part
           note_by_type part, :none, tag: extent
         }
@@ -548,10 +583,6 @@ module DS
             "Explicit, #{extent}: #{exp}"
           }
         }
-      end
-
-      def extract_script xml
-
       end
 
       def find_ms xml

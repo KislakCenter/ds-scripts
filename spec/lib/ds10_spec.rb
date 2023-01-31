@@ -67,7 +67,37 @@ describe DS::DS10 do
   end
 
   context 'physical description' do
+    context 'extract_ms_phys_desc' do
+      it 'formats a binding note' do
+        expect(DS::DS10.extract_ms_phys_desc na_ds_xml).to include 'Binding: Not bound'
+      end
+    end
+    
+    context 'extract_part_phys_desc' do
+      it 'formats a physical details note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Figurative details, One leaf: Physical details note'
+      end
 
-  end
+      it 'formats a physical description note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Other decoration, One leaf: Physical description note'
+      end
 
+      it 'formats a script note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Script, One leaf: Script note'
+      end
+
+      it 'formats a medium note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Music, One leaf: Medium note'
+      end
+
+      it 'formats a technique note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Layout, One leaf: Technique note'
+      end
+
+      it 'formats a marks note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Watermarks, One leaf: Marks note'
+      end
+
+    end # context: extract_part_phys_desc
+  end # context: physical description
 end
