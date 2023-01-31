@@ -19,7 +19,11 @@ describe DS::DS10 do
       'One leaf: Untyped part note.',
       'One leaf: Untyped text note.',
       'Status of text, One leaf: Condition note.',
-      'f. 1r: Untyped page note.'
+      'f. 1r: Untyped page note.',
+      'Incipit, One leaf: Text content note.',
+      'Explicit, One leaf: Text abstract.',
+      'Incipit, f. 1v: Page content note.',
+      'Explicit, f. 1v: Page abstract.',
     ].sort
   }
 
