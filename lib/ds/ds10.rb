@@ -503,12 +503,20 @@ module DS
         }
       end
 
+      def extract_explicit node, tag:
+        node.xpath('mods:mods/mods:abstract/text()').map { |n|
+          "#{tag}: #{n.text}"
+        }
+      end
+
       def extract_text_note xml
         find_texts(xml).flat_map { |text|
           extent = extract_extent text
           notes = []
           notes += note_by_type text, :none, tag: extent
           notes += note_by_type text, 'condition', tag: "Status of text, #{extent}"
+          notes += note_by_type text, 'content', tag: "Incipit, #{extent}"
+          notes += extract_explicit text, tag: "Explicit, #{extent}"
           notes
         }
       end
@@ -516,7 +524,11 @@ module DS
       def extract_page_note xml
         find_pages(xml).flat_map { |page|
           extent = extract_extent page
-          note_by_type page, :none, tag: extent
+          notes = []
+          notes += note_by_type page, :none, tag: extent
+          notes += note_by_type page, 'content', tag: "Incipit, #{extent}"
+          notes += extract_explicit page, tag: "Explicit, #{extent}"
+          notes
         }
       end
 

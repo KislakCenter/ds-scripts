@@ -57,8 +57,16 @@ describe DS::DS10 do
         expect(DS::DS10.extract_text_note na_ds_xml).to include 'One leaf: Untyped text note'
       end
 
-      it 'formats an condition note' do
+      it 'formats a condition note' do
         expect(DS::DS10.extract_text_note na_ds_xml).to include 'Status of text, One leaf: Condition note'
+      end
+
+      it 'formats an incipit' do
+        expect(DS::DS10.extract_text_note na_ds_xml).to include 'Incipit, One leaf: Text content note'
+      end
+
+      it 'formats an explicit' do
+        expect(DS::DS10.extract_text_note na_ds_xml).to include 'Explicit, One leaf: Text abstract'
       end
     end
 
@@ -66,6 +74,15 @@ describe DS::DS10 do
       it 'formats an untyped page note' do
         expect(DS::DS10.extract_page_note na_ds_xml).to include 'f. 1r: Untyped page note'
       end
+
+      it 'formats an incipit' do
+        expect(DS::DS10.extract_page_note na_ds_xml).to include 'Incipit, f. 1v: Page content note'
+      end
+
+      it 'formats an explicit' do
+        expect(DS::DS10.extract_page_note na_ds_xml).to include 'Explicit, f. 1v: Page abstract'
+      end
+
     end
 
     context 'extract_note' do
@@ -84,7 +101,7 @@ describe DS::DS10 do
         expect(DS::DS10.extract_ms_phys_desc na_ds_xml).to include 'Binding: Not bound'
       end
     end
-    
+
     context 'extract_part_phys_desc' do
       it 'formats a physical details note' do
         expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Figurative details, One leaf: Physical details note'
