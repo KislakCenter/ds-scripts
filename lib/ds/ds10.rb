@@ -407,9 +407,27 @@ module DS
       end
 
       def extract_acknowledgements xml
-        note_by_type(xml, 'admin').map { |note|
-          DS.clean_string note, terminator: '.'
-        }.join '|'
+        notes = []
+        notes += find_ms(xml).map { |ms| note_by_type ms, 'admin' }
+
+        notes += find_parts(xml).map { |part|
+          extent = extract_extent part
+          note_by_type part, 'admin', tag: extent
+        }
+
+        notes += find_texts(xml).map { |text|
+          extent = extract_extent text
+          note_by_type text, 'admin', tag: extent
+        }
+
+        notes += find_pages(xml).map { |page|
+          extent = extract_extent page
+          note_by_type page, 'admin', tag: extent
+        }
+
+        notes.flat_map { |note|
+          DS.mark_long DS.clean_string(note, terminator: '.')
+        }
       end
 
       ##

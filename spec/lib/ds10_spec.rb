@@ -177,5 +177,28 @@ describe DS::DS10 do
         expect(descs.grep /^SPLIT.*Long part description/).not_to be_empty, "No SPLIT desc present"
       end
     end
+
+    context 'extract_acknowledgements' do
+      it 'flags a long acknowledement' do
+        acks = DS::DS10.extract_acknowledgements na_ds_xml
+        expect(acks.grep /SPLIT.*Long acknowledgement/).not_to be_empty, "Expected acknowledgement marked SPLIT "
+      end
+
+      it 'formats an ms acknowledgement' do
+        expect(DS::DS10.extract_acknowledgements na_ds_xml).to have_item_matching /^MS acknowledgement/
+      end
+
+      it 'formats a part acknowledgement' do
+        expect(DS::DS10.extract_acknowledgements na_ds_xml).to have_item_matching /^One leaf: Part acknowledgement/
+      end
+
+      it 'formats a text acknowledgement' do
+        expect(DS::DS10.extract_acknowledgements na_ds_xml).to have_item_matching /^One leaf: Text acknowledgement/
+      end
+
+      it 'formats a page acknowledgement' do
+        expect(DS::DS10.extract_acknowledgements na_ds_xml).to have_item_matching /^f. 1r: Page acknowledgement/
+      end
+    end
   end # context: physical description
 end

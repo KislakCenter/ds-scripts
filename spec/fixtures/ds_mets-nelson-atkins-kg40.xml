@@ -45,7 +45,9 @@
           <mods:note type="source note">Fragment</mods:note>
           <mods:note type="source note">source note</mods:note>
           <mods:note type="admin">We are grateful to Brother Thomas Sullivan, O.S.B., for providing the identification of the text, and to Linda Ehrsam Voigts for the physical description.</mods:note>
-          <mods:note type="admin">Long acknowledgment: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:note type="admin">MS acknowledgement</mods:note>
+          <mods:note type="admin">Long acknowledgement: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:note type="admin">Long acknowledgement: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
           <mods:note type="action">Vicki Kirby 2016-07-08</mods:note>
           <mods:note>Untyped note</mods:note>
           <mods:note>Long MS note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
@@ -99,6 +101,7 @@
             <mods:note type="physical description">Border 70 x 37 mm gold background. Fifteen lettered lines in Latin in brown ink with rubricated capitals. Recto, right margin: narcissus, 2 strawberries, violet, 2 strawberries. Verso, left margin: quadrifoliate blue flower, red and pink quadrifoliate flower, sweet pea(?), narcissus, sweet pea, pink and red blossom. Two 2-line initials (recto, verso) with light blue ground, dark blue letter with gold flourishing. Two 1-line initials on verso; gold letter on red ground.;;1</mods:note>
           </mods:physicalDescription>
           <mods:note>Top margin, recto and verso: Of. de la Croix</mods:note>
+          <mods:note type="admin">Part acknowledgement</mods:note>
           <mods:note>Untyped part note</mods:note>
           <mods:note>Long part note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
           <mods:location>
@@ -125,6 +128,7 @@
           <mods:abstract>Text abstract</mods:abstract>
           <mods:note>lang: Latin</mods:note>
           <mods:note>Untyped text note</mods:note>
+          <mods:note type="admin">Text acknowledgement</mods:note>
           <mods:note>Long text note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
           <mods:note type="condition">Condition note</mods:note>
           <mods:note type="content">Text content note</mods:note>
@@ -151,6 +155,7 @@
             <mods:extent>f. 1r</mods:extent>
           </mods:physicalDescription>
           <mods:note>Untyped page note</mods:note>
+          <mods:note type="admin">Page acknowledgement</mods:note>
           <mods:identifier type="filename" displayLabel="Filename">GouldCollection040recto.tif</mods:identifier>
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
