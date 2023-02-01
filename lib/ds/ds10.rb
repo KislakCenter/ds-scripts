@@ -34,11 +34,26 @@ module DS
       end
 
       ##
-      # Extract the physical description for each part in +xml+, and return
-      # formatted string; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
+      # Extract  and format all the physical description values  for the
+      # manuscript and each part.
+      #
+      # # MS Note Phys desc
+      #
+      # - presentation -> Binding
+      #
+      # # MS Part phys description
+      #
+      #   - support -- accounted for as support
+      #
+      #   - marks - 'Watermarks'
+      #   - medium -> 'Music'
+      #   - physical description -> 'Other decoration'
+      #   - physical details -> 'Figurative details'
+      #   - script -> 'Script'
+      #   - technique -> 'Layout'
       #
       # @param [Nokogiri::XML::Node] xml the document's xml
-      # @return [String] the physical description; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
+      # @return [Array] the physical description values
       def extract_physical_description xml
         physdesc = []
         physdesc += extract_ms_phys_desc xml
@@ -547,13 +562,12 @@ module DS
         notes += extract_text_note xml
         notes += extract_page_note xml
 
-        prefixes = %r{^lang:\s*}i
         notes.flatten.map { |note|
           # get node text and clean whitespace
           note.to_s.strip.gsub(%r{\s+}, ' ')
         }.uniq.reject { |note|
           # skip notes with prefixes like 'lang: '
-          note.to_s =~ prefixes
+          note.to_s =~ %r{\blang:\s*}i
         }.map { |note|
           # add period to any note without terminal punctuation: .,;:? or !
           DS.mark_long DS.terminate(note, terminator: '.')

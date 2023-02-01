@@ -91,9 +91,35 @@ describe DS::DS10 do
 
     context 'extract_note' do
       it 'formats all the notes' do
+        notes = DS::DS10.extract_note na_ds_xml
         all_notes.each do |note|
-          expect(DS::DS10.extract_note na_ds_xml).to include note
+          expect(notes).to include note
         end
+      end
+
+      it 'does not include "lang:" notes' do
+        notes = DS::DS10.extract_note na_ds_xml
+         expect(notes.grep /lang: Latin/i).to be_empty
+      end
+
+      it 'flags a long ms note' do
+        notes = DS::DS10.extract_note na_ds_xml
+        expect(notes.grep /^SPLIT.*Long MS note/).not_to be_empty
+      end
+
+      it 'flags a long part note' do
+        notes = DS::DS10.extract_note na_ds_xml
+        expect(notes.grep /^SPLIT.*Long part note/).not_to be_empty
+      end
+
+      it 'flags a long text note' do
+        notes = DS::DS10.extract_note na_ds_xml
+        expect(notes.grep /^SPLIT.*Long text note/).not_to be_empty
+      end
+
+      it 'flags a page ms note' do
+        notes = DS::DS10.extract_note na_ds_xml
+        expect(notes.grep /^SPLIT.*Long page note/).not_to be_empty
       end
     end
 
@@ -135,9 +161,20 @@ describe DS::DS10 do
 
     context 'extract_physical_description' do
       it 'formats all the phys desc notes' do
+        descs = DS::DS10.extract_physical_description na_ds_xml
         all_phys_descs.each do |desc|
-          expect(DS::DS10.extract_physical_description na_ds_xml).to include desc
+          expect(descs).to include desc
         end
+      end
+
+      it 'flags a long part ms description' do
+        descs = DS::DS10.extract_physical_description na_ds_xml
+        expect(descs.grep /^SPLIT.*Long MS description/).not_to be_empty, "No SPLIT desc present"
+      end
+
+      it 'flags a long part physical description' do
+        descs = DS::DS10.extract_physical_description na_ds_xml
+        expect(descs.grep /^SPLIT.*Long part description/).not_to be_empty, "No SPLIT desc present"
       end
     end
   end # context: physical description

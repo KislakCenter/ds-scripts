@@ -244,8 +244,8 @@ class DSConvertCLI < DS::CLI
       material_as_recorded               = DS::DS10.extract_support xml
       material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
       material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
-      physical_description               = DS::DS10.extract_physical_description xml
-      note                               = DS::DS10.extract_all_notes(xml).join '|'
+      physical_description               = DS::DS10.extract_physical_description(xml).join '|'
+      note                               = DS::DS10.extract_note(xml).join '|'
       acknowledgements                   = DS::DS10.extract_acknowledgements xml
       data_processed_at                  = timestamp
       data_source_modified               = DS::DS10.source_modified
