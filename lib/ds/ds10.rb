@@ -425,7 +425,11 @@ module DS
           note_by_type page, 'admin', tag: extent
         }
 
-        notes.flat_map { |note|
+        notes.flatten.map { |note|
+          note.to_s.strip.gsub %r{\s+}, ' '
+        }.uniq.reject { |note|
+          note =~ %r{^$}
+        }.map { |note|
           DS.mark_long DS.clean_string(note, terminator: '.')
         }
       end

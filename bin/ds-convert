@@ -246,7 +246,7 @@ class DSConvertCLI < DS::CLI
       material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
       physical_description               = DS::DS10.extract_physical_description(xml).join '|'
       note                               = DS::DS10.extract_note(xml).join '|'
-      acknowledgements                   = DS::DS10.extract_acknowledgements xml
+      acknowledgements                   = DS::DS10.extract_acknowledgements(xml).join '|'
       data_processed_at                  = timestamp
       data_source_modified               = DS::DS10.source_modified
 
