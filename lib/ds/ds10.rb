@@ -1,6 +1,6 @@
 require 'net/http'
 require 'nokogiri'
-
+require 'csv'
 ##
 # Module with class methods for working with DS10 METS XML.
 module DS
@@ -662,6 +662,19 @@ module DS
 
       def source_modified
         "2021-10-01"
+      end
+
+      IIIF_CSV = File.join(__dir__, 'data/legacy-iiif-manifests.csv')
+      IIIF_MANIFESTS = CSV.readlines(IIIF_CSV, headers: true).inject({}) { |h,row|
+        key = (row['holding_institution'] + row['shelfmark']).downcase
+        h.merge(key => row['iiif_manifest_url'])
+      }.freeze
+
+      def find_iiif_manifest xml
+        holding_institution = extract_institution_name xml
+        shelfmark = extract_shelfmark xml
+        key = (holding_institution + shelfmark).downcase
+        IIIF_MANIFESTS[key]
       end
 
       protected

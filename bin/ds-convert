@@ -198,6 +198,7 @@ class DSConvertCLI < DS::CLI
       holding_institution_id_number      = ''
       holding_institution_shelfmark      = DS::DS10.extract_shelfmark xml
       link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
+      iiif_manifest                      = DS::DS10.find_iiif_manifest xml
       production_place_as_recorded       = DS::DS10.extract_production_place xml
       production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
       production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
@@ -256,6 +257,7 @@ class DSConvertCLI < DS::CLI
         holding_institution_id_number:      holding_institution_id_number,
         holding_institution_shelfmark:      holding_institution_shelfmark,
         link_to_holding_institution_record: link_to_holding_institution_record,
+        iiif_manifest:                      iiif_manifest,
         production_date:                    production_date,
         production_place_as_recorded:       production_place_as_recorded,
         production_place:                   production_place,
