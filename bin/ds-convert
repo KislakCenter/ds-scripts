@@ -234,7 +234,7 @@ class DSConvertCLI < DS::CLI
       language_as_recorded               = DS::DS10.extract_language xml
       language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
       language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
-      former_owner_as_recorded           = DS::DS10.extract_ownership xml
+      former_owner_as_recorded           = DS::DS10.extract_ownership(xml).join '|'
       former_owner_as_recorded_agr       = ''
       # TODO: Legacy XML doesn't have former owner names; the following can't be tested
       former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'

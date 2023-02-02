@@ -201,4 +201,10 @@ describe DS::DS10 do
       end
     end
   end # context: physical description
+
+  context 'extract_ownership' do
+    it 'flags a long ownership note' do
+      expect(DS::DS10.extract_ownership na_ds_xml).to have_item_matching /^SPLIT.*Long ownership/
+    end
+  end
 end

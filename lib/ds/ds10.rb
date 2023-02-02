@@ -60,16 +60,7 @@ module DS
         physdesc += extract_part_phys_desc xml
         physdesc.flatten!
 
-        physdesc.flat_map { |desc|
-          # get node text and clean whitespace
-          desc.to_s.strip.gsub(%r{\s+}, ' ')
-        }.uniq.reject { |desc|
-          # skip notes with prefixes like 'lang: '
-          desc.to_s =~ %r{^lang:\s*}i
-        }.map { |desc|
-          # add period to any note without terminal punctuation: .,;:? or !
-          DS.mark_long DS.terminate(desc, terminator: '.')
-        }
+        clean_notes physdesc
       end
 
       def physdesc_note node, note_type, tag: nil
@@ -168,9 +159,9 @@ module DS
       #
       def note_by_type node, note_type, tag: nil
         if note_type == :none
-          xpath = %q{mods:mods/mods:note[not(@type)]}
+          xpath = %q{mods:mods/mods:note[not(@type)]/text()}
         else
-          xpath = %Q{mods:mods/mods:note[@type = '#{note_type}']}
+          xpath = %Q{mods:mods/mods:note[@type = '#{note_type}']/text()}
         end
 
         node.xpath(xpath).map { |x|
@@ -192,8 +183,10 @@ module DS
       end
 
       def extract_ownership xml
-        xpath = "./descendant::mods:note[@type='ownership']"
-        DS.clean_string find_ms(xml).xpath(xpath).text
+        xpath = "./descendant::mods:note[@type='ownership']/text()"
+        notes = find_ms(xml).xpath(xpath).flat_map &:text
+
+        clean_notes notes
       end
 
       ##
@@ -408,30 +401,24 @@ module DS
 
       def extract_acknowledgements xml
         notes = []
-        notes += find_ms(xml).map { |ms| note_by_type ms, 'admin' }
+        notes += find_ms(xml).flat_map { |ms| note_by_type ms, 'admin' }
 
-        notes += find_parts(xml).map { |part|
+        notes += find_parts(xml).flat_map { |part|
           extent = extract_extent part
           note_by_type part, 'admin', tag: extent
         }
 
-        notes += find_texts(xml).map { |text|
+        notes += find_texts(xml).flat_map { |text|
           extent = extract_extent text
           note_by_type text, 'admin', tag: extent
         }
 
-        notes += find_pages(xml).map { |page|
+        notes += find_pages(xml).flat_map { |page|
           extent = extract_extent page
           note_by_type page, 'admin', tag: extent
         }
 
-        notes.flatten.map { |note|
-          note.to_s.strip.gsub %r{\s+}, ' '
-        }.uniq.reject { |note|
-          note =~ %r{^$}
-        }.map { |note|
-          DS.mark_long DS.clean_string(note, terminator: '.')
-        }
+        clean_notes notes
       end
 
       ##
@@ -584,16 +571,7 @@ module DS
         notes += extract_text_note xml
         notes += extract_page_note xml
 
-        notes.flatten.map { |note|
-          # get node text and clean whitespace
-          note.to_s.strip.gsub(%r{\s+}, ' ')
-        }.uniq.reject { |note|
-          # skip notes with prefixes like 'lang: '
-          note.to_s =~ %r{\blang:\s*}i
-        }.map { |note|
-          # add period to any note without terminal punctuation: .,;:? or !
-          DS.mark_long DS.terminate(note, terminator: '.')
-        }
+        clean_notes notes
       end
 
       ##
@@ -687,6 +665,19 @@ module DS
       end
 
       protected
+
+      def clean_notes notes
+        notes.flat_map { |note|
+          # get node text and clean whitespace
+          note.to_s.strip.gsub(%r{\s+}, ' ')
+        }.uniq.reject { |note|
+          # skip notes with prefixes like 'lang: '
+          note.to_s =~ %r{\blang:\s*}i
+        }.map { |note|
+          # add period to any note without terminal punctuation: .,;:? or !
+          DS.mark_long DS.terminate(note, terminator: '.', force: true)
+        }
+      end
 
       @@ark_cache = nil
 
