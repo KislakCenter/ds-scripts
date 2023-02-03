@@ -32,6 +32,7 @@ describe DS::DS10 do
       'Binding: Not bound.',
       'Figurative details, One leaf: Physical details note.',
       'Other decoration, One leaf: Physical description note.',
+      'Number of scribes, One leaf: number of scribes.',
       'Script, One leaf: Script note.',
       'Music, One leaf: Medium note.',
       'Layout, One leaf: Technique note.',
@@ -137,8 +138,12 @@ describe DS::DS10 do
         expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Figurative details, One leaf: Physical details note'
       end
 
-      it 'formats a physical description note' do
+      it 'formats a physical description other decoration note' do
         expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Other decoration, One leaf: Physical description note'
+      end
+
+      it 'formats a physical description number of scribes note' do
+        expect(DS::DS10.extract_part_phys_desc na_ds_xml).to include 'Number of scribes, One leaf: number of scribes'
       end
 
       it 'formats a script note' do
@@ -179,7 +184,7 @@ describe DS::DS10 do
     end
 
     context 'extract_acknowledgements' do
-      it 'flags a long acknowledement' do
+      it 'flags a long acknowledgement' do
         acks = DS::DS10.extract_acknowledgements na_ds_xml
         expect(acks.grep /SPLIT.*Long acknowledgement/).not_to be_empty, "Expected acknowledgement marked SPLIT "
       end

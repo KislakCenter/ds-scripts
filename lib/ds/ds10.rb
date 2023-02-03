@@ -80,6 +80,24 @@ module DS
         physdesc_note ms, 'presentation', tag: 'Binding'
       end
 
+      def extract_pd_note part
+        extent = extract_extent part
+
+        xpath = %q{mods:mods/mods:physicalDescription/mods:note[@type = 'physical description']/text()}
+        part.xpath(xpath).flat_map { |node|
+          text = node.text
+          notes = []
+          if text =~ %r{;;}
+            other_deco, num_scribes = text.split %r{;;+}
+            notes << "Other decoration, #{extent}: #{other_deco}" unless other_deco.to_s.empty?
+            notes << "Number of scribes, #{extent}: #{num_scribes}" unless num_scribes.to_s.empty?
+          else
+            notes << "Other decoration, #{extent}: #{text}" unless text.empty?
+          end
+          notes
+        }
+      end
+
       def extract_part_phys_desc xml
         parts = find_parts xml
         parts.flat_map { |part|
@@ -88,8 +106,7 @@ module DS
 
           tag = "Figurative details, #{extent}"
           notes += physdesc_note part, 'physical details', tag: tag
-          tag = "Other decoration, #{extent}"
-          notes += physdesc_note part, 'physical description', tag: tag
+          notes += extract_pd_note part
           tag = "Script, #{extent}"
           notes += physdesc_note part, 'script', tag: tag
           tag = "Music, #{extent}"
