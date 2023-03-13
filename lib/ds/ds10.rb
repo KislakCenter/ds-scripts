@@ -21,18 +21,6 @@ module DS
         creator.split %r{;;}
       end
 
-      def extract_part_name xml, name_type
-        find_parts(xml).map { |part|
-          extract_name part, name_type
-        }.join '|'
-      end
-
-      def extract_text_name xml, name_type
-        find_texts(xml).flat_map { |text|
-          extract_name text, name_type
-        }.join '|'
-      end
-
       ##
       # Extract  and format all the physical description values  for the
       # manuscript and each part.
@@ -206,6 +194,17 @@ module DS
         clean_notes notes
       end
 
+      def extract_author xml
+        DS::DS10.extract_name xml, *%w{ author [author] }
+      end
+
+      def extract_artist xml
+        DS::DS10.extract_name xml, *%w{ artist [artist] illuminator }
+      end
+
+      def extract_scribe xml
+        DS::DS10.extract_name xml, *%w{ scribe [scribe] }
+      end
       ##
       # Return a list of unique languages from the text-level <mods:note>s
       # that start with "lang:" (case -insensitive), joined with separator;
@@ -221,10 +220,12 @@ module DS
         }.uniq.join separator
       end
 
-      def extract_name node, name_type
+      def extract_name node, *roles
         # Roles have different cases: Author, author, etc.
         # Xpath 1.0 has no lower-case function, so use translate()
-        xpath = "./descendant::mods:name[translate(./mods:role/mods:roleTerm/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '#{name_type}']"
+        translate = "translate(./mods:role/mods:roleTerm/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
+        props = roles.map { |r| "#{translate} = '#{r}'"}.join ' or '
+        xpath = "./descendant::mods:name[#{props}]"
         node.xpath(xpath).map { |name |
           name.xpath('mods:namePart').map(&:text).join ' '
         }
@@ -279,8 +280,8 @@ module DS
 
       def extract_recon_names xml
         data = []
-        %w{author artist scribe}.each do |role|
-          extract_text_name(xml, role).split('|').each do |name|
+        %w{author artist scribe [scribe] [author] illuminator}.each do |role|
+          extract_name(xml, role).each do |name|
             data << [name, role, '', '']
           end
         end
@@ -297,7 +298,7 @@ module DS
         #   data << [name, 'scribe', '', '']
         # end
 
-        extract_ownership(xml).split('|').each do |name|
+        extract_ownership(xml).each do |name|
           data << [name, 'former owner', '', '']
         end
         data

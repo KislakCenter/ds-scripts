@@ -5,12 +5,13 @@ describe DS::DS10 do
 
   # let(:na_ds_mets) {̋̋ fixture_path 'ds_mets-nelson-atkins-kg40.xml' }
   let(:na_ds_mets) { fixture_path 'ds_mets-nelson-atkins-kg40.xml' }
+  # ds_mets_csl_sutro_collection_ms_05.xml -- 2 parts, no provenance
+  let(:csl_ds_mets) { fixture_path 'ds_mets_csl_sutro_collection_ms_05.xml' }
+  let(:ds_names_mets) { fixture_path 'ds_mets_names.xml' }
 
-  let(:na_ds_xml) {
-    File.open(na_ds_mets) { |f| Nokogiri::XML f }
-  }
-
-  let(:nd_ds_ms) { DS::DS10.find_ms na_ds_xml }
+  let(:na_ds_xml) { File.open(na_ds_mets) { |f| Nokogiri::XML f } }
+  let(:csl_ds_xml) { File.open(csl_ds_mets) { |f| Nokogiri::XML f } }
+  let(:ds_names_xml) { File.open(ds_names_mets) { |f| Nokogiri::XML f } }
 
   let(:all_notes) {
     [
@@ -72,6 +73,32 @@ describe DS::DS10 do
 
       it 'formats an explicit' do
         expect(DS::DS10.extract_text_note na_ds_xml).to include 'Explicit, One leaf: Text abstract'
+      end
+
+    end
+
+    context 'extract_name' do
+      it 'returns "" when there are no scribes' do
+        # expect(DS::DS10.extract_name csl_ds_xml, *%w{ scribe [scribe] }).to be_empty
+        expect(DS::DS10.extract_scribe csl_ds_xml).to be_empty
+      end
+
+      it 'returns the scribe names' do
+        # actual = DS::DS10.extract_name ds_names_xml, *%w{ scribe [scribe] }
+        actual = DS::DS10.extract_scribe ds_names_xml
+        expect(actual.sort).to eq ['Bracketed scribe', 'Part 1 scribe','Part 2 scribe']
+      end
+
+      it 'returns the artist names' do
+        # actual = DS::DS10.extract_name ds_names_xml, *%w{ artist [artist] illuminator }
+        actual = DS::DS10.extract_artist ds_names_xml
+        expect(actual.sort).to eq ['Illuminator artist', 'Part 1 artist', 'Part 2 artist']
+      end
+
+      it 'returns the author names' do
+        # actual = DS::DS10.extract_name ds_names_xml, *%w{ author [author] }
+        actual = DS::DS10.extract_author ds_names_xml
+        expect(actual.sort).to eq ['Bracketed author','Corporate author', 'Personal author 1', 'Personal author 2']
       end
     end
 
