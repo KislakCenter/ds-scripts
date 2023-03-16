@@ -8,10 +8,12 @@ describe DS::DS10 do
   # ds_mets_csl_sutro_collection_ms_05.xml -- 2 parts, no provenance
   let(:csl_ds_mets) { fixture_path 'ds_mets_csl_sutro_collection_ms_05.xml' }
   let(:ds_names_mets) { fixture_path 'ds_mets_names.xml' }
+  let(:ds_docket_mets) { fixture_path 'ds_mets_docket.xml' }
 
   let(:na_ds_xml) { File.open(na_ds_mets) { |f| Nokogiri::XML f } }
   let(:csl_ds_xml) { File.open(csl_ds_mets) { |f| Nokogiri::XML f } }
   let(:ds_names_xml) { File.open(ds_names_mets) { |f| Nokogiri::XML f } }
+  let(:ds_docket_xml) { File.open(ds_docket_mets) { |f| Nokogiri::XML f } }
 
   let(:all_notes) {
     [
@@ -102,6 +104,15 @@ describe DS::DS10 do
       end
     end
 
+    context 'extract_docket' do
+      it 'finds two dockets' do
+        actual = DS::DS10.extract_docket ds_docket_xml
+        expected = [ 'Docket: Docket abstract 1', 'Docket: Docket abstract 2' ]
+        expect(actual.sort).to eq expected
+      end
+
+    end
+
     context 'extract_page_note' do
       it 'formats an untyped page note' do
         expect(DS::DS10.extract_page_note na_ds_xml).to include 'f. 1r: Untyped page note'
@@ -149,8 +160,12 @@ describe DS::DS10 do
         notes = DS::DS10.extract_note na_ds_xml
         expect(notes.grep /^SPLIT.*Long page note/).not_to be_empty
       end
-    end
 
+      it 'includes any dockets' do
+        notes = DS::DS10.extract_note ds_docket_xml
+        expect(notes.grep(/^Docket/).size).to eq 2
+      end
+    end
   end
 
   context 'physical description' do

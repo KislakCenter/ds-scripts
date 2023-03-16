@@ -587,6 +587,7 @@ module DS
         notes += extract_ms_note xml
         notes += extract_part_note xml
         notes += extract_text_note xml
+        notes += extract_docket xml
         notes += extract_page_note xml
 
         clean_notes notes
@@ -626,6 +627,19 @@ module DS
           } + node.xpath('./descendant::mods:note[@type="content"]/text()').map { |exp|
             "Explicit, #{extent}: #{exp}"
           }
+        }
+      end
+
+      ##
+      # DS METS can have +mods:abstract+ elments with +@displayLabel="docket"+.
+      # Extract these values and return as an array.
+      #
+      # @param [Nokogiri::XML::Node] xml the document xml
+      # @return [Array<String>] the note values
+      def extract_docket xml
+        xpath = %q{//mods:abstract[@displayLabel = 'docket']/text()}
+        xml.xpath(xpath, NS).map { |docket|
+          "Docket: #{docket.text}"
         }
       end
 
