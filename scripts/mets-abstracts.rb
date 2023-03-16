@@ -5,7 +5,7 @@ require 'csv'
 require_relative '../lib/ds'
 
 ##
-# Script to generate a CSV of mods:name data from DS METS
+# Script to generate a CSV of mods:abstracts from DS METS
 #
 
 NS = {
@@ -16,7 +16,7 @@ NS = {
 HEADERS = %i{
   shelfmark
   institution
-  role
+  label
   name
   sourcefile
 }
@@ -31,14 +31,15 @@ CSV do |csv|
   csv << HEADERS
   select_input(ARGV).each do |in_xml|
     source_file = in_xml.chomp
-    xml         = File.open(source_file) { |f| Nokogiri::XML(f) }
+    xml         = File.open(source_file) { |f| Nokogiri::XML f }
     institution = source_file.split('/')[3]
-    xpath       = '//mods:name'
+    xpath       = '//mods:abstract'
     shelfmark  = DS::DS10.extract_shelfmark xml
+
     xml.xpath(xpath).each do |node|
-      role = node.xpath('./mods:role/mods:roleTerm').text
-      name = node.xpath('./mods:namePart').text
-      csv << [shelfmark, institution, role, name, source_file]
+      label = node.xpath('./@displayLabel').text
+      text = node.xpath('./text()').text
+      csv << [shelfmark, institution, label, text, source_file]
     end
   end
 end
