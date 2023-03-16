@@ -291,17 +291,9 @@ module DS
           end
         end
 
-        # extract_text_name(xml, 'author').split('|').each do |name|
-        #   data << [name, 'author', '', '']
-        # end
-        #
-        # extract_part_name(xml, 'artist').split('|').each do |name|
-        #   data << [name, 'artist', '', '']
-        # end
-        #
-        # extract_part_name(xml, 'scribe').split('|').each do |name|
-        #   data << [name, 'scribe', '', '']
-        # end
+        extract_other_name(xml).each do |name|
+          data << [name, 'other', '', '']
+        end
 
         extract_ownership(xml).each do |name|
           data << [name, 'former owner', '', '']
