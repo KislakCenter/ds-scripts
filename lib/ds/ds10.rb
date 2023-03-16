@@ -205,6 +205,11 @@ module DS
       def extract_scribe xml
         DS::DS10.extract_name xml, *%w{ scribe [scribe] }
       end
+
+      def extract_other_name xml
+        DS::DS10.extract_name(xml, 'other').flat_map { |n| n.split %r{\s*;\s*} }
+      end
+
       ##
       # Return a list of unique languages from the text-level <mods:note>s
       # that start with "lang:" (case -insensitive), joined with separator;
@@ -227,7 +232,7 @@ module DS
         props = roles.map { |r| "#{translate} = '#{r}'"}.join ' or '
         xpath = "./descendant::mods:name[#{props}]"
         node.xpath(xpath).map { |name |
-          name.xpath('mods:namePart').map(&:text).join ' '
+          name.xpath('mods:namePart').text
         }
       end
 

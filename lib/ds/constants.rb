@@ -49,6 +49,12 @@ scribe
 scribe_label
 scribe_wikidata
 scribe_instance_of
+other_as_recorded
+other_as_recorded_agr
+other
+other_label
+other_wikidata
+other_instance_of
 language_as_recorded
 language
 language_label

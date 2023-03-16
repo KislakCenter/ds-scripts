@@ -104,6 +104,13 @@ describe DS::DS10 do
       end
     end
 
+    context 'extract_other_name'do
+      it  'returns names with role "other"' do
+        actual  = DS::DS10.extract_other_name ds_names_xml
+        expect(actual.sort).to eq [ 'Other 1', 'Other 2', 'Other 3' ]
+      end
+    end
+
     context 'extract_docket' do
       it 'finds two dockets' do
         actual = DS::DS10.extract_docket ds_docket_xml

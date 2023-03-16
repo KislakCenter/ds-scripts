@@ -80,7 +80,8 @@
             <mods:role>
               <mods:roleTerm type="text">Artist</mods:roleTerm>
             </mods:role>
-          </mods:name>          
+          </mods:name>
+
           <mods:typeOfResource>text</mods:typeOfResource>
           <mods:originInfo>
             <mods:place>
@@ -197,7 +198,7 @@
           </mods:titleInfo>
           <mods:titleInfo type="alternative" displayLabel="Caption">
             <mods:title>Ownership notes of the Carthusians at Buxheim.</mods:title>
-          </mods:titleInfo>          
+          </mods:titleInfo>
           <mods:typeOfResource>text</mods:typeOfResource>
           <mods:physicalDescription>
             <mods:extent>f. 1</mods:extent>
@@ -222,7 +223,7 @@
           </mods:titleInfo>
           <mods:titleInfo type="alternative" displayLabel="Caption">
             <mods:title>Explicit with the name of the author, Johannes de Abbatisvilla.</mods:title>
-          </mods:titleInfo>        
+          </mods:titleInfo>
           <mods:typeOfResource>text</mods:typeOfResource>
           <mods:physicalDescription>
             <mods:extent>ff. 106v-107</mods:extent>
@@ -262,6 +263,18 @@
               <mods:roleTerm type="text">Illuminator</mods:roleTerm>
             </mods:role>
           </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Other 1; Other 2</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">other</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Other 3</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">other</mods:roleTerm>
+            </mods:role>
+          </mods:name>             
           <mods:typeOfResource>text</mods:typeOfResource>
           <mods:originInfo>
             <mods:place>
