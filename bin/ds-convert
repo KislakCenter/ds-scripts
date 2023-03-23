@@ -237,7 +237,7 @@ class DSConvertCLI < DS::CLI
       other_wikidata                     = Recon::Names.lookup(other_as_recorded.split('|'), column: 'structured_value').join '|'
       other                              = ''
       other_instance_of                  = Recon::Names.lookup(other_as_recorded.split('|'), column: 'instance_of').join '|'
-      other_label                        = ''
+      other_label                        = Recon::Names.lookup(other_as_recorded.split('|'), column: 'authorized_label').join '|'
       language_as_recorded               = DS::DS10.extract_language xml
       language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
       language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
