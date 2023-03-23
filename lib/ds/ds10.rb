@@ -233,7 +233,7 @@ module DS
         xpath = "./descendant::mods:name[#{props}]"
         node.xpath(xpath).map { |name |
           name.xpath('mods:namePart').text
-        }
+        }.uniq
       end
 
       def extract_title xml
