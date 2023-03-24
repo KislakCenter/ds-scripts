@@ -231,9 +231,9 @@ module DS
         translate = "translate(./mods:role/mods:roleTerm/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
         props = roles.map { |r| "#{translate} = '#{r}'"}.join ' or '
         xpath = "./descendant::mods:name[#{props}]"
-        node.xpath(xpath).map { |name |
-          name.xpath('mods:namePart').text
-        }.uniq
+        node.xpath(xpath).flat_map { |name |
+          name.xpath('mods:namePart').text.split ';'
+        }.map(&:strip).uniq
       end
 
       def extract_title xml
