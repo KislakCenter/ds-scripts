@@ -285,7 +285,7 @@ module DS
 
       def extract_recon_names xml
         data = []
-        %w{author artist scribe [scribe] [author] illuminator}.each do |role|
+        %w{author artist scribe [scribe] [author] illuminator other}.each do |role|
           extract_name(xml, role).each do |name|
             data << [name, role, '', '']
           end
