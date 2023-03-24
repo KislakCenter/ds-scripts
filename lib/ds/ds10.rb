@@ -1,6 +1,6 @@
 require 'net/http'
 require 'nokogiri'
-
+require 'csv'
 ##
 # Module with class methods for working with DS10 METS XML.
 module DS
@@ -21,56 +21,193 @@ module DS
         creator.split %r{;;}
       end
 
-      def extract_part_name xml, name_type
-        find_parts(xml).map { |part|
-          extract_name part, name_type
-        }.join '|'
-      end
-
-      def extract_text_name xml, name_type
-        find_texts(xml).flat_map { |text|
-          extract_name text, name_type
-        }.join '|'
-      end
-
       ##
-      # Extract the physical description for each part in +xml+, and return
-      # formatted string; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
+      # Extract  and format all the physical description values  for the
+      # manuscript and each part.
+      #
+      # # MS Note Phys desc
+      #
+      # - presentation -> Binding
+      #
+      # # MS Part phys description
+      #
+      #   - support -- accounted for as support
+      #
+      #   - marks - 'Watermarks'
+      #   - medium -> 'Music'
+      #   - physical description -> 'Other decoration'
+      #   - physical details -> 'Figurative details'
+      #   - script -> 'Script'
+      #   - technique -> 'Layout'
       #
       # @param [Nokogiri::XML::Node] xml the document's xml
-      # @return [String] the physical description; e.g., 'Extent: 1 leaf; 402 x 223 mm.'
+      # @return [Array] the physical description values
       def extract_physical_description xml
-        find_parts(xml).flat_map { |part|
-          node = part.xpath('./descendant::mods:physicalDescription')
+        physdesc = []
+        physdesc += extract_ms_phys_desc xml
+        physdesc += extract_part_phys_desc xml
+        physdesc.flatten!
 
-          extent    = extract_extent(node).flat_map { |s| "Extent: #{s}." }.join ' '
-          DS.clean_string extent, terminator: '.'
-        }.join ' '
+        clean_notes physdesc
       end
 
-      def note_by_type node, note_type, tag: nil
-        xpath = "./descendant::mods:note[@type='#{note_type}']"
+      def physdesc_note node, note_type, tag: nil
+        if note_type == :none
+          xpath = %q{mods:mods/mods:physicalDescription/mods:note[not(@type)]}
+        else
+          xpath = %Q{mods:mods/mods:physicalDescription/mods:note[@type = '#{note_type}']}
+        end
+
         node.xpath(xpath).map { |x|
           tag.nil? ? x.text : "#{tag}: #{x.text}"
         }
       end
 
-      def extract_extent phys_desc_node
-        xpath = 'mods:extent'
-        phys_desc_node.xpath(xpath).map { |extent|
-          extent.text.split(%r{;;}).reject(&:empty?).join '; '
+      def extract_ms_phys_desc xml
+        ms = find_ms xml
+        physdesc_note ms, 'presentation', tag: 'Binding'
+      end
+
+      def extract_pd_note part
+        extent = extract_extent part
+
+        xpath = %q{mods:mods/mods:physicalDescription/mods:note[@type = 'physical description']/text()}
+        part.xpath(xpath).flat_map { |node|
+          text = node.text
+          notes = []
+          if text =~ %r{;;}
+            other_deco, num_scribes = text.split %r{;;+}
+            notes << "Other decoration, #{extent}: #{other_deco}" unless other_deco.to_s.empty?
+            notes << "Number of scribes, #{extent}: #{num_scribes}" unless num_scribes.to_s.empty?
+          else
+            notes << "Other decoration, #{extent}: #{text}" unless text.empty?
+          end
+          notes
         }
+      end
+
+      def extract_part_phys_desc xml
+        parts = find_parts xml
+        parts.flat_map { |part|
+          extent = extract_extent part
+          notes = []
+
+          tag = "Figurative details, #{extent}"
+          notes += physdesc_note part, 'physical details', tag: tag
+          notes += extract_pd_note part
+          tag = "Script, #{extent}"
+          notes += physdesc_note part, 'script', tag: tag
+          tag = "Music, #{extent}"
+          notes += physdesc_note part, 'medium', tag: tag
+          tag = "Layout, #{extent}"
+          notes += physdesc_note part, 'technique', tag: tag
+          tag = "Watermarks, #{extent}"
+          notes += physdesc_note part, 'marks', tag: tag
+          notes
+        }
+      end
+
+      ##
+      # DS 1.0 METS note types:
+      #
+      # # MS Note types:
+      #
+      #   Accounted for
+      #   - ownership -- accounted for, former owner
+      #   - action -- skip; administrative note: "Inputter ...."
+      #   - admin -- acknowledgements
+      #   - untyped -- 'Manuscript Note'
+      #   - bibliography -- 'Bibliography'
+      #   - source note -- skip; not present on DS legacy pages
+      #
+      #
+      # # MS Note Phys desc
+      #
+      # - presentation -> Binding
+      #
+      # # Part note types:
+      #
+      #   - date - already accounted for
+      #   - content - skip
+      #   - admin - Acknowledgments
+      #
+      #   - untyped
+      #
+      # # MS Part phys description
+      #
+      #   - support -- accounted for as support
+      #
+      #   - marks - 'Watermarks'
+      #   - medium -> 'Music'
+      #   - physical description -> 'Other decoration'
+      #   - physical details -> 'Figurative details'
+      #   - script -> 'Script'
+      #   - technique -> 'Layout'
+      #
+      #  # Text note types
+      #
+      #   Accounted for
+      #   - admin - acknowledgements
+      #
+      #   - condition -> 'Status of text'
+      #   - content -> handled as Text Incipit
+      #   - untyped -> 'Text note'
+      #
+      #  # Page note types
+      #
+      #   Accounted for
+      #     None
+      #
+      #   - content -> Folio Incipit
+      #   - date -- skip
+      #   - untyped -> 'Folio note'
+      #
+      def note_by_type node, note_type, tag: nil
+        if note_type == :none
+          xpath = %q{mods:mods/mods:note[not(@type)]/text()}
+        else
+          xpath = %Q{mods:mods/mods:note[@type = '#{note_type}']/text()}
+        end
+
+        node.xpath(xpath).map { |x|
+          tag.nil? ? x.text : "#{tag}: #{x.text}"
+        }
+      end
+
+      def extract_extent node
+        xpath = 'mods:mods/mods:physicalDescription/mods:extent'
+        node.xpath(xpath).flat_map { |extent|
+          extent.text.split(%r{;;}).first
+        }.join ', '
       end
 
       def extract_support xml
         find_parts(xml).flat_map { |part|
           note_by_type part, 'support'
-        }.map { |s| s.downcase.chomp('.') }.uniq.join '|'
+        }.map { |s| s.downcase.chomp('.').strip }.uniq.join '|'
       end
 
       def extract_ownership xml
-        xpath = "./descendant::mods:note[@type='ownership']"
-        DS.clean_string find_ms(xml).xpath(xpath).text
+        xpath = "./descendant::mods:note[@type='ownership']/text()"
+        notes = find_ms(xml).xpath(xpath).flat_map &:text
+
+        clean_notes notes
+      end
+
+      def extract_author xml
+        DS::DS10.extract_name xml, *%w{ author [author] }
+      end
+
+      def extract_artist xml
+        DS::DS10.extract_name xml, *%w{ artist [artist] illuminator }
+      end
+
+      def extract_scribe xml
+        DS::DS10.extract_name xml, *%w{ scribe [scribe] }
+      end
+
+      def extract_other_name xml
+        DS::DS10.extract_name(xml, 'other').flat_map { |n| n.split %r{\s*;\s*} }
       end
 
       ##
@@ -88,17 +225,19 @@ module DS
         }.uniq.join separator
       end
 
-      def extract_name node, name_type
+      def extract_name node, *roles
         # Roles have different cases: Author, author, etc.
         # Xpath 1.0 has no lower-case function, so use translate()
-        xpath = "./descendant::mods:name[translate(./mods:role/mods:roleTerm/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '#{name_type}']"
-        node.xpath(xpath).map { |name |
-          name.xpath('mods:namePart').map(&:text).join ' '
-        }
+        translate = "translate(./mods:role/mods:roleTerm/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')"
+        props = roles.map { |r| "#{translate} = '#{r}'"}.join ' or '
+        xpath = "./descendant::mods:name[#{props}]"
+        node.xpath(xpath).flat_map { |name |
+          name.xpath('mods:namePart').text.split ';'
+        }.map(&:strip).uniq
       end
 
       def extract_title xml
-        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:titleInfo/mods:title'
+        xpath = 'mods:mods/mods:titleInfo/mods:title'
         find_texts(xml).flat_map { |text|
           text.xpath(xpath).map(&:text)
         }.reject { |t| t == '[Title not supplied]' }.join '|'
@@ -106,7 +245,7 @@ module DS
 
       def extract_production_place xml
         parts = find_parts xml
-        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:place/mods:placeTerm'
+        xpath = 'mods:mods/mods:originInfo/mods:place/mods:placeTerm'
         parts.map { |node|
           node.xpath(xpath).map { |place|
             place.text.split(%r{;;}).join ', '
@@ -128,7 +267,7 @@ module DS
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places xml
         parts = find_parts xml
-        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:place/mods:placeTerm'
+        xpath = 'mods:mods/mods:originInfo/mods:place/mods:placeTerm'
         parts.map { |node|
           node.xpath(xpath).map { |place|
             place.text.split(%r{;;}).reject(&:empty?).join ', '
@@ -146,25 +285,17 @@ module DS
 
       def extract_recon_names xml
         data = []
-        %w{author artist scribe}.each do |role|
-          extract_text_name(xml, role).split('|').each do |name|
+        %w{author artist scribe [scribe] [author] illuminator other}.each do |role|
+          extract_name(xml, role).each do |name|
             data << [name, role, '', '']
           end
         end
 
-        # extract_text_name(xml, 'author').split('|').each do |name|
-        #   data << [name, 'author', '', '']
-        # end
-        #
-        # extract_part_name(xml, 'artist').split('|').each do |name|
-        #   data << [name, 'artist', '', '']
-        # end
-        #
-        # extract_part_name(xml, 'scribe').split('|').each do |name|
-        #   data << [name, 'scribe', '', '']
-        # end
+        extract_other_name(xml).each do |name|
+          data << [name, 'other', '', '']
+        end
 
-        extract_ownership(xml).split('|').each do |name|
+        extract_ownership(xml).each do |name|
           data << [name, 'former owner', '', '']
         end
         data
@@ -179,7 +310,7 @@ module DS
       # @return [String] the shelfmark
       def extract_shelfmark xml
         ms = find_ms xml
-        ms.xpath('mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="local"]/text()').text
+        ms.xpath('mods:mods/mods:identifier[@type="local"]/text()').text
       end
 
       ##
@@ -229,15 +360,15 @@ module DS
 
       def extract_link_to_inst_record xml
         ms = find_ms xml
-        # xpath mets:mdWrap/mets:xmlData/mods:mods/mods:relatedItem/mods:location/mods:url
-        xpath = "mets:mdWrap/mets:xmlData/mods:mods/mods:relatedItem/mods:location/mods:url"
+        # xpath mods:mods/mods:relatedItem/mods:location/mods:url
+        xpath = "mods:mods/mods:relatedItem/mods:location/mods:url"
         ms.xpath(xpath).map(&:text).join '|'
       end
 
       def dated_by_scribe? xml
         parts = find_parts xml
-        # mets:mdWrap/mets:xmlData/mods:mods/mods:note
-        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:note[@type="date"]'
+        # mods:mods/mods:note
+        xpath = 'mods:mods/mods:note[@type="date"]'
         parts.any? { |part |
           part.xpath(xpath).text.upcase == 'Y'
         }
@@ -255,10 +386,10 @@ module DS
       # @param [Nokogiri::XML:Node]
       # @return [Array<Integer>] the start and end dates as an array of integers
       def extract_date_range part
-        xpath      = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateCreated[@point="start"]'
+        xpath      = 'mods:mods/mods:originInfo/mods:dateCreated[@point="start"]'
 
         start_date = part.xpath(xpath).text
-        xpath      = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
+        xpath      = 'mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
         end_date   = part.xpath(xpath).text
         [start_date, end_date].reject(&:empty?).map(&:to_i)
       end
@@ -273,7 +404,7 @@ module DS
         #     s. XII#^med#
         #
         # For now we replace the #^<VAL># with (<VAL>)
-        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:originInfo/mods:dateOther'
+        xpath = 'mods:mods/mods:originInfo/mods:dateOther'
         part.xpath(xpath).text.gsub %r{#\^?([\w/]+)(\^|#)}, '(\1)'
       end
 
@@ -284,9 +415,25 @@ module DS
       end
 
       def extract_acknowledgements xml
-        note_by_type(find_ms(xml), 'admin').map { |note|
-          DS.clean_string note, terminator: '.'
-        }.join ' '
+        notes = []
+        notes += find_ms(xml).flat_map { |ms| note_by_type ms, 'admin' }
+
+        notes += find_parts(xml).flat_map { |part|
+          extent = extract_extent part
+          note_by_type part, 'admin', tag: extent
+        }
+
+        notes += find_texts(xml).flat_map { |text|
+          extent = extract_extent text
+          note_by_type text, 'admin', tag: extent
+        }
+
+        notes += find_pages(xml).flat_map { |page|
+          extent = extract_extent page
+          note_by_type page, 'admin', tag: extent
+        }
+
+        clean_notes notes
       end
 
       ##
@@ -306,8 +453,8 @@ module DS
       # @param [Nokogiri::XML::Node] page the +mets:dmdSec+ node for the page
       # @return [Array<String>] array of all the filenames for +page+
       def extract_filenames page
-        # mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type='filename']
-        xpath     = 'mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type="filename"]'
+        # mods:mods/mods:identifier[@type='filename']
+        xpath     = 'mods:mods/mods:identifier[@type="filename"]'
         filenames = page.xpath(xpath).map(&:text)
         return filenames unless filenames.empty?
 
@@ -316,8 +463,8 @@ module DS
       end
 
       def extract_folio_num page
-        # mets:mdWrap/mets:xmlData/mods:mods/mods:physicalDescription/mods:extent
-        xpath = 'mets:mdWrap/mets:xmlData/mods:mods/mods:physicalDescription/mods:extent'
+        # mods:mods/mods:physicalDescription/mods:extent
+        xpath = 'mods:mods/mods:physicalDescription/mods:extent'
         page.xpath(xpath).map(&:text).join '|'
       end
 
@@ -380,6 +527,50 @@ module DS
         fptr_addresses.map { |address| locate_filename address }
       end
 
+      def extract_ms_note xml
+        notes = []
+        ms = find_ms xml
+        notes += note_by_type ms, :none, tag: 'Manuscript note'
+        notes += note_by_type ms, 'bibliography', tag: 'Bibliography'
+        notes
+      end
+
+      def extract_part_note xml
+        find_parts(xml).flat_map { |part|
+          extent = extract_extent part
+          note_by_type part, :none, tag: extent
+        }
+      end
+
+      def extract_explicit node, tag:
+        node.xpath('mods:mods/mods:abstract/text()').map { |n|
+          "#{tag}: #{n.text}"
+        }
+      end
+
+      def extract_text_note xml
+        find_texts(xml).flat_map { |text|
+          extent = extract_extent text
+          notes = []
+          notes += note_by_type text, :none, tag: extent
+          notes += note_by_type text, 'condition', tag: "Status of text, #{extent}"
+          notes += note_by_type text, 'content', tag: "Incipit, #{extent}"
+          notes += extract_explicit text, tag: "Explicit, #{extent}"
+          notes
+        }
+      end
+
+      def extract_page_note xml
+        find_pages(xml).flat_map { |page|
+          extent = extract_extent page
+          notes = []
+          notes += note_by_type page, :none, tag: extent
+          notes += note_by_type page, 'content', tag: "Incipit, #{extent}"
+          notes += extract_explicit page, tag: "Explicit, #{extent}"
+          notes
+        }
+      end
+
       ##
       # Extract the notes at all level from the +xml+, and return
       # an array of strings
@@ -390,22 +581,71 @@ module DS
         notes = []
         # get all notes that don't have @type
         xpath = %q{//mods:note[not(@type)]/text()}
-        notes += find_ms(xml).map { |node| node.xpath(xpath) }
-        notes += find_parts(xml).map { |node| node.xpath(xpath) }
-        notes += find_texts(xml).map { |node| node.xpath(xpath) }
-        notes += find_pages(xml).map { |node| node.xpath(xpath) }
+        notes += extract_ms_note xml
+        notes += extract_part_note xml
+        notes += extract_text_note xml
+        notes += extract_docket xml
+        notes += extract_page_note xml
 
-        prefixes = %r{^lang:\s*}i
-        notes.flatten.map { |note|
-          # get node text and clean whitespace
-          note.text.strip.gsub(%r{\s+}, ' ')
-        }.uniq.reject { |note|
-          # skip notes with prefixes like 'lang: '
-          note =~ prefixes
-        }.map { |note|
-          # add period to any note without terminal punctuation: .,;:? or !
-          DS.terminate note, terminator: '.'
+        clean_notes notes
+      end
+
+      ##
+      # **If** the +mods:mods+ element has a
+      # <tt><mods:titleInfo type="alternative"></tt> element **and** a
+      # <tt><mods:abstract[not(@displayLabel)]></tt>, **then** the content of
+      # the <tt><mods:abstract[not(@displayLabel)]></tt> is an incipit; XPath:
+      #
+      #
+      #    //mods:mods[./mods:titleInfo[@type="alternative"] and ./mods:abstract[not(@displayLabel)]]
+      #
+      #    //mods:mods[./mods:titleInfo[@type="alternative"]]/mods:abstract[not(@displayLabel)]/text()
+      #
+      #
+      # **If** the `mods:mods` element has a `mods:titleInfo type="alternative"` element **and** a `<mods:note type="content">`, **then** the content of the `<mods:note type="content">` is an explicit; XPath:
+      #
+      #     //mods:mods[./mods:titleInfo[@type="alternative"] and ./mods:note[@type="content"]]
+      #
+      #     //mods:mods[./mods:titleInfo[@type="alternative"]]/mods:note[@type="content"]/text()
+      #
+      def extract_incipit_explicit xml
+        # ./descendant::mods:physicalDescription
+        # mods:mods/mods:originInfo/mods:place/mods:placeTerm
+        # find any mod:mods containing an incipit or explicit
+        xpath = %q{//mods:mods[./mods:titleInfo[@type="alternative"] and
+                (./mods:abstract[not(@displayLabel)] or
+                ./mods:note[@type="content"])]}
+
+        find_texts(xml).flat_map { |node|
+        # return an array for formatted incipits and explicits for this manuscript
+          extent = node.xpath('./descendant::mods:physicalDescription/mods:extent/text()', NS).text
+          node.xpath('./descendant::mods:abstract[not(@displayLabel)]/text()').map { |inc|
+            "Incipit, #{extent}: #{inc}"
+          } + node.xpath('./descendant::mods:note[@type="content"]/text()').map { |exp|
+            "Explicit, #{extent}: #{exp}"
+          }
         }
+      end
+
+      ##
+      # DS METS can have +mods:abstract+ elments with +@displayLabel="docket"+.
+      # Extract these values and return as an array.
+      #
+      # @param [Nokogiri::XML::Node] xml the document xml
+      # @return [Array<String>] the note values
+      def extract_docket xml
+        xpath = %q{//mods:abstract[@displayLabel = 'docket']/text()}
+        xml.xpath(xpath, NS).map { |docket|
+          "Docket: #{docket.text}"
+        }
+      end
+
+      def find_ms xml
+        # the manuscript is one div deep in the structMap
+        # /mets:mets/mets:structMap/mets:div/@DMDID
+        xpath = '/mets:mets/mets:structMap/mets:div/@DMDID'
+        id = xml.xpath(xpath).first.text
+        xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']/mets:mdWrap/mets:xmlData"
       end
 
       def find_parts xml
@@ -418,16 +658,8 @@ module DS
         # elements outside of the structMap. Thus, we have to return an
         # array with the parts mets:dmdSec in the correct order.
         ids.map { |id|
-          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
+          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']/mets:mdWrap/mets:xmlData"
         }
-      end
-
-      def find_ms xml
-        # the manuscript is one div deep in the structMap
-        # /mets:mets/mets:structMap/mets:div/@DMDID
-        xpath = '/mets:mets/mets:structMap/mets:div/@DMDID'
-        id = xml.xpath(xpath).first.text
-        xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
       end
 
       def find_texts xml
@@ -437,7 +669,7 @@ module DS
         xpath = '/mets:mets/mets:structMap/mets:div/mets:div/mets:div/@DMDID'
         ids = xml.xpath(xpath).map &:text
         ids.map { |id|
-          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
+          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']/mets:mdWrap/mets:xmlData"
         }
       end
 
@@ -453,7 +685,7 @@ module DS
         ids = xml.xpath(xpath).map &:text
         # collect dmdSec's for all the page IDs
         ids.flat_map { |id|
-          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']"
+          xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']/mets:mdWrap/mets:xmlData"
         }
       end
 
@@ -461,7 +693,33 @@ module DS
         "2021-10-01"
       end
 
+      IIIF_CSV = File.join(__dir__, 'data/legacy-iiif-manifests.csv')
+      IIIF_MANIFESTS = CSV.readlines(IIIF_CSV, headers: true).inject({}) { |h,row|
+        key = (row['holding_institution'] + row['shelfmark']).downcase
+        h.merge(key => row['iiif_manifest_url'])
+      }.freeze
+
+      def find_iiif_manifest xml
+        holding_institution = extract_institution_name xml
+        shelfmark = extract_shelfmark xml
+        key = (holding_institution + shelfmark).downcase
+        IIIF_MANIFESTS[key]
+      end
+
       protected
+
+      def clean_notes notes
+        notes.flat_map { |note|
+          # get node text and clean whitespace
+          note.to_s.strip.gsub(%r{\s+}, ' ')
+        }.uniq.reject { |note|
+          # skip notes with prefixes like 'lang: '
+          note.to_s =~ %r{\blang:\s*}i
+        }.map { |note|
+          # add period to any note without terminal punctuation: .,;:? or !
+          DS.mark_long DS.terminate(note, terminator: '.', force: true)
+        }
+      end
 
       @@ark_cache = nil
 

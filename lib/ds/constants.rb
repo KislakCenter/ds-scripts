@@ -49,6 +49,12 @@ scribe
 scribe_label
 scribe_wikidata
 scribe_instance_of
+associated_agent_as_recorded
+associated_agent_as_recorded_agr
+associated_agent
+associated_agent_label
+associated_agent_wikidata
+associated_agent_instance_of
 language_as_recorded
 language
 language_label

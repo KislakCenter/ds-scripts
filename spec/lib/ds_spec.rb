@@ -208,6 +208,10 @@ RSpec.describe 'DS' do
         expect(DS.terminate %q{car;}, terminator: '').to eq 'car'
       end
 
+      it %q{removes final ';;'           ('car;;'  => 'car')} do
+        expect(DS.terminate %q{car;;}, terminator: '').to eq 'car'
+      end
+
       it %q{removes final ':'           ('car:'  => 'car')} do
         expect(DS.terminate %q{car:}, terminator: '').to eq 'car'
       end

@@ -98,6 +98,11 @@ module DS
       str
     end
 
+    def mark_long s
+      return s if s.to_s.size < 400
+      "SPLIT: #{s}"
+    end
+
     ##
     # Given a pipe separated list of single years or ranges of years, return
     # a pipe- and semicolon-separated list of century integers. Year ranges

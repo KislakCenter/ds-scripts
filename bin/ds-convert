@@ -198,6 +198,7 @@ class DSConvertCLI < DS::CLI
       holding_institution_id_number      = ''
       holding_institution_shelfmark      = DS::DS10.extract_shelfmark xml
       link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
+      iiif_manifest                      = DS::DS10.find_iiif_manifest xml
       production_place_as_recorded       = DS::DS10.extract_production_place xml
       production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
       production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
@@ -213,28 +214,34 @@ class DSConvertCLI < DS::CLI
       standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
       genre_as_recorded                  = ''
       subject_as_recorded                = DS::DS10.extract_subjects(xml).join '|'
-      author_as_recorded                 = DS::DS10.extract_text_name xml, 'author'
+      author_as_recorded                 = DS::DS10.extract_author(xml).join '|'
       author_as_recorded_agr             = ''
       author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'
       author                             = ''
       author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'instance_of').join '|'
       author_label                       = Recon::Names.lookup(author_as_recorded.split('|'), column: 'authorized_label').join '|'
-      artist_as_recorded                 = DS::DS10.extract_part_name xml, 'artist'
+      artist_as_recorded                 = DS::DS10.extract_artist(xml).join '|'
       artist_as_recorded_agr             = ''
       artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'structured_value').join '|'
       artist                             = ''
       artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'instance_of').join '|'
       artist_label                       = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'authorized_label').join '|'
-      scribe_as_recorded                 = DS::DS10.extract_part_name xml, 'scribe'
+      scribe_as_recorded                 = DS::DS10.extract_scribe(xml).join '|'
       scribe_as_recorded_agr             = ''
       scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
       scribe                             = ''
       scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
       scribe_label                       = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'authorized_label').join '|'
+      associated_agent_as_recorded       = DS::DS10.extract_other_name(xml).join '|'
+      associated_agent_as_recorded_agr   = ''
+      associated_agent_wikidata          = Recon::Names.lookup(associated_agent_as_recorded.split('|'), column: 'structured_value').join '|'
+      associated_agent                   = ''
+      associated_agent_instance_of       = Recon::Names.lookup(associated_agent_as_recorded.split('|'), column: 'instance_of').join '|'
+      associated_agent_label             = Recon::Names.lookup(associated_agent_as_recorded.split('|'), column: 'authorized_label').join '|'
       language_as_recorded               = DS::DS10.extract_language xml
       language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
       language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
-      former_owner_as_recorded           = DS::DS10.extract_ownership xml
+      former_owner_as_recorded           = DS::DS10.extract_ownership(xml).join '|'
       former_owner_as_recorded_agr       = ''
       # TODO: Legacy XML doesn't have former owner names; the following can't be tested
       former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
@@ -244,9 +251,9 @@ class DSConvertCLI < DS::CLI
       material_as_recorded               = DS::DS10.extract_support xml
       material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
       material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
-      physical_description               = DS::DS10.extract_physical_description xml
+      physical_description               = DS::DS10.extract_physical_description(xml).join '|'
       note                               = DS::DS10.extract_note(xml).join '|'
-      acknowledgements                   = DS::DS10.extract_acknowledgements xml
+      acknowledgements                   = DS::DS10.extract_acknowledgements(xml).join '|'
       data_processed_at                  = timestamp
       data_source_modified               = DS::DS10.source_modified
 
@@ -256,6 +263,7 @@ class DSConvertCLI < DS::CLI
         holding_institution_id_number:      holding_institution_id_number,
         holding_institution_shelfmark:      holding_institution_shelfmark,
         link_to_holding_institution_record: link_to_holding_institution_record,
+        iiif_manifest:                      iiif_manifest,
         production_date:                    production_date,
         production_place_as_recorded:       production_place_as_recorded,
         production_place:                   production_place,
@@ -289,6 +297,12 @@ class DSConvertCLI < DS::CLI
         scribe:                             scribe,
         scribe_instance_of:                 scribe_instance_of,
         scribe_label:                       scribe_label,
+        associated_agent_as_recorded:       associated_agent_as_recorded,
+        associated_agent_as_recorded_agr:   associated_agent_as_recorded_agr,
+        associated_agent_wikidata:          associated_agent_wikidata,
+        associated_agent:                   associated_agent,
+        associated_agent_instance_of:       associated_agent_instance_of,
+        associated_agent_label:             associated_agent_label,
         language_as_recorded:               language_as_recorded,
         language:                           language,
         language_label:                     language_label,
