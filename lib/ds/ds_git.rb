@@ -4,13 +4,12 @@ require 'logger'
 module DS
   module DSGit
     def self.update!
-      data_dir  = File.join DS.root, 'data'
       repo_name = Settings.git.local_name
       url       = Settings.git.repo
       branch    = Settings.git.branch || 'main'
       logger    = DS.logger
-      # logger.level = Logger::WARN
-      Dir.chdir data_dir do
+
+      Dir.chdir DS.data_dir do
         unless File.exist? repo_name
           Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger
         end

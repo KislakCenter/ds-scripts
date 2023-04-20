@@ -18,6 +18,10 @@ module DS
     File.expand_path '../..', __FILE__
   end
 
+  def self.data_dir
+    File.join root, 'data'
+  end
+
   def self.configure!
     config_dir = File.join root, 'config'
     yaml_files = Dir["#{config_dir}/*.yml"]
