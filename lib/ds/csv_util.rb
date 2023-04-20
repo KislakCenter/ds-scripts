@@ -33,7 +33,6 @@ module DS
       # @param [Array<Hash>] rows the CSV rows
       # @return [Boolean]
       def validate rows
-        # require 'pry'; binding.pry
         valid = true
         rows.each_with_index do |hash,index|
           hash.each do |column, value|
