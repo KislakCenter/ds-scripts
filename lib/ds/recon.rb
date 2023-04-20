@@ -9,34 +9,12 @@ require_relative 'recon/named_subjects'
 require_relative 'recon/all_subjects'
 require_relative 'recon/titles'
 require_relative 'constants'
-require 'git'
+# require 'git'
 require 'logger'
 require 'csv'
 require 'ostruct'
 
 module Recon
-  def self.update!
-    data_dir     = File.join DS.root, 'data'
-    repo_name    = Settings.recon.git_local_name
-    url          = Settings.recon.git_repo
-    branch       = Settings.recon.git_branch || 'main'
-    logger       = DS.logger
-    # logger.level = Logger::WARN
-    Dir.chdir data_dir do
-      unless File.exist? repo_name
-        Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger
-      end
-      g = Git.open repo_name, log: logger
-      begin
-        g.pull 'origin', branch
-      rescue Git::GitExecuteError => e
-        logger.warn { "Error executing git command" }
-        logger.warn { e.message }
-        STDERR.puts e.backtrace if ENV['DS_VERBOSE']
-      end
-    end
-  end
-
   def self.sort_and_dedupe array
     if array.first.is_a? Array
       array.sort { |a,b| a.first <=> b.first }.uniq &:join
@@ -63,7 +41,7 @@ module Recon
   end
 
   def self.recon_repo
-    File.join DS.root, 'data', Settings.recon.git_local_name
+    File.join DS.root, 'data', Settings.git.local_name
   end
 
   def self.load_set set_name
