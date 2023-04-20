@@ -3,7 +3,6 @@ require_relative '../ds'
 
 module DS
   class CLI < Thor
-    include DS::DSGit
     include Recon
     DS.configure!
     class_option :'skip-recon-update', desc: "Skip CSV update from git; ignored by recon-update", aliases: '-G', type: :boolean, default: false
