@@ -185,7 +185,7 @@ class DSConvertCLI < DS::CLI
   LONGDESC
   def mets *files
     return false unless validate_args files
-    Recon.update! unless skip_git? options
+    DS::DSGit.update! unless skip_git? options
     timestamp = DS.timestamp
 
     rows = select_input(files).map { |in_xml|
