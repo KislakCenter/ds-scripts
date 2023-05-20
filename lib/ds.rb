@@ -2,7 +2,7 @@ require 'config'
 
 require_relative 'ds/ds_error'
 require_relative 'ds/util'
-require_relative 'ds/ds_git'
+require_relative 'ds/recon/recon_data'
 require_relative 'ds/constants'
 require_relative 'ds/ds10'
 require_relative 'ds/openn_tei'

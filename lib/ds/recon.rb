@@ -1,4 +1,5 @@
 require_relative 'util'
+require_relative 'recon/iiif_manifests'
 require_relative 'recon/genres'
 require_relative 'recon/languages'
 require_relative 'recon/materials'
@@ -41,7 +42,7 @@ module Recon
   end
 
   def self.recon_repo
-    File.join DS.root, 'data', Settings.git.local_name
+    File.join DS.root, 'data', Settings.recon.git_local_name
   end
 
   def self.load_set set_name

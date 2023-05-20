@@ -31,7 +31,7 @@ class ReconCLI < DS::CLI
 
     out_csv = out_file 'names', options
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
 
       case options[:'source-type']
       when 'marc'
@@ -68,7 +68,7 @@ class ReconCLI < DS::CLI
 
     out_csv = out_file 'places', options
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
 
       case options[:'source-type']
       when 'marc'
@@ -114,7 +114,7 @@ LONGDESC
     tags    = options[:'named-subjects'] ? [600, 610] : [650, 651]
     out_csv = out_file base, options
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
 
       data = []
 
@@ -157,7 +157,7 @@ LONGDESC
     out_csv = out_file 'genres', options
 
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
       data = []
       case options[:'source-type']
       when 'marc'
@@ -192,7 +192,7 @@ LONGDESC
 
     out_csv = out_file 'materials', options
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
 
       case options[:'source-type']
       when 'marc'
@@ -229,7 +229,7 @@ LONGDESC
 
     out_csv = out_file 'languages', options
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
 
       case options[:'source-type']
       when 'marc'
@@ -266,7 +266,7 @@ LONGDESC
 
     out_csv = out_file 'titles', options
     begin
-      DS::DSGit.update! unless skip_git? options
+      Recon::ReconData.update! unless skip_git? options
 
       case options[:'source-type']
       when 'marc'

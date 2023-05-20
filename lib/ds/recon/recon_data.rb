@@ -1,12 +1,12 @@
 require 'git'
 require 'logger'
 
-module DS
-  module DSGit
+module Recon
+  module ReconData
     def self.update!
-      repo_name = Settings.git.local_name
-      url       = Settings.git.repo
-      branch    = Settings.git.branch || 'main'
+      repo_name = Settings.recon.git_local_name
+      url       = Settings.recon.git_repo
+      branch    = Settings.recon.git_branch || 'main'
       logger    = DS.logger
 
       Dir.chdir DS.data_dir do
@@ -22,6 +22,10 @@ module DS
           STDERR.puts e.backtrace if ENV['DS_VERBOSE']
         end
       end
+    end
+
+    def self.repo_dir
+      File.join DS.root, Settings.recon.git_local_name
     end
   end
 end

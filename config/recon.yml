@@ -1,16 +1,9 @@
 ---
-git:
-  repo: 'https://github.com/DigitalScriptorium/ds-data.git'
-  branch: main
-  local_name: ds-data
-  files:
-    legacy_iiif: iiif/legacy-iiif-manifests.csv
 recon:
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
   git_branch: main
   git_local_name: ds-data
-  files:
-    legacy_iiif_manifests_csv: iiif/legacy-iiif-manifests.csv
+  iiif_manifests: iiif/legacy-iiif-manifests.csv
   # TODO: make sets a hash so you can do Settings.recon.sets.genres
   sets:
     - name: names
@@ -20,7 +13,7 @@ recon:
     - name: genres
       repo_path: terms/reconciled/genres.csv
       key_column: genre_as_recorded
-      subset_column: vocabularyw
+      subset_column: vocabulary
       structured_data_column: structured_value
     - name: materials
       repo_path: terms/reconciled/materials.csv

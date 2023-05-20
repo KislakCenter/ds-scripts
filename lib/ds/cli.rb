@@ -10,7 +10,7 @@ module DS
 
     desc "recon-update", "Update Recon CSVs from git"
     long_desc <<-LONGDESC
-    Update Recon CSVs from #{Settings.git.repo}.
+    Update Recon CSVs from #{Settings.recon.git_repo}.
 
     NOTE: This command ignores all options, including `--skip-recon-update`; set
           the SKIP_RECON_UPDATE environment variable to override.
@@ -21,8 +21,8 @@ module DS
         STDERR.puts 'WARNING: SKIP_RECON_UPDATE set; skipping git pull'
         return
       end
-      STDOUT.print "Updating Recon CSVs from #{Settings.git.repo}..."
-      DS::DSGit.update!
+      STDOUT.print "Updating Recon CSVs from #{Settings.recon.git_repo}..."
+      Recon::ReconData.update!
       STDOUT.puts "done."
     end
 
