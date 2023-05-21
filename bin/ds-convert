@@ -185,7 +185,7 @@ class DSConvertCLI < DS::CLI
   LONGDESC
   def mets *files
     return false unless validate_args files
-    Recon.update! unless skip_git? options
+    Recon::ReconData.update! unless skip_git? options
     timestamp = DS.timestamp
 
     rows = select_input(files).map { |in_xml|
@@ -198,7 +198,7 @@ class DSConvertCLI < DS::CLI
       holding_institution_id_number      = ''
       holding_institution_shelfmark      = DS::DS10.extract_shelfmark xml
       link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
-      iiif_manifest                      = DS::DS10.find_iiif_manifest xml
+      iiif_manifest                      = Recon::IIIFManifests.find_iiif_manifest holding_institution_as_recorded, holding_institution_shelfmark
       production_place_as_recorded       = DS::DS10.extract_production_place xml
       production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
       production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'

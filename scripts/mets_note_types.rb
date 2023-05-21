@@ -58,7 +58,6 @@ CSV do |csv|
     part_note_types = count_notes parts
     part_pds = parts.flat_map { |p| p.xpath('descendant::mods:physicalDescription') }
     part_phys_desc = count_notes part_pds, phys_desc: true
-    # require 'pry'; binding.pry
     texts = DS::DS10.find_texts xml
     number_of_texts = texts.size
     text_note_types = count_notes texts

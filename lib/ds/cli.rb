@@ -5,7 +5,6 @@ module DS
   class CLI < Thor
     include Recon
     DS.configure!
-
     class_option :'skip-recon-update', desc: "Skip CSV update from git; ignored by recon-update", aliases: '-G', type: :boolean, default: false
     class_option :'skip-validation', desc: "Skip validation of CSV values [same as SKIP_OUTPUT_VALIDATION=true]", aliases: '-V', type: :boolean, default: false
 
@@ -23,7 +22,7 @@ module DS
         return
       end
       STDOUT.print "Updating Recon CSVs from #{Settings.recon.git_repo}..."
-      Recon.update!
+      Recon::ReconData.update!
       STDOUT.puts "done."
     end
 

@@ -1,6 +1,7 @@
 require 'net/http'
 require 'nokogiri'
 require 'csv'
+
 ##
 # Module with class methods for working with DS10 METS XML.
 module DS
@@ -693,20 +694,36 @@ module DS
         "2021-10-01"
       end
 
-      IIIF_CSV = File.join(__dir__, 'data/legacy-iiif-manifests.csv')
-      IIIF_MANIFESTS = CSV.readlines(IIIF_CSV, headers: true).inject({}) { |h,row|
-        key = (row['holding_institution'] + row['shelfmark']).downcase
-        h.merge(key => row['iiif_manifest_url'])
-      }.freeze
-
-      def find_iiif_manifest xml
-        holding_institution = extract_institution_name xml
-        shelfmark = extract_shelfmark xml
-        key = (holding_institution + shelfmark).downcase
-        IIIF_MANIFESTS[key]
-      end
+      # def find_iiif_manifest xml
+      #   holding_institution = extract_institution_name xml
+      #   shelfmark = extract_shelfmark xml
+      #   key = iiif_manifest_key holding_institution, shelfmark
+      #   iiif_manifests[key]
+      # end
+      #
+      # @@iiif_manifests = nil
+      # def iiif_manifests
+      #   return @@iiif_manifests if @@iiif_manifests
+      #   recon_repo = File.join DS.root, 'data', Settings.recon.git_local_name
+      #   csv_file = File.join recon_repo, Settings.recon.iiif_manifests
+      #
+      #   @@iiif_manifests = CSV.readlines(csv_file, headers: true).inject({}) { |h,row|
+      #     key = iiif_manifest_key row['holding_institution'], row['shelfmark']
+      #     h.merge(key => row['iiif_manifest_url'])
+      #   }
+      # end
 
       protected
+
+      def iiif_manifest_key holder, shelfmark
+        qid = DS::Institutions.find_qid holder
+        raise DSError, "No QID found for #{holder}" if qid.to_s.empty?
+        normalize_key qid, shelfmark
+      end
+
+      def normalize_key *strings
+        strings.join.downcase.gsub(%r{\s+}, '')
+      end
 
       def clean_notes notes
         notes.flat_map { |note|

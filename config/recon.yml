@@ -1,8 +1,9 @@
 ---
 recon:
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
-  git_branch: 'main'
-  git_local_name: 'ds-data'
+  git_branch: main
+  git_local_name: ds-data
+  iiif_manifests: iiif/legacy-iiif-manifests.csv
   # TODO: make sets a hash so you can do Settings.recon.sets.genres
   sets:
     - name: names

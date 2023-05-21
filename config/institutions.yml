@@ -1,5 +1,8 @@
 ---
 institutions:
+  Q463271:
+    - American Academy in Rome
+    - rome
   Q814779:
     - Beinecke Rare Book & Manuscript Library
     - beinecke
@@ -76,6 +79,12 @@ institutions:
     - Science History Institute
     - Chemical Heritage Foundation
     - shi
+  Q734774:
+    - Saint Louis University
+    - slu
+  Q49204:
+    - Smith College
+    - smith
   Q1378320:
     - Swarthmore College
     - swarthmore
