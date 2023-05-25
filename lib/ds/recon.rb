@@ -16,6 +16,11 @@ require 'csv'
 require 'ostruct'
 
 module Recon
+
+  ERROR_UNBALANCED_SUBFIELDS = 'Row has unmatched subfields'
+  ERROR_BLANK_SUBFIELDS = 'Row has blank subfields'
+  ERROR_MISSING_REQUIRED_COLUMNS = "CSV is missing required column(s)"
+  ERROR_CSV_FILE_NOT_FOUND = 'Recon CSV file cannot be found'
   def self.sort_and_dedupe array
     if array.first.is_a? Array
       array.sort { |a,b| a.first <=> b.first }.uniq &:join
@@ -41,12 +46,23 @@ module Recon
     @@reconciliations[set_name] ||= load_set set_name
   end
 
-  def self.recon_repo
+  def self.git_repo
     File.join DS.root, 'data', Settings.recon.git_local_name
   end
 
+  def self.find_set_config name
+    config = Settings.recon.sets.find { |s| s.name == name }
+    raise DSError, "Unknown set name: #{name}" unless config
+    config
+  end
+
+  def self.csv_files set_name
+    set_config = find_set_config set_name
+    repo_paths = [set_config['repo_path']].flatten # ensure repo_path is an array
+    repo_paths.map { |path| File.join Recon.git_repo, path }
+  end
   def self.load_set set_name
-    set_config = Settings.recon.sets.find { |s| s.name == set_name }
+    set_config = find_set_config set_name
     raise "No configured set found for: '#{set_name}'" unless set_config
 
     data = {}
@@ -57,11 +73,9 @@ module Recon
     }
 
     # Path may be a single value or an array. Make sure it's an array.
-    repo_paths = [set_config['repo_path']].flatten
-    repo_paths.each do |path|
-      params[:csv_file] = File.join recon_repo, path
-
-      validate! set_config, params[:csv_file]
+    csv_files(set_name).each do |csv_file|
+      params[:csv_file] = csv_file
+      validate! set_name, params[:csv_file]
       read_csv **params
     end
 
@@ -81,11 +95,66 @@ module Recon
     data
   end
 
-  def self.validate! set_config, csv_file
-    unless File.exist? csv_file
-      raise "Could not find CSV for set #{set_config['name']}: #{csv_file}"
-    end
+  ##
+  # Return an error if each value in +row_values+ has the same number of subfields
+  # **and** none of the subfields are blank; otherwise, return +nil+.
+  #
+  # If +allow_blank+ is +true+, ignore blanks, only check for balanced
+  # subfields.
+  #
+  # Note: It is always allowed for every value to be blank (empty string).
+  #
+  # So:
+  #
+  #   [ 'a|b|c', '1|2|3' ]   # => valid, return nil
+  #   [ '', '' ]             # => valid, return nil
+  #   [ 'a|b|c', '1|2' ]     # => not valid, return ERROR_UNBALANCED_SUBFIELDS
+  #   [ 'a||c', '1|2|3' ]    # => not valid, return ERROR_BLANK_SUBFIELDS
+  #   [ 'a||c', '1|2|3' ]    # => valid, if allow_blank == true, return nil
+  #
+  # @param [Array<String>] row_values an array of strings from one or more columns
+  # @param [String] separators a list of allowed subfield separators; e.g., ';', '|', ';|'
+  # @param [Boolean] allow_blank whether any of the subfields may be blank
+  # @return [String] the row error or +nil+ if there are no errors
+  def self.validate_row_splits row_values: [], separators: '|;', allow_blank: false
+    # return true if all the values are empty
+    return if row_values.all? { |val| val.to_s.strip.empty? }
+    # Input array is an array of two or more strings that must split into
+    # equal numbers of subfields.
+    #
+    #   ['a|bc', '1|2|3'] => [['a', 'b', 'c'],
+    #                         ['1', '2', '3']]
+    #   ['a|b|c', '1|2']  => [['a', 'b', 'c'],
+    #                         ['1' '2']]
+    #
+    # Count the subfields and make sure there's an equal number in each field
+    #
+    #    ['a|bc', '1|2|3'] => # 3 subfields each; => valid
+    #    ['a|b|c', '1|2']  => # 2 and 3 subfields; => not valid
+    subfield_values = row_values.map { |v| v.split %r{[#{Regexp.escape separators}]} }
+    # there should be only one subfield length:
+    subfield_lengths = subfield_values.map { |vals| vals.size }.uniq
+    return ERROR_UNBALANCED_SUBFIELDS if subfield_lengths.size > 1
 
+    # return true if we don't have check for blanks
+    return nil if allow_blank
+
+    # return an error if any of the subfields are blank
+    return ERROR_BLANK_SUBFIELDS if subfield_values.flatten.any? { |sub| sub.to_s.strip.empty? }
+  end
+
+  ##
+  # Check CSV for presence of required columns by heading name. Return +nil+ if
+  # all required columns present. Otherwise, return an error message.
+  #
+  #    Recon.validate_columns 'names', 'path/to/names.csv'
+  #      # => "CSV is missing required column(s) (path/to/names.csv): instance_of"
+  #
+  # @param [String] set_name the name of the recon set; 'names', 'genres', etc.
+  # @param [String] csv_file the path to the CSV file
+  # @param [Array<String>,NilClass] list of any missing columns; +nil+ otherwise
+  def self.validate_columns set_name, csv_file
+    set_config = Recon.find_set_config set_name
     required_columns = []
     required_columns << set_config['key_column']
     required_columns << (set_config['structured_data_column'] || 'structured_value')
@@ -95,9 +164,45 @@ module Recon
 
     headers = CSV.readlines(csv_file).first
     missing = required_columns.reject { |c| headers.include? c }
-    return if missing.empty?
 
-    raise "Could not find required columns (#{missing.join ', '}) in #{csv_file}"
+    return if missing.empty?
+    "#{ERROR_MISSING_REQUIRED_COLUMNS}: (#{csv_file}) #{missing.join ', '}"
+  end
+
+  def self.validate_csv_splits set_name, csv_file
+    set_config = Recon.find_set_config set_name
+    return unless set_config['balanced_columns']
+
+    balanced_columns = set_config['balanced_columns']
+    errors = []
+    csv = CSV.open csv_file, headers: true
+    csv.each do |row|
+      row_values = balanced_columns.map { |col| row[col] }
+      error =  validate_row_splits row_values: row_values, separators: ';|'
+      next unless error
+      errors << "#{error}: #{csv_file}, line #{csv.lineno}: #{row}"
+    end
+    csv.close
+
+    return if errors.empty?
+    errors
+  end
+
+  def self.validate set_name, csv_file
+    return "#{ERROR_CSV_FILE_NOT_FOUND}: '#{csv_file}'" unless File.exist? csv_file
+
+    column_error = validate_columns set_name, csv_file
+    return column_error if column_error
+
+    splits_errors = validate_csv_splits set_name, csv_file
+    return splits_errors.join "\n" if splits_errors
+  end
+
+  def self.validate! set_name, csv_file
+    error = validate set_name, csv_file
+    return unless error
+
+    raise DSError, "Error validating #{set_name} recon CSV #{csv_file}:\n#{error}"
   end
 
   def self.add_alt_keys data
