@@ -11,10 +11,39 @@ class ReconCLI < DS::CLI
     true
   end
 
-  class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'", aliases: '-a'
-  class_option :directory, banner: 'PATH', desc: "Output directory", aliases: '-o', default: '.'
-  class_option :'source-type', banner: 'TYPE', desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED", aliases: '-t', required: (ARGV.size > 0 && ARGV[0] != 'recon-update')
+  RECON_SETS = Settings.recon.sets.map { |set| set[:name] }.freeze
+  # We don't validate the aggregate subjects, named subjects set
+  VALIDATION_RECON_SETS = RECON_SETS.reject {|set| set == 'all-subjects' }.freeze
+
+  class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'[ignored by recon-update, validate]", aliases: '-a'
+  class_option :directory, banner: 'PATH', desc: "Output directory [ignored by recon-update, validate]", aliases: '-o', default: '.'
+  class_option :'source-type',
+               banner: 'TYPE',
+               desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED except for recon-update, validate",
+               aliases: '-t',
+               required: (ARGV.size > 0 && ! %w{recon-update validate}.include?(ARGV[0]))
   class_option :verbose, desc: "Print full error messages", aliases: '-v', type: :boolean, default: false
+
+  desc "validate [RECON_CSV]", "Validate RECON CSV structure and data"
+  long_desc <<~LONGDESC
+    Validate the recon CSV using set configuration 'config/recon.yml'
+
+    -t/-source-type option is NOT REQUIRED
+
+    ds-recon -s names path/to/names.csv
+  LONGDESC
+  option :'recon-set', banner: 'SET', desc: "One of #{VALIDATION_RECON_SETS.join ', '}; REQUIRED", aliases: '-s', required: true
+  def validate recon_csv = nil
+    set_name = options[:'recon-set']
+    set_config = Recon.find_set_config set_name
+    recon_csvs = Recon.csv_files set_name unless recon_csv
+    errors = recon_csvs.flat_map { |csv| Recon.validate set_name, csv }.compact
+
+    unless errors.empty?
+      puts "ERRORS validating #{recon_csvs.join ', '}:#{$/}#{$/}#{errors.join $/}" unless errors.empty?
+    end
+  end
+
 
   desc "names FILES", "Extract names from one or more FILEs"
   long_desc <<-LONGDESC
@@ -24,7 +53,6 @@ class ReconCLI < DS::CLI
 
       cat list_of_files | recon names -t mets -
   LONGDESC
-
   def names *files
     # TODO: Add role column to names
     return false unless validate_args files

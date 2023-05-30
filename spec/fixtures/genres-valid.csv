@@ -1,5 +1,5 @@
-genre_as_recorded,vocabulary,source_authority_uri,structured_value
-Abridgements,aat,"",http://vocab.getty.edu/aat/300202489
-Account books,rbgenr,"",""
-Accounts,aat,"",http://vocab.getty.edu/aat/300145802
-Addresses,rbgenr,"",""
+genre_as_recorded,vocabulary,source_authority_uri,authorized_label,structured_value
+Abridgements,aat,,abridgements,http://vocab.getty.edu/aat/300202489
+Abridgments,fast,,Abridgments,http://id.worldcat.org/fast/1726571
+"Manuscripts, Arabic,--18th century",local,,"Manuscripts, Arabic;Eighteenth century",http://id.worldcat.org/fast/1008278;http://id.worldcat.org/fast/904058
+marginalia (annotations),aat,,marginalia (annotations),http://vocab.getty.edu/aat/300026102
