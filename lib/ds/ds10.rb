@@ -375,16 +375,30 @@ module DS
         }
       end
 
+      ##
+      # Return as a single string all the date values for the manuscript. This
+      # is a concatenation of the values returned by DS10.extract_date_created,
+      # DS10.extract_assigned_date, DS10.extract_date_range.
+      #
+      # @param [Nokogiri::XML:Node] xml the parsed METS xml document
+      # @return [String] the concatenated date values
       def extract_date_as_recorded xml
-        find_parts(xml).map { |part |
-          assigned = extract_assigned_date part
-          range    = extract_date_range(part).join '-'
-          [assigned, range].reject(&:empty?).join ', '
-        }.join '|'
+        find_parts(xml).map { |part|
+          date_created = extract_date_created part
+          assigned     = extract_assigned_date part
+          range        = extract_date_range(part).join '-'
+          [date_created, assigned, range].uniq.reject(&:empty?).join '; '
+        }.reject { |date| date.to_s.strip.empty? }.join '|'
       end
 
       ##
-      # @param [Nokogiri::XML:Node]
+      # Extract ranges from `mods:dateCreated` elements where a @point is
+      # defined, thus:
+      #
+      #   <mods:dateCreated point="start" encoding="iso8601">1300</mods:dateCreated>
+      #   <mods:dateCreated point="end" encoding="iso8601">1399</mods:dateCreated>
+      #
+      # @param [Nokogiri::XML:Node] part a part-level node
       # @return [Array<Integer>] the start and end dates as an array of integers
       def extract_date_range part
         xpath      = 'mods:mods/mods:originInfo/mods:dateCreated[@point="start"]'
@@ -395,16 +409,58 @@ module DS
         [start_date, end_date].reject(&:empty?).map(&:to_i)
       end
 
+      ##
+      # Return any date not found in the `otherDate` or in a dateCreated date
+      # range (see #extract_date_range); thus:
+      #
+      #     <mods:dateCreated>1537</mods:dateCreated>
+      #     <mods:dateCreated>1531</mods:dateCreated>
+      #     <mods:dateCreated>14??, October 21</mods:dateCreated>
+      #     <mods:dateCreated>1462, July 23</mods:dateCreated>
+      #     <mods:dateCreated>1549, November</mods:dateCreated>
+      #
+      # These values commonly give the date for "dated" manuscripts
+      #
+      # @param [Nokogiri::XML:Node] part a part-level node
+      # @return [Array<Integer>] the content of any dateCreated without '@point'
+      #                          defined
+      def extract_date_created part
+        xpath = 'mods:mods/mods:originInfo/mods:dateCreated[not(@point)]'
+        part.xpath(xpath).map(&:text).join ', '
+      end
+
+      ##
+      # Return dates found in the `otherDate` element, reformatting them as
+      # needed. These examples are taken from several METS files.
+      #
+      #     <mods:dateOther>[ca. 1410]</mods:dateOther>
+      #     <mods:dateOther>[between 1100 and 1200]</mods:dateOther>
+      #     <mods:dateOther>[between 1450 and 1460]</mods:dateOther>
+      #     <mods:dateOther>[between 1450 and 1500]</mods:dateOther>
+      #     <mods:dateOther>s. XV#^3/4#</mods:dateOther>
+      #     <mods:dateOther>s. XV</mods:dateOther>
+      #     <mods:dateOther>s. XVI#^4/4#</mods:dateOther>
+      #     <mods:dateOther>s. XVIII#^2/4#</mods:dateOther>
+      #     <mods:dateOther>s. XV#^in#</mods:dateOther>
+      #
+      # Most dateOther values have the format:
+      #
+      #     s. XVII#^2#
+      #
+      # The notation #^<VAL># encodes a portion of the string that was presented
+      # as superscript on the Berkeley DS site. DS 2.0 doesn't use the
+      # superscripts; thus, when it occurs, this portion of the string is
+      # reformatted `(<VAL>)`:
+      #
+      #     s. XVII#^2#   =>    s. XVII(2)
+      #     s. XV#^ex#    =>    s. XV(ex)
+      #     s. XVI#^in#   =>    s. XVI(in)
+      #     s. X#^med#    =>    s. X(med)
+      #     s. XII#^med#  =>    s. XII(med)
+      #
+      # @param [Nokogiri::XML:Node] part a part-level node
+      # @return [Array<Integer>] the date string reformatted as described above
       def extract_assigned_date part
-        # Assigned values use a system of encoded superscripts; e.g.,
-        #
-        #     s. XVII#^2#
-        #     s. XV#^ex#
-        #     s. XVI#^in#
-        #     s. X#^med#
-        #     s. XII#^med#
-        #
-        # For now we replace the #^<VAL># with (<VAL>)
         xpath = 'mods:mods/mods:originInfo/mods:dateOther'
         part.xpath(xpath).text.gsub %r{#\^?([\w/]+)(\^|#)}, '(\1)'
       end
