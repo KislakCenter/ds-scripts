@@ -430,7 +430,8 @@ module DS
       end
 
       ##
-      # Return dates found in the `otherDate` element; thus,
+      # Return dates found in the `otherDate` element, reformatting them as
+      # needed. These examples are taken from several METS files.
       #
       #     <mods:dateOther>[ca. 1410]</mods:dateOther>
       #     <mods:dateOther>[between 1100 and 1200]</mods:dateOther>
@@ -442,22 +443,20 @@ module DS
       #     <mods:dateOther>s. XVIII#^2/4#</mods:dateOther>
       #     <mods:dateOther>s. XV#^in#</mods:dateOther>
       #
-      # Most have this format:
+      # Most dateOther values have the format:
       #
       #     s. XVII#^2#
-      #     s. XV#^ex#
-      #     s. XVI#^in#
-      #     s. X#^med#
-      #     s. XII#^med#
       #
-      # The notation #^<VAL># encoded a portion of the string to be
-      # superscripted. Here this is formatted as `(<VAL>)`; thus:
+      # The notation #^<VAL># encodes a portion of the string that was presented
+      # as superscript on the Berkeley DS site. DS 2.0 doesn't use the
+      # superscripts; thus, when it occurs, this portion of the string is
+      # reformatted `(<VAL>)`:
       #
-      #     s. XVII(2)
-      #     s. XV(ex)
-      #     s. XVI(in)
-      #     s. X(med)
-      #     s. XII(med)
+      #     s. XVII#^2#   =>    s. XVII(2)
+      #     s. XV#^ex#    =>    s. XV(ex)
+      #     s. XVI#^in#   =>    s. XVI(in)
+      #     s. X#^med#    =>    s. X(med)
+      #     s. XII#^med#  =>    s. XII(med)
       #
       # @param [Nokogiri::XML:Node] part a part-level node
       # @return [Array<Integer>] the date string reformatted as described above
