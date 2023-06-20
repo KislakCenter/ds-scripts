@@ -191,14 +191,16 @@ class DSConvertCLI < DS::CLI
     rows = select_input(files).map { |in_xml|
       source_file = in_xml.chomp # remove newline in case input if from ARGF
       xml = File.open(source_file) { |f| Nokogiri::XML(f) }
+      iiif_manifest_lookup = Recon::URLLookup.new 'iiif_manifests'
+      ia_url_lookup = Recon::URLLookup.new 'legacy_ia_urls'
 
       source_type                        = 'digital-scriptorium'
       holding_institution_as_recorded    = DS::DS10.extract_institution_name xml
       holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
       holding_institution_id_number      = ''
       holding_institution_shelfmark      = DS::DS10.extract_shelfmark xml
-      link_to_holding_institution_record = DS::DS10.extract_link_to_inst_record xml
-      iiif_manifest                      = Recon::IIIFManifests.find_iiif_manifest holding_institution_as_recorded, holding_institution_shelfmark
+      link_to_holding_institution_record = ia_url_lookup.find_url holding_institution_as_recorded, holding_institution_shelfmark
+      iiif_manifest                      = iiif_manifest_lookup.find_url holding_institution_as_recorded, holding_institution_shelfmark
       production_place_as_recorded       = DS::DS10.extract_production_place xml
       production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
       production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'

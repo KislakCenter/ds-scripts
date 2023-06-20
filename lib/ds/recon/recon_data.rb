@@ -15,6 +15,8 @@ module Recon
         end
         g = Git.open repo_name, log: logger
         begin
+          g.fetch 'origin'
+          g.checkout branch
           g.pull 'origin', branch
         rescue Git::GitExecuteError => e
           logger.warn { "Error executing git command" }
