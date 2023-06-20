@@ -188,11 +188,24 @@ module DS
         }.map { |s| s.downcase.chomp('.').strip }.uniq.join '|'
       end
 
-      def extract_ownership xml
+      def extract_ownership xml, lookup_split: true
         xpath = "./descendant::mods:note[@type='ownership']/text()"
-        notes = find_ms(xml).xpath(xpath).flat_map &:text
+        notes = clean_notes(xml.xpath(xpath).flat_map(&:text))
+        # unless notes.grep(/François-Nicolas/).empty?; require 'pry'; binding.pry; end
+        return notes if notes.all? { |n| n.to_s.size < 400 }
 
-        clean_notes notes
+        notes = if lookup_split
+                  notes.flat_map { |n|
+                    if n.to_s.size < 400
+                      n
+                    else
+                      Recon::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
+                    end
+                  }
+                end
+
+
+        clean_notes(notes).map { |n| DS.mark_long n }
       end
 
       def extract_author xml
@@ -300,6 +313,18 @@ module DS
           data << [name, 'former owner', '', '']
         end
         data
+      end
+
+      ##
+      # Extract acknowledgements, notes, physical descriptions, and
+      # former owners; return all strings that start with SPLIT:,
+      # remove 'SPLIT: ' and return an array of arrays that can
+      # be treated as rows by Recon::Splits
+      def extract_recon_splits xml
+        # require 'pry'; binding.pry
+        data = []
+        data += DS::DS10.extract_ownership xml, lookup_split: false
+        data.flatten.select { |d| d.to_s.size >= 400 }.map { |d| [d.strip] }
       end
 
       ##
@@ -790,7 +815,7 @@ module DS
           note.to_s =~ %r{\blang:\s*}i
         }.map { |note|
           # add period to any note without terminal punctuation: .,;:? or !
-          DS.mark_long DS.terminate(note, terminator: '.', force: true)
+          DS.terminate(note, terminator: '.', force: true)
         }
       end
 

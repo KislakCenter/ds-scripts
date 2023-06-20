@@ -83,6 +83,7 @@ sub_commands = [
 'names',
 'places',
 'titles',
+'splits'
 ]
 
 system "#{RECON_SCRIPT} recon-update"
@@ -92,6 +93,3 @@ sub_commands.each do |sub|
   LOGGER.debug "Running: #{cmd}"
   system %Q{cat #{tmpfile.path} | #{cmd} }
 end
-
-
-

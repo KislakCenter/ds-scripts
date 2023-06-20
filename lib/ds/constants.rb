@@ -149,6 +149,8 @@ source_file
 
     TRAILING_PUNCTUATION_RE = %r{[,.:!?;[:space:]]+$}
 
+    MAX_WIKIBASE_FIELD_LENGTH = 400
+
     INSTITUTIONS = INSTITUTION_DS_IDS.values.uniq.freeze
 
     MARC_XML = :marc
