@@ -5,6 +5,9 @@ recon:
   git_local_name: ds-data
   iiif_manifests: iiif/legacy-iiif-manifests.csv
   # TODO: make sets a hash so you can do Settings.recon.sets.genres
+  splits:
+    columns:
+
   sets:
     - name: names
       repo_path: terms/reconciled/names.csv
@@ -84,4 +87,8 @@ recon:
     - name: titles
       repo_path: terms/reconciled/titles.csv
       key_column: title_as_recorded
+      structured_data_column: authorized_label
+    - name: splits
+      repo_path: terms/reconciled/splits.csv
+      key_column: as_recorded
       structured_data_column: authorized_label

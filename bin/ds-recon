@@ -318,6 +318,43 @@ LONGDESC
     true
   end
 
+  desc "splits FILES", "Extract long lines"
+  long_desc <<-LONGDESC
+  Extract strings longer than 400 characters
+
+  Use '-' to read a list of files from standard input:
+
+      cat list_of_files | recon splits -t mets -
+  LONGDESC
+  def splits *files
+    return false unless validate_args files
+
+    out_csv = out_file 'splits', options
+    begin
+      Recon::ReconData.update! unless skip_git? options
+
+      case options[:'source-type']
+      when 'marc'
+        data = Splits.from_marc select_input files
+      when 'mets'
+        data = Splits.from_mets select_input files
+      when 'tei'
+        data = Splits.from_tei select_input files
+      else
+        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+      end
+
+      validate! data unless options[:skip_validation]
+      write_csv out_csv, Splits::CSV_HEADERS, data
+
+    rescue NotImplementedError, StandardError
+      STDERR.puts $!.backtrace if options[:verbose]
+      abort "#{$!}"
+    end
+
+    true
+  end
+
   protected
 
   def validate_args files

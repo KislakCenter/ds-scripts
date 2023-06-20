@@ -45,17 +45,16 @@ this_dir=$(dirname $0)
 tmp_dir=${this_dir}/../tmp
 
 ds_dir=${this_dir}/../data/digitalassets.lib.berkeley.edu/ds
-dest_base=${this_dir}/../tmp/mets-recon-$(date +%Y-%m-%d)
+dest_base=${this_dir}/../tmp/mets-convert-$(date +%Y-%m-%d)
 
 [[ -e ${dest_base} ]] || mkdir "${dest_base}"
 
-for member in ${members1}
+for member in ${members3}
 do
   echo
   echo " ==== Creating import CSV for ${member} ===="
   echo
   dest_dir=${dest_base}/${member}
   [[ -e ${dest_dir} ]] || mkdir "${dest_dir}"
-  ${this_dir}/../bin/ds-convert mets -o ${tmp_dir}/ds-import-${member}.csv ${ds_dir}/${member}/mets/*.xml
+  ${this_dir}/../bin/ds-convert mets -o ${dest_dir}/ds-import-${member}.csv ${ds_dir}/${member}/mets/*.xml
 done
-
