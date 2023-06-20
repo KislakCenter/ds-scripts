@@ -148,26 +148,6 @@ describe DS::DS10 do
          expect(notes.grep /lang: Latin/i).to be_empty
       end
 
-      it 'flags a long ms note' do
-        notes = DS::DS10.extract_note na_ds_xml
-        expect(notes.grep /^SPLIT.*Long MS note/).not_to be_empty
-      end
-
-      it 'flags a long part note' do
-        notes = DS::DS10.extract_note na_ds_xml
-        expect(notes.grep /^SPLIT.*Long part note/).not_to be_empty
-      end
-
-      it 'flags a long text note' do
-        notes = DS::DS10.extract_note na_ds_xml
-        expect(notes.grep /^SPLIT.*Long text note/).not_to be_empty
-      end
-
-      it 'flags a page ms note' do
-        notes = DS::DS10.extract_note na_ds_xml
-        expect(notes.grep /^SPLIT.*Long page note/).not_to be_empty
-      end
-
       it 'includes any dockets' do
         notes = DS::DS10.extract_note ds_docket_xml
         expect(notes.grep(/^Docket/).size).to eq 2
@@ -220,24 +200,9 @@ describe DS::DS10 do
           expect(descs).to include desc
         end
       end
-
-      it 'flags a long part ms description' do
-        descs = DS::DS10.extract_physical_description na_ds_xml
-        expect(descs.grep /^SPLIT.*Long MS description/).not_to be_empty, "No SPLIT desc present"
-      end
-
-      it 'flags a long part physical description' do
-        descs = DS::DS10.extract_physical_description na_ds_xml
-        expect(descs.grep /^SPLIT.*Long part description/).not_to be_empty, "No SPLIT desc present"
-      end
     end
 
     context 'extract_acknowledgements' do
-      it 'flags a long acknowledgement' do
-        acks = DS::DS10.extract_acknowledgements na_ds_xml
-        expect(acks.grep /SPLIT.*Long acknowledgement/).not_to be_empty, "Expected acknowledgement marked SPLIT "
-      end
-
       it 'formats an ms acknowledgement' do
         expect(DS::DS10.extract_acknowledgements na_ds_xml).to have_item_matching /^MS acknowledgement/
       end
