@@ -1,9 +1,10 @@
 ---
 recon:
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
-  git_branch: main
+  git_branch: 22-add-legacy-internet-archive-urls
   git_local_name: ds-data
   iiif_manifests: iiif/legacy-iiif-manifests.csv
+  legacy_ia_urls: internet_archive/legacy-ia-urls.csv
   # TODO: make sets a hash so you can do Settings.recon.sets.genres
   splits:
     columns:
