@@ -4,11 +4,22 @@ module Recon
     attr_reader :lookup_set
     attr_reader :url_hash
 
+    ##
+    # The name of the lookup set in `config/recon.yml`. For example, for
+    #
+    #     ---
+    #     recon:
+    #       # ...
+    #       iiif_manifests: iiif/legacy-iiif-manifests.csv
+    #
+    #  the +lookup_set+ is 'iiif_manifests'.
+    #
+    # @param [String] lookup_set the name of the recon setting
     def initialize lookup_set
       @lookup_set = lookup_set
       @url_hash = {}
-
     end
+
     def find_url holding_institution, shelfmark
       key = url_key holding_institution, shelfmark
       urls[key]
