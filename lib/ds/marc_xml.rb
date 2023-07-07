@@ -17,7 +17,7 @@ module DS
       # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
       def extract_langs record, separator: '|'
-        # Language is in 008 at characters 35-37 (0-based indexing) 
+        # Language is in 008 at characters 35-37 (0-based indexing)
         (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
         # 041 is present if there's more than one language
         langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
@@ -329,19 +329,21 @@ module DS
       #
       # @param [Nokogiri::XML::Node] record the MARC record
       # @param [String] sub2 the value of the 655$2 subfield +rbprov+, +aat+, etc.
-      # @param [String] field_sep separator for multiple 655 datafields
       # @param [String] sub_sep separator for keywords
-      # @return [String] concatenated field value(s)
-      def extract_genre_as_recorded record, sub2:, field_sep: '|', sub_sep: '--'
+      # @param [Boolean] uniq whether to return only unique terms; default: +true+
+      # @return [Array<String>] array of genre terms
+      def extract_genre_as_recorded record, sub2:, sub_sep: '--', uniq: false
         if sub2 == :all
           xpath = %Q{datafield[@tag = 655]}
         else
           xpath = %Q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = '#{sub2}']}
         end
-        record.xpath(xpath).map { |datafield|
+        terms = record.xpath(xpath).map { |datafield|
           value = collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
           DS.clean_string value, terminator: ''
-        }.join field_sep
+        }
+
+        uniq ? terms.uniq : terms
       end
 
       ##
