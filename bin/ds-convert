@@ -23,7 +23,7 @@ class DSConvertCLI < DS::CLI
   option :'holdings-file', banner: 'FILE', desc: 'Associated Holdings File (if separate from records)', aliases: '-f'
   def marc *files
     return false unless validate_args files
-    Recon.update! unless skip_git? options
+    Recon::ReconData.update! unless skip_git? options
 
     inst_qid = DS::Institutions.find_qid options[:institution]
     abort "Not a known institution: #{options[:institution]}" unless inst_qid
@@ -337,7 +337,8 @@ class DSConvertCLI < DS::CLI
   LONGDESC
   def openn *files
     return false unless validate_args files
-    Recon.update! unless skip_git? options
+    Recon::ReconData.update! unless skip_git? options
+
     timestamp = DS.timestamp
     rows = select_input(files).map { |in_xml|
       source_file = in_xml.chomp # remove newline in case input if from ARGF
