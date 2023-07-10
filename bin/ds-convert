@@ -56,7 +56,7 @@ class DSConvertCLI < DS::CLI
         production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
         uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
         uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
-        title_as_recorded                  = DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a']").text, terminator: ''
+        title_as_recorded                  = DS::MarcXML.extract_title_as_recorded record
         title_as_recorded_agr              = DS::MarcXML.extract_title_agr record, 245
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = DS::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')

@@ -397,6 +397,10 @@ module DS
         record.xpath(xpath).text.delete '[]'
       end
 
+      def extract_title_as_recorded record
+        DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a' or @code='b']").map { |s| s.text.strip }.join ' '
+      end
+
       def extract_uniform_title_as_recorded record
         title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
         title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
