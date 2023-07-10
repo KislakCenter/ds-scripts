@@ -58,7 +58,7 @@ egrep -A 4 "tag=.${tag}." ${files} | egrep "code=.${code}." | \
 while read line
 do
  file=$(awk '{ print $1}' | sed 's/-$//')
- egrep -A 4 "tag=.${tag}." ${file}
+ egrep -A 6 "tag=.${tag}." ${file}
 done
 
 if [[ $? -ne 0 ]]
