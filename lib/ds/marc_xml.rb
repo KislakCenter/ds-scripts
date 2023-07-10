@@ -58,12 +58,30 @@ module DS
       # Look for a date as recorded. Look first at 260$c, then 260$d, then
       # 245$f, finally use the encoded date from 008
       def extract_date_as_recorded record
-        dar = record.xpath("datafield[@tag=260]/subfield[@code='c']").text
-        return dar unless dar.strip.empty?
+        # Note that MARC does not specify a subfield '260$d':
+        #
+        # https://www.loc.gov/marc/bibliographic/bd260.html
+        #
+        # However Cornell use $d to continue 245$c
+        dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
+          t.text.strip
+        end.join ' '
+        return dar.strip unless dar.strip.empty?
 
-        dar = record.xpath("datafield[@tag=260]/subfield[@code='d']").text
-        return dar unless dar.strip.empty?
-
+        # 245 is the title field but can have a date in $f
+        #
+        # see: https://www.loc.gov/marc/bibliographic/bd245.html
+        #
+        # Cornell uses 245$f in records that also lack 260 or 264; see
+        # '4600 Bd. Ms. 176':
+        #
+        # https://catalog.library.cornell.edu/catalog/6382455/librarian_view
+        #
+        #   <datafield ind1="0" ind2="0" tag="245">
+        #     <subfield code="a">Shah-nameh,</subfield>
+        #     <subfield code="f">1600s.</subfield>
+        #   </datafield>
+        #
         dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
         return dar unless dar.strip.empty?
 

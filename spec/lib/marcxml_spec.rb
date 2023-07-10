@@ -71,4 +71,105 @@ describe DS::MarcXML do
       ).to eq 'Subfield a; Subfield b.'
     end
   end
+
+  context 'extract_title_as_recorded' do
+    it 'extracts the 245$a and 245$b' do
+      expect(
+        DS::MarcXML.extract_title_as_recorded(title_record)
+      ).to eq 'Subfield a; Subfield b.'
+    end
+  end
+
+  let(:date_260c_marc) {
+    marc_record(
+      %q{<?xml version="1.0" encoding="UTF-8"?>
+      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
+        <marc:datafield ind1=" " ind2=" " tag="260">
+          <marc:subfield code="a">Vienna ;</marc:subfield>
+          <marc:subfield code="c">1644 February 10</marc:subfield>
+         </marc:datafield>
+      </marc:record>
+    }
+    )
+  }
+  let(:date_260d_marc) {
+    marc_record(
+      %q{<?xml version="1.0" encoding="UTF-8"?>
+      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
+        <marc:datafield ind1=" " ind2=" " tag="260">
+          <marc:subfield code="a">[Italy,</marc:subfield>
+          <marc:subfield code="d">14th and 15th centuries]</marc:subfield>
+        </marc:datafield>
+      </marc:record>
+    }
+    )
+  }
+
+  let(:date_245f_record) {
+    marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+        <marc:controlfield tag="008">101130s1409    it a          000 0 lat d</marc:controlfield>
+        <marc:datafield ind1="0" ind2="0" tag="245">
+          <marc:subfield code="a">Shah-nameh,</marc:subfield>
+          <marc:subfield code="f">1600s.</marc:subfield>
+        </marc:datafield>
+      </marc:record>
+    })
+  }
+
+  let(:date_008_record) {
+    marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+        <marc:controlfield tag="008">101130s1409    it a          000 0 lat d</marc:controlfield>
+      </marc:record>
+    })
+  }
+
+  context 'extract_data_as_recorded' do
+    it 'extracts 260$c' do
+      expect(
+        DS::MarcXML.extract_date_as_recorded(date_260c_marc)
+      ).to eq '1644 February 10'
+    end
+
+    it 'extracts 260$d' do
+      expect(
+        DS::MarcXML.extract_date_as_recorded(date_260d_marc)
+      ).to eq '14th and 15th centuries]'
+    end
+
+    it 'extracts 245$f' do
+      expect(
+        DS::MarcXML.extract_date_as_recorded(date_245f_record)
+      ).to eq '1600s.'
+    end
+
+    it 'extracts 008[7,9]' do
+      expect(
+        DS::MarcXML.extract_date_as_recorded(date_008_record)
+      ).to eq '1409'
+    end
+  end
 end
