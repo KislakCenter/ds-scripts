@@ -25,7 +25,6 @@ title_as_recorded
 title_as_recorded_agr
 standard_title
 genre_as_recorded
-genre_vocabulary
 genre
 genre_label
 subject_as_recorded
