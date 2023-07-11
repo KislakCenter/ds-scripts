@@ -62,8 +62,13 @@ module DS
         #
         # https://www.loc.gov/marc/bibliographic/bd260.html
         #
-        # However Cornell use $d to continue 245$c
+        # However Cornell use $d to continue 260$c
         dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
+          t.text.strip
+        end.join ' '
+        return dar.strip unless dar.strip.empty?
+
+        dar = record.xpath("datafield[@tag=264]/subfield[@code='c']/text()").map do |t|
           t.text.strip
         end.join ' '
         return dar.strip unless dar.strip.empty?
