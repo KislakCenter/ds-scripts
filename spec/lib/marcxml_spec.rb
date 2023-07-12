@@ -187,10 +187,9 @@ describe DS::MarcXML do
     end
   end
 
-  context 'extract_place_as_recorded' do
-    let(:place_260a_record) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+  let(:place_260a_record) {
+    marc_record(
+      %q{<?xml version="1.0" encoding="UTF-8"?>
       <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -204,17 +203,12 @@ describe DS::MarcXML do
         </marc:datafield>
       </marc:record>
     }
-      )
-    }
-    it 'extracts 260$a' do
-      expect(
-        DS::MarcXML::extract_place_as_recorded place_260a_record
-        ).to eq 'Italy'
-    end
+    )
+  }
 
-    let(:date_264a_record) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+  let(:place_264a_record) {
+    marc_record(
+      %q{<?xml version="1.0" encoding="UTF-8"?>
       <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -228,13 +222,35 @@ describe DS::MarcXML do
         </marc:datafield>
       </marc:record>
     }
-      )
-    }
+    )
+  }
+
+  context 'extract_place_as_recorded' do
+
+    it 'extracts 260$a' do
+      expect(
+        DS::MarcXML::extract_place_as_recorded place_260a_record
+        ).to eq 'Italy'
+    end
+
     it 'extracts 264$a' do
       expect(
-        DS::MarcXML::extract_place_as_recorded date_264a_record
+        DS::MarcXML::extract_place_as_recorded place_264a_record
       ).to eq 'Lahore'
     end
   end
 
+  context 'extract_recon_places' do
+    it 'extracts 260$a' do
+      expect(
+        DS::MarcXML::extract_recon_places place_260a_record
+      ).to eq [['Italy']]
+    end
+
+    it 'extracts 264$a' do
+      expect(
+        DS::MarcXML::extract_recon_places place_264a_record
+      ).to eq [['Lahore']]
+    end
+  end
 end

@@ -334,7 +334,7 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places record
-        record.xpath("datafield[@tag=260]/subfield[@code='a']").map { |value|
+        record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']").map { |value|
           [DS.clean_string(value.text, terminator: '')]
         }
       end
