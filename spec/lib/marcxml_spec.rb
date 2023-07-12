@@ -3,7 +3,6 @@ require 'nokogiri'
 
 describe DS::MarcXML do
 
-  # let(:duplicate_genre_marc_record) { duplicate_genre_marc.xpath('record')[0] }
   context 'extract_genre_as_recorded' do
     let(:duplicate_genre_record) {
       marc_record %q{<?xml version="1.0" encoding="UTF-8"?>
@@ -187,4 +186,55 @@ describe DS::MarcXML do
       ).to eq '1409'
     end
   end
+
+  context 'extract_place_as_recorded' do
+    let(:place_260a_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
+        <marc:datafield ind1=" " ind2=" " tag="260">
+          <marc:subfield code="a">[Italy,</marc:subfield>
+          <marc:subfield code="d">14th and 15th centuries]</marc:subfield>
+        </marc:datafield>
+      </marc:record>
+    }
+      )
+    }
+    it 'extracts 260$a' do
+      expect(
+        DS::MarcXML::extract_place_as_recorded place_260a_record
+        ).to eq 'Italy'
+    end
+
+    let(:date_264a_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
+        <marc:datafield tag="264" ind1=" " ind2="0">
+          <marc:subfield code="a">Lahore,</marc:subfield>
+          <marc:subfield code="c">1596.</marc:subfield>
+        </marc:datafield>
+      </marc:record>
+    }
+      )
+    }
+    it 'extracts 264$a' do
+      expect(
+        DS::MarcXML::extract_place_as_recorded date_264a_record
+      ).to eq 'Lahore'
+    end
+  end
+
 end

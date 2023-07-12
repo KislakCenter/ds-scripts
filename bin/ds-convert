@@ -50,7 +50,7 @@ class DSConvertCLI < DS::CLI
         production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
-        production_place_as_recorded       = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
+        production_place_as_recorded       = DS::MarcXML.extract_place_as_recorded record
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
         production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record

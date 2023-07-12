@@ -95,6 +95,19 @@ module DS
       end
 
       ##
+      # Look for a place as recorded. Look first at 264$a, then 260$a; return ''
+      # when no value is found
+      # @param [Nokogiri::XML::Node] record the MARC record
+      # @return [String] the place name or ''
+      def extract_place_as_recorded record
+        par = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
+        return DS.clean_string par, terminator: '' unless par.to_s.strip.empty?
+
+        par = record.xpath("datafield[@tag=264]/subfield[@code='a']").text
+        DS.clean_string par.to_s.strip, terminator: ''
+      end
+
+      ##
       # Extract names from record using tags and relators. Tags understood are +100+,
       # +700+, and +710+. The +relators+ are used to require datafields based on the
       # contents of a subfield code +e+ containing the specified value, like 'scribe':
