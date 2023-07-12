@@ -230,13 +230,13 @@ describe DS::MarcXML do
     it 'extracts 260$a' do
       expect(
         DS::MarcXML::extract_place_as_recorded place_260a_record
-        ).to eq 'Italy'
+        ).to eq %w{ Italy }
     end
 
     it 'extracts 264$a' do
       expect(
         DS::MarcXML::extract_place_as_recorded place_264a_record
-      ).to eq 'Lahore'
+      ).to eq %w{ Lahore }
     end
   end
 

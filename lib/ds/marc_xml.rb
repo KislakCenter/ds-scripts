@@ -100,11 +100,9 @@ module DS
       # @param [Nokogiri::XML::Node] record the MARC record
       # @return [String] the place name or ''
       def extract_place_as_recorded record
-        par = record.xpath("datafield[@tag=260]/subfield[@code='a']").text
-        return DS.clean_string par, terminator: '' unless par.to_s.strip.empty?
-
-        par = record.xpath("datafield[@tag=264]/subfield[@code='a']").text
-        DS.clean_string par.to_s.strip, terminator: ''
+        record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()").map { |pn|
+          DS.clean_string pn, terminator: '' unless pn.to_s.strip.empty?
+        }
       end
 
       ##
