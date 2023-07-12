@@ -11,6 +11,7 @@ require_relative 'ds/marc_xml'
 require_relative 'ds/csv_util'
 require_relative 'ds/recon'
 require_relative 'ds/institutions'
+require_relative 'ds/mapper/marc_mapper'
 
 module DS
   include DS::Constants
