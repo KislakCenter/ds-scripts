@@ -253,4 +253,104 @@ describe DS::MarcXML do
       ).to eq [['Lahore']]
     end
   end
+
+  context 'extract_authors_as_recorded' do
+    let(:authors_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+            <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
+              <marc:controlfield tag="001">9948617063503681</marc:controlfield>
+              <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
+              <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
+              <datafield ind1="1" ind2=" " tag="100">
+                <subfield code="a">Cicero, Marcus Tullius,</subfield>
+                <subfield code="e">author.</subfield>
+              </datafield>
+              <datafield ind1="0" ind2=" " tag="100">
+                <subfield code="a">Halgren, John,</subfield>
+                <subfield code="c">of Abbeville.</subfield>
+              </datafield>
+              <datafield ind1="0" ind2=" " tag="100">
+                <subfield code="a">Gregory</subfield>
+                <subfield code="b">I,</subfield>
+                <subfield code="c">Pope,</subfield>
+                <subfield code="d">approximately 540-604.</subfield>
+              </datafield>
+              <datafield ind1="2" ind2=" " tag="110">
+                <subfield code="a">Catholic Church.</subfield>
+              </datafield>
+              <datafield ind1="2" ind2=" " tag="111">
+                <subfield code="a">Council of Nicea.</subfield>
+              </datafield>
+              <datafield ind1="0" ind2=" " tag="700">
+                <subfield code="a">Pseudo-Cicero,</subfield>
+                <subfield code="e">author.</subfield>
+              </datafield>
+              <datafield ind1="0" ind2=" " tag="710">
+                <subfield code="a">A bunch of monks,</subfield>
+                <subfield code="e">author.</subfield>
+              </datafield>
+              <datafield ind1="0" ind2=" " tag="711">
+                <subfield code="a">First Council of Nicea,</subfield>
+                <subfield code="d">(325 :</subfield>
+                <subfield code="c">Nicea)</subfield>
+                <subfield code="e">author.</subfield>
+              </datafield>
+            </marc:record>
+        }
+      )
+    }
+
+    it 'extracts 700$a' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'Pseudo-Cicero'
+    end
+
+    it 'extracts 710$a' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'A bunch of monks'
+    end
+
+    it 'extracts 711$a$d$c' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'First Council of Nicea, (325 : Nicea)'
+    end
+
+    it 'extracts 100$a with an $e = author' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'Cicero, Marcus Tullius'
+    end
+
+    it 'extracts 100$a without an $e' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'Halgren, John, of Abbeville'
+    end
+
+    it 'extracts 100$a$b$c$d' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'Gregory I, Pope, approximately 540-604'
+    end
+
+    it 'extracts 110$a' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'Catholic Church'
+    end
+
+    it 'extracts 111$a' do
+      expect(
+        DS::MarcXML::extract_authors_as_recorded authors_record
+      ).to include 'Council of Nicea'
+    end
+
+  end
 end

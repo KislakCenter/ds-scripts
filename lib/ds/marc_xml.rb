@@ -121,10 +121,35 @@ module DS
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
+        record.xpath(xpath).map { |datafield| extract_pn datafield }
+      end
 
-        record.xpath(xpath).map { |datafield|
-          extract_pn datafield
-        }.join '|'
+
+      ##
+      # Extract names from record using tags and relators. Authors are extracted
+      # from datafields 100, 110, 111, 700, 701, and 711.
+      #
+      # All 1xx are extracted, no relator is assumed and all 1xx are assumed to
+      # be authors.
+      #
+      # 700, 710, and 711 are extracted when subfield 7xx$e contains 'author'.
+      #
+      # @see #build_name_query for details on query construction
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @return [Array<String>] list of names
+      def extract_authors_as_recorded record
+        authors = []
+        authors += extract_names_as_recorded record, tags: [100, 110, 111]
+        authors += extract_names_as_recorded record, tags: [700, 710, 711], relators: %w{author}
+        authors
+      end
+
+      def extract_authors_as_recorded_agr record
+        authors = []
+        authors += extract_names_as_recorded_agr record, tags: [100, 110, 111]
+        authors += extract_names_as_recorded_agr record, tags: [700, 710, 711], relators: %w{author}
+        authors
       end
 
       ##
@@ -183,7 +208,7 @@ module DS
 
         record.xpath(xpath).map { |datafield|
           extract_pn_agr datafield
-        }.join '|'
+        }
       end
 
       ##
