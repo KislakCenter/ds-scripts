@@ -13,6 +13,7 @@ require_relative 'ds/recon'
 require_relative 'ds/institutions'
 require_relative 'ds/mapper/marc_mapper'
 require_relative 'ds/mapper/ds_mets_mapper'
+require_relative 'ds/mapper/openn_tei_mapper'
 
 module DS
   include DS::Constants
