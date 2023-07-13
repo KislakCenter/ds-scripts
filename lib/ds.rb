@@ -12,6 +12,7 @@ require_relative 'ds/csv_util'
 require_relative 'ds/recon'
 require_relative 'ds/institutions'
 require_relative 'ds/mapper/marc_mapper'
+require_relative 'ds/mapper/ds_mets_mapper'
 
 module DS
   include DS::Constants
