@@ -80,11 +80,6 @@ module DS
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::MarcXML.extract_physical_description record
-        binding_description                = DS::MarcXML.extract_named_500 record,  name: 'Binding'
-        extent_as_recorded                 = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
-        folios                             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'a'
-        dimensions_as_recorded             = DS::MarcXML.collect_datafields record, tags: 300, codes: 'c'
-        decoration                         = DS::MarcXML.extract_named_500 record,  name: 'Decoration'
         note                               = DS::MarcXML.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
@@ -145,11 +140,6 @@ module DS
           material:                           material,
           material_label:                     material_label,
           physical_description:               physical_description,
-          binding:                            binding_description,
-          folios:                             folios,
-          extent_as_recorded:                 extent_as_recorded,
-          dimensions_as_recorded:             dimensions_as_recorded,
-          decoration:                         decoration,
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
