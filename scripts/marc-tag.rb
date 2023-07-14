@@ -9,12 +9,48 @@ def usage
   "Usage: #{CMD} [OPTIONS] TAG [CODE...] FILE [FILE...]"
 end
 
+
+# Return true if user has passed a contains option
+# @param [Hash<Symbol,Object>] options the parsed options hash
+def contains_query? options
+  return true if options.include? :contains
+  options.include? :contains_insensitive
+end
+
+def subfield_query? codes, options
+  return true if codes
+  contains_query? options
+end
+
+def build_codes_query codes
+  return if codes.none?
+  codes.map { |code| "@code = '#{code}'" }.join(' or ')
+end
+
+def build_subfield_query codes, options
+  return '' unless subfield_query? codes, options
+
+  base_query = "./subfield[#{build_codes_query codes}]"
+  return " and #{base_query}" unless contains_query? options
+
+  if options[:contains_insensitive]
+    " and contains(translate(#{base_query}, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',"\
+    " 'abcdefghijklmnopqrstuvwxyz'),"\
+    "'#{options[:contains_insensitive].downcase}')"
+  else
+    " and contains(#{base_query}, '#{options[:contains]}')"
+  end
+end
+
 options = { max_count: Float::INFINITY }
 OptionParser.new do |parser|
   parser.banner = "#{usage}
 
 Print all MARC datafields in the provided files for the given datafield TAG
 and subfield CODE or CODEs. Subfield codes are optional.
+
+Note that the -c/--contains matches subfields having CODE or CODEs; when no
+CODE is specified, all subfields will be tested for contains.
   "
 
   parser.on("-v", "--[no-]verbose", "Run verbosely") do |v|
@@ -31,12 +67,24 @@ and subfield CODE or CODEs. Subfield codes are optional.
     options[:max_count] = count
   end
 
-  parser.on('-f', '--files-only', 'Print only the names of matching files') do
+  parser.on('-l', '--list-files', 'Print only the names of matching files') do
     options[:files_only] = true
   end
-end.parse!
 
+  parser.on('-cSTRING', '--contains=STRING',
+           'Return datafields with subfield(s) containing STRING') do |s|
+    options[:contains] = s
+  end
+
+  parser.on('-CSTRING', '--contains-insensitive=STRING',
+            'Case insensitive contains') do |s|
+    options[:contains_insensitive] = s
+  end
+
+end.parse!
+puts "Options are: #{options.inspect}" if options[:verbose]
 ##
+
 # INPUT
 ##
 # the datafield tag
@@ -54,15 +102,7 @@ codes << ARGV.shift while ARGV.first =~ %r{^[a-z0-9]$}
 # assume the rest are files
 files = ARGV
 
-# buuld xpath query for the any codes given; otherwise, use empty string ''
-if codes.empty?
-  subfields = ''
-else
-  subfields = " and ./subfield[#{codes.map { |c|
-    "@code='#{c}'"
-  }.join(' or ')}]"
-end
-xpath = "record/datafield[@tag=#{tag}#{subfields}]"
+xpath = "record/datafield[@tag=#{tag}#{build_subfield_query codes, options}]"
 puts "Using xpath: #{xpath}" if options[:verbose]
 
 # set a counter in case there's a limit
