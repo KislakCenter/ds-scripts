@@ -75,7 +75,7 @@ files.each do |file|
     if options[:files_only]
       puts file
     else
-      puts "============ #{file} ==========="
+      puts "============ #{file} ===========" if ndx == 0
       puts node.to_xml
     end
   end
