@@ -117,11 +117,18 @@ module DS
           material_label:                     material_label,
           physical_description:               physical_description,
           acknowledgements:                   acknowledgements,
+          # TODO: move binding_description to physical_description
           binding:                            binding_description,
+          # TODO: move folios? to physical_description
+          # QUESTION: How is folios different from extent?
           folios:                             folios,
+          # TODO: move extent_as_recorded to physical_description
           extent_as_recorded:                 extent_as_recorded,
+          # TODO: move dimensions to physical_description
           dimensions:                         dimensions,
+          # TODO: move dimensions_as_recorded to physical_description
           dimensions_as_recorded:             dimensions_as_recorded,
+          # TODO: move decoration to physical_description
           decoration:                         decoration,
           note:                               note,
           data_processed_at:                  data_processed_at,
