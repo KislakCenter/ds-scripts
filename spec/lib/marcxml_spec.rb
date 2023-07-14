@@ -6,27 +6,27 @@ describe DS::MarcXML do
   context 'extract_genre_as_recorded' do
     let(:duplicate_genre_record) {
       marc_record %q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat d</marc:controlfield>
-        <marc:datafield ind1=" " ind2="7" tag="655">
-          <marc:subfield code="a">Sermons.</marc:subfield>
-          <marc:subfield code="2">lcgft</marc:subfield>
-          <marc:subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</marc:subfield>
-        </marc:datafield>
-        <marc:datafield ind1=" " ind2="7" tag="655">
-          <marc:subfield code="a">Other value.</marc:subfield>
-        </marc:datafield>
-        <marc:datafield ind1=" " ind2="7" tag="655">
-          <marc:subfield code="a">Sermons.</marc:subfield>
-          <marc:subfield code="2">lcgft</marc:subfield>
-          <marc:subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1=" " ind2="7" tag="655">
+          <subfield code="a">Sermons.</subfield>
+          <subfield code="2">lcgft</subfield>
+          <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        </datafield>
+        <datafield ind1=" " ind2="7" tag="655">
+          <subfield code="a">Other value.</subfield>
+        </datafield>
+        <datafield ind1=" " ind2="7" tag="655">
+          <subfield code="a">Sermons.</subfield>
+          <subfield code="2">lcgft</subfield>
+          <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        </datafield>
+      </record>
     }
     }
     it 'returns a list of unique genre terms when :uniq is true' do
@@ -47,18 +47,18 @@ describe DS::MarcXML do
   context 'extract_title_as_recorded' do
     let(:title_record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat d</marc:controlfield>
-        <marc:datafield ind1="0" ind2="0" tag="245">
-          <marc:subfield code="a">Subfield a; </marc:subfield>
-          <marc:subfield code="b">Subfield b.</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="a">Subfield a; </subfield>
+          <subfield code="b">Subfield b.</subfield>
+        </datafield>
+      </record>
     })
     }
     it 'extracts the 245$a and 245$b' do
@@ -75,18 +75,18 @@ describe DS::MarcXML do
     let(:date_260c_marc) {
       marc_record(
         %q{<?xml version="1.0" encoding="UTF-8"?>
-        <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+        <record xmlns="http://www.loc.gov/MARC21/slim"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-          <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-          <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-          <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-          <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
-          <marc:datafield ind1=" " ind2=" " tag="260">
-            <marc:subfield code="a">Vienna ;</marc:subfield>
-            <marc:subfield code="c">1644 February 10</marc:subfield>
-          </marc:datafield>
-        </marc:record>
+          <leader>12792ctm a2201573Ia 4500</leader>
+          <controlfield tag="001">9948617063503681</controlfield>
+          <controlfield tag="005">20220803105853.0</controlfield>
+          <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+          <datafield ind1=" " ind2=" " tag="260">
+            <subfield code="a">Vienna ;</subfield>
+            <subfield code="c">1644 February 10</subfield>
+          </datafield>
+        </record>
       }
       )
     }
@@ -99,18 +99,18 @@ describe DS::MarcXML do
     let(:date_260d_marc) {
       marc_record(
         %q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
-        <marc:datafield ind1=" " ind2=" " tag="260">
-          <marc:subfield code="a">[Italy,</marc:subfield>
-          <marc:subfield code="d">14th and 15th centuries]</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+        <datafield ind1=" " ind2=" " tag="260">
+          <subfield code="a">[Italy,</subfield>
+          <subfield code="d">14th and 15th centuries]</subfield>
+        </datafield>
+      </record>
     }
       )
     }
@@ -123,18 +123,18 @@ describe DS::MarcXML do
     let(:date_264c_marc) {
       marc_record(
         %q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
-        <marc:datafield tag="264" ind1=" " ind2="0">
-          <marc:subfield code="a">Lahore,</marc:subfield>
-          <marc:subfield code="c">1596.</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+        <datafield tag="264" ind1=" " ind2="0">
+          <subfield code="a">Lahore,</subfield>
+          <subfield code="c">1596.</subfield>
+        </datafield>
+      </record>
     }
       )
     }
@@ -147,18 +147,18 @@ describe DS::MarcXML do
 
     let(:date_245f_record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat d</marc:controlfield>
-        <marc:datafield ind1="0" ind2="0" tag="245">
-          <marc:subfield code="a">Shah-nameh,</marc:subfield>
-          <marc:subfield code="f">1600s.</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="a">Shah-nameh,</subfield>
+          <subfield code="f">1600s.</subfield>
+        </datafield>
+      </record>
     }
       )
     }
@@ -170,14 +170,14 @@ describe DS::MarcXML do
 
     let(:date_008_record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat d</marc:controlfield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      </record>
     })
     }
     it 'extracts 008[7,9]' do
@@ -190,18 +190,18 @@ describe DS::MarcXML do
   let(:place_260a_record) {
     marc_record(
       %q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
-        <marc:datafield ind1=" " ind2=" " tag="260">
-          <marc:subfield code="a">[Italy,</marc:subfield>
-          <marc:subfield code="d">14th and 15th centuries]</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+        <datafield ind1=" " ind2=" " tag="260">
+          <subfield code="a">[Italy,</subfield>
+          <subfield code="d">14th and 15th centuries]</subfield>
+        </datafield>
+      </record>
     }
     )
   }
@@ -209,18 +209,18 @@ describe DS::MarcXML do
   let(:place_264a_record) {
     marc_record(
       %q{<?xml version="1.0" encoding="UTF-8"?>
-      <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+      <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-        <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-        <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-        <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
-        <marc:datafield tag="264" ind1=" " ind2="0">
-          <marc:subfield code="a">Lahore,</marc:subfield>
-          <marc:subfield code="c">1596.</marc:subfield>
-        </marc:datafield>
-      </marc:record>
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+        <datafield tag="264" ind1=" " ind2="0">
+          <subfield code="a">Lahore,</subfield>
+          <subfield code="c">1596.</subfield>
+        </datafield>
+      </record>
     }
     )
   }
@@ -258,13 +258,13 @@ describe DS::MarcXML do
     let(:authors_record) {
       marc_record(
         %q{<?xml version="1.0" encoding="UTF-8"?>
-            <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim"
+            <record xmlns="http://www.loc.gov/MARC21/slim"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-              <marc:leader>12792ctm a2201573Ia 4500</marc:leader>
-              <marc:controlfield tag="001">9948617063503681</marc:controlfield>
-              <marc:controlfield tag="005">20220803105853.0</marc:controlfield>
-              <marc:controlfield tag="008">101130s1409    it a          000 0 lat</marc:controlfield>
+              <leader>12792ctm a2201573Ia 4500</leader>
+              <controlfield tag="001">9948617063503681</controlfield>
+              <controlfield tag="005">20220803105853.0</controlfield>
+              <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
               <datafield ind1="1" ind2=" " tag="100">
                 <subfield code="a">Cicero, Marcus Tullius,</subfield>
                 <subfield code="e">author.</subfield>
@@ -299,7 +299,7 @@ describe DS::MarcXML do
                 <subfield code="c">Nicea)</subfield>
                 <subfield code="e">author.</subfield>
               </datafield>
-            </marc:record>
+            </record>
         }
       )
     }
@@ -351,6 +351,116 @@ describe DS::MarcXML do
         DS::MarcXML::extract_authors_as_recorded authors_record
       ).to include 'Council of Nicea'
     end
+  end
 
+  context 'extract_named_500' do
+    let(:note_500_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+            <record xmlns="http://www.loc.gov/MARC21/slim"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <leader>12792ctm a2201573Ia 4500</leader>
+              <controlfield tag="001">9948617063503681</controlfield>
+              <controlfield tag="005">20220803105853.0</controlfield>
+              <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Binding: Modern red morocco with marbled rose endpapers.</subfield>
+              </datafield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.</subfield>
+              </datafield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Former shelfmark: Burgess Collection MS 19 (Bond &amp; Faye).</subfield>
+              </datafield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">As referenced by Jim Marrow Report: "Book of Hours with an Office of the Dead of Autun Use."</subfield>
+              </datafield>
+            </record>
+        }
+      )
+    }
+    it 'returns a named note with prefix' do
+      expect(
+        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding'
+      ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
+    end
+
+    it 'returns a named note without a prefix' do
+      expect(
+        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding', strip_name: true
+      ).to include 'Modern red morocco with marbled rose endpapers.'
+    end
+
+    it 'handles a "name" parameter with a trailing ":"' do
+      expect(
+        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding:'
+      ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
+    end
+
+    it 'has case-insensitive name matching' do
+      expect(
+        DS::MarcXML.extract_named_500 note_500_record, name: 'bInDiNg'
+      ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
+    end
+
+    it 'has case-insensitive name matching and stripping' do
+      expect(
+        DS::MarcXML.extract_named_500 note_500_record, name: 'bInDiNg', strip_name: true
+      ).to include 'Modern red morocco with marbled rose endpapers.'
+    end
+  end
+
+  context 'find_shelfmark' do
+    let(:shelfmark_in_500a_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+            <record xmlns="http://www.loc.gov/MARC21/slim"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <leader>12792ctm a2201573Ia 4500</leader>
+              <controlfield tag="001">9948617063503681</controlfield>
+              <controlfield tag="005">20220803105853.0</controlfield>
+              <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.</subfield>
+              </datafield>
+            </record>
+        }
+      )
+    }
+
+    it 'returns a 500$a shelfmark' do
+      expect(
+        DS::MarcXML.find_shelfmark shelfmark_in_500a_record
+      ).to eq 'Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.'
+    end
+
+
+    let(:shelfmark_in_099a_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+            <record xmlns="http://www.loc.gov/MARC21/slim"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <leader>12792ctm a2201573Ia 4500</leader>
+              <controlfield tag="001">9948617063503681</controlfield>
+              <controlfield tag="005">20220803105853.0</controlfield>
+              <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+              <datafield ind1=" " ind2=" " tag="099">
+                <subfield code="a">Ms.</subfield>
+                <subfield code="a">65</subfield>
+                <subfield code="9">local</subfield>
+              </datafield>
+            </record>
+        }
+      )
+    }
+
+    it 'returns a 099$a shelfmark' do
+      expect(
+        DS::MarcXML.find_shelfmark shelfmark_in_099a_record
+      ).to eq 'Ms. 65'
+    end
   end
 end

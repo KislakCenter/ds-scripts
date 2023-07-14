@@ -471,12 +471,14 @@ module DS
       end
 
       def extract_physical_description record
-        phys_desc = record.xpath("datafield[@tag=300]").map { |datafield|
-          xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
-          datafield.xpath(xpath).map(&:text).reject(&:empty?).join ' '
-        }.join ' '
-        STDERR.puts "WARNING Value over 400 characters: '#{phys_desc}'" if phys_desc.size > 400
-        "Extent: #{DS.clean_string phys_desc, terminator: '.'}" unless phys_desc.strip.empty?
+        extract_extent record
+      end
+
+      def extract_extent record
+        subfield_xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
+        record.xpath("datafield[@tag=300]").map { |datafield|
+          datafield.xpath(subfield_xpath).filter_map { |s| s.text unless s.text.empty? }.join ' '
+        }.filter_map { |ext| "Extent: #{ext}" unless ext.strip.empty? }
       end
 
       ##
@@ -492,11 +494,9 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
       # @return [Array<String>] an array of note strings
       def extract_note record
-        skip_pattern = %r{^\s*(Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark):\s*}
+        # skip_pattern = %r{^\s*(Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark):\s*}
         xpath = "datafield[@tag=500]/subfield[@code='a']/text()"
-        record.xpath(xpath).reject { |note|
-          note.text =~ skip_pattern
-        }
+        record.xpath(xpath).map(&:text)
       end
 
       # TODO: This CSV is a stopgap; find a more sustainable solution
@@ -582,17 +582,17 @@ module DS
         return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # Princeton call number
-        # Some records mistakenly have two 852$b = 'hsvm' values; get the firsto
+        # Some records have two 852$b = 'hsvm'; get the first
         xpath  = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
         callno = record.xpath(xpath).text
         return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # AMREMM method of a 500$a starting with "Shelfmark: "
-        callno = extract_named_500 record, name: 'Shelfmark'
+        callno = extract_named_500(record, name: 'Shelfmark', strip_name: true).first.to_s
         return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # U. Penn uses the 099$a subfield
-        callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").text
+        callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").map(&:text).join(' ')
         return format_callnumber callno, sub773g unless callno.strip.empty?
 
         # return empty string if we get this far
@@ -603,11 +603,26 @@ module DS
         record.xpath("controlfield[@tag=001]").text
       end
 
-      def extract_named_500 record, name:
-        return '' if name.to_s.strip.empty?
+      ##
+      # Return an array of 500$a values that begin with +name:+ (+name+
+      # followed by a colon +:+). The name prefix is removed if +strip_name+
+      # is +true+; it's +false+ by default.
+      #
+      # @param [Nokogiri::XML::Node] record the MARC XML record
+      # @param [String] name the named prefix, like 'Binding', *without* trailing colon
+      # @param [Boolean] strip_name whether to remove the name prefix from
+      #                 returned comments; default is +false+
+      # @return [Array<String>] the matching
+      def extract_named_500 record, name:, strip_name: false
+        return [] if name.to_s.strip.empty?
 
-        xpath = "datafield[@tag=500]/subfield[@code='a' and starts-with(./text(), '#{name}')]"
-        record.xpath(xpath).map { |d| d.text.sub(%r{^#{name}:?\s*}, '').strip }.join ' '
+        # format the prefix; make sure there's not an extra ':'
+        prefix = "#{name.strip.chomp ':'}:"
+        xpath = %Q{datafield[@tag=500]/subfield[@code='a' and starts-with(translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), '#{prefix.downcase}')]/text()}
+        record.xpath(xpath).map { |d|
+          note = d.text.strip
+          strip_name ? note.sub(%r{^#{prefix}\s*}i, '') : note
+        }
       end
 
       # parse encoded date field into human readable date range
