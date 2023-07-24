@@ -463,4 +463,94 @@ describe DS::MarcXML do
       ).to eq 'Ms. 65'
     end
   end
+
+  context 'extract_subject_as_recorded' do
+    let(:subjects_marc_record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+            <record xmlns="http://www.loc.gov/MARC21/slim"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <leader>12792ctm a2201573Ia 4500</leader>
+              <controlfield tag="001">9948617063503681</controlfield>
+              <controlfield tag="005">20220803105853.0</controlfield>
+              <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+              <datafield ind1="1" ind2="0" tag="600">
+                <subfield code="a">Cicero, Marcus Tullius</subfield>
+                <subfield code="x">Spurious and doubtful works.</subfield>
+              </datafield>
+              <datafield ind1="2" ind2="7" tag="610">
+                <subfield code="a">Catholic Church</subfield>
+                <subfield code="2">fast</subfield>
+                <subfield code="0">(OCoLC)fst00531720</subfield>
+              </datafield>
+              <datafield ind1="2" ind2="7" tag="611">
+                <subfield code="a">First Council of Nicea</subfield>
+                <subfield code="2">fast</subfield>
+                <subfield code="0">(OCoLC)fst00531720</subfield>
+              </datafield>
+              <datafield ind1="0" ind2="0" tag="630">
+                <subfield code="a">Bible.</subfield>
+                <subfield code="p">Epistles of Paul</subfield>
+                <subfield code="v">Commentaries.</subfield>
+              </datafield>
+              <datafield ind1=" " ind2="7" tag="647">
+                <subfield code="a">Conspiracy of Catiline</subfield>
+                <subfield code="c">(Rome :</subfield>
+                <subfield code="d">65-62 B.C.)</subfield>
+                <subfield code="2">fast</subfield>
+                <subfield code="0">(OCoLC)fst01352536</subfield>
+              </datafield>
+              <datafield ind1=" " ind2="7" tag="648">
+                <subfield code="a">600-1500</subfield>
+                <subfield code="2">fast</subfield>
+              </datafield>
+              <datafield ind1=" " ind2="0" tag="650">
+                <subfield code="a">Epic poetry, Persian.</subfield>
+              </datafield>
+              <datafield ind1=" " ind2="7" tag="651">
+                <subfield code="a">Iran</subfield>
+                <subfield code="2">fast</subfield>
+                <subfield code="0">(OCoLC)fst01204889</subfield>
+              </datafield>
+            </record>
+        }
+      )
+    }
+
+    let(:subjects) { DS::MarcXML.extract_subject_as_recorded subjects_marc_record }
+
+    it 'extracts 600' do
+      expect(subjects).to include "Cicero, Marcus Tullius--Spurious and doubtful works"
+    end
+
+    it 'extracts 610' do
+      expect(subjects).to include "Catholic Church"
+    end
+
+    it 'extracts 611' do
+      expect(subjects).to include "First Council of Nicea"
+    end
+
+    it 'extracts 630' do
+      expect(subjects).to include "Bible. Epistles of Paul--Commentaries"
+    end
+
+    it 'extracts 647'do
+      expect(subjects).to include "Conspiracy of Catiline (Rome : 65-62 B.C.)"
+    end
+
+    it 'extracts 648' do
+      expect(subjects).to include "600-1500"
+    end
+
+    it 'extracts 650' do
+      expect(subjects).to include "Epic poetry, Persian"
+    end
+
+
+    it 'extracts 651' do
+      expect(subjects).to include "Iran"
+    end
+  end
 end

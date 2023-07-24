@@ -46,7 +46,7 @@ module DS
         genre_vocabulary                   = DS::MarcXML.extract_genre_vocabulary record
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
-        subject_as_recorded                = DS::MarcXML.collect_datafields record, tags: [600, 610, 611, 630, 647, 648, 650, 651], codes: ('a'..'z').to_a, sub_sep: '--'
+        subject_as_recorded                = DS::MarcXML.extract_subject_as_recorded(record).join '|'
         subject                            = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
         subject_label                      = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
         author_as_recorded                 = DS::MarcXML.extract_authors_as_recorded(record).join '|'
@@ -76,7 +76,7 @@ module DS
         former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded               = DS::MarcXML.collect_datafields record, tags: 300, codes: 'b'
+        material_as_recorded               = DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b').join '|'
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::MarcXML.extract_physical_description record

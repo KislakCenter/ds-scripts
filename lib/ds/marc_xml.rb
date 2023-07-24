@@ -121,7 +121,7 @@ module DS
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
-        record.xpath(xpath).map { |datafield| extract_pn datafield }
+        record.xpath(xpath).map { |datafield| extract_name_portion datafield }
       end
 
 
@@ -170,7 +170,7 @@ module DS
 
         record.xpath(xpath).map { |datafield|
           row = []
-          row << extract_pn(datafield)
+          row << extract_name_portion(datafield)
           role = extract_role(datafield, relators: relators)
           row << (role.strip.empty? ? 'author' : role)
           row << extract_pn_agr(datafield)
@@ -261,7 +261,7 @@ module DS
       #
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
       # @return [String]
-      def extract_pn datafield
+      def extract_name_portion datafield
         codes = %w{ a b c d }
         value = collect_subfields datafield, codes: codes
         DS.clean_string value, terminator: ''
@@ -273,12 +273,14 @@ module DS
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
       # @return [String]
       def extract_role datafield, relators:
-        return '' if relators.nil?
-        return '' if relators.empty?
-        return '' if relators.include? :none
-        xpath = "./subfield[@code='e']"
-        role = datafield.xpath(xpath).text.to_s.downcase
-        relators.find { |r| role.start_with? r.downcase }
+        relators_list = *relators
+        return '' if relators_list.empty? or relators_list.include? :none
+        # if there's no $e, stop processing
+        return '' if datafield.xpath('subfield[@code = "e"]/text()').text.empty?
+
+        df_roles = datafield.xpath('subfield[@code = "e"]/text()').map(&:text)
+        rel_pattern = /(#{relators_list.join('|')})/
+        df_roles.find { |role| role =~ rel_pattern }.to_s.chomp '.'
       end
 
       ###
@@ -320,7 +322,7 @@ module DS
         tag   = datafield.xpath('./@tag').text
         index = linkage.split('-').last
         xpath = "./parent::record/datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]"
-        extract_pn datafield.xpath(xpath)
+        extract_name_portion datafield.xpath(xpath)
       end
 
       ##
@@ -340,6 +342,40 @@ module DS
           value  = DS.clean_string value, terminator: ''
           number = datafield.xpath('subfield[@tag="0"]').text
           [value, number]
+        }
+      end
+
+      def collect_recon_subjects record, tags: []
+        tag_list = *tags
+        raise "No tags given for subject extraction: #{tags.inspect}" if tag_list.empty?
+        sep = '--'
+        tag_query = tag_list.map { |tag| "@tag=#{tag}" }.join " or "
+        # code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
+        record.xpath("datafield[#{tag_query}]").map { |datafield|
+          values = Hash.new { |hash,k| hash[k] = [] }
+          datafield.xpath("subfield").map { |subfield|
+            subfield_text = subfield.text
+            subfield_code = subfield.xpath('./@code').text
+            case subfield_code
+            when 'e', 'w'
+              # don't include these formatted in subject
+            when 'b', 'c', 'd', 'p', 'q', 't'
+              # append these to the preceding value
+              # we assume that there is a preceding value
+              values[:terms][-1] += " #{subfield_text}"
+              values[:codes][-1] += ";#{subfield_code}"
+            when %r{\A[[:alpha:]]\z}
+              # any other codes: a, g, v, x, y, z
+              values[:terms] << subfield_text
+              values[:codes] << subfield_code
+            when '0'
+              values[:urls] << subfield_text
+            end
+          }
+          terms = values[:terms].join(sep)
+          urls  = values[:urls].join(sep)
+          codes = values[:codes].join(sep)
+          [terms, codes, urls]
         }
       end
 
@@ -375,7 +411,7 @@ module DS
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
           DS.clean_string value, terminator: ''
-        }.join field_sep
+        }
       end
 
       ##
@@ -401,6 +437,69 @@ module DS
         }
 
         uniq ? terms.uniq : terms
+      end
+
+      ##
+      # Return an array of strings of formatted subjects (600, 610, 611, 630,
+      # 647, 648, 650, and 651). Subjects values are separated by '--':
+      #
+      #     <datafield ind1="1" ind2="0" tag="600">
+      #       <subfield code="a">Cicero, Marcus Tullius</subfield>
+      #       <subfield code="x">Spurious and doubtful works.</subfield>
+      #     </datafield>
+      #
+      #     # => "Cicero, Marcus Tullius--Spurious and doubtful works"
+      #
+      # Subfields with codes 'b', 'c', 'd', 'p', 'q', and 't' are appended to
+      # the preceding subfield:
+      #
+      #    <datafield ind1=" " ind2="7" tag="647">
+      #      <subfield code="a">Conspiracy of Catiline</subfield>
+      #      <subfield code="c">(Rome :</subfield>
+      #      <subfield code="d">65-62 B.C.)</subfield>
+      #      <subfield code="2">fast</subfield>
+      #      <subfield code="0">(OCoLC)fst01352536</subfield>
+      #    </datafield>
+      #
+      #    # => "Conspiracy of Catiline (Rome : 65-62 B.C.)"
+      #
+      #  @param [Nokogiri::XML::Node] record the MARC record
+      # @return [Array<String>] an array of formatted subjects strings
+      def extract_subject_by_tags record, tags: []
+        tag_list = *tags
+        raise "No tags given for subject extraction: #{tags.inspect}" if tag_list.empty?
+        sep        = '--'
+        tag_query  = tag_list.map { |tag| "@tag=#{tag}" }.join " or "
+        code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
+
+        record.xpath("datafield[#{tag_query}]").map { |datafield|
+          datafield.xpath("subfield[#{code_query}]").reduce([]) { |parts, subfield|
+            case subfield.xpath('./@code').text
+            when 'e', 'w'
+              # don't include these formatted in subject
+            when 'b', 'c', 'd', 'p', 'q', 't'
+              # append these to the preceding value
+              # we assume that there is a preceding value
+              parts[-1] += " #{subfield.text}"
+            else
+              # any other codes: a, g, v, x, y, z
+              parts << subfield.text
+            end
+            parts
+          }.map { |part| DS.clean_string part, terminator: '' }.join sep
+        }
+      end
+
+      def extract_named_subject record
+        extract_subject_by_tags record, tags: [600, 610, 611, 630, 647]
+      end
+
+      def extract_topical_subject record
+        extract_subject_by_tags record, tags: [648, 650, 651]
+      end
+
+      def extract_subject_as_recorded record
+        extract_named_subject(record) + extract_topical_subject(record)
       end
 
       ##
