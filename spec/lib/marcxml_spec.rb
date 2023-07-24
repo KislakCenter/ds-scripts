@@ -353,6 +353,49 @@ describe DS::MarcXML do
     end
   end
 
+  context 'extract note' do
+    let(:record) {
+      marc_record(
+        %q{<?xml version="1.0" encoding="UTF-8"?>
+            <record xmlns="http://www.loc.gov/MARC21/slim"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <leader>12792ctm a2201573Ia 4500</leader>
+              <controlfield tag="001">9948617063503681</controlfield>
+              <controlfield tag="005">20220803105853.0</controlfield>
+              <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Binding: Modern red morocco with marbled rose endpapers.</subfield>
+              </datafield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.</subfield>
+              </datafield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">Former shelfmark: Burgess Collection MS 19 (Bond &amp; Faye).</subfield>
+              </datafield>
+              <datafield ind1=" " ind2=" " tag="500">
+                <subfield code="a">As referenced by Jim Marrow Report: "Book of Hours with an Office of the Dead of Autun Use."</subfield>
+              </datafield>
+              <datafield ind1="1" ind2=" " tag="561">
+                <subfield code="a">Sold by Ronald Orlovsky (Ebay), 2017.</subfield>
+              </datafield>
+            </record>
+        }
+      )
+    }
+    let(:values) {
+      DS::MarcXML.extract_note record
+    }
+
+    it 'extracts 561$a' do
+      expect(values).to include 'Sold by Ronald Orlovsky (Ebay), 2017.'
+    end
+
+    it 'extracts 500$a' do
+      expect(values).to include 'Binding: Modern red morocco with marbled rose endpapers.'
+    end
+  end
+
   context 'extract_named_500' do
     let(:note_500_record) {
       marc_record(
@@ -376,11 +419,20 @@ describe DS::MarcXML do
               <datafield ind1=" " ind2=" " tag="500">
                 <subfield code="a">As referenced by Jim Marrow Report: "Book of Hours with an Office of the Dead of Autun Use."</subfield>
               </datafield>
+              <datafield ind1="1" ind2=" " tag="561">
+                <subfield code="a">Sold by Ronald Orlovsky (Ebay), 2017.</subfield>
+              </datafield>
             </record>
         }
       )
     }
     it 'returns a named note with prefix' do
+      expect(
+        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding'
+      ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
+    end
+
+    it 'returns 561$a' do
       expect(
         DS::MarcXML.extract_named_500 note_500_record, name: 'Binding'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'

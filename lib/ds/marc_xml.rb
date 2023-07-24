@@ -597,8 +597,7 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
       # @return [Array<String>] an array of note strings
       def extract_note record
-        # skip_pattern = %r{^\s*(Pagination|Foliation|Layout|Colophon|Collation|Script|Decoration|Binding|Origin|Watermarks|Watermark|Signatures|Shelfmark):\s*}
-        xpath = "datafield[@tag=500]/subfield[@code='a']/text()"
+        xpath = "datafield[@tag=500 or @tag=561]/subfield[@code='a']/text()"
         record.xpath(xpath).map(&:text)
       end
 
