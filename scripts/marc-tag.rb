@@ -13,12 +13,12 @@ end
 # Return true if user has passed a contains option
 # @param [Hash<Symbol,Object>] options the parsed options hash
 def contains_query? options
-  return true if options.include? :contains
-  options.include? :contains_insensitive
+  contains_keys = %i{ contains contains_insensitive }
+  options.keys.any? { |k| contains_keys.include? k }
 end
 
 def subfield_query? codes, options
-  return true if codes
+  return true if codes.any?
   contains_query? options
 end
 
@@ -30,16 +30,18 @@ end
 def build_subfield_query codes, options
   return '' unless subfield_query? codes, options
 
-  base_query = "./subfield[#{build_codes_query codes}]"
-  return " and #{base_query}" unless contains_query? options
-
+  # query = []
+  base_query = codes.any? ? "./subfield[#{build_codes_query codes}]" : '.'
+  query = ''
   if options[:contains_insensitive]
-    " and contains(translate(#{base_query}, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',"\
-    " 'abcdefghijklmnopqrstuvwxyz'),"\
-    "'#{options[:contains_insensitive].downcase}')"
-  else
-    " and contains(#{base_query}, '#{options[:contains]}')"
+    query = "contains(translate(#{base_query},"\
+             " 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',"\
+             " 'abcdefghijklmnopqrstuvwxyz'),"\
+             "'#{options[:contains_insensitive].downcase}')"
+  elsif options[:contains]
+    query = "contains(#{base_query}, '#{options[:contains]}')"
   end
+  " and #{query}"
 end
 
 options = { max_count: Float::INFINITY }
