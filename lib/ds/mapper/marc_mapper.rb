@@ -23,6 +23,7 @@ module DS
 
       def map_record
         source_type                        = 'marc-xml'
+        cataloging_convention              = DS::MarcXML.extract_cataloging_convention record
         holding_institution                = inst_qid
         holding_institution_as_recorded    = preferred_name
         holding_institution_id_number      = DS::MarcXML.extract_001_control_number record, holdings_file
@@ -85,6 +86,7 @@ module DS
         data_source_modified               = DS::MarcXML.source_modified record
 
         { source_type:                        source_type,
+          cataloging_convention:              cataloging_convention,
           holding_institution:                holding_institution,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,

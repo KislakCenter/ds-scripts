@@ -553,4 +553,44 @@ describe DS::MarcXML do
       expect(subjects).to include "Iran"
     end
   end
+
+  context 'extract_cataloging_convention' do
+    let(:record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+            <?xml version="1.0" encoding="UTF-8"?>
+            <record xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+              <leader>03556ctm a2200637Ia 4500</leader>
+              <controlfield tag="001">9937281963503681</controlfield>
+              <controlfield tag="005">20220803105900.0</controlfield>
+              <controlfield tag="008">050322s1546    ne            000 0 dut d</controlfield>
+              <datafield ind1=" " ind2=" " tag="035">
+                <subfield code="a">(OCoLC)ocn155927441</subfield>
+              </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                <subfield code="a">(OCoLC)155927441</subfield>
+              </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                <subfield code="a">(PU)3728196-penndb-Voyager</subfield>
+              </datafield>
+                  <datafield ind1=" " ind2=" " tag="035">
+                <subfield code="a">(CStRLIN)PAUR05-B10003</subfield>
+              </datafield>
+                  <datafield ind1=" " ind2=" " tag="040">
+                <subfield code="a">PU</subfield>
+                <subfield code="b">eng</subfield>
+                <subfield code="e">amremm</subfield>
+                <subfield code="c">PAULM</subfield>
+                <subfield code="d">PAULM</subfield>
+              </datafield>
+            </record>
+        }
+      )
+    }
+
+    let(:extracted_values) { DS::MarcXML.extract_cataloging_convention record }
+
+    it 'extracts 040$e' do
+      expect(extracted_values).to eq 'amremm'
+    end
+  end
 end

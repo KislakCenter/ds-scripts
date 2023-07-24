@@ -325,6 +325,10 @@ module DS
         extract_name_portion datafield.xpath(xpath)
       end
 
+      def extract_cataloging_convention record
+        record.xpath('datafield[@tag=040]/subfield[@code="e"]/text()').text
+      end
+
       ##
       # Extract datafields values with authority numbers (URL) when present
       # for reconciliation CSV output.
