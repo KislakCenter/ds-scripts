@@ -359,7 +359,7 @@ module DS
       # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
       # @return [Array<String,String>] a two-dimenional array of subject and URI
       def recon_subjects xml
-        extract_subjects(xml).map { |s| [s, ''] }
+        extract_subjects(xml).map { |s| [s, '', '', ''] }
       end
 
       ##

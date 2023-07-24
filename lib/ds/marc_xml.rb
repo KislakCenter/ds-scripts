@@ -357,9 +357,11 @@ module DS
         # code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           values = Hash.new { |hash,k| hash[k] = [] }
+          vocab   = datafield.xpath('./@ind2').text
           datafield.xpath("subfield").map { |subfield|
             subfield_text = subfield.text
             subfield_code = subfield.xpath('./@code').text
+            # require 'pry'; binding.pry if subfield_text =~ /accounting/i
             case subfield_code
             when 'e', 'w'
               # don't include these formatted in subject
@@ -372,14 +374,16 @@ module DS
               # any other codes: a, g, v, x, y, z
               values[:terms] << subfield_text
               values[:codes] << subfield_code
+            when '2'
+              vocab = subfield.text
             when '0'
               values[:urls] << subfield_text
             end
           }
-          terms = values[:terms].join(sep)
-          urls  = values[:urls].join(sep)
-          codes = values[:codes].join(sep)
-          [terms, codes, urls]
+          terms  = values[:terms].join(sep)
+          urls   = values[:urls].join(sep)
+          codes  = values[:codes].join(sep)
+          [terms, codes, vocab, urls]
         }
       end
 

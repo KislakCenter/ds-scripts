@@ -27,8 +27,9 @@ module Recon
     extend DS::Util
 
     CSV_HEADERS = %w{ subject_as_recorded
-                      source_authority_uri
                       subfield_codes
+                      vocab
+                      source_authority_uri
                       authorized_label
                       structured_value }.freeze
 

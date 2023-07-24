@@ -600,7 +600,6 @@ describe DS::MarcXML do
       expect(subjects).to include "Epic poetry, Persian"
     end
 
-
     it 'extracts 651' do
       expect(subjects).to include "Iran"
     end
@@ -609,7 +608,6 @@ describe DS::MarcXML do
   context 'extract_cataloging_convention' do
     let(:record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
-            <?xml version="1.0" encoding="UTF-8"?>
             <record xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
               <leader>03556ctm a2200637Ia 4500</leader>
               <controlfield tag="001">9937281963503681</controlfield>
