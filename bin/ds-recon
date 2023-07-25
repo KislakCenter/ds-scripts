@@ -139,7 +139,7 @@ LONGDESC
 
     base    = options[:'named-subjects'] ? 'named-subjects' : 'subjects'
     klass   = options[:'named-subjects'] ? NamedSubjects : Subjects
-    tags    = options[:'named-subjects'] ? [600, 610] : [650, 651]
+    tags    = options[:'named-subjects'] ? [600, 610, 611, 630, 647, 648] : [650, 651]
     out_csv = out_file base, options
     begin
       Recon::ReconData.update! unless skip_git? options

@@ -23,7 +23,7 @@ LEGACY_INSTS="conception csl cuny grolier gts indiana kansas nelsonatkins nyu pr
 ${SCRIPT_DIR}/../../bin/ds-recon recon-update
 
 # use the same output directory and skip the calls to git
-recon_opts=(--directory ${TMP_DIR} --skip-recon-update)
+recon_opts=(--directory ${TMP_DIR} --skip-recon-update -v)
 
 ################
 # DS legacy METS

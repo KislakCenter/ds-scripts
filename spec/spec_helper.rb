@@ -1,4 +1,5 @@
 require_relative '../lib/ds'
+require 'nokogiri'
 
 module Helpers
   def fixture_path relpath
@@ -6,6 +7,12 @@ module Helpers
     return path if File.exist? path
 
     raise "Unable to find fixture: #{relpath} in #{__dir__}"
+  end
+
+  def marc_record xml_string
+    xml = Nokogiri::XML xml_string
+    xml.remove_namespaces!
+    xml.xpath('record')[0]
   end
 end
 

@@ -27,6 +27,8 @@ module Recon
     extend DS::Util
 
     CSV_HEADERS = %w{ subject_as_recorded
+                      subfield_codes
+                      vocab
                       source_authority_uri
                       authorized_label
                       structured_value }.freeze
@@ -43,7 +45,7 @@ module Recon
       data = []
       process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data += DS::MarcXML.collect_recon_datafields record, tags: tags, codes: ('a'..'z').to_a, sub_sep: '--'
+          data += DS::MarcXML.collect_recon_subjects record, tags: tags
         end
       end
       add_recon_values data

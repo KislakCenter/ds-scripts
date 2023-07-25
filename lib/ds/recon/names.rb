@@ -34,7 +34,7 @@ module Recon
       process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data += DS::MarcXML.extract_recon_names record, tags: [100, 110, 111]
-          data += DS::MarcXML.extract_recon_names record, tags: [700, 710, 790, 791], relators: ['artist', 'illuminator', 'scribe', 'former owner']
+          data += DS::MarcXML.extract_recon_names record, tags: [700, 710, 711, 790, 791], relators: ['artist', 'illuminator', 'scribe', 'former owner', 'author']
         end
       end
       add_recon_values data

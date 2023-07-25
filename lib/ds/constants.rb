@@ -5,6 +5,7 @@ ds_id
 date_added
 date_last_updated
 source_type
+cataloging_convention
 holding_institution
 holding_institution_as_recorded
 holding_institution_id_number
@@ -25,7 +26,6 @@ title_as_recorded
 title_as_recorded_agr
 standard_title
 genre_as_recorded
-genre_vocabulary
 genre
 genre_label
 subject_as_recorded
