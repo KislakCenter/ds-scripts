@@ -1,5 +1,6 @@
 require_relative '../lib/ds'
 require 'nokogiri'
+require 'csv'
 
 module Helpers
   def fixture_path relpath
@@ -13,6 +14,17 @@ module Helpers
     xml = Nokogiri::XML xml_string
     xml.remove_namespaces!
     xml.xpath('record')[0]
+  end
+
+  def parse_csv csv_string
+    CSV.parse csv_string, headers: true
+  end
+
+  def add_stubs obj, methods, return_val
+    syms = *methods
+    syms.each do |method|
+      allow(obj).to receive(method).and_return return_val
+    end
   end
 end
 
