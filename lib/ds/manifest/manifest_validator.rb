@@ -3,6 +3,7 @@
 require 'csv'
 require 'uri'
 require 'date'
+require_relative './constants'
 
 module DS
   module Manifest
@@ -20,6 +21,7 @@ module DS
     #
     # @todo Add test for live URLs
     class ManifestValidator
+      include DS::Manifest::Constants
 
       attr_reader :manifest
       attr_reader :source_dir
@@ -49,7 +51,7 @@ module DS
       # @return [boolean] true if all required columns are present
       def validate_columns
         found_columns = manifest.csv.first.headers
-        diff          = Manifest::MANIFEST_COLUMNS - found_columns
+        diff          = MANIFEST_COLUMNS - found_columns
         return true if diff.empty?
         STDERR.puts "Manifest missing required columns: #{diff.join ', '}"
       end
@@ -59,7 +61,7 @@ module DS
       def validate_required_values
         is_valid = true
         manifest.each do |row|
-          Manifest::REQUIRED_VALUES.each_with_index do |col, ndx|
+          REQUIRED_VALUES.each_with_index do |col, ndx|
             if row[col].blank?
               STDERR.puts "Required value missing row: #{ndx}; col.: #{col}"
               is_valid = false
@@ -86,10 +88,10 @@ module DS
       def validate_files_exist
         is_valid = true
         manifest.each_with_index do |row, row_num|
-          file_path = File.join manifest.source_dir, row[Manifest::FILENAME]
+          file_path = File.join manifest.source_dir, row[FILENAME]
           unless File.exist? file_path
             is_valid = false
-            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{row[Manifest::FILENAME]}"
+            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{row[FILENAME]}"
           end
         end
         is_valid
@@ -101,11 +103,11 @@ module DS
       def validate_ids
         is_valid = true
         manifest.each_with_index do |row, row_num|
-          file_path   = File.join manifest.source_dir, row[Manifest::FILENAME]
-          source_type = row[Manifest::SOURCE_TYPE]
+          file_path   = File.join manifest.source_dir, row[FILENAME]
+          source_type = row[SOURCE_TYPE]
 
           normal_source = Manifest.normalize_lookup source_type
-          inst_id       = row[Manifest::INSTITUTIONAL_ID]
+          inst_id       = row[INSTITUTIONAL_ID]
           found         = case normal_source
                           when 'MARC XML', 'marcxml'
                             id_in_marc_xml? file_path, inst_id
@@ -113,7 +115,7 @@ module DS
                             raise NotImplementedError("validate_ids not implemented for: #{source_type}")
                           end
           unless found
-            STDERR.puts "ID not found in source file row: #{row}; id: #{inst_id}; source_file: #{row[Manifest::FILENAME]}"
+            STDERR.puts "ID not found in source file row: #{row}; id: #{inst_id}; source_file: #{row[FILENAME]}"
             is_valid = false
           end
         end
@@ -146,10 +148,10 @@ module DS
       ####################################
       def validate_source_type row, row_num
         is_valid = true
-        col      = Manifest::SOURCE_TYPE
+        col      = SOURCE_TYPE
 
-        unless Manifest::SOURCE_TYPE_LOOKUP.include? Manifest.normalize_lookup row[col]
-          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{Manifest::VALID_SOURCE_TYPES.join ', '}; got: '#{row[col]}'"
+        unless SOURCE_TYPE_LOOKUP.include? Manifest.normalize_lookup row[col]
+          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{row[col]}'"
           is_valid = false
         end
         is_valid
@@ -157,7 +159,7 @@ module DS
 
       def validate_urls row, row_num
         is_valid = true
-        Manifest::URI_COLUMNS.each do |col|
+        URI_COLUMNS.each do |col|
           unless row[col].to_s =~ URI_REGEXP
             STDERR.puts "Invalid URL in row: #{row_num}; col.: #{col}: '#{row[col]}'"
             is_valid = false
@@ -168,7 +170,7 @@ module DS
 
       def validate_qids row, row_num
         is_valid = true
-        Manifest::QID_COLUMNS.each do |col|
+        QID_COLUMNS.each do |col|
           unless row[col].to_s =~ QID_REGEXP
             is_valid = false
             STDERR.puts "Invalid QID in row: #{row_num}; col.: #{col}: '#{row[col]}'"
@@ -179,7 +181,7 @@ module DS
 
       def validate_dates row, row_num
         is_valid = true
-        Manifest::DATE_TIME_COLUMNS.each do |col|
+        DATE_TIME_COLUMNS.each do |col|
           next if row[col].blank?
           begin
             Date.parse row[col]
