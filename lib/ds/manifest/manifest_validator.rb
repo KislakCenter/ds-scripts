@@ -58,7 +58,7 @@ module DS
       # @return [boolean] true if all require values present
       def validate_required_values
         is_valid = true
-        manifest.csv.each do |row|
+        manifest.each do |row|
           Manifest::REQUIRED_VALUES.each_with_index do |col, ndx|
             if row[col].blank?
               STDERR.puts "Required value missing row: #{ndx}; col.: #{col}"
@@ -73,7 +73,7 @@ module DS
       # @return [boolean] true if all data types are valid
       def validate_data_types
         is_valid = true
-        manifest.csv.each_with_index do |row, row_num|
+        manifest.each_with_index do |row, row_num|
           is_valid = false unless validate_urls row, row_num
           is_valid = false unless validate_qids row, row_num
           is_valid = false unless validate_dates row, row_num
@@ -85,7 +85,7 @@ module DS
       # @return [boolean] true if all list input files are present
       def validate_files_exist
         is_valid = true
-        manifest.csv.each_with_index do |row, row_num|
+        manifest.each_with_index do |row, row_num|
           file_path = File.join manifest.source_dir, row[Manifest::FILENAME]
           unless File.exist? file_path
             is_valid = false
@@ -100,7 +100,7 @@ module DS
       #     values match source file
       def validate_ids
         is_valid = true
-        manifest.csv.each_with_index do |row, row_num|
+        manifest.each_with_index do |row, row_num|
           file_path   = File.join manifest.source_dir, row[Manifest::FILENAME]
           source_type = row[Manifest::SOURCE_TYPE]
 

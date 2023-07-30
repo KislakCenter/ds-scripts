@@ -5,6 +5,8 @@ require 'csv'
 module DS
   module Manifest
     class Manifest
+      include Enumerable
+
       attr_reader :csv
       attr_reader :source_dir
 
@@ -110,6 +112,10 @@ module DS
         else
           raise ArgumentError, "Cannot process input as CSV: #{csv.inspect}"
         end
+      end
+
+      def each &block
+        @csv.each &block
       end
     end
   end
