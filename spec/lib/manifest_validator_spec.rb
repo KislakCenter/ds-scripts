@@ -3,7 +3,7 @@
 require 'spec_helper'
 require 'csv'
 
-RSpec.describe 'DS::ManifestValidator' do
+RSpec.describe 'DS::Manifest::ManifestValidator' do
 
 
   let(:csv_data) { parse_csv <<~EOF
@@ -16,9 +16,9 @@ EOF
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:manifest_csv) { 'manifest.csv' }
   let(:manifest_path) { File.join marc_xml_dir, manifest_csv }
-  let(:manifest) { DS::Manifest.new manifest_path, marc_xml_dir }
+  let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
 
-  let(:validator) { DS::ManifestValidator.new manifest }
+  let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
   before(:each) do
     # suppress STDERR
@@ -31,7 +31,7 @@ EOF
   context 'initialize' do
 
     it 'creates a new ManifestValidator' do
-      expect(DS::ManifestValidator.new manifest).to be_a DS::ManifestValidator
+      expect(DS::Manifest::ManifestValidator.new manifest).to be_a DS::Manifest::ManifestValidator
     end
   end
 
@@ -101,8 +101,8 @@ EOF
         Q49117,University of Pennsylvania,MARC XML,,9957602663503681,"//marc:controlfield[@tag=""001""]",20220803105833,LJS 108,Manuscript leaf from Interpretationes Hebraicorum nominum,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3gw56/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9957602663503681,2023-07-25T09:52:02-0400
 EOF
       }
-      let(:manifest) { DS::Manifest.new csv_data, marc_xml_dir}
-      let(:validator) { DS::ManifestValidator.new manifest }
+      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
+      let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
         expect(validator.validate_columns).to be_falsey
@@ -126,8 +126,8 @@ EOF
         ,9951865503503681_marc.xml,University of Pennsylvania,MARC XML,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
         EOF
       }
-      let(:manifest) { DS::Manifest.new csv_data, marc_xml_dir }
-      let(:validator) { DS::ManifestValidator.new manifest }
+      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir }
+      let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
         expect(validator.validate_required_values).to be_falsey
@@ -261,8 +261,8 @@ EOF
         EOF
       }
 
-      let(:manifest) { DS::Manifest.new csv_data, marc_xml_dir}
-      let(:validator) { DS::ManifestValidator.new manifest }
+      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
+      let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
         expect(validator.validate_files_exist).to be_falsey
@@ -284,8 +284,8 @@ EOF
       EOF
       }
 
-      let(:manifest) { DS::Manifest.new csv_data, marc_xml_dir}
-      let(:validator) { DS::ManifestValidator.new manifest }
+      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
+      let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
         expect(validator.validate_ids).to be_falsey

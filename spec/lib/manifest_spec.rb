@@ -15,7 +15,7 @@ RSpec.describe 'DS::Manifest' do
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:manifest_csv) { 'manifest.csv' }
 
-  let(:manifest) { DS::Manifest.new csv_data, marc_xml_dir }
+  let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir }
 
   context 'initialize' do
 
@@ -27,8 +27,8 @@ RSpec.describe 'DS::Manifest' do
 
     it 'creates a new Manifest with parsed CSV' do
       expect(
-        DS::Manifest.new csv_data, marc_xml_dir
-      ).to be_a DS::Manifest
+        DS::Manifest::Manifest.new csv_data, marc_xml_dir
+      ).to be_a DS::Manifest::Manifest
     end
 
     let(:csv_stringio) { StringIO.new <<~EOF
@@ -39,22 +39,22 @@ RSpec.describe 'DS::Manifest' do
 
     it 'creates a new ManifestValidator from an StringIO instance' do
       expect(
-        DS::Manifest.new csv_stringio, marc_xml_dir
-      ).to be_a DS::Manifest
+        DS::Manifest::Manifest.new csv_stringio, marc_xml_dir
+      ).to be_a DS::Manifest::Manifest
     end
 
     let(:manifest_path) { File.join marc_xml_dir, manifest_csv }
     it 'creates a new ManifestValidator from a manifest path' do
       expect(
-        DS::Manifest.new manifest_path, marc_xml_dir
-      ).to be_a DS::Manifest
+        DS::Manifest::Manifest.new manifest_path, marc_xml_dir
+      ).to be_a DS::Manifest::Manifest
     end
 
     let(:csv_io) { File.open manifest_path, "r+" }
     it 'creates a new ManifestValidator from an IO instance' do
       expect(
-        DS::Manifest.new csv_io, marc_xml_dir
-      ).to be_a DS::Manifest
+        DS::Manifest::Manifest.new csv_io, marc_xml_dir
+      ).to be_a DS::Manifest::Manifest
     end
   end
 end
