@@ -109,25 +109,11 @@ module DS
     URI_REGEXP = URI::DEFAULT_PARSER.make_regexp %w{http https}
     QID_REGEXP = %r{\AQ\d+\z}
 
-    def initialize csv, dir
-      @manifest = get_csv_data csv
-      raise ArgumentError, "Cannot find directory: '#{dir}'" unless Dir.exist? dir
-      @source_dir = dir
-    end
-
-    def get_csv_data csv
-      case csv
-      when IO
-        CSV.parse csv, headers: true
-      when StringIO
-        CSV.parse csv, headers: true
-      when CSV::Table
-        csv
-      when String
-        CSV.parse File.open(csv, "r"), headers: true
-      else
-        raise ArgumentError, "Cannot process input as CSV: #{csv.inspect}"
-      end
+    ##
+    # @param [DS::Manifest] manifest DS::Manifest instance
+    # @return [DS::ManifestValidator]
+    def initialize manifest
+      @manifest = manifest
     end
 
     ##
@@ -144,7 +130,7 @@ module DS
     ##
     # @return [boolean] true if all required columns are present
     def validate_columns
-      found_columns = manifest.first.headers
+      found_columns = manifest.csv.first.headers
       diff = MANIFEST_COLUMNS - found_columns
       return true if diff.empty?
       STDERR.puts "Manifest missing required columns: #{diff.join ', '}"
@@ -154,7 +140,7 @@ module DS
     # @return [boolean] true if all require values present
     def validate_required_values
       is_valid = true
-      manifest.each do |row|
+      manifest.csv.each do |row|
         REQUIRED_VALUES.each_with_index do |col, ndx|
           if row[col].blank?
             STDERR.puts "Required value missing row: #{ndx}; col.: #{col}"
@@ -169,7 +155,7 @@ module DS
     # @return [boolean] true if all data types are valid
     def validate_data_types
       is_valid = true
-      manifest.each_with_index do |row, row_num|
+      manifest.csv.each_with_index do |row, row_num|
         is_valid = false unless validate_urls row, row_num
         is_valid = false unless validate_qids row, row_num
         is_valid = false unless validate_dates row, row_num
@@ -181,8 +167,8 @@ module DS
     # @return [boolean] true if all list input files are present
     def validate_files_exist
       is_valid = true
-      manifest.each_with_index do |row, row_num|
-        file_path = File.join source_dir, row[FILENAME]
+      manifest.csv.each_with_index do |row, row_num|
+        file_path = File.join manifest.source_dir, row[FILENAME]
         unless File.exist? file_path
           is_valid = false
           STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{row[FILENAME]}"
@@ -196,8 +182,8 @@ module DS
     #     values match source file
     def validate_ids
       is_valid = true
-      manifest.each_with_index do |row, row_num|
-        file_path      = File.join source_dir, row[FILENAME]
+      manifest.csv.each_with_index do |row, row_num|
+        file_path      = File.join manifest.source_dir, row[FILENAME]
         source_type    = row[SOURCE_TYPE]
 
         normal_source  = ManifestValidator.normalize_lookup source_type
