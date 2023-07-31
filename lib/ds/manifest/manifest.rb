@@ -9,16 +9,14 @@ module DS
 
       attr_reader :csv
       attr_reader :source_dir
-
-      def self.normalize_lookup value
-        return '' if value.blank?
-        value.to_s.downcase.strip.gsub %r{\W+}, ''
-      end
-
       def initialize csv, source_dir
         @csv = get_csv_data csv
         raise ArgumentError, "Cannot find directory: '#{source_dir}'" unless Dir.exist? source_dir
         @source_dir = source_dir
+      end
+
+      def headers
+        csv.first.headers
       end
 
       def get_csv_data csv
@@ -37,8 +35,13 @@ module DS
       end
 
       def each &block
-        @csv.each &block
+        csv.each do |row|
+          #&block
+          yield DS:: Manifest::Record.new row
+        end
       end
+
+
     end
   end
 end

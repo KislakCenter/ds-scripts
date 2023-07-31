@@ -1,8 +1,9 @@
 # frozen_string_literal: true
-
 module DS
   module Manifest
     module Constants
+      include DS
+
       INSTITUTION_WIKIDATA_QID            = 'holding_institution_wikidata_qid'
       FILENAME                            = 'filename'
       INSTITUTION_WIKIDATA_LABEL          = 'holding_institution_wikidata_label'
@@ -73,13 +74,6 @@ module DS
         DS_METS
       ].freeze
 
-      SOURCE_TYPE_LOOKUP = VALID_SOURCE_TYPES.flat_map { |type|
-        normal = Manifest.normalize_lookup type
-        [type, normal]
-      }.freeze
-
-      XML_SOURCE_TYPES = SOURCE_TYPE_LOOKUP.select { |t| t =~ %r{xml}i }
-      CSV_SOURCE_TYPES = SOURCE_TYPE_LOOKUP.select { |t| t =~ %r{csv}i }
     end
   end
 end

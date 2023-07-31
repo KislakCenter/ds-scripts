@@ -50,7 +50,7 @@ module DS
       ##
       # @return [boolean] true if all required columns are present
       def validate_columns
-        found_columns = manifest.csv.first.headers
+        found_columns = manifest.headers
         diff          = MANIFEST_COLUMNS - found_columns
         return true if diff.empty?
         STDERR.puts "Manifest missing required columns: #{diff.join ', '}"
@@ -75,10 +75,10 @@ module DS
       # @return [boolean] true if all data types are valid
       def validate_data_types
         is_valid = true
-        manifest.each_with_index do |row, row_num|
-          is_valid = false unless validate_urls row, row_num
-          is_valid = false unless validate_qids row, row_num
-          is_valid = false unless validate_dates row, row_num
+        manifest.each_with_index do |record, row_num|
+          is_valid = false unless validate_urls record, row_num
+          is_valid = false unless validate_qids record, row_num
+          is_valid = false unless validate_dates record, row_num
         end
         is_valid
       end
@@ -87,11 +87,11 @@ module DS
       # @return [boolean] true if all list input files are present
       def validate_files_exist
         is_valid = true
-        manifest.each_with_index do |row, row_num|
-          file_path = File.join manifest.source_dir, row[FILENAME]
+        manifest.each_with_index do |record, row_num|
+          file_path = File.join manifest.source_dir, record.filename
           unless File.exist? file_path
             is_valid = false
-            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{row[FILENAME]}"
+            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{record.filename}"
           end
         end
         is_valid
@@ -102,12 +102,13 @@ module DS
       #     values match source file
       def validate_ids
         is_valid = true
-        manifest.each_with_index do |row, row_num|
-          file_path   = File.join manifest.source_dir, row[FILENAME]
-          source_type = row[SOURCE_TYPE]
+        manifest.each_with_index do |record, row_num|
+          file_path   = File.join manifest.source_dir, record.filename
 
-          normal_source = Manifest.normalize_lookup source_type
-          inst_id       = row[INSTITUTIONAL_ID]
+          source_type = record.source_type
+
+          normal_source = DS.normalize_key source_type
+          inst_id       = record.institutional_id
           found         = case normal_source
                           when 'MARC XML', 'marcxml'
                             id_in_marc_xml? file_path, inst_id
@@ -115,7 +116,7 @@ module DS
                             raise NotImplementedError("validate_ids not implemented for: #{source_type}")
                           end
           unless found
-            STDERR.puts "ID not found in source file row: #{row}; id: #{inst_id}; source_file: #{row[FILENAME]}"
+            STDERR.puts "ID not found in source file row: #{row_num}; id: #{inst_id}; source_file: #{record.filename}"
             is_valid = false
           end
         end
@@ -146,51 +147,60 @@ module DS
       ####################################
       # Type validations
       ####################################
-      def validate_source_type row, row_num
+      def validate_source_type record, row_num
         is_valid = true
         col      = SOURCE_TYPE
 
-        unless SOURCE_TYPE_LOOKUP.include? Manifest.normalize_lookup row[col]
-          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{row[col]}'"
+        unless source_types.include? DS.normalize_key record[col]
+          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{record[col]}'"
           is_valid = false
         end
         is_valid
       end
 
-      def validate_urls row, row_num
+      def validate_urls record, row_num
         is_valid = true
         URI_COLUMNS.each do |col|
-          unless row[col].to_s =~ URI_REGEXP
-            STDERR.puts "Invalid URL in row: #{row_num}; col.: #{col}: '#{row[col]}'"
+          unless record[col].to_s =~ URI_REGEXP
+            STDERR.puts "Invalid URL in row: #{row_num}; col.: #{col}: '#{record[col]}'"
             is_valid = false
           end
         end
         is_valid
       end
 
-      def validate_qids row, row_num
+      def validate_qids record, row_num
         is_valid = true
         QID_COLUMNS.each do |col|
-          unless row[col].to_s =~ QID_REGEXP
+          unless record[col].to_s =~ QID_REGEXP
             is_valid = false
-            STDERR.puts "Invalid QID in row: #{row_num}; col.: #{col}: '#{row[col]}'"
+            STDERR.puts "Invalid QID in row: #{row_num}; col.: #{col}: '#{record[col]}'"
           end
         end
         is_valid
       end
 
-      def validate_dates row, row_num
+      def validate_dates record, row_num
         is_valid = true
         DATE_TIME_COLUMNS.each do |col|
-          next if row[col].blank?
+          next if record[col].blank?
           begin
-            Date.parse row[col]
+            Date.parse record[col]
           rescue Date::Error
             is_valid = false
-            STDERR.puts "Invalid date in row: #{row_num}, col.: #{col}: '#{row[col]}'"
+            STDERR.puts "Invalid date in row: #{row_num}, col.: #{col}: '#{record[col]}'"
           end
         end
         is_valid
+      end
+
+      def source_types
+        @source_types ||= build_source_types
+      end
+      def build_source_types
+        VALID_SOURCE_TYPES.flat_map { |type|
+          [type, DS.normalize_key(type)]
+        }
       end
     end
   end

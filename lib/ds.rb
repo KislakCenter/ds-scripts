@@ -15,6 +15,7 @@ require_relative 'ds/institutions'
 require_relative 'ds/mapper/marc_mapper'
 require_relative 'ds/mapper/ds_mets_mapper'
 require_relative 'ds/mapper/openn_tei_mapper'
+require_relative 'ds/manifest/record'
 require_relative 'ds/manifest/manifest'
 require_relative 'ds/manifest/manifest_validator'
 
@@ -23,6 +24,11 @@ module DS
 
   def self.root
     File.expand_path '../..', __FILE__
+  end
+
+  def self.normalize_key key
+    return '' if key.blank?
+    key.to_s.downcase.strip.gsub %r{\W+}, ''
   end
 
   def self.data_dir
