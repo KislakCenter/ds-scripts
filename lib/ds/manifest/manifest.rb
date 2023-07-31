@@ -37,7 +37,7 @@ module DS
       def each &block
         csv.each do |row|
           #&block
-          yield DS:: Manifest::Record.new row
+          yield DS:: Manifest::Entry.new row
         end
       end
 

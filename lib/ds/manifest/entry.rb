@@ -3,7 +3,25 @@
 require_relative './constants'
 module DS
   module Manifest
-    class Record
+    ##
+    # The manifest Entry provides information to validate delivered data
+    # and to drive the data extraction process. Specifically, each
+    # line of the manifest:
+    #
+    # 1. Provides information often not present in standard a location
+    #    in the source record, like shelfmark, source type (MARC XML,
+    #    TEI XML, etc.), link to a IIIF manifest, and link to the
+    #    institution's record in an OPAC or on the institution's
+    #    website
+    #
+    # 2. Gives the file name for the record present in the delivered
+    #    set of records
+    #
+    # 3. Provides information needed to validate the source record:
+    #    its presence in the delivered data, correspondence of the
+    #    source file(s) to identifying information, etc.)
+    #
+    class Entry
       include DS::Manifest::Constants
 
       attr_reader :row

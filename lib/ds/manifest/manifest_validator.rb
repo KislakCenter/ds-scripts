@@ -75,10 +75,10 @@ module DS
       # @return [boolean] true if all data types are valid
       def validate_data_types
         is_valid = true
-        manifest.each_with_index do |record, row_num|
-          is_valid = false unless validate_urls record, row_num
-          is_valid = false unless validate_qids record, row_num
-          is_valid = false unless validate_dates record, row_num
+        manifest.each_with_index do |entry, row_num|
+          is_valid = false unless validate_urls entry, row_num
+          is_valid = false unless validate_qids entry, row_num
+          is_valid = false unless validate_dates entry, row_num
         end
         is_valid
       end
@@ -87,11 +87,11 @@ module DS
       # @return [boolean] true if all list input files are present
       def validate_files_exist
         is_valid = true
-        manifest.each_with_index do |record, row_num|
-          file_path = File.join manifest.source_dir, record.filename
+        manifest.each_with_index do |entry, row_num|
+          file_path = File.join manifest.source_dir, entry.filename
           unless File.exist? file_path
             is_valid = false
-            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{record.filename}"
+            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{entry.filename}"
           end
         end
         is_valid
@@ -102,13 +102,13 @@ module DS
       #     values match source file
       def validate_ids
         is_valid = true
-        manifest.each_with_index do |record, row_num|
-          file_path   = File.join manifest.source_dir, record.filename
+        manifest.each_with_index do |entry, row_num|
+          file_path   = File.join manifest.source_dir, entry.filename
 
-          source_type = record.source_type
+          source_type = entry.source_type
 
           normal_source = DS.normalize_key source_type
-          inst_id       = record.institutional_id
+          inst_id       = entry.institutional_id
           found         = case normal_source
                           when 'MARC XML', 'marcxml'
                             id_in_marc_xml? file_path, inst_id
@@ -116,7 +116,7 @@ module DS
                             raise NotImplementedError("validate_ids not implemented for: #{source_type}")
                           end
           unless found
-            STDERR.puts "ID not found in source file row: #{row_num}; id: #{inst_id}; source_file: #{record.filename}"
+            STDERR.puts "ID not found in source file row: #{row_num}; id: #{inst_id}; source_file: #{entry.filename}"
             is_valid = false
           end
         end
@@ -137,58 +137,58 @@ module DS
       }
 
       def id_in_marc_xml? file_path, id
-        record = File.open(file_path) { |f| Nokogiri::XML(f) }
-        record.remove_namespaces!
+        entry = File.open(file_path) { |f| Nokogiri::XML(f) }
+        entry.remove_namespaces!
 
         xpath = "//controlfield[@tag='001' and text() = #{id}]"
-        record.xpath(xpath).to_a.present?
+        entry.xpath(xpath).to_a.present?
       end
 
       ####################################
       # Type validations
       ####################################
-      def validate_source_type record, row_num
+      def validate_source_type entry, row_num
         is_valid = true
         col      = SOURCE_TYPE
 
-        unless source_types.include? DS.normalize_key record[col]
-          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{record[col]}'"
+        unless source_types.include? DS.normalize_key entry[col]
+          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry[col]}'"
           is_valid = false
         end
         is_valid
       end
 
-      def validate_urls record, row_num
+      def validate_urls entry, row_num
         is_valid = true
         URI_COLUMNS.each do |col|
-          unless record[col].to_s =~ URI_REGEXP
-            STDERR.puts "Invalid URL in row: #{row_num}; col.: #{col}: '#{record[col]}'"
+          unless entry[col].to_s =~ URI_REGEXP
+            STDERR.puts "Invalid URL in row: #{row_num}; col.: #{col}: '#{entry[col]}'"
             is_valid = false
           end
         end
         is_valid
       end
 
-      def validate_qids record, row_num
+      def validate_qids entry, row_num
         is_valid = true
         QID_COLUMNS.each do |col|
-          unless record[col].to_s =~ QID_REGEXP
+          unless entry[col].to_s =~ QID_REGEXP
             is_valid = false
-            STDERR.puts "Invalid QID in row: #{row_num}; col.: #{col}: '#{record[col]}'"
+            STDERR.puts "Invalid QID in row: #{row_num}; col.: #{col}: '#{entry[col]}'"
           end
         end
         is_valid
       end
 
-      def validate_dates record, row_num
+      def validate_dates entry, row_num
         is_valid = true
         DATE_TIME_COLUMNS.each do |col|
-          next if record[col].blank?
+          next if entry[col].blank?
           begin
-            Date.parse record[col]
+            Date.parse entry[col]
           rescue Date::Error
             is_valid = false
-            STDERR.puts "Invalid date in row: #{row_num}, col.: #{col}: '#{record[col]}'"
+            STDERR.puts "Invalid date in row: #{row_num}, col.: #{col}: '#{entry[col]}'"
           end
         end
         is_valid
