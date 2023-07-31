@@ -21,6 +21,7 @@ module DS
     #    its presence in the delivered data, correspondence of the
     #    source file(s) to identifying information, etc.)
     #
+    #
     class Entry
       include DS::Manifest::Constants
 
@@ -91,7 +92,22 @@ module DS
         row[MANIFEST_GENERATED_AT]
       end
 
-
+      def to_h
+        {
+        institution_wikidata_qid:     institution_wikidata_qid,
+        institution_wikidata_label:   institution_wikidata_label,
+        ds_id:                        ds_id,
+        call_number:                  call_number,
+        institutional_id:             institutional_id,
+        title:                        title,
+        link_to_institutional_record: link_to_institutional_record,
+        iiif_manifest_url:            iiif_manifest_url,
+        record_last_updated:          record_last_updated,
+        source_type:                  source_type,
+        filename:                     filename,
+        manifest_generated_at:        manifest_generated_at,
+        }
+      end
 
     end
   end
