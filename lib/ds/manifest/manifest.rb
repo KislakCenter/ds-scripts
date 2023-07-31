@@ -9,6 +9,7 @@ module DS
 
       attr_reader :csv
       attr_reader :source_dir
+
       def initialize csv, source_dir
         @csv = get_csv_data csv
         raise ArgumentError, "Cannot find directory: '#{source_dir}'" unless Dir.exist? source_dir
@@ -36,7 +37,6 @@ module DS
 
       def each &block
         csv.each do |row|
-          #&block
           yield DS:: Manifest::Entry.new row
         end
       end

@@ -3,6 +3,7 @@
 module DS
   module Mapper
     class MarcMapper
+      attr_reader :manifest_entry
       attr_reader :record
       attr_reader :inst_qid
       attr_reader :inst_code
@@ -10,15 +11,28 @@ module DS
       attr_reader :holdings_file
       attr_reader :timestamp
       attr_reader :source_file
+      attr_reader :source_file
+      attr_reader :iiif_manifest_url
+      attr_reader :institutional_id
+      attr_reader :call_number
+      attr_reader :link_to_institutional_record
 
-      def initialize(record:, inst_qid:, inst_code:, preferred_name:, holdings_file:, timestamp:, source_file:)
-        @record         = record
-        @inst_qid       = inst_qid
-        @inst_code      = inst_code
-        @preferred_name = preferred_name
-        @holdings_file  = holdings_file
-        @timestamp      = timestamp
-        @source_file    = source_file
+      ##
+      # @param [DS::Manifest:Entry] manifest_entry the manifest line
+      #        item for this record
+      # @param [Nokogiri::XML::Node] record the MARC XML record node
+      # @param [Date] timestamp for this import CSV
+      def initialize(manifest_entry:, record:, timestamp:)
+        @record                       = record
+        @manifest_entry               = manifest_entry
+        @inst_qid                     = manifest_entry.institution_wikidata_qid
+        @preferred_name               = manifest_entry.institution_wikidata_label
+        @timestamp                    = timestamp
+        @source_file                  = manifest_entry.filename
+        @iiif_manifest_url            = manifest_entry.iiif_manifest_url
+        @institutional_id             = manifest_entry.institutional_id
+        @call_number                  = manifest_entry.call_number
+        @link_to_institutional_record = manifest_entry.link_to_institutional_record
       end
 
       def map_record
@@ -26,10 +40,10 @@ module DS
         cataloging_convention              = DS::MarcXML.extract_cataloging_convention record
         holding_institution                = inst_qid
         holding_institution_as_recorded    = preferred_name
-        holding_institution_id_number      = DS::MarcXML.extract_001_control_number record, holdings_file
-        holding_institution_shelfmark      = DS::MarcXML.extract_holding_institution_shelfmark record, holdings_file
-        link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, inst_code
-        iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
+        holding_institution_id_number      = DS::MarcXML.extract_001_control_number record
+        holding_institution_shelfmark      = call_number
+        link_to_holding_institution_record = link_to_institutional_record
+        iiif_manifest                      = iiif_manifest_url
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
         production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
         century                            = DS.transform_dates_to_centuries production_date
@@ -145,7 +159,7 @@ module DS
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
-          source_file:                        source_file,
+          source_file:                        source_file
         }
       end
     end

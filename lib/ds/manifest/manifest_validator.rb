@@ -149,10 +149,9 @@ module DS
       ####################################
       def validate_source_type entry, row_num
         is_valid = true
-        col      = SOURCE_TYPE
 
-        unless source_types.include? DS.normalize_key entry[col]
-          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry[col]}'"
+        unless source_types.include? entry.source_type
+          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry.source_type}'"
           is_valid = false
         end
         is_valid
@@ -195,12 +194,7 @@ module DS
       end
 
       def source_types
-        @source_types ||= build_source_types
-      end
-      def build_source_types
-        VALID_SOURCE_TYPES.flat_map { |type|
-          [type, DS.normalize_key(type)]
-        }
+        VALID_SOURCE_TYPES
       end
     end
   end

@@ -207,10 +207,9 @@ EOF
   context 'validate_source_type' do
     context 'for valid source types' do
       it 'is truthy' do
-        expect(validator.validate_source_type csv_data.first, 0).to be_truthy
+        expect(validator.validate_source_type manifest.first, 0).to be_truthy
       end
     end
-
 
     context 'for unknown source types' do
       let(:csv_data) { parse_csv <<~EOF
@@ -218,9 +217,10 @@ EOF
         BAD SOURCE TYPE,other_value
       EOF
       }
+      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir }
 
       it 'is falsey' do
-        expect(validator.validate_source_type csv_data.first, 0).to be_falsey
+        expect(validator.validate_source_type manifest.first, 0).to be_falsey
       end
     end
 
@@ -291,6 +291,25 @@ EOF
         expect(validator.validate_ids).to be_falsey
       end
 
+    end
+
+    context 'validate_ids_unique' do
+      context 'ids are unique' do
+        it 'is truthy'
+      end
+
+      context 'ids are not unique' do
+        it 'is falsey'
+      end
+    end
+
+    context 'validate_records_unique' do
+      context "one record per ID" do
+        it 'is truthy'
+      end
+    end
+    context 'multiple records for one ID' do
+      it 'is falsey'
     end
   end
 end

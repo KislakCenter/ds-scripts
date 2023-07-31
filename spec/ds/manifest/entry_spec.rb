@@ -85,7 +85,7 @@ RSpec.describe 'DS::Manifest::Entry' do
        :filename=>"9951865503503681_marc.xml",
        :manifest_generated_at=>"2023-07-25T09:52:02-0400"}
     }
-    
+
     it 'returns the correct hash' do
       expect(entry.to_h).to eq hash
     end

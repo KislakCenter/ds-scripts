@@ -18,6 +18,7 @@ require_relative 'ds/mapper/openn_tei_mapper'
 require_relative 'ds/manifest/entry'
 require_relative 'ds/manifest/manifest'
 require_relative 'ds/manifest/manifest_validator'
+require_relative 'ds/converter/converter'
 
 module DS
   include DS::Constants
