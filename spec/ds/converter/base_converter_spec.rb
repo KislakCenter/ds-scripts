@@ -28,17 +28,13 @@ RSpec.describe 'DS::Converter::BaseConverter' do
   let(:entry) { manifest.first }
 
   let(:converter) {
-    DS::Converter::BaseConverter.new(
-      manifest: manifest, source_dir: marc_xml_dir
-    )
+    DS::Converter::BaseConverter.new manifest
   }
 
   context 'initialize' do
     it 'creates a new DS::Converter::BaseConverter' do
       expect(
-        DS::Converter::BaseConverter.new(
-          manifest: manifest, source_dir: marc_xml_dir
-        )
+        DS::Converter::BaseConverter.new manifest
       ).to be_a DS::Converter::BaseConverter
     end
   end

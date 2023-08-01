@@ -27,10 +27,10 @@ module DS
 
       ##
       # @param [DS::CSV] manifest the Manifest instance
-      def initialize manifest:, source_dir:
+      def initialize manifest
         @manifest  = manifest
         @timestamp = Time.now
-        @source_dir = source_dir
+        @source_dir = manifest.source_dir
       end
 
       ##
