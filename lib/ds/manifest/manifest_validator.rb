@@ -91,7 +91,7 @@ module DS
           file_path = File.join manifest.source_dir, entry.filename
           unless File.exist? file_path
             is_valid = false
-            STDERR.puts "Source file not found row: #{row_num}; source directory: #{source_dir}; file: #{entry.filename}"
+            STDERR.puts "Source file not found row: #{row_num+1}; source directory: #{source_dir}; file: #{entry.filename}"
           end
         end
         is_valid
@@ -116,7 +116,7 @@ module DS
                             raise NotImplementedError("validate_ids not implemented for: #{source_type}")
                           end
           unless found
-            STDERR.puts "ID not found in source file row: #{row_num}; id: #{inst_id}; source_file: #{entry.filename}"
+            STDERR.puts "ID not found in source file row: #{row_num+1}; id: #{inst_id}; source_file: #{entry.filename}"
             is_valid = false
           end
         end
@@ -151,7 +151,7 @@ module DS
         is_valid = true
 
         unless source_types.include? entry.source_type
-          STDERR.puts "Invalid source type in row: #{row_num}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry.source_type}'"
+          STDERR.puts "Invalid source type in row: #{row_num+1}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry.source_type}'"
           is_valid = false
         end
         is_valid
@@ -161,7 +161,7 @@ module DS
         is_valid = true
         URI_COLUMNS.each do |col|
           unless entry[col].to_s =~ URI_REGEXP
-            STDERR.puts "Invalid URL in row: #{row_num}; col.: #{col}: '#{entry[col]}'"
+            STDERR.puts "Invalid URL in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
             is_valid = false
           end
         end
@@ -173,7 +173,7 @@ module DS
         QID_COLUMNS.each do |col|
           unless entry[col].to_s =~ QID_REGEXP
             is_valid = false
-            STDERR.puts "Invalid QID in row: #{row_num}; col.: #{col}: '#{entry[col]}'"
+            STDERR.puts "Invalid QID in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
           end
         end
         is_valid
@@ -187,7 +187,7 @@ module DS
             Date.parse entry[col]
           rescue Date::Error
             is_valid = false
-            STDERR.puts "Invalid date in row: #{row_num}, col.: #{col}: '#{entry[col]}'"
+            STDERR.puts "Invalid date in row: #{row_num+1}, col.: #{col}: '#{entry[col]}'"
           end
         end
         is_valid
