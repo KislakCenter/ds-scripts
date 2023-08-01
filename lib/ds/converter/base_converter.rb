@@ -67,9 +67,8 @@ module DS
       def retrieve_record entry
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
-          xml = File.open(source_file_path entry) { |f|
-            Nokogiri::XML(f)
-          }
+          xml_string = File.open(source_file_path entry).read
+          xml = Nokogiri::XML xml_string
           xml.remove_namespaces!
           xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
           xml.xpath(xpath).first
@@ -84,7 +83,8 @@ module DS
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
           DS::Mapper::MarcMapper.new(
-            manifest_entry: entry, record: record, timestamp: tstamp)
+            manifest_entry: entry, record: record, timestamp: tstamp
+          )
         else
           raise NotImplementedError,
                 "Mapper not implemented for "

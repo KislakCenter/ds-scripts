@@ -19,9 +19,7 @@ RSpec.describe 'DS::Converter::BaseConverter' do
     File.join marc_xml_dir, '9951865503503681_marc.xml'
   }
 
-  let(:record) {
-    File.open(xml_file) { |f| Nokogiri::XML(f) }
-  }
+  let(:record) { marc_record default_xml }
 
   let(:manifest) {
     DS::Manifest::Manifest.new manifest_csv, marc_xml_dir
@@ -57,6 +55,7 @@ RSpec.describe 'DS::Converter::BaseConverter' do
     let(:record) { converter.retrieve_record entry }
 
     it 'returns an XML node' do
+      allow(File).to receive(:open).and_return(StringIO.new default_xml)
       expect(record).to be_a Nokogiri::XML::Element
     end
 
@@ -68,18 +67,45 @@ RSpec.describe 'DS::Converter::BaseConverter' do
   end
 
   context 'each' do
+    let(:record) { converter.retrieve_record entry }
     it 'yields an entry and a record' do
+      allow(converter).to receive(:retrieve_record).and_return(record)
       expect { |b|
         converter.each &b
       }.to yield_with_args DS::Manifest::Entry, Nokogiri::XML::Element
     end
   end
 
-  context 'context' do
+  context 'convert' do
+    let(:record) { converter.retrieve_record entry }
+    let(:mapper) {
+      DS::Mapper::MarcMapper.new(
+        manifest_entry:entry, record: record, timestamp: Time.now
+      )
+    }
+
     it 'yields a hash' do
-      expect { |b|
-        converter.convert &b
-      }.to yield_with_args Hash
+      # Running Mapper#map_record is slow, and that method is tested
+      # elsewhere; here, mock Converter#get_mapper and
+      # Mapper#map_record to optimize the test
+      allow(converter).to receive(:get_mapper).and_return(mapper)
+      allow(mapper).to receive(:map_record).and_return({})
+
+      expect { |b| converter.convert &b }.to yield_with_args Hash
+    end
+
+    it 'returns an array' do
+      allow(converter).to receive(:get_mapper).and_return(mapper)
+      allow(mapper).to receive(:map_record).and_return({ a: 1})
+
+      expect(converter.convert).to be_an Array
+    end
+
+    it 'returns an array of hashes' do
+      allow(converter).to receive(:get_mapper).and_return(mapper)
+      allow(mapper).to receive(:map_record).and_return({ a: 1})
+
+      expect(converter.convert).to include({ a: 1 })
     end
   end
 
