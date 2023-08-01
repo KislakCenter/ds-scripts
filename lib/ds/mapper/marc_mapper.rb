@@ -94,7 +94,7 @@ module DS
         material_as_recorded               = DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b').join '|'
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
-        physical_description               = DS::MarcXML.extract_physical_description record
+        physical_description               = DS::MarcXML.extract_physical_description(record).join('|')
         note                               = DS::MarcXML.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
