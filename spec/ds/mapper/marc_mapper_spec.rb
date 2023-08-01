@@ -49,6 +49,14 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
 
   context 'map_record' do
     it 'returns a hash' do
+      # Recon lookup is slow; stub .lookup for all Recon classes
+      recons = [
+        Recon::AllSubjects, Recon::Genres, Recon::Languages,
+        Recon::Materials, Recon::Names, Recon::Places,
+        Recon::Titles,
+      ]
+      add_stubs recons, :lookup, []
+
       expect(mapper.map_record).to be_a Hash
     end
   end
