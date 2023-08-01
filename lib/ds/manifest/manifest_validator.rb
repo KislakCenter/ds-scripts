@@ -60,10 +60,10 @@ module DS
       # @return [boolean] true if all require values present
       def validate_required_values
         is_valid = true
-        manifest.each do |row|
-          REQUIRED_VALUES.each_with_index do |col, ndx|
+        manifest.each_with_index do |row, ndx|
+          REQUIRED_VALUES.each do |col|
             if row[col].blank?
-              STDERR.puts "Required value missing row: #{ndx}; col.: #{col}"
+              STDERR.puts "Required value missing in row: #{ndx+1}, col.: #{col}"
               is_valid = false
             end
           end
