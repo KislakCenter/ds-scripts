@@ -16,7 +16,7 @@ require_relative 'ds/mapper/marc_mapper'
 require_relative 'ds/mapper/ds_mets_mapper'
 require_relative 'ds/mapper/openn_tei_mapper'
 require_relative 'ds/manifest'
-require_relative 'ds/converter/converter'
+require_relative 'ds/converter'
 
 module DS
   include DS::Constants
