@@ -3,26 +3,8 @@ require 'csv'
 module DS
   module CSVUtil
     module ClassMethods
-      # TODO: remove? zip_columns is called by a script that's no longer used
-      def zip_columns csv_file, *columns
-        data = []
-        CSV.foreach csv_file, headers: true do |row|
-          row_map = columns.map { |c| row[c].to_s.split '|' }
-
-          first = row_map.shift
-          until first.empty?
-            r = []
-            r << first.shift
-            row_map.each do |col|
-              r << (col.shift || '')
-            end
-            data << r
-          end
-        end
-        data.sort! { |a,b| a.first <=> b.first }
-        data.uniq
-      end
-
+      # TODO: These methods don't belong in CSVUtil; find them a new home
+      # TODO: Remove CSVUtil when the above TODO is complete
       # Columns with two levels of subfields, separated by '|' and ';'
       NESTED_COLUMNS = %w{ subject subject_label genre genre_label production_place production_place_label language language_label }
       ##
