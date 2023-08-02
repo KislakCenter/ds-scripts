@@ -28,6 +28,11 @@ the content type.
 
 ### `ds-convert` process
 
+**IMPORTANT: The manifest-based process described below has been
+implemented only for MARC source data. METS and OPenn TEI still
+use a source type-specific process that will be replaced by the method
+described below.**
+
 Given a directory containing a set of source records (MARC XML, DS 1.0
 METS, OPenn TEI XML, a CSV) and a `manifest.csv` file, generate a DS
 import CSV for all records listed in `manifest.csv`. The output import
