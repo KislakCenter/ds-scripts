@@ -26,6 +26,27 @@ The `recon` script outputs a number of CSV with extracted values for names
 various vocabularies). CSVs output by `recon` have different columns according
 the content type.
 
+### `ds-convert` process
+
+Given a directory containing a set of source records (MARC XML, DS 1.0 
+METS, OPenn TEI XML, a CSV) and a `manifest.csv` file, generate a DS 
+import CSV for all records listed in `manifest.csv`. The output import
+CSV is used by the DS Import scripts to import data into the DS 
+Wikibase instance.
+
+The values found in the `manifest.csv` are described in the [DS import
+manifest data dictionary](https://docs.google.com/spreadsheets/d/195ItCa2Qg69lp0lMuVlq2eLWJzIAmWHUzDP170_af3I/edit?usp=sharing).
+The {DS::Manifest::ManifestValidator} validates the manifest and the 
+designated source records. 
+
+{DS::Converter::BaseConverter} uses the manifest to orchestrate the
+conversion of the source records to the CSV import format. Specifically,
+the converter, reads each manifest entry, selects the appropriate 
+DS::Mapper (e.g, DS::Mapper::MarcMapper), and passes the entry and 
+the source records to the data mapper for conversion. The converter
+returns the mapped data for each record (as a Hash) to the caller to
+be written to the import CSV.
+
 ## Scripts folder
 
 The `/scripts` directory contains utility scripts for managing DS data.
