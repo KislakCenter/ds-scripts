@@ -34,18 +34,32 @@ module DS
       # @return [Boolean]
       def validate rows
         valid = true
-        rows.each_with_index do |hash,index|
-          hash.each do |column, value|
-            split_chars = NESTED_COLUMNS.include?(column) ? %r{[;|]} : %r{\|}
-            if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
-              valid = false
-              STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
-            end
+        rows.each_with_index do |row,index|
+          valid = false unless row_valid? row, index
+          # hash.each do |column, value|
+          #   split_chars = NESTED_COLUMNS.include?(column) ? %r{[;|]} : %r{\|}
+          #   if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
+          #     valid = false
+          #     STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
+          #   end
+          # end
+        end
+        valid
+      end
+
+      def row_valid? row, index
+        valid       = true
+        row.each do |column, value|
+          split_chars = NESTED_COLUMNS.include?(column) ? %r{[;|]} : %r{\|}
+          if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
+            valid = false
+            STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
           end
         end
         valid
       end
     end
+
     self.extend ClassMethods
   end
 end
