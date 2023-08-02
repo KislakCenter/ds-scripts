@@ -1,12 +1,18 @@
 require 'thor'
+require 'colorize'
 require_relative '../ds'
 
 module DS
   class CLI < Thor
     include Recon
+    include ActiveSupport::NumberHelper
+
     DS.configure!
     class_option :'skip-recon-update', desc: "Skip CSV update from git [ignored by recon-update, validate]", aliases: '-G', type: :boolean, default: false
     class_option :'skip-validation', desc: "Skip validation of CSV values [same as SKIP_OUTPUT_VALIDATION=true, ignored by recon-update, validate]", aliases: '-V', type: :boolean, default: false
+    class_option :verbose, desc: "Be chatty; print stacktraces; overrides --quiet", aliases: '-v', type: :boolean, default: false
+    class_option :quiet, desc: "Don't print messages", aliases: '-q', type: :boolean, default: false
+
 
     desc "recon-update", "Update Recon CSVs from git"
     long_desc <<-LONGDESC
@@ -26,6 +32,14 @@ module DS
       STDOUT.puts "done."
     end
 
+    ##
+    # Needed to return a non-zero exit code on failure. See:
+    #
+    # https://github.com/rails/thor/wiki/Making-An-Executable
+    def self.exit_on_failure?
+      true
+    end
+
     protected
     def skip_git? options
       return true if options[:'skip-recon-update']
@@ -41,6 +55,20 @@ module DS
     # @return [Boolean]
     def read_from_stdin? files
       files == ['-']
+    end
+
+    ##
+    # @param [String] msg the message to print
+    # @param [Hash] options the command options; the following are used here:
+    # @option options [Boolean] :verbose whether to print all messages
+    # @option option [Boolean] :quiet suppress all messages (except errors); overrides +:verbose+
+    # @param [Boolean] verbose_only print message only if +:verbose+ is true
+    def print_message options, verbose_only: false, &msg
+      return if options[:quiet]
+      # if +verbose_only+ is true, return unless +options[:verbose]+ is true
+      return if verbose_only && ! options[:verbose]
+
+      puts yield
     end
 
     ##
