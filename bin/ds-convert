@@ -92,14 +92,14 @@ The MANIFEST is validated before the import CSV is generated. See
     valid = true
     outfile = options[:'output-csv']
     write outfile: outfile do |csv|
-      converter.each_with_index do |row, ndx|
-        count = ndx
-        valid = false unless DS::CSVUtil.row_valid? row, ndx
+      converter.convert do |row|
+        count += 1
+        valid = false unless DS::CSVUtil.row_valid? row, count
         csv << row
       end
     end
 
-    print_message(options) { "Wrote #{number_to_delimited(count+1)} rows to '#{outfile}'" }
+    print_message(options) { "Wrote #{number_to_delimited(count)} rows to '#{outfile}'" }
     if valid
       print_message(options) { "CSV is valid: #{outfile}".colorize(:green) }
     else
