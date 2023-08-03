@@ -71,6 +71,7 @@ module DS
           xml = Nokogiri::XML xml_string
           xml.remove_namespaces!
           xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
+          # TODO: use xml.at_xpath to get the first item
           xml.xpath(xpath).first
         else
           raise NotImplementedError,
