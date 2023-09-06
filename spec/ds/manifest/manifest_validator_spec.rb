@@ -156,6 +156,18 @@ EOF
         expect(validator.validate_urls csv_data.first, 0).to be_falsey
       end
     end
+
+    context "for an empty URL" do
+      let(:csv_data) { parse_csv <<~EOF
+        iiif_manifest_url,link_to_institutional_record
+        ,
+      EOF
+      }
+
+      it 'is truthy' do
+        expect(validator.validate_urls csv_data.first, 0).to be_truthy
+      end
+    end
   end
 
   context 'validate_qids' do

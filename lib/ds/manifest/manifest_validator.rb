@@ -160,7 +160,7 @@ module DS
       def validate_urls entry, row_num
         is_valid = true
         URI_COLUMNS.each do |col|
-          unless entry[col].to_s =~ URI_REGEXP
+          if entry[col].present? && entry[col].to_s !~ URI_REGEXP
             STDERR.puts "Invalid URL in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
             is_valid = false
           end
