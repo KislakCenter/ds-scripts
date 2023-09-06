@@ -45,41 +45,43 @@ EOF
     end
 
     context 'when run' do
-      SUB_VALIDATIONS = %i{
-        validate_columns validate_required_values validate_data_types
-        validate_files_exist validate_ids
+      let(:sub_validations) {
+        %i{
+          validate_columns validate_required_values
+          validate_data_types validate_files_exist validate_ids
+        }
       }
 
       it 'calls validate_columns'do
-        add_stubs validator, SUB_VALIDATIONS, true
+        add_stubs validator, sub_validations, true
 
         expect(validator).to receive(:validate_columns)
         validator.valid?
       end
 
       it 'calls validate_required_values'do
-        add_stubs validator, SUB_VALIDATIONS, true
+        add_stubs validator, sub_validations, true
 
         expect(validator).to receive(:validate_required_values)
         validator.valid?
       end
 
       it 'calls validate_data_types'do
-        add_stubs validator, SUB_VALIDATIONS, true
+        add_stubs validator, sub_validations, true
 
         expect(validator).to receive(:validate_data_types)
         validator.valid?
       end
 
       it 'calls validate_files_exist'do
-        add_stubs validator, SUB_VALIDATIONS, true
+        add_stubs validator, sub_validations, true
 
         expect(validator).to receive(:validate_files_exist)
         validator.valid?
       end
 
       it 'call validate_ids'do
-        add_stubs validator, SUB_VALIDATIONS, true
+        add_stubs validator, sub_validations, true
 
         expect(validator).to receive(:validate_ids)
         validator.valid?
