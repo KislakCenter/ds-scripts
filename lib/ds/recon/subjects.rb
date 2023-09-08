@@ -66,7 +66,12 @@ module Recon
     end
 
     def self.from_tei files
-      raise NotImplementedError, "No method to extract subjects for TEI"
+      data = []
+      process_xml files, remove_namespaces: true do |xml|
+        data += DS::OPennTEI.extract_recon_subjects xml
+      end
+      add_recon_values data
+      Recon.sort_and_dedupe data
     end
 
     def self._lookup_single term, from_column:

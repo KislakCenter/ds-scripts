@@ -160,11 +160,22 @@ module DS
       def extract_recon_genres record
         xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term'
         record.xpath(xpath).map { |term|
-          value = term.text
-          vocab = 'openn-form/genre'
+          value  = term.text
+          vocab  = 'openn-form/genre'
           number = term['target']
           [value, vocab, number]
         }
+      end
+
+      def extract_recon_subjects xml
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term'
+        xml.xpath(xpath).map do |term|
+          value          = term.text
+          subfield_codes = nil
+          vocab          = "openn-#{term.parent['n']}"
+          number         = term['target']
+          [value, subfield_codes, vocab, number]
+        end
       end
 
       def extract_genre_as_recorded xml
