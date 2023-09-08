@@ -66,7 +66,7 @@ module Recon
     end
 
     def self.from_tei files
-      raise NotImplementedError
+      raise NotImplementedError, "No method to extract subjects for TEI"
     end
 
     def self._lookup_single term, from_column:
