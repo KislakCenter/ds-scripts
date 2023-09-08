@@ -157,6 +157,14 @@ module DS
         }.reject(&:empty?).join '|'
       end
 
+      def extract_genre_as_recorded xml
+        xml.xpath('/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term/text()').map &:text
+      end
+
+      def extract_subject_as_recorded xml
+        xml.xpath('/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()').map &:text
+      end
+
       ##
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [Array<String>]
