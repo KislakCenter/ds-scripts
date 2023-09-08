@@ -17,11 +17,11 @@ module Recon
     end
 
     def self.from_tei files
-      raise NotImplementedError
+      raise NotImplementedError, "No method to process splits for TEI"
     end
 
     def self.from_marc files
-      raise NotImplementedError
+      raise NotImplementedError, "No method to process splits for MARC XML"
     end
 
     def self.from_mets files

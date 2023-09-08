@@ -45,11 +45,16 @@ module Recon
     end
 
     def self.from_mets files
-      raise NotImplementedError
+      raise NotImplementedError, "No method to process genres for DS METS"
     end
 
     def self.from_tei files
-      raise NotImplementedError
+      data = []
+      process_xml files, remove_namespaces: true do |xml|
+        data += DS::OPennTEI.extract_recon_genres xml
+      end
+      add_recon_values data
+      Recon.sort_and_dedupe data
     end
 
     protected

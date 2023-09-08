@@ -43,6 +43,17 @@ do
   ${SCRIPT_DIR}/../../bin/ds-recon subjects --named-subjects "${recon_opts[@]}" -a ${inst} -t marc ${SCRIPT_DIR}/../../data/prototype-data/${inst}/*.xml
 done
 
+# TEI
+TEI_INSTS="flp"
+##########
+# FLP TEI
+##########
+# Run through the TEI_INSTS and output a CSV for each to TMP_DIR
+for inst in ${TEI_INSTS}
+do
+  ${SCRIPT_DIR}/../../bin/ds-recon subjects --named-subjects "${recon_opts[@]}" -a ${inst} -t tei ${SCRIPT_DIR}/../../data/prototype-data/${inst}/*.xml
+done
+
 #######################
 # Combine in single CSV
 #######################

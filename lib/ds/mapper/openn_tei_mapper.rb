@@ -29,6 +29,14 @@ module DS
         century_aat                        = DS.transform_centuries_to_aat century
         title_as_recorded                  = record.xpath('//msItem[1]/title/text()').map(&:to_s).join '|'
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
+        genre_as_recorded                  = DS::OPennTEI.extract_genre_as_recorded(record).join '|'
+        genre_vocabulary                   = '' # DS::OPennTEI.extract_genre_vocabulary record
+        genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
+        genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
+        subject_as_recorded                = DS::OPennTEI.extract_subject_as_recorded(record).join '|'
+        subject                            = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
+        subject_label                      = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
+
         author_as_recorded                 = record.xpath('//msItem/author/text()').map(&:to_s).join '|'
         author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'
         author                             = ''
@@ -87,6 +95,12 @@ module DS
           century_aat:                        century_aat,
           title_as_recorded:                  title_as_recorded,
           standard_title:                     standard_title,
+          genre_as_recorded:                  genre_as_recorded,
+          genre:                              genre,
+          genre_label:                        genre_label,
+          subject_as_recorded:                subject_as_recorded,
+          subject:                            subject,
+          subject_label:                      subject_label,
           author_as_recorded:                 author_as_recorded,
           author_wikidata:                    author_wikidata,
           author:                             author,
