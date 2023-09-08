@@ -38,21 +38,35 @@ module DS
         nodes = xml.xpath('//msContents/msItem')
 
         nodes.xpath('author').each do |author|
-          data << [author.xpath('text()').text, 'author', '', author['ref']]
+          if author.xpath('persName').text.empty?
+            value = author.text.strip
+            role = 'author'
+            vernacular = nil
+            ref = author['ref']
+            data << [value, role, vernacular, ref]
+          else
+            data << build_recon_row(author, 'author')
+          end
         end
 
         _types = [ 'artist', 'scribe', 'former owner']
         type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
         xpath = %Q{//respStmt[#{type_query}]}
-        nodes.xpath(xpath).each { |rs|
-          data << [
-            rs.xpath('persName/text()').text,
-            rs.xpath('resp/text()').text,
-            '',
-            rs.xpath('persName/@ref/text()').text
-          ]
-        }
+        nodes.xpath(xpath).each do |rs|
+          role = rs.xpath('resp/text()').text.strip
+          data << build_recon_row(rs, role)
+        end
         data
+      end
+
+      def build_recon_row resp_node, role
+        value_xpath      = 'persName[not(@type) or @type="authority"]/text()'
+        value            = resp_node.xpath(value_xpath).text.strip
+        vernacular_xpath = 'persName[@type="vernacular"]/text()'
+        vernacular       = resp_node.xpath(vernacular_xpath).text.strip
+        ref              = resp_node['ref']
+
+        [value, role, vernacular, ref]
       end
 
       ##
