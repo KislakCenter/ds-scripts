@@ -14,6 +14,12 @@ module Helpers
     xml.remove_namespaces!
     xml.xpath('record')[0]
   end
+
+  def openn_tei xml_string
+    xml = Nokogiri::XML xml_string
+    xml.remove_namespaces!
+    xml
+  end
 end
 
 RSpec.configure do |c|

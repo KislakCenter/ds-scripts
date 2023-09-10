@@ -157,11 +157,7 @@ module DS
         parts << extract_support(xml)
         parts << extract_extent(xml)
         parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/foliation/text()')
-        parts << extract_collation(xml)
-        parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()')
-        parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/scriptDesc/scriptNote/text()')
-        parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()')
-        parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()')
+
         parts.flatten.map { |x| x.to_s.strip }.reject(&:empty?).join '. '
       end
 
@@ -200,17 +196,36 @@ module DS
         xml.xpath('/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()').map &:text
       end
 
+      SIMPLE_NOTE_XPATH = '/TEI/teiHeader/fileDesc/notesStmt/note[not(@type)]/text()'
+      BINDING_XPATH     = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()'
+      LAYOUT_XPATH      = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()'
+      SCRIPT_XPATH      = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/scriptDesc/scriptNote/text()'
+      DECO_XPATH        = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()'
+      RESOURCE_XPATH    = '/TEI/teiHeader/fileDesc/notesStmt/note[@type = "relatedResource"]/text()'
+      PROVENANCE_XPATH  = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/history/provenance/text()'
+
       ##
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [Array<String>]
       def extract_note xml
         # skip_pattern = %r{^(Support|Extent|Collation):\s*}i
-        xpath = '/TEI/teiHeader/fileDesc/notesStmt/note[not(@type)]/text()'
-        terminal_punct = %r{[.,;:?!]"?$}
-        xml.xpath(xpath).map(&:text).map(&:strip).map { |note|
-          note.gsub(%r{\s+}, ' ')
-        }.map { |note|
-          DS.terminate note, terminator: '.', force: false
+        notes = []
+
+        notes += build_prefixed_notes xml, SIMPLE_NOTE_XPATH
+        notes += build_prefixed_notes xml, BINDING_XPATH, prefix: "Binding"
+        notes += build_prefixed_notes xml, LAYOUT_XPATH, prefix: "Layout"
+        notes += build_prefixed_notes xml, SCRIPT_XPATH, prefix: "Script"
+        notes += build_prefixed_notes xml, DECO_XPATH, prefix: "Decoration"
+        notes += build_prefixed_notes xml, RESOURCE_XPATH, prefix: "Related resource"
+        notes += build_prefixed_notes xml, PROVENANCE_XPATH, prefix: "Provenance"
+
+        notes
+      end
+
+      def build_prefixed_notes xml, xpath, prefix: nil
+        xml.xpath(xpath).map { |note|
+          pref = prefix.to_s.strip.empty? ? '' : "#{prefix}: "
+          "#{pref}#{note.text.gsub(%r{\s+}, ' ').strip}"
         }
       end
 
