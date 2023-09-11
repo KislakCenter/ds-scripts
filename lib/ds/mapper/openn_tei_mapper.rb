@@ -67,12 +67,7 @@ module DS
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::OPennTEI.extract_physical_description record
         acknowledgements                   = ''
-        binding_description                = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()').text
-        folios                             = ''
         extent_as_recorded                 = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
-        dimensions                         = ''
-        dimensions_as_recorded             = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
-        decoration                         = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/decoDesc/decoNote[not(@n)]/text()').text
         note                               = DS::OPennTEI.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::OPennTEI.source_modified record
@@ -131,19 +126,7 @@ module DS
           material_label:                     material_label,
           physical_description:               physical_description,
           acknowledgements:                   acknowledgements,
-          # TODO: move binding_description to physical_description
-          binding:                            binding_description,
-          # TODO: move folios? to physical_description
-          # QUESTION: How is folios different from extent?
-          folios:                             folios,
-          # TODO: move extent_as_recorded to physical_description
           extent_as_recorded:                 extent_as_recorded,
-          # TODO: move dimensions to physical_description
-          dimensions:                         dimensions,
-          # TODO: move dimensions_as_recorded to physical_description
-          dimensions_as_recorded:             dimensions_as_recorded,
-          # TODO: move decoration to physical_description
-          decoration:                         decoration,
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,

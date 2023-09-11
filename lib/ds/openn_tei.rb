@@ -205,27 +205,56 @@ module DS
       PROVENANCE_XPATH  = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/history/provenance/text()'
 
       ##
+      # Create an array of notes. Physical description notes, like
+      # Binding, and Layout are mapped as prefixed notes as with MARC:
+      #
+      #   Binding: The binding note.
+      #   Layout: The layout note.
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [Array<String>]
       def extract_note xml
-        # skip_pattern = %r{^(Support|Extent|Collation):\s*}i
         notes = []
 
-        notes += build_prefixed_notes xml, SIMPLE_NOTE_XPATH
-        notes += build_prefixed_notes xml, BINDING_XPATH, prefix: "Binding"
-        notes += build_prefixed_notes xml, LAYOUT_XPATH, prefix: "Layout"
-        notes += build_prefixed_notes xml, SCRIPT_XPATH, prefix: "Script"
-        notes += build_prefixed_notes xml, DECO_XPATH, prefix: "Decoration"
-        notes += build_prefixed_notes xml, RESOURCE_XPATH, prefix: "Related resource"
-        notes += build_prefixed_notes xml, PROVENANCE_XPATH, prefix: "Provenance"
+        notes += build_notes xml, SIMPLE_NOTE_XPATH
+        notes += build_notes xml, BINDING_XPATH, prefix: "Binding"
+        notes += build_notes xml, LAYOUT_XPATH, prefix: "Layout"
+        notes += build_notes xml, SCRIPT_XPATH, prefix: "Script"
+        notes += build_notes xml, DECO_XPATH, prefix: "Decoration"
+        notes += build_notes xml, RESOURCE_XPATH, prefix: "Related resource"
+        notes += build_notes xml, PROVENANCE_XPATH, prefix: "Provenance"
 
         notes
       end
 
-      def build_prefixed_notes xml, xpath, prefix: nil
+      WHITESPACE_RE = %r{\s+}
+      # FLP Widener 5 has the following text with a pipe:
+      #
+      #   Delmira Espada, "A luz da grisalha. Arte, Liturgia e
+      #     História no Livro de Horas dito de D. Leonor – Il165 da
+      #     BNP," Medievalista [Online], 10 | 2011
+      #
+      # This breaks pipe-splitting and validation; for now, replace
+      # pipes with ', ' (comma + space)
+      MEDIAL_PIPE_RE = %r{\s*\|\s*} # match pipes
+
+      ##
+      # Clean the note text and optionally a prefix. The prefix is
+      # prepended as:
+      #
+      #   "#{prefix}: Note text"
+      #
+      # @param [Nokogiri::XML::Node] xml the TEI xml
+      # @param [String] xpath the xpath for the note(s)
+      # @param [String] prefix value to prepend to the note; default: +nil+
+      # @return [Array<String>]
+      def build_notes xml, xpath, prefix: nil
         xml.xpath(xpath).map { |note|
           pref = prefix.to_s.strip.empty? ? '' : "#{prefix}: "
-          "#{pref}#{note.text.gsub(%r{\s+}, ' ').strip}"
+          cleaned = note.text
+                        .gsub(WHITESPACE_RE, ' ')
+                        .gsub(MEDIAL_PIPE_RE, ', ') # replace pipes with ', ' 🤷🏻
+                        .strip
+          "#{pref}#{cleaned}"
         }
       end
 
