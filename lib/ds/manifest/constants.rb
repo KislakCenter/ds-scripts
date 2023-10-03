@@ -60,10 +60,10 @@ module DS
         MANIFEST_GENERATED_AT
       ].freeze
 
-      MARC_XML = 'MARC XML'
-      TEI_XML  = 'TEI XML'
-      DS_CSV   = 'DS CSV'
-      DS_METS  = 'DS METS XML'
+      MARC_XML = 'marc-xml'
+      TEI_XML  = 'tei-xml'
+      DS_CSV   = 'ds-csv'
+      DS_METS  = 'ds-mets-xml'
 
       # source type list of all type names and normalized names; i.e.,
       # lower case names stripped of all whitespace and non-word characters

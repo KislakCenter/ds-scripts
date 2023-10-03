@@ -8,7 +8,7 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
 
   let(:csv_data) { parse_csv <<~EOF
     holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,MARC XML,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
 EOF
   }
 
@@ -99,8 +99,8 @@ EOF
     context 'with missing columns' do
       let(:csv_data) { StringIO.new <<~EOF
         holding_institution_wikidata_qid,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-        Q49117,University of Pennsylvania,MARC XML,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
-        Q49117,University of Pennsylvania,MARC XML,,9957602663503681,"//marc:controlfield[@tag=""001""]",20220803105833,LJS 108,Manuscript leaf from Interpretationes Hebraicorum nominum,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3gw56/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9957602663503681,2023-07-25T09:52:02-0400
+        Q49117,University of Pennsylvania,marc-xml,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
+        Q49117,University of Pennsylvania,marc-xml,,9957602663503681,"//marc:controlfield[@tag=""001""]",20220803105833,LJS 108,Manuscript leaf from Interpretationes Hebraicorum nominum,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3gw56/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9957602663503681,2023-07-25T09:52:02-0400
 EOF
       }
       let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
@@ -125,7 +125,7 @@ EOF
     context 'with missing values' do
       let(:csv_data) { StringIO.new <<~EOF
         holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-        ,9951865503503681_marc.xml,University of Pennsylvania,MARC XML,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
+        ,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
         EOF
       }
       let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir }
@@ -294,7 +294,7 @@ EOF
     context 'for a CSV with bad IDs' do
       let(:csv_data) { StringIO.new <<~EOF
         filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
-        9951865503503681_marc.xml,MARC XML,XXXXXXXXX,"//marc:controlfield[@tag=""001""]"
+        9951865503503681_marc.xml,marc-xml,XXXXXXXXX,"//marc:controlfield[@tag=""001""]"
       EOF
       }
 
