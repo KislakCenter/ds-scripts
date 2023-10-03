@@ -64,8 +64,8 @@ module DS
       ##
       # @param [DS::Manifest::Entry] entry the manifest data for this
       #       record
-      # TODO: move extract record to MarcMapper allow it to find the correct 
-      #   record based on entry 
+      # TODO: move extract record to MarcMapper allow it to find the correct
+      #   record based on entry
       def retrieve_record entry
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
@@ -77,8 +77,7 @@ module DS
           xml.xpath(xpath).first
         else
           raise NotImplementedError,
-                "Record extraction not implemented for "
-          "source type #{entry.source_type}"
+                "Record extraction not implemented for source type #{entry.source_type}"
         end
       end
 
@@ -90,8 +89,7 @@ module DS
           )
         else
           raise NotImplementedError,
-                "Mapper not implemented for "
-          "source type: '#{entry.source_type}'"
+                "Mapper not implemented for source type: '#{entry.source_type}'"
         end
       end
 
