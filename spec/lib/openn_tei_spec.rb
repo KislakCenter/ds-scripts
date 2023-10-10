@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rspec'
+require 'spec_helper'
 
 RSpec.describe 'DS::OPennTEI' do
   before do
@@ -92,5 +92,117 @@ RSpec.describe 'DS::OPennTEI' do
     it 'includes a provenance note' do
       expect(notes).to include 'Provenance: Provenance note.'
     end
+  end
+
+  context 'extract_authors_as_recorded' do
+    let(:tei_xml) {
+      openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+          <teiHeader>
+            <fileDesc>
+              <sourceDesc>
+                <msDesc>
+                  <msContents>
+                    <summary>Clear copy of Ibn Hishām's grammar compendium. Two leaves have been sliced horizontally and are missing approximately the last 6 lines on each side (f. 11-12).</summary>
+                    <textLang mainLang="ara">Arabic</textLang>
+                    <msItem>
+                      <title>Qaṭr al-nadā wa-ball al-ṣadā.</title>
+                      <title type="vernacular">قطر الندا وبل الصدا</title>
+                      <author>
+                        <persName type="authority">Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360</persName>
+                        <persName type="vernacular">ابن هشام، عبد الله بن يوسف،</persName>
+                      </author>
+                      <author>
+                        <persName>persName Without Type</persName>
+                      </author>
+                      <author>
+                        <name>name Without Type</name>
+                      </author>
+                      <author>
+                        <name type="authority">Some Organization</name>
+                      </author>
+                      <author>
+                        Unwrapped Name
+                      </author>
+                      <author>
+                        <name type="authority">Free Library of Philadelphia. Rare Book Department. John Frederick Lewis collection of Oriental Manuscripts</name>
+                      </author>
+                      <respStmt>
+                      <resp>former owner</resp>
+                        <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
+                        <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
+                      </respStmt>
+                      <respStmt>
+                        <resp>former owner</resp>
+                        <persName type="authority">Lewis, John Frederick, 1860-1932</persName>
+                      </respStmt>
+                      <respStmt>
+                      <resp>donor</resp>
+                        <persName type="authority">Lewis, Anne Baker, 1868-1937</persName>
+                      </respStmt>
+                    </msItem>
+                  </msContents>
+                </msDesc>
+              </sourceDesc>
+            </fileDesc>
+          </teiHeader>
+        </TEI>}
+    }
+
+    let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
+    it 'includes a persName[@type = "authority"]' do
+      expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
+    end
+
+    it 'includes a name[@type = "authority"]' do
+      expect(authors).to include 'Some Organization'
+    end
+
+    it 'includes an author without a <name> or <persName> element' do
+      expect(authors).to include 'Unwrapped Name'
+    end
+
+    it 'includes an author with an untyped persName' do
+      expect(authors).to include 'name Without Type'
+    end
+
+    let(:bad_tei_xml) {
+      openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+          <teiHeader>
+            <fileDesc>
+              <sourceDesc>
+                <msDesc>
+                  <msContents>
+                    <summary>Clear copy of Ibn Hishām's grammar compendium. Two leaves have been sliced horizontally and are missing approximately the last 6 lines on each side (f. 11-12).</summary>
+                    <textLang mainLang="ara">Arabic</textLang>
+                    <msItem>
+                      <title>Qaṭr al-nadā wa-ball al-ṣadā.</title>
+                      <title type="vernacular">قطر الندا وبل الصدا</title>
+                      <author>
+                        <persName type="glarg">Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360</persName>
+                      </author>
+                      <respStmt>
+                      <resp>former owner</resp>
+                        <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
+                        <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
+                      </respStmt>
+                      <respStmt>
+                        <resp>former owner</resp>
+                        <persName type="authority">Lewis, John Frederick, 1860-1932</persName>
+                      </respStmt>
+                      <respStmt>
+                      <resp>donor</resp>
+                        <persName type="authority">Lewis, Anne Baker, 1868-1937</persName>
+                      </respStmt>
+                    </msItem>
+                  </msContents>
+                </msDesc>
+              </sourceDesc>
+            </fileDesc>
+          </teiHeader>
+        </TEI>}
+    }
+
   end
 end

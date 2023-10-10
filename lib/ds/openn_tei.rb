@@ -258,6 +258,29 @@ module DS
         }
       end
 
+      ##
+      # @param [Nokogiri::XML::Node] node
+      # @return [Array<String>]
+      def extract_author_name node
+        # vern = vernacular script
+        unless node.children.any? { |ch| ch['type'] == 'vernacular' }
+          return node.text.strip
+        end
+
+        auth_node = node.children.find { |ch| ch['type'] == 'authority' }
+        auth_node && auth_node.text.strip
+      end
+
+      def extract_authors_as_recorded xml
+        names = []
+
+        xml.xpath('//msItem/author').each { |node|
+          next if node.text =~ /Free Library of Philadelphia./
+          names << extract_author_name(node)
+        }
+        names
+      end
+
       def source_modified xml
         record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when').text
         return nil if record_date.empty?
