@@ -94,7 +94,7 @@ RSpec.describe 'DS::OPennTEI' do
     end
   end
 
-  context 'extract_authors_as_recorded' do
+  context 'names' do
     let(:tei_xml) {
       openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
         <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -140,6 +140,33 @@ RSpec.describe 'DS::OPennTEI' do
                       <resp>donor</resp>
                         <persName type="authority">Lewis, Anne Baker, 1868-1937</persName>
                       </respStmt>
+                      <respStmt>
+                        <resp>artist</resp>
+                        <persName type="authority">Artist One</persName>
+                        <persName type="vernacular">Artist One Vernacular</persName>
+                      </respStmt>
+                        <respStmt>
+                        <resp>artist</resp>
+                        <persName type="authority">Artist Two</persName>
+                      </respStmt>
+                      <respStmt>
+                        <resp>scribe</resp>
+                        <persName type="authority">Scribe One</persName>
+                        <persName type="vernacular">Scribe One Vernacular</persName>
+                      </respStmt>
+                        <respStmt>
+                        <resp>scribe</resp>
+                        <persName type="authority">Scribe Two</persName>
+                      </respStmt>
+                      </respStmt>
+                      <respStmt>
+                        <resp>some resp</resp>
+                        <persName type="authority">Some Name</persName>
+                      </respStmt>
+                      <respStmt>
+                        <resp>SOME resp</resp>
+                        <persName type="authority">Some Other Name</persName>
+                      </respStmt>
                     </msItem>
                   </msContents>
                 </msDesc>
@@ -148,23 +175,6 @@ RSpec.describe 'DS::OPennTEI' do
           </teiHeader>
         </TEI>}
     }
-
-    let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
-    it 'includes a persName[@type = "authority"]' do
-      expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
-    end
-
-    it 'includes a name[@type = "authority"]' do
-      expect(authors).to include 'Some Organization'
-    end
-
-    it 'includes an author without a <name> or <persName> element' do
-      expect(authors).to include 'Unwrapped Name'
-    end
-
-    it 'includes an author with an untyped persName' do
-      expect(authors).to include 'name Without Type'
-    end
 
     let(:bad_tei_xml) {
       openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
@@ -183,16 +193,16 @@ RSpec.describe 'DS::OPennTEI' do
                         <persName type="glarg">Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360</persName>
                       </author>
                       <respStmt>
-                      <resp>former owner</resp>
+                        <resp>former owner</resp>
                         <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
                         <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
                       </respStmt>
-                      <respStmt>
+                        <respStmt>
                         <resp>former owner</resp>
                         <persName type="authority">Lewis, John Frederick, 1860-1932</persName>
                       </respStmt>
                       <respStmt>
-                      <resp>donor</resp>
+                        <resp>donor</resp>
                         <persName type="authority">Lewis, Anne Baker, 1868-1937</persName>
                       </respStmt>
                     </msItem>
@@ -204,5 +214,151 @@ RSpec.describe 'DS::OPennTEI' do
         </TEI>}
     }
 
+    context 'authors' do
+
+      context 'extract_authors_as_recorded' do
+        let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
+        it 'includes a persName[@type = "authority"]' do
+          expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
+        end
+
+        it 'includes a name[@type = "authority"]' do
+          expect(authors).to include 'Some Organization'
+        end
+
+        it 'includes an author without a <name> or <persName> element' do
+          expect(authors).to include 'Unwrapped Name'
+        end
+
+        it 'includes an author with an untyped persName' do
+          expect(authors).to include 'name Without Type'
+        end
+
+      end
+
+      context 'extract_authors_agr_as_recorded' do
+        let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
+        let(:authors_agr) { DS::OPennTEI.extract_authors_agr_as_recorded tei_xml }
+        it 'extracts an agr name' do
+          expect(authors_agr).to include 'ابن هشام، عبد الله بن يوسف،'
+        end
+
+        it 'extracts nil when no vernacular name is present' do
+          expect(authors_agr).to include nil
+        end
+
+        it 'extracts as many vernacular names/slots as names' do
+          expect(authors_agr.size).to eq authors.size
+        end
+      end
+    end
+
+    context 'former owners' do
+      context 'extract_former_owners' do
+        let(:former_owners) { DS::OPennTEI.extract_former_owners tei_xml }
+        it 'extracts a former owner' do
+          expect(former_owners).to include 'Jamālī, Yūsuf ibn Shaykh Muḥammad'
+        end
+
+        it 'extracts all former owners' do
+          expect(former_owners.size).to eq 2
+        end
+      end
+
+      context 'extract_former_owners_agr' do
+        let(:former_owners) { DS::OPennTEI.extract_former_owners tei_xml }
+        let(:former_owners_agr) { DS::OPennTEI.extract_former_owners_agr tei_xml }
+
+        it 'extracts a former owner vernacular name' do
+          expect(former_owners_agr).to include 'يوسف بن شيخ محمد الجمالي.'
+        end
+
+        it 'extracts nil when no vernacular name is present' do
+          expect(former_owners_agr).to include nil
+        end
+
+        it 'extracts as many vernacular names/slots as names' do
+          expect(former_owners_agr.size).to eq former_owners.size
+        end
+      end
+    end
+
+
+    context 'artists' do
+      context 'extract_artists' do
+        let(:artists) { DS::OPennTEI.extract_artists tei_xml }
+        it 'extracts an artist' do
+          expect(artists).to include 'Artist One'
+        end
+
+        it 'extracts all artists' do
+          expect(artists.size).to eq 2
+        end
+      end
+
+      context 'extract_artists_agr' do
+        let(:artists) { DS::OPennTEI.extract_artists tei_xml }
+        let(:artists_agr) { DS::OPennTEI.extract_artists_agr tei_xml }
+
+        it 'extracts an artist vernacular name' do
+          expect(artists_agr).to include 'Artist One Vernacular'
+        end
+
+        it 'extracts nil when no vernacular name is present' do
+          expect(artists_agr).to include nil
+        end
+
+        it 'extracts as many vernacular names/slots as names' do
+          expect(artists_agr.size).to eq artists.size
+        end
+      end
+    end
+
+    context 'scribes' do
+      context 'extract_scribes' do
+        let(:scribes) { DS::OPennTEI.extract_scribes tei_xml }
+        it 'extracts an scribe' do
+          expect(scribes).to include 'Scribe One'
+        end
+
+        it 'extracts all scribes' do
+          expect(scribes.size).to eq 2
+        end
+      end
+
+      context 'extract_scribes_agr' do
+        let(:scribes) { DS::OPennTEI.extract_scribes tei_xml }
+        let(:scribes_agr) { DS::OPennTEI.extract_scribes_agr tei_xml }
+
+        it 'extracts an scribe vernacular name' do
+          expect(scribes_agr).to include 'Scribe One Vernacular'
+        end
+
+        it 'extracts nil when no vernacular name is present' do
+          expect(scribes_agr).to include nil
+        end
+
+        it 'extracts as many vernacular names/slots as names' do
+          expect(scribes_agr.size).to eq scribes.size
+        end
+      end
+    end
+
+    context 'extract_resp_nodes' do
+      let(:resp_name) { "some resp" }
+
+      it 'extracts nodes by resp name' do
+        nodes = DS::OPennTEI.extract_resp_nodes tei_xml, resp_name
+        expect(nodes.size) == 2
+      end
+
+      it 'is case-insensitive' do
+        nodes = DS::OPennTEI.extract_resp_nodes tei_xml, resp_name.upcase
+        expect(nodes.size) == 2
+      end
+    end
+
   end
+
+
 end

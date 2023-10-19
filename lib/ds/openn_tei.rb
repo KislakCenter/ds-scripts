@@ -1,5 +1,9 @@
 module DS
   module OPennTEI
+
+    RESP_FORMER_OWNER = 'former owner'
+    RESP_SCRIBE = 'scribe'
+    RESP_ARTIST = 'artist'
     module ClassMethods
       ##
       # From the given set of nodes, extract the names from all the respStmts with
@@ -9,7 +13,7 @@ module DS
       # @param [Array<String>] types a list of types; e.g., +artist+, <tt>former
       #         owner</tt>
       # @return [String] pipe-separated list of names
-      def extract_resp_names nodes: , types: []
+      def extract_resp_nodes nodes: , types: []
         return '' if types.empty?
         _types = [types].flatten.map &:to_s
         type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
@@ -258,6 +262,8 @@ module DS
         }
       end
 
+
+
       ##
       # @param [Nokogiri::XML::Node] node
       # @return [Array<String>]
@@ -275,10 +281,78 @@ module DS
         names = []
 
         xml.xpath('//msItem/author').each { |node|
-          next if node.text =~ /Free Library of Philadelphia./
+          next if node.text =~ /Free Library of Philadelphia/
           names << extract_author_name(node)
         }
         names
+      end
+
+      def extract_author_name_agr node
+        agr_node = node.children.find { |ch| ch['type'] == 'vernacular' }
+        agr_node && agr_node.text.strip
+      end
+
+      def extract_authors_agr_as_recorded xml
+        names = []
+        xml.xpath('//msItem/author').each { |node|
+          next if node.text =~ /Free Library of Philadelphia/
+          names << extract_author_name_agr(node)
+        }
+        names
+      end
+
+      def extract_resp_name node
+        node.xpath('name|persName|orgName').find { |node|
+          node['type'] != 'vernacular'
+        }.text
+      end
+
+      def extract_resp_name_agr node
+        agr_node = node.xpath('name|persName|orgName').find { |node|
+          node['type'] == 'vernacular'
+        }
+        agr_node && agr_node.text
+      end
+      def extract_resp_nodes xml, resp
+        xpath = "//respStmt[contains(translate(./resp/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '#{resp.to_s.strip.downcase}')]"
+        xml.xpath(xpath)
+      end
+
+      def extract_former_owners xml
+        extract_resp_nodes(xml, RESP_FORMER_OWNER).map { |node|
+          extract_resp_name node
+        }
+      end
+
+      def extract_former_owners_agr xml
+        extract_resp_nodes(xml, RESP_FORMER_OWNER).map { |node|
+          extract_resp_name_agr node
+        }
+      end
+
+      def extract_artists xml
+        extract_resp_nodes(xml, RESP_ARTIST).map { |node|
+          extract_resp_name node
+        }
+      end
+
+      def extract_artists_agr xml
+        extract_resp_nodes(xml, RESP_ARTIST).map { |node|
+          extract_resp_name_agr node
+        }
+      end
+
+
+      def extract_scribes xml
+        extract_resp_nodes(xml, RESP_SCRIBE).map { |node|
+          extract_resp_name node
+        }
+      end
+
+      def extract_scribes_agr xml
+        extract_resp_nodes(xml, RESP_SCRIBE).map { |node|
+          extract_resp_name_agr node
+        }
       end
 
       def source_modified xml
