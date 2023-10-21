@@ -32,14 +32,38 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
         Recon::Titles,
       ]
     }
+    let(:expected_calls) {
+      %i{
+        extract_title_as_recorded
+        extract_title_as_recorded_agr
+        extract_authors
+        extract_authors_agr
+        extract_artists
+        extract_artists_agr
+        extract_scribes
+        extract_scribes_agr
+        extract_former_owners
+        extract_former_owners_agr
+      }
+    }
+
 
     it 'returns a hash' do
       add_stubs recons, :lookup, []
       expect(mapper.map_record).to be_a Hash
     end
 
-    it 'extracts artist' do
+    it 'calls all expected openn_tei methods' do
+      add_stubs recons, :lookup, []
+      add_expects objects: DS::OPennTEI, methods: expected_calls, args: record, return_val: []
 
+      mapper.map_record
+    end
+
+    it 'returns a hash with all expected keys' do
+      add_stubs recons, :lookup, []
+      hash = mapper.map_record
+      expect(DS::Constants::HEADINGS - hash.keys).to be_empty
     end
   end
 end

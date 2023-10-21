@@ -91,6 +91,49 @@ module DS
         as_recorded
       end
 
+      def extract_title_as_recorded record
+        record.xpath('//msItem[1]/title[not(@type)]/text()').map(&:text)
+      end
+
+      ##
+      # Return an array of vernacular script titles equal in number to
+      # the number of non-vernacular titles.
+      #
+      # This is a bit of a hack. Titles are list serially and Roman-
+      # character and vernacular script titles are not paired. Thus:
+      #
+      #      <msItem>
+      #        <title>Qaṭr al-nadā wa-ball al-ṣadā.</title>
+      #        <title type="vernacular">قطر الندا وبل الصدا</title>
+      #        <title>Second title</title>
+      #        <author>
+      #           <!-- ... -->
+      #      </msItem>
+      #
+      # We assume that, when there is a vernacular title, it follows
+      # its Roman equivalent. Each title without a type is assigned
+      # a +nil+ value by default. The nil is replaced with the
+      # vernacular title when present. The above sequence results in
+      # the following:
+      #
+      #    [
+      #       'قطر الندا وبل الصدا',
+      #       nil
+      #    ]
+      #
+      # @param [Nokogiri::XML::Node] record the TEI record
+      # @return [Array<String>]
+      def extract_title_as_recorded_agr record
+        titles_agr = []
+        record.xpath('//msItem[1]/title').each do |title|
+          if title[:type] != 'vernacular'
+            titles_agr << nil
+          else
+            titles_agr[-1] = title.text
+          end
+        end
+        titles_agr
+      end
       ##
       # Extract the collation formula and catchwords description from +supportDesc+,
       # returning those values that are present.
@@ -154,15 +197,18 @@ module DS
       end
 
       ##
+      # Return the extent and support concatenated; e.g.,
+      #
+      #
+      #
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_physical_description xml
-        parts = []
-        parts << extract_support(xml)
-        parts << extract_extent(xml)
-        parts << xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/foliation/text()')
+        extent = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
+        extent = "Extent: #{extent}" unless extent.empty?
+        support =  xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()').text.strip.downcase
 
-        parts.flatten.map { |x| x.to_s.strip }.reject(&:empty?).join '. '
+        [extent, support].reject(&:empty?).join('; ').capitalize
       end
 
       def extract_production_date xml, range_sep: '-'
@@ -262,8 +308,6 @@ module DS
         }
       end
 
-
-
       ##
       # @param [Nokogiri::XML::Node] node
       # @return [Array<String>]
@@ -277,7 +321,7 @@ module DS
         auth_node && auth_node.text.strip
       end
 
-      def extract_authors_as_recorded xml
+      def extract_authors xml
         names = []
 
         xml.xpath('//msItem/author').each { |node|
@@ -292,7 +336,7 @@ module DS
         agr_node && agr_node.text.strip
       end
 
-      def extract_authors_agr_as_recorded xml
+      def extract_authors_agr xml
         names = []
         xml.xpath('//msItem/author').each { |node|
           next if node.text =~ /Free Library of Philadelphia/
@@ -341,7 +385,6 @@ module DS
           extract_resp_name_agr node
         }
       end
-
 
       def extract_scribes xml
         extract_resp_nodes(xml, RESP_SCRIBE).map { |node|

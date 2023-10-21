@@ -217,7 +217,7 @@ RSpec.describe 'DS::OPennTEI' do
     context 'authors' do
 
       context 'extract_authors_as_recorded' do
-        let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
+        let(:authors) { DS::OPennTEI.extract_authors tei_xml }
         it 'includes a persName[@type = "authority"]' do
           expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
         end
@@ -237,8 +237,8 @@ RSpec.describe 'DS::OPennTEI' do
       end
 
       context 'extract_authors_agr_as_recorded' do
-        let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
-        let(:authors_agr) { DS::OPennTEI.extract_authors_agr_as_recorded tei_xml }
+        let(:authors) { DS::OPennTEI.extract_authors tei_xml }
+        let(:authors_agr) { DS::OPennTEI.extract_authors_agr tei_xml }
         it 'extracts an agr name' do
           expect(authors_agr).to include 'ابن هشام، عبد الله بن يوسف،'
         end
@@ -359,6 +359,183 @@ RSpec.describe 'DS::OPennTEI' do
     end
 
   end
+
+  context 'titles' do
+    let(:tei_xml) {
+      openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+          <teiHeader>
+            <fileDesc>
+              <sourceDesc>
+                <msDesc>
+                  <msContents>
+                    <summary>Clear copy of Ibn Hishām's grammar compendium. Two leaves have been sliced horizontally and are missing approximately the last 6 lines on each side (f. 11-12).</summary>
+                    <textLang mainLang="ara">Arabic</textLang>
+                    <msItem>
+                      <title>Qaṭr al-nadā wa-ball al-ṣadā.</title>
+                      <title type="vernacular">قطر الندا وبل الصدا</title>
+                      <title>Second title</title>
+                    </msItem>
+                  </msContents>
+                </msDesc>
+              </sourceDesc>
+            </fileDesc>
+          </teiHeader>
+        </TEI>}
+    }
+
+    let(:titles) {
+      DS::OPennTEI.extract_title_as_recorded tei_xml
+    }
+
+    let(:titles_agr) {
+      DS::OPennTEI.extract_title_as_recorded_agr tei_xml
+    }
+
+    context 'extract_title_as_recorded' do
+      it 'extracts titles' do
+        expect(titles).to eq ['Qaṭr al-nadā wa-ball al-ṣadā.', 'Second title']
+      end
+
+      it 'extracts all non-vernacular titles' do
+        expect(titles).not_to include 'قطر الندا وبل الصدا'
+      end
+
+      it 'extracts vernacular titles' do
+        expect(titles_agr).to eq  ['قطر الندا وبل الصدا', nil]
+      end
+
+      it 'returns a equal number of titles and titles agr' do
+        expect(titles_agr.size).to eq titles.size
+      end
+    end
+  end
+
+  context 'extract_physical_description' do
+    let(:tei_xml) {
+      openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+          <teiHeader>
+            <fileDesc>
+              <sourceDesc>
+                <msDesc>
+                  <physDesc>
+                    <objectDesc>
+                      <supportDesc material="parchment">
+                        <support>
+                          <p>Parchment</p>
+                        </support>
+                        <extent>153; 225 x 165 mm bound to 241 x 172 mm</extent>
+                      </supportDesc>
+                    </objectDesc>
+                  </physDesc>
+                </msDesc>
+              </sourceDesc>
+            </fileDesc>
+          </teiHeader>
+        </TEI>
+      }
+    }
+
+    let(:phys_desc) { DS::OPennTEI.extract_physical_description tei_xml }
+
+    it 'includes the extent' do
+      expect(phys_desc).to include 'Extent: 153; 225 x 165 mm bound to 241 x 172 mm'
+    end
+
+    it 'includes the support' do
+      expect(phys_desc).to include 'parchment'
+    end
+
+    it 'is a formatted string' do
+      expect(phys_desc).to eq 'Extent: 153; 225 x 165 mm bound to 241 x 172 mm; parchment'
+    end
+
+    context 'when extent is blank' do
+      let(:tei_xml) {
+        openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+          <TEI xmlns="http://www.tei-c.org/ns/1.0">
+            <teiHeader>
+              <fileDesc>
+                <sourceDesc>
+                  <msDesc>
+                    <physDesc>
+                      <objectDesc>
+                        <supportDesc material="parchment">
+                          <support>
+                            <p>Parchment</p>
+                          </support>
+                      </objectDesc>
+                    </physDesc>
+                  </msDesc>
+                </sourceDesc>
+              </fileDesc>
+            </teiHeader>
+          </TEI>
+        }
+      }
+
+      it 'returns the formatted extent' do
+        expect(phys_desc).to eq 'Parchment'
+      end
+    end
+
+    context "when support is blank" do
+      let(:tei_xml) {
+        openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+          <TEI xmlns="http://www.tei-c.org/ns/1.0">
+            <teiHeader>
+              <fileDesc>
+                <sourceDesc>
+                  <msDesc>
+                    <physDesc>
+                      <objectDesc>
+                        <supportDesc material="parchment">
+                          <extent>153; 225 x 165 mm bound to 241 x 172 mm</extent>
+                        </supportDesc>
+                      </objectDesc>
+                    </physDesc>
+                  </msDesc>
+                </sourceDesc>
+              </fileDesc>
+            </teiHeader>
+          </TEI>
+        }
+      }
+
+      it 'returns the extent' do
+        expect(phys_desc).to eq 'Extent: 153; 225 x 165 mm bound to 241 x 172 mm'
+      end
+    end
+
+    context 'when extent and support are blank' do
+      let(:tei_xml) {
+        openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
+          <TEI xmlns="http://www.tei-c.org/ns/1.0">
+            <teiHeader>
+              <fileDesc>
+                <sourceDesc>
+                  <msDesc>
+                    <physDesc>
+                      <objectDesc>
+                        <supportDesc material="parchment">
+                        </supportDesc>
+                      </objectDesc>
+                    </physDesc>
+                  </msDesc>
+                </sourceDesc>
+              </fileDesc>
+            </teiHeader>
+          </TEI>
+        }
+      }
+
+      it 'returns blank' do
+        expect(phys_desc).to eq ''
+      end
+    end
+  end
+
 
 
 end

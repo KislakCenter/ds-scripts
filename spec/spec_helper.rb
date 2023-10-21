@@ -372,6 +372,22 @@ module Helpers
       end
     end
   end
+
+  def add_expects objects:, methods:, args: nil, return_val:
+    objs = *objects
+    syms = *methods
+    with = args ? [args].flatten : nil
+    objs.each do |obj|
+      syms.each do |method|
+        if with
+          expect(obj).to receive(method).with(*with) { return_val }
+        else
+          expect(obj).to receive(method) { return_val }
+        end
+      end
+    end
+  end
+
 end
 
 RSpec.configure do |c|
