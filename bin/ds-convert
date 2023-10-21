@@ -15,41 +15,6 @@ class DSConvertCLI < DS::CLI
 
   class_option :'output-csv', banner: 'FILE', desc: "Name of the output CSV file [default: output.csv]", default: 'output.csv', aliases: '-o'
 
-  desc "marc XML [XML...]", "Convert MARC XML to DS CSV"
-  long_desc <<-LONGDESC
-    Convert MARC XML to DS CSV
-  LONGDESC
-  option :institution, banner: 'INSTITUTION', desc: "Short name of the institution to create this CSV for; REQUIRED", aliases: '-i'
-  option :'holdings-file', banner: 'FILE', desc: 'Associated Holdings File (if separate from records)', aliases: '-f'
-  def marc *files
-    return false unless validate_args files
-    Recon::ReconData.update! unless skip_git? options
-
-    inst_qid = DS::Institutions.find_qid options[:institution]
-    abort "Not a known institution: #{options[:institution]}" unless inst_qid
-    preferred_name = DS::Institutions.preferred_name options[:institution]
-    holdings_file = File.open(options[:'holdings-file']) { |f| Nokogiri::XML(f) } unless options[:'holdings-file'].nil?
-    timestamp = DS.timestamp
-
-    rows = select_input(files).flat_map { |in_xml|
-      source_file = in_xml.chomp # remove newline in case input if from ARGF
-      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
-      xml.remove_namespaces!
-
-      records = xml.xpath '//record'
-
-      records.map { |record|
-        mapper = DS::Mapper::MarcMapper.new(
-          record: record, inst_qid: inst_qid, inst_code: options[:inst], preferred_name: preferred_name,
-          holdings_file: holdings_file, timestamp: timestamp,
-          source_file: source_file)
-        mapper.map_record
-      }
-    }
-    validate! rows unless options[:'skip-validation']
-    write_csv rows, options
-  end
-
   desc "mets XML [XML...]", "Convert DS 1.0 METS XML to DS CSV"
   long_desc <<-LONGDESC
     Convert DS 1.0 METS XML to DS CSV
@@ -58,6 +23,7 @@ class DSConvertCLI < DS::CLI
     return false unless validate_args files
     Recon::ReconData.update! unless skip_git? options
     timestamp = DS.timestamp
+    valid = true
 
     iiif_lookup = Recon::URLLookup.new 'iiif_manifests'
     ia_url_lookup = Recon::URLLookup.new 'legacy_ia_urls'
@@ -88,15 +54,115 @@ class DSConvertCLI < DS::CLI
       source_file = in_xml.chomp # remove newline in case input if from ARGF
       record = File.open(source_file) { |f| Nokogiri::XML(f) }
       record.remove_namespaces!
-      mapper = DS::Mapper::OPennTEIMapper.new record: record, timestamp: timestamp, source_file: source_file
+      mapper = DS::Mapper::OPennTEIMapper.new(
+        record: record, timestamp: timestamp, source_file: source_file
+      )
       mapper.map_record
     }
     validate! rows unless options[:'skip-validation']
     write_csv rows, options
   end
 
+  desc "convert MANIFEST SOURCE_DIR", "Generate import CSV for MANIFEST and SOURCE_DIR"
+  long_desc <<-LONGDESC
+    Generate an import CSV for all files listed in the MANIFEST CSV that are found in SOURCE_DIR.
+
+NOTE: Works only for MARC XML at present.
+
+The MANIFEST is validated before the import CSV is generated. See
+'validate' for details.
+  LONGDESC
+  ##
+  # Convert all source records listed in +manifest_csv+; all source
+  # records must be in +source_dir+. If +source_dir+ is nil, +convert+
+  # expects to find source records in the parent directory of
+  # +manifest_csv+.
+  #
+  # @param [String] manifest_csv path to the DS manifest CSV
+  # @param [String] source_dir path to the directory containing all
+  #     source records listed in +manifest_csv+
+  def convert manifest_csv, source_dir=nil
+    # validate the manifest csv before preceding
+    invoke :validate
+
+    # TODO: This is pretty busy; simplify; push to another class?
+    manifest = DS::Manifest::Manifest.new manifest_csv, source_dir
+    converter = DS::Converter::BaseConverter.new manifest
+    count = 0
+    valid = true
+    outfile = options[:'output-csv']
+    write outfile: outfile do |csv|
+      converter.convert do |row|
+        count += 1
+        valid = false unless DS::CSVUtil.row_valid? row, count
+        csv << row
+      end
+    end
+
+    print_message(options) { "Wrote #{number_to_delimited(count)} rows to '#{outfile}'" }
+    if valid
+      print_message(options) { "CSV is valid: #{outfile}".colorize(:green) }
+    else
+      raise DSError, "Validation errors found; see previous messages".colorize(:red)
+    end
+  end
+
+  desc "validate MANIFEST SOURCE_DIR", "Validate the import MANIFEST"
+  # Ugh. I can't figure out how to make thor not join consecutive
+  # so I've separated each list item.
+  long_desc <<LONGDESC
+Validate the import MANIFEST and the SOURCE_DIR.
+
+NOTE: Works only for MARC at present.
+
+The validator:
+
+     - Confirms all required columns are present
+
+     - Confirms all all required values are present
+
+     - Confirms all column values are the correct type
+
+     - Confirms all listed input files are present
+
+     - Confirms all listed input files match the record
+       identifier provided in the manifest
+
+LONGDESC
+  def validate manifest_path, source_dir=nil
+    print_message(options, verbose_only: true) {
+      "Validating manifest CSV: '#{manifest_path}'"
+    }
+
+    manifest = DS::Manifest::Manifest.new manifest_path, source_dir
+
+    if DS::Manifest::ManifestValidator.new(manifest).valid?
+      print_message(options) {
+        "SUCCESS! Manifest is valid: '#{manifest_path}'".colorize(:green)
+      }
+    else
+      print_message(options) {
+        "ERROR: Manifest has validation errors".colorize(:red)
+      }
+      exit 1
+    end
+  end
+
   protected
 
+  ##
+  # Create +outfile+ and yield +csv+ to caller.
+  #
+  # This method should replace {#write_csv}.
+  #
+  # @param [String] outfile the outfile name and path
+  # @yield [CSV] the CSV object
+  def write outfile:, &block
+    CSV.open outfile, "w", headers: true do |csv|
+      csv << DS::HEADINGS
+      yield csv
+    end
+  end
   def write_csv rows, options
     out_csv = options[:'output-csv']
     CSV.open out_csv, "w", headers: true do |csv|
