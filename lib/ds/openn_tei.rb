@@ -91,6 +91,39 @@ module DS
         as_recorded
       end
 
+
+      ##
+      # Extract the collation formula and catchwords description from +supportDesc+,
+      # returning those values that are present.
+      #
+      # @param [Nokogiri::XML::Node] xml the TEI xml
+      # @return [String]
+      def extract_collation xml
+        formula    = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p[not(catchwords)]/text()').text
+        catchwords = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p/catchwords/text()').text
+        s          = ''
+        s          += "Collation: #{formula.strip}. " unless formula.strip.empty?
+        s          += "#{catchwords.strip}"           unless catchwords.strip.empty?
+
+        s.strip
+      end
+
+      ##
+      # Extract the places of production for reconciliation CSV output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # one column: place name; for example:
+      #
+      #     [["Austria"],
+      #      ["Germany"],
+      #      ["France (?)"]]
+      #
+      # @param [Nokogiri::XML:Node] record a +<TEI>+ node
+      # @return [Array<Array>] an array of arrays of values
+      def extract_recon_places xml
+        xml.xpath('//origPlace/text()').map { |place| [place.text] }
+      end
+
       def extract_title_as_recorded record
         record.xpath('//msItem[1]/title[not(@type)]/text()').map(&:text)
       end
@@ -133,37 +166,6 @@ module DS
           end
         end
         titles_agr
-      end
-      ##
-      # Extract the collation formula and catchwords description from +supportDesc+,
-      # returning those values that are present.
-      #
-      # @param [Nokogiri::XML::Node] xml the TEI xml
-      # @return [String]
-      def extract_collation xml
-        formula    = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p[not(catchwords)]/text()').text
-        catchwords = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p/catchwords/text()').text
-        s          = ''
-        s          += "Collation: #{formula.strip}. " unless formula.strip.empty?
-        s          += "#{catchwords.strip}"           unless catchwords.strip.empty?
-
-        s.strip
-      end
-
-      ##
-      # Extract the places of production for reconciliation CSV output.
-      #
-      # Returns a two-dimensional array, each row is a place; and each row has
-      # one column: place name; for example:
-      #
-      #     [["Austria"],
-      #      ["Germany"],
-      #      ["France (?)"]]
-      #
-      # @param [Nokogiri::XML:Node] record a +<TEI>+ node
-      # @return [Array<Array>] an array of arrays of values
-      def extract_recon_places xml
-        xml.xpath('//origPlace/text()').map { |place| [place.text] }
       end
 
       def extract_recon_titles xml
