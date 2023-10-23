@@ -125,7 +125,7 @@ module DS
       end
 
       def extract_title_as_recorded record
-        record.xpath('//msItem[1]/title[not(@type)]/text()').map(&:text)
+        record.xpath('//msItem[1]/title[not(@type = "vernacular")]/text()').map(&:text)
       end
 
       ##
