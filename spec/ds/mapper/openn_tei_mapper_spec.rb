@@ -34,6 +34,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
     }
     let(:expected_calls) {
       %i{
+        extract_holding_institution
         extract_title_as_recorded
         extract_title_as_recorded_agr
         extract_authors

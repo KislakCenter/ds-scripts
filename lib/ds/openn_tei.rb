@@ -374,6 +374,10 @@ module DS
         }
       end
 
+      def extract_holding_institution record
+        record.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
+      end
+
       def extract_artists xml
         extract_resp_nodes(xml, RESP_ARTIST).map { |node|
           extract_resp_name node

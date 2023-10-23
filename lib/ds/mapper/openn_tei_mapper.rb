@@ -15,7 +15,7 @@ module DS
 
       def map_record
         source_type                        = 'openn-tei'
-        holding_institution_as_recorded    = record.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
+        holding_institution_as_recorded    = DS::OPennTEI.extract_holding_institution record
         holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
         holding_institution_id_number      = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno').text()
         holding_institution_shelfmark      = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()

@@ -536,6 +536,44 @@ RSpec.describe 'DS::OPennTEI' do
     end
   end
 
+  context 'holding information' do
+    let(:tei_xml) {
+      openn_tei %q{<?xml version='1.0' encoding='UTF-8'?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+          <teiHeader>
+            <fileDesc>
+              <sourceDesc>
+                <msDesc>
+                  <msIdentifier>
+                    <country>United States</country>
+                    <settlement>Philadelphia</settlement>
+                    <repository>Free Library of Philadelphia</repository>
+                    <collection>Widener Collection</collection>
+                    <idno type="call-number">Widener 3</idno>
+                    <altIdentifier type="deRicci">
+                      <idno>3</idno>
+                    </altIdentifier>
+                    <altIdentifier type="Leaves-of-gold">
+                      <idno>33</idno>
+                    </altIdentifier>
+                    <altIdentifier type="TELMA-Luxury-Bound">
+                      <idno>2965</idno>
+                    </altIdentifier>
+                  </msIdentifier>
+                 </msDesc>
+              </sourceDesc>
+            </fileDesc>
+          </TEI>
+      }
+    }
 
+    context 'extract_holding_institution' do
+      let(:holding_institution) { DS::OPennTEI.extract_holding_institution tei_xml }
+
+      it 'extracts the holding institution' do
+        expect(holding_institution).to eq 'Free Library of Philadelphia'
+      end
+    end
+  end
 
 end
