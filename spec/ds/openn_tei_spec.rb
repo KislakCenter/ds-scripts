@@ -550,6 +550,9 @@ RSpec.describe 'DS::OPennTEI' do
                     <repository>Free Library of Philadelphia</repository>
                     <collection>Widener Collection</collection>
                     <idno type="call-number">Widener 3</idno>
+                    <altIdentifier type="bibid">
+                        <idno>abc1234</idno>
+                    </altIdentifier>
                     <altIdentifier type="deRicci">
                       <idno>3</idno>
                     </altIdentifier>
@@ -572,6 +575,14 @@ RSpec.describe 'DS::OPennTEI' do
 
       it 'extracts the holding institution' do
         expect(holding_institution).to eq 'Free Library of Philadelphia'
+      end
+    end
+
+    context 'extract_holding_institution_id_nummber' do
+      let(:id_number) { DS::OPennTEI.extract_holding_institution_id_nummber tei_xml }
+
+      it 'extracts the holding institution' do
+        expect(id_number).to eq 'abc1234'
       end
     end
   end
