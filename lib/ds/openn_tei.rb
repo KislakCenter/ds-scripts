@@ -211,6 +211,10 @@ module DS
         [extent, support].reject(&:empty?).join('; ').capitalize
       end
 
+      def extract_material_as_recorded record
+        record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
+      end
+
       def extract_production_date xml, range_sep: '-'
         date_array = xml.xpath('//origDate').map { |orig|
           orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep

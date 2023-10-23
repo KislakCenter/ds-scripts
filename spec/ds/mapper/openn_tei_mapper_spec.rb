@@ -41,6 +41,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
         extract_production_place
         extract_title_as_recorded
         extract_title_as_recorded_agr
+        extract_material_as_recorded
         extract_authors
         extract_authors_agr
         extract_artists

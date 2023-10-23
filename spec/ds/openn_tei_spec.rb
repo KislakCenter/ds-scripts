@@ -534,6 +534,14 @@ RSpec.describe 'DS::OPennTEI' do
         expect(phys_desc).to eq ''
       end
     end
+
+    context 'extract_material_as_recorded' do
+      let(:material) { DS::OPennTEI.extract_material_as_recorded tei_xml }
+
+      it 'returns the support material' do
+        expect(material).to eq 'Parchment'
+      end
+    end
   end
 
   context 'holding information' do

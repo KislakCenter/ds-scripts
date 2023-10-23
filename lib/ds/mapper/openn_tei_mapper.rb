@@ -67,7 +67,7 @@ module DS
         former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded               = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
+        material_as_recorded               = DS::OPennTEI.extract_material_as_recorded record
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::OPennTEI.extract_physical_description record
