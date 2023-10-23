@@ -124,12 +124,18 @@ module DS
         xml.xpath('//origPlace/text()').map { |place| [place.text] }
       end
 
-      def extract_title_as_recorded record
-        record.xpath('//msItem[1]/title[not(@type = "vernacular")]/text()').map(&:text)
+      Title = Struct.new(
+        'Title', :as_recorded, :vernacular, :label, :uri,
+        keyword_init: true
+      ) do |title|
+
+        def to_a
+          [as_recorded, vernacular, label, uri].map(&:to_s)
+        end
       end
 
       ##
-      # Return an array of vernacular script titles equal in number to
+      # Return an array of Title instances equal in number to
       # the number of non-vernacular titles.
       #
       # This is a bit of a hack. Titles are list serially and Roman-
@@ -144,34 +150,38 @@ module DS
       #      </msItem>
       #
       # We assume that, when there is a vernacular title, it follows
-      # its Roman equivalent. Each title without a type is assigned
-      # a +nil+ value by default. The nil is replaced with the
-      # vernacular title when present. The above sequence results in
-      # the following:
+      # its Roman equivalent. This script runs through all +<title>+
+      # elements and creates a Title struct for each title where
       #
-      #    [
-      #       'قطر الندا وبل الصدا',
-      #       nil
-      #    ]
+      #   @type != 'vernacular'
+      #
+      # When +@type+ is 'vernacular' is sets the +as_recorded_agr+
+      # of the previous Title instance to that value.
       #
       # @param [Nokogiri::XML::Node] record the TEI record
-      # @return [Array<String>]
-      def extract_title_as_recorded_agr record
-        titles_agr = []
+      # @return [Array<Title>]
+      def extract_titles record
+        titles = []
         record.xpath('//msItem[1]/title').each do |title|
           if title[:type] != 'vernacular'
-            titles_agr << nil
+            titles << Title.new(as_recorded: title.text)
           else
-            titles_agr[-1] = title.text
+            titles.last.vernacular = title.text
           end
         end
-        titles_agr
+        titles
+      end
+
+      def extract_title_as_recorded record
+        extract_titles(record).map { |t| t.as_recorded }
+      end
+
+      def extract_title_as_recorded_agr record
+        extract_titles(record).map { |t| t.vernacular }
       end
 
       def extract_recon_titles xml
-        xml.xpath('//msItem[1]/title/text()').map do |title|
-          [title.text, '', '', '']
-        end
+        extract_titles(xml).map { |t| t.to_a }
       end
 
       ##

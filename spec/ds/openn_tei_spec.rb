@@ -392,6 +392,10 @@ RSpec.describe 'DS::OPennTEI' do
       DS::OPennTEI.extract_title_as_recorded_agr tei_xml
     }
 
+    let(:recon_titles) {
+      DS::OPennTEI.extract_recon_titles tei_xml
+    }
+
     context 'extract_title_as_recorded' do
       it 'extracts titles' do
         expect(titles).to eq ['Qaṭr al-nadā wa-ball al-ṣadā.', 'Second title']
@@ -400,15 +404,31 @@ RSpec.describe 'DS::OPennTEI' do
       it 'extracts all non-vernacular titles' do
         expect(titles).not_to include 'قطر الندا وبل الصدا'
       end
+    end
+
+    context 'extract_title_as_recorded_agr' do
 
       it 'extracts vernacular titles' do
-        expect(titles_agr).to eq  ['قطر الندا وبل الصدا', nil]
+        expect(titles_agr).to eq ['قطر الندا وبل الصدا', nil]
       end
 
       it 'returns a equal number of titles and titles agr' do
         expect(titles_agr.size).to eq titles.size
       end
     end
+
+    context 'extract_recon_titles' do
+      let(:expected_recon_titles) {
+        [
+          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', '', '' ],
+          ['Second title', '', '', '']
+        ]
+      }
+      it 'returns paired titles' do
+        expect(recon_titles).to eq(expected_recon_titles)
+      end
+    end
+
   end
 
   context 'extract_physical_description' do
