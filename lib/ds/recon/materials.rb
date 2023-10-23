@@ -48,9 +48,8 @@ module Recon
 
     def self.from_tei files
       data = []
-      xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
       process_xml files, remove_namespaces: true do |xml|
-        data << [xml.xpath(xpath).text]
+        data << [DS::OPennTEI.extract_material_as_recorded(xml)]
       end
       add_recon_values data
       Recon.sort_and_dedupe data
