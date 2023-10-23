@@ -72,7 +72,6 @@ module DS
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::OPennTEI.extract_physical_description record
         acknowledgements                   = ''
-        extent_as_recorded                 = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
         note                               = DS::OPennTEI.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::OPennTEI.source_modified record
@@ -150,7 +149,6 @@ module DS
           material_label:                     material_label,
           physical_description:               physical_description,
           acknowledgements:                   acknowledgements,
-          extent_as_recorded:                 extent_as_recorded,
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
