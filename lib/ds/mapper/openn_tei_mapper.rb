@@ -18,7 +18,7 @@ module DS
         holding_institution_as_recorded    = DS::OPennTEI.extract_holding_institution record
         holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
         holding_institution_id_number      = DS::OPennTEI.extract_holding_institution_id_nummber record
-        holding_institution_shelfmark      = record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
+        holding_institution_shelfmark      = DS::OPennTEI.extract_shelfmark record
         link_to_holding_institution_record = record.xpath('//altIdentifier[@type="resource"][1]').text.strip
         production_place_as_recorded       = record.xpath('//origPlace/text()').map(&:to_s).join '|'
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'

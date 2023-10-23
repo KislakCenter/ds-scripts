@@ -581,10 +581,20 @@ RSpec.describe 'DS::OPennTEI' do
     context 'extract_holding_institution_id_nummber' do
       let(:id_number) { DS::OPennTEI.extract_holding_institution_id_nummber tei_xml }
 
-      it 'extracts the holding institution' do
+      it 'extracts the holding institution id number' do
         expect(id_number).to eq 'abc1234'
       end
     end
+
+    context 'extract_shelfmark' do
+      let(:shelfmark) { DS::OPennTEI.extract_shelfmark tei_xml }
+
+      it 'extracts the shelfmark' do
+        expect(shelfmark).to eq 'Widener 3'
+      end
+    end
   end
+
+
 
 end
