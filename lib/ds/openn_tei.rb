@@ -217,6 +217,10 @@ module DS
         }.reject(&:empty?).join '|'
       end
 
+      def extract_production_place record
+        record.xpath('//origPlace/text()').map(&:to_s).join '|'
+      end
+
       def extract_recon_genres record
         xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term'
         record.xpath(xpath).map { |term|
@@ -384,6 +388,10 @@ module DS
 
       def extract_shelfmark record
         record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
+      end
+
+      def extract_link_to_record record
+        record.xpath('//altIdentifier[@type="resource"][1]/idno').text.strip
       end
 
       def extract_artists xml

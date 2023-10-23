@@ -19,8 +19,8 @@ module DS
         holding_institution                = DS::Institutions.find_qid holding_institution_as_recorded
         holding_institution_id_number      = DS::OPennTEI.extract_holding_institution_id_nummber record
         holding_institution_shelfmark      = DS::OPennTEI.extract_shelfmark record
-        link_to_holding_institution_record = record.xpath('//altIdentifier[@type="resource"][1]').text.strip
-        production_place_as_recorded       = record.xpath('//origPlace/text()').map(&:to_s).join '|'
+        link_to_holding_institution_record = DS::OPennTEI.extract_link_to_record record
+        production_place_as_recorded       = DS::OPennTEI.extract_production_place record
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
         production_date_as_recorded        = DS::OPennTEI.extract_production_date record, range_sep: '-'

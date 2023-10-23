@@ -553,14 +553,8 @@ RSpec.describe 'DS::OPennTEI' do
                     <altIdentifier type="bibid">
                         <idno>abc1234</idno>
                     </altIdentifier>
-                    <altIdentifier type="deRicci">
-                      <idno>3</idno>
-                    </altIdentifier>
-                    <altIdentifier type="Leaves-of-gold">
-                      <idno>33</idno>
-                    </altIdentifier>
-                    <altIdentifier type="TELMA-Luxury-Bound">
-                      <idno>2965</idno>
+                    <altIdentifier type="resource">
+                      <idno>http://example.com/</idno>
                     </altIdentifier>
                   </msIdentifier>
                  </msDesc>
@@ -593,8 +587,55 @@ RSpec.describe 'DS::OPennTEI' do
         expect(shelfmark).to eq 'Widener 3'
       end
     end
+
+    context 'extract_link_to_record' do
+      let(:url) { DS::OPennTEI.extract_link_to_record tei_xml }
+
+      it 'extracts institution url' do
+        expect(url).to eq 'http://example.com/'
+      end
+    end
   end
 
+  context 'history' do
+    let(:tei_xml) {
+      openn_tei %q{<?xml version='1.0' encoding='UTF-8'?>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+          <teiHeader>
+            <fileDesc>
+              <sourceDesc>
+                <msDesc>
+                  <history>
+                    <origin>
+                      <origDate notBefore="1450" notAfter="1475"/>
+                      <p>Third quarter of the 15th century</p>
+                      <origPlace>Flanders</origPlace>
+                    </origin>
+                    <provenance>Made for John Browne the Younger (d. 1476) and Agnes Browne of Stamford, Lincolnshire, England, 1460-1470; "Tho. Rosary," on flyleaf, c. 1720; "The gift of [Margaret] Lady Ayloffe [1704(?)-1797] to John Topham [1746-1803], Esq. May the 9th 1783," inside front cover; Sir Henry St. John Mildmay of Dogmersfield, Hampshire, England (bookplate of Dogmersfield Library on front flyleaf), c. 1820; his sale, Sotheby's, London, April 18-20, 1907, no. 6; Quaritch, London, 1907; P.A.B. Widener, Philadelphia; Joseph E. Widener, Philadelphia, 1915; given by his children, Josephine Widener Wichfeld and Peter A.B. Widener, to the Free Library of Philadelphia in 1944, in memory of their father</provenance>
+                  </history>
+                </msDesc>
+              </sourceDesc>
+            </fileDesc>
+          </teiHeader>
+         </TEI>
+      }
+    }
 
+    context 'extract_production_place' do
+      let(:place) { DS::OPennTEI.extract_production_place tei_xml }
+
+      it 'extracts the place of production' do
+        expect(place).to eq 'Flanders'
+      end
+    end
+
+    context 'extract_production_date' do
+      let(:date) { DS::OPennTEI.extract_production_date tei_xml, range_sep: '-' }
+
+      it 'extracts the date of production' do
+        expect(date).to eq '1450-1475'
+      end
+    end
+  end
 
 end

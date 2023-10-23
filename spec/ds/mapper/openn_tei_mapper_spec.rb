@@ -37,6 +37,8 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
         extract_holding_institution
         extract_holding_institution_id_nummber
         extract_shelfmark
+        extract_link_to_record
+        extract_production_place
         extract_title_as_recorded
         extract_title_as_recorded_agr
         extract_authors
@@ -59,6 +61,8 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
       add_expects objects: DS::OPennTEI, methods: expected_calls, args: record, return_val: []
+      # extract_production_date gets called 2x, thus the [] , [] returns
+      expect(DS::OPennTEI).to receive(:extract_production_date).and_return [], []
 
       mapper.map_record
     end
