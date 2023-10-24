@@ -69,7 +69,7 @@ class ReconCLI < DS::CLI
       when 'tei'
         data = Names.from_tei select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        raise NotImplementedError, "No method to extract names for source type: '#{options[:source_type]}'"
       end
 
       validate! data unless options[:'skip-validation']
@@ -106,7 +106,7 @@ class ReconCLI < DS::CLI
       when 'tei'
         data = Places.from_tei select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        raise NotImplementedError, "No method to extract places for source type: '#{options[:source_type]}'"
       end
 
       validate! data unless options[:skip_validation]
@@ -154,7 +154,7 @@ LONGDESC
       when 'tei'
         data = klass.from_tei select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        raise NotImplementedError, "No method to extract subjects for source type: '#{options[:source_type]}'"
       end
 
       validate! data unless options[:skip_validation]
@@ -190,10 +190,11 @@ LONGDESC
       case options[:'source-type']
       when 'marc'
         data = Genres.from_marc select_input files
-      when 'mets'
       when 'tei'
+        data = Genres.from_tei select_input files
+      when 'mets'
       else
-        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        raise NotImplementedError, "No method to extract genres for source type: '#{options[:source_type]}'"
       end
 
       validate! data unless options[:skip_validation]
@@ -230,7 +231,7 @@ LONGDESC
       when 'tei'
         data = Materials.from_tei select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        raise NotImplementedError, "No method to extract materials for source type: '#{options[:source_type]}'"
       end
 
       validate! data unless options[:skip_validation]
@@ -267,7 +268,7 @@ LONGDESC
       when 'mets'
         data = Languages.from_mets select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
+        raise NotImplementedError, "No method to extract languages for source type: '#{options[:'source-type']}"
       end
 
       validate! data unless options[:skip_validation]
@@ -304,7 +305,7 @@ LONGDESC
       when 'mets'
         data = Titles.from_mets select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:'source-type']}"
+        raise NotImplementedError, "No method to extract titles for source type: '#{options[:'source-type']}"
       end
 
       validate! data unless options[:skip_validation]
@@ -341,7 +342,7 @@ LONGDESC
       when 'tei'
         data = Splits.from_tei select_input files
       else
-        raise NotImplementedError, "No method for source type: '#{options[:source_type]}'"
+        raise NotImplementedError, "No method to process splits for source type: '#{options[:source_type]}'"
       end
 
       validate! data unless options[:skip_validation]
