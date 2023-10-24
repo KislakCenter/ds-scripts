@@ -5,6 +5,21 @@ module DS
     RESP_SCRIBE = 'scribe'
     RESP_ARTIST = 'artist'
     module ClassMethods
+
+      ############################################################
+      # NAMES
+      ############################################################
+
+      Name = Struct.new(
+        'Name', :as_recorded, :role, :vernacular, :ref,
+        keyword_init: true
+      ) do |name|
+
+        def to_a
+          [as_recorded, role, vernacular, ref].map { |n| n.to_s }
+        end
+      end
+
       ##
       # From the given set of nodes, extract the names from all the respStmts with
       # resp text == type.
