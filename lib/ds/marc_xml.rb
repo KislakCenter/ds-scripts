@@ -64,7 +64,7 @@ module DS
         #
         # However Cornell use $d to continue 260$c
         dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
-          t.text.strip
+          DS.clean_string t.text.strip
         end.join ' '
         return dar.strip unless dar.strip.empty?
 
@@ -121,7 +121,7 @@ module DS
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
-        record.xpath(xpath).map { |datafield| extract_name_portion datafield }
+        record.xpath(xpath).map { |datafield| DS.clean_string extract_name_portion datafield }
       end
 
 
@@ -499,7 +499,7 @@ module DS
       end
 
       def extract_named_subject record
-        extract_subject_by_tags record, tags: [600, 610, 611, 630, 647]
+        extract_subject_by_tags(record, tags: [600, 610, 611, 630, 647])
       end
 
       def extract_topical_subject record
@@ -550,7 +550,7 @@ module DS
         # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
         code_query = _codes.map { |code| "@code = '#{code}'" }.join ' or '
         xpath      = %Q{subfield[#{code_query}]}
-        datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
+        DS.clean_string datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
       end
 
       def extract_title_agr record, tag
@@ -558,7 +558,7 @@ module DS
         return '' if linkage.empty?
         index = linkage.split('-').last
         xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a']"
-        record.xpath(xpath).text.delete '[]'
+        DS.clean_string record.xpath(xpath).text.delete '[]'
       end
 
       def extract_title_as_recorded record
@@ -568,17 +568,21 @@ module DS
       def extract_uniform_title_as_recorded record
         title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
         title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
-        [title_240, title_130].reject(&:empty?).join '|'
+        [title_240, title_130].reject(&:empty?).map { |title|
+          DS.clean_string title
+        }.join '|'
       end
 
       def extract_uniform_title_agr record
         tag240 = extract_title_agr record, 240
         tag130 = extract_title_agr record, 130
-        [tag240, tag130].reject(&:empty?).join '|'
+        [tag240, tag130].reject(&:empty?).map { |title|
+          DS.clean_string title
+        }.join '|'
       end
 
       def extract_physical_description record
-        extract_extent record
+        extract_extent(record).map { |ds| DS.clean_string ds }
       end
 
       def extract_extent record
@@ -602,7 +606,9 @@ module DS
       # @return [Array<String>] an array of note strings
       def extract_note record
         xpath = "datafield[@tag=500 or @tag=561]/subfield[@code='a']/text()"
-        record.xpath(xpath).map(&:text)
+        record.xpath(xpath).map { |note|
+          DS.clean_string note.text.strip.gsub(%r{\s+}, ' ')
+        }
       end
 
       # TODO: This CSV is a stopgap; find a more sustainable solution

@@ -63,8 +63,14 @@ module DS
     def clean_string string, terminator: nil
       # handle DS legacy superscript encoding, whitespace, duplicate '.'
       # remove trailing punctuation only if a terminator is specified (see below)
-      # %r{(?<!\.)\.{2}(?!\.)} => two periods `\.{2}` when not preceded by a period (?<!\.) and not followed by a period (?!\.)
-      normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{(?<!\.)\.\.(?!\.)}, '.').delete('[]').strip
+      # %r{(?<!\.)\.{2}(?!\.)} => two periods `\.{2}` unless it's an ellipsis; that is,
+      # when not preceded by a period (?<!\.) and not followed by a period (?!\.)
+      normal = string.to_s
+                     .gsub(%r{#\^([^#]+)#}, '(\1)') # convert METS superscript encoding
+                     .gsub(%r{\s+}, ' ') # clean up whitespace
+                     .gsub(%r{(?<!\.)\.\.(?!\.)}, '.') # remove 2 '.' characters in a row
+                     .gsub('|', '\|') # escape pipes
+                     .delete('[]').strip
 
       return normal if terminator.nil?
 

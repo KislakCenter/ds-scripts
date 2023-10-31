@@ -29,10 +29,14 @@ module DS
         valid
       end
 
+      # split on pipes that are not escaped with '\'
+      PIPE_SPLIT_REGEXP = %r{(?<!\\)\|}
+      # split on pipes and semicolons that are not escaped with '\'
+      PIPE_SEMICOLON_REGEXP = %r{(?<!\\)[;|]}
       def row_valid? row, index
         valid       = true
         row.each do |column, value|
-          split_chars = NESTED_COLUMNS.include?(column) ? %r{[;|]} : %r{\|}
+          split_chars = NESTED_COLUMNS.include?(column) ? PIPE_SEMICOLON_REGEXP : PIPE_SPLIT_REGEXP
           if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
             valid = false
             STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
