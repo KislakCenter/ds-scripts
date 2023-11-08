@@ -81,7 +81,9 @@ module DS
 
       # IIIF_MANIFEST_URL                   = 'iiif_manifest_url'
       def iiif_manifest_url
-        row[IIIF_MANIFEST_URL]
+        return '' unless row[IIIF_MANIFEST_URL]
+        # there may be multiple manifests; split & join with pipes
+        row[IIIF_MANIFEST_URL].split(%r{[ |]}).join('|')
       end
       # LINK_TO_INSTITUTIONAL_RECORD        = 'link_to_institutional_record'
       def link_to_institutional_record
