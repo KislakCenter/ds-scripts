@@ -69,7 +69,7 @@ module DS
         return dar.strip unless dar.strip.empty?
 
         dar = record.xpath("datafield[@tag=264]/subfield[@code='c']/text()").map do |t|
-          t.text.strip
+          DS.clean_string t.text.strip
         end.join ' '
         return dar.strip unless dar.strip.empty?
 
