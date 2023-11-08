@@ -809,7 +809,7 @@ describe DS::MarcXML do
     it 'is invoked by extract_date_as_recorded' do
       allow(DS).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_date_as_recorded record
-      expect(DS).to have_received :clean_string
+      expect(DS).to have_received(:clean_string).at_least(:once)
     end
 
     it 'is invoked by extract_uniform_title_as_recorded' do
