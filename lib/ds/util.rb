@@ -1,7 +1,11 @@
 require 'nokogiri'
 
+require_relative 'util/strings'
+
 module DS
   module Util
+
+    extend DS::Util::Strings
     ##
     # Open and parse each XML file in +files+, optionally stripping namespaces
     # from the parsed XML, running block on each XML document:

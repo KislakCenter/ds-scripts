@@ -117,7 +117,7 @@ describe DS::MarcXML do
     it 'extracts 260$d' do
       expect(
         DS::MarcXML.extract_date_as_recorded(date_260d_marc)
-      ).to eq '14th and 15th centuries]'
+      ).to eq '14th and 15th centuries'
     end
 
     let(:date_264c_marc) {
@@ -641,6 +641,247 @@ describe DS::MarcXML do
 
     it 'extracts 040$e' do
       expect(extracted_values).to eq 'amremm'
+    end
+  end
+
+  context 'DS::Util.clean_string' do
+    let(:record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+  <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+    <marc:leader>04310ctm a2200613Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9968531423503681</marc:controlfield>
+    <marc:controlfield tag="005">20220803105934.0</marc:controlfield>
+    <marc:controlfield tag="008">160126q15001599xx            000 0 ara d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)954274745</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn954274745</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)6853142-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAU</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAU</marc:subfield>
+  <marc:subfield code="d">OCLCO</marc:subfield>
+  <marc:subfield code="d">PAU</marc:subfield>
+  <marc:subfield code="d">STF</marc:subfield>
+  <marc:subfield code="d">OCLCF</marc:subfield>
+  <marc:subfield code="d">PAU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">CAJS Rar Ms 159</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="100">
+  <marc:subfield code="6">880-01</marc:subfield>
+  <marc:subfield code="a">Ibn Hishām, ʻAbd Allāh ibn Yūsuf,</marc:subfield>
+  <marc:subfield code="d">1309-1360.</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/n82220489</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="240">
+  <marc:subfield code="6">880-02</marc:subfield>
+  <marc:subfield code="a">Mughnī al-labīb ʻan kutub al-aʻārīb</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/n85203377</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="6">880-03</marc:subfield>
+  <marc:subfield code="a">Mughnī al-labīb.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="264">
+  <marc:subfield code="a">[Turkey?],</marc:subfield>
+  <marc:subfield code="c">A.H. 889 (1484)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="c">[between 1500 and 1599?]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">175 leaves :</marc:subfield>
+  <marc:subfield code="b">paper ;</marc:subfield>
+  <marc:subfield code="c">245 x 170 (175 x 100) mm bound to 245 x 180 mm +</marc:subfield>
+  <marc:subfield code="e">1 note</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="336">
+  <marc:subfield code="a">text</marc:subfield>
+  <marc:subfield code="b">txt</marc:subfield>
+  <marc:subfield code="2">rdacontent</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="337">
+  <marc:subfield code="a">unmediated</marc:subfield>
+  <marc:subfield code="b">n</marc:subfield>
+  <marc:subfield code="2">rdamedia</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="338">
+  <marc:subfield code="a">volume</marc:subfield>
+  <marc:subfield code="b">nc</marc:subfield>
+  <marc:subfield code="2">rdacarrier</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">A damaged leaf containing text and marginal notes from an unrelated manuscript is laid in.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">Copy of a work on grammar; neatly written. A few pages at the beginning and end have had the edges restored, obscuring some text.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="541">
+  <marc:subfield code="a">Gift of Mayer Sulzberger to the library of the Dropsie College for Hebrew and Cognate Learning (bookplate inside front cover), possibly in 1912 (pencil note, first flyleaf recto).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Arabic.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Arabic language</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/subjects/sh2007101235</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Marginalia (annotations)</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="0">http://vocab.getty.edu/aat/300026102</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="6">880-05</marc:subfield>
+  <marc:subfield code="a">Ṣūlāqʹzādah, Muṣṭafá,</marc:subfield>
+  <marc:subfield code="e">scribe.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Library at the Herbert D. Katz Center for Advanced Judaic Studies</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">420 Walnut Street, Philadelphia, Pennsylvania 19106-3703.</marc:subfield>
+  <marc:subfield code="j">CAJS Rar Ms 159</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3br8mj3s</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">http://openn.library.upenn.edu/Data/0002/html/cajs_rarms159.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="880">
+  <marc:subfield code="6">100-01//r</marc:subfield>
+  <marc:subfield code="a">ابن هشام، عبد الله بن يوسف.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">245-03//r</marc:subfield>
+  <marc:subfield code="a">مغني اللبيب.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="880">
+  <marc:subfield code="6">240-02//r</marc:subfield>
+  <marc:subfield code="a">مغني اللبيب عن كتب الاعاريب</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/n85203377</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="880">
+  <marc:subfield code="6">700-05//r</marc:subfield>
+  <marc:subfield code="a">صولاق‌زادة، مصطفى،</marc:subfield>
+  <marc:subfield code="e">scribe.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="902">
+  <marc:subfield code="a">MARCIVE 2022</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="996">
+  <marc:subfield code="a">hinge-right</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20160613</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22253312400003681</marc:holding_id>
+        <marc:call_number>CAJS Rar Ms 159</marc:call_number>
+        <marc:library>KatzLib</marc:library>
+        <marc:location>cjsrarms</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+
+        }
+      )
+    }
+
+    it 'is invoked by extract_place_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_place_as_recorded record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_date_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_date_as_recorded record
+      expect(DS::Util).to have_received(:clean_string).at_least(:once)
+    end
+
+    it 'is invoked by extract_uniform_title_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_uniform_title_as_recorded record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_uniform_title_agr' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_uniform_title_agr record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_title_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_title_as_recorded record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_title_agr' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_title_agr record, 245
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_genre_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
+      expect(DS::Util).to have_received(:clean_string).at_least(:once)
+    end
+
+    it 'is invoked by extract_subject_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_subject_as_recorded record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_language_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_language_as_recorded record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_names_as_recorded' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_names_as_recorded(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
+      expect(DS::Util).to have_received(:clean_string).at_most(10).times
+    end
+
+    it 'is invoked by extract_names_as_recorded_agr' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_names_as_recorded_agr(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
+      expect(DS::Util).to have_received(:clean_string).at_most(10).times
+    end
+
+    it 'is invoked by collect_datafields' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b').join '|'
+      expect(DS::Util).to have_received(:clean_string).at_most(10).times
+    end
+
+    it 'is invoked by extract_physical_description' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_physical_description record
+      expect(DS::Util).to have_received :clean_string
+    end
+
+    it 'is invoked by extract_note' do
+      allow(DS::Util).to receive(:clean_string).and_return ''
+      DS::MarcXML.extract_note record
+      expect(DS::Util).to have_received(:clean_string)
     end
   end
 end

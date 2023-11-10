@@ -19,7 +19,7 @@ module Recon
     end
 
     def self.lookup languages, from_column: 'structured_value', separator: '|'
-      clean_languages = DS.clean_string languages, terminator: ''
+      clean_languages = DS::Util.clean_string languages, terminator: ''
       clean_languages.split(separator).map { |lang|
         # make sure each group of languages is separated by ';'
         Recon.lookup('languages', value: lang, column: from_column).gsub('|', ';')
@@ -79,7 +79,7 @@ module Recon
       data = []
       process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          as_recorded = DS.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
+          as_recorded = DS::Util.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
           codes       = DS::MarcXML.extract_langs record, separator: separator
           as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
           data << [as_recorded, codes]
@@ -94,7 +94,7 @@ module Recon
       data = []
       process_xml files do |xml|
         DS::DS10.extract_language(xml, separator: separator).split(separator).each do |lang|
-          data << [DS.terminate(lang, terminator: ''), nil]
+          data << [DS::Util.terminate(lang, terminator: ''), nil]
         end
       end
       # the Mets files don't have codes; so no need for expand_codes
