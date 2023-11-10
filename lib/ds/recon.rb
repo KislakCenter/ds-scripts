@@ -38,7 +38,7 @@ module Recon
     return recon_set.dig key, column if recon_set.include? key
 
     # try a key with a "cleaned" string
-    key = build_key DS.clean_string(value, terminator: ''), subset
+    key = build_key DS::Util.clean_string(value, terminator: ''), subset
     recon_set.dig(key, column) || ''
   end
 
@@ -210,7 +210,7 @@ module Recon
     data.keys.each do |key|
       value, subset = key.split '$$'
       # create a cleaned version of the value without final punctuation
-      alt_value = DS.clean_string value, terminator: ''
+      alt_value = DS::Util.clean_string value, terminator: ''
       alt_key = build_key alt_value, subset
       next if data.include? alt_key
       data[alt_key] = data[key]

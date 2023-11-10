@@ -644,7 +644,7 @@ describe DS::MarcXML do
     end
   end
 
-  context 'DS.clean_string' do
+  context 'DS::Util.clean_string' do
     let(:record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
   <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -801,87 +801,87 @@ describe DS::MarcXML do
     }
 
     it 'is invoked by extract_place_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_place_as_recorded record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_date_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_date_as_recorded record
-      expect(DS).to have_received(:clean_string).at_least(:once)
+      expect(DS::Util).to have_received(:clean_string).at_least(:once)
     end
 
     it 'is invoked by extract_uniform_title_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_uniform_title_as_recorded record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_uniform_title_agr' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_uniform_title_agr record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_title_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_title_as_recorded record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_title_agr' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_title_agr record, 245
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_genre_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
-      expect(DS).to have_received(:clean_string).at_least(:once)
+      expect(DS::Util).to have_received(:clean_string).at_least(:once)
     end
 
     it 'is invoked by extract_subject_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_subject_as_recorded record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_language_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_language_as_recorded record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_names_as_recorded' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_names_as_recorded(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
-      expect(DS).to have_received(:clean_string).at_most(10).times
+      expect(DS::Util).to have_received(:clean_string).at_most(10).times
     end
 
     it 'is invoked by extract_names_as_recorded_agr' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_names_as_recorded_agr(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
-      expect(DS).to have_received(:clean_string).at_most(10).times
+      expect(DS::Util).to have_received(:clean_string).at_most(10).times
     end
 
     it 'is invoked by collect_datafields' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b').join '|'
-      expect(DS).to have_received(:clean_string).at_most(10).times
+      expect(DS::Util).to have_received(:clean_string).at_most(10).times
     end
 
     it 'is invoked by extract_physical_description' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_physical_description record
-      expect(DS).to have_received :clean_string
+      expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_note' do
-      allow(DS).to receive(:clean_string).and_return ''
+      allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_note record
-      expect(DS).to have_received(:clean_string)
+      expect(DS::Util).to have_received(:clean_string)
     end
   end
 end
