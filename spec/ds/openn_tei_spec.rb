@@ -129,12 +129,16 @@ RSpec.describe 'DS::OPennTEI' do
                       </author>
                       <respStmt>
                       <resp>former owner</resp>
-                        <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
+                        <persName type="authority" ref="http://example.com">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
                         <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
                       </respStmt>
                       <respStmt>
                         <resp>former owner</resp>
-                        <persName type="authority">Lewis, John Frederick, 1860-1932</persName>
+                        <persName>Lewis, John Frederick, 1860-1932</persName>
+                      </respStmt>
+                      <respStmt>
+                        <resp>former owner</resp>
+                        <name>Name from name element</name>
                       </respStmt>
                       <respStmt>
                       <resp>donor</resp>
@@ -176,50 +180,12 @@ RSpec.describe 'DS::OPennTEI' do
         </TEI>}
     }
 
-    let(:bad_tei_xml) {
-      openn_tei %q{<?xml version="1.0" encoding="UTF-8"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0">
-          <teiHeader>
-            <fileDesc>
-              <sourceDesc>
-                <msDesc>
-                  <msContents>
-                    <summary>Clear copy of Ibn Hishām's grammar compendium. Two leaves have been sliced horizontally and are missing approximately the last 6 lines on each side (f. 11-12).</summary>
-                    <textLang mainLang="ara">Arabic</textLang>
-                    <msItem>
-                      <title>Qaṭr al-nadā wa-ball al-ṣadā.</title>
-                      <title type="vernacular">قطر الندا وبل الصدا</title>
-                      <author>
-                        <persName type="glarg">Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360</persName>
-                      </author>
-                      <respStmt>
-                        <resp>former owner</resp>
-                        <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
-                        <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
-                      </respStmt>
-                        <respStmt>
-                        <resp>former owner</resp>
-                        <persName type="authority">Lewis, John Frederick, 1860-1932</persName>
-                      </respStmt>
-                      <respStmt>
-                        <resp>donor</resp>
-                        <persName type="authority">Lewis, Anne Baker, 1868-1937</persName>
-                      </respStmt>
-                    </msItem>
-                  </msContents>
-                </msDesc>
-              </sourceDesc>
-            </fileDesc>
-          </teiHeader>
-        </TEI>}
-    }
-
     context 'authors' do
 
       context 'extract_authors_as_recorded' do
-        let(:authors) { DS::OPennTEI.extract_authors tei_xml }
+        let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
         it 'includes a persName[@type = "authority"]' do
-          expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
+          expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
         end
 
         it 'includes a name[@type = "authority"]' do
@@ -237,7 +203,7 @@ RSpec.describe 'DS::OPennTEI' do
       end
 
       context 'extract_authors_agr_as_recorded' do
-        let(:authors) { DS::OPennTEI.extract_authors tei_xml }
+        let(:authors) { DS::OPennTEI.extract_authors_as_recorded tei_xml }
         let(:authors_agr) { DS::OPennTEI.extract_authors_agr tei_xml }
         it 'extracts an agr name' do
           expect(authors_agr).to include 'ابن هشام، عبد الله بن يوسف،'
@@ -253,20 +219,28 @@ RSpec.describe 'DS::OPennTEI' do
       end
     end
 
+    context 'extract_resps' do
+      let(:resps) { DS::OPennTEI.extract_resps tei_xml, 'former owner' }
+      it 'gets all the former owners' do
+        expect(resps.size).to be > 0
+      end
+
+    end
+
     context 'former owners' do
       context 'extract_former_owners' do
-        let(:former_owners) { DS::OPennTEI.extract_former_owners tei_xml }
+        let(:former_owners) { DS::OPennTEI.extract_former_owners_as_recorded tei_xml }
         it 'extracts a former owner' do
-          expect(former_owners).to include 'Jamālī, Yūsuf ibn Shaykh Muḥammad'
+          expect(former_owners).to include 'Jamālī, Yūsuf ibn Shaykh Muḥammad'
         end
 
         it 'extracts all former owners' do
-          expect(former_owners.size).to eq 2
+          expect(former_owners.size).to eq 3
         end
       end
 
       context 'extract_former_owners_agr' do
-        let(:former_owners) { DS::OPennTEI.extract_former_owners tei_xml }
+        let(:former_owners) { DS::OPennTEI.extract_former_owners_as_recorded tei_xml }
         let(:former_owners_agr) { DS::OPennTEI.extract_former_owners_agr tei_xml }
 
         it 'extracts a former owner vernacular name' do
@@ -286,7 +260,7 @@ RSpec.describe 'DS::OPennTEI' do
 
     context 'artists' do
       context 'extract_artists' do
-        let(:artists) { DS::OPennTEI.extract_artists tei_xml }
+        let(:artists) { DS::OPennTEI.extract_artists_as_recorded tei_xml }
         it 'extracts an artist' do
           expect(artists).to include 'Artist One'
         end
@@ -297,7 +271,7 @@ RSpec.describe 'DS::OPennTEI' do
       end
 
       context 'extract_artists_agr' do
-        let(:artists) { DS::OPennTEI.extract_artists tei_xml }
+        let(:artists) { DS::OPennTEI.extract_artists_as_recorded tei_xml }
         let(:artists_agr) { DS::OPennTEI.extract_artists_agr tei_xml }
 
         it 'extracts an artist vernacular name' do
@@ -316,7 +290,7 @@ RSpec.describe 'DS::OPennTEI' do
 
     context 'scribes' do
       context 'extract_scribes' do
-        let(:scribes) { DS::OPennTEI.extract_scribes tei_xml }
+        let(:scribes) { DS::OPennTEI.extract_scribes_as_recorded tei_xml }
         it 'extracts an scribe' do
           expect(scribes).to include 'Scribe One'
         end
@@ -327,7 +301,7 @@ RSpec.describe 'DS::OPennTEI' do
       end
 
       context 'extract_scribes_agr' do
-        let(:scribes) { DS::OPennTEI.extract_scribes tei_xml }
+        let(:scribes) { DS::OPennTEI.extract_scribes_as_recorded tei_xml }
         let(:scribes_agr) { DS::OPennTEI.extract_scribes_agr tei_xml }
 
         it 'extracts an scribe vernacular name' do
@@ -343,21 +317,6 @@ RSpec.describe 'DS::OPennTEI' do
         end
       end
     end
-
-    context 'extract_resp_nodes' do
-      let(:resp_name) { "some resp" }
-
-      it 'extracts nodes by resp name' do
-        nodes = DS::OPennTEI.extract_resp_nodes tei_xml, resp_name
-        expect(nodes.size) == 2
-      end
-
-      it 'is case-insensitive' do
-        nodes = DS::OPennTEI.extract_resp_nodes tei_xml, resp_name.upcase
-        expect(nodes.size) == 2
-      end
-    end
-
   end
 
   context 'titles' do
@@ -398,7 +357,7 @@ RSpec.describe 'DS::OPennTEI' do
 
     context 'extract_title_as_recorded' do
       it 'extracts titles' do
-        expect(titles).to eq ['Qaṭr al-nadā wa-ball al-ṣadā.', 'Second title']
+        expect(titles).to eq ['Qaṭr al-nadā wa-ball al-ṣadā.', 'Second title']
       end
 
       it 'extracts all non-vernacular titles' do
@@ -420,7 +379,7 @@ RSpec.describe 'DS::OPennTEI' do
     context 'extract_recon_titles' do
       let(:expected_recon_titles) {
         [
-          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', '', '' ],
+          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', '', '' ],
           ['Second title', '', '', '']
         ]
       }
@@ -559,7 +518,7 @@ RSpec.describe 'DS::OPennTEI' do
       let(:material) { DS::OPennTEI.extract_material_as_recorded tei_xml }
 
       it 'returns the support material' do
-        expect(material).to eq 'Parchment'
+        expect(material).to eq ['Parchment']
       end
     end
   end
@@ -653,7 +612,7 @@ RSpec.describe 'DS::OPennTEI' do
       let(:place) { DS::OPennTEI.extract_production_place tei_xml }
 
       it 'extracts the place of production' do
-        expect(place).to eq 'Flanders'
+        expect(place).to eq ['Flanders']
       end
     end
 

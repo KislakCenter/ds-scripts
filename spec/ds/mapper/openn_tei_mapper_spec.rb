@@ -44,11 +44,11 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
         extract_material_as_recorded
         extract_authors
         extract_authors_agr
-        extract_artists
+        extract_artists_as_recorded
         extract_artists_agr
-        extract_scribes
+        extract_scribes_as_recorded
         extract_scribes_agr
-        extract_former_owners
+        extract_former_owners_as_recorded
         extract_former_owners_agr
       }
     }

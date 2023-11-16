@@ -4,6 +4,11 @@ module DS
     RESP_FORMER_OWNER = 'former owner'
     RESP_SCRIBE = 'scribe'
     RESP_ARTIST = 'artist'
+    ALL_RESPS = [
+      RESP_FORMER_OWNER,
+      RESP_SCRIBE,
+      RESP_ARTIST
+    ]
     module ClassMethods
 
       ############################################################
@@ -16,14 +21,51 @@ module DS
       ) do |name|
 
         def to_a
-          [as_recorded, role, vernacular, ref].map { |n| n.to_s }
+          [as_recorded, role, vernacular, ref]
         end
+      end
+
+      def extract_authors xml
+        names = []
+        xml.xpath('//msContents/msItem/author').each do |node|
+          next if node.text =~ /Free Library of Philadelphia/
+
+          name_node   = node.at_xpath('(name|persName)[not(@type = "vernacular")]')
+          prenormal   = name_node ? name_node.text : node.text
+          as_recorded = DS::Util.normalize_string prenormal
+
+          ref         = node['ref']
+          ref         = name_node['ref'] if name_node
+          role        = 'author'
+          vern_name   = node.at_xpath('(persName|name)[@type = "vernacular"]')
+          vernacular  = DS::Util.normalize_string(vern_name.text) if vern_name
+
+          params = {
+            as_recorded: as_recorded,
+            ref:         ref,
+            role:        role,
+            vernacular:  vernacular
+          }
+          names << Name.new(**params)
+        end
+        names
+      end
+
+      def extract_authors_as_recorded xml
+        extract_authors(xml).map(&:as_recorded)
+      end
+
+      def extract_authors_agr xml
+        extract_authors(xml).map(&:vernacular)
       end
 
       ##
       # All respStmts for the given +resp+ (e.g., 'artist') and return
-      # the values as names
-      def extract_resps xml, resp
+      # the values as Name instances
+      #
+      # @param [Nokogiri::XML::NodeSet] xml the parsed TEI XML
+      # @return [Array<Name>]
+      def extract_resps xml, *resp_names
         # There are a variety of respStmt patterns; for example:
         #
         #    <respStmt>
@@ -48,85 +90,100 @@ module DS
         #    </respStmt>
         #
         #
-        xpath = "//respStmt[contains(translate(./resp/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '#{resp.to_s.strip.downcase}')]"
-        xml.xpath(xpath).map { |node|
-          params = {
-            as_recorded: node.at_xpath('(persName|name)[not(@type = "vernacular")]/text()'),
-            ref:         node.at_xpath('(persName|name)[not(@type = "vernacular")]/@ref'),
-            role:        resp.downcase,
-            vernacular:  node.at_xpath('(persName|name)[@type = "vernacular"]/text()')
-          }
+        resp_query = resp_names.map { |t|
+          %Q{contains(translate(./resp/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '#{t.to_s.strip.downcase}')}
+        }.join ' or '
 
+        xpath = "//respStmt[#{resp_query}]"
+        xml.xpath(xpath).map { |node|
+
+          auth_name   = node.at_xpath('(persName|name)[not(@type = "vernacular")]')
+          as_recorded = DS::Util.normalize_string(auth_name.text) if auth_name
+          ref         = auth_name['ref'] if auth_name
+          vern_name   = node.at_xpath('(persName|name)[@type = "vernacular"]')
+          vernacular  = DS::Util.normalize_string(vern_name.text) if vern_name
+          resp        = node.at_xpath('resp/text()').to_s
+
+          params = {
+            as_recorded: as_recorded,
+            ref:         ref,
+            role:        resp.downcase.strip,
+            vernacular:  vernacular
+          }
           Name.new **params
         }
       end
 
       ##
-      # From the given set of nodes, extract the names from all the respStmts with
-      # resp text == type.
+      # All names, authors, and names with resps: former owner, scribe,
+      # artist with returned as two-dimensional array with each row
+      # having these values:
       #
-      # @param [Nokogiri::XML:NodeSet] nodes the nodes to search for +respStmt+s
-      # @param [Array<String>] types a list of types; e.g., +artist+, <tt>former
-      #         owner</tt>
-      # @return [String] pipe-separated list of names
-      def extract_resp_nodes nodes: , types: []
-        return '' if types.empty?
-        _types = [types].flatten.map &:to_s
-        type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
-        xpath = %Q{//respStmt[#{type_query}]}
-        nodes.xpath(xpath).map { |rs| rs.xpath('persName/text()') }.join '|'
-      end
-
-      ##
-      # From the given set of nodes, extract the URIs from all the respStmts with
-      # resp text == type.
+      #   * name as recorded
+      #   * role (author, former owner, etc.)
+      #   * name in vernacular script
+      #   * ref (authority URL)
       #
-      # @param [Nokogiri::XML:NodeSet] nodes the nodes to search for +respStmt+s
-      # @param [Array<String>] types a list of types; e.g., +artist+, <tt>former
-      #         owner</tt>
-      # @return [String] pipe-separated list of URIs
-      def extract_resp_ids nodes: , types: []
-        return '' if types.empty?
-        _types = [types].flatten.map &:to_s
-        type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
-        xpath = %Q{//respStmt[#{type_query}]/persName}
-        nodes.xpath(xpath).map { |rs| rs['ref'] }.reject(&:nil?).join '|'
-      end
-
+      # All missing values are returned as +nil+:
+      #
+      #   [
+      #     ["Horace", "author", nil, "https://viaf.org/viaf/100227522/"],
+      #     ["Hodossy, Imre", "former owner", nil, nil],
+      #     ["Jān Sipār Khān ibn Rustamdilkhān, -1701?", "former owner", "جان سپار خان بن رستمدلخان،", nil]
+      #   ]
+      #
+      # @param [Nokogiri::XML::NodeSet] xml the parsed TEI XML
+      # @return [Array<Name>]
       def extract_recon_names xml
         data = []
-        nodes = xml.xpath('//msContents/msItem')
 
-        nodes.xpath('author').each do |author|
-          if author.xpath('persName').text.empty?
-            value = author.text.strip
-            role = 'author'
-            vernacular = nil
-            ref = author['ref']
-            data << [value, role, vernacular, ref]
-          else
-            data << build_recon_row(author, 'author')
-          end
-        end
+        data += extract_authors(xml).map(&:to_a)
+        data += extract_resps(xml, *ALL_RESPS).map(&:to_a)
 
-        _types = [ 'artist', 'scribe', 'former owner']
-        type_query = _types.map { |t| %Q{contains(./resp/text(), '#{t}')} }.join ' or '
-        xpath = %Q{//respStmt[#{type_query}]}
-        nodes.xpath(xpath).each do |rs|
-          role = rs.xpath('resp/text()').text.strip
-          data << build_recon_row(rs, role)
-        end
         data
       end
 
-      def build_recon_row resp_node, role
-        value_xpath      = 'persName[not(@type) or @type="authority"]/text()'
-        value            = resp_node.xpath(value_xpath).text.strip
-        vernacular_xpath = 'persName[@type="vernacular"]/text()'
-        vernacular       = resp_node.xpath(vernacular_xpath).text.strip
-        ref              = resp_node['ref']
+      def extract_artists_as_recorded xml
+        extract_resps(xml, RESP_ARTIST).map(&:as_recorded)
+      end
 
-        [value, role, vernacular, ref]
+      def extract_artists_agr xml
+        extract_resps(xml, RESP_ARTIST).map(&:vernacular)
+      end
+
+      def extract_scribes_as_recorded xml
+        extract_resps(xml, RESP_SCRIBE).map(&:as_recorded)
+      end
+
+      def extract_scribes_agr xml
+        extract_resps(xml, RESP_SCRIBE).map(&:vernacular)
+      end
+
+      def extract_former_owners_as_recorded xml
+        extract_resps(xml, RESP_FORMER_OWNER).map(&:as_recorded)
+      end
+
+      def extract_former_owners_agr xml
+        extract_resps(xml, RESP_FORMER_OWNER).map(&:vernacular)
+      end
+
+      #########################################################################
+      # Miscellaneous authority values
+      #########################################################################
+
+      def extract_material_as_recorded record
+        xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
+        extract_normalized_strings(record, xpath)
+      end
+
+
+      def extract_language_as_recorded xml, separator: '|'
+        xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
+        as_recorded = extract_normalized_strings(xml, xpath).first
+        if as_recorded.blank?
+          as_recorded = DS::OPennTEI.extract_language_codes xml, separator: separator
+        end
+        as_recorded
       end
 
       ##
@@ -140,28 +197,48 @@ module DS
         xml.xpath(xpath).flat_map { |lang| lang.value.split.reject(&:empty?) }.join separator
       end
 
-      def extract_language_as_recorded xml, separator: '|'
-        xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-        as_recorded = xml.xpath(xpath).text
-        as_recorded = DS::OPennTEI.extract_language_codes xml, separator if as_recorded.to_s.strip.empty?
-        as_recorded
+      #########################################################################
+      # Genres and subjects
+      #########################################################################
+
+      def extract_recon_genres record
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term'
+        record.xpath(xpath).map { |term|
+          value  = DS::Util.normalize_string term.text
+          vocab  = 'openn-form/genre'
+          number = term['target']
+          [value, vocab, number]
+        }
       end
 
+      def extract_recon_subjects xml
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term'
+        xml.xpath(xpath).map do |term|
+          value          = DS::Util.normalize_string term.text
+          subfield_codes = nil
+          vocab          = "openn-#{term.parent['n']}"
+          number         = term['target']
+          [value, subfield_codes, vocab, number]
+        end
+      end
 
-      ##
-      # Extract the collation formula and catchwords description from +supportDesc+,
-      # returning those values that are present.
-      #
-      # @param [Nokogiri::XML::Node] xml the TEI xml
-      # @return [String]
-      def extract_collation xml
-        formula    = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p[not(catchwords)]/text()').text
-        catchwords = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/collation/p/catchwords/text()').text
-        s          = ''
-        s          += "Collation: #{formula.strip}. " unless formula.strip.empty?
-        s          += "#{catchwords.strip}"           unless catchwords.strip.empty?
+      def extract_genre_as_recorded xml
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term/text()'
+        extract_normalized_strings xml, xpath
+      end
 
-        s.strip
+      def extract_subject_as_recorded xml
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()'
+        extract_normalized_strings xml, xpath
+      end
+
+      #########################################################################
+      # Place of production
+      #########################################################################
+
+      def extract_production_place record
+        xpath = '//origPlace/text()'
+        extract_normalized_strings(record, xpath)
       end
 
       ##
@@ -177,9 +254,22 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<TEI>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places xml
-        xml.xpath('//origPlace/text()').map { |place| [place.text] }
+        xpath = '//origPlace/text()'
+        extract_normalized_strings(xml, xpath).map { |place| [place] }
       end
 
+      #########################################################################
+      # Date of production
+      #########################################################################
+      def extract_production_date xml, range_sep: '-'
+        xml.xpath('//origDate').map { |orig|
+          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
+        }.reject(&:empty?).join '|'
+      end
+
+      #########################################################################
+      # Titles
+      #########################################################################
       Title = Struct.new(
         'Title', :as_recorded, :vernacular, :label, :uri,
         keyword_init: true
@@ -220,9 +310,11 @@ module DS
         titles = []
         record.xpath('//msItem[1]/title').each do |title|
           if title[:type] != 'vernacular'
-            titles << Title.new(as_recorded: title.text)
+            titles << Title.new(
+              as_recorded: DS::Util.normalize_string(title.text)
+            )
           else
-            titles.last.vernacular = title.text
+            titles.last.vernacular = DS::Util.normalize_string title.text
           end
         end
         titles
@@ -240,88 +332,28 @@ module DS
         extract_titles(xml).map { |t| t.to_a }
       end
 
-      ##
-      # Extract +extent+ element and prefix with <tt>'Extent: '</tt>, return +''+
-      # (empty string) if +extent+ is not present or empty.
-      #
-      # @param [Nokogiri::XML::Node] xml the TEI xml
-      # @return [String]
-      def extract_extent xml
-        formula = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()')
-        return '' if formula.to_s.strip.empty?
-        "Extent: #{formula}"
-      end
 
-      ##
-      # Extract +support+ element text and prefix with <tt>'Support: '</tt>, return
-      # +''+ (empty string) if +support+ is not present or empty.
-      #
-      # @param [Nokogiri::XML::Node] xml the TEI xml
-      # @return [String]
-      def extract_support xml
-        support = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()')
-        return '' if support.to_s.strip.empty?
-        "Support: #{support}"
-      end
-
+      #########################################################################
+      # Physical description
+      #########################################################################
       ##
       # Return the extent and support concatenated; e.g.,
-      #
-      #
       #
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_physical_description xml
-        extent = xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()').text.strip
-        extent = "Extent: #{extent}" unless extent.empty?
-        support =  xml.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()').text.strip.downcase
+        xpath   = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/extent/text()'
+        extent  = extract_normalized_strings(xml, xpath).first
+        extent  = "Extent: #{extent}" unless extent.blank?
+        xpath   = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()'
+        support = extract_normalized_strings(xml, xpath).first
 
-        [extent, support].reject(&:empty?).join('; ').capitalize
+        [extent, support].reject(&:blank?).join('; ').capitalize
       end
 
-      def extract_material_as_recorded record
-        record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p').text
-      end
-
-      def extract_production_date xml, range_sep: '-'
-        date_array = xml.xpath('//origDate').map { |orig|
-          orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
-        }.reject(&:empty?).join '|'
-      end
-
-      def extract_production_place record
-        record.xpath('//origPlace/text()').map(&:to_s).join '|'
-      end
-
-      def extract_recon_genres record
-        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term'
-        record.xpath(xpath).map { |term|
-          value  = term.text
-          vocab  = 'openn-form/genre'
-          number = term['target']
-          [value, vocab, number]
-        }
-      end
-
-      def extract_recon_subjects xml
-        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term'
-        xml.xpath(xpath).map do |term|
-          value          = term.text
-          subfield_codes = nil
-          vocab          = "openn-#{term.parent['n']}"
-          number         = term['target']
-          [value, subfield_codes, vocab, number]
-        end
-      end
-
-      def extract_genre_as_recorded xml
-        xml.xpath('/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term/text()').map &:text
-      end
-
-      def extract_subject_as_recorded xml
-        xml.xpath('/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()').map &:text
-      end
-
+      #########################################################################
+      # Notes
+      #########################################################################
       SIMPLE_NOTE_XPATH = '/TEI/teiHeader/fileDesc/notesStmt/note[not(@type)]/text()'
       BINDING_XPATH     = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/bindingDesc/binding/p/text()'
       LAYOUT_XPATH      = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/layoutDesc/layout/text()'
@@ -336,6 +368,7 @@ module DS
       #
       #   Binding: The binding note.
       #   Layout: The layout note.
+      #
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [Array<String>]
       def extract_note xml
@@ -353,14 +386,6 @@ module DS
       end
 
       WHITESPACE_RE = %r{\s+}
-      # FLP Widener 5 has the following text with a pipe:
-      #
-      #   Delmira Espada, "A luz da grisalha. Arte, Liturgia e
-      #     História no Livro de Horas dito de D. Leonor – Il165 da
-      #     BNP," Medievalista [Online], 10 | 2011
-      #
-      # This breaks pipe-splitting and validation; for now, replace
-      # pipes with ', ' (comma + space)
       MEDIAL_PIPE_RE = %r{\s*\|\s*} # match pipes
 
       ##
@@ -374,128 +399,45 @@ module DS
       # @param [String] prefix value to prepend to the note; default: +nil+
       # @return [Array<String>]
       def build_notes xml, xpath, prefix: nil
-        xml.xpath(xpath).map { |note|
-          pref = prefix.to_s.strip.empty? ? '' : "#{prefix}: "
-          cleaned = note.text
-                        .gsub(WHITESPACE_RE, ' ')
-                        .gsub(MEDIAL_PIPE_RE, ', ') # replace pipes with ', ' 🤷🏻
-                        .strip
-          "#{pref}#{cleaned}"
+        pref = prefix.blank? ? '' : "#{prefix}: "
+        extract_normalized_strings(xml, xpath).map { |value|
+          "#{pref}#{value}"
         }
       end
 
-      ##
-      # @param [Nokogiri::XML::Node] node
-      # @return [Array<String>]
-      def extract_author_name node
-        # vern = vernacular script
-        unless node.children.any? { |ch| ch['type'] == 'vernacular' }
-          return node.text.strip
-        end
-
-        auth_node = node.children.find { |ch| ch['type'] == 'authority' }
-        auth_node && auth_node.text.strip
-      end
-
-      def extract_authors xml
-        names = []
-
-        xml.xpath('//msItem/author').each { |node|
-          next if node.text =~ /Free Library of Philadelphia/
-          names << extract_author_name(node)
-        }
-        names
-      end
-
-      def extract_author_name_agr node
-        agr_node = node.children.find { |ch| ch['type'] == 'vernacular' }
-        agr_node && agr_node.text.strip
-      end
-
-      def extract_authors_agr xml
-        names = []
-        xml.xpath('//msItem/author').each { |node|
-          next if node.text =~ /Free Library of Philadelphia/
-          names << extract_author_name_agr(node)
-        }
-        names
-      end
-
-      def extract_resp_name node
-        node.xpath('name|persName|orgName').find { |node|
-          node['type'] != 'vernacular'
-        }.text
-      end
-
-      def extract_resp_name_agr node
-        agr_node = node.xpath('name|persName|orgName').find { |node|
-          node['type'] == 'vernacular'
-        }
-        agr_node && agr_node.text
-      end
-
-
-
-      def extract_resp_nodes xml, resp
-        xpath = "//respStmt[contains(translate(./resp/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '#{resp.to_s.strip.downcase}')]"
-        xml.xpath(xpath)
-      end
-
-      def extract_former_owners xml
-        extract_resps(xml, RESP_FORMER_OWNER).map { |name|
-          name.as_recorded
-        }
-      end
-
-      def extract_former_owners_agr xml
-        extract_resps(xml, RESP_FORMER_OWNER).map { |name|
-          name.vernacular
-        }
-      end
-
+      #########################################################################
+      # Holding information
+      #########################################################################
       def extract_holding_institution record
-        record.xpath('(//msIdentifier/institution|//msIdentifier/repository)[1]').text
+        xpath = '(//msIdentifier/institution|//msIdentifier/repository)[1]'
+        extract_normalized_strings(record, xpath).first
       end
 
       def extract_holding_institution_id_nummber record
-        record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno').text
+        xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno'
+        extract_normalized_strings(record, xpath).first
       end
 
       def extract_shelfmark record
-        record.xpath('/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]').text()
+        xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]'
+        extract_normalized_strings(record, xpath).first
       end
 
       def extract_link_to_record record
-        record.xpath('//altIdentifier[@type="resource"][1]/idno').text.strip
+        xpath = '//altIdentifier[@type="resource"][1]/idno'
+        extract_normalized_strings(record, xpath).first
       end
 
-      def extract_artists xml
-        extract_resp_nodes(xml, RESP_ARTIST).map { |node|
-          extract_resp_name node
-        }
-      end
-
-      def extract_artists_agr xml
-        extract_resp_nodes(xml, RESP_ARTIST).map { |node|
-          extract_resp_name_agr node
-        }
-      end
-
-      def extract_scribes xml
-        extract_resp_nodes(xml, RESP_SCRIBE).map { |node|
-          extract_resp_name node
-        }
-      end
-
-      def extract_scribes_agr xml
-        extract_resp_nodes(xml, RESP_SCRIBE).map { |node|
-          extract_resp_name_agr node
-        }
+      #########################################################################
+      # Utility methods
+      #########################################################################
+      def extract_normalized_strings record, xpath
+        record.xpath(xpath).map { |node| DS::Util.normalize_string node.text }
       end
 
       def source_modified xml
         record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when').text
-        return nil if record_date.empty?
+        return nil if record_date.blank?
         record_date
       end
     end

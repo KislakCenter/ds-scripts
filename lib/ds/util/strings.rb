@@ -67,7 +67,7 @@ module DS
         return str if str.strip =~ ellipsis
 
         # if :terminator is '' or nil, remove any terminal punctuation
-        return str.sub terminal_punct, '\2' if terminator.to_s.empty?
+        return str.sub terminal_punct, '\2' if terminator.blank?
 
         # str is already terminated
         return str if str.end_with? terminator
@@ -95,8 +95,10 @@ module DS
       # @return [String] the normalized string
       def normalize_string value
         form = is_url?(value) ? :nfkc : :nfc
-        clean_white_space(
-          unicode_normalize(value, form)
+        escape_pipes(
+          clean_white_space(
+            unicode_normalize(value, form)
+          )
         )
       end
 
