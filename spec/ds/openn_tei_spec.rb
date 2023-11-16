@@ -331,6 +331,10 @@ RSpec.describe 'DS::OPennTEI' do
                 <persName>Contributor 1</persName>
               </respStmt>
               <respStmt>
+                <resp>contributor</resp>
+                <persName>Contributor 2</persName>
+              </respStmt>
+              <respStmt>
                 <resp>cataloger</resp>
                 <persName>Cataloger 1</persName>
               </respStmt>
@@ -346,19 +350,32 @@ RSpec.describe 'DS::OPennTEI' do
     }
 
     let(:acknowledgments) { DS::OPennTEI.extract_acknowledgments tei_xml }
+    let(:catalogers) {
+      ["Cataloger: Cataloger 1", "Cataloger: Cataloger 2"]
+    }
+    let(:contributors) {
+      ["Contributor: Contributor 1", "Contributor: Contributor 2"]
+    }
 
     it 'extracts catalogers' do
       expect(acknowledgments).to include "Cataloger: Cataloger 1"
+    end
+
+    it 'returns all catalogers' do
+      expect(acknowledgments.grep %r{Cataloger}).to eq catalogers
     end
 
     it 'extracts contributors' do
       expect(acknowledgments).to include "Contributor: Contributor 1"
     end
 
+    it 'returns all contributors' do
+      expect(acknowledgments.grep %r{Contributor}).to eq contributors
+    end
+
     it 'extracts a funder' do
       expect(acknowledgments).to include "Funder: The Funder"
     end
-
   end
 
   context 'titles' do
