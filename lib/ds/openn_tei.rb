@@ -2,13 +2,21 @@ module DS
   module OPennTEI
 
     RESP_FORMER_OWNER = 'former owner'
-    RESP_SCRIBE = 'scribe'
-    RESP_ARTIST = 'artist'
-    ALL_RESPS = [
+    RESP_SCRIBE       = 'scribe'
+    RESP_ARTIST       = 'artist'
+    MS_CREATOR_RESPS = [
       RESP_FORMER_OWNER,
       RESP_SCRIBE,
       RESP_ARTIST
     ]
+
+    RESP_CATALOGER    = 'cataloger'
+    RESP_CONTRIBUTOR  = 'contributor'
+    ACKNOWLEDGMENT_RESPS = [
+      RESP_CATALOGER,
+      RESP_CONTRIBUTOR,
+    ]
+
     module ClassMethods
 
       ############################################################
@@ -138,7 +146,7 @@ module DS
         data = []
 
         data += extract_authors(xml).map(&:to_a)
-        data += extract_resps(xml, *ALL_RESPS).map(&:to_a)
+        data += extract_resps(xml, *MS_CREATOR_RESPS).map(&:to_a)
 
         data
       end
@@ -426,6 +434,21 @@ module DS
       def extract_link_to_record record
         xpath = '//altIdentifier[@type="resource"][1]/idno'
         extract_normalized_strings(record, xpath).first
+      end
+
+      #########################################################################
+      # Acknowledgments
+      #########################################################################
+      def extract_funder record
+        xpath = '/TEI/teiHeader/fileDesc/titleStmt/funder'
+        extract_normalized_strings(record, xpath).map { |name| "Funder: #{name}"}
+      end
+
+      def extract_acknowledgments record
+        names = extract_resps(record, *ACKNOWLEDGMENT_RESPS).map { |name|
+          "#{name.role.capitalize}: #{name.as_recorded}"
+        }
+        names + extract_funder(record)
       end
 
       #########################################################################

@@ -257,7 +257,6 @@ RSpec.describe 'DS::OPennTEI' do
       end
     end
 
-
     context 'artists' do
       context 'extract_artists' do
         let(:artists) { DS::OPennTEI.extract_artists_as_recorded tei_xml }
@@ -317,6 +316,49 @@ RSpec.describe 'DS::OPennTEI' do
         end
       end
     end
+  end
+
+  context 'extract_acknowledgments' do
+    let(:tei_xml) {
+      openn_tei %q{<?xml version='1.0' encoding='UTF-8'?>
+      <TEI xmlns="http://www.tei-c.org/ns/1.0">
+        <teiHeader>
+          <fileDesc>
+            <titleStmt>
+              <title>Description of Free Library of Philadelphia, Widener 3: Book of Hours, Use of Sarum ("The John Browne Hours")</title>
+              <respStmt>
+                <resp>contributor</resp>
+                <persName>Contributor 1</persName>
+              </respStmt>
+              <respStmt>
+                <resp>cataloger</resp>
+                <persName>Cataloger 1</persName>
+              </respStmt>
+              <respStmt>
+                <resp>cataloger</resp>
+                <persName>Cataloger 2</persName>
+              </respStmt>
+              <funder>The Funder</funder>
+            </titleStmt>
+        </fileDesc>
+      </TEI>
+      }
+    }
+
+    let(:acknowledgments) { DS::OPennTEI.extract_acknowledgments tei_xml }
+
+    it 'extracts catalogers' do
+      expect(acknowledgments).to include "Cataloger: Cataloger 1"
+    end
+
+    it 'extracts contributors' do
+      expect(acknowledgments).to include "Contributor: Contributor 1"
+    end
+
+    it 'extracts a funder' do
+      expect(acknowledgments).to include "Funder: The Funder"
+    end
+
   end
 
   context 'titles' do
@@ -624,5 +666,4 @@ RSpec.describe 'DS::OPennTEI' do
       end
     end
   end
-
 end
