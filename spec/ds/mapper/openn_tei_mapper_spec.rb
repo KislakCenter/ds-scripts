@@ -50,6 +50,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
         extract_scribes_agr
         extract_former_owners_as_recorded
         extract_former_owners_agr
+        extract_acknowledgments
       }
     }
 
