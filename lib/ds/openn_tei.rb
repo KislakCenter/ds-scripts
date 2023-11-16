@@ -21,6 +21,47 @@ module DS
       end
 
       ##
+      # All respStmts for the given +resp+ (e.g., 'artist') and return
+      # the values as names
+      def extract_resps xml, resp
+        # There are a variety of respStmt patterns; for example:
+        #
+        #    <respStmt>
+        #      <resp>former owner</resp>
+        #      <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
+        #      <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
+        #    </respStmt>
+        #
+        #    <respStmt>
+        #      <resp>former owner</resp>
+        #      <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
+        #    </respStmt>
+        #
+        #    <respStmt>
+        #      <resp>former owner</resp>
+        #      <persName>Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
+        #    </respStmt>
+        #
+        #    <respStmt>
+        #      <resp>former owner</resp>
+        #      <name>Jamālī, Yūsuf ibn Shaykh Muḥammad</name>
+        #    </respStmt>
+        #
+        #
+        xpath = "//respStmt[contains(translate(./resp/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '#{resp.to_s.strip.downcase}')]"
+        xml.xpath(xpath).map { |node|
+          params = {
+            as_recorded: node.at_xpath('(persName|name)[not(@type = "vernacular")]/text()'),
+            ref:         node.at_xpath('(persName|name)[not(@type = "vernacular")]/@ref'),
+            role:        resp.downcase,
+            vernacular:  node.at_xpath('(persName|name)[@type = "vernacular"]/text()')
+          }
+
+          Name.new **params
+        }
+      end
+
+      ##
       # From the given set of nodes, extract the names from all the respStmts with
       # resp text == type.
       #
@@ -392,20 +433,23 @@ module DS
         }
         agr_node && agr_node.text
       end
+
+
+
       def extract_resp_nodes xml, resp
         xpath = "//respStmt[contains(translate(./resp/text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '#{resp.to_s.strip.downcase}')]"
         xml.xpath(xpath)
       end
 
       def extract_former_owners xml
-        extract_resp_nodes(xml, RESP_FORMER_OWNER).map { |node|
-          extract_resp_name node
+        extract_resps(xml, RESP_FORMER_OWNER).map { |name|
+          name.as_recorded
         }
       end
 
       def extract_former_owners_agr xml
-        extract_resp_nodes(xml, RESP_FORMER_OWNER).map { |node|
-          extract_resp_name_agr node
+        extract_resps(xml, RESP_FORMER_OWNER).map { |name|
+          name.vernacular
         }
       end
 

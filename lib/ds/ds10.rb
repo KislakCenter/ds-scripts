@@ -78,8 +78,8 @@ module DS
           notes = []
           if text =~ %r{;;}
             other_deco, num_scribes = text.split %r{;;+}
-            notes << "Other decoration, #{extent}: #{other_deco}" unless other_deco.to_s.empty?
-            notes << "Number of scribes, #{extent}: #{num_scribes}" unless num_scribes.to_s.empty?
+            notes << "Other decoration, #{extent}: #{other_deco}" unless other_deco.blank?
+            notes << "Number of scribes, #{extent}: #{num_scribes}" unless num_scribes.blank?
           else
             notes << "Other decoration, #{extent}: #{text}" unless text.empty?
           end
@@ -798,7 +798,7 @@ module DS
 
       def iiif_manifest_key holder, shelfmark
         qid = DS::Institutions.find_qid holder
-        raise DSError, "No QID found for #{holder}" if qid.to_s.empty?
+        raise DSError, "No QID found for #{holder}" if qid.blank?
         normalize_key qid, shelfmark
       end
 
