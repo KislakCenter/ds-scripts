@@ -70,7 +70,7 @@ module DS
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::OPennTEI.extract_physical_description record
-        acknowledgements                   = DS::OPennTEI.extract_acknowledgments record
+        acknowledgements                   = DS::OPennTEI.extract_acknowledgments(record).join '|'
         note                               = DS::OPennTEI.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::OPennTEI.source_modified record
