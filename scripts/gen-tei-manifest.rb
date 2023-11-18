@@ -48,7 +48,7 @@ CSV headers: true do |csv|
 
     filename                             = File.basename xml_file
     holding_institution_institutional_id = DS::OPennTEI.extract_holding_institution_id_nummber xml
-    institutional_id_location_in_source  = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno'
+    institutional_id_location_in_source  = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno'
     call_number                          = DS::OPennTEI.extract_shelfmark xml
     link_to_institutional_record         = sprintf URL_FORMAT, base
     record_last_updated                  = last_modified_date base
