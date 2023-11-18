@@ -41,7 +41,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
         Recon::Titles,
       ]
     }
-    let(:expected_calls) {
+    let(:extractor_calls) {
       %i{
           extract_production_date
           extract_production_date
@@ -66,6 +66,18 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
       }
     }
 
+    let (:entry_calls) {
+      %i{
+          ds_id
+          institution_wikidata_qid
+          institution_wikidata_label
+          institutional_id
+          call_number
+          link_to_institutional_record
+          iiif_manifest_url
+      }
+    }
+
 
     it 'returns a hash' do
       add_stubs recons, :lookup, []
@@ -74,7 +86,14 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
-      add_expects objects: DS::OPennTEI, methods: expected_calls, return_val: []
+      add_expects objects: DS::OPennTEI, methods: extractor_calls, return_val: []
+
+      mapper.map_record
+    end
+
+    it 'calls all expected entry methods' do
+      add_stubs recons, :lookup, []
+      add_expects objects: entry, methods: entry_calls, return_val: []
 
       mapper.map_record
     end
