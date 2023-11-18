@@ -72,18 +72,18 @@ RSpec.describe 'DS::Manifest::Entry' do
 
   context 'to_h' do
     let(:hash) {
-      {:institution_wikidata_qid=>"Q49117",
-       :institution_wikidata_label=>"University of Pennsylvania",
-       :ds_id=>"DS10000",
-       :call_number=>"LJS 101",
-       :institutional_id=>"9951865503503681",
-       :title=>"Periermenias Aristotelis ... [etc.]",
-       :link_to_institutional_record=>"https://example-2.com",
-       :iiif_manifest_url=>"https://example.com",
-       :record_last_updated=>"20220803105830",
-       :source_type=>DS::Manifest::Entry::MARC_XML,
-       :filename=>"9951865503503681_marc.xml",
-       :manifest_generated_at=>"2023-07-25T09:52:02-0400"}
+      { :institution_wikidata_qid     => "Q49117",
+        :institution_wikidata_label   => "University of Pennsylvania",
+        :ds_id                        => "DS10000",
+        :call_number                  => "LJS 101",
+        :institutional_id             => "9951865503503681",
+        :title                        => "Periermenias Aristotelis ... [etc.]",
+        :link_to_institutional_record => "https://example-2.com",
+        :iiif_manifest_url            => "https://example.com",
+        :record_last_updated          => "20220803105830",
+        :source_type                  => DS::Manifest::Entry::MARC_XML,
+        :filename                     => "9951865503503681_marc.xml",
+        :manifest_generated_at        => "2023-07-25T09:52:02-0400" }
     }
 
     it 'returns the correct hash' do

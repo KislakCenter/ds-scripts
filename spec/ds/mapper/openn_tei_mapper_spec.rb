@@ -75,7 +75,6 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
       add_expects objects: DS::OPennTEI, methods: expected_calls, return_val: []
-      # extract_production_date gets called 2x, thus the [] , [] returns
 
       mapper.map_record
     end
