@@ -75,6 +75,12 @@ module DS
           xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
           # TODO: use xml.at_xpath to get the first item
           xml.xpath(xpath).first
+        when DS::Manifest::Constants::TEI_XML
+          xml_string = File.open(source_file_path entry).read
+          xml = Nokogiri::XML xml_string
+          xml.remove_namespaces!
+          xpath = "//TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = '#{entry.call_number}']"
+          xml.xpath(xpath).first
         else
           raise NotImplementedError,
                 "Record extraction not implemented for source type #{entry.source_type}"
@@ -85,6 +91,10 @@ module DS
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
           DS::Mapper::MarcMapper.new(
+            manifest_entry: entry, record: record, timestamp: tstamp
+          )
+        when DS::Manifest::Constants::TEI_XML
+          DS::Mapper::OPennTEIMapper.new(
             manifest_entry: entry, record: record, timestamp: tstamp
           )
         else

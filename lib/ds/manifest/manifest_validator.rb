@@ -112,8 +112,10 @@ module DS
           found         = case normal_source
                           when 'MARC XML', 'marcxml'
                             id_in_marc_xml? file_path, inst_id
+                          when 'teixml'
+                            id_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           else
-                            raise NotImplementedError("validate_ids not implemented for: #{source_type}")
+                            raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
                           end
           unless found
             STDERR.puts "ID not found in source file row: #{row_num+1}; id: #{inst_id}; source_file: #{entry.filename}"
@@ -142,6 +144,14 @@ module DS
 
         xpath = "//controlfield[@tag='001' and text() = #{id}]"
         entry.xpath(xpath).to_a.present?
+      end
+
+      def id_xml? file_path, id, xpath
+        xml = File.open(file_path) { |f| Nokogiri::XML(f) }
+        xml.remove_namespaces!
+        id_in_source = xml.xpath(xpath).text
+
+        id_in_source == id
       end
 
       ####################################

@@ -8,17 +8,26 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
   let(:xml_file) { File.join xml_dir, 'lewis_o_031_TEI.xml' }
   let(:record) { xml = File.open(xml_file) { |f| Nokogiri::XML f } }
   let(:timestamp) { Time.now }
+  let(:manifest_row) { parse_csv(<<~EOF
+        holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
+        Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+      EOF
+    ).first
+  }
+  let(:entry) { DS::Manifest::Entry.new manifest_row }
+
   let(:mapper) {
     DS::Mapper::OPennTEIMapper.new(
-      record: record, timestamp: timestamp, source_file: xml_file
+      manifest_entry: entry, record:record, timestamp: timestamp
     )
   }
+
 
   context 'initialize' do
     it 'creates a DS::Mapper::OPennTEIMapper' do
       expect(
         DS::Mapper::OPennTEIMapper.new(
-          record: record, timestamp: timestamp, source_file: xml_file
+          manifest_entry: entry, record:record, timestamp: timestamp
         )
       ).to be_a DS::Mapper::OPennTEIMapper
     end
@@ -34,23 +43,26 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
     }
     let(:expected_calls) {
       %i{
-        extract_holding_institution
-        extract_holding_institution_id_nummber
-        extract_shelfmark
-        extract_link_to_record
-        extract_production_place
-        extract_title_as_recorded
-        extract_title_as_recorded_agr
-        extract_material_as_recorded
-        extract_authors
-        extract_authors_agr
-        extract_artists_as_recorded
-        extract_artists_agr
-        extract_scribes_as_recorded
-        extract_scribes_agr
-        extract_former_owners_as_recorded
-        extract_former_owners_agr
-        extract_acknowledgments
+          extract_production_date
+          extract_production_date
+          extract_production_place
+          extract_title_as_recorded
+          extract_title_as_recorded_agr
+          extract_genre_as_recorded
+          extract_subject_as_recorded
+          extract_authors_as_recorded
+          extract_authors_agr
+          extract_artists_as_recorded
+          extract_artists_agr
+          extract_scribes_as_recorded
+          extract_scribes_agr
+          extract_language_as_recorded
+          extract_former_owners_as_recorded
+          extract_former_owners_agr
+          extract_material_as_recorded
+          extract_acknowledgments
+          extract_physical_description
+          extract_note
       }
     }
 
@@ -62,9 +74,8 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
-      add_expects objects: DS::OPennTEI, methods: expected_calls, args: record, return_val: []
+      add_expects objects: DS::OPennTEI, methods: expected_calls, return_val: []
       # extract_production_date gets called 2x, thus the [] , [] returns
-      expect(DS::OPennTEI).to receive(:extract_production_date).and_return [], []
 
       mapper.map_record
     end

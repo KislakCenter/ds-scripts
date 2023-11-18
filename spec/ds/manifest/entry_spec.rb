@@ -6,7 +6,7 @@ RSpec.describe 'DS::Manifest::Entry' do
 
   let(:manifest_row) { parse_csv(<<~EOF
     holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,MARC XML,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
   EOF
   ).first
   }
@@ -33,7 +33,7 @@ RSpec.describe 'DS::Manifest::Entry' do
       expect(entry.institution_wikidata_label).to eq 'University of Pennsylvania'
     end
     it 'has a source_type' do
-      expect(entry.source_type).to eq 'MARC XML'
+      expect(entry.source_type).to eq DS::Manifest::Entry::MARC_XML
     end
     it 'has a ds_id' do
       expect(entry.ds_id).to eq 'DS10000'
@@ -81,7 +81,7 @@ RSpec.describe 'DS::Manifest::Entry' do
        :link_to_institutional_record=>"https://example-2.com",
        :iiif_manifest_url=>"https://example.com",
        :record_last_updated=>"20220803105830",
-       :source_type=>"MARC XML",
+       :source_type=>DS::Manifest::Entry::MARC_XML,
        :filename=>"9951865503503681_marc.xml",
        :manifest_generated_at=>"2023-07-25T09:52:02-0400"}
     }
