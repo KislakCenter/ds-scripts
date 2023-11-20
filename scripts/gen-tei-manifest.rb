@@ -57,7 +57,7 @@ CSV headers: true do |csv|
     manifest_generated_at                = Time.now.strftime '%Y-%m-%dT%H:%M:%S%z'
 
     # in case there's no institutional ID, use the call number
-    institutional_id = holding_institution_institutional_id || call_number
+    institutional_id = call_number
 
     data = {
       holding_institution_wikidata_qid:     holding_institution_wikidata_qid,
