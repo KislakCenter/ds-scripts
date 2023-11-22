@@ -1,0 +1,12 @@
+term_as_recorded,vocabulary,source_authority_uri,authorized_label,structured_value
+Some Term,some_subset,,some term,http://example.com
+Abridgements,aat,,abridgements,http://vocab.getty.edu/aat/300202489
+Abridgments,fast,,Abridgments,http://id.worldcat.org/fast/1726571
+Abridgments,lcgft,,Abridgments,http://id.worldcat.org/fast/1726571
+Abstracts (summaries),aat,,abstracts (summaries),http://vocab.getty.edu/aat/300026032
+Account books,aat,,account books,http://vocab.getty.edu/aat/300027483
+accounts,aat,,accounts,http://vocab.getty.edu/aat/300145802
+Accounts,aat,,accounts,http://vocab.getty.edu/aat/300145802
+Agreements,aat,,agreements,http://vocab.getty.edu/aat/300027628
+Albums (Books),lcgft,,Albums (Books),http://id.worldcat.org/fast/1726784
+Allegories,aat,,allegories (literary works),http://vocab.getty.edu/aat/300202507

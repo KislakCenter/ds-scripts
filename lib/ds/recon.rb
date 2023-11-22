@@ -1,5 +1,6 @@
 require_relative 'util'
 require_relative 'recon/url_lookup'
+require_relative 'recon/base_term_set'
 require_relative 'recon/genres'
 require_relative 'recon/languages'
 require_relative 'recon/materials'

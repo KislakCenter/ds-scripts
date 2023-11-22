@@ -1,0 +1,15 @@
+term_as_recorded,language_code,authorized_label,structured_value
+Some Term,a code,A label,some_id
+;ara,;ara,Arabic,Q13955
+;ara;ota,;ara;ota,Arabic;Ottoman Turkish,Q13955;Q36730
+;ara;ota;per,;ara;ota;per,Arabic;Ottoman Turkish;Persian,Q13955;Q36730;Q9168
+;ara;per,;ara;per,Arabic;Persian,Q13955;Q9168
+;cop,;cop,Coptic,Q36155
+;dut,;dut,Dutch,Q7411
+;eng,;eng,English,Q1860
+;frm;ita,;frm;ita,Middle French;Italian,Q1473289;Q652
+;ger,;ger,German,Q188
+;grc,;grc,Ancient Greek,Q35497
+;ita;gre,;ita;gre,Italian;Greek,Q652;Q9129
+;lat,;lat,Latin,Q397
+[English],,English,Q1860
