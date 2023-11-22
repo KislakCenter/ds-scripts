@@ -42,33 +42,8 @@ RSpec.describe 'DS::Converter::BaseConverter' do
   context 'get_mapper' do
     it 'gets a MarcMapper' do
       expect(
-        converter.get_mapper(entry, record, Time.now)
+        converter.get_mapper(entry, Time.now)
       ).to be_a DS::Mapper::MarcMapper
-    end
-  end
-
-  context 'retrieve_record' do
-    let(:record) { converter.retrieve_record entry }
-
-    it 'returns an XML node' do
-      allow(File).to receive(:open).and_return(StringIO.new default_xml)
-      expect(record).to be_a Nokogiri::XML::Element
-    end
-
-    it 'returns the correct record' do
-      expect(
-        record.xpath('controlfield[@tag="001"]').text
-      ).to eq '9951865503503681'
-    end
-  end
-
-  context 'each' do
-    let(:record) { converter.retrieve_record entry }
-    it 'yields an entry and a record' do
-      allow(converter).to receive(:retrieve_record).and_return(record)
-      expect { |b|
-        converter.each &b
-      }.to yield_with_args DS::Manifest::Entry, Nokogiri::XML::Element
     end
   end
 
@@ -76,7 +51,9 @@ RSpec.describe 'DS::Converter::BaseConverter' do
     let(:record) { converter.retrieve_record entry }
     let(:mapper) {
       DS::Mapper::MarcMapper.new(
-        manifest_entry:entry, record: record, timestamp: Time.now
+        source_dir: marc_xml_dir,
+        manifest_entry: entry,
+        timestamp: Time.now
       )
     }
 

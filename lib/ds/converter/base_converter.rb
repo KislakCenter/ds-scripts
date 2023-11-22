@@ -40,8 +40,8 @@ module DS
       #   hashes for the provided manifest
       def convert &block
         data = []
-        each do |entry, record|
-          mapper = get_mapper entry, record, timestamp
+        each do |entry|
+          mapper = get_mapper entry, timestamp
           hash   = mapper.map_record
           data << hash
           yield hash if block_given?
@@ -52,40 +52,19 @@ module DS
       ##
       # @yieldparam [DS::Manifest::Entry] entry the manifest line item
       #   for each record
-      # @yieldparam [Nokogiri::XML::Element] record the XML node for the
-      #   yielded entry
       def each &block
         manifest.each do |entry|
-          record = retrieve_record entry
-          yield entry, record
+          yield entry
         end
       end
 
-      ##
-      # @param [DS::Manifest::Entry] entry the manifest data for this
-      #       record
-      # TODO: move extract record to MarcMapper allow it to find the correct
-      #   record based on entry
-      def retrieve_record entry
-        case entry.source_type
-        when DS::Manifest::Constants::MARC_XML
-          xml_string = File.open(source_file_path entry).read
-          xml = Nokogiri::XML xml_string
-          xml.remove_namespaces!
-          xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
-          # TODO: use xml.at_xpath to get the first item
-          xml.xpath(xpath).first
-        else
-          raise NotImplementedError,
-                "Record extraction not implemented for source type #{entry.source_type}"
-        end
-      end
-
-      def get_mapper entry, record, tstamp
+      def get_mapper entry, tstamp
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
           DS::Mapper::MarcMapper.new(
-            manifest_entry: entry, record: record, timestamp: tstamp
+            source_dir: source_dir,
+            manifest_entry: entry,
+            timestamp: tstamp
           )
         else
           raise NotImplementedError,

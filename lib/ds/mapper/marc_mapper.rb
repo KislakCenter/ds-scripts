@@ -4,18 +4,29 @@ module DS
   module Mapper
     class MarcMapper
       attr_reader :manifest_entry
-      attr_reader :record
       attr_reader :timestamp
+      attr_reader :source_dir
 
       ##
+      # @param [String] source_dir directory containing source files
       # @param [DS::Manifest:Entry] manifest_entry the manifest line
       #        item for this record
-      # @param [Nokogiri::XML::Node] record the MARC XML record node
       # @param [Date] timestamp for this import CSV
-      def initialize(manifest_entry:, record:, timestamp:)
-        @record                       = record
-        @manifest_entry               = manifest_entry
-        @timestamp                    = timestamp
+      def initialize(source_dir:, manifest_entry:, timestamp:)
+        @source_dir     = source_dir
+        @manifest_entry = manifest_entry
+        @timestamp      = timestamp
+      end
+
+      def record
+        return @record if @record.present?
+
+        source_file_path = File.join source_dir, manifest_entry.filename
+        xml_string = File.open(source_file_path).read
+        xml = Nokogiri::XML xml_string
+        xml.remove_namespaces!
+        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{manifest_entry.institutional_id}']]"
+        @record = xml.at_xpath xpath
       end
 
       def map_record
