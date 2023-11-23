@@ -59,7 +59,7 @@ class ReconCLI < DS::CLI
 
     out_csv = out_file 'names', options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       case options[:'source-type']
       when 'marc'
@@ -96,7 +96,7 @@ class ReconCLI < DS::CLI
 
     out_csv = out_file 'places', options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       case options[:'source-type']
       when 'marc'
@@ -142,7 +142,7 @@ LONGDESC
     tags    = options[:'named-subjects'] ? [600, 610, 611, 630, 647, 648] : [650, 651]
     out_csv = out_file base, options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       data = []
 
@@ -185,7 +185,7 @@ LONGDESC
     out_csv = out_file 'genres', options
 
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
       data = []
       case options[:'source-type']
       when 'marc'
@@ -221,7 +221,7 @@ LONGDESC
 
     out_csv = out_file 'materials', options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       case options[:'source-type']
       when 'marc'
@@ -258,7 +258,7 @@ LONGDESC
 
     out_csv = out_file 'languages', options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       case options[:'source-type']
       when 'marc'
@@ -295,7 +295,7 @@ LONGDESC
 
     out_csv = out_file 'titles', options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       case options[:'source-type']
       when 'marc'
@@ -332,7 +332,7 @@ LONGDESC
 
     out_csv = out_file 'splits', options
     begin
-      Recon::ReconData.update! unless skip_git? options
+      invoke :recon_update
 
       case options[:'source-type']
       when 'marc'
