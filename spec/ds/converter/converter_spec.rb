@@ -41,7 +41,7 @@ RSpec.describe 'DS::Converter::BaseConverter' do
   context 'get_mapper' do
     it 'gets a MarcMapper' do
       expect(
-        converter.get_mapper(entry, Time.now)
+        converter.find_or_create_mapper(entry, Time.now)
       ).to be_a DS::Mapper::MarcMapper
     end
   end
@@ -57,23 +57,23 @@ RSpec.describe 'DS::Converter::BaseConverter' do
 
     it 'yields a hash' do
       # Running BaseMapper#map_record is slow, and that method is tested
-      # elsewhere; here, mock Converter#get_mapper and
+      # elsewhere; here, mock Converter#find_or_create_mapper and
       # BaseMapper#map_record to optimize the test
-      allow(converter).to receive(:get_mapper).and_return(mapper)
+      allow(converter).to receive(:find_or_create_mapper).and_return(mapper)
       allow(mapper).to receive(:map_record).and_return({})
 
       expect { |b| converter.convert &b }.to yield_successive_args({}, {})
     end
 
     it 'returns an array' do
-      allow(converter).to receive(:get_mapper).and_return(mapper)
+      allow(converter).to receive(:find_or_create_mapper).and_return(mapper)
       allow(mapper).to receive(:map_record).and_return({ a: 1})
 
       expect(converter.convert).to be_an Array
     end
 
     it 'returns an array of hashes' do
-      allow(converter).to receive(:get_mapper).and_return(mapper)
+      allow(converter).to receive(:find_or_create_mapper).and_return(mapper)
       allow(mapper).to receive(:map_record).and_return({ a: 1})
 
       expect(converter.convert).to include({ a: 1 })

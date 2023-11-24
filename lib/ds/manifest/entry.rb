@@ -97,6 +97,10 @@ module DS
         row[MANIFEST_GENERATED_AT]
       end
 
+      def manifest_path
+        manifest.present? && manifest.path
+      end
+
       def to_h
         {
         institution_wikidata_qid:     institution_wikidata_qid,

@@ -23,6 +23,7 @@ module DS
       attr_reader :manifest
       attr_reader :timestamp
       attr_reader :source_dir
+      attr_reader :mappers
 
       ##
       # @param [DS::CSV] manifest the Manifest instance
@@ -30,6 +31,7 @@ module DS
         @manifest   = manifest
         @timestamp  = Time.now
         @source_dir = manifest.source_dir
+        @mappers = {}
       end
 
       ##
@@ -40,7 +42,7 @@ module DS
       def convert &block
         data = []
         each do |entry|
-          mapper = get_mapper entry, timestamp
+          mapper = find_or_create_mapper entry, timestamp
           hash   = mapper.map_record entry
           data << hash
           yield hash if block_given?
@@ -57,21 +59,34 @@ module DS
         end
       end
 
-      def get_mapper entry, tstamp
+      def find_or_create_mapper entry, tstamp
+        key = mapper_key entry
+        mappers[key] ||= create_mapper entry, tstamp
+      end
+
+      def create_mapper entry, tstamp
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
           DS::Mapper::MarcMapper.new(
             source_dir: source_dir,
-            timestamp: tstamp
+            timestamp:  tstamp
           )
         else
-          raise NotImplementedError,
-                "Mapper not implemented for source type: '#{entry.source_type}'"
+          raise NotImplementedError {
+            "Mapper not implemented for source type: '#{entry.source_type}'"
+          }
         end
       end
 
       def source_file_path entry
         File.join source_dir, entry.filename
+      end
+
+      def mapper_key entry
+        {
+          source_type: entry.source_type,
+          manifest_path: entry
+        }
       end
     end # class BaseConverter
   end # module Converter
