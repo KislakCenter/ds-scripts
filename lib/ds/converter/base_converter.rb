@@ -10,12 +10,11 @@ module DS
   # The DS Converter does the following:
   #
   # 1. Reads each entry from the Manifest CSV
-  # 2. Locates the source file named in the entry
-  # 3. Selects a Mapper type based on the source data type
-  # 4. Assembles the data need for mapping
-  # 5. Maps each record to the data hash, assembling all the
+  # 2. Selects a Mapper type based on the source data type
+  # 3. Assembles the data need for mapping
+  # 4. Maps each record to the data hash, assembling all the
   #    data hashes needed for the import CSV
-  # 6. Returns the assembled hashes to the caller
+  # 5. Returns the assembled hashes to the caller
   #
   module Converter
     class BaseConverter
