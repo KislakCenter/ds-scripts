@@ -17,7 +17,7 @@ module DS
   # 5. Returns the assembled hashes to the caller
   #
   module Converter
-    class BaseConverter
+    class Converter
       include Enumerable
 
       attr_reader :manifest

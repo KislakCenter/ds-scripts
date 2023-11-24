@@ -90,7 +90,7 @@ The MANIFEST is validated before the import CSV is generated. See
 
     # TODO: This is pretty busy; simplify; push to another class?
     manifest  = DS::Manifest::Manifest.new manifest_csv, source_dir
-    converter = DS::Converter::BaseConverter.new manifest
+    converter = DS::Converter::Converter.new manifest
     count     = 0
     valid     = true
     outfile   = options[:'output-csv']

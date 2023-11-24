@@ -27,14 +27,14 @@ RSpec.describe 'DS::Converter::BaseConverter' do
   let(:entry) { manifest.first }
 
   let(:converter) {
-    DS::Converter::BaseConverter.new manifest
+    DS::Converter::Converter.new manifest
   }
 
   context 'initialize' do
     it 'creates a new DS::Converter::BaseConverter' do
       expect(
-        DS::Converter::BaseConverter.new manifest
-      ).to be_a DS::Converter::BaseConverter
+        DS::Converter::Converter.new manifest
+      ).to be_a DS::Converter::Converter
     end
   end
 
