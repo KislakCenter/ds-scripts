@@ -4,19 +4,27 @@ require 'spec_helper'
 
 RSpec.describe 'DS::Manifest::Entry' do
 
-  let(:manifest_row) { parse_csv(<<~EOF
+  let(:manifest_csv) {parse_csv(<<~EOF
     holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
     Q49117,9951865503503681_marc.xml,University of Pennsylvania,MARC XML,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
   EOF
-  ).first
-  }
+  )
+ }
+  let(:marc_xml_dir) { fixture_path 'marc_xml' }
+  let(:manifest_path) { File.join marc_xml_dir, 'manifest.csv' }
 
-  let(:entry) { DS::Manifest::Entry.new manifest_row }
+  let(:manifest) {
+    DS::Manifest::Manifest.new manifest_path, marc_xml_dir
+  }
+  let(:manifest_row) { manifest_csv.first }
+
+
+  let(:entry) { DS::Manifest::Entry.new manifest_row, manifest }
 
   context 'initialize' do
     it 'creates a new DS::Manifest::Entry' do
       expect(
-        DS::Manifest::Entry.new manifest_row
+        DS::Manifest::Entry.new manifest_row, manifest
       ).to be_a DS::Manifest::Entry
     end
   end

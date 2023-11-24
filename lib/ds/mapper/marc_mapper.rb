@@ -3,42 +3,43 @@
 module DS
   module Mapper
     class MarcMapper
-      attr_reader :manifest_entry
       attr_reader :timestamp
       attr_reader :source_dir
 
       ##
       # @param [String] source_dir directory containing source files
-      # @param [DS::Manifest:Entry] manifest_entry the manifest line
-      #        item for this record
       # @param [Date] timestamp for this import CSV
-      def initialize(source_dir:, manifest_entry:, timestamp:)
+      def initialize(source_dir:, timestamp:)
         @source_dir     = source_dir
-        @manifest_entry = manifest_entry
         @timestamp      = timestamp
       end
 
-      def record
-        return @record if @record.present?
-
-        source_file_path = File.join source_dir, manifest_entry.filename
+      ##
+      # @param [DS::Manifest::Entry] entry +entry+ representing one
+      #     row in a manifest
+      def extract_record entry
+        source_file_path = File.join source_dir, entry.filename
         xml_string = File.open(source_file_path).read
         xml = Nokogiri::XML xml_string
         xml.remove_namespaces!
-        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{manifest_entry.institutional_id}']]"
-        @record = xml.at_xpath xpath
+        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
+        xml.at_xpath xpath
       end
 
-      def map_record
+      ##
+      # @param [DS::Manifest::Entry] entry entry instance for a manifest row
+      # @return [Hash] the mapped record
+      def map_record entry
+        record = extract_record entry
         source_type                        = 'marc-xml'
-        source_file                        = manifest_entry.filename
+        source_file                        = entry.filename
         cataloging_convention              = DS::MarcXML.extract_cataloging_convention record
-        holding_institution                = manifest_entry.institution_wikidata_qid
-        holding_institution_as_recorded    = manifest_entry.institution_wikidata_label
+        holding_institution                = entry.institution_wikidata_qid
+        holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = DS::MarcXML.extract_001_control_number record
-        holding_institution_shelfmark      = manifest_entry.call_number
-        link_to_holding_institution_record = manifest_entry.link_to_institutional_record
-        iiif_manifest                      = manifest_entry.iiif_manifest_url
+        holding_institution_shelfmark      = entry.call_number
+        link_to_holding_institution_record = entry.link_to_institutional_record
+        iiif_manifest                      = entry.iiif_manifest_url
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
         production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
         century                            = DS.transform_dates_to_centuries production_date

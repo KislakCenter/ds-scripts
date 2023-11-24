@@ -42,7 +42,7 @@ module DS
         data = []
         each do |entry|
           mapper = get_mapper entry, timestamp
-          hash   = mapper.map_record
+          hash   = mapper.map_record entry
           data << hash
           yield hash if block_given?
         end
@@ -63,7 +63,6 @@ module DS
         when DS::Manifest::Constants::MARC_XML
           DS::Mapper::MarcMapper.new(
             source_dir: source_dir,
-            manifest_entry: entry,
             timestamp: tstamp
           )
         else

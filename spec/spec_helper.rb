@@ -357,6 +357,13 @@ module Helpers
     CSV.parse csv_string, headers: true
   end
 
+  def temp_csv csv_string
+    temp = Tempfile.new
+    temp.puts csv_string
+    temp.rewind
+    temp.path
+  end
+
   def add_stubs objects, methods, return_val
     objs = *objects
     syms = *methods

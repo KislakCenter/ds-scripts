@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<marc:records xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+  <marc:record>
+    <marc:leader>05588ctm a2200709Ia 4500</marc:leader>
+    <marc:controlfield tag="001">9949533433503681</marc:controlfield>
+    <marc:controlfield tag="005">20220803105856.0</marc:controlfield>
+    <marc:controlfield tag="008">110308q12501299paup          000 0 lat d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)ocn706137803</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(OCoLC)706137803</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="035">
+  <marc:subfield code="a">(PU)4953343-penndb-Voyager</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="040">
+  <marc:subfield code="a">PAULM</marc:subfield>
+  <marc:subfield code="b">eng</marc:subfield>
+  <marc:subfield code="e">amremm</marc:subfield>
+  <marc:subfield code="c">PAULM</marc:subfield>
+  <marc:subfield code="d">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="049">
+  <marc:subfield code="a">PAUM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="079">
+  <marc:subfield code="a">ocn706137538</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="9" tag="099">
+  <marc:subfield code="a">LJS 280</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="110">
+  <marc:subfield code="a">Catholic Church.</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/n79041716</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="240">
+  <marc:subfield code="a">Decretales Gregorii IX.</marc:subfield>
+  <marc:subfield code="k">Selections.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2="0" tag="245">
+  <marc:subfield code="a">Decretales a[b]breviate.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="260">
+  <marc:subfield code="a">[France],</marc:subfield>
+  <marc:subfield code="c">[between 1250 and 1299]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="300">
+  <marc:subfield code="a">147 leaves :</marc:subfield>
+  <marc:subfield code="b">parchment, color illustrations ;</marc:subfield>
+  <marc:subfield code="c">208 x 148 (103 x 81) mm bound to 210 x 162 mm</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="336">
+  <marc:subfield code="a">text</marc:subfield>
+  <marc:subfield code="b">txt</marc:subfield>
+  <marc:subfield code="2">rdacontent</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="337">
+  <marc:subfield code="a">unmediated</marc:subfield>
+  <marc:subfield code="b">n</marc:subfield>
+  <marc:subfield code="2">rdamedia</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="338">
+  <marc:subfield code="a">volume</marc:subfield>
+  <marc:subfield code="b">nc</marc:subfield>
+  <marc:subfield code="2">rdacarrier</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Title from explicit (f. 147r).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Origin:  Written in France between 1250 and 1299.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Decoration:  Historiated initial with a portrait of Gregory IX (f. 4r); large illuminated initials in blue, pink, and gold at beginning of table of contents and Books 3-5 (f. 1r, 61r, 96v, 111r); initials at beginning of chapters alternate between red with blue penwork and blue with red penwork; red or blue capital L and red and blue roman numerals in upper margins indicating book divisions; small initials throughout alternate between blue and red; rubrics in red.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Binding:  15th-century sheepskin over wooden boards; blind ruling and stamped heraldic eagles and flowers visible on lower cover; upper cover and edges smoke-damaged; metal clasp; chain, probably 17th-century, of 7 hourglass-shaped links attached to decorative boss at head of lower cover.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Foliation:  Parchment, 147; [1-147]; modern foliation in pencil, upper right recto.  12 bifolia are missing with loss of text (4, 3, 3, and 2 bifolia following f. 11, 28, 126, and 145 respectively) in Book 1, the beginning of Book 2, and Book 5; the modern foliation does not account for the missing leaves.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Layout:  Written in 2 columns of 25 lines; ruled in lead.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Script:  Written in an early Gothic book hand.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="500">
+  <marc:subfield code="a">Ms. codex.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="505">
+  <marc:subfield code="a">1. f.1r-3r: [Table of contents] -- 2. f.4r-28v: Liber I, De summa Trinitate et fide catholica -- 3. f.29r-61r: Liber II, De iudiciis -- 4. f.61r-96v: Liber III, De vita et honestate clericorum -- 5. f.96v-111r: Liber IV, De sponsalibus et matrimoniis -- 6. f.111r-147r: Liber V, De accusationibus, inquisitionibus, denunciationibus -- 7. f.147r: [Liber sextus decretalium IV 1.6.1]</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2=" " tag="510">
+  <marc:subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</marc:subfield>
+  <marc:subfield code="c">p. 148 (LJS 280).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="520">
+  <marc:subfield code="a">An abbreviated version of the decretals compiled by Raymond of Peñafort in the 1230s by order of Pope Gregory IX.  Thomas Izbicki has identified an additional selection from Innocent III from the Liber sextus decretalium (IV 1.6.1) included before the closing rubric (f. 147r).  Table of contents entries for the chapters and chapter numbers added in the margins in a 14th-century hand.  Mnemonic verses indicating the contents of the manuscript and three lines of a hymn to Saints John, Peter, and Lawrence are written inside the upper cover in a 15th-century hand.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="524">
+  <marc:subfield code="a">UPenn LJS 280</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="546">
+  <marc:subfield code="a">Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Formerly held in the library of Saint Martin Major, Cologne (inscription, f. 6v gutter), 17th and 18th centuries.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Gift of Lawrence J. Schoenberg and Barbara Brizdle, 2010.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Purchased by S. Ereilter (?) in Cologne, August 1843 (pencil inscription, f. 147v).</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="561">
+  <marc:subfield code="a">Sold by Sam Fogg to Lawrence J. Schoenberg, Nov. 1998.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="590">
+  <marc:subfield code="a">Lawrence J. Schoenberg &amp; Barbara Brizdle Manuscript Initiative.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="648">
+  <marc:subfield code="a">Early works to 1800.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="650">
+  <marc:subfield code="a">Canon law</marc:subfield>
+  <marc:subfield code="v">Early works to 1800.</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/subjects/sh2008100063</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="650">
+  <marc:subfield code="a">Canon law.</marc:subfield>
+  <marc:subfield code="2">fast</marc:subfield>
+  <marc:subfield code="0">http://id.worldcat.org/fast/845910</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Codices.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="0">http://vocab.getty.edu/aat/300224200</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Medieval.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Decretals.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="0">http://vocab.getty.edu/aat/300026927</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="0" tag="655">
+  <marc:subfield code="a">Manuscripts, Latin.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2="7" tag="655">
+  <marc:subfield code="a">Abridgements.</marc:subfield>
+  <marc:subfield code="2">aat</marc:subfield>
+  <marc:subfield code="0">http://vocab.getty.edu/aat/300202489</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2=" " tag="700">
+  <marc:subfield code="a">Raymond,</marc:subfield>
+  <marc:subfield code="c">of Peñafort, Saint,</marc:subfield>
+  <marc:subfield code="d">1175?-1275,</marc:subfield>
+  <marc:subfield code="e">compiler.</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/n81074464</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Ereilter, S.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">Schoenberg, Lawrence J.,</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/no00004988</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Gross Sankt Martin (Church : Cologne, Germany),</marc:subfield>
+  <marc:subfield code="e">former owner.</marc:subfield>
+  <marc:subfield code="0">http://id.loc.gov/authorities/names/n92078014</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="2" ind2=" " tag="710">
+  <marc:subfield code="a">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+  <marc:subfield code="5">PU</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="0" ind2="0" tag="773">
+  <marc:subfield code="t">Lawrence J. Schoenberg Collection (University of Pennsylvania)</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="852">
+  <marc:subfield code="b">Kislak Center for Special Collections, Rare Books and Manuscripts</marc:subfield>
+  <marc:subfield code="a">University of Pennsylvania</marc:subfield>
+  <marc:subfield code="e">3420 Walnut Street, Philadelphia, Pennsylvania 19104-6206.</marc:subfield>
+  <marc:subfield code="j">LJS 280</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Video orientation</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/2025263</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="2" tag="856">
+  <marc:subfield code="3">The Lawrence J. Schoenberg and Barbara Brizdle Manuscript Initiative Fund Home Page</marc:subfield>
+  <marc:subfield code="u">http://hdl.library.upenn.edu/1017.12/366278</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for download (OPenn)</marc:subfield>
+  <marc:subfield code="u">https://openn.library.upenn.edu/Data/0001/html/ljs280.html</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1="4" ind2="1" tag="856">
+  <marc:subfield code="z">Digital facsimile for browsing (Colenda)</marc:subfield>
+  <marc:subfield code="u">https://colenda.library.upenn.edu/catalog/81431-p3wm13v03</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="902">
+  <marc:subfield code="a">MARCIVE 2022</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="994">
+  <marc:subfield code="a">C0</marc:subfield>
+  <marc:subfield code="b">PAULM</marc:subfield>
+</marc:datafield>
+    <marc:datafield ind1=" " ind2=" " tag="999">
+  <marc:subfield code="a">DLA</marc:subfield>
+  <marc:subfield code="b">20100113</marc:subfield>
+</marc:datafield>
+    <marc:holdings>
+      <marc:holding>
+        <marc:holding_id>22372619990003681</marc:holding_id>
+        <marc:call_number>Oversize LJS 280</marc:call_number>
+        <marc:library>KislakCntr</marc:library>
+        <marc:location>scmss</marc:location>
+      </marc:holding>
+    </marc:holdings>
+  </marc:record>
+</marc:records>

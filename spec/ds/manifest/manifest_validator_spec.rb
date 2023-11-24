@@ -5,17 +5,12 @@ require 'csv'
 
 RSpec.describe 'DS::Manifest::ManifestValidator' do
 
-
-  let(:csv_data) { parse_csv <<~EOF
-    holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
-EOF
-  }
-
-
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:manifest_csv) { 'manifest.csv' }
-  let(:manifest_path) { File.join marc_xml_dir, manifest_csv }
+  let(:manifest_path) { File.join marc_xml_dir, manifest_csv}
+  let(:csv_data) {
+    CSV.parse File.open(manifest_path, 'r').read, headers: true
+  }
   let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
 
   let(:validator) { DS::Manifest::ManifestValidator.new manifest }
@@ -97,13 +92,14 @@ EOF
     end
 
     context 'with missing columns' do
-      let(:csv_data) { StringIO.new <<~EOF
+      let(:csv_data) {  <<~EOF
         holding_institution_wikidata_qid,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
         Q49117,University of Pennsylvania,marc-xml,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
         Q49117,University of Pennsylvania,marc-xml,,9957602663503681,"//marc:controlfield[@tag=""001""]",20220803105833,LJS 108,Manuscript leaf from Interpretationes Hebraicorum nominum,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3gw56/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9957602663503681,2023-07-25T09:52:02-0400
 EOF
       }
-      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
+      let(:manifest_path) { temp_csv csv_data  }
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir}
       let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
@@ -123,12 +119,13 @@ EOF
     end
 
     context 'with missing values' do
-      let(:csv_data) { StringIO.new <<~EOF
+      let(:csv_data) { <<~EOF
         holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
         ,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3rd1b/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9951865503503681,2023-07-25T09:52:02-0400
         EOF
       }
-      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir }
+      let(:manifest_path) { temp_csv csv_data  }
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
       let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
@@ -145,7 +142,6 @@ EOF
       end
 
     end
-
 
     context "for an invalid url" do
       let(:csv_data) { parse_csv <<~EOF
@@ -231,7 +227,8 @@ EOF
         BAD SOURCE TYPE,other_value
       EOF
       }
-      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir }
+      let(:manifest_path) { temp_csv csv_data  }
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
 
       it 'is falsey' do
         expect(validator.validate_source_type manifest.first, 0).to be_falsey
@@ -246,17 +243,17 @@ EOF
     end
 
     it 'validates URLs' do
-      expect(validator).to receive(:validate_urls)
+      expect(validator).to receive(:validate_urls).at_least(:once)
       validator.validate_data_types
     end
 
     it 'validates QIDs' do
-      expect(validator).to receive(:validate_qids)
+      expect(validator).to receive(:validate_qids).at_least(:once)
       validator.validate_data_types
     end
 
     it 'validates Dates' do
-      expect(validator).to receive(:validate_dates)
+      expect(validator).to receive(:validate_dates).at_least(:once)
       validator.validate_data_types
     end
   end
@@ -269,13 +266,15 @@ EOF
     end
 
     context 'for files that don\'t exist' do
-      let(:csv_data) { StringIO.new <<~EOF
+      let(:csv_data) { <<~EOF
         filename,other_column
         not_a_file.xml,val
         EOF
       }
 
-      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
+      let(:manifest_path) { temp_csv csv_data  }
+
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir}
       let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
@@ -292,13 +291,16 @@ EOF
     end
 
     context 'for a CSV with bad IDs' do
-      let(:csv_data) { StringIO.new <<~EOF
+      let(:csv_data) { <<~EOF
         filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
         9951865503503681_marc.xml,marc-xml,XXXXXXXXX,"//marc:controlfield[@tag=""001""]"
       EOF
       }
+      let(:manifest_path) {
+        temp_csv csv_data
+      }
 
-      let(:manifest) { DS::Manifest::Manifest.new csv_data, marc_xml_dir}
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir}
       let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do

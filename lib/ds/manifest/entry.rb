@@ -26,10 +26,13 @@ module DS
       include DS::Manifest::Constants
 
       attr_reader :row
+      attr_reader :manifest
       ##
       # @param [CSV::Row] row a manifest CSV row
-      def initialize row
+      # @param [DS::Manifest::Manifest] manifest the parent manifest
+      def initialize row, manifest
         @row = row
+        @manifest = manifest
       end
 
       def [] key
