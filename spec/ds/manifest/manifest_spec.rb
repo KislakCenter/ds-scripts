@@ -32,13 +32,27 @@ RSpec.describe 'DS::Manifest' do
     end
 
     context 'when source dir is nil' do
-
       it 'uses the directory from the CSV path' do
         expect(
           DS::Manifest::Manifest.new manifest_path
         ).to be_a DS::Manifest::Manifest
       end
+    end
+  end
 
+  context '#path' do
+    it 'is implemented' do
+      expect(manifest).to respond_to :path
+    end
+
+    it "doesn't raise an error" do
+      expect {
+        manifest.path
+      }.not_to raise_error
+    end
+
+    it 'equals the input CSV path' do
+      expect(manifest.path).to eq manifest_path
     end
   end
 end
