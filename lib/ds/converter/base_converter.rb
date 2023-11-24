@@ -28,8 +28,8 @@ module DS
       ##
       # @param [DS::CSV] manifest the Manifest instance
       def initialize manifest
-        @manifest  = manifest
-        @timestamp = Time.now
+        @manifest   = manifest
+        @timestamp  = Time.now
         @source_dir = manifest.source_dir
       end
 
@@ -74,7 +74,6 @@ module DS
       def source_file_path entry
         File.join source_dir, entry.filename
       end
-
     end # class BaseConverter
   end # module Converter
 end # module DS
