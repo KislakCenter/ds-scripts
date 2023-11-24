@@ -2,18 +2,18 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DS::Mapper::Mapper' do
+RSpec.describe 'DS::Mapper::BaseMapper' do
 
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:timestamp) { Time.now }
-  let(:mapper) { DS::Mapper::Mapper.new marc_xml_dir, timestamp }
+  let(:mapper) { DS::Mapper::BaseMapper.new marc_xml_dir, timestamp }
   let(:entry) { Object.new }
 
   context 'initialize' do
     it 'creates a new mapper' do
       expect(
-        DS::Mapper::Mapper.new marc_xml_dir, timestamp
-      ).to be_a DS::Mapper::Mapper
+        DS::Mapper::BaseMapper.new marc_xml_dir, timestamp
+      ).to be_a DS::Mapper::BaseMapper
     end
   end
 

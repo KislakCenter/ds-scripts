@@ -2,7 +2,7 @@
 
 module DS
   module Mapper
-    class Mapper
+    class BaseMapper
       attr_reader :timestamp
       attr_reader :source_dir
 

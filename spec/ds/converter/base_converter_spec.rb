@@ -56,9 +56,9 @@ RSpec.describe 'DS::Converter::BaseConverter' do
     }
 
     it 'yields a hash' do
-      # Running Mapper#map_record is slow, and that method is tested
+      # Running BaseMapper#map_record is slow, and that method is tested
       # elsewhere; here, mock Converter#get_mapper and
-      # Mapper#map_record to optimize the test
+      # BaseMapper#map_record to optimize the test
       allow(converter).to receive(:get_mapper).and_return(mapper)
       allow(mapper).to receive(:map_record).and_return({})
 
