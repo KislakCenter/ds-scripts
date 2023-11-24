@@ -2,17 +2,7 @@
 
 module DS
   module Mapper
-    class MarcMapper
-      attr_reader :timestamp
-      attr_reader :source_dir
-
-      ##
-      # @param [String] source_dir directory containing source files
-      # @param [Date] timestamp for this import CSV
-      def initialize(source_dir:, timestamp:)
-        @source_dir     = source_dir
-        @timestamp      = timestamp
-      end
+    class MarcMapper < DS::Mapper::BaseMapper
 
       ##
       # @param [DS::Manifest::Entry] entry +entry+ representing one

@@ -33,7 +33,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
 
   let(:timestamp) { Time.now }
 
-  let(:mapper) {
+  let(:base_mapper) {
     DS::Mapper::MarcMapper.new(
       source_dir: marc_xml_dir,
       timestamp: timestamp
@@ -43,15 +43,27 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
   context 'extract_record' do
 
     it 'returns an XML node' do
-      expect(mapper.extract_record entry).to be_a Nokogiri::XML::Element
+      expect(base_mapper.extract_record entry).to be_a Nokogiri::XML::Element
     end
 
     let(:institutional_id) { entry.institutional_id }
     let(:xpath) { entry.institutional_id_location_in_source }
-    let(:record) { mapper.extract_record entry }
+    let(:record) { base_mapper.extract_record entry }
 
     it 'returns the expected record' do
       expect(record.at_xpath(xpath).text).to eq entry.institutional_id
+    end
+  end
+
+  context 'DS::Mapper::BaseMapper implementation' do
+    it 'implements #extract_record(entry)' do
+      expect {
+        base_mapper.extract_record entry
+      }.not_to raise_error
+    end
+
+    it 'is a kind of BaseMapper' do
+      expect(base_mapper).to be_a_kind_of DS::Mapper::BaseMapper
     end
   end
 
@@ -76,7 +88,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
       ]
       add_stubs recons, :lookup, []
 
-      expect(mapper.map_record entry).to be_a Hash
+      expect(base_mapper.map_record entry).to be_a Hash
     end
   end
 end
