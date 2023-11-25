@@ -815,7 +815,7 @@ module DS
           note.to_s =~ %r{\blang:\s*}i
         }.map { |note|
           # add period to any note without terminal punctuation: .,;:? or !
-          DS.terminate(note, terminator: '.', force: true)
+          DS::Util.terminate(note, terminator: '.', force: true)
         }
       end
 

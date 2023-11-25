@@ -2,34 +2,34 @@
 
 module DS
   module Mapper
-    class MarcMapper
-      attr_reader :record
-      attr_reader :inst_qid
-      attr_reader :inst_code
-      attr_reader :preferred_name
-      attr_reader :holdings_file
-      attr_reader :timestamp
-      attr_reader :source_file
+    class MarcMapper < DS::Mapper::BaseMapper
 
-      def initialize(record:, inst_qid:, inst_code:, preferred_name:, holdings_file:, timestamp:, source_file:)
-        @record         = record
-        @inst_qid       = inst_qid
-        @inst_code      = inst_code
-        @preferred_name = preferred_name
-        @holdings_file  = holdings_file
-        @timestamp      = timestamp
-        @source_file    = source_file
+      ##
+      # @param [DS::Manifest::Entry] entry +entry+ representing one
+      #     row in a manifest
+      def extract_record entry
+        source_file_path = File.join source_dir, entry.filename
+        xml_string = File.open(source_file_path).read
+        xml = Nokogiri::XML xml_string
+        xml.remove_namespaces!
+        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
+        xml.at_xpath xpath
       end
 
-      def map_record
+      ##
+      # @param [DS::Manifest::Entry] entry entry instance for a manifest row
+      # @return [Hash] the mapped record
+      def map_record entry
+        record = extract_record entry
         source_type                        = 'marc-xml'
+        source_file                        = entry.filename
         cataloging_convention              = DS::MarcXML.extract_cataloging_convention record
-        holding_institution                = inst_qid
-        holding_institution_as_recorded    = preferred_name
-        holding_institution_id_number      = DS::MarcXML.extract_001_control_number record, holdings_file
-        holding_institution_shelfmark      = DS::MarcXML.extract_holding_institution_shelfmark record, holdings_file
-        link_to_holding_institution_record = DS::MarcXML.extract_link_to_inst_record record, inst_code
-        iiif_manifest                      = DS::MarcXML.find_iiif_manifest record
+        holding_institution                = entry.institution_wikidata_qid
+        holding_institution_as_recorded    = entry.institution_wikidata_label
+        holding_institution_id_number      = DS::MarcXML.extract_001_control_number record
+        holding_institution_shelfmark      = entry.call_number
+        link_to_holding_institution_record = entry.link_to_institutional_record
+        iiif_manifest                      = entry.iiif_manifest_url
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
         production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
         century                            = DS.transform_dates_to_centuries production_date
@@ -56,14 +56,14 @@ module DS
         author                             = ''
         author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'instance_of').join '|'
         author_label                       = Recon::Names.lookup(author_as_recorded.split('|'), column: 'authorized_label').join '|'
-        artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded(record,      tags: [700, 710], relators: ['artist', 'illuminator']).join '|'
-        artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr(record,  tags: [700, 710], relators: ['artist', 'illuminator']).join '|'
+        artist_as_recorded                 = DS::MarcXML.extract_names_as_recorded(record,      tags: [700, 710, 711], relators: ['artist', 'illuminator']).join '|'
+        artist_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr(record,  tags: [700, 710, 711], relators: ['artist', 'illuminator']).join '|'
         artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'structured_value').join '|'
         artist                             = ''
         artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'instance_of').join '|'
         artist_label                       = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'authorized_label').join '|'
-        scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded(record,      tags: [700, 710], relators: ['scribe']).join '|'
-        scribe_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr(record,  tags: [700, 710], relators: ['scribe']).join '|'
+        scribe_as_recorded                 = DS::MarcXML.extract_names_as_recorded(record,      tags: [700, 710, 711], relators: ['scribe']).join '|'
+        scribe_as_recorded_agr             = DS::MarcXML.extract_names_as_recorded_agr(record,  tags: [700, 710, 711], relators: ['scribe']).join '|'
         scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
         scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
@@ -71,8 +71,8 @@ module DS
         language_as_recorded               = DS::MarcXML.extract_language_as_recorded record
         language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
         language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
-        former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded(record,      tags: [700, 710, 790, 791], relators: ['former owner']).join '|'
-        former_owner_as_recorded_agr       = DS::MarcXML.extract_names_as_recorded_agr(record,  tags: [700, 710, 790, 791], relators: ['former owner']).join '|'
+        former_owner_as_recorded           = DS::MarcXML.extract_names_as_recorded(record,      tags: [700, 710, 711, 790, 791], relators: ['former owner']).join '|'
+        former_owner_as_recorded_agr       = DS::MarcXML.extract_names_as_recorded_agr(record,  tags: [700, 710, 711, 790, 791], relators: ['former owner']).join '|'
         former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
         former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
@@ -80,7 +80,7 @@ module DS
         material_as_recorded               = DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b').join '|'
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
-        physical_description               = DS::MarcXML.extract_physical_description record
+        physical_description               = DS::MarcXML.extract_physical_description(record).join('|')
         note                               = DS::MarcXML.extract_note(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
@@ -145,7 +145,7 @@ module DS
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
-          source_file:                        source_file,
+          source_file:                        source_file
         }
       end
     end

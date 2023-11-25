@@ -66,7 +66,7 @@ tmpfile = Tempfile.open('files')
 get_input.each { |f| tmpfile.puts f }
 tmpfile.close
 
-tstmp = Time.now.strftime '%Y-%d-%m'
+tstmp = Time.now.strftime '%Y-%m-%d'
 
 command_opts = ""
 command_opts << "-t #{options[:source_type]} "

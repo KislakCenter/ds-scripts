@@ -1,4 +1,5 @@
 require 'config'
+require 'active_support/all'
 
 require_relative 'ds/ds_error'
 require_relative 'ds/util'
@@ -11,15 +12,23 @@ require_relative 'ds/marc_xml'
 require_relative 'ds/csv_util'
 require_relative 'ds/recon'
 require_relative 'ds/institutions'
+require_relative 'ds/mapper/base_mapper'
 require_relative 'ds/mapper/marc_mapper'
 require_relative 'ds/mapper/ds_mets_mapper'
 require_relative 'ds/mapper/openn_tei_mapper'
+require_relative 'ds/manifest'
+require_relative 'ds/converter'
 
 module DS
   include DS::Constants
 
   def self.root
     File.expand_path '../..', __FILE__
+  end
+
+  def self.normalize_key key
+    return '' if key.blank?
+    key.to_s.downcase.strip.gsub %r{\W+}, ''
   end
 
   def self.data_dir
@@ -35,79 +44,6 @@ module DS
   configure!
 
   module ClassMethods
-    ##
-    # This method:
-    #
-    # - converts encoded DS 1.0 encoded superscripts to parenthetical values; e.g., 'XVI#^4/4#' is converted to 'XVI(4/4)'
-    # - cleans tabs, newlines and duplicate spaces with a single +' '+
-    # - removes isolated pairs of period characters, which show up for some reason
-    # - removes square brackets
-    #
-    # If +terminator+ is non-nil, the method removes any trailing punctuation and whitespace and appends +terminator+.
-    #
-    # Set +terminator+ to +``+ (empty string) to remove trailing punctuation.
-    #
-    # A string with leading and trailing whitespace is returned.
-    #
-    # @param [String] string the string to clean
-    # @param [String] terminator the terminator to use, if any
-    # @return [String] the cleaned string
-    def clean_string string, terminator: nil
-      # handle DS legacy superscript encoding, whitespace, duplicate '.'
-      # remove trailing punctuation only if a terminator is specified (see below)
-      # %r{(?<!\.)\.{2}(?!\.)} => two periods `\.{2}` when not preceded by a period (?<!\.) and not followed by a period (?!\.)
-      normal = string.to_s.gsub(%r{#\^([^#]+)#}, '(\1)').gsub(%r{\s+}, ' ').strip.gsub(%r{(?<!\.)\.\.(?!\.)}, '.').delete('[]').strip
-
-      return normal if terminator.nil?
-
-      terminate normal, terminator: terminator, force: true
-    end
-
-    ##
-    # Add termination to string if it lacks terminal punctuation.
-    # Terminal punctuation is one of
-    #
-    #     . , ; : ? !
-    #
-    # When +:terminator+ is +''+ or +nil+, trailing punctuation is*always*
-    # removed.
-    #
-    # Strings ending with ellipsis, '...' or '..."' are returned unaltered. This
-    # behavior cannot be overridden with `:force`.
-    #
-    # @param [String] str the string to terminate
-    # @param [String] terminator the terminator to use; default: +.+
-    # @param [Boolean] force use exact termination with +terminator+
-    # @return [String]
-    def terminate str, terminator: '.', force: false
-      str.strip!
-      # DE 2022.08.12 Note the \s* to match and replace whitespace before
-      #     punctuation; this addresses a bug where some strings were returned
-      #     with trailing whitespace: 'value :' => 'value '
-      # TODO: Refactor? Two functions: strip_punctuation(), terminate() ??
-      terminal_punct = %r{\s*([.,;:?!]+)("?)$}
-      ellipsis = %r{\.\.\."?$}
-
-      # don't strip ellipses
-      return str if str.strip =~ ellipsis
-
-      # if :terminator is '' or nil, remove any terminal punctuation
-      return str.sub terminal_punct, '\2' if terminator.to_s.empty?
-
-      # str is already terminated
-      return str if str.end_with? terminator
-      return str if str.end_with? %Q{#{terminator}"}
-
-      # str lacks terminal punctuation; add it;
-      #  \\1 => keep final '"' (double-quote)
-      return str.sub %r{("?)$}, "#{terminator}\\1" if str !~ terminal_punct
-      # str has to have exact terminal punctuation
-      #  \\1 => keep final '"' (double-quote)
-      return str.sub terminal_punct, "#{terminator}\\2" if force
-      # string has some terminal punctuation; return it
-      str
-    end
-
     def mark_long s
       return s if s.to_s.size <= DS::MAX_WIKIBASE_FIELD_LENGTH
 

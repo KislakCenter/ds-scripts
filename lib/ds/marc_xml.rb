@@ -33,7 +33,7 @@ module DS
       # @return [String]
       def extract_language_as_recorded record
         xpath = "datafield[@tag=546]/subfield[@code='a']"
-        langs = record.xpath(xpath).map { |val| DS.clean_string val.text, terminator: ''}
+        langs = record.xpath(xpath).map { |val| DS::Util.clean_string val.text, terminator: ''}
         return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
 
         extract_langs record
@@ -64,12 +64,12 @@ module DS
         #
         # However Cornell use $d to continue 260$c
         dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
-          t.text.strip
+          DS::Util.clean_string t.text.strip
         end.join ' '
         return dar.strip unless dar.strip.empty?
 
         dar = record.xpath("datafield[@tag=264]/subfield[@code='c']/text()").map do |t|
-          t.text.strip
+          DS::Util.clean_string t.text.strip
         end.join ' '
         return dar.strip unless dar.strip.empty?
 
@@ -88,7 +88,7 @@ module DS
         #   </datafield>
         #
         dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
-        return dar unless dar.strip.empty?
+        return DS::Util.clean_string dar unless dar.strip.empty?
 
         encoded_date = extract_encoded_date_008 record
         parse_008 encoded_date, range_sep: '-'
@@ -101,7 +101,7 @@ module DS
       # @return [String] the place name or ''
       def extract_place_as_recorded record
         record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()").map { |pn|
-          DS.clean_string pn, terminator: '' unless pn.to_s.strip.empty?
+          DS::Util.clean_string pn, terminator: '' unless pn.to_s.strip.empty?
         }
       end
 
@@ -121,7 +121,7 @@ module DS
       def extract_names_as_recorded record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
         return '' if xpath.empty? # don't process nonsensical requests
-        record.xpath(xpath).map { |datafield| extract_name_portion datafield }
+        record.xpath(xpath).map { |datafield| DS::Util.clean_string extract_name_portion datafield }
       end
 
 
@@ -182,7 +182,7 @@ module DS
       def extract_recon_titles record
         xpath = "datafield[@tag=245]/subfield[@code='a']"
         tar = record.xpath(xpath).text
-        tar = DS.clean_string tar, terminator: ''
+        tar = DS::Util.clean_string tar, terminator: ''
         tar_agr = DS::MarcXML.extract_title_agr record, 245
         utar = DS::MarcXML.extract_uniform_title_as_recorded record
         utar_agr = DS::MarcXML.extract_uniform_title_agr record
@@ -264,7 +264,7 @@ module DS
       def extract_name_portion datafield
         codes = %w{ a b c d }
         value = collect_subfields datafield, codes: codes
-        DS.clean_string value, terminator: ''
+        DS::Util.clean_string value, terminator: ''
       end
 
       ###
@@ -343,7 +343,7 @@ module DS
         tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           value  = collect_subfields datafield, codes: codes, sub_sep: sub_sep
-          value  = DS.clean_string value, terminator: ''
+          value  = DS::Util.clean_string value, terminator: ''
           number = datafield.xpath('subfield[@tag="0"]').text
           [value, number]
         }
@@ -359,7 +359,7 @@ module DS
           values = Hash.new { |hash,k| hash[k] = [] }
           vocab   = datafield.xpath('./@ind2').text
           datafield.xpath("subfield").map { |subfield|
-            subfield_text = subfield.text
+            subfield_text = DS::Util.clean_string subfield.text
             subfield_code = subfield.xpath('./@code').text
             # require 'pry'; binding.pry if subfield_text =~ /accounting/i
             case subfield_code
@@ -418,7 +418,7 @@ module DS
         tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
           value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
-          DS.clean_string value, terminator: ''
+          DS::Util.clean_string value, terminator: ''
         }
       end
 
@@ -441,7 +441,7 @@ module DS
         end
         terms = record.xpath(xpath).map { |datafield|
           value = collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
-          DS.clean_string value, terminator: ''
+          DS::Util.clean_string value, terminator: ''
         }
 
         uniq ? terms.uniq : terms
@@ -494,12 +494,12 @@ module DS
               parts << subfield.text
             end
             parts
-          }.map { |part| DS.clean_string part, terminator: '' }.join sep
+          }.map { |part| DS::Util.clean_string part, terminator: '' }.join sep
         }
       end
 
       def extract_named_subject record
-        extract_subject_by_tags record, tags: [600, 610, 611, 630, 647]
+        extract_subject_by_tags(record, tags: [600, 610, 611, 630, 647])
       end
 
       def extract_topical_subject record
@@ -522,7 +522,7 @@ module DS
         xpath = %q{datafield[@tag = 655]}
         record.xpath(xpath).map { |datafield|
           value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
-          value  = DS.clean_string value, terminator: ''
+          value  = DS::Util.clean_string value, terminator: ''
           vocab  = datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
           number = datafield.xpath('subfield[@tag="0"]').text
 
@@ -550,7 +550,7 @@ module DS
         # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
         code_query = _codes.map { |code| "@code = '#{code}'" }.join ' or '
         xpath      = %Q{subfield[#{code_query}]}
-        datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
+        DS::Util.clean_string datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
       end
 
       def extract_title_agr record, tag
@@ -558,34 +558,42 @@ module DS
         return '' if linkage.empty?
         index = linkage.split('-').last
         xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a']"
-        record.xpath(xpath).text.delete '[]'
+        DS::Util.clean_string record.xpath(xpath).text.delete '[]'
       end
 
       def extract_title_as_recorded record
-        DS.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a' or @code='b']").map { |s| s.text.strip }.join ' '
+        DS::Util.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a' or @code='b']").map { |s| s.text.strip }.join ' '
       end
 
       def extract_uniform_title_as_recorded record
         title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
         title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
-        [title_240, title_130].reject(&:empty?).join '|'
+        [title_240, title_130].reject(&:empty?).map { |title|
+          DS::Util.clean_string title
+        }.join '|'
       end
 
       def extract_uniform_title_agr record
         tag240 = extract_title_agr record, 240
         tag130 = extract_title_agr record, 130
-        [tag240, tag130].reject(&:empty?).join '|'
+        [tag240, tag130].reject(&:empty?).map { |title|
+          DS::Util.clean_string title
+        }.join '|'
       end
 
       def extract_physical_description record
-        extract_extent record
+        extract_extent(record)
       end
 
       def extract_extent record
         subfield_xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
         record.xpath("datafield[@tag=300]").map { |datafield|
-          datafield.xpath(subfield_xpath).filter_map { |s| s.text unless s.text.empty? }.join ' '
-        }.filter_map { |ext| "Extent: #{ext}" unless ext.strip.empty? }
+          datafield.xpath(subfield_xpath).filter_map { |s|
+            s.text unless s.text.empty?
+          }.join ' '
+        }.filter_map { |ext|
+          "Extent: #{DS::Util.clean_string ext}" unless ext.strip.empty?
+        }
       end
 
       ##
@@ -602,7 +610,9 @@ module DS
       # @return [Array<String>] an array of note strings
       def extract_note record
         xpath = "datafield[@tag=500 or @tag=561]/subfield[@code='a']/text()"
-        record.xpath(xpath).map(&:text)
+        record.xpath(xpath).map { |note|
+          DS::Util.clean_string note.text.strip.gsub(%r{\s+}, ' ')
+        }
       end
 
       # TODO: This CSV is a stopgap; find a more sustainable solution
@@ -656,10 +666,10 @@ module DS
       # @param [String] sub773g the value of the 773$g MARC subfield
       def format_callnumber callno, sub773g
         return callno if callno.nil?
-        return DS.clean_string callno if sub773g.to_s.strip.empty?  # nil or ''
-        return DS.clean_string callno if callno.downcase.include? sub773g.downcase.strip
+        return DS::Util.clean_string callno if sub773g.to_s.strip.empty?  # nil or ''
+        return DS::Util.clean_string callno if callno.downcase.include? sub773g.downcase.strip
 
-        %Q{#{DS.clean_string callno.strip} #{sub773g.strip}}
+        %Q{#{DS::Util.clean_string callno.strip} #{sub773g.strip}}
       end
 
       ##

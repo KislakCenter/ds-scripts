@@ -41,7 +41,7 @@ def build_subfield_query codes, options
   elsif options[:contains]
     query = "contains(#{base_query}, '#{options[:contains]}')"
   end
-  " and #{query}"
+  " and #{base_query}"
 end
 
 options = { max_count: Float::INFINITY }
@@ -104,7 +104,7 @@ codes << ARGV.shift while ARGV.first =~ %r{^[a-z0-9]$}
 # assume the rest are files
 files = ARGV
 
-xpath = "record/datafield[@tag=#{tag}#{build_subfield_query codes, options}]"
+xpath = "//record/datafield[@tag=#{tag}#{build_subfield_query codes, options}]"
 puts "Using xpath: #{xpath}" if options[:verbose]
 
 # set a counter in case there's a limit

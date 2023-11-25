@@ -210,7 +210,7 @@ module DS
         xml.xpath(xpath).map(&:text).map(&:strip).map { |note|
           note.gsub(%r{\s+}, ' ')
         }.map { |note|
-          DS.terminate note, terminator: '.', force: false
+          DS::Util.terminate note, terminator: '.', force: false
         }
       end
 
