@@ -8,17 +8,19 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
   let(:xml_file) { File.join xml_dir, 'lewis_o_031_TEI.xml' }
   let(:record) { xml = File.open(xml_file) { |f| Nokogiri::XML f } }
   let(:timestamp) { Time.now }
-  let(:manifest_row) { parse_csv(<<~EOF
+
+  let(:csv_string) { <<~EOF
         holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
         Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
       EOF
-    ).first
   }
-  let(:entry) { DS::Manifest::Entry.new manifest_row }
+  let(:manifest_path) { temp_csv csv_string}
+  let(:manifest) { DS::Manifest::Manifest.new manifest_path, xml_dir }
+  let(:entry) { DS::Manifest::Entry.new manifest.csv.first, manifest}
 
   let(:mapper) {
     DS::Mapper::OPennTEIMapper.new(
-      manifest_entry: entry, record:record, timestamp: timestamp
+      manifest_entry: entry, record: record, timestamp: timestamp
     )
   }
 

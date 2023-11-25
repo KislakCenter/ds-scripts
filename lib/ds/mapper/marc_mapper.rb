@@ -2,48 +2,36 @@
 
 module DS
   module Mapper
-    class MarcMapper
-      attr_reader :manifest_entry
-      attr_reader :record
-      attr_reader :inst_qid
-      attr_reader :inst_code
-      attr_reader :preferred_name
-      attr_reader :holdings_file
-      attr_reader :timestamp
-      attr_reader :source_file
-      attr_reader :iiif_manifest_url
-      attr_reader :institutional_id
-      attr_reader :call_number
-      attr_reader :link_to_institutional_record
+
+    class MarcMapper < DS::Mapper::BaseMapper
 
       ##
-      # @param [DS::Manifest:Entry] manifest_entry the manifest line
-      #        item for this record
-      # @param [Nokogiri::XML::Node] record the MARC XML record node
-      # @param [Date] timestamp for this import CSV
-      def initialize(manifest_entry:, record:, timestamp:)
-        @record                       = record
-        @manifest_entry               = manifest_entry
-        @inst_qid                     = manifest_entry.institution_wikidata_qid
-        @preferred_name               = manifest_entry.institution_wikidata_label
-        @timestamp                    = timestamp
-        @source_file                  = manifest_entry.filename
-        @iiif_manifest_url            = manifest_entry.iiif_manifest_url
-        @institutional_id             = manifest_entry.institutional_id
-        @call_number                  = manifest_entry.call_number
-        @link_to_institutional_record = manifest_entry.link_to_institutional_record
+      # @param [DS::Manifest::Entry] entry +entry+ representing one
+      #     row in a manifest
+      def extract_record entry
+        source_file_path = File.join source_dir, entry.filename
+        xml_string = File.open(source_file_path).read
+        xml = Nokogiri::XML xml_string
+        xml.remove_namespaces!
+        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
+        xml.at_xpath xpath
       end
 
-      def map_record
+      ##
+      # @param [DS::Manifest::Entry] entry entry instance for a manifest row
+      # @return [Hash] the mapped record
+      def map_record entry
+        record = extract_record entry
         source_type                        = 'marc-xml'
-        ds_id                              = manifest_entry.ds_id
+        source_file                        = entry.filename
+        ds_id                              = entry.ds_id
         cataloging_convention              = DS::MarcXML.extract_cataloging_convention record
-        holding_institution                = inst_qid
-        holding_institution_as_recorded    = preferred_name
+        holding_institution                = entry.institution_wikidata_qid
+        holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = DS::MarcXML.extract_001_control_number record
-        holding_institution_shelfmark      = call_number
-        link_to_holding_institution_record = link_to_institutional_record
-        iiif_manifest                      = iiif_manifest_url
+        holding_institution_shelfmark      = entry.call_number
+        link_to_holding_institution_record = entry.link_to_institutional_record
+        iiif_manifest                      = entry.iiif_manifest_url
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
         production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
         production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'

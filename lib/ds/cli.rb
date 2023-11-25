@@ -22,9 +22,13 @@ module DS
           the SKIP_RECON_UPDATE environment variable to override.
 
     LONGDESC
-    def recon_update
-      if ENV['SKIP_RECON_UPDATE']
-        STDERR.puts 'WARNING: SKIP_RECON_UPDATE set; skipping git pull'
+    def recon_update(*args)
+      # allow any args so this command can be invoked by any other
+      if skip_git? options
+        print_message(options, verbose_only: true) { <<~EOF.squish }
+          WARNING: SKIP_RECON_UPDATE or 
+          --skip-recon-update set; skipping git pull
+        EOF
         return
       end
       STDOUT.print "Updating Recon CSVs from #{Settings.recon.git_repo}..."

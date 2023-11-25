@@ -88,7 +88,7 @@ module DS
         #   </datafield>
         #
         dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
-        return dar unless dar.strip.empty?
+        return DS::Util.clean_string dar unless dar.strip.empty?
 
         encoded_date = extract_encoded_date_008 record
         parse_008 encoded_date, range_sep: '-'
@@ -359,7 +359,7 @@ module DS
           values = Hash.new { |hash,k| hash[k] = [] }
           vocab   = datafield.xpath('./@ind2').text
           datafield.xpath("subfield").map { |subfield|
-            subfield_text = subfield.text
+            subfield_text = DS::Util.clean_string subfield.text
             subfield_code = subfield.xpath('./@code').text
             # require 'pry'; binding.pry if subfield_text =~ /accounting/i
             case subfield_code
@@ -582,14 +582,18 @@ module DS
       end
 
       def extract_physical_description record
-        extract_extent(record).map { |ds| DS::Util.clean_string ds }
+        extract_extent(record)
       end
 
       def extract_extent record
         subfield_xpath = "subfield[@code = 'a' or @code = 'b' or @code = 'c']"
         record.xpath("datafield[@tag=300]").map { |datafield|
-          datafield.xpath(subfield_xpath).filter_map { |s| s.text unless s.text.empty? }.join ' '
-        }.filter_map { |ext| "Extent: #{ext}" unless ext.strip.empty? }
+          datafield.xpath(subfield_xpath).filter_map { |s|
+            s.text unless s.text.empty?
+          }.join ' '
+        }.filter_map { |ext|
+          "Extent: #{DS::Util.clean_string ext}" unless ext.strip.empty?
+        }
       end
 
       ##

@@ -21,7 +21,7 @@ class DSConvertCLI < DS::CLI
   LONGDESC
   def mets *files
     return false unless validate_args files
-    Recon::ReconData.update! unless skip_git? options
+    invoke :recon_update
     timestamp = DS.timestamp
     valid = true
 
@@ -47,7 +47,8 @@ class DSConvertCLI < DS::CLI
   LONGDESC
   def openn *files
     return false unless validate_args files
-    Recon::ReconData.update! unless skip_git? options
+
+    invoke :recon_update
 
     timestamp = DS.timestamp
     rows = select_input(files).map { |in_xml|
@@ -81,16 +82,18 @@ The MANIFEST is validated before the import CSV is generated. See
   # @param [String] manifest_csv path to the DS manifest CSV
   # @param [String] source_dir path to the directory containing all
   #     source records listed in +manifest_csv+
-  def convert manifest_csv, source_dir=nil
+  def convert manifest_csv, source_dir = nil
+
+    invoke :recon_update
     # validate the manifest csv before preceding
     invoke :validate
 
     # TODO: This is pretty busy; simplify; push to another class?
-    manifest = DS::Manifest::Manifest.new manifest_csv, source_dir
-    converter = DS::Converter::BaseConverter.new manifest
-    count = 0
-    valid = true
-    outfile = options[:'output-csv']
+    manifest  = DS::Manifest::Manifest.new manifest_csv, source_dir
+    converter = DS::Converter::Converter.new manifest
+    count     = 0
+    valid     = true
+    outfile   = options[:'output-csv']
     write outfile: outfile do |csv|
       converter.convert do |row|
         count += 1
