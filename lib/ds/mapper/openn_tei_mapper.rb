@@ -2,29 +2,26 @@
 
 module DS
   module Mapper
-    class OPennTEIMapper
-      attr_reader :manifest_entry
-      attr_reader :record
-      attr_reader :inst_qid
-      attr_reader :inst_code
-      attr_reader :preferred_name
-      attr_reader :timestamp
+    class OPennTEIMapper < BaseMapper
 
-      def initialize(manifest_entry:, record:, timestamp:)
-        @record                       = record
-        @manifest_entry               = manifest_entry
-        @timestamp                    = timestamp
+      def extract_record entry
+        source_file_path = File.join source_dir, entry.filename
+        xml_string = File.open(source_file_path).read
+        xml = Nokogiri::XML xml_string
+        xml.remove_namespaces!
+        xpath = "//TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = '#{entry.institutional_id}']"
+        xml.at_xpath xpath
       end
-
-      def map_record
+      def map_record entry
+        record = extract_record entry
         source_type                        = 'tei-xml'
-        ds_id                              = manifest_entry.ds_id
-        holding_institution                = manifest_entry.institution_wikidata_qid
-        holding_institution_as_recorded    = manifest_entry.institution_wikidata_label
-        holding_institution_id_number      = manifest_entry.institutional_id
-        holding_institution_shelfmark      = manifest_entry.call_number
-        link_to_holding_institution_record = manifest_entry.link_to_institutional_record
-        iiif_manifest                      = manifest_entry.iiif_manifest_url
+        ds_id                              = entry.ds_id
+        holding_institution                = entry.institution_wikidata_qid
+        holding_institution_as_recorded    = entry.institution_wikidata_label
+        holding_institution_id_number      = entry.institutional_id
+        holding_institution_shelfmark      = entry.call_number
+        link_to_holding_institution_record = entry.link_to_institutional_record
+        iiif_manifest                      = entry.iiif_manifest_url
         production_date_as_recorded        = DS::OPennTEI.extract_production_date record, range_sep: '-'
         production_date                    = DS::OPennTEI.extract_production_date record, range_sep: '^'
         century                            = DS.transform_dates_to_centuries production_date
@@ -78,7 +75,7 @@ module DS
         physical_description               = DS::OPennTEI.extract_physical_description record
         note                               = DS::OPennTEI.extract_note(record).join '|'
         data_processed_at                  = timestamp
-        data_source_modified               = manifest_entry.record_last_updated
+        data_source_modified               = entry.record_last_updated
 
 
         # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
@@ -155,7 +152,7 @@ module DS
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
-          source_file:                        manifest_entry.filename
+          source_file:                        entry.filename
         }
       end
     end

@@ -10,8 +10,8 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
   let(:timestamp) { Time.now }
 
   let(:csv_string) { <<~EOF
-        holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-        Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+        holding_institution_wikidata_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,manifest_generated_at
+        Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno,Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,,2023-11-18T17:13:02-0500
       EOF
   }
   let(:manifest_path) { temp_csv csv_string}
@@ -20,7 +20,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
   let(:mapper) {
     DS::Mapper::OPennTEIMapper.new(
-      manifest_entry: entry, record: record, timestamp: timestamp
+      source_dir: xml_dir, timestamp: timestamp
     )
   }
 
@@ -29,9 +29,21 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
     it 'creates a DS::Mapper::OPennTEIMapper' do
       expect(
         DS::Mapper::OPennTEIMapper.new(
-          manifest_entry: entry, record:record, timestamp: timestamp
+          source_dir: xml_dir, timestamp: timestamp
         )
       ).to be_a DS::Mapper::OPennTEIMapper
+    end
+  end
+
+  context 'DS::Mapper::BaseMapper implementation' do
+    it 'implements #extract_record(entry)' do
+      expect {
+        mapper.extract_record entry
+      }.not_to raise_error
+    end
+
+    it 'is a kind of BaseMapper' do
+      expect(mapper).to be_a_kind_of DS::Mapper::BaseMapper
     end
   end
 
@@ -80,29 +92,21 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
       }
     }
 
-
     it 'returns a hash' do
       add_stubs recons, :lookup, []
-      expect(mapper.map_record).to be_a Hash
+      expect(mapper.map_record entry).to be_a Hash
     end
 
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
       add_expects objects: DS::OPennTEI, methods: extractor_calls, return_val: []
 
-      mapper.map_record
-    end
-
-    it 'calls all expected entry methods' do
-      add_stubs recons, :lookup, []
-      add_expects objects: entry, methods: entry_calls, return_val: []
-
-      mapper.map_record
+      mapper.map_record entry
     end
 
     it 'returns a hash with all expected keys' do
       add_stubs recons, :lookup, []
-      hash = mapper.map_record
+      hash = mapper.map_record entry
       expect(DS::Constants::HEADINGS - hash.keys).to be_empty
     end
   end
