@@ -41,7 +41,7 @@ module Recon
 
     def url_key holder, shelfmark
       qid = DS::Institutions.find_qid holder
-      raise DSError, "No QID found for #{holder}" if qid.to_s.empty?
+      raise DSError, "No QID found for #{holder}" if qid.blank?
       normalize_key qid, shelfmark
     end
 

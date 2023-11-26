@@ -48,7 +48,7 @@ module DS
       return s if s.to_s.size <= DS::MAX_WIKIBASE_FIELD_LENGTH
 
       splits = Recon::Splits._lookup_single s, from_column: 'authorized_label'
-      return "SPLIT: #{s}" if splits.to_s.empty?
+      return "SPLIT: #{s}" if splits.blank?
       splits
       # splits.split('|').map { |s|
       #   s ? s.to_s.size < 400 : "SPLIT: #{s}"
@@ -74,7 +74,7 @@ module DS
     #    ranges: '1832', '1350^1520'
     # @return [String] a pipe-separated century integers
     def transform_dates_to_centuries dates
-      return if dates.to_s.empty?
+      return if dates.blank?
       dates.to_s.split('|').flat_map { |date_range|
         next [] if date_range.strip.empty? # don't process empty values
         # Adjust ranges to return sensible centuries for ranges like

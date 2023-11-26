@@ -2,6 +2,7 @@
 
 module DS
   module Mapper
+
     class MarcMapper < DS::Mapper::BaseMapper
 
       ##
@@ -23,6 +24,7 @@ module DS
         record = extract_record entry
         source_type                        = 'marc-xml'
         source_file                        = entry.filename
+        ds_id                              = entry.ds_id
         cataloging_convention              = DS::MarcXML.extract_cataloging_convention record
         holding_institution                = entry.institution_wikidata_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
@@ -31,13 +33,13 @@ module DS
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
         production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
+        production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
         production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
         production_place_as_recorded       = DS::MarcXML.extract_place_as_recorded(record).join '|'
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
-        production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
         uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
         uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
         title_as_recorded                  = DS::MarcXML.extract_title_as_recorded record
@@ -85,7 +87,9 @@ module DS
         data_processed_at                  = timestamp
         data_source_modified               = DS::MarcXML.source_modified record
 
-        { source_type:                        source_type,
+        {
+          ds_id:                              ds_id,
+          source_type:                        source_type,
           cataloging_convention:              cataloging_convention,
           holding_institution:                holding_institution,
           holding_institution_as_recorded:    holding_institution_as_recorded,

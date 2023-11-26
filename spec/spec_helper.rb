@@ -353,6 +353,12 @@ module Helpers
     xml.xpath('record')[0]
   end
 
+  def openn_tei xml_string
+    xml = Nokogiri::XML xml_string
+    xml.remove_namespaces!
+    xml
+  end
+
   def parse_csv csv_string
     CSV.parse csv_string, headers: true
   end
@@ -373,6 +379,22 @@ module Helpers
       end
     end
   end
+
+  def add_expects objects:, methods:, args: nil, return_val:
+    objs = *objects
+    syms = *methods
+    with = args ? [args].flatten : nil
+    objs.each do |obj|
+      syms.each do |method|
+        if with
+          expect(obj).to receive(method).with(*with) { return_val }
+        else
+          expect(obj).to receive(method) { return_val }
+        end
+      end
+    end
+  end
+
 end
 
 RSpec.configure do |c|
