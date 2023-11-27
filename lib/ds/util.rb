@@ -1,6 +1,7 @@
 require 'nokogiri'
 
 require_relative 'util/strings'
+require_relative 'util/cache'
 
 module DS
   module Util
