@@ -4,13 +4,18 @@ require 'spec_helper'
 
 RSpec.describe 'DS::Mapper::BaseMapper' do
 
+  let(:marc_xml_dir) { fixture_path 'marc_xml' }
+
+  ##
+  # Test implementations of the BaseMapper methods
   class TestMapper < DS::Mapper::BaseMapper
     def extract_record entry; {}; end
 
     def map_record entry; {}; end
+
+    def open_source entry; {}; end
   end
 
-  let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:timestamp) { Time.now }
   let(:base_mapper) {
     DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
@@ -92,5 +97,29 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
       expect(test_mapper).not_to eq base_mapper
     end
   end
+
+  context "#source_cache" do
+    # confirm caching works: create two entries with the same source
+    # filename
+
+    let(:entry1) {
+      obj = Object.new
+      obj.define_singleton_method(:filename) do; "some_file.xml"; end
+      obj
+    }
+
+    let(:entry2) {
+      obj = Object.new
+      obj.define_singleton_method(:filename) do; "some_file.xml"; end
+      obj
+    }
+
+    it '#find_or_open_source calls #open_source once for the same source' do
+      expect(test_mapper).to receive(:open_source).exactly(:once)
+      test_mapper.find_or_open_source entry1
+      test_mapper.find_or_open_source entry2
+    end
+  end
+
 
 end
