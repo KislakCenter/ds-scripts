@@ -79,5 +79,4 @@ RSpec.describe 'DS::Converter::BaseConverter' do
       expect(converter.convert).to include({ a: 1 })
     end
   end
-
 end

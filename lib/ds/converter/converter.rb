@@ -31,7 +31,7 @@ module DS
         @manifest   = manifest
         @timestamp  = Time.now
         @source_dir = manifest.source_dir
-        @mappers = {}
+        @mappers = DS::Util::Cache.new
       end
 
       ##
@@ -61,7 +61,10 @@ module DS
 
       def find_or_create_mapper entry, tstamp
         key = mapper_key entry
-        mappers[key] ||= create_mapper entry, tstamp
+        return mappers.get key if mappers.include? key
+        mapper = create_mapper entry, tstamp
+        mappers.add key, mapper
+        mapper
       end
 
       def create_mapper entry, tstamp
