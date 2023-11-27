@@ -5,13 +5,18 @@ module DS
     class OPennTEIMapper < BaseMapper
 
       def extract_record entry
+        xml = find_or_open_source entry
+        xpath = "//TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = '#{entry.institutional_id}']"
+        xml.at_xpath xpath
+      end
+
+      def open_source entry
         source_file_path = File.join source_dir, entry.filename
         xml_string = File.open(source_file_path).read
         xml = Nokogiri::XML xml_string
         xml.remove_namespaces!
-        xpath = "//TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = '#{entry.institutional_id}']"
-        xml.at_xpath xpath
       end
+
       def map_record entry
         record = extract_record entry
         source_type                        = 'tei-xml'

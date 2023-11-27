@@ -71,6 +71,8 @@ module DS
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
           DS::Mapper::MarcMapper.new(source_dir: source_dir, timestamp:  tstamp)
+        when DS::Manifest::Constants::TEI_XML
+          DS::Mapper::OPennTEIMapper.new(source_dir: source_dir, timestamp:  tstamp)
         else
           raise NotImplementedError {
             "Mapper not implemented for source type: '#{entry.source_type}'"
