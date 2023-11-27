@@ -24,39 +24,8 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
     )
   }
 
-
-  context 'initialize' do
-    it 'creates a DS::Mapper::OPennTEIMapper' do
-      expect(
-        DS::Mapper::OPennTEIMapper.new(
-          source_dir: xml_dir, timestamp: timestamp
-        )
-      ).to be_a DS::Mapper::OPennTEIMapper
-    end
-  end
-
-  context 'DS::Mapper::BaseMapper implementation' do
-    it 'implements #extract_record(entry)' do
-      expect {
-        mapper.extract_record entry
-      }.not_to raise_error
-    end
-
-    it 'is a kind of BaseMapper' do
-      expect(mapper).to be_a_kind_of DS::Mapper::BaseMapper
-    end
-  end
-
-  context 'map_record' do
-    let(:recons) {
-      [
-        Recon::AllSubjects, Recon::Genres, Recon::Languages,
-        Recon::Materials, Recon::Names, Recon::Places,
-        Recon::Titles,
-      ]
-    }
-    let(:extractor_calls) {
-      %i{
+  let(:ds_openn_tei_calls) {
+    %i{
           extract_production_date
           extract_production_date
           extract_production_place
@@ -78,6 +47,46 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
           extract_physical_description
           extract_note
       }
+  }
+
+  context 'initialize' do
+    it 'creates a DS::Mapper::OPennTEIMapper' do
+      expect(
+        DS::Mapper::OPennTEIMapper.new(
+          source_dir: xml_dir, timestamp: timestamp
+        )
+      ).to be_a DS::Mapper::OPennTEIMapper
+    end
+  end
+
+  context 'DS::Mapper::BaseMapper implementation' do
+    it 'implements #extract_record(entry)' do
+      expect { mapper.extract_record entry }.not_to raise_error
+    end
+
+
+    it 'implements #map_record' do
+      # don't run the mapping
+      add_stubs DS::OPennTEI, ds_openn_tei_calls, []
+      expect { mapper.map_record entry }.not_to raise_error
+    end
+
+    it 'implements #open_source' do
+      expect { mapper.open_source entry }.not_to raise_error
+    end
+
+    it 'is a kind of BaseMapper' do
+      expect(mapper).to be_a_kind_of DS::Mapper::BaseMapper
+    end
+  end
+
+  context 'map_record' do
+    let(:recons) {
+      [
+        Recon::AllSubjects, Recon::Genres, Recon::Languages,
+        Recon::Materials, Recon::Names, Recon::Places,
+        Recon::Titles,
+      ]
     }
 
     let (:entry_calls) {
@@ -99,7 +108,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
-      add_expects objects: DS::OPennTEI, methods: extractor_calls, return_val: []
+      add_expects objects: DS::OPennTEI, methods: ds_openn_tei_calls, return_val: []
 
       mapper.map_record entry
     end
