@@ -13,6 +13,7 @@ RSpec.describe 'DS::Manifest' do
 
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:manifest_path) { File.join marc_xml_dir, 'manifest.csv'}
+  let(:manifest_dir) { File.dirname manifest_path }
   let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
 
   context 'initialize' do
@@ -32,27 +33,45 @@ RSpec.describe 'DS::Manifest' do
     end
 
     context 'when source dir is nil' do
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path }
+      let(:source_dir) { manifest.source_dir }
+
       it 'uses the directory from the CSV path' do
-        expect(
-          DS::Manifest::Manifest.new manifest_path
-        ).to be_a DS::Manifest::Manifest
+        expect(File.directory? source_dir).to be_truthy
       end
     end
   end
 
-  context '#path' do
+  context '#source_dir' do
     it 'is implemented' do
-      expect(manifest).to respond_to :path
+      expect(manifest).to respond_to :source_dir
     end
 
     it "doesn't raise an error" do
-      expect {
-        manifest.path
-      }.not_to raise_error
+      expect { manifest.source_dir }.not_to raise_error
     end
+  end
+  context 'when manifest is initialized with dir' do
+    context '#source_dir' do
+      let(:dir) { 'some_dir' }
+      let(:manifest) {
+        DS::Manifest::Manifest.new manifest_path, dir
+      }
 
-    it 'equals the input CSV path' do
-      expect(manifest.path).to eq manifest_path
+      it 'returns the directory of source_dir' do
+        expect(manifest.source_dir).to eq dir
+      end
+    end
+  end
+
+  context 'when manifest is initialized without dir' do
+    context '#source_dir' do
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path }
+      let(:csv_dir) { File.dirname manifest_path }
+
+      it 'returns the directory of input CSV path' do
+        expect(manifest.source_dir).to eq csv_dir
+      end
     end
   end
 end

@@ -7,7 +7,7 @@ module DS
     class Manifest
       include Enumerable
 
-      attr_reader :path
+      attr_reader :csv_path
       attr_reader :source_dir
 
       ##
@@ -15,12 +15,12 @@ module DS
       # directory containing source files must the same as the
       # +manifest_csv+ directory.
       #
-      # @param [String] path the manifest path
+      # @param [String] csv_path manifest CSV path
       # @param [String] dir optional path to the directory containing the
       #   source file(s); if
       # @return [DS::Manifest::Manifest] a new Manifest instance
-      def initialize path, dir = nil
-        @path       = path
+      def initialize csv_path, dir = nil
+        @csv_path = csv_path
         @source_dir = get_source_dir dir
       end
 
@@ -40,15 +40,16 @@ module DS
       end
 
       ##
-      # Return the String path of the directory expected to contain the
-      # source records. If +dir+ is present, return +dir+; otherwise,
-      # return the path to the manifest CSV.
+      # Return the String path of the directory expected to contain
+      # the source records. If +dir+ is present, return
+      # +dir+; otherwise, return the directory of the manifest
+      # CSV.
       #
-      # @param [String] dir a source dir path or +nil+
+      # @param [String] dir a source directory path or +nil+
       # @return [String] the directory containing source files
       def get_source_dir dir
         return dir if dir.present?
-        csv.path
+        File.dirname csv.path
       end
 
       ##
@@ -58,7 +59,7 @@ module DS
       #
       # @return [CSV::Table] the parse manifest
       def csv
-        @csv ||= CSV.open path, 'r', headers: true
+        @csv ||= CSV.open csv_path, 'r', headers: true
       end
     end
   end

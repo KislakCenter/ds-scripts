@@ -9,12 +9,17 @@ module DS
       # @param [DS::Manifest::Entry] entry +entry+ representing one
       #     row in a manifest
       def extract_record entry
+        xml = find_or_open_source entry
+        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
+        xml.at_xpath xpath
+      end
+
+      def open_source entry
         source_file_path = File.join source_dir, entry.filename
         xml_string = File.open(source_file_path).read
         xml = Nokogiri::XML xml_string
         xml.remove_namespaces!
-        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
-        xml.at_xpath xpath
+        xml
       end
 
       ##

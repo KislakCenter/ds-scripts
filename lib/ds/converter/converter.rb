@@ -23,15 +23,15 @@ module DS
       attr_reader :manifest
       attr_reader :timestamp
       attr_reader :source_dir
-      attr_reader :mappers
+      attr_reader :mapper_cache
 
       ##
       # @param [DS::CSV] manifest the Manifest instance
       def initialize manifest
-        @manifest   = manifest
-        @timestamp  = Time.now
-        @source_dir = manifest.source_dir
-        @mappers = {}
+        @manifest     = manifest
+        @timestamp    = Time.now
+        @source_dir   = manifest.source_dir
+        @mapper_cache = DS::Util::Cache.new
       end
 
       ##
@@ -61,16 +61,16 @@ module DS
 
       def find_or_create_mapper entry, tstamp
         key = mapper_key entry
-        mappers[key] ||= create_mapper entry, tstamp
+        return mapper_cache.get_item key if mapper_cache.include? key
+        mapper = create_mapper entry, tstamp
+        mapper_cache.add key, mapper
+        mapper
       end
 
       def create_mapper entry, tstamp
         case entry.source_type
         when DS::Manifest::Constants::MARC_XML
-          DS::Mapper::MarcMapper.new(
-            source_dir: source_dir,
-            timestamp:  tstamp
-          )
+          DS::Mapper::MarcMapper.new(source_dir: source_dir, timestamp:  tstamp)
         else
           raise NotImplementedError {
             "Mapper not implemented for source type: '#{entry.source_type}'"
@@ -83,10 +83,7 @@ module DS
       end
 
       def mapper_key entry
-        {
-          source_type: entry.source_type,
-          manifest_path: entry
-        }
+        { source_type: entry.source_type, manifest_path: manifest.csv_path }
       end
     end # class BaseConverter
   end # module Converter
