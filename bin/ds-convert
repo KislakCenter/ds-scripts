@@ -41,29 +41,6 @@ class DSConvertCLI < DS::CLI
     write_csv rows, options
   end
 
-  desc "openn XML [XML...]", "Convert OPenn TEI XML to DS CSV"
-  long_desc <<-LONGDESC
-    Convert OPenn TEI XML to DS CSV
-  LONGDESC
-  def openn *files
-    return false unless validate_args files
-
-    invoke :recon_update
-
-    timestamp = DS.timestamp
-    rows = select_input(files).map { |in_xml|
-      source_file = in_xml.chomp # remove newline in case input if from ARGF
-      record = File.open(source_file) { |f| Nokogiri::XML(f) }
-      record.remove_namespaces!
-      mapper = DS::Mapper::OPennTEIMapper.new(
-        record: record, timestamp: timestamp, source_file: source_file
-      )
-      mapper.map_record
-    }
-    validate! rows unless options[:'skip-validation']
-    write_csv rows, options
-  end
-
   desc "convert MANIFEST SOURCE_DIR", "Generate import CSV for MANIFEST and SOURCE_DIR"
   long_desc <<-LONGDESC
     Generate an import CSV for all files listed in the MANIFEST CSV that are found in SOURCE_DIR.
