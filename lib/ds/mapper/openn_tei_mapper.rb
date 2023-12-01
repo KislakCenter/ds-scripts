@@ -40,7 +40,7 @@ module DS
         uniform_title_agr                  = ''
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = DS::OPennTEI.extract_genre_as_recorded(record).join '|'
-        genre_vocabulary                   = ''
+        genre_vocabulary                   = genre_as_recorded.split('|').size.times.map { 'openn-form/genre'}.join '|'  # add openn-form/genre for each genre AR
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
         subject_as_recorded                = DS::OPennTEI.extract_subject_as_recorded(record).join '|'
