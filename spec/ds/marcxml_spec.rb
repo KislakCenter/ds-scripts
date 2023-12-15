@@ -113,6 +113,11 @@ describe DS::MarcXML do
       it 'extracts all the genres' do
         expect(terms.size).to eq 4
       end
+
+      it 'extracts genres based on vocabulary' do
+        terms = DS::MarcXML.extract_genre_as_recorded record, sub2: 'rbprov'
+        expect(terms).to eq ["Booksellers' copies (Provenance)"]
+      end
     end
 
     context "extract_genre_vocabulary" do
@@ -132,6 +137,23 @@ describe DS::MarcXML do
 
       it 'returns lcsh when the @ind2 is 0 (zero)' do
         expect(result).to include 'lcsh'
+      end
+    end
+
+    context "extract_recon_genres" do
+      let(:result) { DS::MarcXML.extract_recon_genres record }
+
+      it 'returns an array genre data' do
+        # <datafield ind1=" " ind2="7" tag="655">
+        # <subfield code="a">Sermons.</subfield>
+        # <subfield code="2">lcgft</subfield>
+        #   <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        # </datafield>
+        expect(result).to include %w{ Sermons lcgft http://id.loc.gov/authorities/genreForms/gf2015026051 }
+      end
+
+      it 'returns data for all the genre datafields' do
+        expect(result.size).to eq 4
       end
     end
   end
@@ -156,6 +178,7 @@ describe DS::MarcXML do
       }
       )
     }
+
     it 'extracts 260$c' do
       expect(
         DS::MarcXML.extract_date_as_recorded(date_260c_marc)

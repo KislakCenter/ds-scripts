@@ -434,15 +434,7 @@ module DS
       # @param [Boolean] uniq whether to return only unique terms; default: +true+
       # @return [Array<String>] array of genre terms
       def extract_genre_as_recorded record, sub2:, sub_sep: '--', uniq: false
-        if sub2 == :all
-          xpath = %Q{datafield[@tag = 655]}
-        else
-          xpath = %Q{datafield[@tag = 655 and ./subfield[@code="2"]/text() = '#{sub2}']}
-        end
-        terms = record.xpath(xpath).map { |datafield|
-          value = collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
-          DS::Util.clean_string value, terminator: ''
-        }
+        terms = extract_genres(record, sub_sep: sub_sep, vocab: sub2).map(&:as_recorded)
 
         uniq ? terms.uniq : terms
       end
@@ -519,22 +511,28 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_genres record, sub_sep: '--'
-        xpath = %q{datafield[@tag = 655]}
-        record.xpath(xpath).map { |datafield|
-          value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
-          value  = DS::Util.clean_string value, terminator: ''
-          vocab  = extract_vocabulary datafield
-          number = datafield.xpath('subfield[@tag="0"]').text
+        extract_genres(record, sub_sep: sub_sep).map(&:to_a)
+      end
 
-          [value, vocab, number]
+      def extract_genres record, sub_sep: '--', vocab: :all
+        xpath = %q{datafield[@tag = 655]}
+        record.xpath(xpath).filter_map { |datafield|
+          as_recorded          = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
+          as_recorded          = DS::Util.clean_string as_recorded, terminator: ''
+          term_vocab                = extract_vocabulary datafield
+          source_authority_uri = extract_authority_number datafield
+          if [ :all, term_vocab ].include? vocab
+            DS::Extractor::Term.new(
+              as_recorded: as_recorded,
+              vocab: term_vocab,
+              source_authority_uri: source_authority_uri
+            )
+          end
         }
       end
 
       def extract_genre_vocabulary record
-        xpath = %q{datafield[@tag = 655]}
-        record.xpath(xpath).map { |datafield|
-          extract_vocabulary datafield
-        }.join '|'
+        extract_genres(record).map { |g| g.vocab }.join '|'
       end
 
       ##
@@ -545,18 +543,6 @@ module DS
 
         vocab = datafield.xpath("subfield[@code=2]").text
         vocab.chomp '.' if vocab.present?
-      end
-
-      # def extract_genres record, sub_sep: '--'
-      #   xpath = %q{datafield[@tag = 655]}
-      #   record.xpath
-      # end
-
-      def extract_genre_as_recorded_lcsh record, field_sep: '|', sub_sep: '--'
-        xpath = %q{datafield[@tag = 655 and @ind2 = '0']}
-        record.xpath(xpath).map { |datafield|
-          collect_subfields datafield, codes: 'abcvxyz'.split(//), sub_sep: sub_sep
-        }.join field_sep
       end
 
       def collect_subfields datafield, codes: [], sub_sep: ' '
