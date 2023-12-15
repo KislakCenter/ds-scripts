@@ -68,7 +68,8 @@ describe DS::MarcXML do
     end
   end
 
-  context "extract_genre_vocabulary" do
+  context 'genre extraction' do
+
     let(:record) {
       marc_record %q{<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
@@ -100,25 +101,40 @@ describe DS::MarcXML do
     }
     }
 
-    let(:vocab_string) { DS::MarcXML.extract_genre_vocabulary record }
-    let(:result) { vocab_string.split '|'}
-    it 'extracts the vocabulary' do
-      expect(result).to include 'lcgft'
+    context 'extract_genre_as_recorded' do
+      let(:terms) {
+        DS::MarcXML.extract_genre_as_recorded record, sub2: :all
+      }
+
+      it 'extracts a genre string' do
+        expect(terms).to include "Booksellers' copies (Provenance)"
+      end
+
+      it 'extracts all the genres' do
+        expect(terms.size).to eq 4
+      end
     end
 
-    it 'removes trailing periods from vocabularies' do
-      expect(result).to include 'rbprov'
-    end
+    context "extract_genre_vocabulary" do
+      let(:vocab_string) { DS::MarcXML.extract_genre_vocabulary record }
+      let(:result) { vocab_string.split '|' }
+      it 'extracts the vocabulary' do
+        expect(result).to include 'lcgft'
+      end
 
-    it 'returns three values' do
-      expect(result).to match_array ['rbprov', 'lcgft', '', 'lcsh' ]
-    end
+      it 'removes trailing periods from vocabularies' do
+        expect(result).to include 'rbprov'
+      end
 
-    it 'returns lcsh when the @ind2 is 0 (zero)' do
-      expect(result).to include 'lcsh'
+      it 'returns three values' do
+        expect(result).to match_array ['rbprov', 'lcgft', '', 'lcsh']
+      end
+
+      it 'returns lcsh when the @ind2 is 0 (zero)' do
+        expect(result).to include 'lcsh'
+      end
     end
   end
-
 
   context 'extract_data_as_recorded' do
 
