@@ -523,7 +523,7 @@ module DS
         record.xpath(xpath).map { |datafield|
           value  = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
           value  = DS::Util.clean_string value, terminator: ''
-          vocab  = datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
+          vocab  = extract_vocabulary datafield
           number = datafield.xpath('subfield[@tag="0"]').text
 
           [value, vocab, number]
@@ -533,9 +533,24 @@ module DS
       def extract_genre_vocabulary record
         xpath = %q{datafield[@tag = 655]}
         record.xpath(xpath).map { |datafield|
-          datafield['ind2'] == '0' ? 'lcsh' : datafield.xpath("subfield[@code=2]/text()")
+          extract_vocabulary datafield
         }.join '|'
       end
+
+      ##
+      # @param [Nokogiri::XML::Node] datafield the term datafield
+      # @return [String]
+      def extract_vocabulary datafield
+        return 'lcsh' if datafield['ind2'] == '0'
+
+        vocab = datafield.xpath("subfield[@code=2]").text
+        vocab.chomp '.' if vocab.present?
+      end
+
+      # def extract_genres record, sub_sep: '--'
+      #   xpath = %q{datafield[@tag = 655]}
+      #   record.xpath
+      # end
 
       def extract_genre_as_recorded_lcsh record, field_sep: '|', sub_sep: '--'
         xpath = %q{datafield[@tag = 655 and @ind2 = '0']}
