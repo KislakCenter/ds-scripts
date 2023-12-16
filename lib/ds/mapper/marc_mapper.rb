@@ -51,7 +51,7 @@ module DS
         title_as_recorded_agr              = DS::MarcXML.extract_title_agr record, 245
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = DS::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
-        genre_vocabulary                   = DS::MarcXML.extract_genre_vocabulary record
+        genre_vocabulary                   = DS::MarcXML.extract_genre_vocabulary(record).join '|'
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
         subject_as_recorded                = DS::MarcXML.extract_subject_as_recorded(record).join '|'

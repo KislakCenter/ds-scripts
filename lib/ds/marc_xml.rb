@@ -532,7 +532,7 @@ module DS
       end
 
       def extract_genre_vocabulary record
-        extract_genres(record).map { |g| g.vocab }.join '|'
+        extract_genres(record).map(&:vocab)
       end
 
       ##

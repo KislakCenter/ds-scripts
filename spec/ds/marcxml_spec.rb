@@ -121,8 +121,7 @@ describe DS::MarcXML do
     end
 
     context "extract_genre_vocabulary" do
-      let(:vocab_string) { DS::MarcXML.extract_genre_vocabulary record }
-      let(:result) { vocab_string.split '|' }
+      let(:result) { DS::MarcXML.extract_genre_vocabulary record }
       it 'extracts the vocabulary' do
         expect(result).to include 'lcgft'
       end
@@ -132,7 +131,7 @@ describe DS::MarcXML do
       end
 
       it 'returns three values' do
-        expect(result).to match_array ['rbprov', 'lcgft', '', 'lcsh']
+        expect(result).to match_array ['rbprov', 'lcgft', nil, 'lcsh']
       end
 
       it 'returns lcsh when the @ind2 is 0 (zero)' do
