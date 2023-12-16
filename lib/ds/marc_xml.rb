@@ -538,8 +538,6 @@ module DS
         }
       end
 
-
-
       ###
       # Extract the authority number, subfield +$0+ from the given datafield.
       #
@@ -650,108 +648,12 @@ module DS
         h.merge(row['mmsid'] => row['iiif_manifest_url'])
       }.freeze
 
-      def find_iiif_manifest record
-        mmsid = extract_mmsid record
-        IIIF_MANIFESTS[mmsid.to_s]
-      end
-
-      def extract_holding_institution_shelfmark record, holdings_file = nil
-        if holdings_file
-          shelfmarks = [shelfmark_lookup(record, holdings_file)]
-        else
-          shelfmarks = [find_shelfmark(record)]
-        end
-        shelfmarks.reject(&:empty?).join '|'
-      end
-
       def extract_001_control_number record, holdings_file = nil
         ids = []
         # add the MMS ID
         ids << extract_mmsid(record)
 
         ids.reject(&:empty?).join '|'
-      end
-
-      def shelfmark_lookup record, holdings_file
-        # get the id from the record
-        id = extract_mmsid(record)
-        # search for mmsid in the external mmsid_file: "85280 $$b rare $$c hsvm $$h Islamic Manuscripts, Garrett no. 4084Y"
-        c0 = holdings_file.xpath("//x:R[./x:C2/text() = '#{id}']/x:C0", { 'x' => 'urn:schemas-microsoft-com:xml-analysis:rowset' }).text
-        # split: ["85280 ", "b rare ", "c hsvm ", "h Islamic Manuscripts, Garrett no. 4084Y"]
-        all_marks = c0.split('$$')
-        # get marks we're concerned with: ["h Islamic Manuscripts, Garrett no. 4084Y"]
-        raw_marks = all_marks.select { |m| m =~ /^[hd] / }
-        # make pretty: ["Islamic Manuscripts, Garrett no. 4084Y"]
-        shelfmarks = raw_marks.map { |m| m[1..-1].strip }
-        shelfmarks
-      end
-
-
-
-      def extract_institution_name record, default: nil
-        val = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
-        return default if val.to_s.strip.empty?
-        val
-      end
-
-
-
-      ##
-      # Add the content of the MARC 773$g subfield if it's present and not
-      # already part of the call number; otherwise, clean and return the call
-      # number string.
-      #
-      # @param [String] callno the call number
-      # @param [String] sub773g the value of the 773$g MARC subfield
-      def format_callnumber callno, sub773g
-        return callno if callno.nil?
-        return DS::Util.clean_string callno if sub773g.to_s.strip.empty?  # nil or ''
-        return DS::Util.clean_string callno if callno.downcase.include? sub773g.downcase.strip
-
-        %Q{#{DS::Util.clean_string callno.strip} #{sub773g.strip}}
-      end
-
-      ##
-      # Shelfmarks do not have a standard location in Marc records. Most
-      # institutions catalog in OCLC Connexion, which is for print books.
-      # Call numbers are not added to OCLC records, as they are local
-      # information. Institutions follow different conventions for recording
-      # shelfmarks. This method attempts to find the call number in a number of
-      # common locations.
-      def find_shelfmark record
-        # See if there's a 773$g subfield. For complex objects/collections,
-        # this will have detailed information like folder and/or item number
-        sub773g = record.xpath("data[@tag=773]/subfield[@code='g']").text
-
-        # For Penn XML from Marmite, use the pseudo-marc holding data
-        # Note that some MSS have more than one holding. This method will
-        # break when this happens
-        callno = record.xpath('holdings/holding/call_number').text
-        return format_callnumber callno, sub773g unless callno.strip.empty?
-
-        # Cornell call number; Cornell sometimes uses the 710 field; the records
-        # are not consistent
-        # TODO: Determine if this the best way to get this
-        xpath  = "datafield[@tag=710 and contains(subfield[@code='a']/text(), 'Cornell University')]/subfield[@code='n']"
-        callno = record.xpath(xpath).text
-        return format_callnumber callno, sub773g unless callno.strip.empty?
-
-        # Princeton call number
-        # Some records have two 852$b = 'hsvm'; get the first
-        xpath  = "datafield[@tag=852 and subfield[@code='b']/text() = 'hsvm']/subfield[@code='h'][1]"
-        callno = record.xpath(xpath).text
-        return format_callnumber callno, sub773g unless callno.strip.empty?
-
-        # AMREMM method of a 500$a starting with "Shelfmark: "
-        callno = extract_named_500(record, name: 'Shelfmark', strip_name: true).first.to_s
-        return format_callnumber callno, sub773g unless callno.strip.empty?
-
-        # U. Penn uses the 099$a subfield
-        callno = record.xpath("datafield[@tag=99]/subfield[@code='a']").map(&:text).join(' ')
-        return format_callnumber callno, sub773g unless callno.strip.empty?
-
-        # return empty string if we get this far
-        ''
       end
 
       def extract_mmsid record
@@ -789,15 +691,6 @@ module DS
         record_date = record.xpath("controlfield[@tag=005]").text[0..7]
         return nil if record_date.empty?
         "#{record_date[0..3]}-#{record_date[4..5]}-#{record_date[6..7]}"
-      end
-
-      def extract_link_to_inst_record record, institution
-        if institution == "penn"
-          link = %Q{https://franklin.library.upenn.edu/catalog/FRANKLIN_#{extract_mmsid(record)}}
-        else
-          link = ''
-        end
-        link
       end
     end
 

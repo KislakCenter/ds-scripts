@@ -571,13 +571,6 @@ describe DS::MarcXML do
       )
     }
 
-    it 'returns a 500$a shelfmark' do
-      expect(
-        DS::MarcXML.find_shelfmark shelfmark_in_500a_record
-      ).to eq 'Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.'
-    end
-
-
     let(:shelfmark_in_099a_record) {
       marc_record(
         %q{<?xml version="1.0" encoding="UTF-8"?>
@@ -597,12 +590,6 @@ describe DS::MarcXML do
         }
       )
     }
-
-    it 'returns a 099$a shelfmark' do
-      expect(
-        DS::MarcXML.find_shelfmark shelfmark_in_099a_record
-      ).to eq 'Ms. 65'
-    end
   end
 
   context 'extract_subject_as_recorded' do
