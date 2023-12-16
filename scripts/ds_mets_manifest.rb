@@ -22,9 +22,9 @@ headers = %i{
     manifest_generated_at
   }
 
-iiif_lookup = Recon::URLLookup.new 'iiif_manifests'
-ia_url_lookup = Recon::URLLookup.new 'legacy_ia_urls'
-manifest_generated_at = Time.now.strftime('%FT%T%z')
+iiif_lookup           = Recon::URLLookup.new 'iiif_manifests'
+ia_url_lookup         = Recon::URLLookup.new 'legacy_ia_urls'
+manifest_generated_at = Time.now.strftime '%FT%T%z'
 
 xml_files = ARGV.dup
 CSV headers: true do |csv|
@@ -38,10 +38,10 @@ CSV headers: true do |csv|
       holding_institution_wikidata_qid:     DS::Institutions.find_qid(holding_institution_as_recorded),
       holding_institution_wikidata_label:   holding_institution_as_recorded,
       ds_id:                                nil,
-      source_data_type:                     'ds-mets',
+      source_data_type:                     'ds-mets-xml',
       filename:                             File.basename(file),
       holding_institution_institutional_id: DS::DS10.extract_shelfmark(record),
-      institutional_id_location_in_source:  'mods:mods/mods:identifier[@type="local"]/text()',
+      institutional_id_location_in_source:  '//mods:mods/mods:identifier[@type="local"]/text()',
       call_number:                          holding_institution_shelfmark,
       link_to_institutional_record:         ia_url_lookup.find_url(
         holding_institution_as_recorded,
