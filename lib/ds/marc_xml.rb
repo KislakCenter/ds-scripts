@@ -11,99 +11,9 @@ module DS
       # TODO: Add URL extraction (subfield $0) for subjects
       # TODO: Add URL extraction (subfield $0) for genres
 
-      ###
-      # Extract the language codes from controlfield 008 and datafield 041$a.
-      #
-      # @param [Nokogiri::XML::Node] record the marc:record node
-      # @return [String]
-      def extract_langs record, separator: '|'
-        # Language is in 008 at characters 35-37 (0-based indexing)
-        (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
-        # 041 is present if there's more than one language
-        langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
-        # if there are 041 values, the lang from 008 is repeated; remove the duplicate
-        langs.uniq.join separator
-      end
-
-      ##
-      # Extract the language as record; default to the 546$a field; otheriwse
-      # return the code values from controlfield 008 and 041$a.
-      #
-      # @param [Nokogiri::XML::Node] record the marc:record node
-      # @return [String]
-      def extract_language_as_recorded record
-        xpath = "datafield[@tag=546]/subfield[@code='a']"
-        langs = record.xpath(xpath).map { |val| DS::Util.clean_string val.text, terminator: ''}
-        return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
-
-        extract_langs record
-      end
-
-      def extract_institution_name record, default: nil
-        val = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
-        return default if val.to_s.strip.empty?
-        val
-      end
-
-      ###
-      # Extract the encoded date from controlfield 008.
-      #
-      # @param [Nokogiri::XML::Node] record the +marc:record+ node
-      # @return [String]
-      def extract_encoded_date_008 record
-        record.xpath "substring(controlfield[@tag='008']/text(), 7,9)"
-      end
-
-      ##
-      # Look for a date as recorded. Look first at 260$c, then 260$d, then
-      # 245$f, finally use the encoded date from 008
-      def extract_date_as_recorded record
-        # Note that MARC does not specify a subfield '260$d':
-        #
-        # https://www.loc.gov/marc/bibliographic/bd260.html
-        #
-        # However Cornell use $d to continue 260$c
-        dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
-          DS::Util.clean_string t.text.strip
-        end.join ' '
-        return dar.strip unless dar.strip.empty?
-
-        dar = record.xpath("datafield[@tag=264]/subfield[@code='c']/text()").map do |t|
-          DS::Util.clean_string t.text.strip
-        end.join ' '
-        return dar.strip unless dar.strip.empty?
-
-        # 245 is the title field but can have a date in $f
-        #
-        # see: https://www.loc.gov/marc/bibliographic/bd245.html
-        #
-        # Cornell uses 245$f in records that also lack 260 or 264; see
-        # '4600 Bd. Ms. 176':
-        #
-        # https://catalog.library.cornell.edu/catalog/6382455/librarian_view
-        #
-        #   <datafield ind1="0" ind2="0" tag="245">
-        #     <subfield code="a">Shah-nameh,</subfield>
-        #     <subfield code="f">1600s.</subfield>
-        #   </datafield>
-        #
-        dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
-        return DS::Util.clean_string dar unless dar.strip.empty?
-
-        encoded_date = extract_encoded_date_008 record
-        parse_008 encoded_date, range_sep: '-'
-      end
-
-      ##
-      # Look for a place as recorded. Look first at 264$a, then 260$a; return ''
-      # when no value is found
-      # @param [Nokogiri::XML::Node] record the MARC record
-      # @return [String] the place name or ''
-      def extract_place_as_recorded record
-        record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()").map { |pn|
-          DS::Util.clean_string pn, terminator: '' unless pn.to_s.strip.empty?
-        }
-      end
+      ############################################################
+      # NAMES
+      ############################################################
 
       ##
       # Extract names from record using tags and relators. Tags understood are +100+,
@@ -123,7 +33,6 @@ module DS
         return '' if xpath.empty? # don't process nonsensical requests
         record.xpath(xpath).map { |datafield| DS::Util.clean_string extract_name_portion datafield }
       end
-
 
       ##
       # Extract names from record using tags and relators. Authors are extracted
@@ -177,17 +86,6 @@ module DS
           row << extract_authority_number(datafield)
           row
         }
-      end
-
-      def extract_recon_titles record
-        xpath = "datafield[@tag=245]/subfield[@code='a']"
-        tar = record.xpath(xpath).text
-        tar = DS::Util.clean_string tar, terminator: ''
-        tar_agr = DS::MarcXML.extract_title_agr record, 245
-        utar = DS::MarcXML.extract_uniform_title_as_recorded record
-        utar_agr = DS::MarcXML.extract_uniform_title_agr record
-
-        [tar, tar_agr, utar, utar_agr]
       end
 
       ##
@@ -283,145 +181,42 @@ module DS
         df_roles.find { |role| role =~ rel_pattern }.to_s.chomp '.'
       end
 
+      #########################################################################
+      # Miscellaneous authority values
+      #########################################################################
+
+
       ###
-      # Extract the authority number, subfield +$0+ from the given datafield.
+      # Extract the language codes from controlfield 008 and datafield 041$a.
       #
-      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
+      # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
-      def extract_authority_number datafield
-        xpath = "./subfield[@code='0']"
-        datafield.xpath(xpath).text
+      def extract_langs record, separator: '|'
+        # Language is in 008 at characters 35-37 (0-based indexing)
+        (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
+        # 041 is present if there's more than one language
+        langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
+        # if there are 041 values, the lang from 008 is repeated; remove the duplicate
+        langs.uniq.join separator
       end
 
       ##
-      # Extract the alternate graphical representation of the name or return +''+.
+      # Extract the language as record; default to the 546$a field; otheriwse
+      # return the code values from controlfield 008 and 041$a.
       #
-      # See MARC specification for 880 fields:
-      #
-      # * https://www.loc.gov/marc/bibliographic/bd880.html
-      #
-      # Input will look like this:
-      #
-      #     <marc:datafield ind1="1" ind2=" " tag="100">
-      #       <marc:subfield code="6">880-01</marc:subfield>
-      #       <marc:subfield code="a">Urmawī, ʻAbd al-Muʼmin ibn Yūsuf,</marc:subfield>
-      #       <marc:subfield code="d">approximately 1216-1294.</marc:subfield>
-      #     </marc:datafield>
-      #     <!-- ... -->
-      #     <marc:datafield ind1="1" ind2=" " tag="880">
-      #       <marc:subfield code="6">100-01//r</marc:subfield>
-      #       <marc:subfield code="a">ارموي، عبد المؤمن بن يوسف،</marc:subfield>
-      #       <marc:subfield code="d">اپرxمتلي 12161294.</marc:subfield>
-      #     </marc:datafield>
-      #
-      # @param [Nokogiri::XML::Node] datafield the main data field @tag = '100', '700', etc.
-      # @return [String] the text representation of the value
-      def extract_pn_agr datafield
-        linkage = datafield.xpath("subfield[@code='6']").text
-        return '' if linkage.empty?
-        tag   = datafield.xpath('./@tag').text
-        index = linkage.split('-').last
-        xpath = "./parent::record/datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]"
-        extract_name_portion datafield.xpath(xpath)
+      # @param [Nokogiri::XML::Node] record the marc:record node
+      # @return [String]
+      def extract_language_as_recorded record
+        xpath = "datafield[@tag=546]/subfield[@code='a']"
+        langs = record.xpath(xpath).map { |val| DS::Util.clean_string val.text, terminator: ''}
+        return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
+
+        extract_langs record
       end
 
-      def extract_cataloging_convention record
-        record.xpath('datafield[@tag=040]/subfield[@code="e"]/text()').text
-      end
-
-      ##
-      # Extract datafields values with authority numbers (URL) when present
-      # for reconciliation CSV output.
-      #
-      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
-      # @param [Array<String>] tags the MARC datafield tag(s)
-      # @param [Array<String>] codes the MARC subfield code(s)
-      # @param [String] sub_sep separator for joining subfield values
-      # @return [Array<Array>] an array of arrays of values
-      def collect_recon_datafields record, tags: [], codes: [], sub_sep: ' '
-        _tags     = [tags].flatten.map &:to_s
-        tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
-        record.xpath("datafield[#{tag_query}]").map { |datafield|
-          value  = collect_subfields datafield, codes: codes, sub_sep: sub_sep
-          value  = DS::Util.clean_string value, terminator: ''
-          number = datafield.xpath('subfield[@tag="0"]').text
-          [value, number]
-        }
-      end
-
-      def collect_recon_subjects record, tags: []
-        tag_list = *tags
-        raise "No tags given for subject extraction: #{tags.inspect}" if tag_list.empty?
-        sep = '--'
-        tag_query = tag_list.map { |tag| "@tag=#{tag}" }.join " or "
-        # code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
-        record.xpath("datafield[#{tag_query}]").map { |datafield|
-          values = Hash.new { |hash,k| hash[k] = [] }
-          vocab   = datafield.xpath('./@ind2').text
-          datafield.xpath("subfield").map { |subfield|
-            subfield_text = DS::Util.clean_string subfield.text
-            subfield_code = subfield.xpath('./@code').text
-            # require 'pry'; binding.pry if subfield_text =~ /accounting/i
-            case subfield_code
-            when 'e', 'w'
-              # don't include these formatted in subject
-            when 'b', 'c', 'd', 'p', 'q', 't'
-              # append these to the preceding value
-              # we assume that there is a preceding value
-              values[:terms][-1] += " #{subfield_text}"
-              values[:codes][-1] += ";#{subfield_code}"
-            when %r{\A[[:alpha:]]\z}
-              # any other codes: a, g, v, x, y, z
-              values[:terms] << subfield_text
-              values[:codes] << subfield_code
-            when '2'
-              vocab = subfield.text
-            when '0'
-              values[:urls] << subfield_text
-            end
-          }
-          terms  = values[:terms].join(sep)
-          urls   = values[:urls].join(sep)
-          codes  = values[:codes].join(sep)
-          [terms, codes, vocab, urls]
-        }
-      end
-
-      ##
-      # Extract the places of production MARC +260$a+ for reconciliation CSV
-      # output.
-      #
-      # Returns a two-dimensional array, each row is a place; and each row has
-      # one column: place name; for example:
-      #
-      #     [["Austria"],
-      #      ["Germany"],
-      #      ["France (?)"]]
-      #
-      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
-      # @return [Array<Array>] an array of arrays of values
-      def extract_recon_places record
-        extract_place_as_recorded(record).map { |pn| [pn] }
-      end
-
-      ##
-      # Extract subfield values specified by +tags+
-      #
-      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
-      # @param [Array<String>] tags the MARC datafield tag(s)
-      # @param [Array<String>] codes the MARC subfield code(s)
-      # @param [String] field_sep separator for joining multiple datafield values
-      # @param [String] sub_sep separator for joining subfield values
-      # @return [Array<Array>] an array of arrays of values
-      def collect_datafields record, tags: [], codes: [], field_sep: '|', sub_sep: ' '
-        _tags     = [tags].flatten.map &:to_s
-        tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
-        record.xpath("datafield[#{tag_query}]").map { |datafield|
-          value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
-          DS::Util.clean_string value, terminator: ''
-        }
-      end
-
+      #########################################################################
+      # Genres and subjects
+      #########################################################################
       ##
       # Extract genre and form terms from MARC datafield 655 values, where the
       # 655$2 value can be specified; e.g., +rbprov+, +aat+, +lcgft+.
@@ -535,23 +330,144 @@ module DS
         extract_genres(record).map(&:vocab)
       end
 
-      ##
-      # @param [Nokogiri::XML::Node] datafield the term datafield
-      # @return [String]
-      def extract_vocabulary datafield
-        return 'lcsh' if datafield['ind2'] == '0'
 
-        vocab = datafield.xpath("subfield[@code=2]").text
-        vocab.chomp '.' if vocab.present?
+      def collect_recon_subjects record, tags: []
+        tag_list = *tags
+        raise "No tags given for subject extraction: #{tags.inspect}" if tag_list.empty?
+        sep = '--'
+        tag_query = tag_list.map { |tag| "@tag=#{tag}" }.join " or "
+        # code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
+        record.xpath("datafield[#{tag_query}]").map { |datafield|
+          values = Hash.new { |hash,k| hash[k] = [] }
+          vocab   = datafield.xpath('./@ind2').text
+          datafield.xpath("subfield").map { |subfield|
+            subfield_text = DS::Util.clean_string subfield.text
+            subfield_code = subfield.xpath('./@code').text
+            # require 'pry'; binding.pry if subfield_text =~ /accounting/i
+            case subfield_code
+            when 'e', 'w'
+              # don't include these formatted in subject
+            when 'b', 'c', 'd', 'p', 'q', 't'
+              # append these to the preceding value
+              # we assume that there is a preceding value
+              values[:terms][-1] += " #{subfield_text}"
+              values[:codes][-1] += ";#{subfield_code}"
+            when %r{\A[[:alpha:]]\z}
+              # any other codes: a, g, v, x, y, z
+              values[:terms] << subfield_text
+              values[:codes] << subfield_code
+            when '2'
+              vocab = subfield.text
+            when '0'
+              values[:urls] << subfield_text
+            end
+          }
+          terms  = values[:terms].join(sep)
+          urls   = values[:urls].join(sep)
+          codes  = values[:codes].join(sep)
+          [terms, codes, vocab, urls]
+        }
       end
 
-      def collect_subfields datafield, codes: [], sub_sep: ' '
-        # ensure that +codes+ is an array of strings
-        _codes = [codes].flatten.map &:to_s
-        # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
-        code_query = _codes.map { |code| "@code = '#{code}'" }.join ' or '
-        xpath      = %Q{subfield[#{code_query}]}
-        DS::Util.clean_string datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
+      #########################################################################
+      # Place of production
+      #########################################################################
+
+      ##
+      # Look for a place as recorded. Look first at 264$a, then 260$a; return ''
+      # when no value is found
+      # @param [Nokogiri::XML::Node] record the MARC record
+      # @return [String] the place name or ''
+      def extract_place_as_recorded record
+        record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()").map { |pn|
+          DS::Util.clean_string pn, terminator: '' unless pn.to_s.strip.empty?
+        }
+      end
+
+
+      ##
+      # Extract the places of production MARC +260$a+ for reconciliation CSV
+      # output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # one column: place name; for example:
+      #
+      #     [["Austria"],
+      #      ["Germany"],
+      #      ["France (?)"]]
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @return [Array<Array>] an array of arrays of values
+      def extract_recon_places record
+        extract_place_as_recorded(record).map { |pn| [pn] }
+      end
+
+      #########################################################################
+      # Date of production
+      #########################################################################
+
+      ###
+      # Extract the encoded date from controlfield 008.
+      #
+      # @param [Nokogiri::XML::Node] record the +marc:record+ node
+      # @return [String]
+      def extract_encoded_date_008 record
+        record.xpath "substring(controlfield[@tag='008']/text(), 7,9)"
+      end
+
+      ##
+      # Look for a date as recorded. Look first at 260$c, then 260$d, then
+      # 245$f, finally use the encoded date from 008
+      def extract_date_as_recorded record
+        # Note that MARC does not specify a subfield '260$d':
+        #
+        # https://www.loc.gov/marc/bibliographic/bd260.html
+        #
+        # However Cornell use $d to continue 260$c
+        dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
+          DS::Util.clean_string t.text.strip
+        end.join ' '
+        return dar.strip unless dar.strip.empty?
+
+        dar = record.xpath("datafield[@tag=264]/subfield[@code='c']/text()").map do |t|
+          DS::Util.clean_string t.text.strip
+        end.join ' '
+        return dar.strip unless dar.strip.empty?
+
+        # 245 is the title field but can have a date in $f
+        #
+        # see: https://www.loc.gov/marc/bibliographic/bd245.html
+        #
+        # Cornell uses 245$f in records that also lack 260 or 264; see
+        # '4600 Bd. Ms. 176':
+        #
+        # https://catalog.library.cornell.edu/catalog/6382455/librarian_view
+        #
+        #   <datafield ind1="0" ind2="0" tag="245">
+        #     <subfield code="a">Shah-nameh,</subfield>
+        #     <subfield code="f">1600s.</subfield>
+        #   </datafield>
+        #
+        dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
+        return DS::Util.clean_string dar unless dar.strip.empty?
+
+        encoded_date = extract_encoded_date_008 record
+        parse_008 encoded_date, range_sep: '-'
+      end
+
+      #########################################################################
+      # Titles
+      #########################################################################
+
+      def extract_recon_titles record
+        xpath = "datafield[@tag=245]/subfield[@code='a']"
+        tar = record.xpath(xpath).text
+        tar = DS::Util.clean_string tar, terminator: ''
+        tar_agr = DS::MarcXML.extract_title_agr record, 245
+        utar = DS::MarcXML.extract_uniform_title_as_recorded record
+        utar_agr = DS::MarcXML.extract_uniform_title_agr record
+
+        [tar, tar_agr, utar, utar_agr]
       end
 
       def extract_title_agr record, tag
@@ -582,6 +498,9 @@ module DS
         }.join '|'
       end
 
+      #########################################################################
+      # Physical description
+      #########################################################################
       def extract_physical_description record
         extract_extent(record)
       end
@@ -597,6 +516,9 @@ module DS
         }
       end
 
+      #########################################################################
+      # Notes
+      #########################################################################
       ##
       # Extract notes from +record+.
       #
@@ -614,6 +536,112 @@ module DS
         record.xpath(xpath).map { |note|
           DS::Util.clean_string note.text.strip.gsub(%r{\s+}, ' ')
         }
+      end
+
+
+
+      ###
+      # Extract the authority number, subfield +$0+ from the given datafield.
+      #
+      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
+      # @return [String]
+      def extract_authority_number datafield
+        xpath = "./subfield[@code='0']"
+        datafield.xpath(xpath).text
+      end
+
+      ##
+      # Extract the alternate graphical representation of the name or return +''+.
+      #
+      # See MARC specification for 880 fields:
+      #
+      # * https://www.loc.gov/marc/bibliographic/bd880.html
+      #
+      # Input will look like this:
+      #
+      #     <marc:datafield ind1="1" ind2=" " tag="100">
+      #       <marc:subfield code="6">880-01</marc:subfield>
+      #       <marc:subfield code="a">Urmawī, ʻAbd al-Muʼmin ibn Yūsuf,</marc:subfield>
+      #       <marc:subfield code="d">approximately 1216-1294.</marc:subfield>
+      #     </marc:datafield>
+      #     <!-- ... -->
+      #     <marc:datafield ind1="1" ind2=" " tag="880">
+      #       <marc:subfield code="6">100-01//r</marc:subfield>
+      #       <marc:subfield code="a">ارموي، عبد المؤمن بن يوسف،</marc:subfield>
+      #       <marc:subfield code="d">اپرxمتلي 12161294.</marc:subfield>
+      #     </marc:datafield>
+      #
+      # @param [Nokogiri::XML::Node] datafield the main data field @tag = '100', '700', etc.
+      # @return [String] the text representation of the value
+      def extract_pn_agr datafield
+        linkage = datafield.xpath("subfield[@code='6']").text
+        return '' if linkage.empty?
+        tag   = datafield.xpath('./@tag').text
+        index = linkage.split('-').last
+        xpath = "./parent::record/datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]"
+        extract_name_portion datafield.xpath(xpath)
+      end
+
+      def extract_cataloging_convention record
+        record.xpath('datafield[@tag=040]/subfield[@code="e"]/text()').text
+      end
+
+      ##
+      # Extract datafields values with authority numbers (URL) when present
+      # for reconciliation CSV output.
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC datafield tag(s)
+      # @param [Array<String>] codes the MARC subfield code(s)
+      # @param [String] sub_sep separator for joining subfield values
+      # @return [Array<Array>] an array of arrays of values
+      def collect_recon_datafields record, tags: [], codes: [], sub_sep: ' '
+        _tags     = [tags].flatten.map &:to_s
+        tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
+        record.xpath("datafield[#{tag_query}]").map { |datafield|
+          value  = collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          value  = DS::Util.clean_string value, terminator: ''
+          number = datafield.xpath('subfield[@tag="0"]').text
+          [value, number]
+        }
+      end
+
+      ##
+      # Extract subfield values specified by +tags+
+      #
+      # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
+      # @param [Array<String>] tags the MARC datafield tag(s)
+      # @param [Array<String>] codes the MARC subfield code(s)
+      # @param [String] field_sep separator for joining multiple datafield values
+      # @param [String] sub_sep separator for joining subfield values
+      # @return [Array<Array>] an array of arrays of values
+      def collect_datafields record, tags: [], codes: [], field_sep: '|', sub_sep: ' '
+        _tags     = [tags].flatten.map &:to_s
+        tag_query = _tags.map { |t| "@tag = #{t}" }.join " or "
+        record.xpath("datafield[#{tag_query}]").map { |datafield|
+          value = collect_subfields datafield, codes: codes, sub_sep: sub_sep
+          DS::Util.clean_string value, terminator: ''
+        }
+      end
+
+
+      ##
+      # @param [Nokogiri::XML::Node] datafield the term datafield
+      # @return [String]
+      def extract_vocabulary datafield
+        return 'lcsh' if datafield['ind2'] == '0'
+
+        vocab = datafield.xpath("subfield[@code=2]").text
+        vocab.chomp '.' if vocab.present?
+      end
+
+      def collect_subfields datafield, codes: [], sub_sep: ' '
+        # ensure that +codes+ is an array of strings
+        _codes = [codes].flatten.map &:to_s
+        # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
+        code_query = _codes.map { |code| "@code = '#{code}'" }.join ' or '
+        xpath      = %Q{subfield[#{code_query}]}
+        DS::Util.clean_string datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
       end
 
       # TODO: This CSV is a stopgap; find a more sustainable solution
@@ -657,6 +685,16 @@ module DS
         shelfmarks = raw_marks.map { |m| m[1..-1].strip }
         shelfmarks
       end
+
+
+
+      def extract_institution_name record, default: nil
+        val = record.xpath("datafield[@tag=852]/subfield[@code='a']").text
+        return default if val.to_s.strip.empty?
+        val
+      end
+
+
 
       ##
       # Add the content of the MARC 773$g subfield if it's present and not
