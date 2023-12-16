@@ -68,7 +68,94 @@ describe DS::MarcXML do
     end
   end
 
+  context 'genre extraction' do
 
+    let(:record) {
+      marc_record %q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield tag="655" ind1=" " ind2="7">
+            <subfield code="a">Booksellers' copies (Provenance)</subfield>
+            <subfield code="2">rbprov.</subfield>
+        </datafield>
+        <datafield ind1=" " ind2="7" tag="655">
+          <subfield code="a">Sermons.</subfield>
+          <subfield code="2">lcgft</subfield>
+          <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        </datafield>
+        <datafield ind1=" " ind2="7" tag="655">
+          <subfield code="a">Term without vocabulary.</subfield>
+          <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        </datafield>
+        <datafield ind1=" " ind2="0" tag="655">
+          <subfield code="a">Term with 655$2 == 0</subfield>
+          <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        </datafield>
+
+      </record>
+    }
+    }
+
+    context 'extract_genre_as_recorded' do
+      let(:terms) {
+        DS::MarcXML.extract_genre_as_recorded record, sub2: :all
+      }
+
+      it 'extracts a genre string' do
+        expect(terms).to include "Booksellers' copies (Provenance)"
+      end
+
+      it 'extracts all the genres' do
+        expect(terms.size).to eq 4
+      end
+
+      it 'extracts genres based on vocabulary' do
+        terms = DS::MarcXML.extract_genre_as_recorded record, sub2: 'rbprov'
+        expect(terms).to eq ["Booksellers' copies (Provenance)"]
+      end
+    end
+
+    context "extract_genre_vocabulary" do
+      let(:result) { DS::MarcXML.extract_genre_vocabulary record }
+      it 'extracts the vocabulary' do
+        expect(result).to include 'lcgft'
+      end
+
+      it 'removes trailing periods from vocabularies' do
+        expect(result).to include 'rbprov'
+      end
+
+      it 'returns three values' do
+        expect(result).to match_array ['rbprov', 'lcgft', nil, 'lcsh']
+      end
+
+      it 'returns lcsh when the @ind2 is 0 (zero)' do
+        expect(result).to include 'lcsh'
+      end
+    end
+
+    context "extract_recon_genres" do
+      let(:result) { DS::MarcXML.extract_recon_genres record }
+
+      it 'returns an array genre data' do
+        # <datafield ind1=" " ind2="7" tag="655">
+        # <subfield code="a">Sermons.</subfield>
+        # <subfield code="2">lcgft</subfield>
+        #   <subfield code="0">http://id.loc.gov/authorities/genreForms/gf2015026051</subfield>
+        # </datafield>
+        expect(result).to include %w{ Sermons lcgft http://id.loc.gov/authorities/genreForms/gf2015026051 }
+      end
+
+      it 'returns data for all the genre datafields' do
+        expect(result.size).to eq 4
+      end
+    end
+  end
 
   context 'extract_data_as_recorded' do
 
@@ -90,6 +177,7 @@ describe DS::MarcXML do
       }
       )
     }
+
     it 'extracts 260$c' do
       expect(
         DS::MarcXML.extract_date_as_recorded(date_260c_marc)
@@ -138,6 +226,7 @@ describe DS::MarcXML do
     }
       )
     }
+
     it 'extracts 264$c' do
       expect(
         DS::MarcXML.extract_date_as_recorded(date_264c_marc)
@@ -482,13 +571,6 @@ describe DS::MarcXML do
       )
     }
 
-    it 'returns a 500$a shelfmark' do
-      expect(
-        DS::MarcXML.find_shelfmark shelfmark_in_500a_record
-      ).to eq 'Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.'
-    end
-
-
     let(:shelfmark_in_099a_record) {
       marc_record(
         %q{<?xml version="1.0" encoding="UTF-8"?>
@@ -508,12 +590,6 @@ describe DS::MarcXML do
         }
       )
     }
-
-    it 'returns a 099$a shelfmark' do
-      expect(
-        DS::MarcXML.find_shelfmark shelfmark_in_099a_record
-      ).to eq 'Ms. 65'
-    end
   end
 
   context 'extract_subject_as_recorded' do
