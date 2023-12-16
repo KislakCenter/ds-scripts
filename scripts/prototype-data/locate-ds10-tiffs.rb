@@ -73,7 +73,7 @@ DEPENDENT_ON_DS.each do |institution|
   # loop through an institution's METS XMLs
   Dir[mets_dir].each do |f|
     xml   = File.open(f) { |x| Nokogiri::XML x }
-    pages = DS::DS10.find_pages xml
+    pages = DS::Extractor::DS10.find_pages xml
     # insert row into CSV even if no pages are found
     unless pages.any?
       row = [institution, f.sub(%r{^/Volumes/sceti-completed-4/}, '')] unless pages.any?
@@ -85,7 +85,7 @@ DEPENDENT_ON_DS.each do |institution|
     # loop through each page and get TIF filenames
     pages.each do |page|
       dmdSec   = page.attr('ID').to_s
-      mets_tif = DS::DS10.extract_filenames page
+      mets_tif = DS::Extractor::DS10.extract_filenames page
 
       # loop through each TIF filename and find a matching TIF image
       mets_tif.each do |m|

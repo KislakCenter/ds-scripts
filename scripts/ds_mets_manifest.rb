@@ -31,8 +31,8 @@ CSV headers: true do |csv|
   csv << headers
   xml_files.each do |file|
     record                          = File.open(file) { |f| Nokogiri::XML f }
-    holding_institution_as_recorded = DS::DS10.extract_institution_name(record)
-    holding_institution_shelfmark   = DS::DS10.extract_shelfmark(record)
+    holding_institution_as_recorded = DS::Extractor::DS10.extract_institution_name(record)
+    holding_institution_shelfmark   = DS::Extractor::DS10.extract_shelfmark(record)
 
     row                             = {
       holding_institution_wikidata_qid:     DS::Institutions.find_qid(holding_institution_as_recorded),
@@ -40,7 +40,7 @@ CSV headers: true do |csv|
       ds_id:                                nil,
       source_data_type:                     'ds-mets-xml',
       filename:                             File.basename(file),
-      holding_institution_institutional_id: DS::DS10.extract_shelfmark(record),
+      holding_institution_institutional_id: DS::Extractor::DS10.extract_shelfmark(record),
       institutional_id_location_in_source:  '//mods:mods/mods:identifier[@type="local"]/text()',
       call_number:                          holding_institution_shelfmark,
       link_to_institutional_record:         ia_url_lookup.find_url(
@@ -48,7 +48,7 @@ CSV headers: true do |csv|
         holding_institution_shelfmark
       ),
       record_last_updated:                  record.xpath('/mets:mets/mets:metsHdr/@LASTMODDATE').text,
-      title:                                DS::DS10.extract_title(record),
+      title:                                DS::Extractor::DS10.extract_title(record),
       iiif_manifest_url:                    iiif_lookup.find_url(
         holding_institution_as_recorded, holding_institution_shelfmark
       ),

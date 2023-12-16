@@ -37,7 +37,7 @@ module Recon
       data = []
       process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data += DS::MarcXML.extract_recon_genres record, sub_sep: '--'
+          data += DS::Extractor::MarcXML.extract_recon_genres record, sub_sep: '--'
         end
       end
       add_recon_values data
@@ -51,7 +51,7 @@ module Recon
     def self.from_tei files
       data = []
       process_xml files, remove_namespaces: true do |xml|
-        data += DS::OPennTEI.extract_recon_genres xml
+        data += DS::Extractor::OPennTEI.extract_recon_genres xml
       end
       add_recon_values data
       Recon.sort_and_dedupe data

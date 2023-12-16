@@ -72,7 +72,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
     it 'calls all the expected DS10 methods' do
       add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::DS10, methods: ds10_methods, return_val: []
+      add_expects objects: DS::Extractor::DS10, methods: ds10_methods, return_val: []
 
       mapper.map_record entry
     end

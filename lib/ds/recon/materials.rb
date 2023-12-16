@@ -30,7 +30,7 @@ module Recon
 
       process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data += [DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b')]
+          data += [DS::Extractor::MarcXML.collect_datafields(record, tags: 300, codes: 'b')]
           # require 'pry'; binding.pry
         end
       end
@@ -41,7 +41,7 @@ module Recon
     def self.from_mets files
       data = []
       process_xml files do |xml|
-        data << [DS::DS10.extract_support(xml)]
+        data << [DS::Extractor::DS10.extract_support(xml)]
       end
       add_recon_values data
       Recon.sort_and_dedupe data
@@ -50,7 +50,7 @@ module Recon
     def self.from_tei files
       data = []
       process_xml files, remove_namespaces: true do |xml|
-        data += DS::OPennTEI.extract_material_as_recorded(xml).split('|')
+        data += DS::Extractor::OPennTEI.extract_material_as_recorded(xml).split('|')
       end
       add_recon_values data
       Recon.sort_and_dedupe data

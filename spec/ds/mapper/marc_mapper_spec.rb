@@ -125,7 +125,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
 
     it 'calls all the MarcXML methods' do
       add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::MarcXML, methods: marc_xml_methods, return_val: []
+      add_expects objects: DS::Extractor::MarcXML, methods: marc_xml_methods, return_val: []
 
       marc_mapper.map_record entry
     end

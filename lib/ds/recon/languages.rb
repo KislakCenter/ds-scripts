@@ -79,7 +79,7 @@ module Recon
       process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           as_recorded = DS::Util.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
-          codes       = DS::MarcXML.extract_langs record, separator: separator
+          codes       = DS::Extractor::MarcXML.extract_langs record, separator: separator
           as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
           data << [as_recorded, codes]
         end
@@ -92,7 +92,7 @@ module Recon
     def self.from_mets files, separator: '|'
       data = []
       process_xml files do |xml|
-        DS::DS10.extract_language(xml, separator: separator).split(separator).each do |lang|
+        DS::Extractor::DS10.extract_language(xml, separator: separator).split(separator).each do |lang|
           data << [DS::Util.terminate(lang, terminator: ''), nil]
         end
       end
@@ -105,8 +105,8 @@ module Recon
       data = []
       # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
       process_xml files,remove_namespaces: true do |xml|
-        as_recorded = DS::OPennTEI.extract_language_as_recorded xml
-        codes       = DS::OPennTEI.extract_language_codes xml, separator: separator
+        as_recorded = DS::Extractor::OPennTEI.extract_language_as_recorded xml
+        codes       = DS::Extractor::OPennTEI.extract_language_codes xml, separator: separator
         data << [as_recorded,codes]
       end
       expand_codes data
