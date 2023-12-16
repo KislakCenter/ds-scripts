@@ -48,33 +48,33 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
 
   let(:marc_xml_methods) {
     %i{
-          extract_cataloging_convention
-          extract_001_control_number
-          extract_encoded_date_008
-          extract_date_as_recorded
-          parse_008
-          extract_place_as_recorded
-          extract_uniform_title_as_recorded
-          extract_uniform_title_agr
-          extract_title_as_recorded
-          extract_title_agr
-          extract_genre_as_recorded
-          extract_genre_vocabulary
-          extract_subject_as_recorded
-          extract_authors_as_recorded
-          extract_authors_as_recorded_agr
-          extract_names_as_recorded
-          extract_names_as_recorded_agr
-          extract_names_as_recorded
-          extract_names_as_recorded_agr
-          extract_language_as_recorded
-          extract_names_as_recorded
-          extract_names_as_recorded_agr
-          collect_datafields
-          extract_physical_description
-          extract_note
-          source_modified
-        }
+        extract_cataloging_convention
+        extract_001_control_number
+        extract_encoded_date_008
+        extract_date_as_recorded
+        parse_008
+        extract_place_as_recorded
+        extract_uniform_title_as_recorded
+        extract_uniform_title_agr
+        extract_title_as_recorded
+        extract_title_agr
+        extract_genre_as_recorded
+        extract_genre_vocabulary
+        extract_subject_as_recorded
+        extract_authors_as_recorded
+        extract_authors_as_recorded_agr
+        extract_names_as_recorded
+        extract_names_as_recorded_agr
+        extract_names_as_recorded
+        extract_names_as_recorded_agr
+        extract_language_as_recorded
+        extract_names_as_recorded
+        extract_names_as_recorded_agr
+        collect_datafields
+        extract_physical_description
+        extract_note
+        source_modified
+      }
   }
 
   context 'extract_record' do
@@ -126,6 +126,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
     it 'calls all the MarcXML methods' do
       add_stubs recon_classes, :lookup, []
       add_expects objects: DS::MarcXML, methods: marc_xml_methods, return_val: []
+
       marc_mapper.map_record entry
     end
 

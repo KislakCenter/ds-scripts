@@ -15,37 +15,9 @@ class DSConvertCLI < DS::CLI
 
   class_option :'output-csv', banner: 'FILE', desc: "Name of the output CSV file [default: output.csv]", default: 'output.csv', aliases: '-o'
 
-  desc "mets XML [XML...]", "Convert DS 1.0 METS XML to DS CSV"
-  long_desc <<-LONGDESC
-    Convert DS 1.0 METS XML to DS CSV
-  LONGDESC
-  def mets *files
-    return false unless validate_args files
-    invoke :recon_update
-    timestamp = DS.timestamp
-    valid = true
-
-    iiif_lookup = Recon::URLLookup.new 'iiif_manifests'
-    ia_url_lookup = Recon::URLLookup.new 'legacy_ia_urls'
-    rows = select_input(files).map { |in_xml|
-      source_file = in_xml.chomp # remove newline in case input if from ARGF
-      xml = File.open(source_file) { |f| Nokogiri::XML(f) }
-      mapper = DS::Mapper::DSMetsMapper.new(
-        record: xml, timestamp: timestamp, iiif_lookup: iiif_lookup,
-        ia_url_lookup: ia_url_lookup, source_file: source_file
-      )
-      mapper.map_record
-    }
-
-    validate! rows unless options[:'skip-validation']
-    write_csv rows, options
-  end
-
   desc "convert MANIFEST SOURCE_DIR", "Generate import CSV for MANIFEST and SOURCE_DIR"
   long_desc <<-LONGDESC
     Generate an import CSV for all files listed in the MANIFEST CSV that are found in SOURCE_DIR.
-
-NOTE: Works only for MARC XML at present.
 
 The MANIFEST is validated before the import CSV is generated. See
 'validate' for details.
