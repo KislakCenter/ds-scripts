@@ -37,6 +37,11 @@ module DS
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
+        uniform_title_as_recorded          = DS::Extractor::MarcXML.extract_uniform_title_as_recorded record
+        uniform_title_agr                  = DS::Extractor::MarcXML.extract_uniform_title_agr record
+        title_as_recorded                  = DS::Extractor::MarcXML.extract_title_as_recorded record
+        title_as_recorded_agr              = DS::Extractor::MarcXML.extract_title_agr record, 245
+        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         production_date_encoded_008        = DS::Extractor::MarcXML.extract_encoded_date_008 record
         production_date_as_recorded        = DS::Extractor::MarcXML.extract_date_as_recorded record
         production_date                    = DS::Extractor::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
@@ -45,11 +50,6 @@ module DS
         production_place_as_recorded       = DS::Extractor::MarcXML.extract_place_as_recorded(record).join '|'
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
-        uniform_title_as_recorded          = DS::Extractor::MarcXML.extract_uniform_title_as_recorded record
-        uniform_title_agr                  = DS::Extractor::MarcXML.extract_uniform_title_agr record
-        title_as_recorded                  = DS::Extractor::MarcXML.extract_title_as_recorded record
-        title_as_recorded_agr              = DS::Extractor::MarcXML.extract_title_agr record, 245
-        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = DS::Extractor::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
         genre_vocabulary                   = DS::Extractor::MarcXML.extract_genre_vocabulary(record).join '|'
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'

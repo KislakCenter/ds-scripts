@@ -24,15 +24,15 @@ module DS
         # NAMES
         ############################################################
 
-        Name = Struct.new(
-          'Name', :as_recorded, :role, :vernacular, :ref,
-          keyword_init: true
-        ) do |name|
-
-          def to_a
-            [as_recorded, role, vernacular, ref]
-          end
-        end
+        # Name = Struct.new(
+        #   'Name', :as_recorded, :role, :vernacular, :ref,
+        #   keyword_init: true
+        # ) do |name|
+        #
+        #   def to_a
+        #     [as_recorded, role, vernacular, ref]
+        #   end
+        # end
 
         def extract_authors xml
           names = []
@@ -278,15 +278,15 @@ module DS
         #########################################################################
         # Titles
         #########################################################################
-        Title = Struct.new(
-          'Title', :as_recorded, :vernacular, :label, :uri,
-          keyword_init: true
-        ) do |title|
-
-          def to_a
-            [as_recorded, vernacular, label, uri].map(&:to_s)
-          end
-        end
+        # Title = Struct.new(
+        #   'Title', :as_recorded, :vernacular, :label, :uri,
+        #   keyword_init: true
+        # ) do |title|
+        #
+        #   def to_a
+        #     [as_recorded, vernacular, label, uri].map(&:to_s)
+        #   end
+        # end
 
         ##
         # Return an array of Title instances equal in number to

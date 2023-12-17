@@ -2,7 +2,7 @@
 
 module DS
   module Extractor
-    class Term
+    class Genre
 
       attr_accessor :as_recorded
       attr_accessor :vocab

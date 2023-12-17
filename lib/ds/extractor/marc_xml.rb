@@ -317,7 +317,7 @@ module DS
             term_vocab           = extract_vocabulary datafield
             source_authority_uri = extract_authority_number datafield
             if [:all, term_vocab].include? vocab
-              DS::Extractor::Term.new(
+              DS::Extractor::Genre.new(
                 as_recorded:          as_recorded,
                 vocab:                term_vocab,
                 source_authority_uri: source_authority_uri
