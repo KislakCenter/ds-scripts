@@ -24,16 +24,6 @@ module DS
         # NAMES
         ############################################################
 
-        # Name = Struct.new(
-        #   'Name', :as_recorded, :role, :vernacular, :ref,
-        #   keyword_init: true
-        # ) do |name|
-        #
-        #   def to_a
-        #     [as_recorded, role, vernacular, ref]
-        #   end
-        # end
-
         def extract_authors xml
           names = []
           xml.xpath('//msContents/msItem/author').each do |node|
@@ -142,7 +132,7 @@ module DS
         #   ]
         #
         # @param [Nokogiri::XML::NodeSet] xml the parsed TEI XML
-        # @return [Array<Name>]
+        # @return [Array<DS::Extractor::Name>]
         def extract_recon_names xml
           data = []
 
@@ -278,15 +268,6 @@ module DS
         #########################################################################
         # Titles
         #########################################################################
-        # Title = Struct.new(
-        #   'Title', :as_recorded, :vernacular, :label, :uri,
-        #   keyword_init: true
-        # ) do |title|
-        #
-        #   def to_a
-        #     [as_recorded, vernacular, label, uri].map(&:to_s)
-        #   end
-        # end
 
         ##
         # Return an array of Title instances equal in number to
@@ -305,7 +286,7 @@ module DS
         #
         # We assume that, when there is a vernacular title, it follows
         # its Roman equivalent. This script runs through all +<title>+
-        # elements and creates a Title struct for each title where
+        # elements and creates a Title for each title where
         #
         #   @type != 'vernacular'
         #
@@ -313,7 +294,7 @@ module DS
         # of the previous Title instance to that value.
         #
         # @param [Nokogiri::XML::Node] record the TEI record
-        # @return [Array<Title>]
+        # @return [Array<DS::Extractor::Title>]
         def extract_titles record
           titles = []
           record.xpath('//msItem[1]/title').each do |title|
