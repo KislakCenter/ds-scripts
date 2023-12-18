@@ -399,7 +399,9 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places record
-        extract_place_as_recorded(record).map { |pn| [pn] }
+        extract_place_as_recorded(record).map { |pn|
+          [DS::Util.clean_string(pn, terminator: '')]
+        }
       end
 
       #########################################################################
