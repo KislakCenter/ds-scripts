@@ -380,7 +380,7 @@ module DS
       # @return [String] the place name or ''
       def extract_place_as_recorded record
         record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()").map { |pn|
-          DS::Util.clean_string pn, terminator: '' unless pn.to_s.strip.empty?
+          DS::Util.clean_string pn.text, terminator: '' unless pn.to_s.strip.empty?
         }
       end
 
@@ -399,9 +399,7 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places record
-        extract_place_as_recorded(record).map { |pn|
-          [DS::Util.clean_string(pn, terminator: '')]
-        }
+        extract_place_as_recorded(record).map { |pn| [pn] }
       end
 
       #########################################################################
