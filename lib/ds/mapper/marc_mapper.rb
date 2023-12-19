@@ -46,9 +46,9 @@ module DS
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
         uniform_title_as_recorded          = DS::MarcXML.extract_uniform_title_as_recorded record
-        uniform_title_agr                  = DS::MarcXML.extract_uniform_title_agr record
+        uniform_title_agr                  = DS::MarcXML.extract_uniform_title_as_recorded_agr record
         title_as_recorded                  = DS::MarcXML.extract_title_as_recorded record
-        title_as_recorded_agr              = DS::MarcXML.extract_title_agr record, 245
+        title_as_recorded_agr              = DS::MarcXML.extract_title_as_recorded_agr record
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = DS::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
         genre_vocabulary                   = DS::MarcXML.extract_genre_vocabulary(record).join '|'

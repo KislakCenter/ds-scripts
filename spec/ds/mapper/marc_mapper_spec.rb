@@ -55,9 +55,9 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
         parse_008
         extract_place_as_recorded
         extract_uniform_title_as_recorded
-        extract_uniform_title_agr
+        extract_uniform_title_as_recorded_agr
         extract_title_as_recorded
-        extract_title_agr
+        extract_title_as_recorded_agr
         extract_genre_as_recorded
         extract_genre_vocabulary
         extract_subject_as_recorded

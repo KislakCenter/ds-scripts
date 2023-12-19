@@ -178,7 +178,8 @@ module DS
 
         df_roles = datafield.xpath('subfield[@code = "e"]/text()').map(&:text)
         rel_pattern = /(#{relators_list.join('|')})/
-        df_roles.find { |role| role =~ rel_pattern }.to_s.chomp '.'
+        role = df_roles.find { |role| role =~ rel_pattern }
+        DS::Util.clean_string role, terminator: ''
       end
 
       #########################################################################
@@ -362,9 +363,9 @@ module DS
               values[:urls] << subfield_text
             end
           }
-          terms  = values[:terms].join(sep)
-          urls   = values[:urls].join(sep)
-          codes  = values[:codes].join(sep)
+          terms  = DS::Util.clean_string values[:terms].join(sep), terminator: ''
+          urls   = DS::Util.clean_string values[:urls].join(sep), terminator: ''
+          codes  = DS::Util.clean_string values[:codes].join(sep), terminator: ''
           [terms, codes, vocab, urls]
         }
       end
@@ -383,7 +384,6 @@ module DS
           DS::Util.clean_string pn.text, terminator: '' unless pn.to_s.strip.empty?
         }
       end
-
 
       ##
       # Extract the places of production MARC +260$a+ for reconciliation CSV
@@ -458,19 +458,48 @@ module DS
       #########################################################################
       # Titles
       #########################################################################
+      MarcTitle = Struct.new(
+        'MarcTitle', :as_recorded, :vernacular,
+        :uniform_as_recorded,
+        :uniform_vernacular,
+        keyword_init: true
+      ) do |title|
 
-      def extract_recon_titles record
-        xpath = "datafield[@tag=245]/subfield[@code='a']"
-        tar = record.xpath(xpath).text
-        tar = DS::Util.clean_string tar, terminator: ''
-        tar_agr = DS::MarcXML.extract_title_agr record, 245
-        utar = DS::MarcXML.extract_uniform_title_as_recorded record
-        utar_agr = DS::MarcXML.extract_uniform_title_agr record
-
-        [tar, tar_agr, utar, utar_agr]
+        def to_a
+          [as_recorded, vernacular, uniform_as_recorded, uniform_vernacular].map(&:to_s)
+        end
       end
 
-      def extract_title_agr record, tag
+      def extract_recon_titles record
+        extract_titles(record).to_a
+      end
+
+      def extract_titles record
+        tar = title_as_recorded record
+        tar_agr = DS::Util.clean_string DS::MarcXML.title_as_recorded_agr(record, 245), terminator: ''
+        utar = DS::Util.clean_string DS::MarcXML.uniform_title_as_recorded(record), terminator: ''
+        utar_agr = DS::Util.clean_string DS::MarcXML.uniform_title_as_recorded_agr(record), terminator: ''
+
+        MarcTitle.new(
+          as_recorded: tar,
+          vernacular: tar_agr,
+          uniform_as_recorded: utar,
+          uniform_vernacular: utar_agr
+        )
+      end
+
+      def extract_title_as_recorded_agr record
+        extract_titles(record).vernacular
+      end
+
+      def title_as_recorded record
+        xpath = "datafield[@tag=245]/subfield[@code='a' or @code='b']"
+        record.xpath(xpath).map { |title|
+          DS::Util.clean_string(title.text, terminator: '')
+        }.join '; '
+      end
+
+      def title_as_recorded_agr record, tag
         linkage = record.xpath("datafield[@tag=#{tag}]/subfield[@code='6']").text
         return '' if linkage.empty?
         index = linkage.split('-').last
@@ -479,20 +508,28 @@ module DS
       end
 
       def extract_title_as_recorded record
-        DS::Util.clean_string record.xpath("datafield[@tag=245]/subfield[@code='a' or @code='b']").map { |s| s.text.strip }.join ' '
+        extract_titles(record).as_recorded
       end
 
-      def extract_uniform_title_as_recorded record
+      def uniform_title_as_recorded record
         title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
         title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
         [title_240, title_130].reject(&:empty?).map { |title|
-          DS::Util.clean_string title
+          DS::Util.clean_string title, terminator: ''
         }.join '|'
       end
 
-      def extract_uniform_title_agr record
-        tag240 = extract_title_agr record, 240
-        tag130 = extract_title_agr record, 130
+      def extract_uniform_title_as_recorded record
+        extract_titles(record).uniform_as_recorded
+      end
+
+      def extract_uniform_title_as_recorded_agr record
+        extract_titles(record)
+      end
+
+      def uniform_title_as_recorded_agr record
+        tag240 = title_as_recorded_agr record, 240
+        tag130 = title_as_recorded_agr record, 130
         [tag240, tag130].reject(&:empty?).map { |title|
           DS::Util.clean_string title
         }.join '|'

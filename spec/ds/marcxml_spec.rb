@@ -64,7 +64,7 @@ describe DS::MarcXML do
     it 'extracts the 245$a and 245$b' do
       expect(
         DS::MarcXML.extract_title_as_recorded(title_record)
-      ).to eq 'Subfield a; Subfield b.'
+      ).to eq 'Subfield a; Subfield b'
     end
   end
 
@@ -891,25 +891,25 @@ describe DS::MarcXML do
     it 'is invoked by extract_uniform_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_uniform_title_as_recorded record
-      expect(DS::Util).to have_received :clean_string
+      expect(DS::Util).to have_received(:clean_string).exactly(7).times
     end
 
     it 'is invoked by extract_uniform_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_uniform_title_agr record
+      DS::MarcXML.uniform_title_as_recorded_agr record
       expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::MarcXML.extract_title_as_recorded record
-      expect(DS::Util).to have_received :clean_string
+      expect(DS::Util).to have_received(:clean_string).exactly(7).times
     end
 
     it 'is invoked by extract_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_title_agr record, 245
-      expect(DS::Util).to have_received :clean_string
+      DS::MarcXML.extract_title_as_recorded_agr record
+      expect(DS::Util).to have_received(:clean_string).exactly(7).times
     end
 
     it 'is invoked by extract_genre_as_recorded' do
