@@ -35,7 +35,10 @@ module DS
 
         return normal if terminator.nil?
 
-        terminate normal, terminator: terminator, force: true
+        cleaned = terminate normal, terminator: terminator, force: true
+        # keep cleaning until no changes are made
+        return clean_string cleaned unless cleaned == string
+        cleaned
       end
 
       ##
