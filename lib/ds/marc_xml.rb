@@ -524,7 +524,7 @@ module DS
       end
 
       def extract_uniform_title_as_recorded_agr record
-        extract_titles(record)
+        extract_titles(record).uniform_vernacular
       end
 
       def uniform_title_as_recorded_agr record

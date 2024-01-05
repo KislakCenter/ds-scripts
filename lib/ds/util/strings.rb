@@ -21,8 +21,9 @@ module DS
       #
       # @param [String] string the string to clean
       # @param [String] terminator the terminator to use, if any
+      # @param [Boolean] force use exact termination with +terminator+
       # @return [String] the cleaned string
-      def clean_string string, terminator: nil
+      def clean_string string, terminator: nil, force: false
         normal = normalize_string(
           escape_pipes(
             fix_double_periods(
@@ -35,12 +36,20 @@ module DS
 
         return normal if terminator.nil?
 
-        cleaned = terminate normal, terminator: terminator, force: true
+        cleaned = terminate normal, terminator: terminator, force: force
         # keep cleaning until no changes are made
         return clean_string cleaned unless cleaned == string
         cleaned
       end
 
+      # TERMINAL_PUNCT_REGEX matches strings terminated by any of +.,;:?!+
+      TERMINAL_PUNCT_REGEX =  %r{\s*([.,;:?!]+)("?)$}
+
+      # ELLIPSIS_REGEX matches strings terminated by +...+
+      ELLIPSIS_REGEX       = %r{\.\.\."?$}
+
+      # ABBREV_REGEX matches values like 'N.T.', 'O.T.'
+      ABBREV_REGEX         = %r{\W[A-Z]\.$}
       ##
       # Add termination to string if it lacks terminal punctuation.
       # Terminal punctuation is one of
@@ -63,14 +72,14 @@ module DS
         #     punctuation; this addresses a bug where some strings were returned
         #     with trailing whitespace: 'value :' => 'value '
         # TODO: Refactor? Two functions: strip_punctuation(), terminate() ??
-        terminal_punct = %r{\s*([.,;:?!]+)("?)$}
-        ellipsis = %r{\.\.\."?$}
 
         # don't strip ellipses
-        return str if str.strip =~ ellipsis
+        return str if str =~ ELLIPSIS_REGEX
+        # don't strip final periods for strings like "N.T."
+        return str if str =~ ABBREV_REGEX
 
         # if :terminator is '' or nil, remove any terminal punctuation
-        return str.sub terminal_punct, '\2' if terminator.blank?
+        return str.sub TERMINAL_PUNCT_REGEX, '\2' if terminator.blank?
 
         # str is already terminated
         return str if str.end_with? terminator
@@ -78,10 +87,10 @@ module DS
 
         # str lacks terminal punctuation; add it;
         #  \\1 => keep final '"' (double-quote)
-        return str.sub %r{("?)$}, "#{terminator}\\1" if str !~ terminal_punct
+        return str.sub %r{("?)$}, "#{terminator}\\1" if str !~ TERMINAL_PUNCT_REGEX
         # str has to have exact terminal punctuation
         #  \\1 => keep final '"' (double-quote)
-        return str.sub terminal_punct, "#{terminator}\\2" if force
+        return str.sub TERMINAL_PUNCT_REGEX, "#{terminator}\\2" if force
         # string has some terminal punctuation; return it
         str
       end
