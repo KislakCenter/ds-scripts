@@ -283,6 +283,15 @@ EOF
     end
   end
 
+  context '#csv' do
+    it 'rewinds the underlying CSV object' do
+      # csv should always start at line 0
+      expect(manifest.csv.lineno).to eq 0
+      manifest.csv.each_with_index { |_, ndx| break if ndx > 0 } # iterate over the manifest
+      expect(manifest.csv.lineno).to eq 0
+    end
+  end
+
   context 'validate_ids' do
     context 'for a CSV with valid IDs' do
       it 'is truthy' do

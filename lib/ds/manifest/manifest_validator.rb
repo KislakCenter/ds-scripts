@@ -111,7 +111,7 @@ module DS
           inst_id       = entry.institutional_id
           found         = case normal_source
                           when 'MARC XML', 'marcxml'
-                            id_in_marc_xml? file_path, inst_id
+                            id_in_marc_xml? file_path, entry
                           when 'teixml'
                             id_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           else
@@ -138,12 +138,16 @@ module DS
         tei:   'http://www.tei-c.org/ns/1.0'
       }
 
-      def id_in_marc_xml? file_path, id
-        entry = File.open(file_path) { |f| Nokogiri::XML(f) }
-        entry.remove_namespaces!
+      ##
+      # @param [String] file_path the path to the MARC XML file
+      # @param [DS::Manifest::Entry] entry entry for a single record
+      # @retun [boolean] whether the is found in the record
+      def id_in_marc_xml? file_path, entry
+        xml = File.open(file_path) { |f| Nokogiri::XML(f) }
+        xml.remove_namespaces!
 
-        xpath = "//controlfield[@tag='001' and text() = #{id}]"
-        entry.xpath(xpath).to_a.present?
+        xpath = "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
+        xml.xpath(xpath).to_a.present?
       end
 
       def id_xml? file_path, id, xpath
