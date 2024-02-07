@@ -114,6 +114,8 @@ module DS
                             id_in_marc_xml? file_path, entry
                           when 'teixml'
                             id_xml? file_path, inst_id, entry.institutional_id_location_in_source
+                          when 'dsmetsxml'
+                            id_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           else
                             raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
                           end
