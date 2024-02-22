@@ -1,0 +1,106 @@
+UC Riverside,NYAM,HRC,DS-CSV,,Import CSV
+,,,DS ID,,ds_id
+,,,,system generated,data_processed_at
+,,,,from manifest,source_file
+,,,,system generated,date_added
+,,,,system generated,date_last_updated
+row_index,row_index,row_index,row_index,,
+Holding Institution,Holding Institution,Holding Institution,Holding Institution,,holding_institution_as_recorded
+,,,,,holding_institution
+Source Type,Source Type,Source Type,Source Type,"always ""ds-csv"" for now",source_type
+,,,Cataloging Convention,"always ""ds-schema"" for now",cataloging_convention
+Holding Institution Identifier,Holding Institution Identifier,Holding Institution Identifier,Holding Institution Identifier,,holding_institution_id_number
+Shelfmark,Shelfmark,Shelfmark,Shelfmark,,holding_institution_shelfmark
+Link to Institutional Record,Link to Institutional Record,Fragment Number or Disambiguator,Fragment Number or Disambiguator,Question: Is disambiguation manually added to shelfmark; or does the conversion s/w do it?,
+IIIF Manifest,IIIF Manifest,IIIF Manifest,Link to Institutional Record,,link_to_holding_institution_record
+,,Link to Institutional Record,IIIF Manifest,,iiif_manifest
+,,,,,
+Production Place(s),Production Place(s),Production Place(s),Production Place(s),,production_place_as_recorded
+,,,,,production_place
+,,,,,production_place_label
+Date Description,Date Description,Date Description,Date Description,,production_date_as_recorded
+,,,,,
+Production Date START,Production Date START,Production Date START,Production Date START,start and end are combined for production_date,production_date
+Production Date END,Production Date END,Production Date END,Production Date END,,production_date
+,,,,,century
+,,,,,century_aat
+Dated,Dated,Dated,Dated,,dated
+Uniform Title(s),Uniform Title(s),Uniform Title(s),Uniform Title(s),,uniform_title_as_recorded
+,,,,,uniform_title_agr
+Title(s),Title(s),Title(s),Title(s),Question: original script name in brackets after title?,title_as_recorded
+,,,,,title_as_recorded_agr
+,,,,,standard_title
+Genre 1,Genre 1,Genre 1,Genre 1,"drop down with term|AAT ID: ""accounts [AAT 300145802]""",genre_as_recorded
+Genre 2,Genre 2,Genre 2,Genre 2,"drop down with term|AAT ID: ""accounts [AAT 300145802]""",genre_as_recorded
+Genre 3,Genre 3,Genre 3,Genre 3,"drop down with term|AAT ID: ""accounts [AAT 300145802]""",genre_as_recorded
+AAT Term(s),AAT Term(s),AAT Term(s),AAT Term(s),pipe-separated list of terms,genre_as_recorded
+LCGFT Term(s),LCGFT Term(s),LCGFT Term(s),LCGFT Term(s),pipe-separated list of terms,genre_as_recorded
+FAST Term(s),FAST Term(s),FAST Term(s),FAST Term(s),pipe-separated list of terms,genre_as_recorded
+RBMSCV Term(s),RBMSCV Term(s),RBMSCV Term(s),RBMSCV Term(s),pipe-separated list of terms,genre_as_recorded
+LoBT Term(s),LoBT Term(s),LoBT Term(s),LoBT Term(s),pipe-separated list of terms,genre_as_recorded
+,,,,,genre
+,,,,,genre_label
+,,,,,
+,,,,,
+,Named Subject(s),,,,
+,Named Subject Vocabulary,,,,
+Named Subject(s): Personal,,Named Subject(s): Personal,Named Subject(s): Personal,,subject_as_recorded
+Named Subject(s): Corporate,,Named Subject(s): Corporate,Named Subject(s): Corporate,,subject_as_recorded
+Named Subject(s): Event,,Named Subject(s): Event,Named Subject(s): Event,,subject_as_recorded
+Named Subject(s): Uniform Title,,Named Subject(s): Uniform Title,Named Subject(s): Uniform Title,,subject_as_recorded
+,Subject(s),,,,
+Subject(s): Topical,,Subject(s): Topical,Subject(s): Topical,,subject_as_recorded
+Subject(s): Geographical,,Subject(s): Geographical,Subject(s): Geographical,,subject_as_recorded
+Subject(s): Chronological,,Subject(s): Chronological,Subject(s): Chronological,,subject_as_recorded
+Subject Vocabulary,Subject Vocabulary,Subject Vocabulary,Subject Vocabulary,,
+,,,,,subject
+,,,,,subject_label
+Author Name(s),Author Name(s),Author Name(s),Author Name(s),Question: original script name in brackets after name?,author_as_recorded
+,,,,,author_as_recorded_agr
+,,,,,author
+,,,,,author_wikidata
+,,,,,author_instance_of
+,,,,,author_label
+Artist Name(s),Artist Name(s),Artist Name(s),Artist Name(s),Question: original script name in brackets after name?,artist_as_recorded
+,,,,,artist_as_recorded_agr
+,,,,,artist
+,,,,,artist_label
+,,,,,artist_wikidata
+,,,,,artist_instance_of
+Scribe Name(s),Scribe Name(s),,Scribe Name(s),Question: original script name in brackets after name?,scribe_as_recorded
+,,,,,scribe_as_recorded_agr
+,,,,,scribe
+,,,,,scribe_label
+,,,,,scribe_wikidata
+,,,,,scribe_instance_of
+Former Owner Name(s),Former Owner Name(s),Former Owner Name(s),Former Owner Name(s),,former_owner_as_recorded
+,,,,,former_owner_as_recorded_agr
+,,,,,former_owner
+,,,,,former_owner_label
+,,,,,former_owner_wikidata
+,,,,,former_owner_instance_of
+Language(s),Language(s),Language(s),Language(s),,language_as_recorded
+,,,,,language
+,,,,,language_label
+Materials Description,Materials Description,Materials Description,Materials Description,,material_as_recorded
+Material 1,Material 1,Material 1,Material 1,"drop down with values like ""paper [AAT 300014109]",material_label
+,,,,,material
+Material 2,Material 2,Material 2,Material 2,,material_label
+,,,,,material
+Material 3,Material 3,Material 3,Material 3,,material_label
+,,,,,material
+Dimensions,Dimensions,Dimensions,Dimensions,,physical_description
+Extent,Extent,Extent,Extent,,physical_description
+Layout,Layout,Layout,Layout,,note
+Script,Script,Script,Script,,note
+Decoration,Decoration,Decoration,Decoration,,note
+Binding,Binding,Binding,Binding,,note
+Physical Description Miscellaneous,Physical Description Miscellaneous,Physical Description Miscellaneous,Physical Description Miscellaneous,,note
+Provenance Notes,Provenance Notes,Provenance Notes,Provenance Notes,,note
+Note 1,Note 1,Note 1,Note 1,,note
+Note 2,Note 2,Note 2,Note 2,,note
+Acknowledgements,Acknowledgements,Acknowledgements,Acknowledgements,,acknowledgements
+,,,Date Updated by Contributor,,data_source_modified
+,,Reviewed by HRC,,,
+,,Uploaded to Wikibase,,,
+,,DS ID,,,
