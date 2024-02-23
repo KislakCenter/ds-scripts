@@ -10,7 +10,7 @@ module DS
       #     row in a manifest
       def extract_record entry
         xml = find_or_open_source entry
-        xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
+        xpath = "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
         xml.at_xpath xpath
       end
 

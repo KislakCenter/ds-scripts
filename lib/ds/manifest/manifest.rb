@@ -57,9 +57,11 @@ module DS
       # type and return the value (if a CSV::Table) or return the parsed
       # value as appropriate.
       #
-      # @return [CSV::Table] the parse manifest
+      # @return [CSV::Table] the parsed manifest
       def csv
         @csv ||= CSV.open csv_path, 'r', headers: true
+        @csv.rewind
+        @csv
       end
     end
   end

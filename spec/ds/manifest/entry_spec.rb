@@ -6,7 +6,7 @@ RSpec.describe 'DS::Manifest::Entry' do
 
   let(:manifest_csv) {parse_csv(<<~EOF
     holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"//marc:controlfield[@tag=""001""]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
   EOF
   )
  }
@@ -50,7 +50,7 @@ RSpec.describe 'DS::Manifest::Entry' do
       expect(entry.institutional_id).to eq '9951865503503681'
     end
     it 'has a institutional_id_location_in_source' do
-      expect(entry.institutional_id_location_in_source).to eq '//marc:controlfield[@tag="001"]'
+      expect(entry.institutional_id_location_in_source).to eq "controlfield[@tag='001']/text()"
     end
     it 'has a record_last_updated' do
       expect(entry.record_last_updated).to eq '20220803105830'

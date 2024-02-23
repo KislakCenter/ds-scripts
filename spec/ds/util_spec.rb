@@ -391,5 +391,33 @@ RSpec.describe 'DS::Util' do
       expect(result).to include nfc_unicode_string
     end
 
+    it 'removes a trailing period' do
+      result = DS::Util.clean_string 'some string.', terminator: ''
+      expect(result).to eq 'some string'
+    end
+
+    it 'removes a trailing period followed by a space' do
+      result = DS::Util.clean_string 'some string. ', terminator: ''
+      expect(result).to eq 'some string'
+    end
+
+    it 'does not remove a period after single-letter abbreviation' do
+      result = DS::Util.clean_string 'work N.T.', terminator: ''
+      expect(result).to eq 'work N.T.'
+    end
+
+    it 'adds a final terminator if force == true' do
+      result = DS::Util.clean_string(
+        'some string', terminator: '.', force: true
+      )
+      expect(result).to eq 'some string.'
+    end
+
+    it 'does not add a second final terminator even if force == true' do
+      result = DS::Util.clean_string(
+        'some string.', terminator: '.', force: true
+      )
+      expect(result).to eq 'some string.'
+    end
   end
 end
