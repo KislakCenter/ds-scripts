@@ -34,14 +34,15 @@ def build_subfield_query codes, options
   base_query = codes.any? ? "./subfield[#{build_codes_query codes}]" : '.'
   query = ''
   if options[:contains_insensitive]
-    query = "contains(translate(#{base_query},"\
+    "and contains(translate(#{base_query},"\
              " 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',"\
              " 'abcdefghijklmnopqrstuvwxyz'),"\
              "'#{options[:contains_insensitive].downcase}')"
   elsif options[:contains]
-    query = "contains(#{base_query}, '#{options[:contains]}')"
+    " and contains(#{base_query}, '#{options[:contains]}')"
+  else
+    " and #{base_query}"
   end
-  " and #{base_query}"
 end
 
 options = { max_count: Float::INFINITY }
@@ -104,7 +105,11 @@ codes << ARGV.shift while ARGV.first =~ %r{^[a-z0-9]$}
 # assume the rest are files
 files = ARGV
 
-xpath = "//record/datafield[@tag=#{tag}#{build_subfield_query codes, options}]"
+if tag =~ /^00[135678]/
+  xpath = "//record/controlfield[@tag=#{tag}#{build_subfield_query codes, options}]"
+else
+  xpath = "//record/datafield[@tag=#{tag}#{build_subfield_query codes, options}]"
+end
 puts "Using xpath: #{xpath}" if options[:verbose]
 
 # set a counter in case there's a limit
