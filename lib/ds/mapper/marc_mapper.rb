@@ -37,9 +37,8 @@ module DS
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
-        production_date_encoded_008        = DS::MarcXML.extract_encoded_date_008 record
         production_date_as_recorded        = DS::MarcXML.extract_date_as_recorded record
-        production_date                    = DS::MarcXML.parse_008 production_date_encoded_008, range_sep: '^'
+        production_date                    = DS::MarcXML.extract_production_date(record).join '^'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
         production_place_as_recorded       = DS::MarcXML.extract_place_as_recorded(record).join '|'
