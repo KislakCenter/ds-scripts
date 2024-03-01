@@ -3,38 +3,28 @@ require 'csv'
 module DS
   module DSCSV
     COLUMN_MAPPINGS = {
+      dsid:                               "DS ID",
       holding_institution_as_recorded:    "Holding Institution",
       source_type:                        "Source Type",
+      cataloging_convention:              "Cataloging Convention",
       holding_institution_id_number:      "Holding Institution Identifier",
       holding_institution_shelfmark:      "Shelfmark",
-      link_to_holding_institution_record: "IIIF Manifest",
+      fragment_num_disambiguator:         "Fragment Number or Disambiguator",
+      link_to_holding_institution_record: "Link to Institutional Record",
+      link_to_iiif_manifest:              "IIIF Manifest",
       production_place_as_recorded:       "Production Place(s)",
       production_date_as_recorded:        "Date Description",
-      production_date:                    [
-                                            "Production Date START",
-                                            "Production Date END"
-                                          ],
+      production_date_start:              "Production Date START",
+      production_date_end:                "Production Date END",
       dated:                              "Dated",
       uniform_title_as_recorded:          "Uniform Title(s)",
+      uniform_title_agr:                  "Uniform Title(s) - Original Script",
       title_as_recorded:                  "Title(s)",
-      genre_as_recorded:                  [
-                                            "Genre 1",
-                                            "Genre 2",
-                                            "Genre 3",
-                                            "AAT Term(s)",
-                                            "LCGFT Term(s)",
-                                            "FAST Term(s)",
-                                            "RBMSCV Term(s)",
-                                            "LoBT Term(s)",
-                                          ],
+      title_as_recorded_agr:              "Title(s) - Original Script",
+      genre_as_recorded:                  "Genre/Form",
       subject_as_recorded:                [
-                                            "Named Subject(s): Personal",
-                                            "Named Subject(s): Event",
-                                            "Named Subject(s): Uniform Title",
-                                            "Named Subject(s): Corporate",
-                                            "Subject(s): Topical",
-                                            "Subject(s): Geographical",
-                                            "Subject(s): Chronological",
+                                            "Named Subject(s)",
+                                            "Subject(s)",
                                           ],
       author_as_recorded:                 "Author Name(s)",
       artist_as_recorded:                 "Artist Name(s)",
@@ -42,13 +32,9 @@ module DS
       former_owner_as_recorded:           "Former Owner Name(s)",
       language_as_recorded:               "Language(s)",
       material_as_recorded:               "Materials Description",
-      material_label:                     [
-                                            "Material 1",
-                                            "Material 2",
-                                            "Material 3",
-                                          ],
       extent:                             "Extent",
-      dimensions:                         "Dimensions",
+      text_block_dimensions:              "Text block dimensions (mm)",
+      bound_dimensions:                   "Bound dimensions (mm)",
       note:                               [
                                             "Layout",
                                             "Script",
@@ -60,15 +46,34 @@ module DS
                                             "Note 2"
                                           ],
       acknowledgements:                   "Acknowledgements",
+      data_source_modified:               "Date Updated by Contributor",
     }.freeze
+
     module ClassMethods
 
       def extract_physical_description record
         extent = extract_extent record
-        dimensions = extract_dimensions record
-        desc = [ extent, dimensions ].flatten
+        material = extract_material_as_recorded record
+        dimensions = extract_dimensions_description record
+        desc = [ extent, material, dimensions ].flatten
         return unless desc.any?(&:present?)
         "Extent: #{desc.join '; '}"
+      end
+
+      def extract_dimensions_description record
+        textblock = extract_text_block_dimensions record
+        bound = extract_bound_dimensions record
+
+        return textblock.first if bound.blank?
+        return bound.first if textblock.blank?
+
+        "#{textblock.first} bound to #{bound.first}"
+      end
+
+      def extract_production_date record, separator: '-'
+        start_date = extract_production_date_start record
+        end_date   = extract_production_date_end record
+        [start_date,end_date].select(&:present?).join separator
       end
 
       def method_missing name, *args, **kwargs
