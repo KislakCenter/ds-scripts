@@ -198,7 +198,7 @@ module DS
         # 041 is present if there's more than one language
         langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
         # if there are 041 values, the lang from 008 is repeated; remove the duplicate
-        langs.uniq.join separator
+        langs.select(&:present?).uniq.join separator
       end
 
       ##
@@ -409,10 +409,163 @@ module DS
       ###
       # Extract the encoded date from controlfield 008.
       #
+      # Follows
+      #
+      # - https://www.loc.gov/marc/bibliographic/bd046.html
+      # - https://www.loc.gov/marc/bibliographic/bd046.html
+      #
+      # Returns an array containing a pair of dates or a single date,
+      # or an empty array.
+      #
+      # The following date types have appeared in MARC records
+      # contributed to DS as of 2024-02-27 and are handled here:
+      #
+      # b - No dates given; B.C. date involved
+      #   - 'b        '
+      #   - date is taken from 046$b, and if present $d or $e
+      #   - See: https://www.loc.gov/marc/bibliographic/bd046.html
+      #
+      #
+      # e - Detailed date
+      #   - 'e11200520', 'e139403 x', 'e164509 t', 'e167707 y',
+      #     'e187505 s'
+      #   - the first date part is returned a single year
+      #
+      # i - Inclusive dates of collection
+      #   - 'i07500800', 'i08000830', 'i1000    '
+      #   - the first and -- if present -- second date part are
+      #     returned as two years
+      #
+      # k - Range of years of bulk of collection
+      #   - 'k15121716'
+      #   - the first and second date parts are returned as two years
+      #
+      # m - Multiple dates
+      #   - 'm0618193u', 'm07390741', 'm10751200', 'm16uu1637',
+      #     'm17uu1900'
+      #   - the first and second date parts are returned as two years
+      #   - see note below on replacement of u's
+      #
+      # n - Dates unknown
+      #   - 'nuuuuuuuu'
+      #   - no date returned
+      #
+      # p - Date of distribution/release/issue and
+      #     production/recording session when different
+      #   - 'p1400    '
+      #   - the first and -- if present -- second date part are
+      #     returned as two years
+      #
+      # q - Questionable date
+      # q - 'q01000299', 'q0979    ', 'q09910992', 'q10001099',
+      #     'q1300    ', 'q13uu14uu', 'q13uu1693', 'q14011425',
+      #     'q1425uuuu', 'q1450    ', 'q1460    ', 'q14uu14uu',
+      #     'quuuu1597'
+      #   - the first and -- if present -- second date part are
+      #     returned as two years
+      #   - if the second date part is 'uuuu', the first date part is
+      #     returned as year; ; ‘q1425uuuu’ => 1425
+      #   - if the first date part is 'uuuu', the second date part is
+      #     returned as year; ‘quuuu1597’ => 1597
+      #   - for partial date parts with u's, see the note below
+      #
+      # r - Reprint/reissue date and original date
+      #   - 'r11751199'
+      #   - the first date part is returned a single year
+      #
+      # s - Single known date/probable date
+      # s - 's1171    ', 's1171 xx ', 's1192 ua ', 's1250||||',
+      #     's1286 iq ', 's1315 sy ', 's1366 is ', 's1436 gw ',
+      #     's1450 it ', 's1470 ly ', 's1470 tu ', 's1470 uuu',
+      #     's1497 enk', 's1595 sp ', 's19uu    '
+      #   - the first date part is returned a single year
+      #   - see note below on replacement of u's
+      #
+      # | - No attempt to code
+      #   - '|12501300'
+      #   - this appears to be miscoding
+      #   - nevertheless, '|' coded records will follow the default
+      #     rule: date part one is returned a single year
+      #
+      # The following cases, so far unrepresented in contributor data,
+      # will follow the default rule: date part one will be returned
+      # as a single year.
+      #
+      # c - Continuing resource currently published
+      # d - Continuing resource ceased publication
+      # t - Publication date and copyright date
+      # u - Continuing resource status unknown
+      #
+      # Note on the replacement of u's in partial year dates
+      #
+      #  - Where u's appear in the first date they are replace by 0;
+      #    thus, 'q13uu1693'  => '1300, 1693'
+      #  - Where u's appear in the second date they are replace by 9;
+      #    thus, 'q14uu14uu'  => '1400, 1499'
+      #
       # @param [Nokogiri::XML::Node] record the +marc:record+ node
-      # @return [String]
-      def extract_encoded_date_008 record
-        record.xpath "substring(controlfield[@tag='008']/text(), 7,9)"
+      # @return [Array]
+      def extract_production_date record
+        # 008 controlfield; e.g.,
+        #
+        #     "220518q14001500xx            000 0     d"
+        ctrl_008 = record.at_xpath("controlfield[@tag='008']")
+        return [] unless ctrl_008 # return if no 008
+        # get positions 7-15: q14001500
+        date_str = ctrl_008.text[6,9]
+        code = date_str[0]                        # 'm'
+        part1 = extract_date_part date_str, 1, 4  # '0618'
+        part1.gsub! /u/, '0' if part1.present?
+        part2 = extract_date_part date_str, 5, 8  # '193u'
+        part2.gsub! /u/, '9' if part2.present?
+
+        compile_dates(record, code, part1, part2).filter_map { |y|
+          y if y.present?
+        }
+      end
+
+      def compile_dates record, code, part1, part2
+        case code
+        when 'i', 'k', 'm', 'p', 'q', '|'
+          [part1, part2]
+        when 'n'
+          []
+        when 'b'
+          handle_bce_date record
+        else
+          [part1]
+        end
+        # return [part1, part2] if 'ikmpq|'.include? code
+        # return [] if code = 'n'
+        # return handle_bce_date record if code == 'b'
+        # [part1]
+      end
+
+      def handle_bce_date record
+        # "datafield[@tag=260]/subfield[@code='c' or @code='d']/text()")
+        bce_date1 = record.at_xpath('datafield[@tag=046]/subfield[@code="b"]/text()').to_s
+        # stop if there's no BCE date 1
+        return [] if bce_date1.blank?
+
+        xpath = 'datafield[@tag=046]/subfield[@code="d"]/text()'
+        bce_date2 = record.at_xpath(xpath).to_s
+
+        return ["-#{bce_date1}", "-#{bce_date2}"] if bce_date2.present?
+
+        xpath = 'datafield[@tag=046]/subfield[@code="e"]/text()'
+        ce_date2 = bce_date2 = record.at_xpath(xpath).to_s
+        return ["-#{bce_date1}", ce_date2] if ce_date2.present?
+
+        ["-#{bce_date1}"]
+      end
+
+      def extract_date_part datestring, ndx1, ndx2
+        part = datestring[ndx1, ndx2]
+        # part must start with a digit and match a seq of digits and/or u
+        return unless part =~ /^\d[\du]+/
+
+        part.sub! /^0+/, '' if part =~ /^0+[1-9]/
+        part
       end
 
       ##
@@ -451,8 +604,8 @@ module DS
         dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
         return DS::Util.clean_string dar unless dar.strip.empty?
 
-        encoded_date = extract_encoded_date_008 record
-        parse_008 encoded_date, range_sep: '-'
+        encoded_date = extract_production_date record
+        encoded_date.join('_').strip
       end
 
       #########################################################################

@@ -157,7 +157,7 @@ describe DS::MarcXML do
     end
   end
 
-  context 'extract_data_as_recorded' do
+  context 'extract_date_as_recorded' do
 
     let(:date_260c_marc) {
       marc_record(
@@ -269,11 +269,541 @@ describe DS::MarcXML do
       </record>
     })
     }
+
     it 'extracts 008[7,9]' do
       expect(
         DS::MarcXML.extract_date_as_recorded(date_008_record)
       ).to eq '1409'
     end
+
+    let(:date_008_blank_date_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s        it a          000 0 lat d</controlfield>
+      </record>
+    })
+    }
+
+  end
+
+  context 'extract_production_date' do
+    context '088 has no date value' do
+      let(:record) {
+        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130         it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="046">
+          <subfield code="b">150</subfield>
+          <subfield code="d">75</subfield>
+        </datafield>
+      </record>
+      })
+      }
+
+      it 'returns an empty array' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq []
+      end
+    end
+
+    context 'no 008 is present' do
+      let(:record) {
+        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+      </record>
+      })
+      }
+
+      it 'returns an empty array' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq []
+      end
+    end
+
+    context '008 date type b: BCE date' do
+      context "BCE to BCE year" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130b        it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="046">
+          <subfield code="b">150</subfield>
+          <subfield code="d">75</subfield>
+        </datafield>
+      </record>
+      })
+        }
+
+        it 'returns the range' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w{-150 -75}
+        end
+      end
+
+      context "BCE to CE year" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130b        it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="046">
+          <subfield code="b">150</subfield>
+          <subfield code="e">75</subfield>
+        </datafield>
+      </record>
+      })
+        }
+
+        it 'returns the range' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w{-150 75}
+        end
+      end
+
+      context "single BCE year" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130b        it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="046">
+          <subfield code="b">150</subfield>
+        </datafield>
+      </record>
+      })
+        }
+
+        it 'returns the year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w{-150}
+        end
+      end
+
+      context "single BCE year" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130b        it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="046">
+          <subfield code="b">150</subfield>
+        </datafield>
+      </record>
+      })
+        }
+
+        it 'returns the year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w{-150}
+        end
+      end
+
+      context "no 046$b, BCE date 1" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130b        it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="046">
+          <subfield code="e">150</subfield>
+        </datafield>
+      </record>
+      })
+        }
+
+        it 'returns an empty array' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq []
+        end
+      end
+    end
+
+    context '008 date type e: Detailed date' do
+      context "full YYYYMMDD date" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130e11200520it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns the year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1120"]
+        end
+      end
+      context "YYYYMM date with code" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130e112005 xit a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns the year and ignores letter code' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1120"]
+        end
+      end
+    end
+
+    context '008 date type k: range of collection' do
+
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130k15121716it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+      it 'returns a year range' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq %w[1512 1716]
+      end
+    end
+
+    context '008 date type m: multiple dates' do
+
+      let(:record) {
+        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m07390741it a          000 0 lat d</controlfield>
+      </record>
+      })
+      }
+
+      it 'returns a year range' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq %w[739 741]
+      end
+
+      context 'with "u"s in date1' do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m17uu1900it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns a year range and substitutes "0" for "u"' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w[1700 1900]
+        end
+      end
+
+      context 'with "u"s in date2' do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m0618193uit a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns a year range and substitutes "9" for "u"' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w[618 1939]
+        end
+      end
+
+      context 'with "u"s in both dates' do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m061u193uit a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'substitutes 0 and 9 for "u" as appropriate'  do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w[610 1939]
+        end
+      end
+
+    end
+
+    context '008 date type n: Dates unknown' do
+      let(:record) {
+        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130nuuuuuuuuit a          000 0 lat d</controlfield>
+      </record>
+      })
+      }
+
+      it 'returns an empty array' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq []
+      end
+
+    end
+
+    context '008 date type p: Date of ... when different' do
+      # p - Date of distribution/release/issue and
+      #     production/recording session when different
+      let(:record) {
+        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130p1400    it a          000 0 lat d</controlfield>
+      </record>
+      })
+      }
+
+      it 'returns a year' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq ["1400"]
+      end
+    end
+
+    context '008 date type q: Questionable date' do
+      context "year range" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130q01000299it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns a year range' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w[100 299]
+        end
+      end
+      context "single year" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130q0979    it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns a year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["979"]
+        end
+
+      end
+
+      context "dates with u's present" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130q13uu14uuit a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it "returns a range replacing u's with 0s and 9s as appropriate" do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq %w[1300 1499]
+        end
+      end
+
+      context "second year is uuuu" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130q1425uuuuit a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it "returns the first year when the second is uuuu" do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1425"]
+        end
+      end
+
+      context "first year is uuuu" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130quuuu1597it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it "returns the second year when the first is uuuu" do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1597"]
+        end
+      end
+    end
+
+    context '008 date type r - Reprint/reissue date and original date' do
+      let(:record) {
+        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130r11751199it a          000 0 lat d</controlfield>
+      </record>
+      })
+      }
+      it 'returns the first year' do
+        expect(
+          DS::MarcXML.extract_production_date record
+        ).to eq ["1175"]
+      end
+    end
+
+    context '008 date type s - Single known date/probable date' do
+      context "single date is given: 's1171    '" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130s1171    it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'returns a single year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1171"]
+        end
+      end
+
+      context "single date is given with code: 's1171 xx '" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130s1171 xx it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it 'returns a single year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1171"]
+        end
+      end
+
+      context "single date is given with pipes: 's1171||||'" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130s1171||||it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it 'returns a single year' do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1171"]
+        end
+      end
+
+      context "single date is given with u's: 's19uu    '" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130s19uu    it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it "substitutes 0 for u: 's19uu    '" do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1900"]
+        end
+      end
+
+      context "two years are given" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130s15631564it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it "returns the first year: 's15631564'" do
+          expect(
+            DS::MarcXML.extract_production_date record
+          ).to eq ["1563"]
+        end
+      end
+
+    end
+
+
+
   end
 
   let(:place_260a_record) {

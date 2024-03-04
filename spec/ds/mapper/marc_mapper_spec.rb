@@ -50,9 +50,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
     %i{
         extract_cataloging_convention
         extract_001_control_number
-        extract_encoded_date_008
         extract_date_as_recorded
-        parse_008
         extract_place_as_recorded
         extract_uniform_title_as_recorded
         extract_uniform_title_as_recorded_agr
