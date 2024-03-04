@@ -5,8 +5,8 @@ describe DS::DSCSV do
 
   let(:contributor_csv) {
     parse_csv <<~EOF
-      row_index,DS ID,Holding Institution,Source Type,Cataloging Convention,Holding Institution Identifier,Shelfmark,Fragment Number or Disambiguator,Link to Institutional Record,IIIF Manifest,Production Place(s),Date Description,Production Date START,Production Date END,Dated,Uniform Title(s),Uniform Title(s) - Original Script,Title(s),Title(s) - Original Script,Genre/Form,Named Subject(s),Subject(s),Author Name(s),Artist Name(s),Scribe Name(s),Former Owner Name(s),Language(s),Materials Description,Text block dimensions (mm),Bound dimensions (mm),Extent,Layout,Script,Decoration,Binding,Physical Description Miscellaneous,Provenance Notes,Note 1,Note 2,Acknowledgements,Date Updated by Contributor
-      1,DS1234,UC Riverside,ds-csv,amremm,9912345,BP128.57 .A2 1700z,frag 1,https://calisphere.org/item/ark:/86086/n2t72jgg/,https://example.com/iiif,Paris,circa 18th-20th century,1700,1999,FALSE,Al-Hajj,الجزء التاسع,al-Ḥajj 1–15,الجزء التاسع,prayer books|Qur'ans|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term,A personal named subject|A corporate named subject|A named event|A uniform title subject,A topical subject|A geographical subject|A chronological subject,An author,An artist,A scribe,Phillip J. Pirages Fine Books & Manuscripts,Arabic|Farsi,materials description,310 x 190 mm,320 x 200 mm,1 folio,"1 column, 24 lines",Carolingian,Illuminated manuscript,Bound in vellum,Other miscellaneous physical description,"Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017",The first note,The second note,Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript,2024-03-01
+      row_index,DS ID,Holding Institution,Source Type,Cataloging Convention,Holding Institution Identifier,Shelfmark,Fragment Number or Disambiguator,Link to Institutional Record,IIIF Manifest,Production Place(s),Date Description,Production Date START,Production Date END,Dated,Uniform Title(s),Uniform Title(s) - Original Script,Title(s),Title(s) - Original Script,Genre/Form,Named Subject(s),Subject(s),Author Name(s),Artist Name(s),Scribe Name(s),Former Owner Name(s),Language(s),Materials Description,Dimensions,Extent,Layout,Script,Decoration,Binding,Physical Description Miscellaneous,Provenance Notes,Note 1,Note 2,Acknowledgements,Date Updated by Contributor
+      1,DS1234,UC Riverside,ds-csv,amremm,9912345,BP128.57 .A2 1700z,frag 1,https://calisphere.org/item/ark:/86086/n2t72jgg/,https://example.com/iiif,Paris,circa 18th-20th century,1700,1999,FALSE,Al-Hajj,الجزء التاسع,al-Ḥajj 1–15,الجزء التاسع,prayer books|Qur'ans|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term,A personal named subject|A corporate named subject|A named event|A uniform title subject,A topical subject|A geographical subject|A chronological subject,An author,An artist,A scribe,Phillip J. Pirages Fine Books & Manuscripts,Arabic|Farsi,materials description,310 x 190 mm bound to 320 x 200 mm,1 folio,"1 column, 24 lines",Carolingian,Illuminated manuscript,Bound in vellum,Other miscellaneous physical description,"Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017",The first note,The second note,Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript,2024-03-01
     EOF
   }
 
@@ -250,45 +250,12 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_dimensions_description" do
+  context "extract_dimensions" do
     it "returns the formatted dimensions" do
       expect(
-        DS::DSCSV.extract_dimensions_description record
-      ).to eq "310 x 190 mm bound to 320 x 200 mm"
+        DS::DSCSV.extract_dimensions record
+      ).to eq ["310 x 190 mm bound to 320 x 200 mm"]
     end
-
-    context "text block only" do
-      let(:record) {
-        parse_csv(<<~EOF
-          Text block dimensions (mm),Bound dimensions (mm)
-          310 x 190 mm,
-        EOF
-        ).first
-      }
-
-      it 'returns only the text block' do
-        expect(
-          DS::DSCSV.extract_dimensions_description record
-        ).to eq "310 x 190 mm"
-      end
-    end
-
-    context "bound dimensions only" do
-      let(:record) {
-        parse_csv(<<~EOF
-          Text block dimensions (mm),Bound dimensions (mm)
-          ,320 x 200 mm
-        EOF
-        ).first
-      }
-
-      it 'returns only the bound dimensions' do
-        expect(
-          DS::DSCSV.extract_dimensions_description record
-        ).to eq "320 x 200 mm"
-      end
-    end
-
   end
 
   context "extract_physical_description" do

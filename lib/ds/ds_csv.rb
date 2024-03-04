@@ -33,8 +33,7 @@ module DS
       language_as_recorded:               "Language(s)",
       material_as_recorded:               "Materials Description",
       extent:                             "Extent",
-      text_block_dimensions:              "Text block dimensions (mm)",
-      bound_dimensions:                   "Bound dimensions (mm)",
+      dimensions:                         "Dimensions",
       note:                               [
                                             "Layout",
                                             "Script",
@@ -54,21 +53,21 @@ module DS
       def extract_physical_description record
         extent = extract_extent record
         material = extract_material_as_recorded record
-        dimensions = extract_dimensions_description record
+        dimensions = extract_dimensions record
         desc = [ extent, material, dimensions ].flatten
         return unless desc.any?(&:present?)
         "Extent: #{desc.join '; '}"
       end
 
-      def extract_dimensions_description record
-        textblock = extract_text_block_dimensions record
-        bound = extract_bound_dimensions record
-
-        return textblock.first if bound.blank?
-        return bound.first if textblock.blank?
-
-        "#{textblock.first} bound to #{bound.first}"
-      end
+      # def extract_dimensions_description record
+      #   textblock = extract_text_block_dimensions record
+      #   bound = extract_bound_dimensions record
+      #
+      #   return textblock.first if bound.blank?
+      #   return bound.first if textblock.blank?
+      #
+      #   "#{textblock.first} bound to #{bound.first}"
+      # end
 
       def extract_production_date record, separator: '-'
         start_date = extract_production_date_start record
