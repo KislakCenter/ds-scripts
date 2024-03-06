@@ -155,16 +155,17 @@ module DS
     #
     # Thus:
     #
-    #     DS.calculate_century 1501   # =>  16
-    #     DS.calculate_century 1600   # =>  17
-    #     DS.calculate_century -1600  # => -16
-    #     DS.calculate_century -1501  # => -16
-    #     DS.calculate_century 1      # =>   1
-    #     DS.calculate_century 0      # =>   1
+    #     DS.calculate_century '1501'   # =>  16
+    #     DS.calculate_century '1600'   # =>  17
+    #     DS.calculate_century '-1600'  # => -16
+    #     DS.calculate_century '-1501'  # => -16
+    #     DS.calculate_century '1'      # =>   1
+    #     DS.calculate_century '0'      # =>   1
     #
     # @param [Integer] year an integer year value
     # @return [Integer] an integer representation of the century
     def calculate_century year
+      # remove leading 0s; 4-digit numbers starting with 0 are octal
       year_int = Integer year
       # year <=> 0 returns 1 if year > 0; -1 if year < 0; 0 if year == 0
       # 0 is a special year; its sign is 1 and its absolute value is 1
