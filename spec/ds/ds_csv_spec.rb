@@ -12,6 +12,10 @@ describe DS::DSCSV do
 
   let(:record) { contributor_csv.first }
 
+  context "extractor interface" do
+    it_behaves_like "an extractor"
+  end
+
   # Date Updated by Contributor
   context "extract_dsid" do
     it 'returns the DS ID' do
@@ -93,12 +97,8 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_production_date_as_recorded" do
-    it 'returns the date string' do
-      expect(
-        DS::DSCSV.extract_production_date_as_recorded record
-      ).to eq ["circa 18th-20th century"]
-    end
+  context "extract_recon_places" do
+    it "returns the recon place data"
   end
 
   context "extract_production_date_as_recorded" do
@@ -109,11 +109,27 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_production_date" do
-    it 'returns the production date years' do
+  context "extract_production_date_as_recorded" do
+    it 'returns the date string' do
+      expect(
+        DS::DSCSV.extract_production_date_as_recorded record
+      ).to eq ["circa 18th-20th century"]
+    end
+  end
+
+  context "extract_production_date_start" do
+    it 'returns the production date start year' do
         expect(
-          DS::DSCSV.extract_production_date record, separator: '^'
-        ).to eq "1700^1999"
+          DS::DSCSV.extract_production_date_start record
+        ).to eq ["1700"]
+    end
+  end
+
+  context "extract_production_date_end" do
+    it 'returns the production date end year' do
+        expect(
+          DS::DSCSV.extract_production_date_end record
+        ).to eq ["1999"]
     end
   end
 
@@ -157,6 +173,9 @@ describe DS::DSCSV do
     end
   end
 
+  context "extract_recon_titles" do
+    it "returns the recon title data"
+  end
 
   context "extract_genre_as_recorded" do
     let(:genres) {
@@ -182,6 +201,10 @@ describe DS::DSCSV do
     end
   end
 
+  context "extract_recon_genres" do
+    it "returns the recon genre data"
+  end
+
   context "extract_subject_as_recorded" do
     let(:subjects) {
       [
@@ -200,6 +223,10 @@ describe DS::DSCSV do
         DS::DSCSV.extract_subject_as_recorded record
       ).to eq subjects
     end
+  end
+
+  context "extract_recon_subjects" do
+    it "returns the recon subject data"
   end
 
   context "extract_author_as_recorded" do
@@ -232,6 +259,10 @@ describe DS::DSCSV do
         DS::DSCSV.extract_former_owner_as_recorded record
       ).to eq ["Phillip J. Pirages Fine Books & Manuscripts"]
     end
+  end
+
+  context "extract_recon_names" do
+    it "returns the recon name data"
   end
 
   context "extract_language_as_recorded" do
@@ -290,10 +321,10 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_acknowledgements" do
-    it "returns the acknowledgement" do
+  context "extract_acknowledgments" do
+    it "returns the acknowledgment" do
       expect(
-        DS::DSCSV.extract_acknowledgements record
+        DS::DSCSV.extract_acknowledgments record
       ).to eq ["Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript"]
     end
   end

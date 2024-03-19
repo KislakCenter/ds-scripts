@@ -26,10 +26,15 @@ module DS
                                             "Named Subject(s)",
                                             "Subject(s)",
                                           ],
+      named_subject_as_recorded:          "NOT IMPLEMENTED",
       author_as_recorded:                 "Author Name(s)",
+      author_as_recorded_agr:             "Author Name(s) - Original Script",
       artist_as_recorded:                 "Artist Name(s)",
+      artist_as_recorded_agr:             "Artist Name(s) - Original Script",
       scribe_as_recorded:                 "Scribe Name(s)",
+      scribe_as_recorded_agr:             "Scribe Name(s) - Original Script",
       former_owner_as_recorded:           "Former Owner Name(s)",
+      former_owner_as_recorded_agr:       "Former Owner Names(s) - Original Script",
       language_as_recorded:               "Language(s)",
       material_as_recorded:               "Materials Description",
       extent:                             "Extent",
@@ -44,11 +49,29 @@ module DS
                                             "Note 1",
                                             "Note 2"
                                           ],
-      acknowledgements:                   "Acknowledgements",
+      acknowledgments:                    "Acknowledgements",
       data_source_modified:               "Date Updated by Contributor",
     }.freeze
 
     module ClassMethods
+
+      # @todo implement extract_recon_places
+      def extract_recon_places record; end
+
+      # @todo implement extract_recon_titles
+      def extract_recon_titles record; end
+
+      # @todo implement extract_recon_subjects
+      def extract_recon_subjects record; end
+
+      # @todo implement extract_recon_genres
+      def extract_recon_genres record; end
+
+      # @todo implement extract_recon_names
+      def extract_recon_names record; end
+
+      # @todo implement extract_names
+      def extract_names record; end
 
       def extract_physical_description record
         extent = extract_extent record
@@ -69,26 +92,40 @@ module DS
       #   "#{textblock.first} bound to #{bound.first}"
       # end
 
-      def extract_production_date record, separator: '-'
+      def extract_date_range record, separator: '-'
         start_date = extract_production_date_start record
         end_date   = extract_production_date_end record
         [start_date,end_date].select(&:present?).join separator
       end
 
       def method_missing name, *args, **kwargs
-        string_name = name.to_s
-        return super unless string_name =~ /^extract_\w+/
-        property = string_name.split(/_/, 2).last
-        unless COLUMN_MAPPINGS.include? property.to_sym
-          raise "Unknown property #{property}"
-        end
+        return super unless maps_to_property? name
+        retrieve_property name, args.first
+      end
 
-        columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
-        record = args.first
+      def retrieve_property method_name, record
+        prop_name = get_property method_name
+        columns = [COLUMN_MAPPINGS[prop_name.to_sym]].flatten
         columns.filter_map { |header|
           record[header]
         }.flatten.flat_map { |value| value.split '|'  }
       end
+
+      def respond_to_missing? name, *args, &block
+        maps_to_property? name
+      end
+
+      def maps_to_property? method_name
+        prop_name = get_property method_name
+        return unless prop_name
+        COLUMN_MAPPINGS.include? prop_name.to_sym
+      end
+
+      def get_property name
+        return unless name.to_s =~ /^extract_\w+/
+        name.to_s.split(/_/, 2).last
+      end
+
 
       def extract_note record
         COLUMN_MAPPINGS[:note].filter_map { |header|

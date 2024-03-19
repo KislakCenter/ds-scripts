@@ -404,3 +404,4 @@ RSpec.configure do |c|
 end
 
 require_relative './expections'
+require_relative 'support/extractor_examples'
