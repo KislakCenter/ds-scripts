@@ -70,9 +70,6 @@ module DS
       # @todo implement extract_recon_names
       def extract_recon_names record; end
 
-      # @todo implement extract_names
-      def extract_names record; end
-
       def extract_physical_description record
         extent = extract_extent record
         material = extract_material_as_recorded record
@@ -82,16 +79,6 @@ module DS
         "Extent: #{desc.join '; '}"
       end
 
-      # def extract_dimensions_description record
-      #   textblock = extract_text_block_dimensions record
-      #   bound = extract_bound_dimensions record
-      #
-      #   return textblock.first if bound.blank?
-      #   return bound.first if textblock.blank?
-      #
-      #   "#{textblock.first} bound to #{bound.first}"
-      # end
-
       def extract_date_range record, separator: '-'
         start_date = extract_production_date_start record
         end_date   = extract_production_date_end record
@@ -100,32 +87,36 @@ module DS
 
       def method_missing name, *args, **kwargs
         return super unless maps_to_property? name
-        retrieve_property name, args.first
+        record = args.first
+        extract_value name, record
       end
 
-      def retrieve_property method_name, record
-        prop_name = get_property method_name
-        columns = [COLUMN_MAPPINGS[prop_name.to_sym]].flatten
+      def extract_value method_name, record
+        prop_name = get_property_name method_name
+        extract_value_for prop_name, record
+      end
+
+      def extract_value_for property, record
+        columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
         columns.filter_map { |header|
           record[header]
         }.flatten.flat_map { |value| value.split '|'  }
       end
 
-      def respond_to_missing? name, *args, &block
-        maps_to_property? name
+      def respond_to_missing? method_name, *args, &block
+        maps_to_property? method_name
       end
 
       def maps_to_property? method_name
-        prop_name = get_property method_name
+        prop_name = get_property_name method_name
         return unless prop_name
         COLUMN_MAPPINGS.include? prop_name.to_sym
       end
 
-      def get_property name
-        return unless name.to_s =~ /^extract_\w+/
-        name.to_s.split(/_/, 2).last
+      def get_property_name method_name
+        return unless method_name.to_s =~ /^extract_\w+/
+        method_name.to_s.split(/_/, 2).last
       end
-
 
       def extract_note record
         COLUMN_MAPPINGS[:note].filter_map { |header|
