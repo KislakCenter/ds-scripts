@@ -18,9 +18,7 @@ module DS
       production_date_end:                "Production Date END",
       dated:                              "Dated",
       uniform_title_as_recorded:          "Uniform Title(s)",
-      uniform_title_agr:                  "Uniform Title(s) - Original Script",
       title_as_recorded:                  "Title(s)",
-      title_as_recorded_agr:              "Title(s) - Original Script",
       genre_as_recorded:                  "Genre/Form",
       subject_as_recorded:                [
                                             "Named Subject(s)",
@@ -28,13 +26,9 @@ module DS
                                           ],
       named_subject_as_recorded:          "NOT IMPLEMENTED",
       author_as_recorded:                 "Author Name(s)",
-      author_as_recorded_agr:             "Author Name(s) - Original Script",
       artist_as_recorded:                 "Artist Name(s)",
-      artist_as_recorded_agr:             "Artist Name(s) - Original Script",
       scribe_as_recorded:                 "Scribe Name(s)",
-      scribe_as_recorded_agr:             "Scribe Name(s) - Original Script",
       former_owner_as_recorded:           "Former Owner Name(s)",
-      former_owner_as_recorded_agr:       "Former Owner Names(s) - Original Script",
       language_as_recorded:               "Language(s)",
       material_as_recorded:               "Materials Description",
       extent:                             "Extent",
@@ -70,6 +64,7 @@ module DS
       # @todo implement extract_recon_names
       def extract_recon_names record; end
 
+      # @todo implement extract_names
       def extract_physical_description record
         extent = extract_extent record
         material = extract_material_as_recorded record
@@ -93,10 +88,103 @@ module DS
 
       def extract_value method_name, record
         prop_name = get_property_name method_name
-        extract_value_for prop_name, record
+        extract_values_for prop_name, record
       end
 
-      def extract_value_for property, record
+      def extract_author_as_recorded record
+        extract_names(record, :author_as_recorded, 'author').map(&:as_recorded)
+      end
+
+      def extract_author_as_recorded_agr record
+        extract_names(record, :author_as_recorded, 'author').map(&:vernacular)
+      end
+
+      def extract_artist_as_recorded record
+        extract_names(record, :artist_as_recorded, 'artist').map(&:as_recorded)
+      end
+
+      def extract_artist_as_recorded_agr record
+        extract_names(record, :artist_as_recorded, 'artist').map(&:vernacular)
+      end
+
+      def extract_scribe_as_recorded record
+        extract_names(record, :scribe_as_recorded, 'scribe').map(&:as_recorded)
+      end
+
+      def extract_scribe_as_recorded_agr record
+        extract_names(record, :scribe_as_recorded, 'scribe').map(&:vernacular)
+      end
+
+      def extract_former_owner_as_recorded record
+        extract_names(record, :former_owner_as_recorded, 'former_owner').map(&:as_recorded)
+      end
+
+      def extract_former_owner_as_recorded_agr record
+        extract_names(record, :former_owner_as_recorded, 'former_owner').map(&:vernacular)
+      end
+
+      def extract_title_as_recorded record
+        extract_titles(record, :title_as_recorded, 'as_recorded').map(&:as_recorded)
+      end
+
+      def extract_title_as_recorded_agr record
+        extract_titles(record, :title_as_recorded, 'as_recorded').map(&:vernacular)
+      end
+
+      def extract_uniform_title_as_recorded record
+        extract_titles(record, :uniform_title_as_recorded, 'uniform').map(&:as_recorded)
+      end
+
+      def extract_uniform_title_agr record
+        extract_titles(record, :uniform_title_as_recorded, 'uniform').map(&:vernacular)
+      end
+
+      ##
+      # Return titles as an array of DS::Extractor::Title instances.
+      # Title as recorded and vernacular values are in single columns:
+      #
+      #     Uniform Title(s)
+      #     Al-Hajj;;الجزء التاسع
+      #
+      # Titles are divided by pipe characters and as recorded and
+      # vernacular forms of a title are separated by double semicolons:
+      # +;;+.
+      #
+      # @param [CSV::Row] record a CSV row with headers
+      # @param [Symbol] property a valid property name; e.g., +:title_as_recorded+
+      # @param [String] title_type the name role; e.g., +uniform+
+      # @return [Array<DS::Extractor::Title>] the names a list
+      def extract_titles record, property, title_type
+        extract_values_for(property, record).map { |name|
+          as_recorded, vernacular = name.to_s.split ';;', 2
+          DS::Extractor::Title.new as_recorded: as_recorded, vernacular: vernacular, title_type: title_type
+        }
+      end
+
+      ##
+      # Return names as an array DS::Extractor::Name instances. Name
+      # as recorded and vernacular values are in single columns:
+      #
+      #     Author Name(s)
+      #     An author;;An author in original script|Another author
+      #
+      # Names are divided by pipe characters and as recorded and
+      # vernacular forms of a name are separated by double semicolons:
+      # +;;+.
+      #
+      # @param [CSV::Row] record a CSV row with headers
+      # @param [Symbol] property a valid property name; e.g., +:artist_as_recorded+
+      # @param [String] role the name role; e.g., +artist+
+      # @return [Array<DS::Extractor::Name>] the names a list
+      def extract_names record, property, role
+        extract_values_for(property, record).map { |name|
+          as_recorded, vernacular = name.to_s.split ';;', 2
+          DS::Extractor::Name.new as_recorded: as_recorded, vernacular: vernacular, role: role
+        }
+      end
+
+      def extract_values_for property, record
+        raise "Unknown property: #{property}" unless known_property? property
         columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
         columns.filter_map { |header|
           record[header]
@@ -110,7 +198,11 @@ module DS
       def maps_to_property? method_name
         prop_name = get_property_name method_name
         return unless prop_name
-        COLUMN_MAPPINGS.include? prop_name.to_sym
+        known_property? prop_name
+      end
+
+      def known_property? property
+        COLUMN_MAPPINGS.include? property.to_sym
       end
 
       def get_property_name method_name
