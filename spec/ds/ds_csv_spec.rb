@@ -5,8 +5,8 @@ describe DS::DSCSV do
 
   let(:contributor_csv) {
     parse_csv <<~EOF
-      row_index,DS ID,Holding Institution,Source Type,Cataloging Convention,Holding Institution Identifier,Shelfmark,Fragment Number or Disambiguator,Link to Institutional Record,IIIF Manifest,Production Place(s),Date Description,Production Date START,Production Date END,Dated,Uniform Title(s),Title(s),Genre/Form,Named Subject(s),Subject(s),Author Name(s),Artist Name(s),Artist Name(s) - Original Script,Scribe Name(s),Former Owner Name(s),Language(s),Materials Description,Dimensions,Extent,Layout,Script,Decoration,Binding,Physical Description Miscellaneous,Provenance Notes,Note 1,Note 2,Acknowledgements,Date Updated by Contributor
-      1,DS1234,UC Riverside,ds-csv,amremm,9912345,BP128.57 .A2 1700z,frag 1,https://calisphere.org/item/ark:/86086/n2t72jgg/,https://example.com/iiif,Paris,circa 18th-20th century,1700,1999,FALSE,Al-Hajj;;الجزء التاسع,al-Ḥajj 1–15;;الجزء التاسع,prayer books|Qur'ans|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term,A personal named subject|A corporate named subject|A named event|A uniform title subject,A topical subject|A geographical subject|A chronological subject,An author;;An author in original script,An artist|Another artist;;Another artist original script,|Another artist original script,A scribe,Phillip J. Pirages Fine Books & Manuscripts,Arabic|Farsi,materials description,310 x 190 mm bound to 320 x 200 mm,1 folio,"1 column, 24 lines",Carolingian,Illuminated manuscript,Bound in vellum,Other miscellaneous physical description,"Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017",The first note,The second note,Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript,2024-03-01
+      row_index,DS ID,Holding Institution,Source Type,Cataloging Convention,Holding Institution Identifier,Shelfmark,Fragment Number or Disambiguator,Link to Institutional Record,IIIF Manifest,Production Place(s),Date Description,Production Date START,Production Date END,Dated,Uniform Title(s),Title(s),Genre/Form,Named Subject(s),Subject(s),Author Name(s),Artist Name(s),Scribe Name(s),Former Owner Name(s),Language(s),Materials Description,Dimensions,Extent,Layout,Script,Decoration,Binding,Physical Description Miscellaneous,Provenance Notes,Note 1,Note 2,Acknowledgements,Date Updated by Contributor
+      1,DS1234,UC Riverside,ds-csv,amremm,9912345,BP128.57 .A2 1700z,frag 1,https://calisphere.org/item/ark:/86086/n2t72jgg/,https://example.com/iiif,Paris,circa 18th-20th century,1700,1999,FALSE,Al-Hajj;;الجزء التاسع,al-Ḥajj 1–15;;الجزء التاسع,prayer books|Qur'ans|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term,A personal named subject|A corporate named subject|A named event|A uniform title subject,A topical subject|A geographical subject|A chronological subject,An author;;An author in original script,An artist|Another artist;;Another artist original script,A scribe,Phillip J. Pirages Fine Books & Manuscripts,Arabic|Farsi,materials description,310 x 190 mm bound to 320 x 200 mm,1 folio,"1 column, 24 lines",Carolingian,Illuminated manuscript,Bound in vellum,Other miscellaneous physical description,"Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017",The first note,The second note,Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript,2024-03-01
     EOF
   }
 
@@ -97,10 +97,6 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_recon_places" do
-    it "returns the recon place data"
-  end
-
   context "extract_production_date_as_recorded" do
     it 'returns the date string' do
       expect(
@@ -173,10 +169,6 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_recon_titles" do
-    it "returns the recon title data"
-  end
-
   context "extract_genre_as_recorded" do
     let(:genres) {
       [
@@ -201,9 +193,6 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_recon_genres" do
-    it "returns the recon genre data"
-  end
 
   context "extract_subject_as_recorded" do
     let(:subjects) {
@@ -225,9 +214,7 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_recon_subjects" do
-    it "returns the recon subject data"
-  end
+
 
   context "extract_author_as_recorded" do
     it 'returns the authors' do
@@ -285,9 +272,6 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_recon_names" do
-    it "returns the recon name data"
-  end
 
   context "extract_language_as_recorded" do
     it 'returns the languages' do
@@ -359,6 +343,78 @@ describe DS::DSCSV do
       expect(
         DS::DSCSV.extract_data_source_modified record
       ).to eq ["2024-03-01"]
+    end
+  end
+
+  context "extract_recon_places" do
+    it "returns the recon place data" do
+      expect(
+        DS::DSCSV.extract_recon_places record
+      ).to be_an Array
+    end
+
+    it 'returns an array that includes the place as recorded data' do
+      expect(
+        DS::DSCSV.extract_recon_places record
+      ).to include ["Paris"]
+    end
+  end
+
+  context "extract_recon_titles" do
+    it "returns the recon title data" do
+      expect(
+        DS::DSCSV.extract_recon_titles record
+      ).to be_an Array
+    end
+
+    it "returns an array that includes the title as recorded data" do
+      expect(
+        DS::DSCSV.extract_recon_titles record
+      ).to include ["al-Ḥajj 1–15", "الجزء التاسع"]
+    end
+  end
+
+  context "extract_recon_genres" do
+    it "returns the recon genre data" do
+      expect(DS::DSCSV.extract_recon_genres record).to be_an Array
+    end
+
+    it "returns an array that includes genre data" do
+      expect(DS::DSCSV.extract_recon_genres record).to include [ "prayer books", nil, nil  ]
+      expect(DS::DSCSV.extract_recon_genres record).to include [ "An LoBT term", nil, nil  ]
+    end
+  end
+
+  context "extract_recon_subjects" do
+    it "returns the recon subject data" do
+      expect(DS::DSCSV.extract_recon_subjects record).to include [ "A personal named subject", nil, nil  ]
+      expect(DS::DSCSV.extract_recon_subjects record).to include [ "A chronological subject", nil, nil  ]
+    end
+  end
+
+  context "extract_recon_names" do
+    it "returns the recon name data" do
+      expect(DS::DSCSV.extract_recon_names record).to be_an Array
+    end
+
+    it "returns an array that includes the author data" do
+      expect(
+        DS::DSCSV.extract_recon_names record
+      ).to include ['An author', 'author', 'An author in original script', nil]
+    end
+
+    it "returns an array that includes the artist data" do
+      # An artist|Another artist;;Another artist original script
+      expect(DS::DSCSV.extract_recon_names record).to include ['An artist', 'artist', nil, nil]
+      expect(DS::DSCSV.extract_recon_names record).to include ['Another artist', 'artist', 'Another artist original script', nil]
+    end
+
+    it "returns an array that includes the scribe data" do
+      expect(DS::DSCSV.extract_recon_names record).to include ['A scribe', 'scribe', nil, nil]
+    end
+
+    it "returns an array that includes the former owner data" do
+      expect(DS::DSCSV.extract_recon_names record).to include ['Phillip J. Pirages Fine Books & Manuscripts', 'former owner', nil, nil]
     end
   end
 

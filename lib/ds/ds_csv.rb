@@ -50,19 +50,34 @@ module DS
     module ClassMethods
 
       # @todo implement extract_recon_places
-      def extract_recon_places record; end
+      def extract_recon_places record
+        extract_places(record, :production_place_as_recorded).map &:to_a
+      end
 
       # @todo implement extract_recon_titles
-      def extract_recon_titles record; end
+      def extract_recon_titles record
+        extract_titles(record, :title_as_recorded, 'as_recorded').map &:to_a
+      end
 
       # @todo implement extract_recon_subjects
-      def extract_recon_subjects record; end
+      def extract_recon_subjects record
+        extract_terms(record, :subject_as_recorded).map &:to_a
+      end
 
       # @todo implement extract_recon_genres
-      def extract_recon_genres record; end
+      def extract_recon_genres record
+        extract_terms(record, :genre_as_recorded).map &:to_a
+      end
 
       # @todo implement extract_recon_names
-      def extract_recon_names record; end
+      def extract_recon_names record
+        names = []
+        names += extract_names(record, :author_as_recorded, 'author').map(&:to_a)
+        names += extract_names(record, :artist_as_recorded, 'artist').map(&:to_a)
+        names += extract_names(record, :scribe_as_recorded, 'scribe').map(&:to_a)
+        names += extract_names(record, :former_owner_as_recorded, 'former owner').map(&:to_a)
+        names
+      end
 
       # @todo implement extract_names
       def extract_physical_description record
@@ -180,6 +195,30 @@ module DS
         extract_values_for(property, record).map { |name|
           as_recorded, vernacular = name.to_s.split ';;', 2
           DS::Extractor::Name.new as_recorded: as_recorded, vernacular: vernacular, role: role
+        }
+      end
+
+      def extract_place_as_recorded record
+        extract_places(record, :production_place_as_recorded).map &:as_recorded
+      end
+
+      def extract_places record, property
+        extract_values_for(property, record).map { |place|
+          DS::Extractor::Place.new as_recorded: place
+        }
+      end
+
+      def extract_genre_as_recorded record
+        extract_terms(record, :genre_as_recorded).map(&:as_recorded)
+      end
+
+      def extract_subject_as_recorded record
+        extract_terms(record, :subject_as_recorded).map(&:as_recorded)
+      end
+
+      def extract_terms record, property
+        extract_values_for(property, record).map { |term|
+          DS::Extractor::Term.new as_recorded: term
         }
       end
 
