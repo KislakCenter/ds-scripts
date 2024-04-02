@@ -61,10 +61,6 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
         extract_subject_as_recorded
         extract_authors_as_recorded
         extract_authors_as_recorded_agr
-        extract_names_as_recorded
-        extract_names_as_recorded_agr
-        extract_names_as_recorded
-        extract_names_as_recorded_agr
         extract_language_as_recorded
         extract_names_as_recorded
         extract_names_as_recorded_agr

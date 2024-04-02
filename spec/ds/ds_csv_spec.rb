@@ -146,10 +146,10 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_uniform_title_agr" do
+  context "extract_uniform_title_as_recorded_agr" do
     it 'returns the uniform title in original script' do
       expect(
-        DS::DSCSV.extract_uniform_title_agr record
+        DS::DSCSV.extract_uniform_title_as_recorded_agr record
       ).to eq ["الجزء التاسع"]
     end
   end
@@ -338,12 +338,12 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_data_source_modified" do
+  context "extract_date_source_modified" do
 
     it "returns the date the data source was modified" do
       expect(
-        DS::DSCSV.extract_data_source_modified record
-      ).to eq ["2024-03-01"]
+        DS::DSCSV.extract_date_source_modified record
+      ).to eq "2024-03-01"
     end
   end
 

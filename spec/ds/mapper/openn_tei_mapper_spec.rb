@@ -27,7 +27,6 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
   let(:ds_openn_tei_calls) {
     %i{
           extract_production_date
-          extract_production_date
           extract_production_place
           extract_title_as_recorded
           extract_title_as_recorded_agr

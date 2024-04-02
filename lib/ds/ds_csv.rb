@@ -44,7 +44,7 @@ module DS
                                             "Note 2"
                                           ],
       acknowledgments:                    "Acknowledgements",
-      data_source_modified:               "Date Updated by Contributor",
+      date_source_modified:               "Date Updated by Contributor",
     }.freeze
 
     module ClassMethods
@@ -150,7 +150,7 @@ module DS
         extract_titles(record, :uniform_title_as_recorded, 'uniform').map(&:as_recorded)
       end
 
-      def extract_uniform_title_agr record
+      def extract_uniform_title_as_recorded_agr record
         extract_titles(record, :uniform_title_as_recorded, 'uniform').map(&:vernacular)
       end
 
@@ -228,6 +228,10 @@ module DS
         columns.filter_map { |header|
           record[header]
         }.flatten.flat_map { |value| value.split '|'  }
+      end
+
+      def extract_date_source_modified record
+        extract_values_for(:date_source_modified, record).first
       end
 
       def respond_to_missing? method_name, *args, &block

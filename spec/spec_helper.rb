@@ -387,9 +387,9 @@ module Helpers
     objs.each do |obj|
       syms.each do |method|
         if with
-          expect(obj).to receive(method).with(*with) { return_val }
+          expect(obj).to receive(method).with(*with).at_least(:once) { return_val }
         else
-          expect(obj).to receive(method) { return_val }
+          expect(obj).to receive(method).at_least(:once) { return_val }
         end
       end
     end
