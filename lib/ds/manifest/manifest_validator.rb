@@ -113,9 +113,9 @@ module DS
                           when 'MARC XML', 'marcxml'
                             id_in_marc_xml? file_path, entry
                           when 'teixml'
-                            id_xml? file_path, inst_id, entry.institutional_id_location_in_source
+                            id_in_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           when 'dsmetsxml'
-                            id_xml? file_path, inst_id, entry.institutional_id_location_in_source
+                            id_in_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           when 'dscsv'
                             id_in_csv? file_path, inst_id, entry.institutional_id_location_in_source
                           else
@@ -154,7 +154,7 @@ module DS
         xml.xpath(xpath).to_a.present?
       end
 
-      def id_xml? file_path, id, xpath
+      def id_in_xml? file_path, id, xpath
         xml = File.open(file_path) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
         id_in_source = xml.xpath(xpath).text
