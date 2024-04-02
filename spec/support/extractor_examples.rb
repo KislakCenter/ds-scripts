@@ -17,6 +17,14 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_title_as_recorded_agr
   end
 
+  it 'responds to extract_uniform_title_as_recorded' do
+    expect(described_class).to respond_to :extract_uniform_title_as_recorded
+  end
+
+  it 'responds to extract_uniform_title_as_recorded_agr' do
+    expect(described_class).to respond_to :extract_uniform_title_as_recorded_agr
+  end
+
   it 'responds to extract_recon_titles' do
     expect(described_class).to respond_to :extract_recon_titles
   end
@@ -81,6 +89,11 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_physical_description
   end
 
+  it 'responds to extract_material_as_recorded' do
+    expect(described_class).to respond_to :extract_material_as_recorded
+  end
+
+
   it 'responds to extract_subject_as_recorded' do
     expect(described_class).to respond_to :extract_scribe_as_recorded
   end
@@ -103,6 +116,10 @@ RSpec.shared_examples "an extractor" do
 
   it 'responds to extract_note' do
     expect(described_class).to respond_to :extract_note
+  end
+
+  it 'responds to extract_date_source_modified' do
+    expect(described_class).to respond_to :extract_date_source_modified
   end
 
   it 'responds to extract_acknowledgments' do
