@@ -12,28 +12,28 @@ module DS
       fragment_num_disambiguator:         "Fragment Number or Disambiguator",
       link_to_holding_institution_record: "Link to Institutional Record",
       link_to_iiif_manifest:              "IIIF Manifest",
-      production_place_as_recorded:       "Production Place(s)",
+      production_places_as_recorded:      "Production Place(s)",
       production_date_as_recorded:        "Date Description",
       production_date_start:              "Production Date START",
       production_date_end:                "Production Date END",
       dated:                              "Dated",
-      uniform_title_as_recorded:          "Uniform Title(s)",
-      title_as_recorded:                  "Title(s)",
-      genre_as_recorded:                  "Genre/Form",
-      subject_as_recorded:                [
+      uniform_titles_as_recorded:         "Uniform Title(s)",
+      titles_as_recorded:                 "Title(s)",
+      genres_as_recorded:                 "Genre/Form",
+      subjects_as_recorded:               [
                                             "Named Subject(s)",
                                             "Subject(s)",
                                           ],
-      named_subject_as_recorded:          "NOT IMPLEMENTED",
-      author_as_recorded:                 "Author Name(s)",
-      artist_as_recorded:                 "Artist Name(s)",
-      scribe_as_recorded:                 "Scribe Name(s)",
-      former_owner_as_recorded:           "Former Owner Name(s)",
-      language_as_recorded:               "Language(s)",
-      material_as_recorded:               "Materials Description",
+      named_subjects_as_recorded:         "NOT IMPLEMENTED",
+      authors_as_recorded:                "Author Name(s)",
+      artists_as_recorded:                "Artist Name(s)",
+      scribes_as_recorded:                "Scribe Name(s)",
+      former_owners_as_recorded:          "Former Owner Name(s)",
+      language_as_recorded:              "Language(s)",
+      materials_as_recorded:              "Materials Description",
       extent:                             "Extent",
       dimensions:                         "Dimensions",
-      note:                               [
+      notes:                              [
                                             "Layout",
                                             "Script",
                                             "Decoration",
@@ -51,38 +51,38 @@ module DS
 
       # @todo implement extract_recon_places
       def extract_recon_places record
-        extract_places(record, :production_place_as_recorded).map &:to_a
+        extract_places(record, :production_places_as_recorded).map &:to_a
       end
 
       # @todo implement extract_recon_titles
       def extract_recon_titles record
-        extract_titles(record, :title_as_recorded, 'as_recorded').map &:to_a
+        extract_titles(record, :titles_as_recorded, 'as_recorded').map &:to_a
       end
 
       # @todo implement extract_recon_subjects
       def extract_recon_subjects record
-        extract_terms(record, :subject_as_recorded).map &:to_a
+        extract_terms(record, :subjects_as_recorded).map &:to_a
       end
 
       # @todo implement extract_recon_genres
       def extract_recon_genres record
-        extract_terms(record, :genre_as_recorded).map &:to_a
+        extract_terms(record, :genres_as_recorded).map &:to_a
       end
 
       # @todo implement extract_recon_names
       def extract_recon_names record
         names = []
-        names += extract_names(record, :author_as_recorded, 'author').map(&:to_a)
-        names += extract_names(record, :artist_as_recorded, 'artist').map(&:to_a)
-        names += extract_names(record, :scribe_as_recorded, 'scribe').map(&:to_a)
-        names += extract_names(record, :former_owner_as_recorded, 'former owner').map(&:to_a)
+        names += extract_names(record, :authors_as_recorded, 'author').map(&:to_a)
+        names += extract_names(record, :artists_as_recorded, 'artist').map(&:to_a)
+        names += extract_names(record, :scribes_as_recorded, 'scribe').map(&:to_a)
+        names += extract_names(record, :former_owners_as_recorded, 'former owner').map(&:to_a)
         names
       end
 
       # @todo implement extract_names
       def extract_physical_description record
         extent = extract_extent record
-        material = extract_material_as_recorded record
+        material = extract_materials_as_recorded record
         dimensions = extract_dimensions record
         desc = [ extent, material, dimensions ].flatten
         return unless desc.any?(&:present?)
@@ -106,52 +106,52 @@ module DS
         extract_values_for prop_name, record
       end
 
-      def extract_author_as_recorded record
-        extract_names(record, :author_as_recorded, 'author').map(&:as_recorded)
+      def extract_authors_as_recorded record
+        extract_names(record, :authors_as_recorded, 'author').map(&:as_recorded)
       end
 
-      def extract_author_as_recorded_agr record
-        extract_names(record, :author_as_recorded, 'author').map(&:vernacular)
+      def extract_authors_as_recorded_agr record
+        extract_names(record, :authors_as_recorded, 'author').map(&:vernacular)
       end
 
-      def extract_artist_as_recorded record
-        extract_names(record, :artist_as_recorded, 'artist').map(&:as_recorded)
+      def extract_artists_as_recorded record
+        extract_names(record, :artists_as_recorded, 'artist').map(&:as_recorded)
       end
 
-      def extract_artist_as_recorded_agr record
-        extract_names(record, :artist_as_recorded, 'artist').map(&:vernacular)
+      def extract_artists_as_recorded_agr record
+        extract_names(record, :artists_as_recorded, 'artist').map(&:vernacular)
       end
 
-      def extract_scribe_as_recorded record
-        extract_names(record, :scribe_as_recorded, 'scribe').map(&:as_recorded)
+      def extract_scribes_as_recorded record
+        extract_names(record, :scribes_as_recorded, 'scribe').map(&:as_recorded)
       end
 
-      def extract_scribe_as_recorded_agr record
-        extract_names(record, :scribe_as_recorded, 'scribe').map(&:vernacular)
+      def extract_scribes_as_recorded_agr record
+        extract_names(record, :scribes_as_recorded, 'scribe').map(&:vernacular)
       end
 
-      def extract_former_owner_as_recorded record
-        extract_names(record, :former_owner_as_recorded, 'former_owner').map(&:as_recorded)
+      def extract_former_owners_as_recorded record
+        extract_names(record, :former_owners_as_recorded, 'former_owner').map(&:as_recorded)
       end
 
-      def extract_former_owner_as_recorded_agr record
-        extract_names(record, :former_owner_as_recorded, 'former_owner').map(&:vernacular)
+      def extract_former_owners_as_recorded_agr record
+        extract_names(record, :former_owners_as_recorded, 'former_owner').map(&:vernacular)
       end
 
-      def extract_title_as_recorded record
-        extract_titles(record, :title_as_recorded, 'as_recorded').map(&:as_recorded)
+      def extract_titles_as_recorded record
+        extract_titles(record, :titles_as_recorded, 'as_recorded').map(&:as_recorded)
       end
 
-      def extract_title_as_recorded_agr record
-        extract_titles(record, :title_as_recorded, 'as_recorded').map(&:vernacular)
+      def extract_titles_as_recorded_agr record
+        extract_titles(record, :titles_as_recorded, 'as_recorded').map(&:vernacular)
       end
 
-      def extract_uniform_title_as_recorded record
-        extract_titles(record, :uniform_title_as_recorded, 'uniform').map(&:as_recorded)
+      def extract_uniform_titles_as_recorded record
+        extract_titles(record, :uniform_titles_as_recorded, 'uniform').map(&:as_recorded)
       end
 
-      def extract_uniform_title_as_recorded_agr record
-        extract_titles(record, :uniform_title_as_recorded, 'uniform').map(&:vernacular)
+      def extract_uniform_titles_as_recorded_agr record
+        extract_titles(record, :uniform_titles_as_recorded, 'uniform').map(&:vernacular)
       end
 
       ##
@@ -198,8 +198,8 @@ module DS
         }
       end
 
-      def extract_place_as_recorded record
-        extract_places(record, :production_place_as_recorded).map &:as_recorded
+      def extract_places_as_recorded record
+        extract_places(record, :production_places_as_recorded).map &:as_recorded
       end
 
       def extract_places record, property
@@ -208,12 +208,12 @@ module DS
         }
       end
 
-      def extract_genre_as_recorded record
-        extract_terms(record, :genre_as_recorded).map(&:as_recorded)
+      def extract_genres_as_recorded record
+        extract_terms(record, :genres_as_recorded).map(&:as_recorded)
       end
 
-      def extract_subject_as_recorded record
-        extract_terms(record, :subject_as_recorded).map(&:as_recorded)
+      def extract_subjects_as_recorded record
+        extract_terms(record, :subjects_as_recorded).map(&:as_recorded)
       end
 
       def extract_terms record, property
@@ -253,8 +253,8 @@ module DS
         method_name.to_s.split(/_/, 2).last
       end
 
-      def extract_note record
-        COLUMN_MAPPINGS[:note].filter_map { |header|
+      def extract_notes record
+        COLUMN_MAPPINGS[:notes].filter_map { |header|
           vals = record[header].to_s.split '|'
           next unless vals
           case header

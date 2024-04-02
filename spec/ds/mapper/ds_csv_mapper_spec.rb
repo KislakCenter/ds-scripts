@@ -24,25 +24,25 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
     %i{
         extract_cataloging_convention
         extract_production_date_as_recorded
-        extract_production_place_as_recorded
-        extract_uniform_title_as_recorded
-        extract_uniform_title_as_recorded_agr
-        extract_title_as_recorded
-        extract_title_as_recorded_agr
-        extract_genre_as_recorded
-        extract_subject_as_recorded
-        extract_author_as_recorded
-        extract_author_as_recorded_agr
-        extract_artist_as_recorded
-        extract_artist_as_recorded_agr
-        extract_scribe_as_recorded
-        extract_scribe_as_recorded_agr
-        extract_former_owner_as_recorded
-        extract_former_owner_as_recorded_agr
+        extract_production_places_as_recorded
+        extract_uniform_titles_as_recorded
+        extract_uniform_titles_as_recorded_agr
+        extract_titles_as_recorded
+        extract_titles_as_recorded_agr
+        extract_genres_as_recorded
+        extract_subjects_as_recorded
+        extract_authors_as_recorded
+        extract_authors_as_recorded_agr
+        extract_artists_as_recorded
+        extract_artists_as_recorded_agr
+        extract_scribes_as_recorded
+        extract_scribes_as_recorded_agr
+        extract_former_owners_as_recorded
+        extract_former_owners_as_recorded_agr
         extract_language_as_recorded
         extract_physical_description
-        extract_material_as_recorded
-        extract_note
+        extract_materials_as_recorded
+        extract_notes
         extract_date_source_modified
       }
   }

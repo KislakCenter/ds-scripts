@@ -9,20 +9,20 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_cataloging_convention
   end
 
-  it 'responds to extract_title_as_recorded' do
-    expect(described_class).to respond_to :extract_title_as_recorded
+  it 'responds to extract_titles_as_recorded' do
+    expect(described_class).to respond_to :extract_titles_as_recorded
   end
 
-  it 'responds to extract_title_as_recorded_agr' do
-    expect(described_class).to respond_to :extract_title_as_recorded_agr
+  it 'responds to extract_titles_as_recorded_agr' do
+    expect(described_class).to respond_to :extract_titles_as_recorded_agr
   end
 
-  it 'responds to extract_uniform_title_as_recorded' do
-    expect(described_class).to respond_to :extract_uniform_title_as_recorded
+  it 'responds to extract_uniform_titles_as_recorded' do
+    expect(described_class).to respond_to :extract_uniform_titles_as_recorded
   end
 
-  it 'responds to extract_uniform_title_as_recorded_agr' do
-    expect(described_class).to respond_to :extract_uniform_title_as_recorded_agr
+  it 'responds to extract_uniform_titles_as_recorded_agr' do
+    expect(described_class).to respond_to :extract_uniform_titles_as_recorded_agr
   end
 
   it 'responds to extract_recon_titles' do
@@ -37,8 +37,8 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_date_range
   end
 
-  it 'responds to extract_production_place_as_recorded' do
-    expect(described_class).to respond_to :extract_production_place_as_recorded
+  it 'responds to extract_production_places_as_recorded' do
+    expect(described_class).to respond_to :extract_production_places_as_recorded
   end
 
   it 'responds to extract_recon_places' do
@@ -49,36 +49,36 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_language_as_recorded
   end
 
-  it 'responds to extract_author_as_recorded' do
-    expect(described_class).to respond_to :extract_author_as_recorded
+  it 'responds to extract_authors_as_recorded' do
+    expect(described_class).to respond_to :extract_authors_as_recorded
   end
 
-  it 'responds to extract_author_as_recorded_agr' do
-    expect(described_class).to respond_to :extract_author_as_recorded_agr
+  it 'responds to extract_authors_as_recorded_agr' do
+    expect(described_class).to respond_to :extract_authors_as_recorded_agr
   end
 
-  it 'responds to extract_artist_as_recorded' do
-    expect(described_class).to respond_to :extract_artist_as_recorded
+  it 'responds to extract_artists_as_recorded' do
+    expect(described_class).to respond_to :extract_artists_as_recorded
   end
 
-  it 'responds to extract_artist_as_recorded_agr' do
-    expect(described_class).to respond_to :extract_artist_as_recorded_agr
+  it 'responds to extract_artists_as_recorded_agr' do
+    expect(described_class).to respond_to :extract_artists_as_recorded_agr
   end
 
-  it 'responds to extract_scribe_as_recorded' do
-    expect(described_class).to respond_to :extract_scribe_as_recorded
+  it 'responds to extract_scribes_as_recorded' do
+    expect(described_class).to respond_to :extract_scribes_as_recorded
   end
 
-  it 'responds to extract_scribe_as_recorded_agr' do
-    expect(described_class).to respond_to :extract_scribe_as_recorded_agr
+  it 'responds to extract_scribes_as_recorded_agr' do
+    expect(described_class).to respond_to :extract_scribes_as_recorded_agr
   end
 
   it 'responds to extract_former_owner_as_recorded' do
-    expect(described_class).to respond_to :extract_former_owner_as_recorded
+    expect(described_class).to respond_to :extract_former_owners_as_recorded
   end
 
   it 'responds to extract_former_owner_as_recorded_agr' do
-    expect(described_class).to respond_to :extract_former_owner_as_recorded_agr
+    expect(described_class).to respond_to :extract_former_owners_as_recorded_agr
   end
 
   it 'responds to extract_recon_names' do
@@ -89,33 +89,33 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_physical_description
   end
 
-  it 'responds to extract_material_as_recorded' do
-    expect(described_class).to respond_to :extract_material_as_recorded
+  it 'responds to extract_materials_as_recorded' do
+    expect(described_class).to respond_to :extract_materials_as_recorded
   end
 
 
-  it 'responds to extract_subject_as_recorded' do
-    expect(described_class).to respond_to :extract_scribe_as_recorded
+  it 'responds to extract_subjects_as_recorded' do
+    expect(described_class).to respond_to :extract_scribes_as_recorded
   end
 
-  it 'responds to extract_named_subject_as_recorded' do
-    expect(described_class).to respond_to :extract_named_subject_as_recorded
+  it 'responds to extract_named_subjects_as_recorded' do
+    expect(described_class).to respond_to :extract_named_subjects_as_recorded
   end
 
   it 'responds to extract_recon_subjects' do
     expect(described_class).to respond_to :extract_recon_subjects
   end
 
-  it 'responds to extract_genre_as_recorded' do
-    expect(described_class).to respond_to :extract_genre_as_recorded
+  it 'responds to extract_genres_as_recorded' do
+    expect(described_class).to respond_to :extract_genres_as_recorded
   end
 
   it 'responds to extract_recon_genres' do
     expect(described_class).to respond_to :extract_recon_genres
   end
 
-  it 'responds to extract_note' do
-    expect(described_class).to respond_to :extract_note
+  it 'responds to extract_notes' do
+    expect(described_class).to respond_to :extract_notes
   end
 
   it 'responds to extract_date_source_modified' do

@@ -90,9 +90,9 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_production_place_as_recorded" do
+  context "extract_production_places_as_recorded" do
     it 'returns the production place' do
-      expect(DS::DSCSV.extract_production_place_as_recorded(
+      expect(DS::DSCSV.extract_production_places_as_recorded(
         record)
       ).to eq ["Paris"]
     end
@@ -138,25 +138,25 @@ describe DS::DSCSV do
     end
   end
 
-  context "extract_uniform_title_as_recorded" do
-    it 'returns the uniform title' do
+  context "extract_uniform_titles_as_recorded" do
+    it 'returns the uniform titles' do
       expect(
-        DS::DSCSV.extract_uniform_title_as_recorded record
+        DS::DSCSV.extract_uniform_titles_as_recorded record
       ).to eq ["Al-Hajj"]
     end
   end
 
-  context "extract_uniform_title_as_recorded_agr" do
-    it 'returns the uniform title in original script' do
+  context "extract_uniform_titles_as_recorded_agr" do
+    it 'returns the uniform titles in original script' do
       expect(
-        DS::DSCSV.extract_uniform_title_as_recorded_agr record
+        DS::DSCSV.extract_uniform_titles_as_recorded_agr record
       ).to eq ["الجزء التاسع"]
     end
   end
 
-  context "extract_title_as_recorded" do
+  context "extract_titles_as_recorded" do
     it 'returns the title' do
-      expect(DS::DSCSV.extract_title_as_recorded(
+      expect(DS::DSCSV.extract_titles_as_recorded(
         record)
       ).to eq ["al-Ḥajj 1–15"]
     end
@@ -164,7 +164,7 @@ describe DS::DSCSV do
 
   context "extract_title_as_recorded_agr" do
     it 'returns the title in original script' do
-      expect(DS::DSCSV.extract_title_as_recorded_agr(
+      expect(DS::DSCSV.extract_titles_as_recorded_agr(
         record)
       ).to eq ["الجزء التاسع"]
     end
@@ -189,7 +189,7 @@ describe DS::DSCSV do
 
     it 'returns the genres' do
       expect(
-        DS::DSCSV.extract_genre_as_recorded record
+        DS::DSCSV.extract_genres_as_recorded record
       ).to eq genres
     end
   end
@@ -210,7 +210,7 @@ describe DS::DSCSV do
 
     it 'returns the subjects' do
       expect(
-        DS::DSCSV.extract_subject_as_recorded record
+        DS::DSCSV.extract_subjects_as_recorded record
       ).to eq subjects
     end
   end
@@ -220,7 +220,7 @@ describe DS::DSCSV do
   context "extract_author_as_recorded" do
     it 'returns the authors' do
       expect(
-        DS::DSCSV.extract_author_as_recorded record
+        DS::DSCSV.extract_authors_as_recorded record
       ).to eq ["An author"]
     end
   end
@@ -228,7 +228,7 @@ describe DS::DSCSV do
   context "extract_author_as_recorded_agr" do
     it 'returns the authors' do
       expect(
-        DS::DSCSV.extract_author_as_recorded_agr record
+        DS::DSCSV.extract_authors_as_recorded_agr record
       ).to eq ["An author in original script"]
     end
   end
@@ -236,7 +236,7 @@ describe DS::DSCSV do
   context "extract_artist_as_recorded" do
     it 'returns the artists' do
       expect(
-        DS::DSCSV.extract_artist_as_recorded record
+        DS::DSCSV.extract_artists_as_recorded record
       ).to eq ["An artist", "Another artist"]
     end
   end
@@ -244,7 +244,7 @@ describe DS::DSCSV do
   context "extract_artist_as_recorded_agr" do
     it 'returns the artist names in vernacular script' do
       expect(
-        DS::DSCSV.extract_artist_as_recorded_agr record
+        DS::DSCSV.extract_artists_as_recorded_agr record
       ).to eq [nil, "Another artist original script"]
     end
   end
@@ -252,7 +252,7 @@ describe DS::DSCSV do
   context "extract_scribe_as_recorded" do
     it 'returns the scribes' do
       expect(
-        DS::DSCSV.extract_scribe_as_recorded record
+        DS::DSCSV.extract_scribes_as_recorded record
       ).to eq ["A scribe"]
     end
   end
@@ -260,7 +260,7 @@ describe DS::DSCSV do
   context "extract_scribe_as_recorded_agr" do
     it 'returns the scribes' do
       expect(
-        DS::DSCSV.extract_scribe_as_recorded_agr record
+        DS::DSCSV.extract_scribes_as_recorded_agr record
       ).to eq [nil]
     end
   end
@@ -268,7 +268,7 @@ describe DS::DSCSV do
   context "extract_former_owner_as_recorded" do
     it 'returns the former owners' do
       expect(
-        DS::DSCSV.extract_former_owner_as_recorded record
+        DS::DSCSV.extract_former_owners_as_recorded record
       ).to eq ["Phillip J. Pirages Fine Books & Manuscripts"]
     end
   end
@@ -285,7 +285,7 @@ describe DS::DSCSV do
   context "extract_material_as_recorded" do
     it 'returns the material string' do
       expect(
-        DS::DSCSV.extract_material_as_recorded record
+        DS::DSCSV.extract_materials_as_recorded record
       ).to eq ["materials description"]
     end
   end
@@ -325,7 +325,7 @@ describe DS::DSCSV do
 
     it 'returns all the notes' do
       expect(
-        DS::DSCSV.extract_note record
+        DS::DSCSV.extract_notes record
       ).to eq notes
     end
   end
