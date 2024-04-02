@@ -338,18 +338,64 @@ EOF
     end
   end
 
-  context 'validate_ids for DS CSV' do
+  context 'DS CSV' do
     let(:source_dir) { fixture_path 'ds_csv' }
     let(:source_file) { File.join source_dir, 'ucriverside-dscsv.csv' }
     let(:manifest_path) { File.join source_dir, 'ucriverside-manifest.csv' }
     let(:manifest) { DS::Manifest::Manifest.new manifest_path, source_dir }
     let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
-    context 'for a DS CSV with valid IDs' do
+    context 'validate_columns' do
       it 'is truthy' do
-        expect(validator.validate_ids).to be_truthy
+        expect(validator.validate_columns).to be_truthy
       end
     end
 
+    context 'validate_required_values' do
+      it 'is truthy' do
+        RSpec::Mocks.space.proxy_for($stderr).reset
+        expect(validator.validate_required_values).to be_truthy
+      end
+    end
+
+    context 'valid?' do
+      it 'is valid' do
+        expect(validator.valid?).to be_truthy
+      end
+    end
+
+    context 'validate_data_types' do
+      it 'is truthy' do
+        expect(validator.validate_data_types).to be_truthy
+      end
+    end
+
+    context 'validate_files_exist' do
+      it 'is truthy' do
+        expect(validator.validate_files_exist).to be_truthy
+      end
+    end
+
+    context 'validate_ids' do
+      context 'when all IDs are in the source CSV' do
+        it 'is truthy' do
+          expect(validator.validate_ids).to be_truthy
+        end
+      end
+
+      context 'when an ID is not in the source CSV' do
+        let(:manifest_path) { File.join source_dir, 'ucriverside-manifest-invalid-id.csv' }
+        let(:manifest) { DS::Manifest::Manifest.new manifest_path, source_dir }
+        let(:validator) { DS::Manifest::ManifestValidator.new manifest }
+
+        it 'is falsey' do
+          expect(validator.validate_ids).to be_falsey
+        end
+      end
+
+    end
+
   end
+
+
 end
