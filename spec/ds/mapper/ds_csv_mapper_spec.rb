@@ -39,9 +39,9 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
         extract_scribes_as_recorded_agr
         extract_former_owners_as_recorded
         extract_former_owners_as_recorded_agr
-        extract_language_as_recorded
+        extract_languages_as_recorded
         extract_physical_description
-        extract_materials_as_recorded
+        extract_material_as_recorded
         extract_notes
         extract_date_source_modified
       }

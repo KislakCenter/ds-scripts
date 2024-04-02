@@ -22,7 +22,7 @@ describe DS::DSCSV do
     it 'returns the DS ID' do
       expect(
         DS::DSCSV.extract_dsid record
-      ).to eq ["DS1234"]
+      ).to eq "DS1234"
     end
   end
 
@@ -30,7 +30,7 @@ describe DS::DSCSV do
     it 'returns the name of the holding institution' do
       expect(
         DS::DSCSV.extract_holding_institution_as_recorded record
-      ).to eq ["UC Riverside"]
+      ).to eq "UC Riverside"
     end
   end
 
@@ -38,7 +38,7 @@ describe DS::DSCSV do
     it 'returns the source type' do
       expect(
         DS::DSCSV.extract_source_type record
-      ).to eq ["ds-csv"]
+      ).to eq "ds-csv"
     end
   end
 
@@ -54,7 +54,7 @@ describe DS::DSCSV do
     it 'returns the institutional identifier' do
       expect(
         DS::DSCSV.extract_holding_institution_id_number record
-      ).to eq ["9912345"]
+      ).to eq "9912345"
     end
   end
 
@@ -62,7 +62,7 @@ describe DS::DSCSV do
     it 'returns the shelfmark' do
       expect(
         DS::DSCSV.extract_holding_institution_shelfmark record
-      ).to eq ["BP128.57 .A2 1700z"]
+      ).to eq "BP128.57 .A2 1700z"
     end
   end
 
@@ -70,7 +70,7 @@ describe DS::DSCSV do
     it 'returns the disambiguator' do
       expect(
         DS::DSCSV.extract_fragment_num_disambiguator record
-      ).to eq ["frag 1"]
+      ).to eq "frag 1"
     end
   end
 
@@ -78,7 +78,7 @@ describe DS::DSCSV do
     it 'returns the institutional URL' do
       expect(
         DS::DSCSV.extract_link_to_holding_institution_record record
-      ).to eq ["https://calisphere.org/item/ark:/86086/n2t72jgg/"]
+      ).to eq "https://calisphere.org/item/ark:/86086/n2t72jgg/"
     end
   end
 
@@ -86,7 +86,7 @@ describe DS::DSCSV do
     it 'returns the IIIF manfest URL' do
       expect(
         DS::DSCSV.extract_link_to_iiif_manifest record
-      ).to eq ["https://example.com/iiif"]
+      ).to eq "https://example.com/iiif"
     end
   end
 
@@ -102,7 +102,7 @@ describe DS::DSCSV do
     it 'returns the date string' do
       expect(
         DS::DSCSV.extract_production_date_as_recorded record
-      ).to eq ["circa 18th-20th century"]
+      ).to eq "circa 18th-20th century"
     end
   end
 
@@ -110,7 +110,7 @@ describe DS::DSCSV do
     it 'returns the date string' do
       expect(
         DS::DSCSV.extract_production_date_as_recorded record
-      ).to eq ["circa 18th-20th century"]
+      ).to eq "circa 18th-20th century"
     end
   end
 
@@ -118,7 +118,7 @@ describe DS::DSCSV do
     it 'returns the production date start year' do
         expect(
           DS::DSCSV.extract_production_date_start record
-        ).to eq ["1700"]
+        ).to eq "1700"
     end
   end
 
@@ -126,7 +126,7 @@ describe DS::DSCSV do
     it 'returns the production date end year' do
         expect(
           DS::DSCSV.extract_production_date_end record
-        ).to eq ["1999"]
+        ).to eq "1999"
     end
   end
 
@@ -134,7 +134,7 @@ describe DS::DSCSV do
     it 'returns the dated column value' do
         expect(
           DS::DSCSV.extract_dated record
-        ).to eq ["FALSE"]
+        ).to be_falsey
     end
   end
 
@@ -274,9 +274,9 @@ describe DS::DSCSV do
   end
 
 
-  context "extract_language_as_recorded" do
+  context "extract_languages_as_recorded" do
     it 'returns the languages' do
-      expect(DS::DSCSV.extract_language_as_recorded(
+      expect(DS::DSCSV.extract_languages_as_recorded(
         record)
       ).to eq ["Arabic", "Farsi"]
     end
@@ -285,8 +285,8 @@ describe DS::DSCSV do
   context "extract_material_as_recorded" do
     it 'returns the material string' do
       expect(
-        DS::DSCSV.extract_materials_as_recorded record
-      ).to eq ["materials description"]
+        DS::DSCSV.extract_material_as_recorded record
+      ).to eq "materials description"
     end
   end
 

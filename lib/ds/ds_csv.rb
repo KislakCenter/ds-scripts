@@ -29,8 +29,8 @@ module DS
       artists_as_recorded:                "Artist Name(s)",
       scribes_as_recorded:                "Scribe Name(s)",
       former_owners_as_recorded:          "Former Owner Name(s)",
-      language_as_recorded:              "Language(s)",
-      materials_as_recorded:              "Materials Description",
+      languages_as_recorded:               "Language(s)",
+      material_as_recorded:              "Materials Description",
       extent:                             "Extent",
       dimensions:                         "Dimensions",
       notes:                              [
@@ -49,44 +49,44 @@ module DS
 
     module ClassMethods
 
-      # @todo implement extract_recon_places
-      def extract_recon_places record
-        extract_places(record, :production_places_as_recorded).map &:to_a
+      def extract_dsid record
+        [extract_values_for(:dsid, record)].flatten.first
       end
 
-      # @todo implement extract_recon_titles
-      def extract_recon_titles record
-        extract_titles(record, :titles_as_recorded, 'as_recorded').map &:to_a
+      def extract_source_type record
+        extract_values_for(:source_type, record).first
       end
 
-      # @todo implement extract_recon_subjects
-      def extract_recon_subjects record
-        extract_terms(record, :subjects_as_recorded).map &:to_a
+      def extract_cataloging_convention record
+        extract_values_for :cataloging_convention, record
       end
 
-      # @todo implement extract_recon_genres
-      def extract_recon_genres record
-        extract_terms(record, :genres_as_recorded).map &:to_a
+      def extract_holding_institution_as_recorded record
+        extract_values_for(:holding_institution_as_recorded, record).first
       end
 
-      # @todo implement extract_recon_names
-      def extract_recon_names record
-        names = []
-        names += extract_names(record, :authors_as_recorded, 'author').map(&:to_a)
-        names += extract_names(record, :artists_as_recorded, 'artist').map(&:to_a)
-        names += extract_names(record, :scribes_as_recorded, 'scribe').map(&:to_a)
-        names += extract_names(record, :former_owners_as_recorded, 'former owner').map(&:to_a)
-        names
+      def extract_holding_institution_id_number record
+        extract_values_for(:holding_institution_id_number, record).first
       end
 
-      # @todo implement extract_names
-      def extract_physical_description record
-        extent = extract_extent record
-        material = extract_materials_as_recorded record
-        dimensions = extract_dimensions record
-        desc = [ extent, material, dimensions ].flatten
-        return unless desc.any?(&:present?)
-        "Extent: #{desc.join '; '}"
+      def extract_holding_institution_shelfmark record
+        extract_values_for(:holding_institution_shelfmark, record).first
+      end
+
+      def extract_fragment_num_disambiguator record
+        extract_values_for(:fragment_num_disambiguator, record).first
+      end
+
+      def extract_link_to_holding_institution_record record
+        extract_values_for(:link_to_holding_institution_record, record).first
+      end
+
+      def extract_link_to_iiif_manifest record
+        extract_values_for(:link_to_iiif_manifest, record).first
+      end
+
+      def extract_production_date_as_recorded record
+        extract_values_for(:production_date_as_recorded, record).first
       end
 
       def extract_date_range record, separator: '-'
@@ -95,15 +95,31 @@ module DS
         [start_date,end_date].select(&:present?).join separator
       end
 
-      def method_missing name, *args, **kwargs
-        return super unless maps_to_property? name
-        record = args.first
-        extract_value name, record
+      def extract_production_date_start record
+        extract_values_for(:production_date_start, record).first
       end
 
-      def extract_value method_name, record
-        prop_name = get_property_name method_name
-        extract_values_for prop_name, record
+      def extract_production_date_end record
+        extract_values_for(:production_date_end, record).first
+      end
+
+      def extract_dated record
+        dated = extract_values_for(:dated, record)
+        return true if dated.join.strip.downcase == 'true'
+      end
+
+      # @todo implement extract_names
+      def extract_physical_description record
+        extent = extract_values_for :extent, record
+        material = extract_values_for :material_as_recorded, record
+        dimensions = extract_dimensions record
+        desc = [ extent, material, dimensions ].flatten
+        return unless desc.any?(&:present?)
+        "Extent: #{desc.join '; '}"
+      end
+
+      def extract_dimensions record
+        extract_values_for :dimensions, record
       end
 
       def extract_authors_as_recorded record
@@ -136,6 +152,14 @@ module DS
 
       def extract_former_owners_as_recorded_agr record
         extract_names(record, :former_owners_as_recorded, 'former_owner').map(&:vernacular)
+      end
+
+      def extract_languages_as_recorded record
+        extract_values_for :languages_as_recorded, record
+      end
+
+      def extract_material_as_recorded record
+        extract_values_for(:material_as_recorded, record).first
       end
 
       def extract_titles_as_recorded record
@@ -198,7 +222,7 @@ module DS
         }
       end
 
-      def extract_places_as_recorded record
+      def extract_production_places_as_recorded record
         extract_places(record, :production_places_as_recorded).map &:as_recorded
       end
 
@@ -216,10 +240,52 @@ module DS
         extract_terms(record, :subjects_as_recorded).map(&:as_recorded)
       end
 
+      def extract_named_subjects_as_recorded record
+        extract_terms(record, :named_subjects_as_recorded).map(&:as_recorded)
+      end
+
       def extract_terms record, property
         extract_values_for(property, record).map { |term|
           DS::Extractor::Term.new as_recorded: term
         }
+      end
+
+      def extract_date_source_modified record
+        extract_values_for(:date_source_modified, record).first
+      end
+
+      def extract_acknowledgments record
+        extract_values_for :acknowledgments, record
+      end
+
+      # @todo implement extract_recon_places
+      def extract_recon_places record
+        extract_places(record, :production_places_as_recorded).map &:to_a
+      end
+
+      # @todo implement extract_recon_titles
+      def extract_recon_titles record
+        extract_titles(record, :titles_as_recorded, 'as_recorded').map &:to_a
+      end
+
+      # @todo implement extract_recon_subjects
+      def extract_recon_subjects record
+        extract_terms(record, :subjects_as_recorded).map &:to_a
+      end
+
+      # @todo implement extract_recon_genres
+      def extract_recon_genres record
+        extract_terms(record, :genres_as_recorded).map &:to_a
+      end
+
+      # @todo implement extract_recon_names
+      def extract_recon_names record
+        names = []
+        names += extract_names(record, :authors_as_recorded, 'author').map(&:to_a)
+        names += extract_names(record, :artists_as_recorded, 'artist').map(&:to_a)
+        names += extract_names(record, :scribes_as_recorded, 'scribe').map(&:to_a)
+        names += extract_names(record, :former_owners_as_recorded, 'former owner').map(&:to_a)
+        names
       end
 
       def extract_values_for property, record
@@ -228,14 +294,6 @@ module DS
         columns.filter_map { |header|
           record[header]
         }.flatten.flat_map { |value| value.split '|'  }
-      end
-
-      def extract_date_source_modified record
-        extract_values_for(:date_source_modified, record).first
-      end
-
-      def respond_to_missing? method_name, *args, &block
-        maps_to_property? method_name
       end
 
       def maps_to_property? method_name

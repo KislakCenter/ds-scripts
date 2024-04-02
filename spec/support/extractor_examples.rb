@@ -5,6 +5,7 @@ RSpec.shared_examples "an extractor" do
   it 'responds to extract_cataloging_convention' do
     expect(described_class).to respond_to :extract_cataloging_convention
   end
+
   it 'responds to extract_cataloging_convention' do
     expect(described_class).to respond_to :extract_cataloging_convention
   end
@@ -45,8 +46,8 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_recon_places
   end
 
-  it 'responds to extract_language_as_recorded' do
-    expect(described_class).to respond_to :extract_language_as_recorded
+  it 'responds to extract_languages_as_recorded' do
+    expect(described_class).to respond_to :extract_languages_as_recorded
   end
 
   it 'responds to extract_authors_as_recorded' do
@@ -89,8 +90,8 @@ RSpec.shared_examples "an extractor" do
     expect(described_class).to respond_to :extract_physical_description
   end
 
-  it 'responds to extract_materials_as_recorded' do
-    expect(described_class).to respond_to :extract_materials_as_recorded
+  it 'responds to extract_material_as_recorded' do
+    expect(described_class).to respond_to :extract_material_as_recorded
   end
 
 

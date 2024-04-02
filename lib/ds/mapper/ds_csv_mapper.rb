@@ -17,7 +17,7 @@ module DS
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
-        production_date_as_recorded        = DS::DSCSV.extract_production_date_as_recorded(record).join '|'
+        production_date_as_recorded        = DS::DSCSV.extract_production_date_as_recorded record
         production_date                    = DS::DSCSV.extract_date_range(record)
         century                            = ''
         century_aat                        = ''
@@ -53,7 +53,7 @@ module DS
         scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
         scribe_label                       = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'authorized_label').join '|'
-        language_as_recorded               = DS::DSCSV.extract_language_as_recorded(record).join '|'
+        language_as_recorded               = DS::DSCSV.extract_languages_as_recorded(record).join '|'
         language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
         language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
         former_owner_as_recorded           = DS::DSCSV.extract_former_owners_as_recorded(record).join '|'
@@ -62,7 +62,7 @@ module DS
         former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded               = DS::DSCSV.extract_materials_as_recorded(record).join '|'
+        material_as_recorded               = DS::DSCSV.extract_material_as_recorded record
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::DSCSV.extract_physical_description record
