@@ -292,7 +292,7 @@ EOF
     end
   end
 
-  context 'validate_ids' do
+  context 'validate_ids for MARC XML' do
     context 'for a CSV with valid IDs' do
       it 'is truthy' do
         expect(validator.validate_ids).to be_truthy
@@ -336,5 +336,20 @@ EOF
     context 'multiple records for one ID' do
       it 'is falsey'
     end
+  end
+
+  context 'validate_ids for DS CSV' do
+    let(:source_dir) { fixture_path 'ds_csv' }
+    let(:source_file) { File.join source_dir, 'ucriverside-dscsv.csv' }
+    let(:manifest_path) { File.join source_dir, 'ucriverside-manifest.csv' }
+    let(:manifest) { DS::Manifest::Manifest.new manifest_path, source_dir }
+    let(:validator) { DS::Manifest::ManifestValidator.new manifest }
+
+    context 'for a DS CSV with valid IDs' do
+      it 'is truthy' do
+        expect(validator.validate_ids).to be_truthy
+      end
+    end
+
   end
 end

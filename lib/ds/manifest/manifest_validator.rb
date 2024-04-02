@@ -116,6 +116,8 @@ module DS
                             id_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           when 'dsmetsxml'
                             id_xml? file_path, inst_id, entry.institutional_id_location_in_source
+                          when 'dscsv'
+                            id_in_csv? file_path, inst_id, entry.institutional_id_location_in_source
                           else
                             raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
                           end
@@ -158,6 +160,11 @@ module DS
         id_in_source = xml.xpath(xpath).text
 
         id_in_source == id
+      end
+
+      def id_in_csv? file_path, id, location
+        csv = CSV.readlines file_path, headers: true
+        csv.any? { |row| row[location] == id}
       end
 
       ####################################
