@@ -399,7 +399,10 @@ end
 
 RSpec.configure do |c|
   c.fail_if_no_examples = true
-
+  DS.env = 'test'
+  DS.configure!
+  # Do not run ReconData.update! for tests; recon CSVs are fixtures
+  # Recon::ReconData.update!
   c.include Helpers
 end
 

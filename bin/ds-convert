@@ -7,7 +7,6 @@ require_relative '../lib/ds/cli'
 # TODO: No URIs for Scribes in prototype data set; need test data
 
 class DSConvertCLI < DS::CLI
-  DS.configure!
 
   def self.exit_on_failure?
     true

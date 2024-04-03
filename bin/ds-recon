@@ -5,7 +5,6 @@ require 'csv'
 require_relative '../lib/ds/cli'
 
 class ReconCLI < DS::CLI
-  DS.configure!
 
   def self.exit_on_failure?
     true

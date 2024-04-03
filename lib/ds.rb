@@ -40,7 +40,6 @@ module DS
     # Set Settings, so you can do things like Settings.recon.key ...
     Config.load_and_set_settings *yaml_files
   end
-  configure!
 
   module ClassMethods
     def mark_long s
@@ -49,9 +48,6 @@ module DS
       splits = Recon::Splits._lookup_single s, from_column: 'authorized_label'
       return "SPLIT: #{s}" if splits.blank?
       splits
-      # splits.split('|').map { |s|
-      #   s ? s.to_s.size < 400 : "SPLIT: #{s}"
-      # }.join '|'
     end
 
     ##

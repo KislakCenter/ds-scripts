@@ -7,7 +7,9 @@ module DS
     include Recon
     include ActiveSupport::NumberHelper
 
+    DS.env = (ENV['DS_ENV'].present? ? ENV['DS_ENV'] : 'production')
     DS.configure!
+
     class_option :'skip-recon-update', desc: "Skip CSV update from git [ignored by recon-update, validate]", aliases: '-G', type: :boolean, default: false
     class_option :'skip-validation', desc: "Skip validation of CSV values [same as SKIP_OUTPUT_VALIDATION=true, ignored by recon-update, validate]", aliases: '-V', type: :boolean, default: false
     class_option :verbose, desc: "Be chatty; print stacktraces; overrides --quiet", aliases: '-v', type: :boolean, default: false
