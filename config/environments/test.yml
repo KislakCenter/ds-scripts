@@ -1,6 +1,9 @@
 ---
 recon:
+  # Override recon data location and git repo configuration; prevent
+  # git from working in the test environment; they use a set of static
+  # files.
   local_dir: <%= File.join DS.root, 'spec/fixtures' %>
-  git_repo: https://gitlab.library.upenn.edu/chc/digital-scriptorium/ds-convert.git
+  git_repo: None
   git_branch: None
   git_local_name: ds-data
