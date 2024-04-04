@@ -62,12 +62,6 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
     end
   end
 
-  context '#map_record' do
-    it 'maps a record' do
-      expect(mapper.map_record entry).to be_a Hash
-    end
-  end
-
   context 'DS::Mapper::BaseMapper implementation' do
     it 'implements #extract_record(entry)' do
       expect { mapper.extract_record entry }.not_to raise_error
@@ -97,8 +91,78 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
 
     it 'returns a hash' do
       add_stubs recon_classes, :lookup, []
-
       expect(mapper.map_record entry).to be_a Hash
+    end
+
+    let(:expected_map) {
+      { ds_id:                              "DS1234",
+        source_type:                        "ds-csv",
+        cataloging_convention:              "amremm",
+        holding_institution:                "Q1075148",
+        holding_institution_as_recorded:    "University of California, Riverside",
+        holding_institution_id_number:      "BP128.57 .A2 1700z",
+        holding_institution_shelfmark:      "BP128.57 .A2 1700z",
+        link_to_holding_institution_record: "http://example.com/holding_int_url",
+        iiif_manifest:                      "http://example.com/iiif",
+        production_date:                    "1700^1999",
+        century:                            "18;19;20",
+        century_aat:                        "http://vocab.getty.edu/aat/300404512;http://vocab.getty.edu/aat/300404513;http://vocab.getty.edu/aat/300404514",
+        production_place_as_recorded:       "Paris",
+        production_place:                   "http://vocab.getty.edu/tgn/paris_id",
+        production_place_label:             "Paris",
+        production_date_as_recorded:        "circa 18th-20th century",
+        uniform_title_as_recorded:          "Uniform title",
+        uniform_title_agr:                  "Uniform title in vernacular",
+        title_as_recorded:                  "Title",
+        title_as_recorded_agr:              "Title in vernacular",
+        standard_title:                     "Standard title",
+        genre_as_recorded:                  "prayer books|Glossaries|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term",
+        genre:                              "|http://vocab.getty.edu/aat/300026189|||||||||",
+        genre_label:                        "|glossaries|||||||||",
+        subject_as_recorded:                "A personal named subject|A corporate named subject|A named event|A uniform title subject|A topical subject|A geographical subject|A chronological subject",
+        subject:                            "|http://id.worldcat.org/fast/named_subject|||http://id.worldcat.org/fast/topical_subject||",
+        subject_label:                      "|Named subject auth label|||Topical auth label||",
+        author_as_recorded:                 "An author",
+        author_as_recorded_agr:             "An author in original script",
+        author_wikidata:                    "WDQIDAUTHOR",
+        author:                             "",
+        author_instance_of:                 "human",
+        author_label:                       "Author auth name",
+        artist_as_recorded:                 "An artist|Another artist",
+        artist_as_recorded_agr:             "|Another artist original script",
+        artist_wikidata:                    "|WDQIDARTIST",
+        artist:                             "",
+        artist_instance_of:                 "|human",
+        artist_label:                       "|Artist auth name",
+        scribe_as_recorded:                 "A scribe",
+        scribe_as_recorded_agr:             "A scribe in original script",
+        scribe_wikidata:                    "WDQIDSCRIBE",
+        scribe:                             "",
+        scribe_instance_of:                 "human",
+        scribe_label:                       "Scribe auth name",
+        language_as_recorded:               "Arabic|Farsi",
+        language:                           "Q13955|Q9168",
+        language_label:                     "Arabic|Persian",
+        former_owner_as_recorded:           "Former owner as recorded",
+        former_owner_as_recorded_agr:       "Former owner in original script",
+        former_owner_wikidata:              "WDQIDOWNER",
+        former_owner:                       "",
+        former_owner_instance_of:           "organization",
+        former_owner_label:                 "Former owner auth name",
+        material_as_recorded:               "materials description",
+        material:                           "http://vocab.getty.edu/aat/300014109;http://vocab.getty.edu/aat/300011851",
+        material_label:                     "parchment;paper",
+        physical_description:               "Extent: 1 folio; materials description; 310 x 190 mm bound to 320 x 200 mm",
+        note:                               "Layout: 1 column, 24 lines|Script: Carolingian|Decoration: Illuminated manuscript|Binding: Bound in vellum|Other miscellaneous physical description|Provenance: Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017|The first note|The second note",
+        data_processed_at:                  be_a_kind_of(Time),
+        data_source_modified:               "2024-03-01",
+        source_file:                        "ucriverside-dscsv.csv",
+        acknowledgments:                    "Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript"
+      }
+    }
+
+    it 'maps a record' do
+      expect(mapper.map_record entry).to match expected_map
     end
 
     it 'calls all the DSSCV methods' do

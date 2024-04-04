@@ -1,4 +1,5 @@
 subject_as_recorded,subfield_codes,vocab,source_authority_uri,authorized_label,structured_value
+A corporate named subject,"","","",Named subject auth label,http://id.worldcat.org/fast/named_subject
 "Abū Ḥanīfah, -767 or 768",a;d,fast,(OCoLC)fst01803236,"Abū Ḥanīfah, -767 or 768",http://id.worldcat.org/fast/1803236
 "Adrian VI, Pope, 1459-1523.",a;b;c;d,0,http://id.loc.gov/authorities/names/n80020628,"Adrian VI, Pope, 1459-1523",http://id.worldcat.org/fast/50541
 "Aegidius, Saint, Abbot--Poetry",a;c--v,0,,"Aegidius, Saint, Abbot;Poetry",http://id.worldcat.org/fast/130602;http://id.worldcat.org/fast/1423828

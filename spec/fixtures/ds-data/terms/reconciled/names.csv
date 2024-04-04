@@ -1,4 +1,8 @@
 name_as_recorded,role,name_agr,source_authority_uri,instance_of,authorized_label,structured_value
+Former owner as recorded,former owner,Former owner in original script,http://example.com/owner_uri,organization,Former owner auth name,WDQIDOWNER
+An author,author,An author in original script,http://example.com/author_uri,human,Author auth name,WDQIDAUTHOR
+Another artist,artist,Another artist in original script,http://example.com/artist_uri,human,Artist auth name,WDQIDARTIST
+A scribe,scribe,A scribe in original script,http://example.com/scribe_uri,human,Scribe auth name,WDQIDSCRIBE
 """as a souvenir of the happy days with which I have begun my life in New York"" (letter enclosed), with Poor’s leather booklabel; his sale, New York, 17 November 1908, lot 799, to Morris; Walter T. Wallace (1866-1922), with his armorial bookplate; his sale, New York, 22 March 1920, lot 229, to C. L. Ricketts; acquired by the Lilly Library with the Ricketts Collection in 1961.",former owner,,,human;human,Walter Thomas Wallace;Coella Lindsay Ricketts,Q116784946;Q116771179
 "Abū al-Faraj ʻAbd Allāh ibn al-Tayyib, -1043",author,ابو الفرج عبد الله بن الطيب,http://id.loc.gov/authorities/names/nr95024340,human,Ibn al-Tayyib,Q2820894
 "Abū al-Layth al-Samarqandī, Naṣr ibn Muḥammad, -983",author,ابو الليث السمرقندي، نصر بن محمد، -983؟,http://id.loc.gov/authorities/names/n82268136(uri) http://id.loc.gov/authorities/names/n82268136(uri) http://viaf.org/viaf/sourceID/LC%7cn82268136,human,Abu al-Layth al-Samarqandi,Q938348
@@ -499,3 +503,4 @@ Zavattari school,illuminator,,,organization,Franceschino Zavattari,Q3080890
 "ʻĀmilī, Nūr al-Dīn al-Ḥusayn ibn al-Ḥasan ibn ʻAlī al-Shāfī",author,,,human,"ʻĀmilī, Nūr al-Dīn al-Ḥusayn ibn al-Ḥasan ibn ʻAlī al-Shāfī",Q124566994
 "ʻIrāqī, ʻAbd al-Raḥīm ibn al-Ḥusayn, 1325-1404",author,عراقي، عبد الرحيم بن الحسين، 1325-1404,http://id.loc.gov/authorities/names/n84199018,human,Abd al-Rahim ibn al-Husain al-'Iraqi,Q4664581
 "ʻUkbarī, ʻAbd Allāh ibn al-Ḥusayn, 1143 or 1144-1219",author,عكبري، عبد الله بن الحسين، 1143 or 1144-1219,,human,ʾAbū al-Baqāʾ al-ʿUkbariyy,Q3535817
+"""as a souvenir of the happy days with which I have begun my life in New York"" (letter enclosed), with Poor’s leather booklabel; his sale, New York, 17 November 1908, lot 799, to Morris; Walter T. Wallace (1866-1922), with his armorial bookplate; his sale, New York, 22 March 1920, lot 229, to C. L. Ricketts; acquired by the Lilly Library with the Ricketts Collection in 1961.",former owner,,,human;human,Walter Thomas Wallace;Coella Lindsay Ricketts,Q116784946;Q116771179

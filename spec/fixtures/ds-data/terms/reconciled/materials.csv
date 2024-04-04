@@ -1,4 +1,5 @@
 material_as_recorded,authorized_label,structured_value
+materials description,parchment;paper,http://vocab.getty.edu/aat/300014109;http://vocab.getty.edu/aat/300011851
 """fine vellum""",parchment,http://vocab.getty.edu/aat/300011851
 """paper, color illustrations, coats of arms""",paper,http://vocab.getty.edu/aat/300014109
 """paper, color illustrations""",paper,http://vocab.getty.edu/aat/300014109

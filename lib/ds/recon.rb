@@ -218,6 +218,6 @@ module Recon
   end
 
   def self.build_key value, subset
-    "#{value}$$#{subset}".downcase
+    DS::Util.unicode_normalize "#{value}$$#{subset}".downcase
   end
 end

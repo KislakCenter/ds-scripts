@@ -18,9 +18,9 @@ module DS
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
         production_date_as_recorded        = DS::DSCSV.extract_production_date_as_recorded record
-        production_date                    = DS::DSCSV.extract_date_range(record)
-        century                            = ''
-        century_aat                        = ''
+        production_date                    = DS::DSCSV.extract_date_range record, separator: '^'
+        century                            = DS.transform_dates_to_centuries production_date
+        century_aat                        = DS.transform_centuries_to_aat century
         production_place_as_recorded       = DS::DSCSV.extract_production_places_as_recorded(record).join '|'
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
@@ -28,10 +28,10 @@ module DS
         uniform_title_agr                  = DS::DSCSV.extract_uniform_titles_as_recorded_agr(record).join '|'
         title_as_recorded                  = DS::DSCSV.extract_titles_as_recorded(record).join '|'
         title_as_recorded_agr              = DS::DSCSV.extract_titles_as_recorded_agr(record).join '|'
-        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'structured_value').join '|'
+        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join '|'
         genre_as_recorded                  = DS::DSCSV.extract_genres_as_recorded(record).join '|'
-        genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), [], from_column: 'structured_value'
-        genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), [], from_column: 'authorized_label'
+        genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), [], from_column: 'authorized_label'
+        genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), [], from_column: 'structured_value'
         subject_as_recorded                = DS::DSCSV.extract_subjects_as_recorded(record).join '|'
         subject                            = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
         subject_label                      = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
@@ -49,7 +49,7 @@ module DS
         artist_label                       = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'authorized_label').join '|'
         scribe_as_recorded                 = DS::DSCSV.extract_scribes_as_recorded(record).join '|'
         scribe_as_recorded_agr             = DS::DSCSV.extract_scribes_as_recorded_agr(record).join '|'
-        scribe_wikidata                    = ''
+        scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
         scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
         scribe_label                       = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'authorized_label').join '|'

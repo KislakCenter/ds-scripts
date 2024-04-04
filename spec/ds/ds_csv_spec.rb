@@ -142,7 +142,7 @@ describe DS::DSCSV do
     it 'returns the uniform titles' do
       expect(
         DS::DSCSV.extract_uniform_titles_as_recorded record
-      ).to eq ["Al-Hajj"]
+      ).to eq ["Uniform title"]
     end
   end
 
@@ -150,7 +150,7 @@ describe DS::DSCSV do
     it 'returns the uniform titles in original script' do
       expect(
         DS::DSCSV.extract_uniform_titles_as_recorded_agr record
-      ).to eq ["الجزء التاسع"]
+      ).to eq ["Uniform title in vernacular"]
     end
   end
 
@@ -158,7 +158,7 @@ describe DS::DSCSV do
     it 'returns the title' do
       expect(DS::DSCSV.extract_titles_as_recorded(
         record)
-      ).to eq ["al-Ḥajj 1–15"]
+      ).to eq ["Title"]
     end
   end
 
@@ -166,7 +166,7 @@ describe DS::DSCSV do
     it 'returns the title in original script' do
       expect(DS::DSCSV.extract_titles_as_recorded_agr(
         record)
-      ).to eq ["الجزء التاسع"]
+      ).to eq ["Title in vernacular"]
     end
   end
 
@@ -174,7 +174,7 @@ describe DS::DSCSV do
     let(:genres) {
       [
         "prayer books",
-        "Qur'ans",
+        "Glossaries",
         "A third genre",
         "An AAT term",
         "A second AAT term",
@@ -261,7 +261,7 @@ describe DS::DSCSV do
     it 'returns the scribes' do
       expect(
         DS::DSCSV.extract_scribes_as_recorded_agr record
-      ).to eq [nil]
+      ).to eq ["A scribe in original script"]
     end
   end
 
@@ -269,7 +269,7 @@ describe DS::DSCSV do
     it 'returns the former owners' do
       expect(
         DS::DSCSV.extract_former_owners_as_recorded record
-      ).to eq ["Phillip J. Pirages Fine Books & Manuscripts"]
+      ).to eq ["Former owner as recorded"]
     end
   end
 
@@ -371,7 +371,7 @@ describe DS::DSCSV do
     it "returns an array that includes the title as recorded data" do
       expect(
         DS::DSCSV.extract_recon_titles record
-      ).to include ["al-Ḥajj 1–15", "الجزء التاسع"]
+      ).to include ["Title", "Title in vernacular"]
     end
   end
 
@@ -411,11 +411,11 @@ describe DS::DSCSV do
     end
 
     it "returns an array that includes the scribe data" do
-      expect(DS::DSCSV.extract_recon_names record).to include ['A scribe', 'scribe', nil, nil]
+      expect(DS::DSCSV.extract_recon_names record).to include ["A scribe", "scribe", "A scribe in original script", nil]
     end
 
     it "returns an array that includes the former owner data" do
-      expect(DS::DSCSV.extract_recon_names record).to include ['Phillip J. Pirages Fine Books & Manuscripts', 'former owner', nil, nil]
+      expect(DS::DSCSV.extract_recon_names record).to include ["Former owner as recorded", "former owner", "Former owner in original script", nil]
     end
   end
 
