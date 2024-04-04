@@ -48,7 +48,7 @@ module Recon
   end
 
   def self.git_repo
-    File.join DS.root, 'data', Settings.recon.git_local_name
+    File.join Settings.recon.local_dir, Settings.recon.git_local_name
   end
 
   def self.find_set_config name

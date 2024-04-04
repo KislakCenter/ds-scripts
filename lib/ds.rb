@@ -25,6 +25,14 @@ module DS
     File.expand_path '../..', __FILE__
   end
 
+  def self.env
+    @@env ||= 'production'
+  end
+
+  def self.env= environment
+    @@env = environment
+  end
+
   def self.normalize_key key
     return '' if key.blank?
     key.to_s.downcase.strip.gsub %r{\W+}, ''
@@ -36,9 +44,10 @@ module DS
 
   def self.configure!
     config_dir = File.join root, 'config'
-    yaml_files = Dir["#{config_dir}/*.yml"]
+    # yaml_files = Dir["#{config_dir}/**/*.yml"]
+    # Config.load_and_set_settings(Config.setting_files("/path/to/config_root", "your_project_environment"))
     # Set Settings, so you can do things like Settings.recon.key ...
-    Config.load_and_set_settings *yaml_files
+    Config.load_and_set_settings(Config.setting_files config_dir, DS.env)
   end
 
   module ClassMethods

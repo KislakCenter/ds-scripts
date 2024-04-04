@@ -1,5 +1,8 @@
 ---
+ds:
+  log_level: <%= ENV['DS_LOG_LEVEL'] || 'WARN' %>
 recon:
+  local_dir: <%= File.join DS.root, 'data' %>
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
   git_branch: main
   git_local_name: ds-data
@@ -93,3 +96,116 @@ recon:
       repo_path: terms/reconciled/splits.csv
       key_column: as_recorded
       structured_data_column: authorized_label
+
+institutions:
+  Q463271:
+    - American Academy in Rome
+    - rome
+  Q814779:
+    - Beinecke Rare Book & Manuscript Library
+    - beinecke
+  Q995265:
+    - Bryn Mawr College
+    - brynmawr
+  Q63969940:
+    - Burke Library at Union Theological Seminary
+    - burke
+  Q5146808:
+    - The College of Physicians of Philadelphia
+  Q30257935:
+    - Conception Abbey and Seminary
+    - Conception Seminary College
+    - conception
+  Q1093910:
+    - City College of New York
+    - cuny
+    - ccny
+  Q5021042:
+    - State of California
+    - California State Library
+    - csl
+  Q49088:
+    - Columbia University
+    - columbia
+  Q49115:
+    - Cornell University
+    - cornell
+  Q5671855:
+    - Harry Ransom Center
+    - hrc
+  Q3087288:
+    - Free Library of Philadelphia
+    - flp
+  Q1501676:
+    - General Theological Seminary
+    - gts
+  Q5174002:
+    - Grolier Club
+    - grolier
+  Q13371:
+    - Harvard University
+    - harvard
+  Q1400558:
+    - Huntington Library, Art Museum, and Botanical Gardens
+    - The Huntington Library, Art Museum, and Botanical Gardens
+    - huntington
+  Q1079140:
+    - Indiana University, Bloomington
+    - Indiana University
+    - indiana
+  Q52413:
+    - University of Kansas
+    - kansas
+  Q1976985:
+    - Nelson-Atkins Museum of Art
+    - nelsonatkins
+  Q49210:
+    - New York University
+    - nyu
+  Q510324:
+    - Philadelphia Museum of Art
+  Q21578:
+    - Princeton University
+    - princeton
+  Q20745482:
+    - Providence Public Library
+    - providence
+  Q499451:
+    - Rutgers, The State University of New Jersey
+    - rutgers
+  Q5090408:
+    - Science History Institute
+    - Chemical Heritage Foundation
+    - shi
+  Q734774:
+    - Saint Louis University
+    - slu
+  Q49204:
+    - Smith College
+    - smith
+  Q1378320:
+    - Swarthmore College
+    - swarthmore
+  Q168756:
+    - University of California, Berkeley
+    - ucb
+  Q579968:
+    - University of Missouri
+    - mizzou
+    - missouri
+  Q766145:
+    - University of Oregon
+    - oregon
+  Q49117:
+    - University of Pennsylvania
+    - upenn
+    - penn
+  Q49205:
+    - Wellesley College
+    - wellesley
+  Q49112:
+    - Yale University
+    - yale
+  Q129421:
+    - University of California, Davis
+    - ucdavis

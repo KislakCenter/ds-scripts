@@ -1,0 +1,6 @@
+---
+recon:
+  local_dir: <%= File.join DS.root, 'spec/fixtures' %>
+  git_repo: https://gitlab.library.upenn.edu/chc/digital-scriptorium/ds-convert.git
+  git_branch: None
+  git_local_name: ds-data
