@@ -58,7 +58,7 @@ module DS
       end
 
       def extract_cataloging_convention record
-        extract_values_for :cataloging_convention, record
+        extract_values_for(:cataloging_convention, record).first
       end
 
       def extract_holding_institution_as_recorded record

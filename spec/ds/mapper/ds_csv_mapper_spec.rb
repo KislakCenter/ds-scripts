@@ -47,7 +47,7 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
       }
   }
 
-  context 'extract_record' do
+  context '#extract_record' do
 
     it 'returns an CSV row' do
       expect(mapper.extract_record entry).to be_a CSV::Row
@@ -59,6 +59,12 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
 
     it 'returns the expected record' do
       expect(record[id_location]).to eq entry.institutional_id
+    end
+  end
+
+  context '#map_record' do
+    it 'maps a record' do
+      expect(mapper.map_record entry).to be_a Hash
     end
   end
 
@@ -76,7 +82,7 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
     end
   end
 
-  context 'initialize' do
+  context '.initialize' do
     it 'creates a DS::Mapper::DSCSVMapper' do
       expect(
         DS::Mapper::DSCSVMapper.new(
@@ -87,7 +93,7 @@ RSpec.describe 'DS::Mapper::DSCSVMapper' do
     end
   end
 
-  context 'map_record' do
+  context '#map_record' do
 
     it 'returns a hash' do
       add_stubs recon_classes, :lookup, []

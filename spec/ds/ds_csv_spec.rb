@@ -46,7 +46,7 @@ describe DS::DSCSV do
     it 'returns the cataloging convention' do
       expect(
         DS::DSCSV.extract_cataloging_convention record
-      ).to eq ["amremm"]
+      ).to eq "amremm"
     end
   end
 

@@ -75,10 +75,12 @@ module DS
           DS::Mapper::OPennTEIMapper.new source_dir: source_dir, timestamp:  tstamp
         when DS::Manifest::Constants::DS_METS
           DS::Mapper::DSMetsMapper.new source_dir: source_dir, timestamp: tstamp
+        when DS::Manifest::Constants::DS_CSV
+          DS::Mapper::DSCSVMapper.new source_dir: source_dir, timestamp: tstamp
         else
-          raise NotImplementedError {
+          raise NotImplementedError.new(
             "Mapper not implemented for source type: '#{entry.source_type}'"
-          }
+          )
         end
       end
 
