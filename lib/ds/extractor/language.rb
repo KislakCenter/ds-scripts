@@ -3,14 +3,13 @@
 module DS
   module Extractor
 
-    class Language
+    class Language < BaseTerm
 
-      attr_accessor :as_recorded
       attr_accessor :codes
 
-      def initialize as_recorded: nil,codes: nil
-        @as_recorded = as_recorded
+      def initialize as_recorded:, codes: nil
         @codes       = codes
+        super(as_recorded: as_recorded)
       end
 
       def to_a

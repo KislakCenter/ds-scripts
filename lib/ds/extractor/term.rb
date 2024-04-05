@@ -2,20 +2,19 @@
 
 module DS
   module Extractor
-    class Term
+    class Term < BaseTerm
 
-      attr_accessor :as_recorded
       attr_accessor :vocab
       attr_accessor :source_authority_uri
 
       def initialize(
-        as_recorded: nil,
+        as_recorded:,
         source_authority_uri: nil,
         vocab: nil
       )
-        @as_recorded          = as_recorded
         @source_authority_uri = source_authority_uri
         @vocab                = vocab
+        super(as_recorded: as_recorded)
       end
 
       def to_a

@@ -228,10 +228,20 @@ module DS
         }
       end
 
+      ##
+      # Note: BaseTerm implementations require +as_recorded+; for DS
+      # CSV we don't assume that the Title(s) and Uniform Titles(s)
+      # are paralleled so they're handled separately.
+      #
+      # @todo: Find out whether we should enforce that Titles and
+      #   Uniform Titles be evenly paired.
       def extract_uniform_titles record
         extract_values_for(:uniform_titles_as_recorded, record).map { |title|
           as_recorded, vernacular = title.to_s.split ';;', 2
-          DS::Extractor::Title.new uniform_title: as_recorded, uniform_title_vernacular: vernacular
+          # BaseTerm implementations require +as_recorded+; for DS CSV
+          # we don't assume that the Title(s) and Uniform Titles(s)
+          # are paralleled so there handled separately
+          DS::Extractor::Title.new as_recorded: nil, uniform_title: as_recorded, uniform_title_vernacular: vernacular
         }
       end
 

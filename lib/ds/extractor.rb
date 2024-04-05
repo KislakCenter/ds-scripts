@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'extractor/base_term'
 require_relative 'extractor/material'
 require_relative 'extractor/name'
 require_relative 'extractor/place'

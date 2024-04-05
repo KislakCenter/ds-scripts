@@ -2,17 +2,16 @@
 
 module DS
   module Extractor
-    class Name
-      attr_accessor :as_recorded
+    class Name < BaseTerm
       attr_accessor :role
       attr_accessor :vernacular
       attr_accessor :ref
 
-      def initialize as_recorded: nil, role: nil, vernacular: nil, ref: nil
-        @as_recorded = as_recorded
+      def initialize as_recorded:, role: nil, vernacular: nil, ref: nil
         @role        = role
         @vernacular  = vernacular
         @ref         = ref
+        super(as_recorded: as_recorded)
       end
 
       def to_a
