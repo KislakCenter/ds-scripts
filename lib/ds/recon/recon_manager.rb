@@ -14,7 +14,8 @@ module Recon
       extract_recons(
         method_name: :extract_places,
         item_type: 'places',
-        columns: %w[authorized_label structured_value]
+        columns: %w[authorized_label structured_value],
+        delimiter_map: { '|' => ';'}
       )
     end
 
@@ -22,7 +23,8 @@ module Recon
       extract_recons(
         method_name: :extract_materials,
         item_type: 'materials',
-        columns: %w[authorized_label structured_value]
+        columns: %w[authorized_label structured_value],
+        delimiter_map: { '|' => ';' }
       )
     end
 
@@ -54,7 +56,8 @@ module Recon
       extract_recons(
         method_name: %i[extract_named_subjects],
         item_type: 'named-subjects',
-        columns: %w[authorized_label structured_value]
+        columns: %w[authorized_label structured_value],
+        delimiter_map: { '|' => ';' }
       )
     end
 
@@ -74,7 +77,9 @@ module Recon
       )
     end
 
-    def extract_recons method_name:, item_type:, columns: []
+    ##
+    # @note: +delimiter_map+: see {#build_recons}
+    def extract_recons method_name:, item_type:, columns: [], delimiter_map: {}
       items = Set.new
       iterator.each do |record|
         [method_name].flatten.each do |name|
@@ -82,19 +87,47 @@ module Recon
         end
       end
       recons = build_recons(
-        terms: items,
-        recon_type: item_type,
-        columns: columns
+        items:         items,
+        recon_type:    item_type,
+        columns:       columns,
+        delimiter_map: delimiter_map
       )
       recons.sort
     end
 
-    def build_recons terms:, recon_type:, columns: []
-      terms.map { |term|
-        as_recorded = term.as_recorded
-        row = term.to_a
+    ##
+    # Build an array of recon CSV rows; e.g.,
+    #
+    #       [
+    #          ["Arabic", nil, "Arabic", "Q13955"],
+    #          ["Farsi", nil, "Persian", "Q9168"],
+    #          ["Latin", nil, "Latin", "Q397"]
+    #       ]
+    #
+    # Note the +delimiter_map+ option. This is a hash of replacement
+    # values to use when one delimiter should replace another. For
+    # example, the source recon CSV may have a subfields divided by
+    # pipes (+|+), when they should be separated by the standard
+    # subfield delimiter, the semicolon (+;+).
+    #
+    # @todo: There's something off about the need to replace delmiters
+    #   the source and output of the recon result are the recon CSV.
+    #   There shouldn't be any need to make this conversion. Keeping
+    #   the behavior for now to match the code being refactored.
+    #
+    # @param items [Array<DS::Extractor::BaseTerm>] the list of terms to process e.g, Language
+    # @param recon_type [String] the recon set name; e.g., 'languages'
+    # @param columns [Array<Symbol>] a list of recon columns to add to the term array; e.g., <tt>[:authorized_label, :structured_value]</tt>
+    # @param delimiter_map [Hash<String,String>] a map of delimiters to replace; e.g., <tt>{ '|' => ';' }</tt>
+    # @return [Array<Array<String>]> an array of arrays of +item.to_a+ plus recon columns; e.g., <tt>[['Arabic', 'ara', 'Arabic', 'Q13955']]</tt>
+    def build_recons items:, recon_type:, columns: [], delimiter_map: {}
+      items.map { |item|
+        as_recorded = item.as_recorded
+        row = item.to_a
         row += columns.map { |col|
-          Recon.lookup(recon_type, value: as_recorded, column: col).to_s.gsub '|', ';'
+          val = Recon.lookup(recon_type, value: as_recorded, column: col)
+          delimiter_map.each { |old, new| val.gsub! old, new }
+          val
         }
         row
       }
