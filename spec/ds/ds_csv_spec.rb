@@ -194,23 +194,51 @@ describe DS::DSCSV do
     end
   end
 
+  context "extract_all_subjects_as_recorded" do
+    let(:subjects) {
+      [
+        "A topical subject",
+        "A geographical subject",
+        "A chronological subject",
+        "A personal named subject",
+        "A corporate named subject",
+        "A named event",
+        "A uniform title subject"
+      ]
+    }
+
+    it 'returns the subjects' do
+      expect(
+        DS::DSCSV.extract_all_subjects_as_recorded record
+      ).to match subjects
+    end
+  end
 
   context "extract_subject_as_recorded" do
+    let(:subjects) {
+      ["A topical subject", "A geographical subject", "A chronological subject"]
+    }
+
+    it 'returns the subjects' do
+      expect(
+        DS::DSCSV.extract_subjects_as_recorded record
+      ).to eq subjects
+    end
+  end
+
+  context "extract_named_subjects_as_recorded" do
     let(:subjects) {
       [
         "A personal named subject",
         "A corporate named subject",
         "A named event",
         "A uniform title subject",
-        "A topical subject",
-        "A geographical subject",
-        "A chronological subject"
       ]
     }
 
     it 'returns the subjects' do
       expect(
-        DS::DSCSV.extract_subjects_as_recorded record
+        DS::DSCSV.extract_named_subjects_as_recorded record
       ).to eq subjects
     end
   end
@@ -371,7 +399,7 @@ describe DS::DSCSV do
     it "returns an array that includes the title as recorded data" do
       expect(
         DS::DSCSV.extract_recon_titles record
-      ).to include ["Title", "Title in vernacular"]
+      ).to include ["Title", "Title in vernacular", nil, nil]
     end
   end
 

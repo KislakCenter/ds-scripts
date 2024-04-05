@@ -32,7 +32,7 @@ module DS
         genre_as_recorded                  = DS::DSCSV.extract_genres_as_recorded(record).join '|'
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), [], from_column: 'authorized_label'
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), [], from_column: 'structured_value'
-        subject_as_recorded                = DS::DSCSV.extract_subjects_as_recorded(record).join '|'
+        subject_as_recorded                = DS::DSCSV.extract_all_subjects_as_recorded(record).join '|'
         subject                            = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
         subject_label                      = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
         author_as_recorded                 = DS::DSCSV.extract_authors_as_recorded(record).join '|'

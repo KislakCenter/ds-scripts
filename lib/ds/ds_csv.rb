@@ -20,17 +20,18 @@ module DS
       uniform_titles_as_recorded:         "Uniform Title(s)",
       titles_as_recorded:                 "Title(s)",
       genres_as_recorded:                 "Genre/Form",
-      subjects_as_recorded:               [
-                                            "Named Subject(s)",
+      all_subjects:                       [
                                             "Subject(s)",
+                                            "Named Subject(s)",
                                           ],
-      named_subjects_as_recorded:         "NOT IMPLEMENTED",
+      subjects_as_recorded:               "Subject(s)",
+      named_subjects_as_recorded:         "Named Subject(s)",
       authors_as_recorded:                "Author Name(s)",
       artists_as_recorded:                "Artist Name(s)",
       scribes_as_recorded:                "Scribe Name(s)",
       former_owners_as_recorded:          "Former Owner Name(s)",
-      languages_as_recorded:               "Language(s)",
-      material_as_recorded:              "Materials Description",
+      languages_as_recorded:              "Language(s)",
+      material_as_recorded:               "Materials Description",
       extent:                             "Extent",
       dimensions:                         "Dimensions",
       notes:                              [
@@ -123,59 +124,88 @@ module DS
       end
 
       def extract_authors_as_recorded record
-        extract_names(record, :authors_as_recorded, 'author').map(&:as_recorded)
+        extract_authors(record).map &:as_recorded
       end
 
       def extract_authors_as_recorded_agr record
-        extract_names(record, :authors_as_recorded, 'author').map(&:vernacular)
+        extract_authors(record).map &:vernacular
+      end
+
+      def extract_authors record
+        extract_names(record, :authors_as_recorded, 'author')
       end
 
       def extract_artists_as_recorded record
-        extract_names(record, :artists_as_recorded, 'artist').map(&:as_recorded)
+        extract_artists(record).map &:as_recorded
       end
 
       def extract_artists_as_recorded_agr record
-        extract_names(record, :artists_as_recorded, 'artist').map(&:vernacular)
+        extract_artists(record).map &:vernacular
+      end
+
+      def extract_artists record
+        extract_names(record, :artists_as_recorded, 'artist')
       end
 
       def extract_scribes_as_recorded record
-        extract_names(record, :scribes_as_recorded, 'scribe').map(&:as_recorded)
+        extract_scribes(record).map &:as_recorded
       end
 
       def extract_scribes_as_recorded_agr record
-        extract_names(record, :scribes_as_recorded, 'scribe').map(&:vernacular)
+        extract_scribes(record).map &:vernacular
+      end
+
+      def extract_scribes record
+        extract_names(record, :scribes_as_recorded, 'scribe')
       end
 
       def extract_former_owners_as_recorded record
-        extract_names(record, :former_owners_as_recorded, 'former_owner').map(&:as_recorded)
+        extract_former_owners(record).map &:as_recorded
       end
 
       def extract_former_owners_as_recorded_agr record
-        extract_names(record, :former_owners_as_recorded, 'former_owner').map(&:vernacular)
+        extract_former_owners(record).map &:vernacular
+      end
+
+      def extract_former_owners record
+        extract_names(record, :former_owners_as_recorded, 'former_owner')
       end
 
       def extract_languages_as_recorded record
-        extract_values_for :languages_as_recorded, record
+        extract_languages(record).map &:as_recorded
+      end
+
+      def extract_languages record
+        extract_values_for(:languages_as_recorded, record).map { |lang|
+          DS::Extractor::Language.new as_recorded: lang
+        }
       end
 
       def extract_material_as_recorded record
-        extract_values_for(:material_as_recorded, record).first
+        materials = extract_materials(record)
+        return materials.first.as_recorded if materials.present?
+      end
+
+      def extract_materials record
+        extract_values_for(:material_as_recorded, record).map { |as_recorded|
+          DS::Extractor::Material.new as_recorded: as_recorded
+        }
       end
 
       def extract_titles_as_recorded record
-        extract_titles(record, :titles_as_recorded, 'as_recorded').map(&:as_recorded)
+        extract_titles(record).map &:as_recorded
       end
 
       def extract_titles_as_recorded_agr record
-        extract_titles(record, :titles_as_recorded, 'as_recorded').map(&:vernacular)
+        extract_titles(record).map  &:vernacular
       end
 
       def extract_uniform_titles_as_recorded record
-        extract_titles(record, :uniform_titles_as_recorded, 'uniform').map(&:as_recorded)
+        extract_uniform_titles(record).map &:uniform_title
       end
 
       def extract_uniform_titles_as_recorded_agr record
-        extract_titles(record, :uniform_titles_as_recorded, 'uniform').map(&:vernacular)
+        extract_uniform_titles(record).map  &:uniform_title_vernacular
       end
 
       ##
@@ -190,13 +220,18 @@ module DS
       # +;;+.
       #
       # @param [CSV::Row] record a CSV row with headers
-      # @param [Symbol] property a valid property name; e.g., +:title_as_recorded+
-      # @param [String] title_type the name role; e.g., +uniform+
       # @return [Array<DS::Extractor::Title>] the names a list
-      def extract_titles record, property, title_type
-        extract_values_for(property, record).map { |name|
+      def extract_titles record
+        extract_values_for(:titles_as_recorded, record).map { |name|
           as_recorded, vernacular = name.to_s.split ';;', 2
-          DS::Extractor::Title.new as_recorded: as_recorded, vernacular: vernacular, title_type: title_type
+          DS::Extractor::Title.new as_recorded: as_recorded, vernacular: vernacular
+        }
+      end
+
+      def extract_uniform_titles record
+        extract_values_for(:uniform_titles_as_recorded, record).map { |title|
+          as_recorded, vernacular = title.to_s.split ';;', 2
+          DS::Extractor::Title.new uniform_title: as_recorded, uniform_title_vernacular: vernacular
         }
       end
 
@@ -226,22 +261,44 @@ module DS
         extract_places(record, :production_places_as_recorded).map &:as_recorded
       end
 
-      def extract_places record, property
+      def extract_places record, property = :production_places_as_recorded
         extract_values_for(property, record).map { |place|
           DS::Extractor::Place.new as_recorded: place
         }
       end
 
       def extract_genres_as_recorded record
-        extract_terms(record, :genres_as_recorded).map(&:as_recorded)
+        extract_genres(record).map &:as_recorded
+      end
+
+      def extract_genres record
+        extract_terms record, :genres_as_recorded
       end
 
       def extract_subjects_as_recorded record
-        extract_terms(record, :subjects_as_recorded).map(&:as_recorded)
+        extract_subjects(record).map &:as_recorded
+      end
+
+      def extract_all_subjects_as_recorded record
+        extract_all_subjects(record).map &:as_recorded
+      end
+
+      ##
+      # Extract subjects and named subjects
+      def extract_all_subjects record
+        extract_subjects(record) + extract_named_subjects(record)
+      end
+
+      def extract_subjects record
+        extract_terms record, :subjects_as_recorded
       end
 
       def extract_named_subjects_as_recorded record
-        extract_terms(record, :named_subjects_as_recorded).map(&:as_recorded)
+        extract_named_subjects(record).map &:as_recorded
+      end
+
+      def extract_named_subjects record
+        extract_terms record, :named_subjects_as_recorded
       end
 
       def extract_terms record, property
@@ -265,12 +322,12 @@ module DS
 
       # @todo implement extract_recon_titles
       def extract_recon_titles record
-        extract_titles(record, :titles_as_recorded, 'as_recorded').map &:to_a
+        extract_titles(record).map &:to_a
       end
 
       # @todo implement extract_recon_subjects
       def extract_recon_subjects record
-        extract_terms(record, :subjects_as_recorded).map &:to_a
+        extract_all_subjects(record).map &:to_a
       end
 
       # @todo implement extract_recon_genres

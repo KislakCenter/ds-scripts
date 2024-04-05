@@ -1,4 +1,7 @@
 require_relative 'util'
+require_relative 'recon/iterator'
+require_relative 'recon/csv_iterator'
+require_relative 'recon/recon_manager'
 require_relative 'recon/url_lookup'
 require_relative 'recon/genres'
 require_relative 'recon/languages'
