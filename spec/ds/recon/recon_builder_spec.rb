@@ -10,7 +10,16 @@ RSpec.describe 'Recon::ReconBuilder' do
     Recon::ReconBuilder.new enumerator: enumerator, extractor: DS::DsCsv
   }
 
+
   context 'csv recon' do
+    context 'initialize' do
+      it 'creates a ReconBuilder' do
+        expect(
+          Recon::ReconBuilder.new enumerator: enumerator, extractor: DS::DsCsv
+        ).to be_a Recon::ReconBuilder
+      end
+    end
+
     context '#recon_places' do
       it 'returns an array' do
         expect(recon_manager.recon_places).to be_an Array
