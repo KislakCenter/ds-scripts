@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'nokogiri'
 
-describe DS::MarcXML do
+describe DS::MarcXml do
 
   context 'extract_genre_as_recorded' do
     let(:duplicate_genre_record) {
@@ -31,14 +31,14 @@ describe DS::MarcXML do
     }
     it 'returns a list of unique genre terms when :uniq is true' do
       # duplicate_genre_marc.remove_namespaces!
-      expect(DS::MarcXML.extract_genre_as_recorded(
+      expect(DS::MarcXml.extract_genre_as_recorded(
         duplicate_genre_record, sub2: :all, sub_sep: '--', uniq: true).size
       ).to eq 2
     end
 
     it 'returns a list with non-unique genre terms by default' do
       # duplicate_genre_marc.remove_namespaces!
-      expect(DS::MarcXML.extract_genre_as_recorded(
+      expect(DS::MarcXml.extract_genre_as_recorded(
         duplicate_genre_record, sub2: :all, sub_sep: '--').size
       ).to eq 3
     end
@@ -63,7 +63,7 @@ describe DS::MarcXML do
     }
     it 'extracts the 245$a and 245$b' do
       expect(
-        DS::MarcXML.extract_title_as_recorded(title_record)
+        DS::MarcXml.extract_title_as_recorded(title_record)
       ).to eq 'Subfield a; Subfield b'
     end
   end
@@ -103,7 +103,7 @@ describe DS::MarcXML do
 
     context 'extract_genre_as_recorded' do
       let(:terms) {
-        DS::MarcXML.extract_genre_as_recorded record, sub2: :all
+        DS::MarcXml.extract_genre_as_recorded record, sub2: :all
       }
 
       it 'extracts a genre string' do
@@ -115,13 +115,13 @@ describe DS::MarcXML do
       end
 
       it 'extracts genres based on vocabulary' do
-        terms = DS::MarcXML.extract_genre_as_recorded record, sub2: 'rbprov'
+        terms = DS::MarcXml.extract_genre_as_recorded record, sub2: 'rbprov'
         expect(terms).to eq ["Booksellers' copies (Provenance)"]
       end
     end
 
     context "extract_genre_vocabulary" do
-      let(:result) { DS::MarcXML.extract_genre_vocabulary record }
+      let(:result) { DS::MarcXml.extract_genre_vocabulary record }
       it 'extracts the vocabulary' do
         expect(result).to include 'lcgft'
       end
@@ -140,7 +140,7 @@ describe DS::MarcXML do
     end
 
     context "extract_recon_genres" do
-      let(:result) { DS::MarcXML.extract_recon_genres record }
+      let(:result) { DS::MarcXml.extract_recon_genres record }
 
       it 'returns an array genre data' do
         # <datafield ind1=" " ind2="7" tag="655">
@@ -180,7 +180,7 @@ describe DS::MarcXML do
 
     it 'extracts 260$c' do
       expect(
-        DS::MarcXML.extract_date_as_recorded(date_260c_marc)
+        DS::MarcXml.extract_date_as_recorded(date_260c_marc)
       ).to eq '1644 February 10'
     end
 
@@ -204,7 +204,7 @@ describe DS::MarcXML do
     }
     it 'extracts 260$d' do
       expect(
-        DS::MarcXML.extract_date_as_recorded(date_260d_marc)
+        DS::MarcXml.extract_date_as_recorded(date_260d_marc)
       ).to eq '14th and 15th centuries'
     end
 
@@ -229,7 +229,7 @@ describe DS::MarcXML do
 
     it 'extracts 264$c' do
       expect(
-        DS::MarcXML.extract_date_as_recorded(date_264c_marc)
+        DS::MarcXml.extract_date_as_recorded(date_264c_marc)
       ).to eq '1596.'
     end
 
@@ -253,7 +253,7 @@ describe DS::MarcXML do
     }
     it 'extracts 245$f' do
       expect(
-        DS::MarcXML.extract_date_as_recorded(date_245f_record)
+        DS::MarcXml.extract_date_as_recorded(date_245f_record)
       ).to eq '1600s.'
     end
 
@@ -272,7 +272,7 @@ describe DS::MarcXML do
 
     it 'extracts 008[7,9]' do
       expect(
-        DS::MarcXML.extract_date_as_recorded(date_008_record)
+        DS::MarcXml.extract_date_as_recorded(date_008_record)
       ).to eq '1409'
     end
 
@@ -309,7 +309,7 @@ describe DS::MarcXML do
 
       it 'returns an empty array' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq []
       end
     end
@@ -326,7 +326,7 @@ describe DS::MarcXML do
 
       it 'returns an empty array' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq []
       end
     end
@@ -349,7 +349,7 @@ describe DS::MarcXML do
 
         it 'returns the range' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w{-150 -75}
         end
       end
@@ -371,7 +371,7 @@ describe DS::MarcXML do
 
         it 'returns the range' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w{-150 75}
         end
       end
@@ -392,7 +392,7 @@ describe DS::MarcXML do
 
         it 'returns the year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w{-150}
         end
       end
@@ -413,7 +413,7 @@ describe DS::MarcXML do
 
         it 'returns the year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w{-150}
         end
       end
@@ -434,7 +434,7 @@ describe DS::MarcXML do
 
         it 'returns an empty array' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq []
         end
       end
@@ -453,7 +453,7 @@ describe DS::MarcXML do
         }
         it 'returns the year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1120"]
         end
       end
@@ -469,7 +469,7 @@ describe DS::MarcXML do
         }
         it 'returns the year and ignores letter code' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1120"]
         end
       end
@@ -488,7 +488,7 @@ describe DS::MarcXML do
         }
       it 'returns a year range' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq %w[1512 1716]
       end
     end
@@ -507,7 +507,7 @@ describe DS::MarcXML do
 
       it 'returns a year range' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq %w[739 741]
       end
 
@@ -523,7 +523,7 @@ describe DS::MarcXML do
         }
         it 'returns a year range and substitutes "0" for "u"' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w[1700 1900]
         end
       end
@@ -540,7 +540,7 @@ describe DS::MarcXML do
         }
         it 'returns a year range and substitutes "9" for "u"' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w[618 1939]
         end
       end
@@ -557,7 +557,7 @@ describe DS::MarcXML do
         }
         it 'substitutes 0 and 9 for "u" as appropriate'  do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w[610 1939]
         end
       end
@@ -577,7 +577,7 @@ describe DS::MarcXML do
 
       it 'returns an empty array' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq []
       end
 
@@ -598,7 +598,7 @@ describe DS::MarcXML do
 
       it 'returns a year' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq ["1400"]
       end
     end
@@ -616,7 +616,7 @@ describe DS::MarcXML do
         }
         it 'returns a year range' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w[100 299]
         end
       end
@@ -632,7 +632,7 @@ describe DS::MarcXML do
         }
         it 'returns a year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["979"]
         end
 
@@ -651,7 +651,7 @@ describe DS::MarcXML do
 
         it "returns a range replacing u's with 0s and 9s as appropriate" do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq %w[1300 1499]
         end
       end
@@ -669,7 +669,7 @@ describe DS::MarcXML do
 
         it "returns the first year when the second is uuuu" do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1425"]
         end
       end
@@ -687,7 +687,7 @@ describe DS::MarcXML do
 
         it "returns the second year when the first is uuuu" do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1597"]
         end
       end
@@ -705,7 +705,7 @@ describe DS::MarcXML do
       }
       it 'returns the first year' do
         expect(
-          DS::MarcXML.extract_production_date record
+          DS::MarcXml.extract_production_date record
         ).to eq ["1175"]
       end
     end
@@ -723,7 +723,7 @@ describe DS::MarcXML do
         }
         it 'returns a single year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1171"]
         end
       end
@@ -741,7 +741,7 @@ describe DS::MarcXML do
 
         it 'returns a single year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1171"]
         end
       end
@@ -759,7 +759,7 @@ describe DS::MarcXML do
 
         it 'returns a single year' do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1171"]
         end
       end
@@ -777,7 +777,7 @@ describe DS::MarcXML do
 
         it "substitutes 0 for u: 's19uu    '" do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1900"]
         end
       end
@@ -795,7 +795,7 @@ describe DS::MarcXML do
 
         it "returns the first year: 's15631564'" do
           expect(
-            DS::MarcXML.extract_production_date record
+            DS::MarcXml.extract_production_date record
           ).to eq ["1563"]
         end
       end
@@ -848,13 +848,13 @@ describe DS::MarcXML do
 
     it 'extracts 260$a' do
       expect(
-        DS::MarcXML::extract_place_as_recorded place_260a_record
+        DS::MarcXml::extract_place_as_recorded place_260a_record
         ).to eq %w{ Italy }
     end
 
     it 'extracts 264$a' do
       expect(
-        DS::MarcXML::extract_place_as_recorded place_264a_record
+        DS::MarcXml::extract_place_as_recorded place_264a_record
       ).to eq %w{ Lahore }
     end
   end
@@ -862,13 +862,13 @@ describe DS::MarcXML do
   context 'extract_recon_places' do
     it 'extracts 260$a' do
       expect(
-        DS::MarcXML::extract_recon_places place_260a_record
+        DS::MarcXml::extract_recon_places place_260a_record
       ).to eq [['Italy']]
     end
 
     it 'extracts 264$a' do
       expect(
-        DS::MarcXML::extract_recon_places place_264a_record
+        DS::MarcXml::extract_recon_places place_264a_record
       ).to eq [['Lahore']]
     end
   end
@@ -925,49 +925,49 @@ describe DS::MarcXML do
 
     it 'extracts 700$a' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'Pseudo-Cicero'
     end
 
     it 'extracts 710$a' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'A bunch of monks'
     end
 
     it 'extracts 711$a$d$c' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'First Council of Nicea, (325 : Nicea)'
     end
 
     it 'extracts 100$a with an $e = author' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'Cicero, Marcus Tullius'
     end
 
     it 'extracts 100$a without an $e' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'Halgren, John, of Abbeville'
     end
 
     it 'extracts 100$a$b$c$d' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'Gregory I, Pope, approximately 540-604'
     end
 
     it 'extracts 110$a' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'Catholic Church'
     end
 
     it 'extracts 111$a' do
       expect(
-        DS::MarcXML::extract_authors_as_recorded authors_record
+        DS::MarcXml::extract_authors_as_recorded authors_record
       ).to include 'Council of Nicea'
     end
   end
@@ -1003,7 +1003,7 @@ describe DS::MarcXML do
       )
     }
     let(:values) {
-      DS::MarcXML.extract_note record
+      DS::MarcXml.extract_note record
     }
 
     it 'extracts 561$a' do
@@ -1047,37 +1047,37 @@ describe DS::MarcXML do
     }
     it 'returns a named note with prefix' do
       expect(
-        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding'
+        DS::MarcXml.extract_named_500 note_500_record, name: 'Binding'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'returns 561$a' do
       expect(
-        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding'
+        DS::MarcXml.extract_named_500 note_500_record, name: 'Binding'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'returns a named note without a prefix' do
       expect(
-        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding', strip_name: true
+        DS::MarcXml.extract_named_500 note_500_record, name: 'Binding', strip_name: true
       ).to include 'Modern red morocco with marbled rose endpapers.'
     end
 
     it 'handles a "name" parameter with a trailing ":"' do
       expect(
-        DS::MarcXML.extract_named_500 note_500_record, name: 'Binding:'
+        DS::MarcXml.extract_named_500 note_500_record, name: 'Binding:'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'has case-insensitive name matching' do
       expect(
-        DS::MarcXML.extract_named_500 note_500_record, name: 'bInDiNg'
+        DS::MarcXml.extract_named_500 note_500_record, name: 'bInDiNg'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'has case-insensitive name matching and stripping' do
       expect(
-        DS::MarcXML.extract_named_500 note_500_record, name: 'bInDiNg', strip_name: true
+        DS::MarcXml.extract_named_500 note_500_record, name: 'bInDiNg', strip_name: true
       ).to include 'Modern red morocco with marbled rose endpapers.'
     end
   end
@@ -1176,7 +1176,7 @@ describe DS::MarcXML do
       )
     }
 
-    let(:subjects) { DS::MarcXML.extract_subject_as_recorded subjects_marc_record }
+    let(:subjects) { DS::MarcXml.extract_subject_as_recorded subjects_marc_record }
 
     it 'extracts 600' do
       expect(subjects).to include "Cicero, Marcus Tullius--Spurious and doubtful works"
@@ -1243,7 +1243,7 @@ describe DS::MarcXML do
       )
     }
 
-    let(:extracted_values) { DS::MarcXML.extract_cataloging_convention record }
+    let(:extracted_values) { DS::MarcXml.extract_cataloging_convention record }
 
     it 'extracts 040$e' do
       expect(extracted_values).to eq 'amremm'
@@ -1408,85 +1408,85 @@ describe DS::MarcXML do
 
     it 'is invoked by extract_place_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_place_as_recorded record
+      DS::MarcXml.extract_place_as_recorded record
       expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_date_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_date_as_recorded record
+      DS::MarcXml.extract_date_as_recorded record
       expect(DS::Util).to have_received(:clean_string).at_least(:once)
     end
 
     it 'is invoked by extract_uniform_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_uniform_title_as_recorded record
+      DS::MarcXml.extract_uniform_title_as_recorded record
       expect(DS::Util).to have_received(:clean_string).exactly(7).times
     end
 
     it 'is invoked by extract_uniform_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.uniform_title_as_recorded_agr record
+      DS::MarcXml.uniform_title_as_recorded_agr record
       expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_title_as_recorded record
+      DS::MarcXml.extract_title_as_recorded record
       expect(DS::Util).to have_received(:clean_string).exactly(7).times
     end
 
     it 'is invoked by extract_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_title_as_recorded_agr record
+      DS::MarcXml.extract_title_as_recorded_agr record
       expect(DS::Util).to have_received(:clean_string).exactly(7).times
     end
 
     it 'is invoked by extract_genre_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
+      DS::MarcXml.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
       expect(DS::Util).to have_received(:clean_string).at_least(:once)
     end
 
     it 'is invoked by extract_subject_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_subject_as_recorded record
+      DS::MarcXml.extract_subject_as_recorded record
       expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_language_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_language_as_recorded record
+      DS::MarcXml.extract_language_as_recorded record
       expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_names_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_names_as_recorded(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
+      DS::MarcXml.extract_names_as_recorded(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
       expect(DS::Util).to have_received(:clean_string).at_most(10).times
     end
 
     it 'is invoked by extract_names_as_recorded_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_names_as_recorded_agr(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
+      DS::MarcXml.extract_names_as_recorded_agr(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
       expect(DS::Util).to have_received(:clean_string).at_most(10).times
     end
 
     it 'is invoked by collect_datafields' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b').join '|'
+      DS::MarcXml.collect_datafields(record, tags: 300, codes: 'b').join '|'
       expect(DS::Util).to have_received(:clean_string).at_most(10).times
     end
 
     it 'is invoked by extract_physical_description' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_physical_description record
+      DS::MarcXml.extract_physical_description record
       expect(DS::Util).to have_received :clean_string
     end
 
     it 'is invoked by extract_note' do
       allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::MarcXML.extract_note record
+      DS::MarcXml.extract_note record
       expect(DS::Util).to have_received(:clean_string)
     end
   end

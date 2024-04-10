@@ -30,7 +30,7 @@ module Recon
       data = []
       process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data << DS::MarcXML.extract_recon_titles(record)
+          data << DS::MarcXml.extract_recon_titles(record)
         end
       end
       add_recon_values data

@@ -30,7 +30,7 @@ module Recon
 
       process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data += [DS::MarcXML.collect_datafields(record, tags: 300, codes: 'b')]
+          data += [DS::MarcXml.collect_datafields(record, tags: 300, codes: 'b')]
           # require 'pry'; binding.pry
         end
       end

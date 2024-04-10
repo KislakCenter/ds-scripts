@@ -1,7 +1,7 @@
 require 'csv'
 
 module DS
-  module MarcXML
+  module MarcXml
     module ClassMethods
 
       # TODO: Determine how the following, URL extraction, will work with name authority work flow
@@ -629,9 +629,9 @@ module DS
 
       def extract_titles record
         tar = title_as_recorded record
-        tar_agr = DS::Util.clean_string DS::MarcXML.title_as_recorded_agr(record, 245), terminator: ''
-        utar = DS::Util.clean_string DS::MarcXML.uniform_title_as_recorded(record), terminator: ''
-        utar_agr = DS::Util.clean_string DS::MarcXML.uniform_title_as_recorded_agr(record), terminator: ''
+        tar_agr = DS::Util.clean_string DS::MarcXml.title_as_recorded_agr(record, 245), terminator: ''
+        utar = DS::Util.clean_string DS::MarcXml.uniform_title_as_recorded(record), terminator: ''
+        utar_agr = DS::Util.clean_string DS::MarcXml.uniform_title_as_recorded_agr(record), terminator: ''
 
         MarcTitle.new(
           as_recorded: tar,
