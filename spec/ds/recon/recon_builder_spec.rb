@@ -2,12 +2,12 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Recon::ReconManager' do
+RSpec.describe 'Recon::ReconBuilder' do
 
   let(:files) { File.join fixture_path('ds_csv'), 'ucriverside-dscsv.csv' }
   let(:enumerator) { Recon::DsCsvEnumerator.new files }
   let(:recon_manager) {
-    Recon::ReconManager.new enumerator: enumerator, extractor: DS::DsCsv
+    Recon::ReconBuilder.new enumerator: enumerator, extractor: DS::DsCsv
   }
 
   context 'csv recon' do

@@ -1,7 +1,7 @@
 require_relative 'util'
 require_relative 'recon/source_enumerator'
 require_relative 'recon/ds_csv_enumerator'
-require_relative 'recon/recon_manager'
+require_relative 'recon/recon_builder'
 require_relative 'recon/url_lookup'
 require_relative 'recon/genres'
 require_relative 'recon/languages'

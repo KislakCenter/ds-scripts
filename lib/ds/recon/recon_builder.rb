@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Recon
-  class ReconManager
+  class ReconBuilder
     attr_reader :enumerator
     attr_reader :extractor
 

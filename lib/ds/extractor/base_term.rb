@@ -23,7 +23,7 @@ module DS
     # (+:vernacular+, +:role+, etc.) and implement +#to_a+.
     #
     # NB: BaseTerm instances are used by extractors and the +#to_a+
-    # by the ReconManager, which assumes values returned are in the
+    # by the ReconBuilder, which assumes values returned are in the
     # order of the first columns of each corresponding recon CSV. For
     # example, the languages.csv has these columns:
     #
@@ -31,7 +31,7 @@ module DS
     #   Arabic,ara,Arabic,Q13955
     #
     # The +authorized_label+ and +structured_value+ columns are added
-    # by the ReconManager which expects +term.to_a+ an array
+    # by the ReconBuilder which expects +term.to_a+ an array
     # containing the first two column values:
     #
     #     term.to_a  # => ['Arabic', 'ara']
