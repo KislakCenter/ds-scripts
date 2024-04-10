@@ -5,9 +5,9 @@ require 'spec_helper'
 RSpec.describe 'Recon::ReconManager' do
 
   let(:files) { File.join fixture_path('ds_csv'), 'ucriverside-dscsv.csv' }
-  let(:iterator) { Recon::CSVIterator.new files }
+  let(:enumerator) { Recon::DsCsvEnumerator.new files }
   let(:recon_manager) {
-    Recon::ReconManager.new iterator: iterator, extractor: DS::DSCSV
+    Recon::ReconManager.new enumerator: enumerator, extractor: DS::DSCSV
   }
 
   context 'csv recon' do

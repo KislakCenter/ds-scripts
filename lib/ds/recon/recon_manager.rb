@@ -2,11 +2,11 @@
 
 module Recon
   class ReconManager
-    attr_reader :iterator
+    attr_reader :enumerator
     attr_reader :extractor
 
-    def initialize iterator:, extractor:
-      @iterator  = iterator
+    def initialize enumerator:, extractor:
+      @enumerator  = enumerator
       @extractor = extractor
     end
 
@@ -81,7 +81,7 @@ module Recon
     # @note: +delimiter_map+: see {#build_recons}
     def extract_recons method_name:, item_type:, columns: [], delimiter_map: {}
       items = Set.new
-      iterator.each do |record|
+      enumerator.each do |record|
         [method_name].flatten.each do |name|
           items += extractor.send(name.to_sym, record)
         end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Recon
-  class CSVIterator < Iterator
+  class DsCsvEnumerator < SourceEnumerator
 
     def each &block
       files.each do |file|

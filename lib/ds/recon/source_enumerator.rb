@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Recon
-  class Iterator
+  class SourceEnumerator
     include Enumerable
 
     attr_accessor :files
@@ -10,7 +10,7 @@ module Recon
     end
 
     ##
-    # @yield record a record of the Iterator's type (MARC XML, CSV::Row, etc.)
+    # @yield record a record of the SourceEnumerator's type (MARC XML, CSV::Row, etc.)
     def each &block
       raise NotImplementedError
     end
