@@ -169,7 +169,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
 
     it 'calls all the DSSCV methods' do
       add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::DSCSV, methods: extractor_methods, return_val: []
+      add_expects objects: DS::DsCsv, methods: extractor_methods, return_val: []
 
       mapper.map_record entry
     end

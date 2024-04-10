@@ -1,7 +1,7 @@
 require 'csv'
 
 module DS
-  module DSCSV
+  module DsCsv
     COLUMN_MAPPINGS = {
       dsid:                               "DS ID",
       holding_institution_as_recorded:    "Holding Institution",
