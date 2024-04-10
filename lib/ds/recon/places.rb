@@ -39,7 +39,7 @@ module Recon
     def self.from_mets files
       data = []
       process_xml files do |xml|
-        data += DS::DS10.extract_recon_places xml
+        data += DS::DsMetsXml.extract_recon_places xml
       end
       add_recon_values data
       Recon.sort_and_dedupe data

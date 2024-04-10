@@ -54,7 +54,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
           source_modified
     }
   }
-  
+
   context 'initialize' do
     it 'creates a mapper' do
       mapper = DS::Mapper::DSMetsMapper.new source_dir: xml_dir, timestamp: timestamp
@@ -72,7 +72,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
     it 'calls all the expected DS10 methods' do
       add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::DS10, methods: ds10_methods, return_val: []
+      add_expects objects: DS::DsMetsXml, methods: ds10_methods, return_val: []
 
       mapper.map_record entry
     end

@@ -44,7 +44,7 @@ module Recon
     def self.from_mets files
       data = []
       process_xml files do |xml|
-        data += DS::DS10.extract_recon_names xml
+        data += DS::DsMetsXml.extract_recon_names xml
       end
       add_recon_values data
       data.sort { |a,b| a.first <=> b.first }.uniq

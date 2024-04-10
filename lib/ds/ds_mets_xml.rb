@@ -5,7 +5,7 @@ require 'csv'
 ##
 # Module with class methods for working with DS10 METS XML.
 module DS
-  module DS10
+  module DsMetsXml
     module ClassMethods
 
       NS = {
@@ -209,19 +209,19 @@ module DS
       end
 
       def extract_author xml
-        DS::DS10.extract_name xml, *%w{ author [author] }
+        DS::DsMetsXml.extract_name xml, *%w{ author [author] }
       end
 
       def extract_artist xml
-        DS::DS10.extract_name xml, *%w{ artist [artist] illuminator }
+        DS::DsMetsXml.extract_name xml, *%w{ artist [artist] illuminator }
       end
 
       def extract_scribe xml
-        DS::DS10.extract_name xml, *%w{ scribe [scribe] }
+        DS::DsMetsXml.extract_name xml, *%w{ scribe [scribe] }
       end
 
       def extract_other_name xml
-        DS::DS10.extract_name(xml, 'other').flat_map { |n| n.split %r{\s*;\s*} }
+        DS::DsMetsXml.extract_name(xml, 'other').flat_map { |n| n.split %r{\s*;\s*} }
       end
 
       ##
@@ -323,7 +323,7 @@ module DS
       def extract_recon_splits xml
         # require 'pry'; binding.pry
         data = []
-        data += DS::DS10.extract_ownership xml, lookup_split: false
+        data += DS::DsMetsXml.extract_ownership xml, lookup_split: false
         data.flatten.select { |d| d.to_s.size >= 400 }.map { |d| [d.strip] }
       end
 

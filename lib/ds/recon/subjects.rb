@@ -59,7 +59,7 @@ module Recon
     def self.from_mets files
       data = []
       process_xml files do |xml|
-        data += DS::DS10.recon_subjects(xml)
+        data += DS::DsMetsXml.recon_subjects(xml)
       end
       add_recon_values data
       Recon.sort_and_dedupe data
