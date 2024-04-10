@@ -47,12 +47,12 @@ CSV headers: true do |csv|
     base                                 = File.basename xml_file, '_TEI.xml'
 
     filename                             = File.basename xml_file
-    holding_institution_institutional_id = DS::OPennTEI.extract_holding_institution_id_nummber xml
+    holding_institution_institutional_id = DS::TeiXml.extract_holding_institution_id_nummber xml
     institutional_id_location_in_source  = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno'
-    call_number                          = DS::OPennTEI.extract_shelfmark xml
+    call_number                          = DS::TeiXml.extract_shelfmark xml
     link_to_institutional_record         = sprintf URL_FORMAT, base
     record_last_updated                  = last_modified_date base
-    title                                = (DS::OPennTEI.extract_title_as_recorded(xml) || []).first
+    title                                = (DS::TeiXml.extract_title_as_recorded(xml) || []).first
     iiif_manifest_url                    = nil
     manifest_generated_at                = Time.now.strftime '%Y-%m-%dT%H:%M:%S%z'
 

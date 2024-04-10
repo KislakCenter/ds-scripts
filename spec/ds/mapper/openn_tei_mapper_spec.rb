@@ -66,7 +66,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'implements #map_record' do
       # don't run the mapping
-      add_stubs DS::OPennTEI, ds_openn_tei_calls, []
+      add_stubs DS::TeiXml, ds_openn_tei_calls, []
       expect { mapper.map_record entry }.not_to raise_error
     end
 
@@ -107,7 +107,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
-      add_expects objects: DS::OPennTEI, methods: ds_openn_tei_calls, return_val: []
+      add_expects objects: DS::TeiXml, methods: ds_openn_tei_calls, return_val: []
 
       mapper.map_record entry
     end

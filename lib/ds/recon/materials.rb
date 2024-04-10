@@ -50,7 +50,7 @@ module Recon
     def self.from_tei files
       data = []
       process_xml files, remove_namespaces: true do |xml|
-        data += DS::OPennTEI.extract_material_as_recorded(xml).split('|')
+        data += DS::TeiXml.extract_material_as_recorded(xml).split('|')
       end
       add_recon_values data
       Recon.sort_and_dedupe data

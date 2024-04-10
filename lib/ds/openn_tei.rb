@@ -1,5 +1,5 @@
 module DS
-  module OPennTEI
+  module TeiXml
 
     RESP_FORMER_OWNER = 'former owner'
     RESP_SCRIBE       = 'scribe'
@@ -189,7 +189,7 @@ module DS
         xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
         as_recorded = extract_normalized_strings(xml, xpath).first
         if as_recorded.blank?
-          as_recorded = DS::OPennTEI.extract_language_codes xml, separator: separator
+          as_recorded = DS::TeiXml.extract_language_codes xml, separator: separator
         end
         as_recorded
       end

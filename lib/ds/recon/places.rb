@@ -48,7 +48,7 @@ module Recon
     def self.from_tei files
       data = []
       process_xml files,remove_namespaces: true do |xml|
-        data += DS::OPennTEI.extract_recon_places xml
+        data += DS::TeiXml.extract_recon_places xml
       end
       add_recon_values data
       Recon.sort_and_dedupe data
