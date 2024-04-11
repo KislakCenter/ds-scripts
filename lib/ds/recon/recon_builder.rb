@@ -2,12 +2,36 @@
 
 module Recon
   class ReconBuilder
-    attr_reader :enumerator
-    attr_reader :extractor
+    attr_reader :source_type
+    attr_reader :files
+    attr_reader :out_dir
 
-    def initialize enumerator:, extractor:
-      @enumerator  = enumerator
-      @extractor = extractor
+    SOURCE_TYPE_ENUMERATORS = {
+      DS::Constants::DS_CSV => Recon::DsCsvEnumerator
+    }
+
+    SOURCE_TYPE_EXTRACTORS = {
+      DS::Constants::MARC_XML => DS::MarcXml,
+      DS::Constants::DS_CSV   => DS::DsCsv,
+      DS::Constants::DS_METS  => DS::DsMetsXml,
+      DS::Constants::TEI_XML  => DS::TeiXml
+    }
+
+    def initialize source_type:, files:, out_dir:
+      @source_type = source_type
+      @files       = files
+      @out_dir     = out_dir
+    end
+
+    def enumerator
+      return @enumerator if @enumerator.present?
+      klass = SOURCE_TYPE_ENUMERATORS[source_type]
+      @enumerator = klass.new files
+    end
+
+    def extractor
+      return @extractor if @extractor.present?
+      @extractor = SOURCE_TYPE_EXTRACTORS[source_type]
     end
 
     def recon_places

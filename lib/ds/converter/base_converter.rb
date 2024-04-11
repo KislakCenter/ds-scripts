@@ -68,14 +68,14 @@ module DS
       #   record based on entry
       def retrieve_record entry
         case entry.source_type
-        when DS::Manifest::Constants::MARC_XML
+        when DS::Constants::MARC_XML
           xml_string = File.open(source_file_path entry).read
           xml = Nokogiri::XML xml_string
           xml.remove_namespaces!
           xpath = "//record[./controlfield[@tag='001' and ./text() = '#{entry.institutional_id}']]"
           # TODO: use xml.at_xpath to get the first item
           xml.xpath(xpath).first
-        when DS::Manifest::Constants::TEI_XML
+        when DS::Constants::TEI_XML
           xml_string = File.open(source_file_path entry).read
           xml = Nokogiri::XML xml_string
           xml.remove_namespaces!
@@ -89,12 +89,12 @@ module DS
 
       def get_mapper entry, record, tstamp
         case entry.source_type
-        when DS::Manifest::Constants::MARC_XML
-          DS::Mapper::MarcMapper.new(
+        when DS::MARC_XML
+          DS::Mapper::Constants::MarcMapper.new(
             manifest_entry: entry, record: record, timestamp: tstamp
           )
-        when DS::Manifest::Constants::TEI_XML
-          DS::Mapper::OPennTEIMapper.new(
+        when DS::TEI_XML
+          DS::Mapper::Constants::OPennTEIMapper.new(
             manifest_entry: entry, record: record, timestamp: tstamp
           )
         else

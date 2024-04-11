@@ -69,13 +69,13 @@ module DS
 
       def create_mapper entry, tstamp
         case entry.source_type
-        when DS::Manifest::Constants::MARC_XML
+        when DS::Constants::MARC_XML
           DS::Mapper::MarcMapper.new source_dir: source_dir, timestamp:  tstamp
-        when DS::Manifest::Constants::TEI_XML
+        when DS::Constants::TEI_XML
           DS::Mapper::OPennTEIMapper.new source_dir: source_dir, timestamp:  tstamp
-        when DS::Manifest::Constants::DS_METS
+        when DS::Constants::DS_METS
           DS::Mapper::DSMetsMapper.new source_dir: source_dir, timestamp: tstamp
-        when DS::Manifest::Constants::DS_CSV
+        when DS::Constants::DS_CSV
           DS::Mapper::DSCSVMapper.new source_dir: source_dir, timestamp: tstamp
         else
           raise NotImplementedError.new(

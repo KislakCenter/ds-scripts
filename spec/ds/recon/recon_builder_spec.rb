@@ -6,8 +6,10 @@ RSpec.describe 'Recon::ReconBuilder' do
 
   let(:files) { File.join fixture_path('ds_csv'), 'ucriverside-dscsv.csv' }
   let(:enumerator) { Recon::DsCsvEnumerator.new files }
+  let(:source_type) { 'ds-csv' }
+  let(:out_dir) { File.join DS.root, 'tmp' }
   let(:recon_manager) {
-    Recon::ReconBuilder.new enumerator: enumerator, extractor: DS::DsCsv
+    Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
   }
 
 
@@ -15,7 +17,7 @@ RSpec.describe 'Recon::ReconBuilder' do
     context 'initialize' do
       it 'creates a ReconBuilder' do
         expect(
-          Recon::ReconBuilder.new enumerator: enumerator, extractor: DS::DsCsv
+          Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
         ).to be_a Recon::ReconBuilder
       end
     end

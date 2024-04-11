@@ -153,10 +153,25 @@ source_file
 
     INSTITUTIONS = INSTITUTION_DS_IDS.values.uniq.freeze
 
-    MARC_XML = :marc
-    METS_XML = :mets
-    TEI_XML  = :tei
-    DS_CSV   = :csv
-    SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, DS_CSV ].freeze
+    MARC_XML = 'marc-xml'
+    TEI_XML  = 'tei-xml'
+    DS_CSV   = 'ds-csv'
+    DS_METS  = 'ds-mets-xml'
+
+    # source type list of all type names and normalized names; i.e.,
+    # lower case names stripped of all whitespace and non-word characters
+    VALID_SOURCE_TYPES = [
+      MARC_XML,
+      TEI_XML,
+      DS_CSV,
+      DS_METS
+    ].freeze
+
+    # MARC_XML = :marc
+    # METS_XML = :mets
+    # TEI_XML  = :tei
+    # DS_CSV   = :csv
+    # SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, DS_CSV ].freeze
+
   end
 end
