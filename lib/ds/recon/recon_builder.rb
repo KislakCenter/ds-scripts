@@ -17,6 +17,57 @@ module Recon
       DS::Constants::TEI_XML  => DS::TeiXml
     }
 
+    ReconType = Struct.new(
+      'ReconType', :method_name, :item_type, :columns, :delimiter_map,
+      keyword_init: true
+    )
+
+    RECON_TYPES = [
+      ReconType.new(
+        method_name: %i[extract_places],
+        item_type: :places,
+        columns: %w[authorized_label structured_value],
+        delimiter_map: { '|' => ';'}
+      ),
+      ReconType.new(
+        method_name:   :extract_materials,
+        item_type:     :materials,
+        columns:       %w[authorized_label structured_value],
+        delimiter_map: { '|' => ';' }
+      ),
+      ReconType.new(
+        method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
+        item_type: :names,
+        columns: %w[instance_of authorized_label structured_value]
+      ),
+      ReconType.new(
+        method_name: %i[extract_genres],
+        item_type: :genres,
+        columns: %w[authorized_label structured_value]
+      ),
+      ReconType.new(
+        method_name: %i[extract_subjects],
+        item_type: :subjects,
+        columns: %w[authorized_label structured_value]
+      ),
+      ReconType.new(
+        method_name: %i[extract_named_subjects],
+        item_type: :'named-subjects',
+        columns: %w[authorized_label structured_value],
+        delimiter_map: { '|' => ';' }
+      ),
+      ReconType.new(
+        method_name: %i[extract_titles],
+        item_type: :titles,
+        columns: %w[authorized_label]
+      ),
+      ReconType.new(
+        method_name: %i[extract_languages],
+        item_type: :languages,
+        columns: %w[authorized_label structured_value]
+      )
+    ]
+
     def initialize source_type:, files:, out_dir:
       @source_type = source_type
       @files       = files
@@ -34,89 +85,28 @@ module Recon
       @extractor = SOURCE_TYPE_EXTRACTORS[source_type]
     end
 
-    def recon_places
-      extract_recons(
-        method_name: :extract_places,
-        item_type: 'places',
-        columns: %w[authorized_label structured_value],
-        delimiter_map: { '|' => ';'}
-      )
-    end
-
-    def recon_materials
-      extract_recons(
-        method_name: :extract_materials,
-        item_type: 'materials',
-        columns: %w[authorized_label structured_value],
-        delimiter_map: { '|' => ';' }
-      )
-    end
-
-    def recon_names
-      extract_recons(
-        method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
-        item_type: 'names',
-        columns: %w[instance_of authorized_label structured_value]
-      )
-    end
-
-    def recon_genres
-      extract_recons(
-        method_name: %i[extract_genres],
-        item_type: 'genres',
-        columns: %w[authorized_label structured_value]
-      )
-    end
-
-    def recon_subjects
-      extract_recons(
-        method_name: %i[extract_subjects],
-        item_type: 'subjects',
-        columns: %w[authorized_label structured_value]
-      )
-    end
-
-    def recon_named_subjects
-      extract_recons(
-        method_name: %i[extract_named_subjects],
-        item_type: 'named-subjects',
-        columns: %w[authorized_label structured_value],
-        delimiter_map: { '|' => ';' }
-      )
-    end
-
-    def recon_titles
-      extract_recons(
-        method_name: %i[extract_titles],
-        item_type: 'titles',
-        columns: %w[authorized_label]
-      )
-    end
-
-    def recon_languages
-      extract_recons(
-        method_name: %i[extract_languages],
-        item_type: 'languages',
-        columns: %w[authorized_label structured_value]
-      )
-    end
-
     ##
     # @note: +delimiter_map+: see {#build_recons}
-    def extract_recons method_name:, item_type:, columns: [], delimiter_map: {}
+    def extract_recons item_type
       items = Set.new
+      recon_config = find_recon_type item_type
+
       enumerator.each do |record|
-        [method_name].flatten.each do |name|
+        [recon_config.method_name].flatten.each do |name|
           items += extractor.send(name.to_sym, record)
         end
       end
       recons = build_recons(
         items:         items,
-        recon_type:    item_type,
-        columns:       columns,
-        delimiter_map: delimiter_map
+        recon_type:    recon_config.item_type.to_s,
+        columns:       recon_config.columns,
+        delimiter_map: recon_config.delimiter_map
       )
       recons.sort
+    end
+
+    def find_recon_type name
+      RECON_TYPES.find { |config| config.item_type == name.to_sym }
     end
 
     ##
@@ -150,11 +140,17 @@ module Recon
         row = item.to_a
         row += columns.map { |col|
           val = Recon.lookup(recon_type, value: as_recorded, column: col)
-          delimiter_map.each { |old, new| val.gsub! old, new }
-          val
+          fix_delimiters val, delimiter_map
         }
         row
       }
+    end
+
+    def fix_delimiters value, delimiter_map = {}
+      return value if delimiter_map.blank?
+      val = ''
+      delimiter_map.each  { |old, new| val = value.gsub old, new }
+      val
     end
   end
 end

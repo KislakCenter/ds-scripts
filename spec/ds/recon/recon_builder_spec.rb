@@ -24,7 +24,7 @@ RSpec.describe 'Recon::ReconBuilder' do
 
     context '#recon_places' do
       it 'returns an array' do
-        expect(recon_manager.recon_places).to be_an Array
+        expect(recon_manager.extract_recons :places).to be_an Array
       end
 
       let(:recons) {
@@ -35,13 +35,13 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns the places auth values' do
-        expect(recon_manager.recon_places).to match recons
+        expect(recon_manager.extract_recons :places).to match recons
       end
     end
 
     context '#recon_materials' do
       it 'returns an array' do
-        expect(recon_manager.recon_materials).to be_an Array
+        expect(recon_manager.extract_recons :materials).to be_an Array
       end
 
       let(:recons) {
@@ -55,7 +55,7 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns the materials auth values' do
-        expect(recon_manager.recon_materials).to match recons
+        expect(recon_manager.extract_recons :materials).to match recons
       end
     end
 
@@ -71,11 +71,11 @@ RSpec.describe 'Recon::ReconBuilder' do
         ]
       }
       it 'returns an array' do
-        expect(recon_manager.send(method)).to be_an Array
+        expect(recon_manager.extract_recons :names).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.send(method)).to match recons
+        expect(recon_manager.extract_recons :names).to match recons
       end
     end
 
@@ -99,11 +99,11 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.send(method)).to be_an Array
+        expect(recon_manager.extract_recons :genres).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.send(method)).to match recons
+        expect(recon_manager.extract_recons :genres).to match recons
       end
 
     end
@@ -119,11 +119,31 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.send(method)).to be_an Array
+        expect(recon_manager.extract_recons :subjects).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.send(method)).to match recons
+        expect(recon_manager.extract_recons :subjects).to match recons
+      end
+    end
+
+    context "#recon_named_subjects" do
+      let(:method) { :named_recon_subjects }
+      let(:recons) {
+        [
+          ["A corporate named subject", nil, nil, "Named subject auth label", "http://id.worldcat.org/fast/named_subject"],
+          ["A named event", nil, nil, "", ""],
+          ["A personal named subject", nil, nil, "", ""],
+          ["A uniform title subject", nil, nil, "", ""]
+        ]
+      }
+
+      it 'returns an array' do
+        expect(recon_manager.extract_recons :'named-subjects').to be_an Array
+      end
+
+      it 'returns the auth values' do
+        expect(recon_manager.extract_recons :'named-subjects').to match recons
       end
     end
 
@@ -137,11 +157,11 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.send(method)).to be_an Array
+        expect(recon_manager.extract_recons :titles).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.send(method)).to match recons
+        expect(recon_manager.extract_recons :titles).to match recons
       end
     end
 
@@ -156,11 +176,11 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.send(method)).to be_an Array
+        expect(recon_manager.extract_recons :languages).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.send(method)).to match recons
+        expect(recon_manager.extract_recons :languages).to match recons
       end
     end
 
