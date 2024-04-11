@@ -15,6 +15,7 @@ describe DS::DsCsv do
 
   context "extractor interface" do
     it_behaves_like "an extractor"
+    it_behaves_like "a recon extractor"
   end
 
   # Date Updated by Contributor
