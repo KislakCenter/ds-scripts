@@ -350,7 +350,7 @@ module Helpers
   def marc_record xml_string
     xml = Nokogiri::XML xml_string
     xml.remove_namespaces!
-    xml.xpath('record')[0]
+    xml.at_xpath('//record')
   end
 
   def openn_tei xml_string

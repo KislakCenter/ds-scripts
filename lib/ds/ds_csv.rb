@@ -93,7 +93,7 @@ module DS
       def extract_date_range record, separator: '-'
         start_date = extract_production_date_start record
         end_date   = extract_production_date_end record
-        [start_date,end_date].select(&:present?).join separator
+        [start_date,end_date].select(&:present?)
       end
 
       def extract_production_date_start record
@@ -116,7 +116,7 @@ module DS
         dimensions = extract_dimensions record
         desc = [ extent, material, dimensions ].flatten
         return unless desc.any?(&:present?)
-        "Extent: #{desc.join '; '}"
+        ["Extent: #{desc.join '; '}"]
       end
 
       def extract_dimensions record
@@ -282,7 +282,7 @@ module DS
       end
 
       def extract_genres record
-        extract_terms record, :genres_as_recorded
+        extract_terms record, :genres_as_recorded, DS::Extractor::Genre
       end
 
       def extract_subjects_as_recorded record
@@ -300,7 +300,7 @@ module DS
       end
 
       def extract_subjects record
-        extract_terms record, :subjects_as_recorded
+        extract_terms record, :subjects_as_recorded, DS::Extractor::Subject
       end
 
       def extract_named_subjects_as_recorded record
@@ -308,12 +308,12 @@ module DS
       end
 
       def extract_named_subjects record
-        extract_terms record, :named_subjects_as_recorded
+        extract_terms record, :named_subjects_as_recorded, DS::Extractor::Subject
       end
 
-      def extract_terms record, property
+      def extract_terms record, property, term_type
         extract_values_for(property, record).map { |term|
-          DS::Extractor::Term.new as_recorded: term
+          term_type.new as_recorded: term
         }
       end
 
@@ -342,7 +342,7 @@ module DS
 
       # @todo implement extract_recon_genres
       def extract_recon_genres record
-        extract_terms(record, :genres_as_recorded).map &:to_a
+        extract_genres(record).map &:to_a
       end
 
       # @todo implement extract_recon_names

@@ -18,7 +18,7 @@ module DS
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
         production_date_as_recorded        = DS::DsCsv.extract_production_date_as_recorded record
-        production_date                    = DS::DsCsv.extract_date_range record, separator: '^'
+        production_date                    = DS::DsCsv.extract_date_range(record).join '^'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
         production_place_as_recorded       = DS::DsCsv.extract_production_places_as_recorded(record).join '|'
@@ -65,7 +65,7 @@ module DS
         material_as_recorded               = DS::DsCsv.extract_material_as_recorded record
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
-        physical_description               = DS::DsCsv.extract_physical_description record
+        physical_description               = DS::DsCsv.extract_physical_description(record).join '|'
         note                               = DS::DsCsv.extract_notes(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = DS::DsCsv.extract_date_source_modified record
@@ -88,7 +88,7 @@ module DS
           production_place:                   production_place,
           production_place_label:             production_place_label,
           production_date_as_recorded:        production_date_as_recorded,
-          uniform_title_as_recorded:          uniform_title_as_recorded,
+          extract_titles_as_recorded:         uniform_title_as_recorded,
           uniform_title_agr:                  uniform_title_agr,
           title_as_recorded:                  title_as_recorded,
           title_as_recorded_agr:              title_as_recorded_agr,

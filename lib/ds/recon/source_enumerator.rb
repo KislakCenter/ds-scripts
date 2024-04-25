@@ -5,8 +5,8 @@ module Recon
     include Enumerable
 
     attr_accessor :files
-    def initialize *files
-      @files = files
+    def initialize files
+      @files = *files
     end
 
     ##

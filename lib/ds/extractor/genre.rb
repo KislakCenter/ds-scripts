@@ -2,7 +2,7 @@
 
 module DS
   module Extractor
-    class Term < BaseTerm
+    class Genre < BaseTerm
 
       attr_accessor :vocab
       attr_accessor :source_authority_uri

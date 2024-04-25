@@ -4,16 +4,90 @@ require 'spec_helper'
 
 RSpec.describe 'Recon::ReconBuilder' do
 
-  let(:files) { File.join fixture_path('ds_csv'), 'ucriverside-dscsv.csv' }
-  let(:enumerator) { Recon::DsCsvEnumerator.new files }
-  let(:source_type) { 'ds-csv' }
-  let(:out_dir) { File.join DS.root, 'tmp' }
-  let(:recon_manager) {
-    Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
-  }
+  context 'MARX XML recon' do
+    let(:files) { "#{fixture_path 'marc_xml'}/9951865503503681_marc.xml" }
+    let(:source_type) { DS::Constants::MARC_XML }
+    let(:out_dir) { File.join DS.root, 'tmp' }
+    let(:recon_builder) {
+      Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
+    }
 
+    context 'initialize' do
+      it 'creates a ReconBuilder' do
+        expect(
+          Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
+        ).to be_a Recon::ReconBuilder
+      end
+    end
+
+    context '#extract_recons' do
+      context ':places' do
+        it 'returns an array' do
+          expect(recon_builder.extract_recons :places).to be_an Array
+        end
+
+        let(:recons) {
+          [
+            ["France", "France", "http://vocab.getty.edu/tgn/1000070"]
+          ]
+        }
+
+        it 'returns the auth values' do
+          expect(recon_builder.extract_recons :places).to match recons
+        end
+      end
+
+      context ':materials' do
+        let(:recon_type) { :materials }
+        it 'returns an array' do
+          expect(recon_builder.extract_recons recon_type).to be_an Array
+        end
+      end
+
+      context ':genres' do
+        let(:recon_type) { :genres }
+        it 'returns an array' do
+          expect(recon_builder.extract_recons recon_type).to be_an Array
+        end
+      end
+
+      context ':subjects' do
+        let(:recon_type) { :subjects }
+        it 'returns an array' do
+          expect(recon_builder.extract_recons recon_type).to be_an Array
+        end
+      end
+
+      context ':names' do
+        let(:recon_type) { :names }
+        it 'returns an array' do
+          expect(recon_builder.extract_recons :names).to be_an Array
+        end
+
+        let(:recons) {
+          [
+            ["Beck, Helmut, 1919-2001", "former owner", "", "", "human", "Helmut Beck", "Q94821473"],
+            ["Boethius, -524", "author", "", "http://id.loc.gov/authorities/names/n79029805", "human", "Boethius", "Q102851"],
+            ["Phillipps, Thomas, Sir, 1792-1872", "former owner", "", "http://id.loc.gov/authorities/names/n50078542", "human", "Thomas Phillipps", "Q2147709"],
+            ["Saint-Benoît-sur-Loire (Abbey)", "former owner", "", "http://id.loc.gov/authorities/names/n83019607", "organization", "Fleury Abbey", "Q956741"]
+          ]
+        }
+
+        it 'returns the auth values' do
+          expect(recon_builder.extract_recons recon_type).to match recons
+        end
+      end
+    end
+  end
 
   context 'csv recon' do
+    let(:files) { File.join fixture_path('ds_csv'), 'ucriverside-dscsv.csv' }
+    let(:source_type) { 'ds-csv' }
+    let(:out_dir) { File.join DS.root, 'tmp' }
+    let(:recon_builder) {
+      Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
+    }
+
     context 'initialize' do
       it 'creates a ReconBuilder' do
         expect(
@@ -24,24 +98,24 @@ RSpec.describe 'Recon::ReconBuilder' do
 
     context '#recon_places' do
       it 'returns an array' do
-        expect(recon_manager.extract_recons :places).to be_an Array
+        expect(recon_builder.extract_recons :places).to be_an Array
       end
 
       let(:recons) {
         [
-          ["France", "", ""],
+          ["France", "France", "http://vocab.getty.edu/tgn/1000070"],
           ["Paris", "Paris", "http://vocab.getty.edu/tgn/paris_id"]
         ]
       }
 
       it 'returns the places auth values' do
-        expect(recon_manager.extract_recons :places).to match recons
+        expect(recon_builder.extract_recons :places).to match recons
       end
     end
 
     context '#recon_materials' do
       it 'returns an array' do
-        expect(recon_manager.extract_recons :materials).to be_an Array
+        expect(recon_builder.extract_recons :materials).to be_an Array
       end
 
       let(:recons) {
@@ -55,7 +129,7 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns the materials auth values' do
-        expect(recon_manager.extract_recons :materials).to match recons
+        expect(recon_builder.extract_recons :materials).to match recons
       end
     end
 
@@ -71,11 +145,11 @@ RSpec.describe 'Recon::ReconBuilder' do
         ]
       }
       it 'returns an array' do
-        expect(recon_manager.extract_recons :names).to be_an Array
+        expect(recon_builder.extract_recons :names).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.extract_recons :names).to match recons
+        expect(recon_builder.extract_recons :names).to match recons
       end
     end
 
@@ -99,11 +173,11 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.extract_recons :genres).to be_an Array
+        expect(recon_builder.extract_recons :genres).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.extract_recons :genres).to match recons
+        expect(recon_builder.extract_recons :genres).to match recons
       end
 
     end
@@ -112,18 +186,18 @@ RSpec.describe 'Recon::ReconBuilder' do
       let(:method) { :recon_subjects }
       let(:recons) {
         [
-          ["A chronological subject", nil, nil, "", ""],
-          ["A geographical subject", nil, nil, "", ""],
-          ["A topical subject", nil, nil, "Topical auth label", "http://id.worldcat.org/fast/topical_subject"]
+          ["A chronological subject", nil, nil, nil, "", ""],
+          ["A geographical subject", nil, nil, nil, "", ""],
+          ["A topical subject", nil, nil, nil, "Topical auth label", "http://id.worldcat.org/fast/topical_subject"]
         ]
       }
 
       it 'returns an array' do
-        expect(recon_manager.extract_recons :subjects).to be_an Array
+        expect(recon_builder.extract_recons :subjects).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.extract_recons :subjects).to match recons
+        expect(recon_builder.extract_recons :subjects).to match recons
       end
     end
 
@@ -131,19 +205,19 @@ RSpec.describe 'Recon::ReconBuilder' do
       let(:method) { :named_recon_subjects }
       let(:recons) {
         [
-          ["A corporate named subject", nil, nil, "Named subject auth label", "http://id.worldcat.org/fast/named_subject"],
-          ["A named event", nil, nil, "", ""],
-          ["A personal named subject", nil, nil, "", ""],
-          ["A uniform title subject", nil, nil, "", ""]
+          ["A corporate named subject", nil, nil, nil, "Named subject auth label", "http://id.worldcat.org/fast/named_subject"],
+          ["A named event", nil, nil, nil, "", ""],
+          ["A personal named subject", nil, nil, nil, "", ""],
+          ["A uniform title subject", nil, nil, nil, "", ""]
         ]
       }
 
       it 'returns an array' do
-        expect(recon_manager.extract_recons :'named-subjects').to be_an Array
+        expect(recon_builder.extract_recons :'named-subjects').to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.extract_recons :'named-subjects').to match recons
+        expect(recon_builder.extract_recons :'named-subjects').to match recons
       end
     end
 
@@ -157,11 +231,11 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.extract_recons :titles).to be_an Array
+        expect(recon_builder.extract_recons :titles).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.extract_recons :titles).to match recons
+        expect(recon_builder.extract_recons :titles).to match recons
       end
     end
 
@@ -176,13 +250,14 @@ RSpec.describe 'Recon::ReconBuilder' do
       }
 
       it 'returns an array' do
-        expect(recon_manager.extract_recons :languages).to be_an Array
+        expect(recon_builder.extract_recons :languages).to be_an Array
       end
 
       it 'returns the auth values' do
-        expect(recon_manager.extract_recons :languages).to match recons
+        expect(recon_builder.extract_recons :languages).to match recons
       end
     end
 
   end
+
 end

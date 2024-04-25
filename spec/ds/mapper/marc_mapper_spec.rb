@@ -49,25 +49,29 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
   let(:marc_xml_methods) {
     %i{
         extract_cataloging_convention
-        extract_001_control_number
-        extract_date_as_recorded
-        extract_place_as_recorded
-        extract_uniform_title_as_recorded
-        extract_uniform_title_as_recorded_agr
-        extract_title_as_recorded
-        extract_title_as_recorded_agr
-        extract_genre_as_recorded
+        extract_production_date_as_recorded
+        extract_date_range
+        extract_production_places_as_recorded
+        extract_uniform_titles_as_recorded
+        extract_uniform_titles_as_recorded_agr
+        extract_titles_as_recorded
+        extract_titles_as_recorded_agr
+        extract_genres_as_recorded
         extract_genre_vocabulary
-        extract_subject_as_recorded
+        extract_all_subjects_as_recorded
         extract_authors_as_recorded
         extract_authors_as_recorded_agr
-        extract_language_as_recorded
-        extract_names_as_recorded
-        extract_names_as_recorded_agr
-        collect_datafields
+        extract_artists_as_recorded
+        extract_artists_as_recorded_agr
+        extract_scribes_as_recorded
+        extract_scribes_as_recorded_agr
+        extract_languages_as_recorded
+        extract_former_owners_as_recorded
+        extract_former_owners_as_recorded_agr
+        extract_material_as_recorded
         extract_physical_description
-        extract_note
-        source_modified
+        extract_notes
+        extract_date_source_modified
       }
   }
 

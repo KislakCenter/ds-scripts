@@ -215,7 +215,7 @@ describe DS::DsCsv do
     end
   end
 
-  context "extract_subject_as_recorded" do
+  context "extract_subjects_as_recorded" do
     let(:subjects) {
       ["A topical subject", "A geographical subject", "A chronological subject"]
     }
@@ -334,7 +334,7 @@ describe DS::DsCsv do
     it "returns the extent" do
       expect(
         DS::DsCsv.extract_physical_description record
-      ).to eq "Extent: 1 folio; materials description; 310 x 190 mm bound to 320 x 200 mm"
+      ).to eq ["Extent: 1 folio; materials description; 310 x 190 mm bound to 320 x 200 mm"]
     end
   end
 
@@ -417,8 +417,8 @@ describe DS::DsCsv do
 
   context "extract_recon_subjects" do
     it "returns the recon subject data" do
-      expect(DS::DsCsv.extract_recon_subjects record).to include ["A personal named subject", nil, nil  ]
-      expect(DS::DsCsv.extract_recon_subjects record).to include ["A chronological subject", nil, nil  ]
+      expect(DS::DsCsv.extract_recon_subjects record).to include ["A personal named subject", nil, nil, nil  ]
+      expect(DS::DsCsv.extract_recon_subjects record).to include ["A chronological subject", nil, nil, nil  ]
     end
   end
 

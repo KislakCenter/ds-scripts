@@ -33,27 +33,27 @@ module DS
         cataloging_convention              = DS::MarcXml.extract_cataloging_convention record
         holding_institution                = entry.institution_wikidata_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
-        holding_institution_id_number      = DS::MarcXml.extract_001_control_number record
+        holding_institution_id_number      = entry.institutional_id
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
-        production_date_as_recorded        = DS::MarcXml.extract_date_as_recorded record
-        production_date                    = DS::MarcXml.extract_production_date(record).join '^'
+        production_date_as_recorded        = DS::MarcXml.extract_production_date_as_recorded record
+        production_date                    = DS::MarcXml.extract_date_range(record).join '^'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
-        production_place_as_recorded       = DS::MarcXml.extract_place_as_recorded(record).join '|'
+        production_place_as_recorded       = DS::MarcXml.extract_production_places_as_recorded(record).join '|'
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
-        uniform_title_as_recorded          = DS::MarcXml.extract_uniform_title_as_recorded record
-        uniform_title_agr                  = DS::MarcXml.extract_uniform_title_as_recorded_agr record
-        title_as_recorded                  = DS::MarcXml.extract_title_as_recorded record
-        title_as_recorded_agr              = DS::MarcXml.extract_title_as_recorded_agr record
+        uniform_title_as_recorded          = DS::MarcXml.extract_uniform_titles_as_recorded record
+        uniform_title_agr                  = DS::MarcXml.extract_uniform_titles_as_recorded_agr(record).join '|'
+        title_as_recorded                  = DS::MarcXml.extract_titles_as_recorded record
+        title_as_recorded_agr              = DS::MarcXml.extract_titles_as_recorded_agr record
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
-        genre_as_recorded                  = DS::MarcXml.extract_genre_as_recorded(record, sub2: :all, sub_sep: '--', uniq: true).join('|')
+        genre_as_recorded                  = DS::MarcXml.extract_genres_as_recorded(record).join('|')
         genre_vocabulary                   = DS::MarcXml.extract_genre_vocabulary(record).join '|'
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
-        subject_as_recorded                = DS::MarcXml.extract_subject_as_recorded(record).join '|'
+        subject_as_recorded                = DS::MarcXml.extract_all_subjects_as_recorded(record).join '|'
         subject                            = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
         subject_label                      = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
         author_as_recorded                 = DS::MarcXml.extract_authors_as_recorded(record).join '|'
@@ -62,34 +62,34 @@ module DS
         author                             = ''
         author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'instance_of').join '|'
         author_label                       = Recon::Names.lookup(author_as_recorded.split('|'), column: 'authorized_label').join '|'
-        artist_as_recorded                 = DS::MarcXml.extract_names_as_recorded(record, tags: [700, 710, 711], relators: ['artist', 'illuminator']).join '|'
-        artist_as_recorded_agr             = DS::MarcXml.extract_names_as_recorded_agr(record, tags: [700, 710, 711], relators: ['artist', 'illuminator']).join '|'
+        artist_as_recorded                 = DS::MarcXml.extract_artists_as_recorded(record).join '|'
+        artist_as_recorded_agr             = DS::MarcXml.extract_artists_as_recorded_agr(record).join '|'
         artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'structured_value').join '|'
         artist                             = ''
         artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'instance_of').join '|'
         artist_label                       = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'authorized_label').join '|'
-        scribe_as_recorded                 = DS::MarcXml.extract_names_as_recorded(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
-        scribe_as_recorded_agr             = DS::MarcXml.extract_names_as_recorded_agr(record, tags: [700, 710, 711], relators: ['scribe']).join '|'
+        scribe_as_recorded                 = DS::MarcXml.extract_scribes_as_recorded(record).join '|'
+        scribe_as_recorded_agr             = DS::MarcXml.extract_scribes_as_recorded_agr(record).join '|'
         scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
         scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
         scribe_label                       = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'authorized_label').join '|'
-        language_as_recorded               = DS::MarcXml.extract_language_as_recorded record
+        language_as_recorded               = DS::MarcXml.extract_languages_as_recorded(record).join '|'
         language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
         language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
-        former_owner_as_recorded           = DS::MarcXml.extract_names_as_recorded(record, tags: [700, 710, 711, 790, 791], relators: ['former owner']).join '|'
-        former_owner_as_recorded_agr       = DS::MarcXml.extract_names_as_recorded_agr(record, tags: [700, 710, 711, 790, 791], relators: ['former owner']).join '|'
+        former_owner_as_recorded           = DS::MarcXml.extract_former_owners_as_recorded(record).join '|'
+        former_owner_as_recorded_agr       = DS::MarcXml.extract_former_owners_as_recorded_agr(record).join '|'
         former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
         former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded               = DS::MarcXml.collect_datafields(record, tags: 300, codes: 'b').join '|'
+        material_as_recorded               = DS::MarcXml.extract_material_as_recorded record
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::MarcXml.extract_physical_description(record).join('|')
-        note                               = DS::MarcXml.extract_note(record).join '|'
+        note                               = DS::MarcXml.extract_notes(record).join '|'
         data_processed_at                  = timestamp
-        data_source_modified               = DS::MarcXml.source_modified record
+        data_source_modified               = DS::MarcXml.extract_date_source_modified record
 
         {
           ds_id:                              ds_id,
@@ -108,7 +108,7 @@ module DS
           production_place:                   production_place,
           production_place_label:             production_place_label,
           production_date_as_recorded:        production_date_as_recorded,
-          uniform_title_as_recorded:          uniform_title_as_recorded,
+          extract_titles_as_recorded:         uniform_title_as_recorded,
           uniform_title_agr:                  uniform_title_agr,
           title_as_recorded:                  title_as_recorded,
           title_as_recorded_agr:              title_as_recorded_agr,

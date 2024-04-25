@@ -4,13 +4,6 @@ module DS
   module MarcXml
     module ClassMethods
 
-      # TODO: Determine how the following, URL extraction, will work with name authority work flow
-      # TODO: Add URL extraction (subfield $0) for authors (100)
-      # TODO: Add URL extraction (subfield $0) for related names
-      # TODO: Add URL extraction (subfield $0) uniform titles (do these exist?)
-      # TODO: Add URL extraction (subfield $0) for subjects
-      # TODO: Add URL extraction (subfield $0) for genres
-
       ############################################################
       # NAMES
       ############################################################
@@ -61,6 +54,66 @@ module DS
         authors
       end
 
+      def extract_scribes record
+        extract_names(
+          record, tags: [700, 710, 711], relators: ['scribe']
+        )
+      end
+
+      def extract_scribes_as_recorded record
+        extract_scribes(record).map &:as_recorded
+      end
+
+
+      def extract_scribes_as_recorded_agr record
+        extract_scribes(record).map &:vernacular
+      end
+
+      def extract_artists record
+        extract_names(
+          record, tags: [700, 710, 711],
+          relators: ['artist', 'illuminator']
+        )
+      end
+
+      def extract_artists_as_recorded record
+        extract_artists(record).map &:as_recorded
+      end
+
+      def extract_artists_as_recorded_agr record
+        extract_artists(record).map &:vernacular
+      end
+
+      def extract_former_owners record
+        extract_names(
+          record, tags: [700, 710, 711], relators: ['former owner']
+        )
+      end
+
+      def extract_former_owners_as_recorded record
+        extract_former_owners(record).map &:as_recorded
+      end
+
+      def extract_former_owners_as_recorded_agr record
+        extract_former_owners(record).map &:vernacular
+      end
+
+      def extract_scribes_as_recorded_agr record
+        extract_scribes(record).map &:vernacular
+      end
+
+      def extract_artists record
+        extract_names(
+          record, tags: [700, 710, 711],
+          relators: ['artist', 'illuminator']
+        )
+      end
+
+      def extract_authors record
+        extract_names(record, tags: [100, 110, 111]) +
+          extract_names(record, tags: [700, 710, 711], relators: %w{author})
+      end
+
       ##
       # For the given record, extract the names as an array of arrays, including
       # the concatenated name string (subfields, a, b, c, d) and, if present,
@@ -74,17 +127,37 @@ module DS
       # @param [Array<String>] relators for +700$e+, +710$e+, a value[s] like 'former owner'
       # @return [Array<Array<String>>]
       def extract_recon_names record, tags: [], relators: []
+        extract_names(record, tags: tags, relators: relators).map &:to_a
+        # xpath = build_name_query tags: tags, relators: relators
+        # return '' if xpath.empty? # don't process nonsensical requests
+        #
+        # record.xpath(xpath).map { |datafield|
+        #   row = []
+        #   row << extract_name_portion(datafield)
+        #   role = extract_role(datafield, relators: relators)
+        #   row << (role.strip.empty? ? 'author' : role)
+        #   row << extract_pn_agr(datafield)
+        #   row << extract_authority_number(datafield)
+        #   row
+        # }
+      end
+
+      def extract_names record, tags: [], relators: []
         xpath = build_name_query tags: tags, relators: relators
-        return '' if xpath.empty? # don't process nonsensical requests
+        return [] if xpath.empty? # don't process nonsensical requests
 
         record.xpath(xpath).map { |datafield|
-          row = []
-          row << extract_name_portion(datafield)
-          role = extract_role(datafield, relators: relators)
-          row << (role.strip.empty? ? 'author' : role)
-          row << extract_pn_agr(datafield)
-          row << extract_authority_number(datafield)
-          row
+
+          as_recorded = extract_name_portion datafield
+          role        = extract_role datafield, relators: relators
+          role        = 'author' if role.blank?
+          vernacular  = extract_pn_agr datafield
+          ref         = extract_authority_number datafield
+
+          DS::Extractor::Name.new(
+            as_recorded: as_recorded, role: role,
+            vernacular: vernacular, ref: ref
+          )
         }
       end
 
@@ -192,13 +265,13 @@ module DS
       #
       # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
-      def extract_langs record, separator: '|'
+      def extract_langs record
         # Language is in 008 at characters 35-37 (0-based indexing)
         (langs ||= []) << record.xpath("substring(controlfield[@tag='008']/text(), 36, 3)")
         # 041 is present if there's more than one language
         langs += record.xpath("datafield[@tag=041]/subfield[@code='a']").map(&:text)
         # if there are 041 values, the lang from 008 is repeated; remove the duplicate
-        langs.select(&:present?).uniq.join separator
+        langs.select(&:present?).uniq
       end
 
       ##
@@ -207,12 +280,22 @@ module DS
       #
       # @param [Nokogiri::XML::Node] record the marc:record node
       # @return [String]
-      def extract_language_as_recorded record
-        xpath = "datafield[@tag=546]/subfield[@code='a']"
-        langs = record.xpath(xpath).map { |val| DS::Util.clean_string val.text, terminator: ''}
-        return langs.join '|' unless langs.all? { |l| l.to_s.strip.empty? }
+      def extract_languages_as_recorded record
+        extract_languages(record).map &:as_recorded
+      end
 
-        extract_langs record
+      def extract_languages record
+        xpath = "datafield[@tag=546]/subfield[@code='a']"
+        langs = record.xpath(xpath).map { |val|
+          DS::Util.clean_string val.text, terminator: ''
+        }.select(&:present?).map { |as_recorded|
+          DS::Extractor::Language.new as_recorded: as_recorded
+        }
+        return langs if langs.present?
+
+        extract_langs(record).map { |as_recorded|
+          DS::Extractor::Language.new as_recorded: as_recorded
+        }
       end
 
       #########################################################################
@@ -225,12 +308,10 @@ module DS
       # Set +sub2+ to +:all+ to extract all 655 terms
       #
       # @param [Nokogiri::XML::Node] record the MARC record
-      # @param [String] sub2 the value of the 655$2 subfield +rbprov+, +aat+, etc.
-      # @param [String] sub_sep separator for keywords
       # @param [Boolean] uniq whether to return only unique terms; default: +true+
       # @return [Array<String>] array of genre terms
-      def extract_genre_as_recorded record, sub2:, sub_sep: '--', uniq: false
-        terms = extract_genres(record, sub_sep: sub_sep, vocab: sub2).map(&:as_recorded)
+      def extract_genres_as_recorded record, uniq: true
+        terms = extract_genres(record, sub_sep: '--', vocab: :all).map(&:as_recorded)
 
         uniq ? terms.uniq : terms
       end
@@ -260,87 +341,15 @@ module DS
       #    # => "Conspiracy of Catiline (Rome : 65-62 B.C.)"
       #
       #  @param [Nokogiri::XML::Node] record the MARC record
-      # @return [Array<String>] an array of formatted subjects strings
+      # @return [Array<DS::Extractor::Subject>] an array of formatted subjects strings
       def extract_subject_by_tags record, tags: []
         tag_list = *tags
         raise "No tags given for subject extraction: #{tags.inspect}" if tag_list.empty?
-        sep        = '--'
-        tag_query  = tag_list.map { |tag| "@tag=#{tag}" }.join " or "
-        code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
-
-        record.xpath("datafield[#{tag_query}]").map { |datafield|
-          datafield.xpath("subfield[#{code_query}]").reduce([]) { |parts, subfield|
-            case subfield.xpath('./@code').text
-            when 'e', 'w'
-              # don't include these formatted in subject
-            when 'b', 'c', 'd', 'p', 'q', 't'
-              # append these to the preceding value
-              # we assume that there is a preceding value
-              parts[-1] += " #{subfield.text}"
-            else
-              # any other codes: a, g, v, x, y, z
-              parts << subfield.text
-            end
-            parts
-          }.map { |part| DS::Util.clean_string part, terminator: '' }.join sep
-        }
-      end
-
-      def extract_named_subject record
-        extract_subject_by_tags(record, tags: [600, 610, 611, 630, 647])
-      end
-
-      def extract_topical_subject record
-        extract_subject_by_tags record, tags: [648, 650, 651]
-      end
-
-      def extract_subject_as_recorded record
-        extract_named_subject(record) + extract_topical_subject(record)
-      end
-
-      ##
-      # Extract genre terms for reconciliation CSV output.
-      #
-      # Returns a two-dimensional array, each row is a place; and each row has
-      # three columns: term, vocabulary, and authority number.
-      #
-      # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
-      # @return [Array<Array>] an array of arrays of values
-      def extract_recon_genres record, sub_sep: '--'
-        extract_genres(record, sub_sep: sub_sep).map(&:to_a)
-      end
-
-      def extract_genres record, sub_sep: '--', vocab: :all
-        xpath = %q{datafield[@tag = 655]}
-        record.xpath(xpath).filter_map { |datafield|
-          as_recorded          = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
-          as_recorded          = DS::Util.clean_string as_recorded, terminator: ''
-          term_vocab                = extract_vocabulary datafield
-          source_authority_uri = extract_authority_number datafield
-          if [ :all, term_vocab ].include? vocab
-            DS::Extractor::Term.new(
-              as_recorded: as_recorded,
-              vocab: term_vocab,
-              source_authority_uri: source_authority_uri
-            )
-          end
-        }
-      end
-
-      def extract_genre_vocabulary record
-        extract_genres(record).map(&:vocab)
-      end
-
-
-      def collect_recon_subjects record, tags: []
-        tag_list = *tags
-        raise "No tags given for subject extraction: #{tags.inspect}" if tag_list.empty?
-        sep = '--'
+        sep       = '--'
         tag_query = tag_list.map { |tag| "@tag=#{tag}" }.join " or "
-        # code_query = ('a'..'z').map { |code| "@code='#{code}'" }.join " or "
         record.xpath("datafield[#{tag_query}]").map { |datafield|
-          values = Hash.new { |hash,k| hash[k] = [] }
-          vocab   = datafield.xpath('./@ind2').text
+          values = Hash.new { |hash, k| hash[k] = [] }
+          vocab  = datafield.xpath('./@ind2').text
           datafield.xpath("subfield").map { |subfield|
             subfield_text = DS::Util.clean_string subfield.text
             subfield_code = subfield.xpath('./@code').text
@@ -363,11 +372,78 @@ module DS
               values[:urls] << subfield_text
             end
           }
-          terms  = DS::Util.clean_string values[:terms].join(sep), terminator: ''
-          urls   = DS::Util.clean_string values[:urls].join(sep), terminator: ''
-          codes  = DS::Util.clean_string values[:codes].join(sep), terminator: ''
-          [terms, codes, vocab, urls]
+          terms = DS::Util.clean_string values[:terms].join(sep), terminator: ''
+          urls  = DS::Util.clean_string values[:urls].join(sep), terminator: ''
+          codes = DS::Util.clean_string values[:codes].join(sep), terminator: ''
+          DS::Extractor::Subject.new(
+            as_recorded:          terms,
+            subfield_codes:       codes,
+            source_authority_uri: urls,
+            vocab:                vocab
+          )
         }
+
+      end
+
+      def extract_named_subjects_as_recorded record
+        extract_named_subjects(record).map &:as_recorded
+      end
+
+      def extract_named_subjects record
+        extract_subject_by_tags record, tags: [600, 610, 611, 630, 647]
+      end
+
+      def extract_subjects_as_recorded record
+        extract_subjects(record).map &:as_recorded
+      end
+
+      def extract_subjects record
+        extract_subject_by_tags record, tags: [648, 650, 651]
+      end
+
+      def extract_all_subjects record
+        extract_named_subjects(record) + extract_subjects(record)
+      end
+
+      def extract_all_subjects_as_recorded record
+        extract_all_subjects(record).map &:as_recorded
+      end
+
+      ##
+      # Extract genre terms for reconciliation CSV output.
+      #
+      # Returns a two-dimensional array, each row is a place; and each row has
+      # three columns: term, vocabulary, and authority number.
+      #
+      # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
+      # @return [Array<Array>] an array of arrays of values
+      def extract_recon_genres record, sub_sep: '--'
+        extract_genres(record, sub_sep: sub_sep).map(&:to_a)
+      end
+
+      def extract_genres record, sub_sep: '--', vocab: :all
+        xpath = %q{datafield[@tag = 655]}
+        record.xpath(xpath).filter_map { |datafield|
+          as_recorded          = collect_subfields datafield, codes: 'abcvzyx'.split(//), sub_sep: sub_sep
+          as_recorded          = DS::Util.clean_string as_recorded, terminator: ''
+          term_vocab                = extract_vocabulary datafield
+          source_authority_uri = extract_authority_number datafield
+          if [ :all, term_vocab ].include? vocab
+            DS::Extractor::Genre.new(
+              as_recorded: as_recorded,
+              vocab: term_vocab,
+              source_authority_uri: source_authority_uri
+            )
+          end
+        }
+      end
+
+      def extract_genre_vocabulary record
+        extract_genres(record).map(&:vocab)
+      end
+
+      def extract_recon_subjects record
+        extract_all_subjects(record).map &:to_a
       end
 
       #########################################################################
@@ -378,9 +454,10 @@ module DS
       # Look for a place as recorded. Look first at 264$a, then 260$a; return ''
       # when no value is found
       # @param [Nokogiri::XML::Node] record the MARC record
-      # @return [String] the place name or ''
-      def extract_place_as_recorded record
-        record.xpath("datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()").map { |pn|
+      # @return [Array<String>] the place name or []
+      def extract_production_places_as_recorded record
+        xpath = "datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()"
+        record.xpath(xpath).map { |pn|
           DS::Util.clean_string pn.text, terminator: '' unless pn.to_s.strip.empty?
         }
       end
@@ -399,7 +476,16 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<marc:record>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places record
-        extract_place_as_recorded(record).map { |pn| [pn] }
+        extract_places(record).map &:to_a
+      end
+
+      def extract_places record
+        xpath = "datafield[@tag=260 or @tag=264]/subfield[@code='a']/text()"
+        record.xpath(xpath).map { |pn|
+          next if pn.to_s.blank?
+          as_recorded = DS::Util.clean_string(pn.text, terminator: '')
+          DS::Extractor::Place.new as_recorded: as_recorded
+        }
       end
 
       #########################################################################
@@ -505,7 +591,7 @@ module DS
       #
       # @param [Nokogiri::XML::Node] record the +marc:record+ node
       # @return [Array]
-      def extract_production_date record
+      def extract_date_range record
         # 008 controlfield; e.g.,
         #
         #     "220518q14001500xx            000 0     d"
@@ -571,7 +657,7 @@ module DS
       ##
       # Look for a date as recorded. Look first at 260$c, then 260$d, then
       # 245$f, finally use the encoded date from 008
-      def extract_date_as_recorded record
+      def extract_production_date_as_recorded record
         # Note that MARC does not specify a subfield '260$d':
         #
         # https://www.loc.gov/marc/bibliographic/bd260.html
@@ -604,24 +690,13 @@ module DS
         dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
         return DS::Util.clean_string dar unless dar.strip.empty?
 
-        encoded_date = extract_production_date record
+        encoded_date = extract_date_range record
         encoded_date.join('_').strip
       end
 
       #########################################################################
       # Titles
       #########################################################################
-      MarcTitle = Struct.new(
-        'MarcTitle', :as_recorded, :vernacular,
-        :uniform_as_recorded,
-        :uniform_vernacular,
-        keyword_init: true
-      ) do |title|
-
-        def to_a
-          [as_recorded, vernacular, uniform_as_recorded, uniform_vernacular].map(&:to_s)
-        end
-      end
 
       def extract_recon_titles record
         extract_titles(record).to_a
@@ -630,19 +705,19 @@ module DS
       def extract_titles record
         tar = title_as_recorded record
         tar_agr = DS::Util.clean_string DS::MarcXml.title_as_recorded_agr(record, 245), terminator: ''
-        utar = DS::Util.clean_string DS::MarcXml.uniform_title_as_recorded(record), terminator: ''
+        utar = DS::Util.clean_string DS::MarcXml.uniform_titles_as_recorded(record), terminator: ''
         utar_agr = DS::Util.clean_string DS::MarcXml.uniform_title_as_recorded_agr(record), terminator: ''
 
-        MarcTitle.new(
+        [DS::Extractor::Title.new(
           as_recorded: tar,
           vernacular: tar_agr,
-          uniform_as_recorded: utar,
-          uniform_vernacular: utar_agr
-        )
+          uniform_title: utar,
+          uniform_title_vernacular: utar_agr
+        )]
       end
 
-      def extract_title_as_recorded_agr record
-        extract_titles(record).vernacular
+      def extract_titles_as_recorded_agr record
+        extract_titles(record).map &:vernacular
       end
 
       def title_as_recorded record
@@ -660,11 +735,11 @@ module DS
         DS::Util.clean_string record.xpath(xpath).text.delete '[]'
       end
 
-      def extract_title_as_recorded record
-        extract_titles(record).as_recorded
+      def extract_titles_as_recorded record
+        extract_titles(record).map &:as_recorded
       end
 
-      def uniform_title_as_recorded record
+      def uniform_titles_as_recorded record
         title_240 = record.xpath("datafield[@tag=240]/subfield[@code='a']").text
         title_130 = record.xpath("datafield[@tag=130]/subfield[@code='a']").text
         [title_240, title_130].reject(&:empty?).map { |title|
@@ -672,12 +747,12 @@ module DS
         }.join '|'
       end
 
-      def extract_uniform_title_as_recorded record
-        extract_titles(record).uniform_as_recorded
+      def extract_uniform_titles_as_recorded record
+        extract_titles(record).map &:uniform_title
       end
 
-      def extract_uniform_title_as_recorded_agr record
-        extract_titles(record).uniform_vernacular
+      def extract_uniform_titles_as_recorded_agr record
+        extract_titles(record).map &:uniform_title_vernacular
       end
 
       def uniform_title_as_recorded_agr record
@@ -693,6 +768,18 @@ module DS
       #########################################################################
       def extract_physical_description record
         extract_extent(record)
+      end
+
+      def  extract_material_as_recorded record
+        extract_materials(record).map(&:as_recorded).first
+      end
+
+      def extract_materials record
+        DS::MarcXml.collect_datafields(
+          record, tags: 300, codes: 'b'
+        ).map { |material|
+          DS::Extractor::Material.new as_recorded: material
+        }
       end
 
       def extract_extent record
@@ -721,7 +808,7 @@ module DS
       #
       # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
       # @return [Array<String>] an array of note strings
-      def extract_note record
+      def extract_notes record
         xpath = "datafield[@tag=500 or @tag=561]/subfield[@code='a']/text()"
         record.xpath(xpath).map { |note|
           DS::Util.clean_string note.text.strip.gsub(%r{\s+}, ' ')
@@ -850,6 +937,10 @@ module DS
         record.xpath("controlfield[@tag=001]").text
       end
 
+      def extract_acknowledgments record
+        []
+      end
+
       ##
       # Return an array of 500$a values that begin with +name:+ (+name+
       # followed by a colon +:+). The name prefix is removed if +strip_name+
@@ -877,7 +968,7 @@ module DS
         date_string.scan(/\d{4}/).map(&:to_i).join range_sep
       end
 
-      def source_modified record
+      def extract_date_source_modified record
         record_date = record.xpath("controlfield[@tag=005]").text[0..7]
         return nil if record_date.empty?
         "#{record_date[0..3]}-#{record_date[4..5]}-#{record_date[6..7]}"

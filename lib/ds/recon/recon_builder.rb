@@ -7,7 +7,8 @@ module Recon
     attr_reader :out_dir
 
     SOURCE_TYPE_ENUMERATORS = {
-      DS::Constants::DS_CSV => Recon::DsCsvEnumerator
+      DS::Constants::DS_CSV => Recon::DsCsvEnumerator,
+      DS::Constants::MARC_XML => Recon::MarcXmlEnumerator
     }
 
     SOURCE_TYPE_EXTRACTORS = {
