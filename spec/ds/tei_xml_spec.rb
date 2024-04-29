@@ -2,13 +2,20 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DS::OPennTEI' do
-  before do
-    # Do nothing
-  end
+RSpec.describe DS::TeiXml do
 
-  after do
-    # Do nothing
+  let(:tei_file) {
+    File.join fixture_path('tei_xml'), 'lewis_o_031_TEI.xml'
+  }
+
+  let(:record) {
+    openn_tei open(tei_file, 'r').read
+  }
+
+  context "extractor interface" do
+    skips = %i{named_subjects cataloging_convention uniform_titles}
+    it_behaves_like "a recon extractor", except: skips
+    it_behaves_like "an extractor", except: skips
   end
 
   context 'extract_note' do
@@ -58,7 +65,7 @@ RSpec.describe 'DS::OPennTEI' do
       }
     }
 
-    let(:notes) { DS::TeiXml.extract_note tei_xml }
+    let(:notes) { DS::TeiXml.extract_notes tei_xml }
 
     it 'includes a note' do
       expect(notes).to include "Plain note."
@@ -204,7 +211,7 @@ RSpec.describe 'DS::OPennTEI' do
 
       context 'extract_authors_agr_as_recorded' do
         let(:authors) { DS::TeiXml.extract_authors_as_recorded tei_xml }
-        let(:authors_agr) { DS::TeiXml.extract_authors_agr tei_xml }
+        let(:authors_agr) { DS::TeiXml.extract_authors_as_recorded_agr tei_xml }
         it 'extracts an agr name' do
           expect(authors_agr).to include 'ابن هشام، عبد الله بن يوسف،'
         end
@@ -241,7 +248,7 @@ RSpec.describe 'DS::OPennTEI' do
 
       context 'extract_former_owners_agr' do
         let(:former_owners) { DS::TeiXml.extract_former_owners_as_recorded tei_xml }
-        let(:former_owners_agr) { DS::TeiXml.extract_former_owners_agr tei_xml }
+        let(:former_owners_agr) { DS::TeiXml.extract_former_owners_as_recorded_agr tei_xml }
 
         it 'extracts a former owner vernacular name' do
           expect(former_owners_agr).to include 'يوسف بن شيخ محمد الجمالي.'
@@ -271,7 +278,7 @@ RSpec.describe 'DS::OPennTEI' do
 
       context 'extract_artists_agr' do
         let(:artists) { DS::TeiXml.extract_artists_as_recorded tei_xml }
-        let(:artists_agr) { DS::TeiXml.extract_artists_agr tei_xml }
+        let(:artists_agr) { DS::TeiXml.extract_artists_as_recorded_agr tei_xml }
 
         it 'extracts an artist vernacular name' do
           expect(artists_agr).to include 'Artist One Vernacular'
@@ -301,7 +308,7 @@ RSpec.describe 'DS::OPennTEI' do
 
       context 'extract_scribes_agr' do
         let(:scribes) { DS::TeiXml.extract_scribes_as_recorded tei_xml }
-        let(:scribes_agr) { DS::TeiXml.extract_scribes_agr tei_xml }
+        let(:scribes_agr) { DS::TeiXml.extract_scribes_as_recorded_agr tei_xml }
 
         it 'extracts an scribe vernacular name' do
           expect(scribes_agr).to include 'Scribe One Vernacular'
@@ -403,11 +410,11 @@ RSpec.describe 'DS::OPennTEI' do
     }
 
     let(:titles) {
-      DS::TeiXml.extract_title_as_recorded tei_xml
+      DS::TeiXml.extract_titles_as_recorded tei_xml
     }
 
     let(:titles_agr) {
-      DS::TeiXml.extract_title_as_recorded_agr tei_xml
+      DS::TeiXml.extract_titles_as_recorded_agr tei_xml
     }
 
     let(:recon_titles) {
@@ -438,8 +445,8 @@ RSpec.describe 'DS::OPennTEI' do
     context 'extract_recon_titles' do
       let(:expected_recon_titles) {
         [
-          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', '', '' ],
-          ['Second title', '', '', '']
+          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', nil, nil],
+          ['Second title', nil, nil, nil]
         ]
       }
       it 'returns paired titles' do
@@ -478,15 +485,15 @@ RSpec.describe 'DS::OPennTEI' do
     let(:phys_desc) { DS::TeiXml.extract_physical_description tei_xml }
 
     it 'includes the extent' do
-      expect(phys_desc).to include 'Extent: 153; 225 x 165 mm bound to 241 x 172 mm'
+      expect(phys_desc).to have_item_matching /Extent: 153; 225 x 165 mm bound to 241 x 172 mm/
     end
 
     it 'includes the support' do
-      expect(phys_desc).to include 'parchment'
+      expect(phys_desc).to have_item_matching /parchment/
     end
 
-    it 'is a formatted string' do
-      expect(phys_desc).to eq 'Extent: 153; 225 x 165 mm bound to 241 x 172 mm; parchment'
+    it 'includes a formatted string' do
+      expect(phys_desc).to eq ['Extent: 153; 225 x 165 mm bound to 241 x 172 mm; parchment']
     end
 
     context 'when extent is blank' do
@@ -514,7 +521,7 @@ RSpec.describe 'DS::OPennTEI' do
       }
 
       it 'returns the formatted extent' do
-        expect(phys_desc).to eq 'Parchment'
+        expect(phys_desc).to eq ['Parchment']
       end
     end
 
@@ -542,7 +549,7 @@ RSpec.describe 'DS::OPennTEI' do
       }
 
       it 'returns the extent' do
-        expect(phys_desc).to eq 'Extent: 153; 225 x 165 mm bound to 241 x 172 mm'
+        expect(phys_desc).to eq ['Extent: 153; 225 x 165 mm bound to 241 x 172 mm']
       end
     end
 
@@ -569,7 +576,7 @@ RSpec.describe 'DS::OPennTEI' do
       }
 
       it 'returns blank' do
-        expect(phys_desc).to eq ''
+        expect(phys_desc).to eq ['']
       end
     end
 
@@ -577,7 +584,7 @@ RSpec.describe 'DS::OPennTEI' do
       let(:material) { DS::TeiXml.extract_material_as_recorded tei_xml }
 
       it 'returns the support material' do
-        expect(material).to eq ['Parchment']
+        expect(material).to eq 'Parchment'
       end
     end
   end
@@ -668,7 +675,7 @@ RSpec.describe 'DS::OPennTEI' do
     }
 
     context 'extract_production_place' do
-      let(:place) { DS::TeiXml.extract_production_place tei_xml }
+      let(:place) { DS::TeiXml.extract_production_places_as_recorded tei_xml }
 
       it 'extracts the place of production' do
         expect(place).to eq ['Flanders']
@@ -676,7 +683,7 @@ RSpec.describe 'DS::OPennTEI' do
     end
 
     context 'extract_production_date' do
-      let(:date) { DS::TeiXml.extract_production_date tei_xml, range_sep: '-' }
+      let(:date) { DS::TeiXml.extract_production_date_as_recorded tei_xml }
 
       it 'extracts the date of production' do
         expect(date).to eq '1450-1475'

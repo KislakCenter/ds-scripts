@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-RSpec.shared_examples "a recon extractor" do
+RSpec.shared_examples "a recon extractor" do |options|
 
   it 'responds to extract_places' do
     expect(described_class).to respond_to :extract_places
@@ -33,8 +33,10 @@ RSpec.shared_examples "a recon extractor" do
     expect(described_class).to respond_to :extract_subjects
   end
 
-  it 'responds to extract_named_subjects' do
-    expect(described_class).to respond_to :extract_named_subjects
+  unless skip_example? options, :named_subjects
+    it 'responds to extract_named_subjects' do
+      expect(described_class).to respond_to :extract_named_subjects
+    end
   end
 
   it 'responds to extract_titles' do

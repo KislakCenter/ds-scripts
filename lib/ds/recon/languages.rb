@@ -105,7 +105,7 @@ module Recon
       data = []
       # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
       process_xml files,remove_namespaces: true do |xml|
-        as_recorded = DS::TeiXml.extract_language_as_recorded xml
+        as_recorded = DS::TeiXml.extract_languages_as_recorded xml
         codes       = DS::TeiXml.extract_language_codes xml, separator: separator
         data << [as_recorded,codes]
       end

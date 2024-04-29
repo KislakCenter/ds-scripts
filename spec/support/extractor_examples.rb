@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.shared_examples "an extractor" do
+
+RSpec.shared_examples "an extractor" do |options|
 
   context 'composite values' do
     context 'extract_titles' do
@@ -83,13 +84,15 @@ RSpec.shared_examples "an extractor" do
       end
     end
 
-    context 'extract_named_subjects' do
-      let(:extraction_method) { :extract_named_subjects }
-      let(:composite_type) { DS::Extractor::Subject }
-      it 'returns an array of Subject objects' do
-        expect(
-          described_class.send extraction_method, record
-        ).to include an_instance_of composite_type
+    unless skip_example? options, :named_subjects
+      context 'extract_named_subjects' do
+        let(:extraction_method) { :extract_named_subjects }
+        let(:composite_type) { DS::Extractor::Subject }
+        it 'returns an array of Subject objects' do
+          expect(
+            described_class.send extraction_method, record
+          ).to include an_instance_of composite_type
+        end
       end
     end
 
@@ -104,16 +107,18 @@ RSpec.shared_examples "an extractor" do
     end
   end
 
-  context 'extract_cataloging_convention' do
-    let(:extract_method) { :extract_cataloging_convention }
-    let(:return_type) { String }
+  unless skip_example? options, :cataloging_convention
+    context 'extract_cataloging_convention' do
+      let(:extract_method) { :extract_cataloging_convention }
+      let(:return_type) { String }
 
-    it 'responds to the method' do
-      expect(described_class).to respond_to extract_method
-    end
+      it 'responds to the method' do
+        expect(described_class).to respond_to extract_method
+      end
 
-    it 'returns the expected type' do
-      expect(described_class.send extract_method, record).to be_a return_type
+      it 'returns the expected type' do
+        expect(described_class.send extract_method, record).to be_a return_type
+      end
     end
   end
 
@@ -143,29 +148,31 @@ RSpec.shared_examples "an extractor" do
     end
   end
 
-  context 'extract_uniform_titles_as_recorded' do
-    let(:extract_method) { :extract_uniform_titles_as_recorded }
-    let(:return_type) { Array }
+  unless skip_example? options, :uniform_titles
+    context 'extract_uniform_titles_as_recorded' do
+      let(:extract_method) { :extract_uniform_titles_as_recorded }
+      let(:return_type) { Array }
 
-    it 'responds to the method' do
-      expect(described_class).to respond_to extract_method
+      it 'responds to the method' do
+        expect(described_class).to respond_to extract_method
+      end
+
+      it 'returns the expected type' do
+        expect(described_class.send extract_method, record).to be_a return_type
+      end
     end
 
-    it 'returns the expected type' do
-      expect(described_class.send extract_method, record).to be_a return_type
-    end
-  end
+    context 'extract_uniform_titles_as_recorded_agr' do
+      let(:extract_method) { :extract_uniform_titles_as_recorded_agr }
+      let(:return_type) { Array }
 
-  context 'extract_uniform_titles_as_recorded_agr' do
-    let(:extract_method) { :extract_uniform_titles_as_recorded_agr }
-    let(:return_type) { Array }
+      it 'responds to the method' do
+        expect(described_class).to respond_to extract_method
+      end
 
-    it 'responds to the method' do
-      expect(described_class).to respond_to extract_method
-    end
-
-    it 'returns the expected type' do
-      expect(described_class.send extract_method, record).to be_a return_type
+      it 'returns the expected type' do
+        expect(described_class.send extract_method, record).to be_a return_type
+      end
     end
   end
 
@@ -325,7 +332,7 @@ RSpec.shared_examples "an extractor" do
     end
   end
 
-  context 'extract_former_owner_as_recorded' do
+  context 'extract_former_owners_as_recorded' do
     let(:extract_method) { :extract_former_owners_as_recorded }
     let(:return_type) { Array }
 
@@ -338,7 +345,7 @@ RSpec.shared_examples "an extractor" do
     end
   end
 
-  context 'extract_former_owner_as_recorded_agr' do
+  context 'extract_former_owners_as_recorded_agr' do
     let(:extract_method) { :extract_former_owners_as_recorded_agr }
     let(:return_type) { Array }
 
@@ -403,16 +410,18 @@ RSpec.shared_examples "an extractor" do
     end
   end
 
-  context 'extract_named_subjects_as_recorded' do
-    let(:extract_method) { :extract_named_subjects_as_recorded }
-    let(:return_type) { Array }
+  unless skip_example? options, :named_subjects
+    context 'extract_named_subjects_as_recorded', named_subjects: true do
+      let(:extract_method) { :extract_named_subjects_as_recorded }
+      let(:return_type) { Array }
 
-    it 'responds to the method' do
-      expect(described_class).to respond_to extract_method
-    end
+      it 'responds to the method' do
+        expect(described_class).to respond_to extract_method
+      end
 
-    it 'returns the expected type' do
-      expect(described_class.send extract_method, record).to be_a return_type
+      it 'returns the expected type' do
+        expect(described_class.send extract_method, record).to be_a return_type
+      end
     end
   end
 
@@ -478,23 +487,6 @@ RSpec.shared_examples "an extractor" do
 
     it 'returns the expected type' do
       expect(described_class.send extract_method, record).to be_a return_type
-    end
-  end
-
-  context 'extract_date_source_modified' do
-    let(:extract_method) { :extract_date_source_modified }
-    let(:return_type) { String }
-
-    it 'responds to the method' do
-      expect(described_class).to respond_to extract_method
-    end
-
-    it 'returns the expected type' do
-      expect(described_class.send extract_method, record).to be_a return_type
-    end
-
-    it 'is in YYYY-MM-DD format' do
-      expect(described_class.send extract_method, record).to match /^\d{4}-\d{2}-\d{2}$/
     end
   end
 

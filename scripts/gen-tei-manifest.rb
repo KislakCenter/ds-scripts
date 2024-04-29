@@ -52,7 +52,7 @@ CSV headers: true do |csv|
     call_number                          = DS::TeiXml.extract_shelfmark xml
     link_to_institutional_record         = sprintf URL_FORMAT, base
     record_last_updated                  = last_modified_date base
-    title                                = (DS::TeiXml.extract_title_as_recorded(xml) || []).first
+    title                                = (DS::TeiXml.extract_titles_as_recorded(xml) || []).first
     iiif_manifest_url                    = nil
     manifest_generated_at                = Time.now.strftime '%Y-%m-%dT%H:%M:%S%z'
 

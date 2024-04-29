@@ -317,10 +317,6 @@ module DS
         }
       end
 
-      def extract_date_source_modified record
-        extract_values_for(:date_source_modified, record).first
-      end
-
       def extract_acknowledgments record
         extract_values_for :acknowledgments, record
       end

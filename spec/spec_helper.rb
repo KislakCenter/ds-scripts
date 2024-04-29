@@ -397,6 +397,15 @@ module Helpers
 
 end
 
+#####################################################################
+# Top-level methods
+#####################################################################
+def skip_example? options, *symbols
+  return unless options.present?
+  return unless options[:except].present?
+  symbols.any? { |sym| options[:except].include? sym }
+end
+
 RSpec.configure do |c|
   c.fail_if_no_examples = true
   DS.env = 'test'

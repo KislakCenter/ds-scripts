@@ -71,7 +71,6 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
         extract_material_as_recorded
         extract_physical_description
         extract_notes
-        extract_date_source_modified
       }
   }
 

@@ -967,12 +967,6 @@ module DS
       def parse_008 date_string, range_sep: '-'
         date_string.scan(/\d{4}/).map(&:to_i).join range_sep
       end
-
-      def extract_date_source_modified record
-        record_date = record.xpath("controlfield[@tag=005]").text[0..7]
-        return nil if record_date.empty?
-        "#{record_date[0..3]}-#{record_date[4..5]}-#{record_date[6..7]}"
-      end
     end
 
     self.extend ClassMethods

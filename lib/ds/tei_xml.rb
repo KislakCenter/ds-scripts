@@ -19,6 +19,7 @@ module DS
 
     module ClassMethods
 
+
       ############################################################
       # NAMES
       ############################################################
@@ -35,7 +36,7 @@ module DS
 
       def extract_authors xml
         names = []
-        xml.xpath('//msContents/msItem/author').each do |node|
+        xml.xpath('//msContents/msItem/author').map do |node|
           next if node.text =~ /Free Library of Philadelphia/
 
           name_node   = node.at_xpath('(name|persName)[not(@type = "vernacular")]')
@@ -54,7 +55,7 @@ module DS
             role:        role,
             vernacular:  vernacular
           }
-          names << Name.new(**params)
+          names << DS::Extractor::Name.new(**params)
         end
         names
       end
@@ -63,7 +64,7 @@ module DS
         extract_authors(xml).map(&:as_recorded)
       end
 
-      def extract_authors_agr xml
+      def extract_authors_as_recorded_agr xml
         extract_authors(xml).map(&:vernacular)
       end
 
@@ -118,7 +119,7 @@ module DS
             role:        resp.downcase.strip,
             vernacular:  vernacular
           }
-          Name.new **params
+          DS::Extractor::Name.new **params
         }
       end
 
@@ -152,27 +153,39 @@ module DS
       end
 
       def extract_artists_as_recorded xml
-        extract_resps(xml, RESP_ARTIST).map(&:as_recorded)
+        extract_artists(xml).map(&:as_recorded)
       end
 
-      def extract_artists_agr xml
-        extract_resps(xml, RESP_ARTIST).map(&:vernacular)
+      def extract_artists_as_recorded_agr xml
+        extract_artists(xml).map(&:vernacular)
+      end
+
+      def extract_artists xml
+        extract_resps(xml, RESP_ARTIST)
       end
 
       def extract_scribes_as_recorded xml
-        extract_resps(xml, RESP_SCRIBE).map(&:as_recorded)
+        extract_scribes(xml).map &:as_recorded
       end
 
-      def extract_scribes_agr xml
-        extract_resps(xml, RESP_SCRIBE).map(&:vernacular)
+      def extract_scribes_as_recorded_agr xml
+        extract_scribes(xml).map &:vernacular
+      end
+
+      def extract_scribes xml
+        extract_resps(xml, RESP_SCRIBE)
       end
 
       def extract_former_owners_as_recorded xml
-        extract_resps(xml, RESP_FORMER_OWNER).map(&:as_recorded)
+        extract_former_owners(xml).map &:as_recorded
       end
 
-      def extract_former_owners_agr xml
-        extract_resps(xml, RESP_FORMER_OWNER).map(&:vernacular)
+      def extract_former_owners_as_recorded_agr xml
+        extract_former_owners(xml).map &:vernacular
+      end
+
+      def extract_former_owners xml
+        extract_resps(xml, RESP_FORMER_OWNER)
       end
 
       #########################################################################
@@ -180,18 +193,27 @@ module DS
       #########################################################################
 
       def extract_material_as_recorded record
+        # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
+        # extract_normalized_strings(record, xpath).first
+        extract_materials(record).map(&:as_recorded).first
+      end
+
+      def extract_materials record
         xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
-        extract_normalized_strings(record, xpath)
+        extract_normalized_strings(record, xpath).map { |material|
+          DS::Extractor::Material.new as_recorded: material
+        }
       end
 
 
-      def extract_language_as_recorded xml, separator: '|'
-        xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-        as_recorded = extract_normalized_strings(xml, xpath).first
-        if as_recorded.blank?
-          as_recorded = DS::TeiXml.extract_language_codes xml, separator: separator
-        end
-        as_recorded
+      def extract_languages_as_recorded xml, separator: '|'
+        extract_languages(xml).map &:as_recorded
+        # xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
+        # as_recorded = extract_normalized_strings(xml, xpath).first
+        # if as_recorded.blank?
+        #   as_recorded = DS::TeiXml.extract_language_codes xml, separator: separator
+        # end
+        # as_recorded
       end
 
       ##
@@ -201,8 +223,23 @@ module DS
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [String]
       def extract_language_codes xml, separator: '|'
-        xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@mainLang | /TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/@otherLangs'
-        xml.xpath(xpath).flat_map { |lang| lang.value.split.reject(&:empty?) }.join separator
+        extract_languages(xml).map &:codes
+      end
+
+      def extract_languages record
+        xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang'
+        record.xpath(xpath).map { |text_lang|
+          codes = Set.new
+          codes << text_lang['mainLang']
+          codes += text_lang['otherLang'].to_s.split
+          if text_lang.text.present?
+            as_recorded = text_lang.text
+          else
+            as_recorded = codes.join '|'
+          end
+
+          DS::Extractor::Language.new as_recorded: as_recorded, codes: codes
+        }
       end
 
       #########################################################################
@@ -230,23 +267,46 @@ module DS
         end
       end
 
-      def extract_genre_as_recorded xml
-        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term/text()'
-        extract_normalized_strings xml, xpath
+      def extract_genres_as_recorded xml
+        extract_genres(xml).map &:as_recorded
       end
 
-      def extract_subject_as_recorded xml
-        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()'
-        extract_normalized_strings xml, xpath
+      def extract_genres xml
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term/text()'
+        extract_normalized_strings(xml, xpath).map { |term|
+          DS::Extractor::Genre.new as_recorded: term
+        }
       end
+
+      def extract_subjects_as_recorded xml
+        extract_subjects(xml).map &:as_recorded
+      end
+
+      def extract_all_subjects_as_recorded xml
+        extract_subjects_as_recorded xml
+      end
+
+      def extract_subjects xml
+        xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()'
+        extract_normalized_strings(xml, xpath).map { |term|
+          DS::Extractor::Subject.new as_recorded: term
+        }
+      end
+
 
       #########################################################################
       # Place of production
       #########################################################################
 
-      def extract_production_place record
-        xpath = '//origPlace/text()'
-        extract_normalized_strings(record, xpath)
+      def extract_production_places_as_recorded record
+        extract_places(record).map &:as_recorded
+      end
+
+      def extract_places record
+        xpath = '//origPlace'
+        extract_normalized_strings(record, xpath).map { |place|
+          DS::Extractor::Place.new as_recorded: place
+        }
       end
 
       ##
@@ -269,10 +329,14 @@ module DS
       #########################################################################
       # Date of production
       #########################################################################
-      def extract_production_date xml, range_sep: '-'
-        xml.xpath('//origDate').map { |orig|
+      def extract_production_date_as_recorded xml, range_sep: '-'
+        extract_date_range(xml).join '-'
+      end
+
+      def extract_date_range record, range_sep: '-'
+        record.xpath('//origDate').map { |orig|
           orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
-        }.reject(&:empty?).join '|'
+        }.reject(&:empty?)
       end
 
       #########################################################################
@@ -318,7 +382,7 @@ module DS
         titles = []
         record.xpath('//msItem[1]/title').each do |title|
           if title[:type] != 'vernacular'
-            titles << Title.new(
+            titles << DS::Extractor::Title.new(
               as_recorded: DS::Util.normalize_string(title.text)
             )
           else
@@ -328,18 +392,17 @@ module DS
         titles
       end
 
-      def extract_title_as_recorded record
+      def extract_titles_as_recorded record
         extract_titles(record).map { |t| t.as_recorded }
       end
 
-      def extract_title_as_recorded_agr record
+      def extract_titles_as_recorded_agr record
         extract_titles(record).map { |t| t.vernacular }
       end
 
       def extract_recon_titles xml
         extract_titles(xml).map { |t| t.to_a }
       end
-
 
       #########################################################################
       # Physical description
@@ -356,7 +419,8 @@ module DS
         xpath   = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p/text()'
         support = extract_normalized_strings(xml, xpath).first
 
-        [extent, support].reject(&:blank?).join('; ').capitalize
+        desc = [extent, support].reject(&:blank?).join('; ').capitalize
+        [desc]
       end
 
       #########################################################################
@@ -379,7 +443,7 @@ module DS
       #
       # @param [Nokogiri::XML::Node] xml the TEI xml
       # @return [Array<String>]
-      def extract_note xml
+      def extract_notes xml
         notes = []
 
         notes += build_notes xml, SIMPLE_NOTE_XPATH
@@ -456,12 +520,6 @@ module DS
       #########################################################################
       def extract_normalized_strings record, xpath
         record.xpath(xpath).map { |node| DS::Util.normalize_string node.text }
-      end
-
-      def source_modified xml
-        record_date = xml.xpath('/TEI/teiHeader/fileDesc/publicationStmt/date/@when').text
-        return nil if record_date.blank?
-        record_date
       end
     end
 

@@ -68,7 +68,7 @@ module DS
         physical_description               = DS::DsCsv.extract_physical_description(record).join '|'
         note                               = DS::DsCsv.extract_notes(record).join '|'
         data_processed_at                  = timestamp
-        data_source_modified               = DS::DsCsv.extract_date_source_modified record
+        data_source_modified               = entry.record_last_updated
         acknowledgments                    = DS::DsCsv.extract_acknowledgments(record).join '|'
 
         {

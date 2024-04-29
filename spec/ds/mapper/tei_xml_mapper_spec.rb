@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe DS::Mapper::OPennTEIMapper do
+RSpec.describe DS::Mapper::TeiXmlMapper do
 
   let(:xml_dir) { fixture_path 'tei_xml' }
   let(:xml_file) { File.join xml_dir, 'lewis_o_031_TEI.xml' }
@@ -19,42 +19,42 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
   let(:entry) { DS::Manifest::Entry.new manifest.csv.first, manifest}
 
   let(:mapper) {
-    DS::Mapper::OPennTEIMapper.new(
+    DS::Mapper::TeiXmlMapper.new(
       source_dir: xml_dir, timestamp: timestamp
     )
   }
 
-  let(:ds_openn_tei_calls) {
+  let(:extractor_calls) {
     %i{
-          extract_production_date
-          extract_production_place
-          extract_title_as_recorded
-          extract_title_as_recorded_agr
-          extract_genre_as_recorded
-          extract_subject_as_recorded
+          extract_production_date_as_recorded
+          extract_production_places_as_recorded
+          extract_titles_as_recorded
+          extract_titles_as_recorded_agr
+          extract_genres_as_recorded
+          extract_subjects_as_recorded
           extract_authors_as_recorded
-          extract_authors_agr
+          extract_authors_as_recorded_agr
           extract_artists_as_recorded
-          extract_artists_agr
+          extract_artists_as_recorded_agr
           extract_scribes_as_recorded
-          extract_scribes_agr
-          extract_language_as_recorded
+          extract_scribes_as_recorded_agr
+          extract_languages_as_recorded
           extract_former_owners_as_recorded
-          extract_former_owners_agr
+          extract_former_owners_as_recorded_agr
           extract_material_as_recorded
           extract_acknowledgments
           extract_physical_description
-          extract_note
+          extract_notes
       }
   }
 
   context 'initialize' do
-    it 'creates a DS::Mapper::OPennTEIMapper' do
+    it 'creates a DS::Mapper::TeiXmlMapper' do
       expect(
-        DS::Mapper::OPennTEIMapper.new(
+        DS::Mapper::TeiXmlMapper.new(
           source_dir: xml_dir, timestamp: timestamp
         )
-      ).to be_a DS::Mapper::OPennTEIMapper
+      ).to be_a DS::Mapper::TeiXmlMapper
     end
   end
 
@@ -66,7 +66,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'implements #map_record' do
       # don't run the mapping
-      add_stubs DS::TeiXml, ds_openn_tei_calls, []
+      add_stubs DS::TeiXml, extractor_calls, []
       expect { mapper.map_record entry }.not_to raise_error
     end
 
@@ -107,7 +107,7 @@ RSpec.describe DS::Mapper::OPennTEIMapper do
 
     it 'calls all expected openn_tei methods' do
       add_stubs recons, :lookup, []
-      add_expects objects: DS::TeiXml, methods: ds_openn_tei_calls, return_val: []
+      add_expects objects: DS::TeiXml, methods: extractor_calls, return_val: []
 
       mapper.map_record entry
     end

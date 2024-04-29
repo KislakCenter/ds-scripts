@@ -43,7 +43,6 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         extract_physical_description
         extract_material_as_recorded
         extract_notes
-        extract_date_source_modified
       }
   }
 
@@ -155,8 +154,8 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         material_label:                     "parchment;paper",
         physical_description:               "Extent: 1 folio; materials description; 310 x 190 mm bound to 320 x 200 mm",
         note:                               "Layout: 1 column, 24 lines|Script: Carolingian|Decoration: Illuminated manuscript|Binding: Bound in vellum|Other miscellaneous physical description|Provenance: Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017|The first note|The second note",
-        data_processed_at:                  be_a_kind_of(Time),
-        data_source_modified:               "2024-03-01",
+        data_processed_at:                  be_a_date_time_string,
+        data_source_modified:               be_a_date_time_string,
         source_file:                        "ucriverside-dscsv.csv",
         acknowledgments:                    "Imad Bayoun and Ahmad AlKurdy helped to identify and describe this manuscript"
       }

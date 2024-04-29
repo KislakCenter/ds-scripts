@@ -367,15 +367,6 @@ describe DS::DsCsv do
     end
   end
 
-  context "extract_date_source_modified" do
-
-    it "returns the date the data source was modified" do
-      expect(
-        DS::DsCsv.extract_date_source_modified record
-      ).to eq "2024-03-01"
-    end
-  end
-
   context "extract_recon_places" do
     it "returns the recon place data" do
       expect(

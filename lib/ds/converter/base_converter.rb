@@ -94,7 +94,7 @@ module DS
             manifest_entry: entry, record: record, timestamp: tstamp
           )
         when DS::TEI_XML
-          DS::Mapper::Constants::OPennTEIMapper.new(
+          DS::Mapper::Constants::TeiXmlMapper.new(
             manifest_entry: entry, record: record, timestamp: tstamp
           )
         else

@@ -89,7 +89,7 @@ module DS
         physical_description               = DS::MarcXml.extract_physical_description(record).join('|')
         note                               = DS::MarcXml.extract_notes(record).join '|'
         data_processed_at                  = timestamp
-        data_source_modified               = DS::MarcXml.extract_date_source_modified record
+        data_source_modified               = entry.record_last_updated
 
         {
           ds_id:                              ds_id,
