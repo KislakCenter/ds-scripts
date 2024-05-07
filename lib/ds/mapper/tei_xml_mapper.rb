@@ -43,7 +43,7 @@ module DS
         genre_vocabulary                   = genre_as_recorded.split('|').size.times.map { 'openn-form/genre'}.join '|'  # add openn-form/genre for each genre AR
         genre                              = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value'
         genre_label                        = Recon::Genres.lookup genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label'
-        subject_as_recorded                = DS::TeiXml.extract_subjects_as_recorded(record).join '|'
+        subject_as_recorded                = DS::TeiXml.extract_all_subjects_as_recorded(record).join '|'
         subject                            = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'structured_value'
         subject_label                      = Recon::AllSubjects.lookup subject_as_recorded.split('|'), from_column: 'authorized_label'
         author_as_recorded                 = DS::TeiXml.extract_authors_as_recorded(record).join '|'

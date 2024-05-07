@@ -43,6 +43,19 @@ describe DS::DsMetsXml do
     ]
   }
 
+  let(:record) { na_ds_xml }
+
+  context "extractor interface" do
+    skips = {
+      skip_named_subjects: true,
+      skip_cataloging_convention: true,
+      skip_uniform_titles: true,
+      skip_genres: true
+    }
+    it_behaves_like "a recon extractor", skips
+    it_behaves_like "an extractor", skips
+  end
+
   context "notes" do
     context 'extract_ms_note' do
       it 'formats an untyped ms note' do
@@ -76,37 +89,36 @@ describe DS::DsMetsXml do
       it 'formats an explicit' do
         expect(DS::DsMetsXml.extract_text_note na_ds_xml).to include 'Explicit, One leaf: Text abstract'
       end
-
     end
 
     context 'extract_name' do
       it 'returns "" when there are no scribes' do
         # expect(DS::DS10.extract_name csl_ds_xml, *%w{ scribe [scribe] }).to be_empty
-        expect(DS::DsMetsXml.extract_scribe csl_ds_xml).to be_empty
+        expect(DS::DsMetsXml.extract_scribes_as_recorded csl_ds_xml).to be_empty
       end
 
       it 'returns the scribe names' do
         # actual = DS::DS10.extract_name ds_names_xml, *%w{ scribe [scribe] }
-        actual = DS::DsMetsXml.extract_scribe ds_names_xml
+        actual = DS::DsMetsXml.extract_scribes_as_recorded ds_names_xml
         expect(actual.sort).to eq ['Bracketed scribe', 'Part 1 scribe','Part 2 scribe']
       end
 
       it 'returns the artist names' do
         # actual = DS::DS10.extract_name ds_names_xml, *%w{ artist [artist] illuminator }
-        actual = DS::DsMetsXml.extract_artist ds_names_xml
+        actual = DS::DsMetsXml.extract_artists_as_recorded ds_names_xml
         expect(actual.sort).to eq ['Illuminator artist', 'Part 1 artist', 'Part 2 artist']
       end
 
       it 'returns the author names' do
         # actual = DS::DS10.extract_name ds_names_xml, *%w{ author [author] }
-        actual = DS::DsMetsXml.extract_author ds_names_xml
+        actual = DS::DsMetsXml.extract_authors_as_recorded ds_names_xml
         expect(actual.sort).to eq ['Bracketed author','Corporate author', 'Personal author 1', 'Personal author 2']
       end
     end
 
     context 'extract_other_name'do
       it  'returns names with role "other"' do
-        actual  = DS::DsMetsXml.extract_other_name ds_names_xml
+        actual  = DS::DsMetsXml.extract_other_names_as_recorded ds_names_xml
         expect(actual.sort).to eq [ 'Other 1', 'Other 2', 'Other 3' ]
       end
     end
@@ -137,19 +149,19 @@ describe DS::DsMetsXml do
 
     context 'extract_note' do
       it 'formats all the notes' do
-        notes = DS::DsMetsXml.extract_note na_ds_xml
+        notes = DS::DsMetsXml.extract_notes na_ds_xml
         all_notes.each do |note|
           expect(notes).to include note
         end
       end
 
       it 'does not include "lang:" notes' do
-        notes = DS::DsMetsXml.extract_note na_ds_xml
+        notes = DS::DsMetsXml.extract_notes na_ds_xml
          expect(notes.grep /lang: Latin/i).to be_empty
       end
 
       it 'includes any dockets' do
-        notes = DS::DsMetsXml.extract_note ds_docket_xml
+        notes = DS::DsMetsXml.extract_notes ds_docket_xml
         expect(notes.grep(/^Docket/).size).to eq 2
       end
     end
@@ -204,26 +216,26 @@ describe DS::DsMetsXml do
 
     context 'extract_acknowledgements' do
       it 'formats an ms acknowledgement' do
-        expect(DS::DsMetsXml.extract_acknowledgements na_ds_xml).to have_item_matching /^MS acknowledgement/
+        expect(DS::DsMetsXml.extract_acknowledgments na_ds_xml).to have_item_matching /^MS acknowledgement/
       end
 
       it 'formats a part acknowledgement' do
-        expect(DS::DsMetsXml.extract_acknowledgements na_ds_xml).to have_item_matching /^One leaf: Part acknowledgement/
+        expect(DS::DsMetsXml.extract_acknowledgments na_ds_xml).to have_item_matching /^One leaf: Part acknowledgement/
       end
 
       it 'formats a text acknowledgement' do
-        expect(DS::DsMetsXml.extract_acknowledgements na_ds_xml).to have_item_matching /^One leaf: Text acknowledgement/
+        expect(DS::DsMetsXml.extract_acknowledgments na_ds_xml).to have_item_matching /^One leaf: Text acknowledgement/
       end
 
       it 'formats a page acknowledgement' do
-        expect(DS::DsMetsXml.extract_acknowledgements na_ds_xml).to have_item_matching /^f. 1r: Page acknowledgement/
+        expect(DS::DsMetsXml.extract_acknowledgments na_ds_xml).to have_item_matching /^f. 1r: Page acknowledgement/
       end
     end
   end # context: physical description
 
-  context 'extract_ownership' do
+  context 'extract_former_owners_as_recorded' do
     it 'flags a long ownership note' do
-      expect(DS::DsMetsXml.extract_ownership na_ds_xml).to have_item_matching /^SPLIT.*Long ownership/
+      expect(DS::DsMetsXml.extract_former_owners_as_recorded na_ds_xml).to have_item_matching /^SPLIT.*Long ownership/
     end
   end
 end

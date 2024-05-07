@@ -64,6 +64,11 @@
                 <persName type="vernacular">A scribe vernacular</persName>
               </respStmt>
               <respStmt>
+                <resp>artist</resp>
+                <persName type="authority">An artist</persName>
+                <persName type="vernacular">An artist vernacular</persName>
+              </respStmt>
+              <respStmt>
                 <resp>former owner</resp>
                 <persName type="authority">Lewis, John Frederick, 1860-1932</persName>
               </respStmt>

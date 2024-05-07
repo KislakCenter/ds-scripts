@@ -406,6 +406,12 @@ def skip_example? options, *symbols
   symbols.any? { |sym| options[:except].include? sym }
 end
 
+def skip? options, *types
+  return unless options.present?
+  return unless types.present?
+  types.any? { |type| options[type] }
+end
+
 RSpec.configure do |c|
   c.fail_if_no_examples = true
   DS.env = 'test'
@@ -418,3 +424,5 @@ end
 require_relative './expections'
 require_relative 'support/extractor_examples'
 require_relative 'support/recon_extractor_examples'
+require_relative 'support/extractor_with_agr_examples'
+require_relative 'support/extractor_mapper_examples'

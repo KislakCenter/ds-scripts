@@ -31,12 +31,14 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
 
   let(:timestamp) { Time.now }
 
-  let(:marc_mapper) {
+  let(:mapper) {
     DS::Mapper::MarcMapper.new(
       source_dir: marc_xml_dir,
       timestamp: timestamp
     )
   }
+
+  let(:extractor) { DS::MarcXml }
 
   let(:recon_classes) {
     [
@@ -46,58 +48,23 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
     ]
   }
 
-  let(:marc_xml_methods) {
-    %i{
-        extract_cataloging_convention
-        extract_production_date_as_recorded
-        extract_date_range
-        extract_production_places_as_recorded
-        extract_uniform_titles_as_recorded
-        extract_uniform_titles_as_recorded_agr
-        extract_titles_as_recorded
-        extract_titles_as_recorded_agr
-        extract_genres_as_recorded
-        extract_genre_vocabulary
-        extract_all_subjects_as_recorded
-        extract_authors_as_recorded
-        extract_authors_as_recorded_agr
-        extract_artists_as_recorded
-        extract_artists_as_recorded_agr
-        extract_scribes_as_recorded
-        extract_scribes_as_recorded_agr
-        extract_languages_as_recorded
-        extract_former_owners_as_recorded
-        extract_former_owners_as_recorded_agr
-        extract_material_as_recorded
-        extract_physical_description
-        extract_notes
-      }
-  }
+  context 'mapper implementation' do
+    except = %i[extract_acknowledgments]
+    it_behaves_like 'an extractor mapper', except
+  end
 
   context 'extract_record' do
 
     it 'returns an XML node' do
-      expect(marc_mapper.extract_record entry).to be_a Nokogiri::XML::Element
+      expect(mapper.extract_record entry).to be_a Nokogiri::XML::Element
     end
 
     let(:institutional_id) { entry.institutional_id }
     let(:xpath) { entry.institutional_id_location_in_source }
-    let(:record) { marc_mapper.extract_record entry }
+    let(:record) { mapper.extract_record entry }
 
     it 'returns the expected record' do
       expect(record.at_xpath(xpath).text).to eq entry.institutional_id
-    end
-  end
-
-  context 'DS::Mapper::BaseMapper implementation' do
-    it 'implements #extract_record(entry)' do
-      expect {
-        marc_mapper.extract_record entry
-      }.not_to raise_error
-    end
-
-    it 'is a kind of BaseMapper' do
-      expect(marc_mapper).to be_a_kind_of DS::Mapper::BaseMapper
     end
   end
 
@@ -112,20 +79,4 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
     end
   end
 
-  context 'map_record' do
-
-    it 'returns a hash' do
-      add_stubs recon_classes, :lookup, []
-
-      expect(marc_mapper.map_record entry).to be_a Hash
-    end
-
-    it 'calls all the MarcXml methods' do
-      add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::MarcXml, methods: marc_xml_methods, return_val: []
-
-      marc_mapper.map_record entry
-    end
-
-  end
 end

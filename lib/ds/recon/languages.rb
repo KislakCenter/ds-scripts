@@ -92,7 +92,7 @@ module Recon
     def self.from_mets files, separator: '|'
       data = []
       process_xml files do |xml|
-        DS::DsMetsXml.extract_language(xml, separator: separator).split(separator).each do |lang|
+        DS::DsMetsXml.extract_languages_as_recorded(xml, separator: separator).split(separator).each do |lang|
           data << [DS::Util.terminate(lang, terminator: ''), nil]
         end
       end

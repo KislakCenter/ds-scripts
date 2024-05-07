@@ -271,6 +271,11 @@
   <marc:subfield code="d">1919-2001,</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>
 </marc:datafield>
+    <marc:datafield ind1="1" ind2=" " tag="700">
+  <marc:subfield code="a">An Artist</marc:subfield>
+  <marc:subfield code="d">1919-2001,</marc:subfield>
+  <marc:subfield code="e">artist.</marc:subfield>
+</marc:datafield>
     <marc:datafield ind1="2" ind2=" " tag="710">
   <marc:subfield code="a">Saint-Benoît-sur-Loire (Abbey),</marc:subfield>
   <marc:subfield code="e">former owner.</marc:subfield>

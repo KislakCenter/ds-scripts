@@ -183,7 +183,7 @@ RSpec.describe 'Recon::ReconBuilder' do
     end
 
     context "#recon_subjects" do
-      let(:method) { :recon_subjects }
+      let(:method) { :extract_recon_subjects }
       let(:recons) {
         [
           ["A chronological subject", nil, nil, nil, "", ""],

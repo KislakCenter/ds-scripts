@@ -111,7 +111,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         production_place:                   "http://vocab.getty.edu/tgn/paris_id",
         production_place_label:             "Paris",
         production_date_as_recorded:        "circa 18th-20th century",
-        extract_titles_as_recorded:         "Uniform title",
+        uniform_title_as_recorded:          "Uniform title",
         uniform_title_agr:                  "Uniform title in vernacular",
         title_as_recorded:                  "Title",
         title_as_recorded_agr:              "Title in vernacular",

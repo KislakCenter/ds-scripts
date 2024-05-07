@@ -13,9 +13,15 @@ RSpec.describe DS::TeiXml do
   }
 
   context "extractor interface" do
-    skips = %i{named_subjects cataloging_convention uniform_titles}
-    it_behaves_like "a recon extractor", except: skips
-    it_behaves_like "an extractor", except: skips
+    skips = {
+      skip_named_subjects: true,
+      skip_cataloging_convention: true,
+      skip_uniform_titles: true,
+      skip_other_names: true
+    }
+
+    it_behaves_like "a recon extractor", skips
+    it_behaves_like "an extractor", skips
   end
 
   context 'extract_note' do

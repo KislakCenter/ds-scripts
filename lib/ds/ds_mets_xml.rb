@@ -182,46 +182,70 @@ module DS
         }.join ', '
       end
 
-      def extract_support xml
-        find_parts(xml).flat_map { |part|
-          note_by_type part, 'support'
-        }.map { |s| s.downcase.chomp('.').strip }.uniq.join '|'
+      def extract_material_as_recorded record
+        extract_materials(record).map(&:as_recorded).join '|'
       end
 
-      def extract_ownership xml, lookup_split: true
+      def extract_materials record
+        find_parts(record).flat_map { |part|
+          physdesc_note part, 'support'
+        }.map { |s|
+          s.downcase.chomp('.').strip
+        }.uniq.map { |as_recorded|
+          DS::Extractor::Material.new as_recorded: as_recorded
+        }
+      end
+
+      def extract_former_owners_as_recorded xml, lookup_split: true
+        extract_former_owners(xml).map &:as_recorded
+      end
+
+      def extract_former_owners record
         xpath = "./descendant::mods:note[@type='ownership']/text()"
-        notes = clean_notes(xml.xpath(xpath).flat_map(&:text))
-        # unless notes.grep(/François-Nicolas/).empty?; require 'pry'; binding.pry; end
+        notes = clean_notes(record.xpath(xpath).flat_map(&:text))
         return notes if notes.all? { |n| n.to_s.size < 400 }
 
-        notes = if lookup_split
-                  notes.flat_map { |n|
-                    if n.to_s.size < 400
-                      n
-                    else
-                      Recon::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
-                    end
-                  }
-                end
-
-
-        clean_notes(notes).map { |n| DS.mark_long n }
+        notes.flat_map { |n|
+          if n.to_s.size < 400
+            n
+          else
+            Recon::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
+          end
+        }.map { |n|
+          DS::Extractor::Name.new as_recorded: DS.mark_long(n)
+        }
       end
 
-      def extract_author xml
-        DS::DsMetsXml.extract_name xml, *%w{ author [author] }
+      def extract_authors record
+        DS::DsMetsXml.extract_name record, *%w{ author [author] }
       end
 
-      def extract_artist xml
-        DS::DsMetsXml.extract_name xml, *%w{ artist [artist] illuminator }
+      def extract_authors_as_recorded record
+        extract_authors(record).map &:as_recorded
       end
 
-      def extract_scribe xml
-        DS::DsMetsXml.extract_name xml, *%w{ scribe [scribe] }
+      def extract_artists_as_recorded record
+        extract_artists(record).map &:as_recorded
       end
 
-      def extract_other_name xml
-        DS::DsMetsXml.extract_name(xml, 'other').flat_map { |n| n.split %r{\s*;\s*} }
+      def extract_artists record
+        DS::DsMetsXml.extract_name record, *%w{ artist [artist] illuminator }
+      end
+
+      def extract_scribes_as_recorded record
+        extract_scribes(record).map &:as_recorded
+      end
+
+      def extract_scribes record
+        DS::DsMetsXml.extract_name record, *%w{ scribe [scribe] }
+      end
+
+      def extract_other_names_as_recorded record
+        extract_other_names(record).map &:as_recorded
+      end
+
+      def extract_other_names record
+        DS::DsMetsXml.extract_name record, 'other'
       end
 
       ##
@@ -230,13 +254,19 @@ module DS
       # so, "Latin", rather than "Latin|Latin|Latin", etc.
       #
       # @return [String]
-      def extract_language xml, separator: '|'
+      def extract_languages_as_recorded record
+        extract_languages(record).map &:as_recorded
+      end
+
+      def extract_languages record
         # /mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:note
         # Can be Lang: or lang: or ???, so down case the text with translate()
         xpath = './descendant::mods:note[starts-with(translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), "lang:")]'
-        find_texts(xml).flat_map { |text|
+        find_texts(record).flat_map { |text|
           text.xpath(xpath).map{ |note| note.text.sub(%r{^lang:\s*}i, '') }
-        }.uniq.join separator
+        }.uniq.map { |as_recorded|
+          DS::Extractor::Language.new as_recorded: as_recorded
+        }
       end
 
       def extract_name node, *roles
@@ -246,25 +276,29 @@ module DS
         props = roles.map { |r| "#{translate} = '#{r}'"}.join ' or '
         xpath = "./descendant::mods:name[#{props}]"
         node.xpath(xpath).flat_map { |name |
-          name.xpath('mods:namePart').text.split ';'
-        }.map(&:strip).uniq
+          name.xpath('mods:namePart').text.split %r{\s*;\s*}
+        }.uniq.map { |as_recorded|
+          DS::Extractor::Name.new as_recorded: as_recorded
+        }
       end
 
-      def extract_title xml
+      def extract_titles_as_recorded record
+        extract_titles(record).map &:as_recorded
+      end
+
+      def extract_titles record
         xpath = 'mods:mods/mods:titleInfo/mods:title'
-        find_texts(xml).flat_map { |text|
+        find_texts(record).flat_map { |text|
           text.xpath(xpath).map(&:text)
-        }.reject { |t| t == '[Title not supplied]' }.join '|'
+        }.reject {
+          |t| t == '[Title not supplied]'
+        }.map { |as_recorded|
+          DS::Extractor::Title.new as_recorded: as_recorded
+        }
       end
 
-      def extract_production_place xml
-        parts = find_parts xml
-        xpath = 'mods:mods/mods:originInfo/mods:place/mods:placeTerm'
-        parts.map { |node|
-          node.xpath(xpath).map { |place|
-            place.text.split(%r{;;}).join ', '
-          }
-        }.uniq.join '|'
+      def extract_production_places_as_recorded xml
+        extract_places(xml).map &:as_recorded
       end
 
       ##
@@ -280,38 +314,19 @@ module DS
       # @param [Nokogiri::XML:Node] record a +<METS_XML>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places xml
-        parts = find_parts xml
-        xpath = 'mods:mods/mods:originInfo/mods:place/mods:placeTerm'
-        parts.map { |node|
-          node.xpath(xpath).map { |place|
-            place.text.split(%r{;;}).reject(&:empty?).join ', '
-          }
-        }.uniq.reject &:empty? # some parts have no placeTerm
+        extract_places(xml).map &:to_a
       end
 
       def extract_recon_titles xml
-        data = []
-        extract_title(xml).split('|').each do |title|
-          data << [title, '', '', '']
-        end
-        data
+        extract_titles(xml).to_a
       end
 
       def extract_recon_names xml
-        data = []
-        %w{author artist scribe [scribe] [author] illuminator other}.each do |role|
-          extract_name(xml, role).each do |name|
-            data << [name, role, '', '']
-          end
-        end
-
-        extract_other_name(xml).each do |name|
-          data << [name, 'other', '', '']
-        end
-
-        extract_ownership(xml).each do |name|
-          data << [name, 'former owner', '', '']
-        end
+        data = extract_authors(xml).map &:to_a
+        data += extract_artists(xml).map &:to_a
+        data += extract_scribes(xml).map &:to_a
+        data += extract_former_owners(xml).map &:to_a
+        data += extract_other_names(xml).map &:to_a
         data
       end
 
@@ -321,9 +336,8 @@ module DS
       # remove 'SPLIT: ' and return an array of arrays that can
       # be treated as rows by Recon::Splits
       def extract_recon_splits xml
-        # require 'pry'; binding.pry
         data = []
-        data += DS::DsMetsXml.extract_ownership xml, lookup_split: false
+        data += DS::DsMetsXml.extract_former_owners_as_recorded xml, lookup_split: false
         data.flatten.select { |d| d.to_s.size >= 400 }.map { |d| [d.strip] }
       end
 
@@ -345,7 +359,7 @@ module DS
       #
       #     [["Islamic law--Early works to 1800", ""],
       #       ["Malikites--Early works to 1800", ""],
-      #       ["Islamic law", ""],
+      #       ["Islamic law", ""],s
       #       ["Malikites", ""],
       #       ["Arabic language--Grammar--Early works to 1800", ""],
       #       ["Arabic language--Grammar", ""],
@@ -358,8 +372,8 @@ module DS
       #
       # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
       # @return [Array<String,String>] a two-dimenional array of subject and URI
-      def recon_subjects xml
-        extract_subjects(xml).map { |s| [s, '', '', ''] }
+      def extract_recon_subjects xml
+        extract_subjects(xml).map &:to_a
       end
 
       ##
@@ -368,7 +382,6 @@ module DS
       #
       #    <mods:originInfo>
       #      <mods:edition>Alexander, de Villa Dei.</mods:edition>
-      #      <mods:edition>Illumination of books and manuscripts, Medieval.</mods:edition>
       #      <mods:edition>Latin language--Grammar.</mods:edition>
       #      <mods:edition>Latin poetry, Medieval and modern.</mods:edition>
       #      <mods:edition>Manuscripts, Medieval--Connecticut--New Haven.</mods:edition>
@@ -376,12 +389,12 @@ module DS
       #
       # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
       # @return [Array<String>] an of subjects
-      def extract_subjects xml
-        xpath = '//mods:originInfo/mods:edition'
-        data = find_texts(xml).flat_map { |text|
-          text.xpath(xpath).map &:text
-        }
-        data
+      def extract_subjects_as_recorded xml
+        extract_subjects(xml).map(&:as_recorded)
+      end
+
+      def extract_all_subjects_as_recorded xml
+        extract_subjects_as_recorded xml
       end
 
       def extract_link_to_inst_record xml
@@ -407,7 +420,7 @@ module DS
       #
       # @param [Nokogiri::XML:Node] xml the parsed METS xml document
       # @return [String] the concatenated date values
-      def extract_date_as_recorded xml
+      def extract_production_date_as_recorded xml
         find_parts(xml).map { |part|
           date_created = extract_date_created part
           assigned     = extract_assigned_date part
@@ -496,7 +509,7 @@ module DS
         }.reject(&:empty?).join '|'
       end
 
-      def extract_acknowledgements xml
+      def extract_acknowledgments xml
         notes = []
         notes += find_ms(xml).flat_map { |ms| note_by_type ms, 'admin' }
 
@@ -659,7 +672,7 @@ module DS
       #
       # @param [Nokogiri::XML::Node] xml the document's xml
       # @return [Array<String>] the note values
-      def extract_note xml
+      def extract_notes xml
         notes = []
         # get all notes that don't have @type
         xpath = %q{//mods:note[not(@type)]/text()}
@@ -722,6 +735,34 @@ module DS
         }
       end
 
+      ###
+      # Recon extractor
+      ###
+
+      def extract_places record
+        parts = find_parts record
+        xpath = 'mods:mods/mods:originInfo/mods:place/mods:placeTerm'
+        parts.flat_map { |node|
+          node.xpath(xpath).map { |place|
+            DS::Extractor::Place.new as_recorded: place.text.split(%r{;;}).join(', ')
+          }
+        }
+      end
+
+      def extract_subjects record
+        xpath = '//mods:originInfo/mods:edition'
+        find_texts(record).flat_map { |text|
+          DS::Extractor::Subject.new as_recorded: text.xpath(xpath).map(&:text)
+        }
+      end
+
+      ###
+      # METS structMap extraction
+      #
+      # Extract mods:mods elements by catalog description level:
+      # manuscript, manuscript part, text, page, image
+      ###
+
       def find_ms xml
         # the manuscript is one div deep in the structMap
         # /mets:mets/mets:structMap/mets:div/@DMDID
@@ -774,25 +815,6 @@ module DS
       def source_modified
         "2021-10-01"
       end
-
-      # def find_iiif_manifest xml
-      #   holding_institution = extract_institution_name xml
-      #   shelfmark = extract_shelfmark xml
-      #   key = iiif_manifest_key holding_institution, shelfmark
-      #   iiif_manifests[key]
-      # end
-      #
-      # @@iiif_manifests = nil
-      # def iiif_manifests
-      #   return @@iiif_manifests if @@iiif_manifests
-      #   recon_repo = File.join DS.root, 'data', Settings.recon.git_local_name
-      #   csv_file = File.join recon_repo, Settings.recon.iiif_manifests
-      #
-      #   @@iiif_manifests = CSV.readlines(csv_file, headers: true).inject({}) { |h,row|
-      #     key = iiif_manifest_key row['holding_institution'], row['shelfmark']
-      #     h.merge(key => row['iiif_manifest_url'])
-      #   }
-      # end
 
       protected
 

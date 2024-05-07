@@ -48,7 +48,7 @@ CSV headers: true do |csv|
         holding_institution_shelfmark
       ),
       record_last_updated:                  record.xpath('/mets:mets/mets:metsHdr/@LASTMODDATE').text,
-      title:                                DS::DsMetsXml.extract_title(record),
+      title:                                DS::DsMetsXml.extract_titles_as_recorded(record),
       iiif_manifest_url:                    iiif_lookup.find_url(
         holding_institution_as_recorded, holding_institution_shelfmark
       ),

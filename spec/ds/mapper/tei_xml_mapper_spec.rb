@@ -10,8 +10,8 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
   let(:timestamp) { Time.now }
 
   let(:csv_string) { <<~EOF
-        holding_institution_wikidata_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,manifest_generated_at
-        Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno,Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,,2023-11-18T17:13:02-0500
+    holding_institution_wikidata_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,manifest_generated_at
+    Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno,Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,,2023-11-18T17:13:02-0500
       EOF
   }
   let(:manifest_path) { temp_csv csv_string}
@@ -24,29 +24,22 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
     )
   }
 
-  let(:extractor_calls) {
-    %i{
-          extract_production_date_as_recorded
-          extract_production_places_as_recorded
-          extract_titles_as_recorded
-          extract_titles_as_recorded_agr
-          extract_genres_as_recorded
-          extract_subjects_as_recorded
-          extract_authors_as_recorded
-          extract_authors_as_recorded_agr
-          extract_artists_as_recorded
-          extract_artists_as_recorded_agr
-          extract_scribes_as_recorded
-          extract_scribes_as_recorded_agr
-          extract_languages_as_recorded
-          extract_former_owners_as_recorded
-          extract_former_owners_as_recorded_agr
-          extract_material_as_recorded
-          extract_acknowledgments
-          extract_physical_description
-          extract_notes
-      }
-  }
+  let(:extractor) { DS::TeiXml }
+
+  context 'mapper implementation' do
+    except = %i[
+      extract_cataloging_convention
+      extract_date_range
+      extract_uniform_titles_as_recorded
+      extract_uniform_titles_as_recorded_agr
+      extract_titles_as_recorded_agr
+      extract_authors_as_recorded_agr
+      extract_scribes_as_recorded_agr
+      extract_former_owners_as_recorded_agr
+      extract_genre_vocabulary
+    ]
+    it_behaves_like 'an extractor mapper', except
+  end
 
   context 'initialize' do
     it 'creates a DS::Mapper::TeiXmlMapper' do
@@ -63,59 +56,12 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
       expect { mapper.extract_record entry }.not_to raise_error
     end
 
-
-    it 'implements #map_record' do
-      # don't run the mapping
-      add_stubs DS::TeiXml, extractor_calls, []
-      expect { mapper.map_record entry }.not_to raise_error
-    end
-
     it 'implements #open_source' do
       expect { mapper.open_source entry }.not_to raise_error
     end
 
     it 'is a kind of BaseMapper' do
       expect(mapper).to be_a_kind_of DS::Mapper::BaseMapper
-    end
-  end
-
-  context 'map_record' do
-    let(:recons) {
-      [
-        Recon::AllSubjects, Recon::Genres, Recon::Languages,
-        Recon::Materials, Recon::Names, Recon::Places,
-        Recon::Titles,
-      ]
-    }
-
-    let (:entry_calls) {
-      %i{
-          ds_id
-          institution_wikidata_qid
-          institution_wikidata_label
-          institutional_id
-          call_number
-          link_to_institutional_record
-          iiif_manifest_url
-      }
-    }
-
-    it 'returns a hash' do
-      add_stubs recons, :lookup, []
-      expect(mapper.map_record entry).to be_a Hash
-    end
-
-    it 'calls all expected openn_tei methods' do
-      add_stubs recons, :lookup, []
-      add_expects objects: DS::TeiXml, methods: extractor_calls, return_val: []
-
-      mapper.map_record entry
-    end
-
-    it 'returns a hash with all expected keys' do
-      add_stubs recons, :lookup, []
-      hash = mapper.map_record entry
-      expect(DS::Constants::HEADINGS - hash.keys).to be_empty
     end
   end
 end

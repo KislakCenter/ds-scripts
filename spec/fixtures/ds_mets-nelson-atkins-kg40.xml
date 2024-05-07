@@ -19,22 +19,48 @@
   OBJID="ark:/28722/bk0016x8890"
   LABEL="[No Title for Display]"
   PROFILE="http://www.loc.gov/mets/profiles/00000013.xml">
-
-
   <mets:metsHdr CREATEDATE="2016-07-19T02:37:41" LASTMODDATE="2016-09-13T08:51:34">
     <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
       <mets:name>Nelson-Atkins Museum of Art;;Spencer Art Reference Library;;Kansas City</mets:name>
     </mets:agent>
   </mets:metsHdr>
-
   <mets:dmdSec ID="DM1">
     <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
       <mets:xmlData>
         <mods:mods>
-
           <mods:titleInfo>
             <mods:title>[Title not supplied]</mods:title>
           </mods:titleInfo>
+          <mods:name type="corporate">
+            <mods:namePart>Catholic Church.</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Author</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>William Skrene; John Quynton; John Blecche and his wife, Mary</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">other</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Pynchebek</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Scribe</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Hans Wertinger, also called Hans Schwab von Wertinger (1465/70&#8211;1533), of Landshut, or his workshop</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Artist</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Pynchebek</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Scribe</mods:roleTerm>
+            </mods:role>
+          </mods:name>
           <mods:typeOfResource>text</mods:typeOfResource>
           <mods:physicalDescription>
             <mods:extent>One leaf</mods:extent>
@@ -45,7 +71,7 @@
           <mods:note type="ownership">Long ownership: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
           <mods:note type="source note">Fragment</mods:note>
           <mods:note type="source note">source note</mods:note>
-          <mods:note type="admin">We are grateful to Brother Thomas Sullivan, O.S.B., for providing the identification of the text, and to Linda Ehrsam Voigts for the physical description.</mods:note>
+          <mods:note type="admin">We are grateful to Brother Thomas Sullivarn, O.S.B., for providing the identification of the text, and to Linda Ehrsam Voigts for the physical description.</mods:note>
           <mods:note type="admin">MS acknowledgement</mods:note>
           <mods:note type="admin">Long acknowledgement: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
           <mods:note type="action">Vicki Kirby 2016-07-08</mods:note>
@@ -62,17 +88,14 @@
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
           </mods:location>
-
         </mods:mods>
       </mets:xmlData>
     </mets:mdWrap>
   </mets:dmdSec>
-
   <mets:dmdSec ID="DM2">
     <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
       <mets:xmlData>
         <mods:mods>
-
           <mods:titleInfo>
             <mods:title>[Title not supplied]</mods:title>
           </mods:titleInfo>
@@ -87,6 +110,9 @@
             <mods:dateCreated encoding="iso8601" point="start">1400</mods:dateCreated>
             <mods:dateCreated encoding="iso8601" point="end">1499</mods:dateCreated>
             <mods:dateOther>s. XV</mods:dateOther>
+              <mods:edition>Catholic Church--Liturgy--Texts.</mods:edition>
+              <mods:edition>Manuscripts, Latin (Medieval and
+                modern)--Massachusetts--Northampton.</mods:edition>
           </mods:originInfo>
           <mods:physicalDescription>
             <mods:extent>One leaf;;132 x 87</mods:extent>
@@ -107,17 +133,14 @@
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
           </mods:location>
-
         </mods:mods>
       </mets:xmlData>
     </mets:mdWrap>
   </mets:dmdSec>
-
   <mets:dmdSec ID="DM3">
     <mets:mdWrap MDTYPE="MODS" LABEL="Book of Hours, excerpt Hours of the Cross">
       <mets:xmlData>
         <mods:mods>
-
           <mods:titleInfo>
             <mods:title>Book of Hours, excerpt Hours of the Cross</mods:title>
           </mods:titleInfo>
@@ -132,21 +155,17 @@
           <mods:note>Long text note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
           <mods:note type="condition">Condition note</mods:note>
           <mods:note type="content">Text content note</mods:note>
-
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
           </mods:location>
-
         </mods:mods>
       </mets:xmlData>
     </mets:mdWrap>
   </mets:dmdSec>
-
   <mets:dmdSec ID="DM4">
     <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
       <mets:xmlData>
         <mods:mods>
-
           <mods:titleInfo>
             <mods:title>[Title not supplied]</mods:title>
           </mods:titleInfo>
@@ -160,17 +179,14 @@
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
           </mods:location>
-
         </mods:mods>
       </mets:xmlData>
     </mets:mdWrap>
   </mets:dmdSec>
-
   <mets:dmdSec ID="DM5">
     <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
       <mets:xmlData>
         <mods:mods>
-
           <mods:titleInfo>
             <mods:title>[Title not supplied]</mods:title>
           </mods:titleInfo>
@@ -186,19 +202,15 @@
           <mods:location>
             <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
           </mods:location>
-
         </mods:mods>
       </mets:xmlData>
     </mets:mdWrap>
   </mets:dmdSec>
-
   <mets:amdSec>
-
     <mets:techMD ID="ADM1">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
           <mix:mix>
-
             <mix:BasicDigitalObjectInformation>
               <mix:FormatDesignation>
                 <mix:formatName>image/tiff</mix:formatName>
@@ -207,17 +219,14 @@
                 <mix:compressionScheme>Uncompressed</mix:compressionScheme>
               </mix:Compression>
             </mix:BasicDigitalObjectInformation>
-
           </mix:mix>
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM2">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
           <mix:mix>
-
             <mix:BasicDigitalObjectInformation>
               <mix:FormatDesignation>
                 <mix:formatName>image/jpeg</mix:formatName>
@@ -235,12 +244,10 @@
                 <mix:samplesPerPixel>3</mix:samplesPerPixel>
               </mix:ImageColorEncoding>
             </mix:ImageAssessmentMetadata>
-
           </mix:mix>
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM3">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -267,7 +274,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM4">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -294,7 +300,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM5">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -321,7 +326,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM6">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -348,7 +352,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM7">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -375,7 +378,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM8">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -402,7 +404,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM9">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -429,7 +430,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM10">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -456,7 +456,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM11">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -483,7 +482,6 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:techMD ID="ADM12">
       <mets:mdWrap MDTYPE="NISOIMG">
         <mets:xmlData>
@@ -510,16 +508,13 @@
         </mets:xmlData>
       </mets:mdWrap>
     </mets:techMD>
-
     <mets:rightsMD ID="RMD1">
       <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
         <mets:xmlData>
           <rts:RightsDeclarationMD RIGHTSCATEGORY="OTHER" OTHERCATEGORYTYPE="UNKNOWN">
             <rts:RightsHolder>
               <rts:RightsHolderComments>The Nelson-Atkins Museum of Art respects all valid claims of copyright by artists, or by their respective families, estates, foundations, or representatives.
-
                 The copyright status of individual works and artists must be investigated carefully by anyone wishing to make potential use of these images. The Museum does not warrant that the use of individual works will not infringe on the rights of third parties. It is the individual’s responsibility to determine and satisfy copyright or other use restrictions before copying, transmitting, or making other use of protected items beyond that allowed by "fair use," as such term is understood under the United States Copyright Act.
-
                 The Nelson-Atkins Museum of Art holds the right to assert its copyright in all one-of-a-kind works that it owns that are not explicitly covered by other claims.</rts:RightsHolderComments>
             </rts:RightsHolder>
             <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
@@ -528,15 +523,11 @@
               </rts:Constraints>
             </rts:Context>
           </rts:RightsDeclarationMD>
-
         </mets:xmlData>
       </mets:mdWrap>
     </mets:rightsMD>
-
   </mets:amdSec>
-
   <mets:fileSec>
-
     <mets:fileGrp USE="image/master">
       <mets:file ID="FID1" MIMETYPE="image/tiff" SEQ="1" CREATED="2016-08-08T09:22:43.417" ADMID="ADM1 ADM3" GROUPID="GID1">
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k2s" LOCTYPE="URL"/>
@@ -545,7 +536,6 @@
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k7j" LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
-
     <mets:fileGrp USE="image/thumbnail">
       <mets:file ID="FID3" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.467" ADMID="ADM2" GROUPID="GID1">
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k5f" LOCTYPE="URL"/>
@@ -554,7 +544,6 @@
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8m06" LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
-
     <mets:fileGrp USE="image/reference">
       <mets:file ID="FID5" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.453" ADMID="ADM2" GROUPID="GID1">
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k4w" LOCTYPE="URL"/>
@@ -563,7 +552,6 @@
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k9n" LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
-
     <mets:fileGrp USE="image/reference">
       <mets:file ID="FID7" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.44" ADMID="ADM2" GROUPID="GID1">
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k3b" LOCTYPE="URL"/>
@@ -572,7 +560,6 @@
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k83" LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
-
     <mets:fileGrp USE="image/reference">
       <mets:file ID="FID9" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.43" ADMID="ADM2" GROUPID="GID1">
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k17" LOCTYPE="URL"/>
@@ -581,9 +568,7 @@
         <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k60" LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
-
   </mets:fileSec>
-
   <mets:structMap>
     <mets:div TYPE="text" LABEL="[No Title for Display]" ADMID="RMD1" DMDID="DM1">
       <mets:div TYPE="text" LABEL="[No Title for Display]" DMDID="DM2">
@@ -606,5 +591,4 @@
       </mets:div>
     </mets:div>
   </mets:structMap>
-
 </mets:mets>

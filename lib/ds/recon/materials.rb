@@ -41,7 +41,7 @@ module Recon
     def self.from_mets files
       data = []
       process_xml files do |xml|
-        data << [DS::DsMetsXml.extract_support(xml)]
+        data << [DS::DsMetsXml.extract_material_as_recorded(xml)]
       end
       add_recon_values data
       Recon.sort_and_dedupe data

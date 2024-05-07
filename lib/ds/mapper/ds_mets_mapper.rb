@@ -35,66 +35,69 @@ module DS
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
-        production_place_as_recorded       = DS::DsMetsXml.extract_production_place record
+        production_place_as_recorded       = DS::DsMetsXml.extract_production_places_as_recorded(record).join '|'
         production_place                   = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'structured_value'
         production_place_label             = Recon::Places.lookup production_place_as_recorded.split('|'), from_column: 'authorized_label'
-        production_date_as_recorded        = DS::DsMetsXml.extract_date_as_recorded record
+        production_date_as_recorded        = DS::DsMetsXml.extract_production_date_as_recorded record
         production_date                    = DS::DsMetsXml.transform_production_date record
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
         dated                              = DS::DsMetsXml.dated_by_scribe? record
         uniform_title_as_recorded          = ''
         uniform_title_agr                  = ''
-        title_as_recorded                  = DS::DsMetsXml.extract_title record
+        title_as_recorded                  = DS::DsMetsXml.extract_titles_as_recorded(record).join '|'
         title_as_recorded_agr              = ''
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
         genre_as_recorded                  = ''
-        subject_as_recorded                = DS::DsMetsXml.extract_subjects(record).join '|'
-        author_as_recorded                 = DS::DsMetsXml.extract_author(record).join '|'
+        subject_as_recorded                = DS::DsMetsXml.extract_all_subjects_as_recorded(record).join '|'
+        author_as_recorded                 = DS::DsMetsXml.extract_authors_as_recorded(record).join '|'
         author_as_recorded_agr             = ''
         author_wikidata                    = Recon::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'
         author                             = ''
         author_instance_of                 = Recon::Names.lookup(author_as_recorded.split('|'), column: 'instance_of').join '|'
         author_label                       = Recon::Names.lookup(author_as_recorded.split('|'), column: 'authorized_label').join '|'
-        artist_as_recorded                 = DS::DsMetsXml.extract_artist(record).join '|'
+        artist_as_recorded                 = DS::DsMetsXml.extract_artists_as_recorded(record).join '|'
         artist_as_recorded_agr             = ''
         artist_wikidata                    = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'structured_value').join '|'
         artist                             = ''
         artist_instance_of                 = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'instance_of').join '|'
         artist_label                       = Recon::Names.lookup(artist_as_recorded.split('|'), column: 'authorized_label').join '|'
-        scribe_as_recorded                 = DS::DsMetsXml.extract_scribe(record).join '|'
+        scribe_as_recorded                 = DS::DsMetsXml.extract_scribes_as_recorded(record).join '|'
         scribe_as_recorded_agr             = ''
         scribe_wikidata                    = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
         scribe                             = ''
         scribe_instance_of                 = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
         scribe_label                       = Recon::Names.lookup(scribe_as_recorded.split('|'), column: 'authorized_label').join '|'
-        associated_agent_as_recorded       = DS::DsMetsXml.extract_other_name(record).join '|'
+        associated_agent_as_recorded       = DS::DsMetsXml.extract_other_names_as_recorded(record).join '|'
         associated_agent_as_recorded_agr   = ''
         associated_agent_wikidata          = Recon::Names.lookup(associated_agent_as_recorded.split('|'), column: 'structured_value').join '|'
         associated_agent                   = ''
         associated_agent_instance_of       = Recon::Names.lookup(associated_agent_as_recorded.split('|'), column: 'instance_of').join '|'
         associated_agent_label             = Recon::Names.lookup(associated_agent_as_recorded.split('|'), column: 'authorized_label').join '|'
-        language_as_recorded               = DS::DsMetsXml.extract_language record
+        language_as_recorded               = DS::DsMetsXml.extract_languages_as_recorded(record).join '|'
         language                           = Recon::Languages.lookup language_as_recorded, from_column: 'structured_value'
         language_label                     = Recon::Languages.lookup language_as_recorded, from_column: 'authorized_label'
-        former_owner_as_recorded           = DS::DsMetsXml.extract_ownership(record).join '|'
+        former_owner_as_recorded           = DS::DsMetsXml.extract_former_owners_as_recorded(record).join '|'
         former_owner_as_recorded_agr       = ''
         # TODO: Legacy XML doesn't have former owner names; the following can't be tested
         former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
         former_owner                       = ''
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded               = DS::DsMetsXml.extract_support record
+        material_as_recorded               = DS::DsMetsXml.extract_material_as_recorded record
         material                           = Recon::Materials.lookup material_as_recorded.split('|'), column: 'structured_value'
         material_label                     = Recon::Materials.lookup material_as_recorded.split('|'), column: 'authorized_label'
         physical_description               = DS::DsMetsXml.extract_physical_description(record).join '|'
-        note                               = DS::DsMetsXml.extract_note(record).join '|'
-        acknowledgements                   = DS::DsMetsXml.extract_acknowledgements(record).join '|'
+        note                               = DS::DsMetsXml.extract_notes(record).join '|'
+        acknowledgements                   = DS::DsMetsXml.extract_acknowledgments(record).join '|'
         data_processed_at                  = timestamp
-        data_source_modified               = DS::DsMetsXml.source_modified
+        data_source_modified               = entry.record_last_updated
 
         {
           ds_id:                              ds_id,
+          date_added:                         nil,
+          date_last_updated:                  nil,
+          cataloging_convention:              nil,
           source_type:                        source_type,
           holding_institution:                holding_institution,
           holding_institution_as_recorded:    holding_institution_as_recorded,
@@ -110,13 +113,17 @@ module DS
           century_aat:                        century_aat,
           production_date_as_recorded:        production_date_as_recorded,
           dated:                              dated,
-          extract_titles_as_recorded:         uniform_title_as_recorded,
+          uniform_title_as_recorded:          uniform_title_as_recorded,
           uniform_title_agr:                  uniform_title_agr,
           title_as_recorded:                  title_as_recorded,
           title_as_recorded_agr:              title_as_recorded_agr,
           standard_title:                     standard_title,
           genre_as_recorded:                  genre_as_recorded,
+          genre:                              nil,
+          genre_label:                        nil,
           subject_as_recorded:                subject_as_recorded,
+          subject:                            nil,
+          subject_label:                      nil,
           author_as_recorded:                 author_as_recorded,
           author_as_recorded_agr:             author_as_recorded_agr,
           author_wikidata:                    author_wikidata,

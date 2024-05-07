@@ -88,7 +88,7 @@ module DS
           production_place:                   production_place,
           production_place_label:             production_place_label,
           production_date_as_recorded:        production_date_as_recorded,
-          extract_titles_as_recorded:         uniform_title_as_recorded,
+          uniform_title_as_recorded:          uniform_title_as_recorded,
           uniform_title_agr:                  uniform_title_agr,
           title_as_recorded:                  title_as_recorded,
           title_as_recorded_agr:              title_as_recorded_agr,

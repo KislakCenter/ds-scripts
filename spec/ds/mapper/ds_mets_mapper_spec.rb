@@ -33,27 +33,24 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
     ]
   }
 
-  let(:ds10_methods) {
-    %i{
-          extract_production_place
-          extract_date_as_recorded
-          transform_production_date
-          dated_by_scribe?
-          extract_title
-          extract_subjects
-          extract_author
-          extract_artist
-          extract_scribe
-          extract_other_name
-          extract_language
-          extract_ownership
-          extract_support
-          extract_physical_description
-          extract_note
-          extract_acknowledgements
-          source_modified
-    }
-  }
+  let(:extractor) {  DS::DsMetsXml }
+
+  context 'mapper implementation' do
+    except = %i[
+        extract_cataloging_convention
+        extract_uniform_titles_as_recorded
+        extract_uniform_titles_as_recorded_agr
+        extract_titles_as_recorded_agr
+        extract_authors_as_recorded_agr
+        extract_artists_as_recorded_agr
+        extract_former_owners_as_recorded_agr
+        extract_scribes_as_recorded_agr
+        extract_genres_as_recorded
+        extract_genre_vocabulary
+    ]
+
+    it_behaves_like 'an extractor mapper', except
+  end
 
   context 'initialize' do
     it 'creates a mapper' do
@@ -62,19 +59,4 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
     end
   end
 
-  context '#map_record' do
-    let(:mapped_record) { mapper.map_record entry }
-    it 'returns a hash' do
-      add_stubs recon_classes, :lookup, []
-
-      expect(mapped_record).to be_a Hash
-    end
-
-    it 'calls all the expected DS10 methods' do
-      add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::DsMetsXml, methods: ds10_methods, return_val: []
-
-      mapper.map_record entry
-    end
-  end
 end
