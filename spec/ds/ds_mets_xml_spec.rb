@@ -50,7 +50,13 @@ describe DS::DsMetsXml do
       skip_named_subjects: true,
       skip_cataloging_convention: true,
       skip_uniform_titles: true,
-      skip_genres: true
+      skip_genres: true,
+      skip_titles_agr: true,
+      skip_uniform_titles_agr: true,
+      skip_authors_agr: true,
+      skip_artists_agr: true,
+      skip_scribes_agr: true,
+      skip_former_owners_agr: true,
     }
     it_behaves_like "a recon extractor", skips
     it_behaves_like "an extractor", skips

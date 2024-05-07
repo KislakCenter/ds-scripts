@@ -17,6 +17,7 @@ RSpec.describe DS::TeiXml do
       skip_named_subjects: true,
       skip_cataloging_convention: true,
       skip_uniform_titles: true,
+      skip_uniform_titles_agr: true,
       skip_other_names: true
     }
 

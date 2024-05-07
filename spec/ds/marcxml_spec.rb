@@ -14,7 +14,6 @@ describe DS::MarcXml do
     skips = { skip_other_names: true }
     it_behaves_like "a recon extractor", skips
     it_behaves_like "an extractor", skips
-    it_behaves_like "an extractor with AGR methods"
   end
 
   context 'extract_genre_as_recorded' do

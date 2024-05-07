@@ -424,5 +424,4 @@ end
 require_relative './expections'
 require_relative 'support/extractor_examples'
 require_relative 'support/recon_extractor_examples'
-require_relative 'support/extractor_with_agr_examples'
 require_relative 'support/extractor_mapper_examples'
