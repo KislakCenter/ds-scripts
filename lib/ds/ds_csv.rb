@@ -87,7 +87,7 @@ module DS
       end
 
       def extract_production_date_as_recorded record
-        extract_values_for(:production_date_as_recorded, record).first
+        extract_values_for(:production_date_as_recorded, record)
       end
 
       def extract_date_range record, separator: '-'

@@ -243,7 +243,7 @@ describe DS::MarcXml do
     it 'extracts 260$c' do
       expect(
         DS::MarcXml.extract_production_date_as_recorded(date_260c_marc)
-      ).to eq '1644 February 10'
+      ).to eq ['1644 February 10']
     end
 
     let(:date_260d_marc) {
@@ -267,7 +267,7 @@ describe DS::MarcXml do
     it 'extracts 260$d' do
       expect(
         DS::MarcXml.extract_production_date_as_recorded(date_260d_marc)
-      ).to eq '14th and 15th centuries'
+      ).to eq ['14th and 15th centuries']
     end
 
     let(:date_264c_marc) {
@@ -292,7 +292,7 @@ describe DS::MarcXml do
     it 'extracts 264$c' do
       expect(
         DS::MarcXml.extract_production_date_as_recorded(date_264c_marc)
-      ).to eq '1596.'
+      ).to eq ['1596.']
     end
 
 
@@ -316,7 +316,7 @@ describe DS::MarcXml do
     it 'extracts 245$f' do
       expect(
         DS::MarcXml.extract_production_date_as_recorded(date_245f_record)
-      ).to eq '1600s.'
+      ).to eq ['1600s.']
     end
 
     let(:date_008_record) {
@@ -335,7 +335,7 @@ describe DS::MarcXml do
     it 'extracts 008[7,9]' do
       expect(
         DS::MarcXml.extract_production_date_as_recorded(date_008_record)
-      ).to eq '1409'
+      ).to eq ['1409']
     end
 
     let(:date_008_blank_date_record) {

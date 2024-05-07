@@ -693,7 +693,7 @@ RSpec.describe DS::TeiXml do
       let(:date) { DS::TeiXml.extract_production_date_as_recorded tei_xml }
 
       it 'extracts the date of production' do
-        expect(date).to eq '1450-1475'
+        expect(date).to eq ['1450-1475']
       end
     end
   end

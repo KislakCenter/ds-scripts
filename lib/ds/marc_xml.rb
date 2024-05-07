@@ -666,12 +666,12 @@ module DS
         dar = record.xpath("datafield[@tag=260]/subfield[@code='c' or @code='d']/text()").map do |t|
           DS::Util.clean_string t.text.strip
         end.join ' '
-        return dar.strip unless dar.strip.empty?
+        return [dar.strip] unless dar.strip.empty?
 
         dar = record.xpath("datafield[@tag=264]/subfield[@code='c']/text()").map do |t|
           DS::Util.clean_string t.text.strip
         end.join ' '
-        return dar.strip unless dar.strip.empty?
+        return [dar.strip] unless dar.strip.empty?
 
         # 245 is the title field but can have a date in $f
         #
@@ -688,10 +688,10 @@ module DS
         #   </datafield>
         #
         dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
-        return DS::Util.clean_string dar unless dar.strip.empty?
+        return [DS::Util.clean_string(dar)] unless dar.strip.empty?
 
         encoded_date = extract_date_range record
-        encoded_date.join('_').strip
+        [encoded_date.join('_').strip]
       end
 
       #########################################################################

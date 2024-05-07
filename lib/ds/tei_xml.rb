@@ -330,13 +330,13 @@ module DS
       # Date of production
       #########################################################################
       def extract_production_date_as_recorded xml, range_sep: '-'
-        extract_date_range(xml).join '-'
+        extract_date_range(xml, range_sep: range_sep)
       end
 
       def extract_date_range record, range_sep: '-'
         record.xpath('//origDate').map { |orig|
           orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
-        }.reject(&:empty?)
+        }
       end
 
       #########################################################################

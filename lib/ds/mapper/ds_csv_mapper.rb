@@ -17,7 +17,7 @@ module DS
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
-        production_date_as_recorded        = DS::DsCsv.extract_production_date_as_recorded record
+        production_date_as_recorded        = DS::DsCsv.extract_production_date_as_recorded(record).join '|'
         production_date                    = DS::DsCsv.extract_date_range(record).join '^'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century

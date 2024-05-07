@@ -17,3 +17,21 @@ RSpec::Matchers.define :be_a_date_time_string do
     end
   end
 end
+
+RSpec::Matchers.define :be_one_of do |expected|
+  match do |actual|
+    [expected].flatten.include? actual
+    failure_message_when_negated do |actual|
+      "expected that #{actual} would be one of #{expected.inspect}"
+    end
+  end
+end
+
+RSpec::Matchers.define :be_a_ds_id do
+  match do |actual|
+    expected.to_s =~ /^DS(NAME)?\d+$/
+    failure_message_when_negated do |actual|
+      "expected that #{actual} would match DS[0-9]+ or DSNAME[0-9]+"
+    end
+  end
+end

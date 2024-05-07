@@ -101,18 +101,18 @@ describe DS::DsCsv do
   end
 
   context "extract_production_date_as_recorded" do
-    it 'returns the date string' do
+    it 'returns the date string in an array' do
       expect(
         DS::DsCsv.extract_production_date_as_recorded record
-      ).to eq "circa 18th-20th century"
+      ).to eq ["circa 18th-20th century"]
     end
   end
 
   context "extract_production_date_as_recorded" do
-    it 'returns the date string' do
+    it 'returns the date string in an array' do
       expect(
         DS::DsCsv.extract_production_date_as_recorded record
-      ).to eq "circa 18th-20th century"
+      ).to eq ["circa 18th-20th century"]
     end
   end
 

@@ -426,7 +426,7 @@ module DS
           assigned     = extract_assigned_date part
           range        = extract_date_range(part).join '-'
           [date_created, assigned, range].uniq.reject(&:empty?).join '; '
-        }.reject { |date| date.to_s.strip.empty? }.join '|'
+        }.reject { |date| date.to_s.strip.empty? }
       end
 
       ##

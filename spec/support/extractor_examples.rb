@@ -494,7 +494,7 @@ RSpec.shared_examples "an extractor" do |options|
 
     context 'extract_production_date_as_recorded' do
       let(:extract_method) { :extract_production_date_as_recorded }
-      let(:return_type) { String }
+      let(:return_type) { Array }
 
       it 'responds to the method' do
         expect(described_class).to respond_to extract_method
