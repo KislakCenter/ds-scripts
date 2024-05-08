@@ -29,7 +29,7 @@ module Recon
       data = []
       process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data += DS::MarcXml.extract_recon_places record
+          data += DS::Extractor::MarcXml.extract_recon_places record
         end
       end
       add_recon_values data

@@ -37,7 +37,7 @@ module Recon
       data = []
       process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
-          data += DS::MarcXml.extract_recon_genres record, sub_sep: '--'
+          data += DS::Extractor::MarcXml.extract_recon_genres record, sub_sep: '--'
         end
       end
       add_recon_values data

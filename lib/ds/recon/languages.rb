@@ -79,7 +79,7 @@ module Recon
       process_xml files,remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           as_recorded = DS::Util.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
-          codes       = DS::MarcXml.extract_langs record, separator: separator
+          codes       = DS::Extractor::MarcXml.extract_langs record, separator: separator
           as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
           data << [as_recorded, codes]
         end

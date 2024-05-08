@@ -38,7 +38,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
     )
   }
 
-  let(:extractor) { DS::MarcXml }
+  let(:extractor) { DS::Extractor::MarcXml }
 
   context 'mapper implementation' do
     except = %i[extract_acknowledgments]

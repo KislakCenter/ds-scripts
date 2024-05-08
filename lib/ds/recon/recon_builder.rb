@@ -12,7 +12,7 @@ module Recon
     }
 
     SOURCE_TYPE_EXTRACTORS = {
-      DS::Constants::MARC_XML => DS::MarcXml,
+      DS::Constants::MARC_XML => DS::Extractor::MarcXml,
       DS::Constants::DS_CSV   => DS::DsCsv,
       DS::Constants::DS_METS  => DS::DsMetsXml,
       DS::Constants::TEI_XML  => DS::TeiXml
