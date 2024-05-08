@@ -24,7 +24,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
     )
   }
 
-  let(:extractor) { DS::TeiXml }
+  let(:extractor) { DS::Extractor::TeiXml }
 
   context 'mapper implementation' do
     except = %i[

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe DS::TeiXml do
+RSpec.describe DS::Extractor::TeiXml do
 
   let(:tei_file) {
     File.join fixture_path('tei_xml'), 'lewis_o_031_TEI.xml'
@@ -72,7 +72,7 @@ RSpec.describe DS::TeiXml do
       }
     }
 
-    let(:notes) { DS::TeiXml.extract_notes tei_xml }
+    let(:notes) { DS::Extractor::TeiXml.extract_notes tei_xml }
 
     it 'includes a note' do
       expect(notes).to include "Plain note."
@@ -197,7 +197,7 @@ RSpec.describe DS::TeiXml do
     context 'authors' do
 
       context 'extract_authors_as_recorded' do
-        let(:authors) { DS::TeiXml.extract_authors_as_recorded tei_xml }
+        let(:authors) { DS::Extractor::TeiXml.extract_authors_as_recorded tei_xml }
         it 'includes a persName[@type = "authority"]' do
           expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
         end
@@ -217,8 +217,8 @@ RSpec.describe DS::TeiXml do
       end
 
       context 'extract_authors_agr_as_recorded' do
-        let(:authors) { DS::TeiXml.extract_authors_as_recorded tei_xml }
-        let(:authors_agr) { DS::TeiXml.extract_authors_as_recorded_agr tei_xml }
+        let(:authors) { DS::Extractor::TeiXml.extract_authors_as_recorded tei_xml }
+        let(:authors_agr) { DS::Extractor::TeiXml.extract_authors_as_recorded_agr tei_xml }
         it 'extracts an agr name' do
           expect(authors_agr).to include 'ابن هشام، عبد الله بن يوسف،'
         end
@@ -234,7 +234,7 @@ RSpec.describe DS::TeiXml do
     end
 
     context 'extract_resps' do
-      let(:resps) { DS::TeiXml.extract_resps tei_xml, 'former owner' }
+      let(:resps) { DS::Extractor::TeiXml.extract_resps tei_xml, 'former owner' }
       it 'gets all the former owners' do
         expect(resps.size).to be > 0
       end
@@ -243,7 +243,7 @@ RSpec.describe DS::TeiXml do
 
     context 'former owners' do
       context 'extract_former_owners' do
-        let(:former_owners) { DS::TeiXml.extract_former_owners_as_recorded tei_xml }
+        let(:former_owners) { DS::Extractor::TeiXml.extract_former_owners_as_recorded tei_xml }
         it 'extracts a former owner' do
           expect(former_owners).to include 'Jamālī, Yūsuf ibn Shaykh Muḥammad'
         end
@@ -254,8 +254,8 @@ RSpec.describe DS::TeiXml do
       end
 
       context 'extract_former_owners_agr' do
-        let(:former_owners) { DS::TeiXml.extract_former_owners_as_recorded tei_xml }
-        let(:former_owners_agr) { DS::TeiXml.extract_former_owners_as_recorded_agr tei_xml }
+        let(:former_owners) { DS::Extractor::TeiXml.extract_former_owners_as_recorded tei_xml }
+        let(:former_owners_agr) { DS::Extractor::TeiXml.extract_former_owners_as_recorded_agr tei_xml }
 
         it 'extracts a former owner vernacular name' do
           expect(former_owners_agr).to include 'يوسف بن شيخ محمد الجمالي.'
@@ -273,7 +273,7 @@ RSpec.describe DS::TeiXml do
 
     context 'artists' do
       context 'extract_artists' do
-        let(:artists) { DS::TeiXml.extract_artists_as_recorded tei_xml }
+        let(:artists) { DS::Extractor::TeiXml.extract_artists_as_recorded tei_xml }
         it 'extracts an artist' do
           expect(artists).to include 'Artist One'
         end
@@ -284,8 +284,8 @@ RSpec.describe DS::TeiXml do
       end
 
       context 'extract_artists_agr' do
-        let(:artists) { DS::TeiXml.extract_artists_as_recorded tei_xml }
-        let(:artists_agr) { DS::TeiXml.extract_artists_as_recorded_agr tei_xml }
+        let(:artists) { DS::Extractor::TeiXml.extract_artists_as_recorded tei_xml }
+        let(:artists_agr) { DS::Extractor::TeiXml.extract_artists_as_recorded_agr tei_xml }
 
         it 'extracts an artist vernacular name' do
           expect(artists_agr).to include 'Artist One Vernacular'
@@ -303,7 +303,7 @@ RSpec.describe DS::TeiXml do
 
     context 'scribes' do
       context 'extract_scribes' do
-        let(:scribes) { DS::TeiXml.extract_scribes_as_recorded tei_xml }
+        let(:scribes) { DS::Extractor::TeiXml.extract_scribes_as_recorded tei_xml }
         it 'extracts an scribe' do
           expect(scribes).to include 'Scribe One'
         end
@@ -314,8 +314,8 @@ RSpec.describe DS::TeiXml do
       end
 
       context 'extract_scribes_agr' do
-        let(:scribes) { DS::TeiXml.extract_scribes_as_recorded tei_xml }
-        let(:scribes_agr) { DS::TeiXml.extract_scribes_as_recorded_agr tei_xml }
+        let(:scribes) { DS::Extractor::TeiXml.extract_scribes_as_recorded tei_xml }
+        let(:scribes_agr) { DS::Extractor::TeiXml.extract_scribes_as_recorded_agr tei_xml }
 
         it 'extracts an scribe vernacular name' do
           expect(scribes_agr).to include 'Scribe One Vernacular'
@@ -363,7 +363,7 @@ RSpec.describe DS::TeiXml do
       }
     }
 
-    let(:acknowledgments) { DS::TeiXml.extract_acknowledgments tei_xml }
+    let(:acknowledgments) { DS::Extractor::TeiXml.extract_acknowledgments tei_xml }
     let(:catalogers) {
       ["Cataloger: Cataloger 1", "Cataloger: Cataloger 2"]
     }
@@ -417,15 +417,15 @@ RSpec.describe DS::TeiXml do
     }
 
     let(:titles) {
-      DS::TeiXml.extract_titles_as_recorded tei_xml
+      DS::Extractor::TeiXml.extract_titles_as_recorded tei_xml
     }
 
     let(:titles_agr) {
-      DS::TeiXml.extract_titles_as_recorded_agr tei_xml
+      DS::Extractor::TeiXml.extract_titles_as_recorded_agr tei_xml
     }
 
     let(:recon_titles) {
-      DS::TeiXml.extract_recon_titles tei_xml
+      DS::Extractor::TeiXml.extract_recon_titles tei_xml
     }
 
     context 'extract_title_as_recorded' do
@@ -489,7 +489,7 @@ RSpec.describe DS::TeiXml do
       }
     }
 
-    let(:phys_desc) { DS::TeiXml.extract_physical_description tei_xml }
+    let(:phys_desc) { DS::Extractor::TeiXml.extract_physical_description tei_xml }
 
     it 'includes the extent' do
       expect(phys_desc).to have_item_matching /Extent: 153; 225 x 165 mm bound to 241 x 172 mm/
@@ -588,7 +588,7 @@ RSpec.describe DS::TeiXml do
     end
 
     context 'extract_material_as_recorded' do
-      let(:material) { DS::TeiXml.extract_material_as_recorded tei_xml }
+      let(:material) { DS::Extractor::TeiXml.extract_material_as_recorded tei_xml }
 
       it 'returns the support material' do
         expect(material).to eq 'Parchment'
@@ -625,7 +625,7 @@ RSpec.describe DS::TeiXml do
     }
 
     context 'extract_holding_institution' do
-      let(:holding_institution) { DS::TeiXml.extract_holding_institution tei_xml }
+      let(:holding_institution) { DS::Extractor::TeiXml.extract_holding_institution tei_xml }
 
       it 'extracts the holding institution' do
         expect(holding_institution).to eq 'Free Library of Philadelphia'
@@ -633,7 +633,7 @@ RSpec.describe DS::TeiXml do
     end
 
     context 'extract_holding_institution_id_nummber' do
-      let(:id_number) { DS::TeiXml.extract_holding_institution_id_nummber tei_xml }
+      let(:id_number) { DS::Extractor::TeiXml.extract_holding_institution_id_nummber tei_xml }
 
       it 'extracts the holding institution id number' do
         expect(id_number).to eq 'abc1234'
@@ -641,7 +641,7 @@ RSpec.describe DS::TeiXml do
     end
 
     context 'extract_shelfmark' do
-      let(:shelfmark) { DS::TeiXml.extract_shelfmark tei_xml }
+      let(:shelfmark) { DS::Extractor::TeiXml.extract_shelfmark tei_xml }
 
       it 'extracts the shelfmark' do
         expect(shelfmark).to eq 'Widener 3'
@@ -649,7 +649,7 @@ RSpec.describe DS::TeiXml do
     end
 
     context 'extract_link_to_record' do
-      let(:url) { DS::TeiXml.extract_link_to_record tei_xml }
+      let(:url) { DS::Extractor::TeiXml.extract_link_to_record tei_xml }
 
       it 'extracts institution url' do
         expect(url).to eq 'http://example.com/'
@@ -682,7 +682,7 @@ RSpec.describe DS::TeiXml do
     }
 
     context 'extract_production_place' do
-      let(:place) { DS::TeiXml.extract_production_places_as_recorded tei_xml }
+      let(:place) { DS::Extractor::TeiXml.extract_production_places_as_recorded tei_xml }
 
       it 'extracts the place of production' do
         expect(place).to eq ['Flanders']
@@ -690,7 +690,7 @@ RSpec.describe DS::TeiXml do
     end
 
     context 'extract_production_date' do
-      let(:date) { DS::TeiXml.extract_production_date_as_recorded tei_xml }
+      let(:date) { DS::Extractor::TeiXml.extract_production_date_as_recorded tei_xml }
 
       it 'extracts the date of production' do
         expect(date).to eq ['1450-1475']

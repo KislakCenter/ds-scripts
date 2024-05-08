@@ -15,7 +15,7 @@ module Recon
       DS::Constants::MARC_XML => DS::Extractor::MarcXml,
       DS::Constants::DS_CSV   => DS::DsCsv,
       DS::Constants::DS_METS  => DS::DsMetsXml,
-      DS::Constants::TEI_XML  => DS::TeiXml
+      DS::Constants::TEI_XML  => DS::Extractor::TeiXml
     }
 
     ReconType = Struct.new(

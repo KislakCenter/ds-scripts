@@ -49,7 +49,7 @@ module Recon
     def self.from_tei files
       data = []
       process_xml files,remove_namespaces: true do |xml|
-        data += DS::TeiXml.extract_recon_titles xml
+        data += DS::Extractor::TeiXml.extract_recon_titles xml
       end
       add_recon_values data
       data.sort { |a, b| a.first <=> b.first }.uniq
