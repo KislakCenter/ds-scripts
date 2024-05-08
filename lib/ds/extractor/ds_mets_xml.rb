@@ -204,7 +204,6 @@ module DS
         def extract_former_owners record
           xpath = "./descendant::mods:note[@type='ownership']/text()"
           notes = clean_notes(record.xpath(xpath).flat_map(&:text))
-          return notes if notes.all? { |n| n.to_s.size < 400 }
 
           notes.flat_map { |n|
             if n.to_s.size < 400
