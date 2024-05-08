@@ -919,12 +919,6 @@ module DS
         DS::Util.clean_string datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep
       end
 
-      # TODO: This CSV is a stopgap; find a more sustainable solution
-      IIIF_CSV = File.join(__dir__, 'data/iiif_manifests.csv')
-      IIIF_MANIFESTS = CSV.readlines(IIIF_CSV, headers: true).inject({}) { |h,row|
-        h.merge(row['mmsid'] => row['iiif_manifest_url'])
-      }.freeze
-
       def extract_001_control_number record, holdings_file = nil
         ids = []
         # add the MMS ID
