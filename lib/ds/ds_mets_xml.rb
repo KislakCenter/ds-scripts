@@ -311,7 +311,7 @@ module DS
       #      ["Germany"],
       #      ["France (?)"]]
       #
-      # @param [Nokogiri::XML:Node] record a +<METS_XML>+ node
+      # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places xml
         extract_places(xml).map &:to_a

@@ -157,7 +157,7 @@ module Recon
   #
   # @param [String] set_name the name of the recon set; 'names', 'genres', etc.
   # @param [String] csv_file the path to the CSV file
-  # @param [Array<String>,NilClass] list of any missing columns; +nil+ otherwise
+  # @return [Array<String>,NilClass] list of any missing columns; +nil+ otherwise
   def self.validate_columns set_name, csv_file
     set_config = Recon.find_set_config set_name
     required_columns = []

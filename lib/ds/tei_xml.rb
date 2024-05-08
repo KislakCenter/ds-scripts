@@ -319,7 +319,7 @@ module DS
       #      ["Germany"],
       #      ["France (?)"]]
       #
-      # @param [Nokogiri::XML:Node] record a +<TEI>+ node
+      # @param [Nokogiri::XML:Node] xml a +<TEI>+ node
       # @return [Array<Array>] an array of arrays of values
       def extract_recon_places xml
         xpath = '//origPlace/text()'

@@ -145,7 +145,7 @@ module DS
       ##
       # @param [String] file_path the path to the MARC XML file
       # @param [DS::Manifest::Entry] entry entry for a single record
-      # @retun [boolean] whether the is found in the record
+      # @return [boolean] whether the is found in the record
       def id_in_marc_xml? file_path, entry
         xml = File.open(file_path) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
