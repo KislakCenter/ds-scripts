@@ -23,7 +23,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
     )
   }
 
-  let(:extractor) {  DS::DsMetsXml }
+  let(:extractor) {  DS::Extractor::DsMetsXml }
 
   context 'mapper implementation' do
     except = %i[
