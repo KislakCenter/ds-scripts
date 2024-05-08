@@ -22,7 +22,7 @@ module Recon
       materials.map { |material|
         material_uris = Recon.lookup 'materials', value: material, column: column
         material_uris.to_s.gsub '|', ';'
-      }.join '|'
+      }
     end
 
     def self.from_marc files

@@ -31,7 +31,7 @@ describe DS::DsCsv do
   context "extract_holding_institution_as_recorded" do
     it 'returns the name of the holding institution' do
       expect(
-        DS::DsCsv.extract_holding_institution_as_recorded record
+          DS::DsCsv.extract_holding_institution_as_recorded record
       ).to eq "UC Riverside"
     end
   end

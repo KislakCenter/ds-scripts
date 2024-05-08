@@ -42,7 +42,7 @@ module DS
         title_as_recorded_agr              = DS::TeiXml.extract_titles_as_recorded_agr(record).join '|'
         uniform_title_as_recorded          = ''
         uniform_title_agr                  = ''
-        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
+        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join '|'
         genre_as_recorded                  = DS::TeiXml.extract_genres_as_recorded(record).join '|'
         genre_vocabulary                   = genre_as_recorded.split('|').size.times.map { 'openn-form/genre' }.join '|' # add openn-form/genre for each genre AR
         genre                              = Recon::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value').join '|'

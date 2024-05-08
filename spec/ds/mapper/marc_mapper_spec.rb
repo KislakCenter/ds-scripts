@@ -40,14 +40,6 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
 
   let(:extractor) { DS::MarcXml }
 
-  let(:recon_classes) {
-    [
-      Recon::AllSubjects, Recon::Genres, Recon::Languages,
-      Recon::Materials, Recon::Names, Recon::Places,
-      Recon::Titles,
-    ]
-  }
-
   context 'mapper implementation' do
     except = %i[extract_acknowledgments]
     it_behaves_like 'an extractor mapper', except

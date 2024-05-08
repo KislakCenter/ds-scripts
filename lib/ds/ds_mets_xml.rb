@@ -752,7 +752,9 @@ module DS
       def extract_subjects record
         xpath = '//mods:originInfo/mods:edition'
         find_texts(record).flat_map { |text|
-          DS::Extractor::Subject.new as_recorded: text.xpath(xpath).map(&:text)
+          text.xpath(xpath).map { |subj|
+            DS::Extractor::Subject.new as_recorded: subj.text.strip.gsub(/\s+/, ' ')
+          }
         }
       end
 

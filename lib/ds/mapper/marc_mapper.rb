@@ -51,7 +51,7 @@ module DS
         uniform_title_agr                  = DS::MarcXml.extract_uniform_titles_as_recorded_agr(record).join '|'
         title_as_recorded                  = DS::MarcXml.extract_titles_as_recorded(record).join '|'
         title_as_recorded_agr              = DS::MarcXml.extract_titles_as_recorded_agr(record).join '|'
-        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
+        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join '|'
         genre_as_recorded                  = DS::MarcXml.extract_genres_as_recorded(record).join('|')
         genre_vocabulary                   = DS::MarcXml.extract_genre_vocabulary(record).join '|'
         genre                              = Recon::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value').join '|'

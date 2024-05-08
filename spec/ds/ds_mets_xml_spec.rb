@@ -4,7 +4,7 @@ require 'nokogiri'
 describe DS::DsMetsXml do
 
   # let(:na_ds_mets) {̋̋ fixture_path 'ds_mets-nelson-atkins-kg40.xml' }
-  let(:na_ds_mets) { fixture_path 'ds_mets-nelson-atkins-kg40.xml' }
+  let(:na_ds_mets) { fixture_path 'ds_mets_xml/ds_mets-nelson-atkins-kg40.xml' }
   # ds_mets_csl_sutro_collection_ms_05.xml -- 2 parts, no provenance
   let(:csl_ds_mets) { fixture_path 'ds_mets_csl_sutro_collection_ms_05.xml' }
   let(:ds_names_mets) { fixture_path 'ds_mets_names.xml' }

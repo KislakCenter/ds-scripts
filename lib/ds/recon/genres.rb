@@ -30,7 +30,7 @@ module Recon
     def self.lookup genres, vocabs, from_column: 'structured_value'
       genres.zip(vocabs).map { |term, vocab|
         _lookup_single term, vocab, from_column: from_column
-      }.join '|'
+      }
     end
 
     def self.from_marc files

@@ -53,7 +53,9 @@ module Recon
     end
 
     def self.lookup terms, from_column: 'structured_value'
-      terms.map { |term| _lookup_single term, from_column: from_column }.join '|'
+      terms.map { |term|
+        _lookup_single term, from_column: from_column
+      }
     end
 
     def self.from_mets files

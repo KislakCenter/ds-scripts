@@ -24,9 +24,9 @@ module Recon
     end
 
     def self.lookup names, column:
-      names.map do|name|
-        Recon.lookup 'names', value: name, column: column
-      end
+      names.map {|name|
+        Recon.lookup('names', value: name, column: column)
+      }
     end
 
     def self.from_marc files

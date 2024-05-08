@@ -22,7 +22,7 @@ module Recon
       languages.split(separator).map { |lang|
         # make sure each group of languages is separated by ';'
         Recon.lookup('languages', value: lang, column: from_column).gsub('|', ';')
-      }.join separator
+      }
     end
 
     ##

@@ -50,7 +50,7 @@ module DS
         uniform_title_agr                  = ''
         title_as_recorded                  = DS::DsMetsXml.extract_titles_as_recorded(record).join '|'
         title_as_recorded_agr              = ''
-        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join('|')
+        standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join '|'
         genre_as_recorded                  = ''
         genre                              = ''
         genre_label                        = ''
@@ -86,19 +86,18 @@ module DS
         language_label                     = Recon::Languages.lookup(language_as_recorded, from_column: 'authorized_label').join '|'
         former_owner_as_recorded           = DS::DsMetsXml.extract_former_owners_as_recorded(record).join '|'
         former_owner_as_recorded_agr       = ''
-        # TODO: Legacy XML doesn't have former owner names; the following can't be tested
-        former_owner_wikidata    = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
-        former_owner             = ''
-        former_owner_instance_of = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
-        former_owner_label       = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded     = DS::DsMetsXml.extract_material_as_recorded record
-        material                 = Recon::Materials.lookup(material_as_recorded.split('|'), column: 'structured_value').join '|'
-        material_label           = Recon::Materials.lookup(material_as_recorded.split('|'), column: 'authorized_label').join '|'
-        physical_description     = DS::DsMetsXml.extract_physical_description(record).join '|'
-        note                     = DS::DsMetsXml.extract_notes(record).join '|'
-        acknowledgements         = DS::DsMetsXml.extract_acknowledgments(record).join '|'
-        data_processed_at        = timestamp
-        data_source_modified     = entry.record_last_updated
+        former_owner_wikidata              = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
+        former_owner                       = ''
+        former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
+        former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
+        material_as_recorded               = DS::DsMetsXml.extract_material_as_recorded record
+        material                           = Recon::Materials.lookup(material_as_recorded.split('|'), column: 'structured_value').join '|'
+        material_label                     = Recon::Materials.lookup(material_as_recorded.split('|'), column: 'authorized_label').join '|'
+        physical_description               = DS::DsMetsXml.extract_physical_description(record).join '|'
+        note                               = DS::DsMetsXml.extract_notes(record).join '|'
+        acknowledgements                   = DS::DsMetsXml.extract_acknowledgments(record).join '|'
+        data_processed_at                  = timestamp
+        data_source_modified               = entry.record_last_updated
 
         {
           ds_id:                              ds_id,
