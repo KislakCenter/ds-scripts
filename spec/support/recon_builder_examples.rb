@@ -1,5 +1,32 @@
 # frozen_string_literal: true
 
+##
+# Shared examples for testing recon extraction for a given source
+# type. Performs recon extraction and lookups for all recon types:
+# +:places+, +:materials+, +:languages+, +:genres+, +:subjects+,
+# +:named-subjects+, +:names+, +:titles+.
+#
+# For each recon type, the following are tested:
+#
+# - Initialization
+# - that +#extract_recons+ returns an Array
+# - that +#extract_recons+ returns a non-empty Array
+# - that +#extract_recons+ returns an 2-D array with the correct number of columns in each row
+#
+# the calling context must define the following via let statements
+#
+# - +source_type+
+# - +files+
+# - +out_dir+
+# - +recon_builder+
+#
+# Not all source types define all recon types. To skip a particular
+# recon type for a source type, pass in an array of symbols of recon
+# types to skip; e.g,
+#
+#     skips = %i{ genres named-subjects }
+#     it_behaves_like 'a ReconBuilder', skips
+#
 RSpec.shared_examples 'a ReconBuilder' do |skips|
 
   def skip? *skips, recon_type
