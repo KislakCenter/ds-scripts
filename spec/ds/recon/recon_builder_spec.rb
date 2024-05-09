@@ -32,9 +32,9 @@ RSpec.describe Recon::ReconBuilder do
         let(:recons) {
           [
             {
-              "authorized_label" => "France",
+              :authorized_label => "France",
               :place_as_recorded => "France",
-              "structured_value" => "http://vocab.getty.edu/tgn/1000070"
+              :structured_value => "http://vocab.getty.edu/tgn/1000070"
             }
           ]
 
@@ -49,34 +49,34 @@ RSpec.describe Recon::ReconBuilder do
         let(:recon_type) { :names }
 
         let(:recons) {
-          [{"authorized_label"=>"Helmut Beck",
-            "instance_of"=>"human",
+          [{:authorized_label=>"Helmut Beck",
+            :instance_of=>"human",
             :name_agr=>"",
             :name_as_recorded=>"Beck, Helmut, 1919-2001",
             :role=>"former owner",
             :source_authority_uri=>"",
-            "structured_value"=>"Q94821473"},
-           {"authorized_label"=>"Boethius",
-            "instance_of"=>"human",
+            :structured_value=>"Q94821473"},
+           {:authorized_label=>"Boethius",
+            :instance_of=>"human",
             :name_agr=>"",
             :name_as_recorded=>"Boethius, -524",
             :role=>"author",
             :source_authority_uri=>"http://id.loc.gov/authorities/names/n79029805",
-            "structured_value"=>"Q102851"},
-           {"authorized_label"=>"Thomas Phillipps",
-            "instance_of"=>"human",
+            :structured_value=>"Q102851"},
+           {:authorized_label=>"Thomas Phillipps",
+            :instance_of=>"human",
             :name_agr=>"",
             :name_as_recorded=>"Phillipps, Thomas, Sir, 1792-1872",
             :role=>"former owner",
             :source_authority_uri=>"http://id.loc.gov/authorities/names/n50078542",
-            "structured_value"=>"Q2147709"},
-           {"authorized_label"=>"Fleury Abbey",
-            "instance_of"=>"organization",
+            :structured_value=>"Q2147709"},
+           {:authorized_label=>"Fleury Abbey",
+            :instance_of=>"organization",
             :name_agr=>"",
             :name_as_recorded=>"Saint-Benoît-sur-Loire (Abbey)",
             :role=>"former owner",
             :source_authority_uri=>"http://id.loc.gov/authorities/names/n83019607",
-            "structured_value"=>"Q956741"}]
+            :structured_value=>"Q956741"}]
 
         }
 
@@ -103,12 +103,12 @@ RSpec.describe Recon::ReconBuilder do
       end
 
       let(:recons) {
-        [{"authorized_label"=>"France",
+        [{:authorized_label=>"France",
           :place_as_recorded=>"France",
-          "structured_value"=>"http://vocab.getty.edu/tgn/1000070"},
-         {"authorized_label"=>"Paris",
+          :structured_value=>"http://vocab.getty.edu/tgn/1000070"},
+         {:authorized_label=>"Paris",
           :place_as_recorded=>"Paris",
-          "structured_value"=>"http://vocab.getty.edu/tgn/paris_id"}]
+          :structured_value=>"http://vocab.getty.edu/tgn/paris_id"}]
       }
 
       it 'returns the places auth values' do
@@ -122,11 +122,11 @@ RSpec.describe Recon::ReconBuilder do
       end
 
       let(:recons) {
-        [{"authorized_label"=>"parchment;paper",
+        [{:authorized_label=>"parchment;paper",
           :material_as_recorded=>"materials description",
-          "structured_value"=>
-            "http://vocab.getty.edu/aat/300014109;http://vocab.getty.edu/aat/300011851"}]
-
+          :structured_value=>
+            "http://vocab.getty.edu/aat/300014109;http://vocab.getty.edu/aat/300011851"}
+        ]
       }
 
       it 'returns the materials auth values' do
@@ -136,42 +136,42 @@ RSpec.describe Recon::ReconBuilder do
 
     context ':names' do
       let(:recons) {
-        [{"authorized_label"=>"Scribe auth name",
-          "instance_of"=>"human",
+        [{:authorized_label=>"Scribe auth name",
+          :instance_of=>"human",
           :name_agr=>"A scribe in original script",
           :name_as_recorded=>"A scribe",
           :role=>"scribe",
           :source_authority_uri=>nil,
-          "structured_value"=>"WDQIDSCRIBE"},
-         {"authorized_label"=>"",
-          "instance_of"=>"",
+          :structured_value=>"WDQIDSCRIBE"},
+         {:authorized_label=>"",
+          :instance_of=>"",
           :name_agr=>nil,
           :name_as_recorded=>"An artist",
           :role=>"artist",
           :source_authority_uri=>nil,
-          "structured_value"=>""},
-         {"authorized_label"=>"Author auth name",
-          "instance_of"=>"human",
+          :structured_value=>""},
+         {:authorized_label=>"Author auth name",
+          :instance_of=>"human",
           :name_agr=>"An author in original script",
           :name_as_recorded=>"An author",
           :role=>"author",
           :source_authority_uri=>nil,
-          "structured_value"=>"WDQIDAUTHOR"},
-         {"authorized_label"=>"Artist auth name",
-          "instance_of"=>"human",
+          :structured_value=>"WDQIDAUTHOR"},
+         {:authorized_label=>"Artist auth name",
+          :instance_of=>"human",
           :name_agr=>"Another artist original script",
           :name_as_recorded=>"Another artist",
           :role=>"artist",
           :source_authority_uri=>nil,
-          "structured_value"=>"WDQIDARTIST"},
-         {"authorized_label"=>"Former owner auth name",
-          "instance_of"=>"organization",
+          :structured_value=>"WDQIDARTIST"},
+         {:authorized_label=>"Former owner auth name",
+          :instance_of=>"organization",
           :name_agr=>"Former owner in original script",
           :name_as_recorded=>"Former owner as recorded",
           :role=>"former_owner",
           :source_authority_uri=>nil,
-          "structured_value"=>"WDQIDOWNER"}]
-
+          :structured_value=>"WDQIDOWNER"}
+        ]
       }
 
       it 'returns the auth values' do
@@ -181,65 +181,65 @@ RSpec.describe Recon::ReconBuilder do
 
     context ":genres" do
       let(:recons) {
-        [{"authorized_label"=>"",
+        [{:authorized_label=>"",
             :genre_as_recorded=>"A FAST term",
             :source_authority_uri=>nil,
-            "structured_value"=>"",
+            :structured_value=>"",
             :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"A second AAT term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"A second FAST term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"A third genre",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"An AAT term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"An LCGFT term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"An LoBT term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"An RBMSVC term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"Another LCGFT term",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"books of hours",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil},
-          {"authorized_label"=>"glossaries",
+          {:authorized_label=>"glossaries",
               :genre_as_recorded=>"Glossaries",
               :source_authority_uri=>nil,
-              "structured_value"=>"http://vocab.getty.edu/aat/300026189",
+              :structured_value=>"http://vocab.getty.edu/aat/300026189",
               :vocabulary=>nil},
-          {"authorized_label"=>"",
+          {:authorized_label=>"",
               :genre_as_recorded=>"prayer books",
               :source_authority_uri=>nil,
-              "structured_value"=>"",
+              :structured_value=>"",
               :vocabulary=>nil}]
       }
 
@@ -251,21 +251,21 @@ RSpec.describe Recon::ReconBuilder do
 
     context ":subjects" do
       let(:recons) {
-        [{"authorized_label"=>"",
+        [{:authorized_label=>"",
           :source_authority_uri=>nil,
-          "structured_value"=>"",
+          :structured_value=>"",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A chronological subject",
           :vocab=>nil},
-         {"authorized_label"=>"",
+         {:authorized_label=>"",
           :source_authority_uri=>nil,
-          "structured_value"=>"",
+          :structured_value=>"",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A geographical subject",
           :vocab=>nil},
-         {"authorized_label"=>"Topical auth label",
+         {:authorized_label=>"Topical auth label",
           :source_authority_uri=>nil,
-          "structured_value"=>"http://id.worldcat.org/fast/topical_subject",
+          :structured_value=>"http://id.worldcat.org/fast/topical_subject",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A topical subject",
           :vocab=>nil}]
@@ -279,27 +279,27 @@ RSpec.describe Recon::ReconBuilder do
 
     context ":named_subjects" do
       let(:recons) {
-        [{"authorized_label"=>"Named subject auth label",
+        [{:authorized_label=>"Named subject auth label",
           :source_authority_uri=>nil,
-          "structured_value"=>"http://id.worldcat.org/fast/named_subject",
+          :structured_value=>"http://id.worldcat.org/fast/named_subject",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A corporate named subject",
           :vocab=>nil},
-         {"authorized_label"=>"",
+         {:authorized_label=>"",
           :source_authority_uri=>nil,
-          "structured_value"=>"",
+          :structured_value=>"",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A named event",
           :vocab=>nil},
-         {"authorized_label"=>"",
+         {:authorized_label=>"",
           :source_authority_uri=>nil,
-          "structured_value"=>"",
+          :structured_value=>"",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A personal named subject",
           :vocab=>nil},
-         {"authorized_label"=>"",
+         {:authorized_label=>"",
           :source_authority_uri=>nil,
-          "structured_value"=>"",
+          :structured_value=>"",
           :subfield_codes=>nil,
           :subject_as_recorded=>"A uniform title subject",
           :vocab=>nil}]
@@ -313,12 +313,12 @@ RSpec.describe Recon::ReconBuilder do
 
     context ":titles" do
       let(:recons) {
-        [{"authorized_label"=>"",
+        [{:authorized_label=>"",
           :title_as_recorded=>"Book of Hours",
           :title_as_recorded_agr=>nil,
           :uniform_title_as_recorded=>nil,
           :uniform_title_as_recorded_agr=>nil},
-         {"authorized_label"=>"Standard title",
+         {:authorized_label=>"Standard title",
           :title_as_recorded=>"Title",
           :title_as_recorded_agr=>"Title in vernacular",
           :uniform_title_as_recorded=>nil,
@@ -334,9 +334,9 @@ RSpec.describe Recon::ReconBuilder do
     context ":languages" do
       let(:recons) {
         [
-          { :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" },
-          { :language_as_recorded => "Farsi", :language_code => "", "authorized_label" => "Persian", "structured_value" => "Q9168" },
-          { :language_as_recorded => "Latin", :language_code => "", "authorized_label" => "Latin", "structured_value" => "Q397" }
+          { :language_as_recorded => "Arabic", :language_code => "", :authorized_label => "Arabic", :structured_value => "Q13955" },
+          { :language_as_recorded => "Farsi", :language_code => "", :authorized_label => "Persian", :structured_value => "Q9168" },
+          { :language_as_recorded => "Latin", :language_code => "", :authorized_label => "Latin", :structured_value => "Q397" }
         ]
       }
 

@@ -88,8 +88,20 @@ module Recon
     end
 
     def write_csv item_type
+      recons = extract_recons item_type
+      if recons.blank?
+        STDERR.puts "WARNING: No recon values for #{item_type}"
+        return
+      end
+
       outfile = File.join out_dir, "#{item_type}.csv"
-      csv
+      CSV.open outfile, 'w+', headers: true do |csv|
+        csv << recons.first.keys
+        recons.each do |row|
+          csv << row
+        end
+      end
+      outfile
     end
 
     ##
@@ -122,11 +134,11 @@ module Recon
     ##
     # Build an array of recon CSV rows; e.g.,
     #
-    #       [
-    #          ["Arabic", nil, "Arabic", "Q13955"],
-    #          ["Farsi", nil, "Persian", "Q9168"],
-    #          ["Latin", nil, "Latin", "Q397"]
-    #       ]
+    #         [
+    #           { :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" },
+    #           { :language_as_recorded => "Farsi", :language_code => "", "authorized_label" => "Persian", "structured_value" => "Q9168" },
+    #           { :language_as_recorded => "Latin", :language_code => "", "authorized_label" => "Latin", "structured_value" => "Q397" }
+    #         ]
     #
     # Note the +delimiter_map+ option. This is a hash of replacement
     # values to use when one delimiter should replace another. For
@@ -134,23 +146,24 @@ module Recon
     # pipes (+|+), when they should be separated by the standard
     # subfield delimiter, the semicolon (+;+).
     #
-    # @todo: There's something off about the need to replace delmiters
-    #   the source and output of the recon result are the recon CSV.
-    #   There shouldn't be any need to make this conversion. Keeping
-    #   the behavior for now to match the code being refactored.
+    # @todo: There's something off about the need to replace
+    #   delimiters; the source and output of this recon data are the
+    #   recon CSV. There shouldn't be any need to make this
+    #   conversion. Keeping the behavior for now to match the code
+    #   being refactored.
     #
     # @param items [Array<DS::Extractor::BaseTerm>] the list of terms to process e.g, Language
     # @param recon_type [String] the recon set name; e.g., 'languages'
     # @param columns [Array<Symbol>] a list of recon columns to add to the term array; e.g., <tt>[:authorized_label, :structured_value]</tt>
     # @param delimiter_map [Hash<String,String>] a map of delimiters to replace; e.g., <tt>{ '|' => ';' }</tt>
-    # @return [Array<Hash<String,String>>] an array of arrays of +item.to_a+ plus recon columns; e.g., <tt>[['Arabic', 'ara', 'Arabic', 'Q13955']]</tt>
+    # @return [Array<Hash<Symbol,String>>] an array of arrays of +item.to_h+ plus recon columns; e.g., <tt>[{ :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" }]</tt>
     def build_recons items:, recon_type:, columns: [], delimiter_map: {}
       items.map { |item|
         as_recorded = item.as_recorded
         row = item.to_h
         columns.each do |col|
           val = Recon.lookup(recon_type, value: as_recorded, column: col)
-          row[col] = fix_delimiters val, delimiter_map
+          row[col.to_sym] = fix_delimiters val, delimiter_map
         end
         row
       }

@@ -13,17 +13,18 @@
 # - that +#extract_recons+ returns a non-empty Array
 # - that +#extract_recons+ returns an array of hashes
 # - that +#extract_recons+ returns an 2-D array with the correct number of columns in each row
+# - that +#write_csv+ creates a non-empty CSV for each recon type
 #
 # the calling context must define the following via let statements
 #
-# - +source_type+
-# - +files+
-# - +out_dir+
-# - +recon_builder+
+# - +:source_type+
+# - +:files+
+# - +:out_dir+
+# - +:recon_builder+
 #
 # Not all source types define all recon types. To skip a particular
-# recon type for a source type, pass in an array of symbols of recon
-# types to skip; e.g,
+# recon type for a source type, pass in an array of symbols of types
+# to skip; e.g,
 #
 #     skips = %i{ genres named-subjects }
 #     it_behaves_like 'a ReconBuilder', skips
@@ -208,4 +209,61 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
     end
   end
 
+  context '#write_csv' do
+    context :titles do
+      let(:recon_type) { :titles }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+
+    context :names, unless: skip_example?(skips, :names) do
+      let(:recon_type) { :names }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+
+    context :materials, unless: skip_example?(skips, :materials) do
+      let(:recon_type) { :materials }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+
+    context :genres, unless: skip_example?(skips, :genres) do
+      let(:recon_type) { :genres }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+
+    context :subjects, unless: skip_example?(skips, :subjects) do
+      let(:recon_type) { :subjects }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+
+    context :'named-subjects', unless: skip_example?(skips, :'named-subjects') do
+      let(:recon_type) { :'named-subjects' }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+
+    context :languages, unless: skip_example?(skips, :languages) do
+      let(:recon_type) { :languages }
+
+      it "writes the CSV" do
+        expect { recon_builder.write_csv recon_type }.not_to raise_error
+      end
+    end
+  end
 end
