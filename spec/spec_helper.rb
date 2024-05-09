@@ -402,8 +402,7 @@ end
 #####################################################################
 def skip_example? options, *symbols
   return unless options.present?
-  return unless options[:except].present?
-  symbols.any? { |sym| options[:except].include? sym }
+  symbols.any? { |sym| options.include? sym }
 end
 
 def skip? options, *types
@@ -421,7 +420,7 @@ RSpec.configure do |c|
   c.include Helpers
 end
 
-require_relative './expections'
+require_relative 'expections'
 require_relative 'support/extractor_examples'
 require_relative 'support/recon_extractor_examples'
 require_relative 'support/extractor_mapper_examples'

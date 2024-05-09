@@ -35,3 +35,12 @@ RSpec::Matchers.define :be_a_ds_id do
     end
   end
 end
+
+RSpec::Matchers.define :have_columns do |num_columns|
+  match do |actual|
+    actual.all? { |row|  row.size == num_columns }
+    failure_message_when_negated do |actual|
+      "expected that each row of #{actual} would have #{num_columns} columns"
+    end
+  end
+end

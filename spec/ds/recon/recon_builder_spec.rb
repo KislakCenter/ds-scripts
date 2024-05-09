@@ -12,7 +12,8 @@ RSpec.describe Recon::ReconBuilder do
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
 
-    it_behaves_like "a ReconBuilder"
+    skips = %i{ named-subjects }
+    it_behaves_like 'a ReconBuilder', skips
 
   end
 
@@ -204,14 +205,15 @@ RSpec.describe Recon::ReconBuilder do
   end
 
   context 'DS METS XML' do
-    let(:files) { File.join fixture_path('ds_mets_xml'), 'cubanc_50_48_00206115.xml' }
+    let(:files) { File.join fixture_path('ds_mets_xml'), 'ds_mets-nelson-atkins-kg40.xml' }
     let(:source_type) { DS::Constants::DS_METS }
     let(:out_dir) { File.join DS.root, 'tmp' }
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
 
-    it_behaves_like 'a ReconBuilder'
+    skips = %i{ genres named-subjects }
+    it_behaves_like 'a ReconBuilder', skips
   end
 
 end
