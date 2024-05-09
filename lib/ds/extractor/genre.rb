@@ -23,9 +23,9 @@ module DS
 
       def to_h
         {
-          as_recorded: as_recorded,
+          genre_as_recorded: as_recorded,
           source_authority_uri: source_authority_uri,
-          vocab: vocab
+          vocabulary: vocab
         }
       end
     end

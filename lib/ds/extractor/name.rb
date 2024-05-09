@@ -17,6 +17,15 @@ module DS
       def to_a
         [as_recorded, role, vernacular, ref]
       end
+
+      def to_h
+        {
+          name_as_recorded: as_recorded,
+          role: role,
+          name_agr: vernacular,
+          source_authority_uri: ref
+        }
+      end
     end
   end
 end

@@ -84,8 +84,12 @@ module Recon
     end
 
     def extractor
-      return @extractor if @extractor.present?
-      @extractor = SOURCE_TYPE_EXTRACTORS[source_type]
+      @extractor ||= SOURCE_TYPE_EXTRACTORS[source_type]
+    end
+
+    def write_csv item_type
+      outfile = File.join out_dir, "#{item_type}.csv"
+      csv
     end
 
     ##
@@ -106,7 +110,9 @@ module Recon
         columns:       recon_config.columns,
         delimiter_map: recon_config.delimiter_map
       )
-      recons.sort
+      recons.sort { |a,b|
+        a.values.join.downcase <=> b.values.join.downcase
+      }
     end
 
     def find_recon_type name
@@ -137,15 +143,15 @@ module Recon
     # @param recon_type [String] the recon set name; e.g., 'languages'
     # @param columns [Array<Symbol>] a list of recon columns to add to the term array; e.g., <tt>[:authorized_label, :structured_value]</tt>
     # @param delimiter_map [Hash<String,String>] a map of delimiters to replace; e.g., <tt>{ '|' => ';' }</tt>
-    # @return [Array<Array<String>]> an array of arrays of +item.to_a+ plus recon columns; e.g., <tt>[['Arabic', 'ara', 'Arabic', 'Q13955']]</tt>
+    # @return [Array<Hash<String,String>>] an array of arrays of +item.to_a+ plus recon columns; e.g., <tt>[['Arabic', 'ara', 'Arabic', 'Q13955']]</tt>
     def build_recons items:, recon_type:, columns: [], delimiter_map: {}
       items.map { |item|
         as_recorded = item.as_recorded
-        row = item.to_a
-        row += columns.map { |col|
+        row = item.to_h
+        columns.each do |col|
           val = Recon.lookup(recon_type, value: as_recorded, column: col)
-          fix_delimiters val, delimiter_map
-        }
+          row[col] = fix_delimiters val, delimiter_map
+        end
         row
       }
     end

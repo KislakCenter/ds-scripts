@@ -11,6 +11,7 @@
 # - Initialization
 # - that +#extract_recons+ returns an Array
 # - that +#extract_recons+ returns a non-empty Array
+# - that +#extract_recons+ returns an array of hashes
 # - that +#extract_recons+ returns an 2-D array with the correct number of columns in each row
 #
 # the calling context must define the following via let statements
@@ -55,6 +56,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         expect(recon_builder.extract_recons recon_type).not_to be_empty
       end
 
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+      end
+
       let(:number_of_columns) { 3 }
       it 'returns the correct number of elements per row' do
         expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
@@ -69,6 +74,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
       it 'returns an non-empty array' do
         expect(recon_builder.extract_recons recon_type).not_to be_empty
+      end
+
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
       end
 
       let(:number_of_columns) { 3 }
@@ -87,6 +96,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         expect(recon_builder.extract_recons recon_type).not_to be_empty
       end
 
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+      end
+
       let(:number_of_columns) { 4 }
       it 'returns the correct number of elements per row' do
         expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
@@ -101,6 +114,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
       it 'returns an non-empty array' do
         expect(recon_builder.extract_recons recon_type).not_to be_empty
+      end
+
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
       end
 
       let(:number_of_columns) { 4 }
@@ -120,6 +137,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         expect(recon_builder.extract_recons recon_type).not_to be_empty
       end
 
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+      end
+
       let(:number_of_columns) { 4 }
       it 'returns the correct number of elements per row' do
         expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
@@ -134,6 +155,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
       it 'returns an non-empty array' do
         expect(recon_builder.extract_recons recon_type).not_to be_empty
+      end
+
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
       end
 
       let(:number_of_columns) { 6 }
@@ -152,6 +177,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         expect(recon_builder.extract_recons recon_type).not_to be_empty
       end
 
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+      end
+
       let(:number_of_columns) { 7 }
       it 'returns the correct number of elements per row' do
         expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
@@ -166,6 +195,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
       it 'returns an non-empty array' do
         expect(recon_builder.extract_recons recon_type).not_to be_empty
+      end
+
+      it 'returns an array of hashes' do
+        expect(recon_builder.extract_recons recon_type).to all be_a Hash
       end
 
       let(:number_of_columns) { 5 }

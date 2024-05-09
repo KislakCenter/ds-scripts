@@ -207,12 +207,6 @@ module DS
 
         def extract_languages_as_recorded xml, separator: '|'
           extract_languages(xml).map &:as_recorded
-          # xpath       = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-          # as_recorded = extract_normalized_strings(xml, xpath).first
-          # if as_recorded.blank?
-          #   as_recorded = DS::Extractor::TeiXml.extract_language_codes xml, separator: separator
-          # end
-          # as_recorded
         end
 
         ##
