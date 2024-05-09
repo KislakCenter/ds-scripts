@@ -18,7 +18,7 @@ class ReconCLI < DS::CLI
   class_option :directory, banner: 'PATH', desc: "Output directory [ignored by recon-update, validate]", aliases: '-o', default: '.'
   class_option :'source-type',
                banner: 'TYPE',
-               desc: "One of #{DS::SOURCE_TYPES.join(', ')}; REQUIRED except for recon-update, validate",
+               desc: "One of #{DS::VALID_SOURCE_TYPES.join(', ')}; REQUIRED except for recon-update, validate",
                aliases: '-t',
                required: (ARGV.size > 0 && ! %w{recon-update validate}.include?(ARGV[0]))
   class_option :verbose, desc: "Print full error messages", aliases: '-v', type: :boolean, default: false

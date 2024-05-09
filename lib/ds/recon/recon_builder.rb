@@ -8,7 +8,9 @@ module Recon
 
     SOURCE_TYPE_ENUMERATORS = {
       DS::Constants::DS_CSV => Recon::DsCsvEnumerator,
-      DS::Constants::MARC_XML => Recon::MarcXmlEnumerator
+      DS::Constants::MARC_XML => Recon::MarcXmlEnumerator,
+      DS::Constants::TEI_XML => Recon::TeiXmlEnumerator,
+      DS::Constants::DS_METS => Recon::DsMetsXmlEnumerator,
     }
 
     SOURCE_TYPE_EXTRACTORS = {
@@ -94,6 +96,7 @@ module Recon
 
       enumerator.each do |record|
         [recon_config.method_name].flatten.each do |name|
+          next unless extractor.respond_to? name.to_sym
           items += extractor.send(name.to_sym, record)
         end
       end

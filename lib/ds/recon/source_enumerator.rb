@@ -2,6 +2,7 @@
 
 module Recon
   class SourceEnumerator
+    include DS::Util
     include Enumerable
 
     attr_accessor :files
