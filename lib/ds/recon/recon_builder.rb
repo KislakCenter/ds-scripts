@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'recon_config'
+
 module Recon
   class ReconBuilder
     attr_reader :source_type
@@ -20,51 +22,47 @@ module Recon
       DS::Constants::TEI_XML  => DS::Extractor::TeiXml
     }
 
-    ReconType = Struct.new(
-      'ReconType', :method_name, :item_type, :columns, :delimiter_map,
-      keyword_init: true
-    )
 
     RECON_TYPES = [
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_places],
         item_type: :places,
         columns: %w[authorized_label structured_value],
         delimiter_map: { '|' => ';'}
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name:   :extract_materials,
         item_type:     :materials,
         columns:       %w[authorized_label structured_value],
         delimiter_map: { '|' => ';' }
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
         item_type: :names,
         columns: %w[instance_of authorized_label structured_value]
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_genres],
         item_type: :genres,
         columns: %w[authorized_label structured_value]
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_subjects],
         item_type: :subjects,
         columns: %w[authorized_label structured_value]
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_named_subjects],
         item_type: :'named-subjects',
         columns: %w[authorized_label structured_value],
         delimiter_map: { '|' => ';' }
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_titles],
         item_type: :titles,
         columns: %w[authorized_label]
       ),
-      ReconType.new(
+      ReconConfig.new(
         method_name: %i[extract_languages],
         item_type: :languages,
         columns: %w[authorized_label structured_value]
@@ -116,12 +114,8 @@ module Recon
           items += extractor.send(name.to_sym, record)
         end
       end
-      recons = build_recons(
-        items:         items,
-        recon_type:    recon_config.item_type.to_s,
-        columns:       recon_config.columns,
-        delimiter_map: recon_config.delimiter_map
-      )
+      recons = build_recons(items: items, recon_type: recon_config)
+
       recons.sort { |a,b|
         a.values.join.downcase <=> b.values.join.downcase
       }
@@ -153,17 +147,15 @@ module Recon
     #   being refactored.
     #
     # @param items [Array<DS::Extractor::BaseTerm>] the list of terms to process e.g, Language
-    # @param recon_type [String] the recon set name; e.g., 'languages'
-    # @param columns [Array<Symbol>] a list of recon columns to add to the term array; e.g., <tt>[:authorized_label, :structured_value]</tt>
-    # @param delimiter_map [Hash<String,String>] a map of delimiters to replace; e.g., <tt>{ '|' => ';' }</tt>
+    # @param recon_type [ReconConfig] the recon type config struct
     # @return [Array<Hash<Symbol,String>>] an array of arrays of +item.to_h+ plus recon columns; e.g., <tt>[{ :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" }]</tt>
-    def build_recons items:, recon_type:, columns: [], delimiter_map: {}
+    def build_recons items:, recon_type:
       items.map { |item|
         as_recorded = item.as_recorded
         row = item.to_h
-        columns.each do |col|
-          val = Recon.lookup(recon_type, value: as_recorded, column: col)
-          row[col.to_sym] = fix_delimiters val, delimiter_map
+        recon_type.columns.each do |col|
+          val = Recon.lookup(recon_type.item_type.to_s, value: as_recorded, column: col)
+          row[col.to_sym] = fix_delimiters val, recon_type.delimiter_map
         end
         row
       }
