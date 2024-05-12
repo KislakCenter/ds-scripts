@@ -1,11 +1,32 @@
 require 'nokogiri'
+require_relative 'recon_type'
 
 module Recon
   class Places
 
     extend DS::Util
+    include ReconType
 
-    CSV_HEADERS = %w{ place_as_recorded authorized_label structured_value }
+    SET_NAME = 'places'
+
+    CSV_HEADERS = %i{ place_as_recorded authorized_label structured_value ds_qid}
+
+    LOOKUP_COLUMNS = %i{
+      authorized_label
+      structured_value
+      ds_qid
+    }
+
+    KEY_COLUMNS = %i{
+      place_as_recorded
+    }
+
+
+    AS_RECORDED_COLUMN = %i{
+      place_as_recorded
+    }
+
+    DELIMITER_MAP = { '|' => ';' }
 
     def self.add_recon_values rows
       rows.each do |row|

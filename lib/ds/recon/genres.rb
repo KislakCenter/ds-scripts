@@ -1,4 +1,5 @@
 require 'nokogiri'
+require_relative 'recon_type'
 
 module Recon
   ##
@@ -10,13 +11,37 @@ module Recon
   class Genres
 
     extend DS::Util
-    CSV_HEADERS = %w{
+    include ReconType
+
+    SET_NAME = 'genres'
+
+    CSV_HEADERS = %i{
       genre_as_recorded
       vocabulary
       source_authority_uri
       authorized_label
       structured_value
+      ds_qid
     }
+
+    LOOKUP_COLUMNS = %i{
+      authorized_label
+      structured_value
+      ds_qid
+    }
+
+    KEY_COLUMNS = %i{
+      genre_as_recorded
+      vocabulary
+    }
+
+
+    AS_RECORDED_COLUMN = %i{
+      genre_as_recorded
+    }
+
+    DELIMITER_MAP = { '|' => ';' }
+
 
     def self.add_recon_values rows
       rows.each do |row|

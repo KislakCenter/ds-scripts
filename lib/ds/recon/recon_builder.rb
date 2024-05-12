@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'recon_config'
+# require_relative 'recon_config'
+require_relative 'recon_type'
 
 module Recon
   class ReconBuilder
@@ -23,49 +24,47 @@ module Recon
     }
 
 
+    ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
     RECON_TYPES = [
       ReconConfig.new(
         method_name: %i[extract_places],
-        item_type: :places,
-        columns: %w[authorized_label structured_value],
-        delimiter_map: { '|' => ';'}
+        klass: Recon::Places,
+        set_name: Recon::Places.set_name
       ),
       ReconConfig.new(
         method_name:   :extract_materials,
-        item_type:     :materials,
-        columns:       %w[authorized_label structured_value],
-        delimiter_map: { '|' => ';' }
+        klass: Recon::Materials,
+        set_name: Recon::Materials.set_name
       ),
       ReconConfig.new(
         method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
-        item_type: :names,
-        columns: %w[instance_of authorized_label structured_value]
+        klass: Recon::Names,
+        set_name: Recon::Names.set_name
       ),
       ReconConfig.new(
         method_name: %i[extract_genres],
-        item_type: :genres,
-        columns: %w[authorized_label structured_value]
+        klass: Recon::Genres,
+        set_name: Recon::Genres.set_name
       ),
       ReconConfig.new(
         method_name: %i[extract_subjects],
-        item_type: :subjects,
-        columns: %w[authorized_label structured_value]
+        klass: Recon::Subjects,
+        set_name: Recon::Subjects.set_name
       ),
       ReconConfig.new(
         method_name: %i[extract_named_subjects],
-        item_type: :'named-subjects',
-        columns: %w[authorized_label structured_value],
-        delimiter_map: { '|' => ';' }
+        klass: Recon::NamedSubjects,
+        set_name: Recon::NamedSubjects.set_name
       ),
       ReconConfig.new(
         method_name: %i[extract_titles],
-        item_type: :titles,
-        columns: %w[authorized_label]
+        klass: Recon::Titles,
+        set_name: Recon::Titles.set_name
       ),
       ReconConfig.new(
         method_name: %i[extract_languages],
-        item_type: :languages,
-        columns: %w[authorized_label structured_value]
+        klass: Recon::Languages,
+        set_name: Recon::Languages.set_name
       )
     ]
 
@@ -114,7 +113,7 @@ module Recon
           items += extractor.send(name.to_sym, record)
         end
       end
-      recons = build_recons(items: items, recon_type: recon_config)
+      recons = build_recons(items: items, recon_type: recon_config.klass)
 
       recons.sort { |a,b|
         a.values.join.downcase <=> b.values.join.downcase
@@ -122,7 +121,7 @@ module Recon
     end
 
     def find_recon_type name
-      RECON_TYPES.find { |config| config.item_type == name.to_sym }
+      RECON_TYPES.find { |config| config.set_name == name.to_s }
     end
 
     ##
@@ -147,14 +146,14 @@ module Recon
     #   being refactored.
     #
     # @param items [Array<DS::Extractor::BaseTerm>] the list of terms to process e.g, Language
-    # @param recon_type [ReconConfig] the recon type config struct
+    # @param recon_type [Recon::ReconType] the recon type config struct
     # @return [Array<Hash<Symbol,String>>] an array of arrays of +item.to_h+ plus recon columns; e.g., <tt>[{ :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" }]</tt>
     def build_recons items:, recon_type:
       items.map { |item|
         as_recorded = item.as_recorded
         row = item.to_h
-        recon_type.columns.each do |col|
-          val = Recon.lookup(recon_type.item_type.to_s, value: as_recorded, column: col)
+        recon_type.lookup_columns.each do |col|
+          val = Recon.lookup(recon_type.set_name, value: as_recorded, column: col)
           row[col.to_sym] = fix_delimiters val, recon_type.delimiter_map
         end
         row
@@ -164,7 +163,7 @@ module Recon
     def fix_delimiters value, delimiter_map = {}
       return value if delimiter_map.blank?
       val = ''
-      delimiter_map.each  { |old, new| val = value.gsub old, new }
+      delimiter_map.each  { |old, new| val = value.to_s.gsub old, new }
       val
     end
   end

@@ -1,17 +1,39 @@
 require 'nokogiri'
+require_relative 'recon_type'
 
 module Recon
   class Titles
 
     extend DS::Util
+    include ReconType
 
-    CSV_HEADERS = %w{
+    SET_NAME = 'titles'
+
+    CSV_HEADERS = %i{
       title_as_recorded
       title_as_recorded_agr
       uniform_title_as_recorded
       uniform_title_as_recorded_agr
       authorized_label
+      ds_qid
     }
+
+    LOOKUP_COLUMNS = %i{
+      authorized_label
+      ds_qid
+    }
+
+    KEY_COLUMNS = %i{
+      title_as_recorded
+    }
+    # TODO: add uniform_title_as_recorded as KEY column
+
+
+    AS_RECORDED_COLUMN = %i{
+      title_as_recorded
+    }
+
+    DELIMITER_MAP = { '|' => ';' }
 
     def self.add_recon_values rows
       rows.each do |row|

@@ -1,18 +1,40 @@
 require 'nokogiri'
+require_relative 'recon_type'
 
 module Recon
   class Names
 
     extend DS::Util
+    include ReconType
 
-    CSV_HEADERS = %w{
+    SET_NAME = 'names'
+
+    CSV_HEADERS = %i{
       name_as_recorded
       role name_agr
       source_authority_uri
       instance_of
       authorized_label
       structured_value
+      ds_qid
     }
+
+    LOOKUP_COLUMNS = %i{
+      authorized_label
+      structured_value
+      instance_of
+      ds_qid
+    }
+
+    KEY_COLUMNS = %i{
+      name_as_recorded
+    }
+
+    AS_RECORDED_COLUMN = %i{
+      name_as_recorded
+    }
+
+    DELIMITER_MAP = {}
 
     def self.add_recon_values rows
       rows.each do |row|

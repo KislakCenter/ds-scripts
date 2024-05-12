@@ -1,12 +1,37 @@
 require 'nokogiri'
+require_relative 'recon_type'
 
 module Recon
   class Materials
 
     extend DS::Util
+    include ReconType
 
-    extend DS::Util
-    CSV_HEADERS = %w{material_as_recorded authorized_label structured_value}
+    SET_NAME = 'materials'
+
+    CSV_HEADERS = %i{
+      material_as_recorded
+      authorized_label
+      structured_value
+      ds_qid
+    }
+
+    LOOKUP_COLUMNS = %i{
+      authorized_label
+      structured_value
+      ds_qid
+    }
+
+    KEY_COLUMNS = %i{
+      material_as_recorded
+    }
+
+
+    AS_RECORDED_COLUMN = %i{
+      material_as_recorded
+    }
+
+    DELIMITER_MAP = { '|' => ';' }
 
     def self.add_recon_values rows
       rows.each do |row|

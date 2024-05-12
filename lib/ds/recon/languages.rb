@@ -1,14 +1,36 @@
+require_relative 'recon_type'
 module Recon
   class Languages
 
     extend DS::Util
+    include Recon::ReconType
 
-    CSV_HEADERS = %w{
+    SET_NAME = 'languages'
+
+    CSV_HEADERS = %i{
       language_as_recorded
       language_code
       authorized_label
       structured_value
+      ds_qid
     }
+
+    LOOKUP_COLUMNS = %i{
+      authorized_label
+      structured_value
+      ds_qid
+    }
+
+    KEY_COLUMNS = %i{
+      language_as_recorded
+    }
+
+    AS_RECORDED_COLUMN = %i{
+      language_as_recorded
+    }
+
+    DELIMITER_MAP = {}
+
 
     def self.add_recon_values rows
       rows.each do |row|
