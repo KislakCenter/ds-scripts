@@ -28,7 +28,7 @@ module Recon
     extend DS::Util
     include ReconType
 
-    SET_NAME = 'subjects'
+    SET_NAME = :subjects
 
     CSV_HEADERS = %i{
       subject_as_recorded
@@ -102,7 +102,7 @@ module Recon
     end
 
     def self._lookup_single term, from_column:
-      uris = Recon.lookup('subjects', value: term, column: from_column)
+      uris = Recon.lookup(SET_NAME, value: term, column: from_column)
       uris.to_s.gsub '|', ';'
     end
   end

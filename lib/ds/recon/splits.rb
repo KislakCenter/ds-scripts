@@ -39,7 +39,7 @@ module Recon
 
     def self._lookup_single as_recorded, from_column:
       # if as_recorded.to_s.size >= 400 ; require 'pry'; binding.pry; end
-      Recon.lookup('splits', value: as_recorded, column: from_column)
+      Recon.lookup(:splits, value: as_recorded, column: from_column)
     end
 
   end

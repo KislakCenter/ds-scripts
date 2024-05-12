@@ -10,7 +10,7 @@ RSpec.shared_examples "a recon type class" do
     end
 
     it 'returns a of symbol' do
-      expect(described_class.send the_method).to be_a String
+      expect(described_class.send the_method).to be_a Symbol
     end
   end
 

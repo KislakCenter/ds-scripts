@@ -103,12 +103,12 @@ module Recon
 
   def self.find_set_config name
     config = Settings.recon.sets.find { |s| s.name == name }
-    raise DSError, "Unknown set name: #{name}" unless config
+    raise DSError, "Unknown set name: #{name.inspect}" unless config
     config
   end
 
   def self.find_recon_config set_name
-    RECON_TYPES.find { |config| config.set_name == set_name.to_s }
+    RECON_TYPES.find { |config| config.set_name == set_name }
   end
 
   def self.csv_files set_name

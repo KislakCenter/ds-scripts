@@ -7,7 +7,7 @@ module Recon
     extend DS::Util
     include ReconType
 
-    SET_NAME = 'materials'
+    SET_NAME = :materials
 
     CSV_HEADERS = %i{
       material_as_recorded
@@ -36,8 +36,8 @@ module Recon
     def self.add_recon_values rows
       rows.each do |row|
         material_as_recorded = row.first
-        material_labels      = Recon.lookup 'materials', value: material_as_recorded, column: 'authorized_label'
-        material_uris        = Recon.lookup 'materials', value: material_as_recorded, column: 'structured_value'
+        material_labels      = Recon.lookup SET_NAME, value: material_as_recorded, column: 'authorized_label'
+        material_uris        = Recon.lookup SET_NAME, value: material_as_recorded, column: 'structured_value'
         row << material_labels.to_s.gsub('|', ';')
         row << material_uris.to_s.gsub('|', ';')
       end
@@ -45,7 +45,7 @@ module Recon
 
     def self.lookup materials, column:
       materials.map { |material|
-        material_uris = Recon.lookup 'materials', value: material, column: column
+        material_uris = Recon.lookup SET_NAME, value: material, column: column
         material_uris.to_s.gsub '|', ';'
       }
     end

@@ -5,7 +5,7 @@ module Recon
     extend DS::Util
     include Recon::ReconType
 
-    SET_NAME = 'languages'
+    SET_NAME = :languages
 
     CSV_HEADERS = %i{
       language_as_recorded
@@ -43,7 +43,7 @@ module Recon
     def self.lookup languages, from_column: 'structured_value', separator: '|'
       languages.split(separator).map { |lang|
         # make sure each group of languages is separated by ';'
-        Recon.lookup('languages', value: lang, column: from_column).gsub('|', ';')
+        Recon.lookup(SET_NAME, value: lang, column: from_column).gsub('|', ';')
       }
     end
 

@@ -13,7 +13,7 @@ module Recon
     extend DS::Util
     include ReconType
 
-    SET_NAME = 'genres'
+    SET_NAME = :genres
 
     CSV_HEADERS = %i{
       genre_as_recorded
@@ -85,7 +85,7 @@ module Recon
     protected
 
     def self._lookup_single term, vocab, from_column:
-      uris = Recon.lookup('genres', subset: vocab, value: term, column: from_column)
+      uris = Recon.lookup(SET_NAME, subset: vocab, value: term, column: from_column)
       uris.to_s.gsub('|', ';')
     end
   end

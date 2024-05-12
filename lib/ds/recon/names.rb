@@ -7,7 +7,7 @@ module Recon
     extend DS::Util
     include ReconType
 
-    SET_NAME = 'names'
+    SET_NAME = :names
 
     CSV_HEADERS = %i{
       name_as_recorded
@@ -47,7 +47,7 @@ module Recon
 
     def self.lookup names, column:
       names.map {|name|
-        Recon.lookup('names', value: name, column: column)
+        Recon.lookup(SET_NAME, value: name, column: column)
       }
     end
 

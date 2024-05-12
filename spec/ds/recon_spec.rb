@@ -13,25 +13,25 @@ describe 'Recon' do
   context 'validate!' do
     it 'passes a valid names CSV' do
       expect {
-        Recon.validate! 'names', valid_names_csv
+        Recon.validate! :names, valid_names_csv
       }.not_to raise_error
     end
 
     it 'fails a names CSV missing headers' do
       expect {
-        Recon.validate! 'names', invalid_names_csv
+        Recon.validate! :names, invalid_names_csv
       }.to raise_error /name_as_recorded, structured_value/
     end
 
     it 'passes a valid genres CSV' do
       expect {
-        Recon.validate! 'genres', valid_genres_csv
+        Recon.validate! :genres, valid_genres_csv
       }.not_to raise_error
     end
 
     it 'fails a genres CSV missing headers' do
       expect {
-        Recon.validate! 'genres', invalid_genres_csv
+        Recon.validate! :genres, invalid_genres_csv
       }.to raise_error /genre_as_recorded, structured_value/
     end
   end
