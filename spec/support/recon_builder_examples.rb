@@ -211,58 +211,58 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
   context '#write_csv' do
     context :titles do
-      let(:recon_type) { :titles }
+      let(:set_name) { :titles }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
 
     context :names, unless: skip_example?(skips, :names) do
-      let(:recon_type) { :names }
+      let(:set_name) { :names }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
 
     context :materials, unless: skip_example?(skips, :materials) do
-      let(:recon_type) { :materials }
+      let(:set_name) { :materials }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
 
     context :genres, unless: skip_example?(skips, :genres) do
-      let(:recon_type) { :genres }
+      let(:set_name) { :genres }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
 
     context :subjects, unless: skip_example?(skips, :subjects) do
-      let(:recon_type) { :subjects }
+      let(:set_name) { :subjects }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
 
     context :'named-subjects', unless: skip_example?(skips, :'named-subjects') do
-      let(:recon_type) { :'named-subjects' }
+      let(:set_name) { :'named-subjects' }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
 
     context :languages, unless: skip_example?(skips, :languages) do
-      let(:recon_type) { :languages }
+      let(:set_name) { :languages }
 
       it "writes the CSV" do
-        expect { recon_builder.write_csv recon_type }.not_to raise_error
+        expect { recon_builder.write_csv set_name }.not_to raise_error
       end
     end
   end

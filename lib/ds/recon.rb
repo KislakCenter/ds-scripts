@@ -27,6 +27,51 @@ module Recon
   ERROR_BLANK_SUBFIELDS = 'Row has blank subfields'
   ERROR_MISSING_REQUIRED_COLUMNS = "CSV is missing required column(s)"
   ERROR_CSV_FILE_NOT_FOUND = 'Recon CSV file cannot be found'
+
+  ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
+  RECON_TYPES = [
+    ReconConfig.new(
+      method_name: %i[extract_places],
+      klass: Recon::Places,
+      set_name: Recon::Places.set_name
+    ),
+    ReconConfig.new(
+      method_name:   :extract_materials,
+      klass: Recon::Materials,
+      set_name: Recon::Materials.set_name
+    ),
+    ReconConfig.new(
+      method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
+      klass: Recon::Names,
+      set_name: Recon::Names.set_name
+    ),
+    ReconConfig.new(
+      method_name: %i[extract_genres],
+      klass: Recon::Genres,
+      set_name: Recon::Genres.set_name
+    ),
+    ReconConfig.new(
+      method_name: %i[extract_subjects],
+      klass: Recon::Subjects,
+      set_name: Recon::Subjects.set_name
+    ),
+    ReconConfig.new(
+      method_name: %i[extract_named_subjects],
+      klass: Recon::NamedSubjects,
+      set_name: Recon::NamedSubjects.set_name
+    ),
+    ReconConfig.new(
+      method_name: %i[extract_titles],
+      klass: Recon::Titles,
+      set_name: Recon::Titles.set_name
+    ),
+    ReconConfig.new(
+      method_name: %i[extract_languages],
+      klass: Recon::Languages,
+      set_name: Recon::Languages.set_name
+    )
+  ]
+
   def self.sort_and_dedupe array
     if array.first.is_a? Array
       array.sort { |a,b| a.first <=> b.first }.uniq &:join
@@ -60,6 +105,10 @@ module Recon
     config = Settings.recon.sets.find { |s| s.name == name }
     raise DSError, "Unknown set name: #{name}" unless config
     config
+  end
+
+  def self.find_recon_config set_name
+    RECON_TYPES.find { |config| config.set_name == set_name.to_s }
   end
 
   def self.csv_files set_name

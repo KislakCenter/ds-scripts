@@ -23,51 +23,6 @@ module Recon
       DS::Constants::TEI_XML  => DS::Extractor::TeiXml
     }
 
-
-    ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
-    RECON_TYPES = [
-      ReconConfig.new(
-        method_name: %i[extract_places],
-        klass: Recon::Places,
-        set_name: Recon::Places.set_name
-      ),
-      ReconConfig.new(
-        method_name:   :extract_materials,
-        klass: Recon::Materials,
-        set_name: Recon::Materials.set_name
-      ),
-      ReconConfig.new(
-        method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
-        klass: Recon::Names,
-        set_name: Recon::Names.set_name
-      ),
-      ReconConfig.new(
-        method_name: %i[extract_genres],
-        klass: Recon::Genres,
-        set_name: Recon::Genres.set_name
-      ),
-      ReconConfig.new(
-        method_name: %i[extract_subjects],
-        klass: Recon::Subjects,
-        set_name: Recon::Subjects.set_name
-      ),
-      ReconConfig.new(
-        method_name: %i[extract_named_subjects],
-        klass: Recon::NamedSubjects,
-        set_name: Recon::NamedSubjects.set_name
-      ),
-      ReconConfig.new(
-        method_name: %i[extract_titles],
-        klass: Recon::Titles,
-        set_name: Recon::Titles.set_name
-      ),
-      ReconConfig.new(
-        method_name: %i[extract_languages],
-        klass: Recon::Languages,
-        set_name: Recon::Languages.set_name
-      )
-    ]
-
     def initialize source_type:, files:, out_dir:
       @source_type = source_type
       @files       = files
@@ -84,14 +39,14 @@ module Recon
       @extractor ||= SOURCE_TYPE_EXTRACTORS[source_type]
     end
 
-    def write_csv item_type
-      recons = extract_recons item_type
+    def write_csv set_name
+      recons = extract_recons set_name
       if recons.blank?
-        STDERR.puts "WARNING: No recon values for #{item_type}"
+        STDERR.puts "WARNING: No recon values for #{set_name}"
         return
       end
 
-      outfile = File.join out_dir, "#{item_type}.csv"
+      outfile = File.join out_dir, "#{set_name}.csv"
       CSV.open outfile, 'w+', headers: true do |csv|
         csv << recons.first.keys
         recons.each do |row|
@@ -103,9 +58,9 @@ module Recon
 
     ##
     # @note: +delimiter_map+: see {#build_recons}
-    def extract_recons item_type
+    def extract_recons set_name
       items = Set.new
-      recon_config = find_recon_type item_type
+      recon_config = Recon.find_recon_config set_name
 
       enumerator.each do |record|
         [recon_config.method_name].flatten.each do |name|
@@ -121,7 +76,7 @@ module Recon
     end
 
     def find_recon_type name
-      RECON_TYPES.find { |config| config.set_name == name.to_s }
+      Recon::RECON_TYPES.find { |config| config.set_name == name.to_s }
     end
 
     ##
