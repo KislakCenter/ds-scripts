@@ -17,14 +17,10 @@ module Recon
       ds_qid
     }
 
-    KEY_COLUMNS = %i{
-      place_as_recorded
-    }
+    KEY_COLUMNS = %i{ :place_as_recorded }
 
 
-    AS_RECORDED_COLUMN = %i{
-      place_as_recorded
-    }
+    AS_RECORDED_COLUMN = :place_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
 

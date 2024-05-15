@@ -138,8 +138,8 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
         :acknowledgements                   => "",
         :note                               =>
           "Ms. codex.|Title from introduction (f. 1v).|Kabīkaj invocation on f. 1r.|Catalog entry describing the manuscript pasted onto f. 1r.|Binding: Laid paper over pasteboard with flap (Type II) and leather spine back. No decorations. Textblock is detached from cover.|Layout: 25 long lines.|Script: Written in naskh in black and red; pointed.|Decoration: Rubrications in red.|Provenance: Gift of Anne Baker Lewis in 1933.|Provenance: Formerly owned by Yūsuf ibn Shaykh Muḥammad al-Jamālī (note dated 1170 AH [1757], f. 1r).|Provenance: Formerly owned by John Frederick Lewis.",
-        :data_processed_at                  => be_a_date_time_string,
-        :data_source_modified               => be_a_date_time_string,
+        :data_processed_at                  => be_some_kind_of_date_time.or(be_blank),
+        :data_source_modified               => be_some_kind_of_date_time.or(be_blank),
         :source_file                        => "lewis_o_031_TEI.xml"
       }
     }

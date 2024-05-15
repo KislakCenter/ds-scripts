@@ -36,9 +36,7 @@ module Recon
     }
 
 
-    AS_RECORDED_COLUMN = %i{
-      genre_as_recorded
-    }
+    AS_RECORDED_COLUMN = :genre_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
 

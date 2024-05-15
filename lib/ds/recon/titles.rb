@@ -23,15 +23,9 @@ module Recon
       ds_qid
     }
 
-    KEY_COLUMNS = %i{
-      title_as_recorded
-    }
-    # TODO: add uniform_title_as_recorded as KEY column
+    KEY_COLUMNS =  %i{ :title_as_recorded }
 
-
-    AS_RECORDED_COLUMN = %i{
-      title_as_recorded
-    }
+    AS_RECORDED_COLUMN = :title_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
 

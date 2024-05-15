@@ -52,9 +52,7 @@ module Recon
     # TODO: ADD subfield_codes as key column
 
 
-    AS_RECORDED_COLUMN = %i{
-      subject_as_recorded
-    }
+    AS_RECORDED_COLUMN = :subject_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
 

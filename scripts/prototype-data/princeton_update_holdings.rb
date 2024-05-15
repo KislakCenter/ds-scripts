@@ -52,7 +52,6 @@ File.open output_path, 'w' do |f|
 	</xsd:schema>}
 
   f.puts matching_elements
-  # matching_elements.each { |e| f.puts e }
 
   f.puts '</RS>'
 end

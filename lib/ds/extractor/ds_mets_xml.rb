@@ -206,11 +206,8 @@ module DS
           notes = clean_notes(record.xpath(xpath).flat_map(&:text))
 
           notes.flat_map { |n|
-            if n.to_s.size < 400
-              n
-            else
-              Recon::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
-            end
+            splits = Recon::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
+            splits.present? ? splits : n
           }.map { |n|
             DS::Extractor::Name.new as_recorded: DS.mark_long(n)
           }

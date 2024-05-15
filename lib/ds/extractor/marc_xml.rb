@@ -128,18 +128,6 @@ module DS
         # @return [Array<Array<String>>]
         def extract_recon_names record, tags: [], relators: []
           extract_names(record, tags: tags, relators: relators).map &:to_a
-          # xpath = build_name_query tags: tags, relators: relators
-          # return '' if xpath.empty? # don't process nonsensical requests
-          #
-          # record.xpath(xpath).map { |datafield|
-          #   row = []
-          #   row << extract_name_portion(datafield)
-          #   role = extract_role(datafield, relators: relators)
-          #   row << (role.strip.empty? ? 'author' : role)
-          #   row << extract_pn_agr(datafield)
-          #   row << extract_authority_number(datafield)
-          #   row
-          # }
         end
 
         def extract_names record, tags: [], relators: []

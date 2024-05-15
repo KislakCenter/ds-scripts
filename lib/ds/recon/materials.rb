@@ -27,9 +27,7 @@ module Recon
     }
 
 
-    AS_RECORDED_COLUMN = %i{
-      material_as_recorded
-    }
+    AS_RECORDED_COLUMN = :material_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
 

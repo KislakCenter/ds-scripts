@@ -18,13 +18,6 @@ module DS
         valid = true
         rows.each_with_index do |row,index|
           valid = false unless row_valid? row, index
-          # hash.each do |column, value|
-          #   split_chars = NESTED_COLUMNS.include?(column) ? %r{[;|]} : %r{\|}
-          #   if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
-          #     valid = false
-          #     STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
-          #   end
-          # end
         end
         valid
       end

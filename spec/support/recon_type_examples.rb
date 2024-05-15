@@ -9,7 +9,7 @@ RSpec.shared_examples "a recon type class" do
       expect(described_class).to respond_to the_method
     end
 
-    it 'returns a of symbol' do
+    it 'returns a symbol' do
       expect(described_class.send the_method).to be_a Symbol
     end
   end
@@ -57,8 +57,8 @@ RSpec.shared_examples "a recon type class" do
       expect(described_class).to respond_to the_method
     end
 
-    it 'returns an array of symbols' do
-      expect(described_class.send the_method).to all be_a Symbol
+    it 'returns a symbols' do
+      expect(described_class.send the_method).to be_a Symbol
     end
   end
 

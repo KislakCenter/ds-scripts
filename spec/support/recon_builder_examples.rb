@@ -31,10 +31,10 @@
 #
 RSpec.shared_examples 'a ReconBuilder' do |skips|
 
-  def skip? *skips, recon_type
+  def skip? *skips, set_name
     return unless skips.present?
-    return unless recon_type.present?
-    skips.include? recon_type
+    return unless set_name.present?
+    skips.include? set_name
   end
 
   context 'initialize' do
@@ -48,163 +48,176 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
   context "#extract_recons" do
 
     context ':places', unless: skip_example?(skips, :places) do
-      let(:recon_type) { :places }
+      let(:set_name) { :places }
+      let(:recon_class) { Recon::Places }
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 3 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':materials', unless: skip_example?(skips, :materials) do
-      let(:recon_type) { :materials }
+      let(:set_name) { :materials }
+      let(:recon_class) { Recon::Materials }
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 3 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':languages', unless: skip_example?(skips, :languages) do
-      let(:recon_type) { :languages }
+      let(:set_name) { :languages }
+      let(:recon_class) { Recon::Languages }
+
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 4 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':genres', unless: skip_example?(skips, :genres) do
-      let(:recon_type) { :genres }
+      let(:set_name) { :genres }
+      let(:recon_class) { Recon::Genres }
+
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 4 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':subjects', unless: skip_example?(skips, :subjects) do
-      let(:recon_type) { :subjects }
+      let(:set_name) { :subjects }
+      let(:recon_class) { Recon::Subjects }
 
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 4 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':named-subjects', unless: skip_example?(skips, :'named-subjects') do
-      let(:recon_type) { :'named-subjects' }
+      let(:set_name) { :'named-subjects' }
+      let(:recon_class) { Recon::NamedSubjects }
+
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 6 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':names', unless: skip_example?(skips, :names) do
-      let(:recon_type) { :names }
+      let(:set_name) { :names }
+      let(:recon_class) { Recon::Names }
+
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 7 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
 
     context ':titles', unless: skip_example?(skips, :titles) do
-      let(:recon_type) { :titles }
+      let(:set_name) { :titles }
+      let(:recon_class) { Recon::Titles }
+
       it 'returns an array' do
-        expect(recon_builder.extract_recons recon_type).to be_an Array
+        expect(recon_builder.extract_recons set_name).to be_an Array
       end
 
       it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons recon_type).not_to be_empty
+        expect(recon_builder.extract_recons set_name).not_to be_empty
       end
 
       it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons recon_type).to all be_a Hash
+        expect(recon_builder.extract_recons set_name).to all be_a Hash
       end
 
-      let(:number_of_columns) { 5 }
-      it 'returns the correct number of elements per row' do
-        expect(recon_builder.extract_recons recon_type).to have_columns number_of_columns
+      let(:headers) { recon_class.csv_headers }
+      it 'returns the hashes with the expected headers' do
+        expect(recon_builder.extract_recons set_name).to all have_columns headers
       end
     end
   end

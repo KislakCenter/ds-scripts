@@ -25,9 +25,7 @@ module Recon
       language_as_recorded
     }
 
-    AS_RECORDED_COLUMN = %i{
-      language_as_recorded
-    }
+    AS_RECORDED_COLUMN = :language_as_recorded
 
     DELIMITER_MAP = {}
 

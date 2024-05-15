@@ -105,21 +105,26 @@ module Recon
     # @return [Array<Hash<Symbol,String>>] an array of arrays of +item.to_h+ plus recon columns; e.g., <tt>[{ :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" }]</tt>
     def build_recons items:, recon_type:
       items.map { |item|
-        as_recorded = item.as_recorded
-        row = item.to_h
-        recon_type.lookup_columns.each do |col|
-          val = Recon.lookup(recon_type.set_name, value: as_recorded, column: col)
-          row[col.to_sym] = fix_delimiters val, recon_type.delimiter_map
-        end
-        row
+        _build_recon item: item, recon_type: recon_type
       }
     end
-
     def fix_delimiters value, delimiter_map = {}
       return value if delimiter_map.blank?
       val = ''
       delimiter_map.each  { |old, new| val = value.to_s.gsub old, new }
       val
     end
+
+    private
+    def _build_recon item:, recon_type:
+      as_recorded = item.as_recorded
+      row = item.to_h
+      recon_type.lookup_columns.each do |col|
+        val = Recon.lookup(recon_type.set_name, value: as_recorded, column: col)
+        row[col.to_sym] = fix_delimiters val, recon_type.delimiter_map
+      end
+      row
+    end
+
   end
 end

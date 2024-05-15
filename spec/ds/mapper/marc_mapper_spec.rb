@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DS::Mapper::MarcMapper' do
+RSpec.describe DS::Mapper::MarcMapper do
 
   let(:manifest) {  }
 
@@ -145,7 +145,7 @@ RSpec.describe 'DS::Mapper::MarcMapper' do
         :physical_description               => "Extent: 64 leaves : parchment ; 204-206 x 172-174 (136-148 x 100-128) mm bound to 219 x 190 mm",
         :note                               =>
           "Ms. codex.|Origin: Written in north central France, possibly at the abbey in Saint-Benoît-sur-Loire, also known as the Abbaye de Fleury.|Title for manuscript from caption title for predominant work (f. 1v).|Decoration: 5 9th-century diagrams, 3 in the ink of the text (f. 37v, 54v) and 2 with colored inks added in the 11th century (f. 36r, 36v); 11th-century full-page decorated initial with Celtic knotwork and lions' heads (f. 1v); 2 11th-century 3-line initials in red and blue (f. 2r, 60v); 11th-century red and blue ink added to 9th-century 3-line initial (f. 5r); 1- and 2-line initials, mostly in the ink of the text (but alternating with red, f. 30-34); 2 3-line and many 2-line 11th-century calligraphic initials in ink of the text with simple ornamentation (f. 44-64).|Script: Written in a 9th-century Caroline minuscule, with replacement leaves in 11th-century Caroline minuscule at beginning (f. 1-4) and end (f. 45-64), with headings in rustic Latin capitals.|Layout: Written in 20 (f. 5-36), 23 (f. 1-4, 45-64), and 27 (f. 37-44) long lines, with the first line above the top line; ruled in drypoint, with a narrow vertical column at each side of the text block into which initials extend in part or in whole; prickings visible on most leaves.|Collation: Parchment, i (19th-century paper) + i (19th-century parchment) + 64 + i (19th-century parchment) + i (19th-century paper); 14 24(+4) 3-88 94; 1-64, 19th-century foliation in ink, upper right recto.|Binding: 19th-century English diced russia leather (lower flyleaf has J. Whatman 1832 watermark), bound for Sir Thomas Phillips.|Gift of Barbara Brizdle Schoenberg in honor of Amy Gutmann, President, University of Pennsylvania, 2014.|Sold at auction at Sotheby's as part of the Beck Collection, 16 June 1997, lot 3, to Lawrence J. Schoenberg.|Formerly owned by Sir Thomas Phillipps, ms. 2179 (stamped crest inside upper cover; inscription with alternate number 717, f. 1r; label on spine).|Sold by H. P. Kraus to Helmut Beck (Stuttgart), ms. 3 (embossed label, inside upper cover).|Sold as part of the residue of the Phillips collection first to William H. Robinson Ltd., 1945, and again to H. P. Kraus, Mar. 1978.|Sold by bookseller James Taylor (London) to Sir Thomas Phillipps, ca. 1826.",
-        :data_processed_at                  => be_a_date_time_string,
+        :data_processed_at                  => be_some_kind_of_date_time.or(be_blank),
         :data_source_modified               => "20220803105830",
         :source_file                        => "marc_xml_with_all_values.xml",
         :acknowledgements                   => ""

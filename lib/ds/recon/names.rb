@@ -30,9 +30,7 @@ module Recon
       name_as_recorded
     }
 
-    AS_RECORDED_COLUMN = %i{
-      name_as_recorded
-    }
+    AS_RECORDED_COLUMN = :name_as_recorded
 
     DELIMITER_MAP = {}
 

@@ -11,20 +11,31 @@ module DS
         @outfile = outfile
       end
 
-      def write *rows
-        rows.each do |row|
-          csv << row
+      def write rows=nil, &block
+        if block_given?
+          _write_with_block &block
+        elsif rows.is_a? Enumerable
+          _write_all rows
+        else
+          raise ""
         end
       end
 
-      def csv
-        return @csv if @csv.present?
-        @csv = CSV.open outfile, 'w+', headers: true
-        @csv
+      private
+      def _write_with_block
+        CSV.open outfile, 'w+', headers: true do |csv|
+          csv << headers
+          yield csv
+        end
       end
 
-      def close
-        @csv.close if @csv.present?
+      def _write_all rows
+        CSV.open outfile, 'w+', headers: true do |csv|
+          csv << headers
+          rows.each do |row|
+            csv << row
+          end
+        end
       end
     end
   end

@@ -62,9 +62,6 @@ end
 out_rows.delete headers
 CSV do |csv|
   csv << headers
-  # out_rows.sort_by { |row|
-  #   row
-  # }.uniq.each { |row|
   out_rows.uniq.each { |row|
     csv << row
   }
