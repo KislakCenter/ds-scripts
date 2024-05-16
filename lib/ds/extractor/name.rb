@@ -20,7 +20,7 @@ module DS
 
       def to_h
         {
-          name_as_recorded: as_recorded,
+          as_recorded: as_recorded,
           role: role,
           name_agr: vernacular,
           source_authority_uri: ref

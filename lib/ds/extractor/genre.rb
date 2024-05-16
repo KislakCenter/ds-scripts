@@ -23,7 +23,7 @@ module DS
 
       def to_h
         {
-          genre_as_recorded: as_recorded,
+          as_recorded: as_recorded,
           source_authority_uri: source_authority_uri,
           vocabulary: vocab
         }

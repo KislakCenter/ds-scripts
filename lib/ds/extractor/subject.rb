@@ -29,7 +29,7 @@ module DS
 
       def to_h
         {
-          subject_as_recorded:          as_recorded,
+          as_recorded:          as_recorded,
           subfield_codes:       subfield_codes,
           vocab:                vocab,
           source_authority_uri: source_authority_uri

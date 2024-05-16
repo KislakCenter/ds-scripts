@@ -22,7 +22,7 @@ module DS
 
       def to_h
         {
-          title_as_recorded: as_recorded,
+          as_recorded: as_recorded,
           title_as_recorded_agr: vernacular,
           uniform_title_as_recorded: uniform_title,
           uniform_title_as_recorded_agr: uniform_title_vernacular

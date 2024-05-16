@@ -6,7 +6,7 @@ module DS
 
       def to_h
         {
-          place_as_recorded: as_recorded
+          as_recorded: as_recorded
         }
       end
     end

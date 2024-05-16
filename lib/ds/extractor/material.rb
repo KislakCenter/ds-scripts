@@ -7,7 +7,7 @@ module DS
 
       def to_h
         {
-          material_as_recorded: as_recorded
+          as_recorded: as_recorded
         }
       end
     end
