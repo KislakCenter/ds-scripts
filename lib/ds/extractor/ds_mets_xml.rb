@@ -14,10 +14,18 @@ module DS
           mets: 'http://www.loc.gov/METS/',
         }
 
+        # Extracts the institution name from the given XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML document to extract the institution name from
+        # @return [String] the extracted institution name
         def extract_institution_name xml
           extract_mets_creator(xml).first
         end
 
+        # Extracts the creator information from the METS XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML document containing METS data
+        # @return [Array<String>] an array of creator information
         def extract_mets_creator xml
           creator = xml.xpath('/mets:mets/mets:metsHdr/mets:agent[@ROLE="CREATOR" and @TYPE="ORGANIZATION"]/mets:name', NS).text
           creator.split %r{;;}
@@ -53,6 +61,12 @@ module DS
           clean_notes physdesc
         end
 
+        # Extracts the physical description notes from the given node based on the note type and optional tag.
+        #
+        # @param [Nokogiri::XML::Node] node the XML node to extract notes from
+        # @param [Symbol] note_type the type of note to extract
+        # @param [String] tag an optional tag to prepend to each extracted note
+        # @return [Array<String>] an array of extracted notes
         def physdesc_note node, note_type, tag: nil
           if note_type == :none
             xpath = %q{mods:mods/mods:physicalDescription/mods:note[not(@type)]}
@@ -65,11 +79,17 @@ module DS
           }
         end
 
+
+
         def extract_ms_phys_desc xml
           ms = find_ms xml
           physdesc_note ms, 'presentation', tag: 'Binding'
         end
 
+        # Extracts physical description notes from the given part object.
+        #
+        # @param [Nokogiri::XML::Node] part the XML node representing the part
+        # @return [Array<String>] an array of extracted physical description notes
         def extract_pd_note part
           extent = extract_extent part
 
@@ -88,6 +108,10 @@ module DS
           }
         end
 
+        # Extracts physical description notes for each part in the XML.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML node to extract parts from
+        # @return [Array<String>] an array of extracted physical description notes
         def extract_part_phys_desc xml
           parts = find_parts xml
           parts.flat_map { |part|
@@ -176,6 +200,10 @@ module DS
           }
         end
 
+        # Extracts the extent from the given node.
+        #
+        # @param [Nokogiri::XML::Node] node the XML node to extract extent from
+        # @return [String] the extracted extent
         def extract_extent node
           xpath = 'mods:mods/mods:physicalDescription/mods:extent'
           node.xpath(xpath).flat_map { |extent|
@@ -183,10 +211,18 @@ module DS
           }.join ', '
         end
 
+        # Extracts the material as recorded from the given record.
+        #
+        # @param [CSV::Row] record the record to extract material from
+        # @return [String] the extracted material as recorded
         def extract_material_as_recorded record
           extract_materials(record).map(&:as_recorded).join '|'
         end
 
+        # Extracts materials from the given record.
+        #
+        # @param [Object] record the record to extract materials from
+        # @return [Array<DS::Extractor::Material>] an array of Material objects
         def extract_materials record
           find_parts(record).flat_map { |part|
             physdesc_note part, 'support'
@@ -197,10 +233,19 @@ module DS
           }
         end
 
+        # Extracts former owners as recorded from the given XML.
+        #
+        # @param [Nokogiri::XML::NodeSet] xml the parsed XML to extract former owners from
+        # @param [Boolean] lookup_split whether to lookup split information or not
+        # @return [Array<String>] the extracted former owners as recorded
         def extract_former_owners_as_recorded xml, lookup_split: true
           extract_former_owners(xml).map &:as_recorded
         end
 
+        # Extracts former owners from the given record.
+        #
+        # @param [Nokogiri::XML::Node] record the XML node representing the record
+        # @return [Array<DS::Extractor::Name>] an array of extracted former owners
         def extract_former_owners record
           xpath = "./descendant::mods:note[@type='ownership']/text()"
           notes = clean_notes(record.xpath(xpath).flat_map(&:text))
@@ -213,34 +258,65 @@ module DS
           }
         end
 
+        # Extracts authors from the given record.
+        #
+        # @param [Object] record the record to extract authors from
+        # @return [Array<DS::Extractor::Name>] an array of extracted authors
         def extract_authors record
           DS::Extractor::DsMetsXml.extract_name record, *%w{ author [author] }
         end
 
+        # Extracts authors as recorded from the given record.
+        #
+        # @param [Object] record the record to extract authors from
+        # @return [Array<String>] the extracted authors as recorded
         def extract_authors_as_recorded record
           extract_authors(record).map &:as_recorded
         end
 
+        # Extracts artists as recorded from the given record.
+        #
+        # @param [Object] record the record to extract artists
         def extract_artists_as_recorded record
           extract_artists(record).map &:as_recorded
         end
 
+        # Extracts artists from the given record using the specified type and role.
+        #
+        # @param [Object] record the record to extract artists from
+        # @return [Array<DS::Extractor::Name>] an array of extracted artists
         def extract_artists record
           DS::Extractor::DsMetsXml.extract_name record, *%w{ artist [artist] illuminator }
         end
 
+        # Extracts scribes as recorded from the given record.
+        #
+        # @param [Object] record the record to extract scribes from
+        # @return [Array<String>] the extracted scribes as recorded
         def extract_scribes_as_recorded record
           extract_scribes(record).map &:as_recorded
         end
 
+        # Extract scribes from the given record.
+        #
+        # @param record [Object] the record to extract scribes from
+        # @return [Array<String>] the extracted scribes
         def extract_scribes record
           DS::Extractor::DsMetsXml.extract_name record, *%w{ scribe [scribe] }
         end
 
+        # Extract other names as recorded from the given record.
+        #
+        # @param record [Object] the record to extract other names from
+        # @return [Array<String>] the extracted other names as recorded
         def extract_other_names_as_recorded record
           extract_other_names(record).map &:as_recorded
         end
 
+        # Extract other names from the given record.
+        #
+        # @param record [Object] the record to extract other names from
+        # @return [Array<String>] the extracted other names
         def extract_other_names record
           DS::Extractor::DsMetsXml.extract_name record, 'other'
         end
@@ -255,6 +331,10 @@ module DS
           extract_languages(record).map &:as_recorded
         end
 
+        # Extract languages from the given record.
+        #
+        # @param record [Object] the record to extract languages from
+        # @return [Array<DS::Extractor::Language>] the extracted languages
         def extract_languages record
           # /mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:note
           # Can be Lang: or lang: or ???, so down case the text with translate()
@@ -266,6 +346,11 @@ module DS
           }
         end
 
+        # Extract name from the given node based on the provided roles.
+        #
+        # @param node [Object] the node to extract name from
+        # @param roles [Array<String>] the roles to search for
+        # @return [Array<DS::Extractor::Name>] the extracted names
         def extract_name node, *roles
           # Roles have different cases: Author, author, etc.
           # Xpath 1.0 has no lower-case function, so use translate()
@@ -279,10 +364,18 @@ module DS
           }
         end
 
+        # Extract titles as recorded from the given record.
+        #
+        # @param record [Object] the record to extract titles from
+        # @return [Array<String>] the extracted titles as recorded
         def extract_titles_as_recorded record
           extract_titles(record).map &:as_recorded
         end
 
+        # Extract titles from the given record.
+        #
+        # @param record [Object] the record to extract titles from
+        # @return [Array<DS::Extractor::Title>] the extracted titles
         def extract_titles record
           xpath = 'mods:mods/mods:titleInfo/mods:title'
           find_texts(record).flat_map { |text|
@@ -294,6 +387,10 @@ module DS
           }
         end
 
+        # Extract production places as recorded from the given XML.
+        #
+        # @param xml [Object] the XML to extract production places from
+        # @return [Array<String>] the extracted production places as recorded
         def extract_production_places_as_recorded xml
           extract_places(xml).map &:as_recorded
         end
@@ -314,10 +411,18 @@ module DS
           extract_places(xml).map &:to_a
         end
 
+        # Extract reconciliation titles from the given XML.
+        #
+        # @param xml [Nokogiri::XML::Node] a +<METS_XML>+ node
+        # @return [Array<String>] an array of titles for reconciliation
         def extract_recon_titles xml
           extract_titles(xml).to_a
         end
 
+        # Extract reconciliation names from the given XML.
+        #
+        # @param xml [Nokogiri::XML::Node] a +<METS_XML>+ node
+        # @return [Array<Array>] an array of arrays of names for reconciliation
         def extract_recon_names xml
           data = extract_authors(xml).map &:to_a
           data += extract_artists(xml).map &:to_a
@@ -390,10 +495,18 @@ module DS
           extract_subjects(xml).map(&:as_recorded)
         end
 
+        # Extract all subjects as recorded from the given XML.
+        #
+        # @param xml [Nokogiri::XML::Node] the XML to extract subjects from
+        # @return [Array<String>] the extracted subjects as recorded
         def extract_all_subjects_as_recorded xml
           extract_subjects_as_recorded xml
         end
 
+        # Extract link to institution record from the given XML.
+        #
+        # @param xml [Nokogiri::XML::Node] the XML to extract the link from
+        # @return [String] the extracted link to the institution record
         def extract_link_to_inst_record xml
           ms = find_ms xml
           # xpath mods:mods/mods:relatedItem/mods:location/mods:url
@@ -401,6 +514,10 @@ module DS
           ms.xpath(xpath).map(&:text).join '|'
         end
 
+        # Determines if the XML document is dated by a scribe.
+        #
+        # @param [Nokogiri::XML:Node] xml the XML document to check
+        # @return [Boolean] true if the document is dated by a scribe, false otherwise
         def dated_by_scribe? xml
           parts = find_parts xml
           # mods:mods/mods:note
@@ -500,12 +617,20 @@ module DS
           part.xpath(xpath).text.gsub %r{#\^?([\w/]+)(\^|#)}, '(\1)'
         end
 
+        # Transform the production date based on the parts found in the XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed XML document
+        # @return [String] the transformed production date string
         def transform_production_date xml
           find_parts(xml).map { |part|
             extract_date_range(part).join '^'
           }.reject(&:empty?).join '|'
         end
 
+        # Extracts acknowledgments from the given XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML document to extract acknowledgments from
+        # @return [Array<String>] the extracted acknowledgments
         def extract_acknowledgments xml
           notes = []
           notes += find_ms(xml).flat_map { |ms| note_by_type ms, 'admin' }
@@ -554,6 +679,10 @@ module DS
           extract_master_mets_file page
         end
 
+        # Extracts the folio number from the given page node.
+        #
+        # @param [Nokogiri::XML::Node] page the XML node representing the page
+        # @return [String] the extracted folio number
         def extract_folio_num page
           # mods:mods/mods:physicalDescription/mods:extent
           xpath = 'mods:mods/mods:physicalDescription/mods:extent'
@@ -619,6 +748,10 @@ module DS
           fptr_addresses.map { |address| locate_filename address }
         end
 
+        # Extracts the manuscript note from the given XML.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML node to extract manuscript note from
+        # @return [Array<String>] an array of manuscript notes
         def extract_ms_note xml
           notes = []
           ms    = find_ms xml
@@ -627,6 +760,10 @@ module DS
           notes
         end
 
+        # Extracts notes for each part in the given XML.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML node to extract notes from
+        # @return [Array<String>] an array of extracted notes
         def extract_part_note xml
           find_parts(xml).flat_map { |part|
             extent = extract_extent part
@@ -634,12 +771,21 @@ module DS
           }
         end
 
+        # Extracts explicit information from the given node based on the provided tag.
+        #
+        # @param [Nokogiri::XML::Node] node the XML node to extract information from
+        # @param [String] tag the tag to prepend to each extracted information
+        # @return [Array<String>] an array of extracted information
         def extract_explicit node, tag:
           node.xpath('mods:mods/mods:abstract/text()').map { |n|
             "#{tag}: #{n.text}"
           }
         end
 
+        # Extracts text notes from the given XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML document to extract text notes from
+        # @return [Array<String>] the extracted text notes
         def extract_text_note xml
           find_texts(xml).flat_map { |text|
             extent = extract_extent text
@@ -652,6 +798,10 @@ module DS
           }
         end
 
+        # Extracts notes for each page in the given XML.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML node to extract notes from
+        # @return [Array<String>] an array of extracted notes
         def extract_page_note xml
           find_pages(xml).flat_map { |page|
             extent = extract_extent page
@@ -736,6 +886,10 @@ module DS
         # Recon extractor
         ###
 
+        # Extracts places from the given record.
+        #
+        # @param [Object] record the record to extract places from
+        # @return [Array<DS::Extractor::Place>] the extracted places
         def extract_places record
           parts = find_parts record
           xpath = 'mods:mods/mods:originInfo/mods:place/mods:placeTerm'
@@ -746,6 +900,10 @@ module DS
           }
         end
 
+        # Extracts subjects from the given record.
+        #
+        # @param [Object] record the record to extract subjects from
+        # @return [Array<DS::Extractor::Subject>] the extracted subjects
         def extract_subjects record
           xpath = '//mods:originInfo/mods:edition'
           find_texts(record).flat_map { |text|
@@ -770,6 +928,10 @@ module DS
           xml.xpath "/mets:mets/mets:dmdSec[@ID='#{id}']/mets:mdWrap/mets:xmlData"
         end
 
+        # Find the manuscript parts in the XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed XML document
+        # @return [Array<Nokogiri::XML::Node>] an array of manuscript parts in the correct order
         def find_parts xml
           # /mets:mets/mets:structMap/mets:div/mets:div/@DMDID
           # manuscripts parts are two divs deep in the structMap
@@ -784,6 +946,11 @@ module DS
           }
         end
 
+
+        # Find the texts in the XML document.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed XML document
+        # @return [Array<Nokogiri::XML::Node>] an array of text nodes in the correct order
         def find_texts xml
           # /mets:mets/mets:structMap/mets:div/mets:div/mets:div/@DMDID
           # texts are three divs deep in the structMap
@@ -811,22 +978,38 @@ module DS
           }
         end
 
+        # A method to return the date when the source was last modified.
+        # For DS METS we have chosen the date 2021-10-01.
+        # @return [String] "2021-10-01"
         def source_modified
           "2021-10-01"
         end
 
         protected
 
+        # Returns a key for the IIIF manifest based on the holder and shelfmark.
+        #
+        # @param holder [String] the holder of the IIIF manifest
+        # @param shelfmark [String] the shelfmark of the IIIF manifest
+        # @return [String] the normalized key for the IIIF manifest
         def iiif_manifest_key holder, shelfmark
           qid = DS::Institutions.find_qid holder
           raise DSError, "No QID found for #{holder}" if qid.blank?
           normalize_key qid, shelfmark
         end
 
+
+        # Returns a normalized key by joining and downcasing the input strings and removing whitespace.
+        # @param strings [Array<String>] the strings to join and normalize
+        # @return [String] the normalized key
         def normalize_key *strings
           strings.join.downcase.gsub(%r{\s+}, '')
         end
 
+        # A method to clean and process notes by removing whitespace, skipping notes with specific prefixes, and adding periods to notes without terminal punctuation.
+        #
+        # @param notes [Array<String>] the array of notes to be cleaned and processed
+        # @return [Array<String>] the cleaned and processed notes as an array
         def clean_notes notes
           notes.flat_map { |note|
             # get node text and clean whitespace

@@ -7,6 +7,9 @@ module DS
 
       attr_accessor :codes
 
+      # Initializes the Language object with the provided as_recorded and codes.
+      # @param as_recorded [String] the as_recorded value
+      # @param codes [Set] the language codes
       def initialize as_recorded:, codes: Set.new
         @codes       = codes
         super(as_recorded: as_recorded)

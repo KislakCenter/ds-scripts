@@ -130,19 +130,22 @@ module Recon
     # pipes (+|+), when they should be separated by the standard
     # subfield delimiter, the semicolon (+;+).
     #
-    # @todo: There's something off about the need to replace
-    #   delimiters; the source and output of this recon data are the
-    #   recon CSV. There shouldn't be any need to make this
-    #   conversion. Keeping the behavior for now to match the code
-    #   being refactored.
-    #
     # @param items [Array<DS::Extractor::BaseTerm>] the list of terms to process e.g, Language
     # @param recon_type [Recon::ReconType] the recon type config struct
-    # @return [Array<Hash<Symbol,String>>] an array of arrays of +item.to_h+ plus recon columns; e.g., <tt>[{ :language_as_recorded => "Arabic", :language_code => "", "authorized_label" => "Arabic", "structured_value" => "Q13955" }]</tt>
-    def build_recons items:, recon_type:
-      items.map { |item|
-        _build_recon item: item, recon_type: recon_type
-      }
+    # @return [Array<Hash>] an array of hashes the recon CSV rows;
+    #   e.g., <tt>[{ :language_as_recorded => "Arabic",
+    #   :language_code => "", "authorized_label" => "Arabic",
+    #   "structured_value" => "Q13955" }]</tt>
+    def build_recons items:, recon_type:, &block
+      if block_given?
+        items.each do |item|
+          yield _build_recon item: item, recon_type: recon_type
+        end
+      else
+        items.map { |item|
+          _build_recon item: item, recon_type: recon_type
+        }
+      end
     end
 
     # A function that replaces delimiters in a value based on a given
@@ -165,6 +168,7 @@ module Recon
     #
     # @param [DS::Extractor::BaseTerm] item a term like a DS::Extractor::Place
     # @param [Recon::ReconType] recon_type a recon type configuration like Recon::Places
+    # @return [Hash<Symbol,String>] a recon CSV row
     def _build_recon item:, recon_type:
       as_recorded = item.as_recorded
       recon_hash = item.to_h

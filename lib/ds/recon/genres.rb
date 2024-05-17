@@ -41,6 +41,12 @@ module Recon
     DELIMITER_MAP = { '|' => ';' }
 
 
+
+    # Adds recon the 'authorized_label' and 'structured_value' columns
+    # to each row in the given array.
+    # @param [Array] rows an array of arrays :genre_as_recorded
+    #       :vocabulary, :source_authority_uri
+    # @return [Array] the updated rows
     def self.add_recon_values rows
       rows.each do |row|
         term, vocab, _ = row

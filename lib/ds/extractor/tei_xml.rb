@@ -24,16 +24,10 @@ module DS
         # NAMES
         ############################################################
 
-        Name = Struct.new(
-          'Name', :as_recorded, :role, :vernacular, :ref,
-          keyword_init: true
-        ) do |name|
-
-          def to_a
-            [as_recorded, role, vernacular, ref]
-          end
-        end
-
+        # Extracts authors from the given XML record.
+        #
+        # @param [Nokogiri::XML:Node] xml the XML record to extract authors from
+        # @return [Array<DS::Extractor::Name>] list of extracted author names
         def extract_authors xml
           names = []
           xml.xpath('//msContents/msItem/author').map do |node|
@@ -60,13 +54,22 @@ module DS
           names
         end
 
+        # Extract authors as recorded from the given XML record.
+        #
+        # @param [Nokogiri::XML:Node] xml a TEI XML record
+        # @return [Array<String>] list of authors as recorded
         def extract_authors_as_recorded xml
           extract_authors(xml).map(&:as_recorded)
         end
 
+        # Extracts authors as recorded with vernacular form from the given XML record.
+        #
+        # @param [Nokogiri::XML:Node] xml a TEI XML record
+        # @return [Array<String>] the extracted authors as recorded with vernacular form
         def extract_authors_as_recorded_agr xml
           extract_authors(xml).map(&:vernacular)
         end
+
 
         ##
         # All respStmts for the given +resp+ (e.g., 'artist') and return
@@ -152,38 +155,74 @@ module DS
           data
         end
 
+        # Extracts artists as recorded from the given record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted artists as recorded
         def extract_artists_as_recorded xml
           extract_artists(xml).map(&:as_recorded)
         end
 
+        # Extracts artists as recorded with vernacular form from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted artists as recorded with vernacular form
         def extract_artists_as_recorded_agr xml
           extract_artists(xml).map(&:vernacular)
         end
 
+        # Extracts artists from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted artists
         def extract_artists xml
           extract_resps(xml, RESP_ARTIST)
         end
 
+        # Extracts scribes as recorded from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted scribes as recorded
         def extract_scribes_as_recorded xml
           extract_scribes(xml).map &:as_recorded
         end
 
+        # Extracts scribes as recorded with vernacular form from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted scribes as recorded with vernacular form
         def extract_scribes_as_recorded_agr xml
           extract_scribes(xml).map &:vernacular
         end
 
+        # Extracts scribes from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted scribes
         def extract_scribes xml
           extract_resps(xml, RESP_SCRIBE)
         end
 
+        # Extracts former owners as recorded from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted former owners as recorded
         def extract_former_owners_as_recorded xml
           extract_former_owners(xml).map &:as_recorded
         end
 
+        # Extracts former owners as recorded with vernacular form from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted former owners as recorded with vernacular form
         def extract_former_owners_as_recorded_agr xml
           extract_former_owners(xml).map &:vernacular
         end
 
+        # Extracts former owners from the given XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array<String>] the extracted former owners
         def extract_former_owners xml
           extract_resps(xml, RESP_FORMER_OWNER)
         end
@@ -192,12 +231,20 @@ module DS
         # Miscellaneous authority values
         #########################################################################
 
+        # Extracts the material as recorded from the given TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @return [String] the extracted material as recorded
         def extract_material_as_recorded record
           # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
           # extract_normalized_strings(record, xpath).first
           extract_materials(record).map(&:as_recorded).first
         end
 
+        # Extracts materials from the given TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @return [Array<DS::Extractor::Material>] the extracted materials
         def extract_materials record
           xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
           extract_normalized_strings(record, xpath).map { |material|
@@ -205,6 +252,11 @@ module DS
           }
         end
 
+        # Extracts the languages as recorded from the given XML with an optional separator.
+        #
+        # @param [Nokogiri::XML::Node] xml the XML node containing language information
+        # @param [String] separator the separator to use when multiple languages are extracted
+        # @return [Array<String>] the extracted languages as recorded
         def extract_languages_as_recorded xml, separator: '|'
           extract_languages(xml).map &:as_recorded
         end
@@ -219,6 +271,11 @@ module DS
           extract_languages(xml).map &:codes
         end
 
+        # Extracts the languages from the given TEI XML record using the specified xpath.
+        # Each language is mapped to a Language object containing the language as recorded and its ISO codes.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @return [Array<DS::Extractor::Language>] list of Language objects
         def extract_languages record
           xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang'
           record.xpath(xpath).map { |text_lang|
@@ -239,6 +296,10 @@ module DS
         # Genres and subjects
         #########################################################################
 
+        # Extracts genre terms from the given TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @return [Array<Array>] an array of arrays containing value, vocabulary, and number for each term
         def extract_recon_genres record
           xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term'
           record.xpath(xpath).map { |term|
@@ -249,6 +310,10 @@ module DS
           }
         end
 
+        # Extracts subject terms from the given TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @return [Array] an array containing value, subfield codes, vocabulary, and number for each term
         def extract_recon_subjects xml
           xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term'
           xml.xpath(xpath).map do |term|
@@ -260,10 +325,18 @@ module DS
           end
         end
 
+        # Extracts genres from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @return [Array<String>] the extracted genres
         def extract_genres_as_recorded xml
           extract_genres(xml).map &:as_recorded
         end
 
+        # Extracts genres from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @return [Array<DS::Extractor::Genre>] the extracted genres
         def extract_genres xml
           xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="form/genre"]/term/text()'
           extract_normalized_strings(xml, xpath).map { |term|
@@ -271,14 +344,26 @@ module DS
           }
         end
 
+        # Extracts subjects from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @return [Array<String>] the extracted subjects
         def extract_subjects_as_recorded xml
           extract_subjects(xml).map &:as_recorded
         end
 
+        # Extracts all subjects from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @return [Array<String>] the extracted subjects
         def extract_all_subjects_as_recorded xml
           extract_subjects_as_recorded xml
         end
 
+        # Extracts subjects from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @return [Array<DS::Extractor::Subject>] the extracted subjects
         def extract_subjects xml
           xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()'
           extract_normalized_strings(xml, xpath).map { |term|
@@ -290,10 +375,18 @@ module DS
         # Place of production
         #########################################################################
 
+        # Extracts the places of production from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @return [Array<String>] the extracted places of production as recorded
         def extract_production_places_as_recorded record
           extract_places(record).map &:as_recorded
         end
 
+        # Extracts places from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @return [Array<DS::Extractor::Place>] the extracted places
         def extract_places record
           xpath = '//origPlace'
           extract_normalized_strings(record, xpath).map { |place|
@@ -321,10 +414,21 @@ module DS
         #########################################################################
         # Date of production
         #########################################################################
+
+        # Extracts the date of production from the given TEI XML record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI XML record
+        # @param [String] range_sep the separator for the date range
+        # @return [String] the extracted date of production as recorded
         def extract_production_date_as_recorded xml, range_sep: '-'
           extract_date_range(xml, range_sep: range_sep)
         end
 
+        # Extracts and formats date ranges as recorded in the given TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI XML record
+        # @param [String] range_sep the separator for the date range
+        # @return [Array<String>] an array of formatted date ranges
         def extract_date_range record, range_sep: '-'
           record.xpath('//origDate').map { |orig|
             orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
@@ -334,15 +438,6 @@ module DS
         #########################################################################
         # Titles
         #########################################################################
-        Title = Struct.new(
-          'Title', :as_recorded, :vernacular, :label, :uri,
-          keyword_init: true
-        ) do |title|
-
-          def to_a
-            [as_recorded, vernacular, label, uri].map(&:to_s)
-          end
-        end
 
         ##
         # Return an array of Title instances equal in number to
@@ -384,14 +479,26 @@ module DS
           titles
         end
 
+        # Extracts the titles from the given TEI record as recorded.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI record
+        # @return [Array<String>] list of titles as recorded
         def extract_titles_as_recorded record
           extract_titles(record).map { |t| t.as_recorded }
         end
 
+        # Extracts the titles from the given TEI record as recorded in the vernacular language.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI record
+        # @return [Array<String>] list of titles in the vernacular language as recorded
         def extract_titles_as_recorded_agr record
           extract_titles(record).map { |t| t.vernacular }
         end
 
+        # Extracts the titles from the given TEI record to an array of titles.
+        #
+        # @param [Nokogiri::XML::Node] xml the TEI record
+        # @return [Array<Array>] list of titles converted to arrays
         def extract_recon_titles xml
           extract_titles(xml).map { |t| t.to_a }
         end
@@ -428,7 +535,7 @@ module DS
 
         ##
         # Create an array of notes. Physical description notes, like
-        # Binding, and Layout are mapped as prefixed notes as with MARC:
+        # Binding, and Layout are mapped as prefixed notes as with TEI:
         #
         #   Binding: The binding note.
         #   Layout: The layout note.
@@ -472,21 +579,38 @@ module DS
         #########################################################################
         # Holding information
         #########################################################################
+
+        # Extracts the holding institution from the given record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI xml representing a TEI XML record
+        # @return [String] the extracted holding institution
         def extract_holding_institution record
           xpath = '(//msIdentifier/institution|//msIdentifier/repository)[1]'
           extract_normalized_strings(record, xpath).first
         end
 
+        # Extracts the holding institution id number from the given record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI xml representing a TEI XML record
+        # @return [String] the extracted holding institution id number
         def extract_holding_institution_id_nummber record
           xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/altIdentifier[@type="bibid"]/idno'
           extract_normalized_strings(record, xpath).first
         end
 
+        # Extracts the shelfmark from the given record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI xml representing a TEI XML record
+        # @return [String] the extracted shelfmark
         def extract_shelfmark record
           xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno[@type="call-number"]'
           extract_normalized_strings(record, xpath).first
         end
 
+        # Extracts the link to the record from the given record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI xml representing a TEI XML record
+        # @return [String] the extracted link to the record
         def extract_link_to_record record
           xpath = '//altIdentifier[@type="resource"][1]/idno'
           extract_normalized_strings(record, xpath).first
@@ -495,11 +619,20 @@ module DS
         #########################################################################
         # Acknowledgments
         #########################################################################
+
+        # Extracts the funder information from the TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI xml representing a TEI XML record
+        # @return [Array<String>] an array of funders extracted from the record
         def extract_funder record
           xpath = '/TEI/teiHeader/fileDesc/titleStmt/funder'
           extract_normalized_strings(record, xpath).map { |name| "Funder: #{name}" }
         end
 
+        # Extracts acknowledgments from the TEI XML record.
+        #
+        # @param [Nokogiri::XML::Node] record the TEI xml representing a TEI XML record
+        # @return [Array<String>] an array of acknowledgments extracted from the record
         def extract_acknowledgments record
           names = extract_resps(record, *ACKNOWLEDGMENT_RESPS).map { |name|
             "#{name.role.capitalize}: #{name.as_recorded}"
@@ -510,6 +643,12 @@ module DS
         #########################################################################
         # Utility methods
         #########################################################################
+
+        # Extracts normalized strings from the given record based on the provided xpath.
+        #
+        # @param [Nokogiri::XML::Node] record the record to extract normalized strings from
+        # @param [String] xpath the xpath to specify the location of the strings in the record
+        # @return [Array<String>] an array of normalized strings extracted from the record
         def extract_normalized_strings record, xpath
           record.xpath(xpath).map { |node| DS::Util.normalize_string node.text }
         end
