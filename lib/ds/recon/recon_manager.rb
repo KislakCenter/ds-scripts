@@ -27,13 +27,13 @@ module Recon
 
     # Write a CSV file for a specific recon type.
     #
-    # @param recon_type [ReconConfig] the type of reconciliation data
+    # @param recon_type [Recon::ReconType] the type of reconciliation data
     # @return [void]
     def write_csv recon_type
       outfile = File.join out_dir, "#{recon_type.set_name}.csv"
       CSV.open(outfile, 'w+', headers: true) do |csv|
         csv << recon_type.csv_headers
-        recon_builder.extract_recons(recon_type.set_name).each do |recon|
+        recon_builder.extract_recons(recon_type.set_name) do |recon|
           csv << recon
         end
       end
