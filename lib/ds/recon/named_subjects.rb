@@ -12,6 +12,8 @@ module Recon
     extend DS::Util
     SET_NAME = :'named-subjects'
 
+    METHOD_NAME = %i{ extract_named_subjects }
+
     def self._lookup_single term, from_column:
       uris = Recon.lookup(SET_NAME, value: term, column: from_column)
       uris.to_s.gsub '|', ';'

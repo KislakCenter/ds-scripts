@@ -34,6 +34,8 @@ module Recon
 
     DELIMITER_MAP = {}
 
+    METHOD_NAME = %i{ extract_authors extract_artists extract_scribes extract_former_owners }
+
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first

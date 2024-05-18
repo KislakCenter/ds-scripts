@@ -26,6 +26,8 @@ module Recon
       material_as_recorded
     }
 
+    METHOD_NAME = %i{ extract_materials }
+
 
     AS_RECORDED_COLUMN = :material_as_recorded
 

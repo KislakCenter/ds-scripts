@@ -35,12 +35,11 @@ module Recon
       vocabulary
     }
 
-
     AS_RECORDED_COLUMN = :genre_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
 
-
+    METHOD_NAME = %i{ extract_genres }
 
     # Adds recon the 'authorized_label' and 'structured_value' columns
     # to each row in the given array.

@@ -11,6 +11,7 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
+    let(:extractor) { DS::Extractor::TeiXml }
 
     skips = %i{ named-subjects }
     it_behaves_like 'a ReconBuilder', skips
@@ -24,10 +25,12 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
+    let(:extractor) { DS::Extractor::MarcXml }
 
     it_behaves_like 'a ReconBuilder'
 
     context '#extract_recons' do
+      let(:recon_type) { :places }
       context ':places' do
         let(:recons) {
           [
@@ -41,8 +44,8 @@ RSpec.describe Recon::ReconBuilder do
 
         }
 
-        it 'returns the auth values' do
-          expect(recon_builder.extract_recons :places).to match recons
+        it 'yields the auth values' do
+          expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end
 
@@ -87,8 +90,8 @@ RSpec.describe Recon::ReconBuilder do
 
         }
 
-        it 'returns the auth values' do
-          expect(recon_builder.extract_recons recon_type).to match recons
+        it 'yields the auth values' do
+          expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end
     end
@@ -101,13 +104,12 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
+    let(:extractor) { DS::Extractor::DsCsv }
 
     it_behaves_like 'a ReconBuilder'
 
     context ':places' do
-      it 'returns an array' do
-        expect(recon_builder.extract_recons :places).to be_an Array
-      end
+      let(:recon_type) { :places }
 
       let(:recons) {
         [
@@ -122,15 +124,13 @@ RSpec.describe Recon::ReconBuilder do
         ]
       }
 
-      it 'returns the places auth values' do
-        expect(recon_builder.extract_recons :places).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
     context ':materials' do
-      it 'returns an array' do
-        expect(recon_builder.extract_recons :materials).to be_an Array
-      end
+      let(:recon_type) { :materials }
 
       let(:recons) {
         [{:authorized_label=>"parchment;paper",
@@ -141,12 +141,13 @@ RSpec.describe Recon::ReconBuilder do
           }]
       }
 
-      it 'returns the materials auth values' do
-        expect(recon_builder.extract_recons :materials).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
     context ':names' do
+      let(:recon_type) { :names }
       let(:recons) {
         [
          {:authorized_label=>"Author auth name",
@@ -194,12 +195,13 @@ RSpec.describe Recon::ReconBuilder do
         ]
       }
 
-      it 'returns the auth values' do
-        expect(recon_builder.extract_recons :names).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
     context ":genres" do
+      let(:recon_type) { :genres }
       let(:recons) {
         [
           {:authorized_label=>"",
@@ -277,13 +279,14 @@ RSpec.describe Recon::ReconBuilder do
         ]
       }
 
-      it 'returns the auth values' do
-        expect(recon_builder.extract_recons :genres).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
 
     end
 
     context ":subjects" do
+      let(:recon_type) { :subjects }
       let(:recons) {
         [
          {:authorized_label=>"Topical auth label",
@@ -311,12 +314,13 @@ RSpec.describe Recon::ReconBuilder do
 
       }
 
-      it 'returns the auth values' do
-        expect(recon_builder.extract_recons :subjects).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
     context ":named_subjects" do
+      let(:recon_type) { :'named-subjects' }
       let(:recons) {
         [
          {:authorized_label=>"",
@@ -351,12 +355,13 @@ RSpec.describe Recon::ReconBuilder do
 
       }
 
-      it 'returns the auth values' do
-        expect(recon_builder.extract_recons :'named-subjects').to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
     context ":titles" do
+      let(:recon_type) { :titles }
       let(:recons) {
         [
          {:authorized_label=>"Standard title",
@@ -375,12 +380,13 @@ RSpec.describe Recon::ReconBuilder do
 
       }
 
-      it 'returns the auth values' do
-        expect(recon_builder.extract_recons :titles).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
     context ":languages" do
+      let(:recon_type) { :languages }
       let(:recons) {
         [
           { :language_as_recorded => "Arabic", :language_code => "", :authorized_label => "Arabic", :structured_value => "Q13955", ds_qid: nil },
@@ -389,8 +395,8 @@ RSpec.describe Recon::ReconBuilder do
         ]
       }
 
-      it 'returns the auth values' do
-        expect(recon_builder.extract_recons :languages).to match recons
+      it 'yields the auth values' do
+        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -403,6 +409,7 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
+    let(:extractor) { DS::Extractor::DsMetsXml }
 
     skips = %i{ genres named-subjects }
     it_behaves_like 'a ReconBuilder', skips

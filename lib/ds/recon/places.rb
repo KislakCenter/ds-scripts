@@ -24,6 +24,8 @@ module Recon
 
     DELIMITER_MAP = { '|' => ';' }
 
+    METHOD_NAME = %i{ extract_places }
+
     def self.add_recon_values rows
       rows.each do |row|
         place_as_recorded = row.first

@@ -9,6 +9,8 @@ module Recon
 
     SET_NAME = :titles
 
+    METHOD_NAME = %i{ extract_titles }
+
     CSV_HEADERS = %i{
       title_as_recorded
       title_as_recorded_agr

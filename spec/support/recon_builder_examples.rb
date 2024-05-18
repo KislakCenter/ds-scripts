@@ -2,21 +2,13 @@
 
 ##
 # Shared examples for testing recon extraction for a given source
-# type. Performs recon extraction and lookups for all recon types:
-# +:places+, +:materials+, +:languages+, +:genres+, +:subjects+,
+# type. Performs recon extraction  all recon types: +:places+,
+# +:materials+, +:languages+, +:genres+, +:subjects+,
 # +:named-subjects+, +:names+, +:titles+.
 #
-# For each recon type, the following are tested:
-#
-# - Initialization
-# - that +#extract_recons+ returns an Array
-# - that +#extract_recons+ returns a non-empty Array
-# - that +#extract_recons+ returns an array of hashes
-# - that +#extract_recons+ returns an 2-D array with the correct number of columns in each row
-# - that +#write_csv+ creates a non-empty CSV for each recon type
-#
-# the calling context must define the following via let statements
-#
+# For each recon type, the examples confirm that the extract_recons method
+# yields the expected recon hash.
+# #
 # - +:source_type+
 # - +:files+
 # - +:out_dir+
@@ -50,233 +42,228 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
     context ':places', unless: skip_example?(skips, :places) do
       let(:set_name) { :places }
       let(:recon_class) { Recon::Places }
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
+      let(:recon_row) {
+        {
+          authorized_label:  "Paris",
+          ds_qid:            "",
+          place_as_recorded: "Paris",
+          structured_value:  "http://vocab.getty.edu/tgn/paris_id"
+        }
+      }
+      let(:terms) {
+        [DS::Extractor::Place.new(as_recorded: 'Paris')]
+      }
+
+      # let(:extractor) { double('extractor') }
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
-      end
     end
 
     context ':materials', unless: skip_example?(skips, :materials) do
       let(:set_name) { :materials }
       let(:recon_class) { Recon::Materials }
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
-      end
+      let(:recon_row) {
+        {
+          :authorized_label=>"paper",
+          :ds_qid=>"",
+          :material_as_recorded=>"paper",
+          :structured_value=>"http://vocab.getty.edu/aat/300014109"
+        }
+      }
+      let(:terms) {
+        [DS::Extractor::Material.new(as_recorded: 'paper')]
+      }
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
     end
 
     context ':languages', unless: skip_example?(skips, :languages) do
       let(:set_name) { :languages }
       let(:recon_class) { Recon::Languages }
+      let(:recon_row) {
+        {
+          :authorized_label=>"Latin",
+          :ds_qid=>nil,
+          :language_as_recorded=>"Latin",
+          :language_code=>"la",
+          :structured_value=>"Q397"
+        }
+      }
+      let(:terms) {
+        [DS::Extractor::Language.new(as_recorded: 'Latin', codes: ['la'])]
+      }
 
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
-      end
     end
 
     context ':genres', unless: skip_example?(skips, :genres) do
       let(:set_name) { :genres }
       let(:recon_class) { Recon::Genres }
+      let(:recon_row) {
+        {
+          :authorized_label=>"Qur'ans",
+          :ds_qid=>"",
+          :genre_as_recorded=>"Qurʼans",
+          :source_authority_uri=>nil,
+          :structured_value=>"http://vocab.getty.edu/aat/300265128",
+          :vocabulary=>"aat"
+        }
+      }
+      let(:terms) {
+        [DS::Extractor::Genre.new(as_recorded: 'Qurʼans', vocab: 'aat' )]
+      }
 
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
-      end
     end
 
     context ':subjects', unless: skip_example?(skips, :subjects) do
       let(:set_name) { :subjects }
       let(:recon_class) { Recon::Subjects }
 
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
-      end
+      let(:recon_row) {
+        {
+          subfield_codes:        "a--x",
+          vocab:                 "fast",
+          source_authority_uri:  "http://id.worldcat.org/fast/1175925",
+          authorized_label:      "Wine and wine making--Law and legislation",
+          structured_value:      "http://id.worldcat.org/fast/1175925",
+          ds_qid:                "",
+          subject_as_recorded:   "Wine and wine making--Law and legislation"
+        }
+      }
+      let(:terms) {
+        [
+          DS::Extractor::Subject.new(
+            as_recorded: 'Wine and wine making--Law and legislation',
+            vocab: 'fast',
+            subfield_codes: 'a--x',
+            source_authority_uri: 'http://id.worldcat.org/fast/1175925'
+          )
+        ]
+      }
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
     end
 
     context ':named-subjects', unless: skip_example?(skips, :'named-subjects') do
       let(:set_name) { :'named-subjects' }
       let(:recon_class) { Recon::NamedSubjects }
+      let(:terms) {
+        [
+          DS::Extractor::Subject.new(
+            as_recorded:          'Rhetorica ad Herennium',
+            vocab:                'fast',
+            subfield_codes:       'a',
+            source_authority_uri: 'http://id.worldcat.org/fast/1357545'
+          )
+        ]
+      }
+      let(:recon_row) {
+        {:subfield_codes=>"a",
+         :vocab=>"fast",
+         :source_authority_uri=>"http://id.worldcat.org/fast/1357545",
+         :authorized_label=>"Rhetorica ad Herennium",
+         :structured_value=>"http://id.worldcat.org/fast/1357545",
+         :ds_qid=>"",
+         :subject_as_recorded=>"Rhetorica ad Herennium"}
+      }
 
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
-      end
     end
 
     context ':names', unless: skip_example?(skips, :names) do
       let(:set_name) { :names }
       let(:recon_class) { Recon::Names }
+      let(:terms) {
+        [
+          DS::Extractor::Name.new(
+            as_recorded:          'Former owner as recorded',
+            role: 'former owner',
+            vernacular: 'Former owner in original script',
+            ref: 'http://example.com/owner_uri'
+          )
+        ]
+      }
+      let(:recon_row) {
+        {:role=>"former owner",
+         :name_agr=>"Former owner in original script",
+         :source_authority_uri=>"http://example.com/owner_uri",
+         :authorized_label=>"Former owner auth name",
+         :structured_value=>"WDQIDOWNER",
+         :instance_of=>"organization",
+         :ds_qid=>nil,
+         :name_as_recorded=>"Former owner as recorded"}
+      }
 
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
-      end
     end
 
     context ':titles', unless: skip_example?(skips, :titles) do
       let(:set_name) { :titles }
       let(:recon_class) { Recon::Titles }
 
-      it 'returns an array' do
-        expect(recon_builder.extract_recons set_name).to be_an Array
-      end
+      let(:recon_row) {
+        {:title_as_recorded_agr=>"Title in vernacular",
+         :uniform_title_as_recorded=>"Uniform title",
+         :uniform_title_as_recorded_agr=>"Uniform title in vernacular",
+         :authorized_label=>"Standard title",
+         :ds_qid=>"",
+         :title_as_recorded=>"Title"}
+      }
+      let(:terms) {
+        [DS::Extractor::Title.new(
+          as_recorded: 'Title', vernacular: 'Title in vernacular',
+          uniform_title: 'Uniform title',
+          uniform_title_vernacular: 'Uniform title in vernacular'
+        )]
+      }
 
-      it 'returns an non-empty array' do
-        expect(recon_builder.extract_recons set_name).not_to be_empty
-      end
-
-      it 'returns an array of hashes' do
-        expect(recon_builder.extract_recons set_name).to all be_a Hash
-      end
-
-      let(:headers) { recon_class.csv_headers }
-      it 'returns the hashes with the expected headers' do
-        expect(recon_builder.extract_recons set_name).to all have_columns headers
-      end
-    end
-  end
-
-  context '#write_csv' do
-    context :titles do
-      let(:set_name) { :titles }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
-      end
-    end
-
-    context :names, unless: skip_example?(skips, :names) do
-      let(:set_name) { :names }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
-      end
-    end
-
-    context :materials, unless: skip_example?(skips, :materials) do
-      let(:set_name) { :materials }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
-      end
-    end
-
-    context :genres, unless: skip_example?(skips, :genres) do
-      let(:set_name) { :genres }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
-      end
-    end
-
-    context :subjects, unless: skip_example?(skips, :subjects) do
-      let(:set_name) { :subjects }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
-      end
-    end
-
-    context :'named-subjects', unless: skip_example?(skips, :'named-subjects') do
-      let(:set_name) { :'named-subjects' }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
-      end
-    end
-
-    context :languages, unless: skip_example?(skips, :languages) do
-      let(:set_name) { :languages }
-
-      it "writes the CSV" do
-        expect { recon_builder.write_csv set_name }.not_to raise_error
+      it 'yields a hash' do
+        recon_class.method_name.each do |meth|
+          allow(extractor).to receive(meth).and_return(terms)
+        end
+        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
       end
     end
   end
+
 end

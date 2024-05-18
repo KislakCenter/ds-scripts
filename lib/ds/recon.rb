@@ -40,48 +40,16 @@ module Recon
     subjects
     titles
   }
-  ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
+  # ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
   RECON_TYPES = [
-    ReconConfig.new(
-      method_name: %i[extract_genres],
-      klass: Recon::Genres,
-      set_name: Recon::Genres.set_name
-    ),
-    ReconConfig.new(
-      method_name: %i[extract_languages],
-      klass: Recon::Languages,
-      set_name: Recon::Languages.set_name
-    ),
-    ReconConfig.new(
-      method_name:   :extract_materials,
-      klass: Recon::Materials,
-      set_name: Recon::Materials.set_name
-    ),
-    ReconConfig.new(
-      method_name: %i[extract_named_subjects],
-      klass: Recon::NamedSubjects,
-      set_name: Recon::NamedSubjects.set_name
-    ),
-    ReconConfig.new(
-      method_name: %i[extract_authors extract_artists extract_scribes extract_former_owners],
-      klass: Recon::Names,
-      set_name: Recon::Names.set_name
-    ),
-    ReconConfig.new(
-      method_name: %i[extract_places],
-      klass: Recon::Places,
-      set_name: Recon::Places.set_name
-    ),
-    ReconConfig.new(
-      method_name: %i[extract_subjects],
-      klass: Recon::Subjects,
-      set_name: Recon::Subjects.set_name
-    ),
-    ReconConfig.new(
-      method_name: %i[extract_titles],
-      klass: Recon::Titles,
-      set_name: Recon::Titles.set_name
-    ),
+    Recon::Genres,
+    Recon::Languages,
+    Recon::Materials,
+    Recon::NamedSubjects,
+    Recon::Names,
+    Recon::Places,
+    Recon::Subjects,
+    Recon::Titles
   ]
 
   def self.sort_and_dedupe array

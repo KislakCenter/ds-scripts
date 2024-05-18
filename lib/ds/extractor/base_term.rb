@@ -52,6 +52,15 @@ module DS
       def to_a
         [as_recorded]
       end
+
+      def to_h
+        { as_recorded: as_recorded }
+      end
+
+      def ==(other)
+        self.class == other.class &&
+          self.to_h == other.to_h
+      end
     end
   end
 end

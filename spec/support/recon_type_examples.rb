@@ -62,6 +62,17 @@ RSpec.shared_examples "a recon type class" do
     end
   end
 
+  context '.method_name' do
+    let(:the_method) { :method_name }
+    it 'implements the method' do
+      expect(described_class).to respond_to the_method
+    end
+
+    it 'returns an array of symbols' do
+      expect(described_class.send the_method).to all be_a Symbol
+    end
+  end
+
   context '.delimiter_map' do
     let(:the_method) { :delimiter_map }
 

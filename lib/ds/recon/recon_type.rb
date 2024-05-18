@@ -31,6 +31,10 @@ module Recon
       def delimiter_map
         self::DELIMITER_MAP
       end
+
+      def method_name
+        self::METHOD_NAME
+      end
     end
   end
 end

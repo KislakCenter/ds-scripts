@@ -49,6 +49,8 @@ module Recon
       subject_as_recorded
       vocabulary
     }
+
+    METHOD_NAME = %i{ extract_subjects }
     # TODO: ADD subfield_codes as key column
 
 
