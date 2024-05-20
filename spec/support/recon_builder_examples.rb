@@ -6,7 +6,7 @@
 # +:materials+, +:languages+, +:genres+, +:subjects+,
 # +:named-subjects+, +:names+, +:titles+.
 #
-# For each recon type, the examples confirm that the extract_recons method
+# For each recon type, the examples confirm that the each_recon method
 # yields the expected recon hash.
 # #
 # - +:source_type+
@@ -37,7 +37,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
     end
   end
 
-  context "#extract_recons" do
+  context "#each_recon" do
 
     context ':places', unless: skip_example?(skips, :places) do
       let(:set_name) { :places }
@@ -59,7 +59,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
     end
@@ -83,7 +83,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
     end
 
@@ -107,7 +107,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
     end
@@ -133,7 +133,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
     end
@@ -168,7 +168,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
     end
 
@@ -199,7 +199,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
     end
@@ -232,7 +232,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
 
     end
@@ -261,7 +261,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         recon_class.method_name.each do |meth|
           allow(extractor).to receive(meth).and_return(terms)
         end
-        expect { |b| recon_builder.extract_recons(set_name, &b) }.to yield_successive_args(recon_row)
+        expect { |b| recon_builder.each_recon(set_name, &b) }.to yield_successive_args(recon_row)
       end
     end
   end

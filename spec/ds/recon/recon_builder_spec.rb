@@ -29,7 +29,7 @@ RSpec.describe Recon::ReconBuilder do
 
     it_behaves_like 'a ReconBuilder'
 
-    context '#extract_recons' do
+    context '#each_recon' do
       let(:recon_type) { :places }
       context ':places' do
         let(:recons) {
@@ -45,7 +45,7 @@ RSpec.describe Recon::ReconBuilder do
         }
 
         it 'yields the auth values' do
-          expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+          expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end
 
@@ -91,7 +91,7 @@ RSpec.describe Recon::ReconBuilder do
         }
 
         it 'yields the auth values' do
-          expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+          expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end
     end
@@ -125,7 +125,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -142,7 +142,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -196,7 +196,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -280,7 +280,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
 
     end
@@ -315,7 +315,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -356,7 +356,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -381,7 +381,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 
@@ -396,7 +396,7 @@ RSpec.describe Recon::ReconBuilder do
       }
 
       it 'yields the auth values' do
-        expect { |b| recon_builder.extract_recons(recon_type, &b) }.to yield_successive_args(*recons)
+        expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
       end
     end
 

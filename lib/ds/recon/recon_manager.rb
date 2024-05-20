@@ -33,7 +33,7 @@ module Recon
       outfile = File.join out_dir, "#{recon_type.set_name}.csv"
       CSV.open(outfile, 'w+', headers: true) do |csv|
         csv << recon_type.csv_headers
-        recon_builder.extract_recons(recon_type.set_name) do |recon|
+        recon_builder.each_recon(recon_type.set_name) do |recon|
           csv << recon
         end
       end

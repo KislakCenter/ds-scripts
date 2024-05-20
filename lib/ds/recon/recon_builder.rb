@@ -73,24 +73,7 @@ module Recon
     def extractor
       @extractor ||= SOURCE_TYPE_EXTRACTORS[source_type]
     end
-
-    def write_csv set_name
-      recons = extract_recons set_name
-      if recons.blank?
-        STDERR.puts "WARNING: No recon values for #{set_name}"
-        return
-      end
-
-      outfile = File.join out_dir, "#{set_name}.csv"
-      CSV.open outfile, 'w+', headers: true do |csv|
-        csv << recons.first.keys
-        recons.each do |row|
-          csv << row
-        end
-      end
-      outfile
-    end
-
+    
     ##
     # For each extracted term in of the given set type (like :places)
     # yield the corresponding recon CSV row.
@@ -100,14 +83,14 @@ module Recon
     #     # for a ReconBuilder for set of TEI files
     #     CSV headers: true do |csv|
     #       csv << Recon::Places.csv_headers
-    #       recon_builder.extract_recons(:places) do |recon|
+    #       recon_builder.each_recon(:places) do |recon|
     #         csv << recon
     #       end
     #     end
     #
     # @param [Symbol] set_name a recon set name, like :places
     # @yield [Hash<Symbol, String>] a block that yields recon rows
-    def extract_recons set_name, &block
+    def each_recon set_name, &block
       items = Set.new
       recon_config = Recon.find_recon_config set_name
 
