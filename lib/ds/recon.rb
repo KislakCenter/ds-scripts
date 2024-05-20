@@ -87,7 +87,7 @@ module Recon
     config
   end
 
-  def self.find_recon_config set_name
+  def self.find_recon_type set_name
     RECON_TYPES.find { |config| config.set_name == set_name }
   end
 

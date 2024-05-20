@@ -73,7 +73,7 @@ module Recon
     def extractor
       @extractor ||= SOURCE_TYPE_EXTRACTORS[source_type]
     end
-    
+
     ##
     # For each extracted term in of the given set type (like :places)
     # yield the corresponding recon CSV row.
@@ -92,7 +92,7 @@ module Recon
     # @yield [Hash<Symbol, String>] a block that yields recon rows
     def each_recon set_name, &block
       items = Set.new
-      recon_config = Recon.find_recon_config set_name
+      recon_config = Recon.find_recon_type set_name
 
       enumerator.each do |record|
         [recon_config.method_name].flatten.each do |name|
