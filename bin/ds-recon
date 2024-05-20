@@ -12,7 +12,6 @@ class ReconCLI < DS::CLI
 
   RECON_SETS = Settings.recon.sets.map { |set| set[:name] }.freeze
   # We don't validate the aggregate subjects, named subjects set
-  VALIDATION_RECON_SETS = RECON_SETS.reject {|set| set == 'all-subjects' }.freeze
 
   class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'[ignored by recon-update, validate]", aliases: '-a'
   class_option :directory, banner: 'PATH', desc: "Output directory [ignored by recon-update, validate]", aliases: '-o', default: '.'
@@ -31,7 +30,7 @@ class ReconCLI < DS::CLI
 
     ds-recon -s names path/to/names.csv
   LONGDESC
-  option :'recon-set', banner: 'SET', desc: "One of #{VALIDATION_RECON_SETS.join ', '}; REQUIRED", aliases: '-s', required: true
+  option :'recon-set', banner: 'SET', desc: "One of #{Recon::RECON_VALIDATION_SETS.join ', '}; REQUIRED", aliases: '-s', required: true
   def validate recon_csv = nil
     set_name = options[:'recon-set']
     set_config = Recon.find_set_config set_name

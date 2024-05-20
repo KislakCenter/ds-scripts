@@ -1,14 +1,14 @@
-name_as_recorded,role,name_agr,source_authority_uri,instance_of,authorized_label,structured_value
-Former owner as recorded,former owner,Former owner in original script,http://example.com/owner_uri,organization,Former owner auth name,WDQIDOWNER
-An author,author,An author in original script,http://example.com/author_uri,human,Author auth name,WDQIDAUTHOR
-Another artist,artist,Another artist in original script,http://example.com/artist_uri,human,Artist auth name,WDQIDARTIST
-A scribe,scribe,A scribe in original script,http://example.com/scribe_uri,human,Scribe auth name,WDQIDSCRIBE
-"Phillipps, Thomas",former owner,,,human,Thomas Phillipps,Q2147709
-"Phillipps, Thomas, Sir, 1792-1872",former owner,,,human,Thomas Phillipps,Q2147709
-"Phillipps, Thomas, Sir, 1792-1872",former owner,,http://id.loc.gov/authorities/names/n50078542,human,Thomas Phillipps,Q2147709
-"Boethius, -524",author,,http://id.loc.gov/authorities/names/n79029805,human,Boethius,Q102851
-"Boethius, -524",author,,,human,Boethius,Q102851
-"Beck, Helmut, 1919-2001",former owner,,,human,Helmut Beck,Q94821473
-Saint-Benoît-sur-Loire (Abbey),former owner,,,organization,Fleury Abbey,Q956741
-Saint-Benoît-sur-Loire (Abbey),former owner,,http://id.loc.gov/authorities/names/n83019607,organization,Fleury Abbey,Q956741
-Catholic Church.,author,,,organization,Catholic Church,Q12345
+name_as_recorded,role,name_agr,source_authority_uri,instance_of,authorized_label,structured_value,ds_qid
+Former owner as recorded,former owner,Former owner in original script,http://example.com/owner_uri,organization,Former owner auth name,WDQIDOWNER,
+An author,author,An author in original script,http://example.com/author_uri,human,Author auth name,WDQIDAUTHOR,
+Another artist,artist,Another artist in original script,http://example.com/artist_uri,human,Artist auth name,WDQIDARTIST,
+A scribe,scribe,A scribe in original script,http://example.com/scribe_uri,human,Scribe auth name,WDQIDSCRIBE,
+"Phillipps, Thomas",former owner,,,human,Thomas Phillipps,Q2147709,
+"Phillipps, Thomas, Sir, 1792-1872",former owner,,,human,Thomas Phillipps,Q2147709,
+"Phillipps, Thomas, Sir, 1792-1872",former owner,,http://id.loc.gov/authorities/names/n50078542,human,Thomas Phillipps,Q2147709,
+"Boethius, -524",author,,http://id.loc.gov/authorities/names/n79029805,human,Boethius,Q102851,
+"Boethius, -524",author,,,human,Boethius,Q102851,
+"Beck, Helmut, 1919-2001",former owner,,,human,Helmut Beck,Q94821473,
+Saint-Benoît-sur-Loire (Abbey),former owner,,,organization,Fleury Abbey,Q956741,
+Saint-Benoît-sur-Loire (Abbey),former owner,,http://id.loc.gov/authorities/names/n83019607,organization,Fleury Abbey,Q956741,
+Catholic Church.,author,,,organization,Catholic Church,Q12345,

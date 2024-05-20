@@ -1,106 +1,106 @@
-genre_as_recorded,vocabulary,source_authority_uri,authorized_label,structured_value
-Agreements,aat,,agreements,http://vocab.getty.edu/aat/300027628
-Anecdotes,fast,(OCoLC)fst01423876,Anecdotes,http://id.worldcat.org/fast/1423876
-Annotations (Provenance),rbprov,,Annotations,http://id.loc.gov/vocabulary/rbmscv/cv00102
-Anthologies,aat,,anthologies,http://vocab.getty.edu/aat/300026037
-Antiphonaries (Service books),lcgft,,Antiphonaries (Service books),http://id.worldcat.org/fast/1920004
-Arabic scripts,aat,,Arabic scripts,http://vocab.getty.edu/aat/300208615
-Autographs,rbmscv ,,Autographs,http://id.loc.gov/vocabulary/rbmscv/cv00177
-Biographies (literary works),aat,,biographies (literary works),http://vocab.getty.edu/aat/300080102
-Blocked bindings,rbmscv,,Blocked bindings,http://id.loc.gov/vocabulary/rbmscv/cv00438
-Bookplates (Provenance),openn-form/genre,,Bookplates,http://id.loc.gov/vocabulary/rbmscv/cv00138
-Booksellers' copies,rbmscv,,Booksellers' copies,http://id.loc.gov/vocabulary/rbmscv/cv00150
-Bullae (seals),aat,,bullae (seals),http://vocab.getty.edu/aat/300266223
-Calf bindings (Binding)--17th century,rbbin,,Calf bindings;Seventeenth century,http://id.loc.gov/vocabulary/rbmscv/cv00454;http://id.worldcat.org/fast/1113663
-Caroline minuscule,aat,,Caroline minuscule,http://vocab.getty.edu/aat/300195207
-Catchplates,lobt,,Catchplates,https://www.ligatus.org.uk/lob/concept/1244
-Champlevé--Great Britain--16th century,aat,,champlevé;Great Britain;Sixteenth century,http://vocab.getty.edu/aat/300053777;http://id.worldcat.org/fast/1204623;http://id.worldcat.org/fast/1119851
-Civil court records,aat,,civil court records,http://vocab.getty.edu/aat/300027866
-Clasp straps,lobt,,Clasp straps,https://www.ligatus.org.uk/lob/concept/2858
-Cookbooks,aat,,cookbooks,http://vocab.getty.edu/aat/300026109
-Detached leaves--Italy--14th century,aat,,detached leaves;Italy;Fourteenth century,http://vocab.getty.edu/aat/300379890;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420
-Devices (Provenance),rbprov,,Devices (Provenance),http://id.loc.gov/vocabulary/rbmscv/cv00140
-Dialogues,aat,,dialogues,http://vocab.getty.edu/aat/300026185
-Drawings--Austrian--14th century,gmgpc,,Drawings;Austria;Fourteenth century,http://id.worldcat.org/fast/1423718;http://id.worldcat.org/fast/1204901;http://id.worldcat.org/fast/933420
-Early works,openn-form/genre,,Early works,http://id.worldcat.org/fast/1411636
-Early works,fast,,Early works,http://id.worldcat.org/fast/1411636
-Engravings--England,gmgpc,,Engravings;England,http://id.worldcat.org/fast/1986244;http://id.worldcat.org/fast/1219920
-Figured initials--England--14th century,aat,,figure initials;England;Fourteenth century,http://vocab.getty.edu/aat/300199991;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/933420
-Glossaries,aat,,glossaries,http://vocab.getty.edu/aat/300026189
-Glossaries,,,glossaries,http://vocab.getty.edu/aat/300026189
-Gold-tooled (decoration),lobt,,gold-tooled (decoration),http://w3id.org/lob/concept/1371
-Gothic scripts--France--15th century,aat,,Gothic scripts;France;Fifteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/923962
-Gothic scripts--Italy--14th century,aat,,Gothic scripts;Italy;Fourteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420
-Gothic scripts--Italy--Ferrara--15th century,aat,,Gothic scripts;Italy--Ferrara;Fifteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204575;http://id.worldcat.org/fast/923962
-Gregorian chants,aat,,Gregorian chants,http://vocab.getty.edu/aat/300265207
-Historiated initials--19th century,aat,,historiated initials;Nineteenth century,http://vocab.getty.edu/aat/300194390;http://id.worldcat.org/fast/1037841
-History,fast,,History,http://id.worldcat.org/fast/1411628
-Illuminated manuscripts--England--15th century,aat,,illuminated manuscripts;England;Fifteenth century,http://vocab.getty.edu/aat/300265483;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/923962
-Illuminated manuscripts--France--12th century,aat,,illuminated manuscripts;France;Twelfth century,http://vocab.getty.edu/aat/300265483;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/1159791
-Illuminated manuscripts--France--15th century,aat,,illuminated manuscripts;France;Fifteenth century,http://vocab.getty.edu/aat/300265483;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/923962
-Incunabula,lcsh,,Incunabula,http://id.worldcat.org/fast/2070682
-Indentures--15th century,aat,,indentures;Fifteenth century,http://vocab.getty.edu/aat/300027753;http://id.worldcat.org/fast/923962
-Lecture notes,aat,,lecture notes,http://vocab.getty.edu/aat/300027204
-Legal instruments,aat,,legal instruments,http://vocab.getty.edu/aat/300163664
-Manuals (instructional materials),aat,,manuals (instructional materials),http://vocab.getty.edu/aat/300026395
-"Manuscripts, 18th century",lcsh,,Manuscripts;Eighteenth century,http://id.worldcat.org/fast/1424060;http://id.worldcat.org/fast/904058
-"Manuscripts, Dutch--Netherlands",lcsh,,"Manuscripts, Dutch;Netherlands",http://id.worldcat.org/fast/1008323;http://id.worldcat.org/fast/1204034
-"Manuscripts, French--France",lcsh,,"Manuscripts, French;France",http://id.worldcat.org/fast/1008338;http://id.worldcat.org/fast/1204289
-"Manuscripts, Hindi",lcsh,,"Manuscripts, Hindi",http://id.worldcat.org/fast/1008366
-"Manuscripts, Latin (Medieval and modern)--Flanders",lcsh,,"Manuscripts, Latin (Medieval and modern)",http://id.worldcat.org/fast/1008399
-"Manuscripts, Latin (Medieval and modern)--Italy",lcsh,,"Manuscripts, Latin (Medieval and modern);Italy",http://id.worldcat.org/fast/1008399;http://id.worldcat.org/fast/1204565
-"Manuscripts, Medieval--1050-1100",lcsh,,"Manuscripts, Medieval",http://id.worldcat.org/fast/1008422
-"Manuscripts, Medieval--1350-1400",lcsh,,"Manuscripts, Medieval",http://id.worldcat.org/fast/1008422
-"Manuscripts, Medieval--Austria--1350-1400",lcsh,,"Manuscripts, Medieval;Austria",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204901
-"Manuscripts, Medieval--England--1350-1400",lcsh,,"Manuscripts, Medieval;England",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1219920
-"Manuscripts, Medieval--France--1150-1200",lcsh,,"Manuscripts, Medieval;France",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204289
-"Manuscripts, Medieval--France--1350-1400",lcsh,,"Manuscripts, Medieval;France",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204289
-"Manuscripts, Medieval--France--650-700",lcsh,,"Manuscripts, Medieval;France",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204289
-"Manuscripts, Medieval--Germany--1100-1150",lcsh,,"Manuscripts, Medieval;Germany",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1210272
-"Manuscripts, Medieval--Italy--1350-1400",aat,,"Manuscripts, Medieval;Italy",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204565
-"Manuscripts, Medieval--Italy--1400-1450",lcsh,,"Manuscripts, Medieval;Italy",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204565
-"Manuscripts, Medieval--Portugal--1275-1300",lcsh,,"Manuscripts, Medieval;Portugal",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1208476
-"Manuscripts, Persian--16th century",local,,"Manuscripts, Persian;Sixteenth century",http://id.worldcat.org/fast/1008462;http://id.worldcat.org/fast/1119851
-"Manuscripts, Rajasthani",lcsh,,"Manuscripts, Rajasthani",http://id.worldcat.org/fast/1008471
-"Manuscripts, Renaissance--England--1550-1600",,,"Manuscripts, Renaissance;England",http://id.worldcat.org/fast/1008472;http://id.worldcat.org/fast/1219920
-"Manuscripts, Renaissance--Italy--1450-1500",lcsh,,"Manuscripts, Renaissance;Italy",http://id.worldcat.org/fast/1008472;http://id.worldcat.org/fast/1204565
-Manuscripts--France--12th century,aat,,manuscripts (documents);France;Twelfth century,http://vocab.getty.edu/aat/300028569;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/1159791
-Manuscripts--Italy--14th century,aat,,manuscripts (documents);Italy;Fourteenth century,http://vocab.getty.edu/aat/300028569;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420
-Manuscripts--Japan--15th century,aat,,manuscripts (documents);Japan;Fifteenth century,http://vocab.getty.edu/aat/300028569;http://id.worldcat.org/fast/1204082;http://id.worldcat.org/fast/923962
-Manuscript waste (Binding)--16th century,rbbin,,Manuscript waste;Sixteenth century,http://id.loc.gov/vocabulary/rbmscv/cv01568;http://id.worldcat.org/fast/1119851
-marginalia (annotations),aat,,marginalia (annotations),http://vocab.getty.edu/aat/300026102
-Metalcuts--Germany--15th century,aat,,metal cuts;Germany;Fifteenth century,http://vocab.getty.edu/aat/300041396;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/923962
-Miniatures (Painting)--Belgium--15th century,aat,,miniatures (paintings);Belgium;Fifteenth century,http://vocab.getty.edu/aat/300033936;http://id.worldcat.org/fast/1210278;http://id.worldcat.org/fast/923962
-miniatures (paintings),openn-form/genre,,miniatures (paintings),http://vocab.getty.edu/aat/300033936
-Missals--Italy--15th century,aat,,missals;Italy;Fifteenth century,http://vocab.getty.edu/aat/300026472;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/923962
-Musical works,rbgenr,,Musical works,http://id.loc.gov/vocabulary/rbmscv/cv00117
-Mystery plays--England--15th century,aat,,mystery plays;England;Fifteenth century,http://vocab.getty.edu/aat/300055914;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/923962
-Mystery plays--England--16th century,aat,,mystery plays;England;Sixteenth century,http://vocab.getty.edu/aat/300055914;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/1119851
-Notes (documents),aat,,notes (documents),http://vocab.getty.edu/aat/300027200
-Novellas--Italy--15th century,aat,,novellas;Italy;Fifteenth century,http://vocab.getty.edu/aat/300202569;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/923962
-Petitions,rbgenr,,Petitions,http://id.loc.gov/vocabulary/rbmscv/cv01522
-Pigskin bindings,rbmscv,,Pigskin bindings,http://id.loc.gov/vocabulary/rbmscv/cv00624
-Poésie,rvmgf,,Poetry,http://id.worldcat.org/fast/1423828
-Portraits,lcgft,,Portraits,http://id.worldcat.org/fast/1423831
-Prayer books--Germany--15th century,rbgenr,,Prayer books;Germany;Fifteenth century,http://id.loc.gov/vocabulary/rbmscv/cv01759;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/923962
-Prayer books--Germany--17th century,aat,,prayer books;Germany;Seventeenth century,http://vocab.getty.edu/aat/300026476;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/1113663
-Prayer books--Turkey--16th century,aat,,prayer books;Turkey;Sixteenth century,http://vocab.getty.edu/aat/300026476;http://id.worldcat.org/fast/1208963;http://id.worldcat.org/fast/1119851
-Prayers (literary works),openn-form/genre,,prayers (literary genre),http://vocab.getty.edu/aat/300026452
-Qur'ans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128
-Qurʼans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128
-Satires (literary works),aat,,satires (literary works),http://vocab.getty.edu/aat/300251297
-Scrolls (Information artifact)--England--15th century,aat,,scrolls (information artifacts);England;Fifteenth century,http://vocab.getty.edu/aat/300028629;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/923962
-Speeches,aat,,speeches (documents),http://vocab.getty.edu/aat/300026671
-Sprinkled edges (Binding),rbbin,,Sprinkled edges,http://id.loc.gov/vocabulary/rbmscv/cv00753
-Supported sewing,lobt,,supported sewing structures,http://w3id.org/lob/concept/2508
-Tax records,aat,,tax records,http://vocab.getty.edu/aat/300027371
-Témoin,lobt,,témoin,http://w3id.org/lob/concept/5640
-Vellum bindings (Binding)--Switzerland--14th century,aat,,Vellum bindings;Switzerland;Fourteenth century,http://id.loc.gov/vocabulary/rbmscv/cv00543;http://id.worldcat.org/fast/1205401;http://id.worldcat.org/fast/933420
-Vellum wrappers (Binding)--Spain--1500,rbbin,,Vellum wrappers,http://id.loc.gov/vocabulary/rbmscv/cv00685
-Velvet bindings (Binding)--Great Britain--16th century,rbbin,,Velvet bindings;Great Britain;Sixteenth century,http://id.loc.gov/vocabulary/rbmscv/cv00708;http://id.worldcat.org/fast/1204623;http://id.worldcat.org/fast/1119851
-Wooden boards (Bindings),rbbin,,Wooden boards,http://id.loc.gov/vocabulary/rbmscv/cv00601
-Writing books--Germany--16th century,rbgenr,,Writing books;Germany;Sixteenth century,http://id.loc.gov/vocabulary/rbmscv/cv01178;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/1119851
-Qur'ans,openn-form/genre,,Qur'ans,http://vocab.getty.edu/aat/300265128
-Qur'ans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128
-Qurʼans,openn-form/genre,,Qur'ans,http://vocab.getty.edu/aat/300265128
-Qurʼans,,,Qur'ans,http://vocab.getty.edu/aat/300265128
+genre_as_recorded,vocabulary,source_authority_uri,authorized_label,structured_value,ds_qid
+Agreements,aat,,agreements,http://vocab.getty.edu/aat/300027628,
+Anecdotes,fast,(OCoLC)fst01423876,Anecdotes,http://id.worldcat.org/fast/1423876,
+Annotations (Provenance),rbprov,,Annotations,http://id.loc.gov/vocabulary/rbmscv/cv00102,
+Anthologies,aat,,anthologies,http://vocab.getty.edu/aat/300026037,
+Antiphonaries (Service books),lcgft,,Antiphonaries (Service books),http://id.worldcat.org/fast/1920004,
+Arabic scripts,aat,,Arabic scripts,http://vocab.getty.edu/aat/300208615,
+Autographs,rbmscv ,,Autographs,http://id.loc.gov/vocabulary/rbmscv/cv00177,
+Biographies (literary works),aat,,biographies (literary works),http://vocab.getty.edu/aat/300080102,
+Blocked bindings,rbmscv,,Blocked bindings,http://id.loc.gov/vocabulary/rbmscv/cv00438,
+Bookplates (Provenance),openn-form/genre,,Bookplates,http://id.loc.gov/vocabulary/rbmscv/cv00138,
+Booksellers' copies,rbmscv,,Booksellers' copies,http://id.loc.gov/vocabulary/rbmscv/cv00150,
+Bullae (seals),aat,,bullae (seals),http://vocab.getty.edu/aat/300266223,
+Calf bindings (Binding)--17th century,rbbin,,Calf bindings;Seventeenth century,http://id.loc.gov/vocabulary/rbmscv/cv00454;http://id.worldcat.org/fast/1113663,
+Caroline minuscule,aat,,Caroline minuscule,http://vocab.getty.edu/aat/300195207,
+Catchplates,lobt,,Catchplates,https://www.ligatus.org.uk/lob/concept/1244,
+Champlevé--Great Britain--16th century,aat,,champlevé;Great Britain;Sixteenth century,http://vocab.getty.edu/aat/300053777;http://id.worldcat.org/fast/1204623;http://id.worldcat.org/fast/1119851,
+Civil court records,aat,,civil court records,http://vocab.getty.edu/aat/300027866,
+Clasp straps,lobt,,Clasp straps,https://www.ligatus.org.uk/lob/concept/2858,
+Cookbooks,aat,,cookbooks,http://vocab.getty.edu/aat/300026109,
+Detached leaves--Italy--14th century,aat,,detached leaves;Italy;Fourteenth century,http://vocab.getty.edu/aat/300379890;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420,
+Devices (Provenance),rbprov,,Devices (Provenance),http://id.loc.gov/vocabulary/rbmscv/cv00140,
+Dialogues,aat,,dialogues,http://vocab.getty.edu/aat/300026185,
+Drawings--Austrian--14th century,gmgpc,,Drawings;Austria;Fourteenth century,http://id.worldcat.org/fast/1423718;http://id.worldcat.org/fast/1204901;http://id.worldcat.org/fast/933420,
+Early works,openn-form/genre,,Early works,http://id.worldcat.org/fast/1411636,
+Early works,fast,,Early works,http://id.worldcat.org/fast/1411636,
+Engravings--England,gmgpc,,Engravings;England,http://id.worldcat.org/fast/1986244;http://id.worldcat.org/fast/1219920,
+Figured initials--England--14th century,aat,,figure initials;England;Fourteenth century,http://vocab.getty.edu/aat/300199991;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/933420,
+Glossaries,aat,,glossaries,http://vocab.getty.edu/aat/300026189,
+Glossaries,,,glossaries,http://vocab.getty.edu/aat/300026189,
+Gold-tooled (decoration),lobt,,gold-tooled (decoration),http://w3id.org/lob/concept/1371,
+Gothic scripts--France--15th century,aat,,Gothic scripts;France;Fifteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/923962,
+Gothic scripts--Italy--14th century,aat,,Gothic scripts;Italy;Fourteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420,
+Gothic scripts--Italy--Ferrara--15th century,aat,,Gothic scripts;Italy--Ferrara;Fifteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204575;http://id.worldcat.org/fast/923962,
+Gregorian chants,aat,,Gregorian chants,http://vocab.getty.edu/aat/300265207,
+Historiated initials--19th century,aat,,historiated initials;Nineteenth century,http://vocab.getty.edu/aat/300194390;http://id.worldcat.org/fast/1037841,
+History,fast,,History,http://id.worldcat.org/fast/1411628,
+Illuminated manuscripts--England--15th century,aat,,illuminated manuscripts;England;Fifteenth century,http://vocab.getty.edu/aat/300265483;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/923962,
+Illuminated manuscripts--France--12th century,aat,,illuminated manuscripts;France;Twelfth century,http://vocab.getty.edu/aat/300265483;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/1159791,
+Illuminated manuscripts--France--15th century,aat,,illuminated manuscripts;France;Fifteenth century,http://vocab.getty.edu/aat/300265483;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/923962,
+Incunabula,lcsh,,Incunabula,http://id.worldcat.org/fast/2070682,
+Indentures--15th century,aat,,indentures;Fifteenth century,http://vocab.getty.edu/aat/300027753;http://id.worldcat.org/fast/923962,
+Lecture notes,aat,,lecture notes,http://vocab.getty.edu/aat/300027204,
+Legal instruments,aat,,legal instruments,http://vocab.getty.edu/aat/300163664,
+Manuals (instructional materials),aat,,manuals (instructional materials),http://vocab.getty.edu/aat/300026395,
+"Manuscripts, 18th century",lcsh,,Manuscripts;Eighteenth century,http://id.worldcat.org/fast/1424060;http://id.worldcat.org/fast/904058,
+"Manuscripts, Dutch--Netherlands",lcsh,,"Manuscripts, Dutch;Netherlands",http://id.worldcat.org/fast/1008323;http://id.worldcat.org/fast/1204034,
+"Manuscripts, French--France",lcsh,,"Manuscripts, French;France",http://id.worldcat.org/fast/1008338;http://id.worldcat.org/fast/1204289,
+"Manuscripts, Hindi",lcsh,,"Manuscripts, Hindi",http://id.worldcat.org/fast/1008366,
+"Manuscripts, Latin (Medieval and modern)--Flanders",lcsh,,"Manuscripts, Latin (Medieval and modern)",http://id.worldcat.org/fast/1008399,
+"Manuscripts, Latin (Medieval and modern)--Italy",lcsh,,"Manuscripts, Latin (Medieval and modern);Italy",http://id.worldcat.org/fast/1008399;http://id.worldcat.org/fast/1204565,
+"Manuscripts, Medieval--1050-1100",lcsh,,"Manuscripts, Medieval",http://id.worldcat.org/fast/1008422,
+"Manuscripts, Medieval--1350-1400",lcsh,,"Manuscripts, Medieval",http://id.worldcat.org/fast/1008422,
+"Manuscripts, Medieval--Austria--1350-1400",lcsh,,"Manuscripts, Medieval;Austria",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204901,
+"Manuscripts, Medieval--England--1350-1400",lcsh,,"Manuscripts, Medieval;England",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1219920,
+"Manuscripts, Medieval--France--1150-1200",lcsh,,"Manuscripts, Medieval;France",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204289,
+"Manuscripts, Medieval--France--1350-1400",lcsh,,"Manuscripts, Medieval;France",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204289,
+"Manuscripts, Medieval--France--650-700",lcsh,,"Manuscripts, Medieval;France",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204289,
+"Manuscripts, Medieval--Germany--1100-1150",lcsh,,"Manuscripts, Medieval;Germany",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1210272,
+"Manuscripts, Medieval--Italy--1350-1400",aat,,"Manuscripts, Medieval;Italy",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204565,
+"Manuscripts, Medieval--Italy--1400-1450",lcsh,,"Manuscripts, Medieval;Italy",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1204565,
+"Manuscripts, Medieval--Portugal--1275-1300",lcsh,,"Manuscripts, Medieval;Portugal",http://id.worldcat.org/fast/1008422;http://id.worldcat.org/fast/1208476,
+"Manuscripts, Persian--16th century",local,,"Manuscripts, Persian;Sixteenth century",http://id.worldcat.org/fast/1008462;http://id.worldcat.org/fast/1119851,
+"Manuscripts, Rajasthani",lcsh,,"Manuscripts, Rajasthani",http://id.worldcat.org/fast/1008471,
+"Manuscripts, Renaissance--England--1550-1600",,,"Manuscripts, Renaissance;England",http://id.worldcat.org/fast/1008472;http://id.worldcat.org/fast/1219920,
+"Manuscripts, Renaissance--Italy--1450-1500",lcsh,,"Manuscripts, Renaissance;Italy",http://id.worldcat.org/fast/1008472;http://id.worldcat.org/fast/1204565,
+Manuscripts--France--12th century,aat,,manuscripts (documents);France;Twelfth century,http://vocab.getty.edu/aat/300028569;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/1159791,
+Manuscripts--Italy--14th century,aat,,manuscripts (documents);Italy;Fourteenth century,http://vocab.getty.edu/aat/300028569;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420,
+Manuscripts--Japan--15th century,aat,,manuscripts (documents);Japan;Fifteenth century,http://vocab.getty.edu/aat/300028569;http://id.worldcat.org/fast/1204082;http://id.worldcat.org/fast/923962,
+Manuscript waste (Binding)--16th century,rbbin,,Manuscript waste;Sixteenth century,http://id.loc.gov/vocabulary/rbmscv/cv01568;http://id.worldcat.org/fast/1119851,
+marginalia (annotations),aat,,marginalia (annotations),http://vocab.getty.edu/aat/300026102,
+Metalcuts--Germany--15th century,aat,,metal cuts;Germany;Fifteenth century,http://vocab.getty.edu/aat/300041396;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/923962,
+Miniatures (Painting)--Belgium--15th century,aat,,miniatures (paintings);Belgium;Fifteenth century,http://vocab.getty.edu/aat/300033936;http://id.worldcat.org/fast/1210278;http://id.worldcat.org/fast/923962,
+miniatures (paintings),openn-form/genre,,miniatures (paintings),http://vocab.getty.edu/aat/300033936,
+Missals--Italy--15th century,aat,,missals;Italy;Fifteenth century,http://vocab.getty.edu/aat/300026472;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/923962,
+Musical works,rbgenr,,Musical works,http://id.loc.gov/vocabulary/rbmscv/cv00117,
+Mystery plays--England--15th century,aat,,mystery plays;England;Fifteenth century,http://vocab.getty.edu/aat/300055914;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/923962,
+Mystery plays--England--16th century,aat,,mystery plays;England;Sixteenth century,http://vocab.getty.edu/aat/300055914;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/1119851,
+Notes (documents),aat,,notes (documents),http://vocab.getty.edu/aat/300027200,
+Novellas--Italy--15th century,aat,,novellas;Italy;Fifteenth century,http://vocab.getty.edu/aat/300202569;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/923962,
+Petitions,rbgenr,,Petitions,http://id.loc.gov/vocabulary/rbmscv/cv01522,
+Pigskin bindings,rbmscv,,Pigskin bindings,http://id.loc.gov/vocabulary/rbmscv/cv00624,
+Poésie,rvmgf,,Poetry,http://id.worldcat.org/fast/1423828,
+Portraits,lcgft,,Portraits,http://id.worldcat.org/fast/1423831,
+Prayer books--Germany--15th century,rbgenr,,Prayer books;Germany;Fifteenth century,http://id.loc.gov/vocabulary/rbmscv/cv01759;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/923962,
+Prayer books--Germany--17th century,aat,,prayer books;Germany;Seventeenth century,http://vocab.getty.edu/aat/300026476;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/1113663,
+Prayer books--Turkey--16th century,aat,,prayer books;Turkey;Sixteenth century,http://vocab.getty.edu/aat/300026476;http://id.worldcat.org/fast/1208963;http://id.worldcat.org/fast/1119851,
+Prayers (literary works),openn-form/genre,,prayers (literary genre),http://vocab.getty.edu/aat/300026452,
+Qur'ans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128,
+Qurʼans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128,
+Satires (literary works),aat,,satires (literary works),http://vocab.getty.edu/aat/300251297,
+Scrolls (Information artifact)--England--15th century,aat,,scrolls (information artifacts);England;Fifteenth century,http://vocab.getty.edu/aat/300028629;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/923962,
+Speeches,aat,,speeches (documents),http://vocab.getty.edu/aat/300026671,
+Sprinkled edges (Binding),rbbin,,Sprinkled edges,http://id.loc.gov/vocabulary/rbmscv/cv00753,
+Supported sewing,lobt,,supported sewing structures,http://w3id.org/lob/concept/2508,
+Tax records,aat,,tax records,http://vocab.getty.edu/aat/300027371,
+Témoin,lobt,,témoin,http://w3id.org/lob/concept/5640,
+Vellum bindings (Binding)--Switzerland--14th century,aat,,Vellum bindings;Switzerland;Fourteenth century,http://id.loc.gov/vocabulary/rbmscv/cv00543;http://id.worldcat.org/fast/1205401;http://id.worldcat.org/fast/933420,
+Vellum wrappers (Binding)--Spain--1500,rbbin,,Vellum wrappers,http://id.loc.gov/vocabulary/rbmscv/cv00685,
+Velvet bindings (Binding)--Great Britain--16th century,rbbin,,Velvet bindings;Great Britain;Sixteenth century,http://id.loc.gov/vocabulary/rbmscv/cv00708;http://id.worldcat.org/fast/1204623;http://id.worldcat.org/fast/1119851,
+Wooden boards (Bindings),rbbin,,Wooden boards,http://id.loc.gov/vocabulary/rbmscv/cv00601,
+Writing books--Germany--16th century,rbgenr,,Writing books;Germany;Sixteenth century,http://id.loc.gov/vocabulary/rbmscv/cv01178;http://id.worldcat.org/fast/1210272;http://id.worldcat.org/fast/1119851,
+Qur'ans,openn-form/genre,,Qur'ans,http://vocab.getty.edu/aat/300265128,
+Qur'ans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128,
+Qurʼans,openn-form/genre,,Qur'ans,http://vocab.getty.edu/aat/300265128,
+Qurʼans,,,Qur'ans,http://vocab.getty.edu/aat/300265128,

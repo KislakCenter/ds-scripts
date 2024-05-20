@@ -50,7 +50,9 @@ module Recon
     Recon::Places,
     Recon::Subjects,
     Recon::Titles
-  ]
+  ].freeze
+
+  RECON_VALIDATION_SETS = RECON_TYPES.map(&:set_name).freeze
 
   def self.sort_and_dedupe array
     if array.first.is_a? Array
@@ -87,6 +89,10 @@ module Recon
     config
   end
 
+  # Finds the reconciliation type configuration for the given set name.
+  #
+  # @param set_name [String] the name of the set
+  # @return [Recon::ReconType, nil] the configuration for the set name, or nil if not found
   def self.find_recon_type set_name
     RECON_TYPES.find { |config| config.set_name == set_name }
   end
@@ -189,16 +195,10 @@ module Recon
   # @param [String] csv_file the path to the CSV file
   # @return [Array<String>,NilClass] list of any missing columns; +nil+ otherwise
   def self.validate_columns set_name, csv_file
-    set_config = Recon.find_set_config set_name
-    required_columns = []
-    required_columns << set_config['key_column']
-    required_columns << (set_config['structured_data_column'] || 'structured_value')
-    required_columns << set_config['subset_column'] if set_config.include?('subset_column')
-    required_columns << set_config['authorized_label_column'] if set_config.include?('authorized_label_column')
-    required_columns << 'instance_of' if set_config['name'] == 'names'
+    recon_type = Recon.find_recon_type set_name
 
-    headers = CSV.readlines(csv_file).first
-    missing = required_columns.reject { |c| headers.include? c }
+    headers = CSV.readlines(csv_file).first.map &:to_sym
+    missing = recon_type.csv_headers - headers
 
     return if missing.empty?
     "#{ERROR_MISSING_REQUIRED_COLUMNS}: (#{csv_file}) #{missing.join ', '}"
@@ -224,6 +224,7 @@ module Recon
   end
 
   def self.validate set_name, csv_file
+    return unless RECON_VALIDATION_SETS.include? set_name
     return "#{ERROR_CSV_FILE_NOT_FOUND}: '#{csv_file}'" unless File.exist? csv_file
 
     column_error = validate_columns set_name, csv_file

@@ -5,7 +5,8 @@ require 'spec_helper'
 RSpec.describe Recon::ReconManager do
 
   let(:source_type) { DS::Constants::MARC_XML }
-  let(:out_dir) { ENV['TMPDIR'] || '/tmp' }
+  let(:tmpdir) { ENV['TMPDIR'] || '/tmp' }
+  let(:out_dir) { File.join(tmpdir, "ReconManagerSpec#$$") }
   let(:files) {
     "#{fixture_path 'marc_xml'}/9951865503503681_marc.xml"
   }
@@ -19,6 +20,14 @@ RSpec.describe Recon::ReconManager do
   let(:subject) {
     described_class.new recon_builder: recon_builder, out_dir: out_dir
   }
+
+  before(:each) do
+    FileUtils.mkdir out_dir
+  end
+
+  after(:each) do
+    FileUtils.rm_rf out_dir
+  end
 
   context '#initialize' do
     it 'is a ReconManager' do
@@ -46,35 +55,15 @@ RSpec.describe Recon::ReconManager do
       subject.write_all_csvs
     end
 
-    it 'writes the places CSV' do
+    # doing all these in one block to cut down on file system churn
+    it 'writes the CSVs' do
       expect(File.exist?("#{out_dir}/places.csv")).to be true
-    end
-
-    it 'writes the genres CSV' do
       expect(File.exist?("#{out_dir}/genres.csv")).to be true
-    end
-
-    it 'writes the languages CSV' do
       expect(File.exist?("#{out_dir}/languages.csv")).to be true
-    end
-
-    it 'writes the materials CSV' do
       expect(File.exist?("#{out_dir}/materials.csv")).to be true
-    end
-
-    it 'writes the named-subjects CSV' do
       expect(File.exist?("#{out_dir}/named-subjects.csv")).to be true
-    end
-
-    it 'writes the names CSV' do
       expect(File.exist?("#{out_dir}/names.csv")).to be true
-    end
-
-    it 'writes the subjects CSV' do
       expect(File.exist?("#{out_dir}/subjects.csv")).to be true
-    end
-
-    it 'writes the titles CSV' do
       expect(File.exist?("#{out_dir}/titles.csv")).to be true
     end
   end

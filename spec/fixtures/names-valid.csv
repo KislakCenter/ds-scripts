@@ -1,5 +1,5 @@
-name_as_recorded,role,name_agr,source_authority_uri,instance_of,structured_value
-"""1756 Ex libris Presbiteri Joseph Marie Sormani"" (inscription on flyleaf ); H. C. (Harley) Drayton (1901-1966), bought at Sotheby’s, 29 January 1951, lot 13; his sale, Sotheby’s, 12 December 1967, lot 63; re-sold at Christie’s, 28 June 1972, lot 8; Ruth E. Adomeit (1910-1996), bequeathed by her to the Lilly Library.",former owner,"","",,
-"""Anno Domini 1548 Mensis Julio"" (f. 1r); ""Sold by Thomas Baker, 1, Soho Square, London"" (label on front pastedown); ""Cranmere Kenrick"" (f. iir)",former owner,"","",,
-"""Iste liber est domini philippi alleap(?)"", 15th century (f. 1r, lower margin); ""817"", 19th(?) century pencil (f. 1r, upper margin); purchased from Boesen in 1959.",former owner,"","",,
-"""Philippi Monti,"" f. 1; Cardinal Domenico Passionei (1682-1761); Sidney Graves Hamilton (1855-1916); his sale, Sotheby's (25 July 1917, lot 10) to Dobell. Date of acquisition by Bancroft Library UC Berkeley unrecorded. Formerly t2MS BX885 B6.",former owner,"","",,
+name_as_recorded,role,name_agr,source_authority_uri,instance_of,structured_value,ds_qid,authorized_label
+"""1756 Ex libris Presbiteri Joseph Marie Sormani"" (inscription on flyleaf ); H. C. (Harley) Drayton (1901-1966), bought at Sotheby’s, 29 January 1951, lot 13; his sale, Sotheby’s, 12 December 1967, lot 63; re-sold at Christie’s, 28 June 1972, lot 8; Ruth E. Adomeit (1910-1996), bequeathed by her to the Lilly Library.",former owner,"","",,,,
+"""Anno Domini 1548 Mensis Julio"" (f. 1r); ""Sold by Thomas Baker, 1, Soho Square, London"" (label on front pastedown); ""Cranmere Kenrick"" (f. iir)",former owner,"","",,,,
+"""Iste liber est domini philippi alleap(?)"", 15th century (f. 1r, lower margin); ""817"", 19th(?) century pencil (f. 1r, upper margin); purchased from Boesen in 1959.",former owner,"","",,,,
+"""Philippi Monti,"" f. 1; Cardinal Domenico Passionei (1682-1761); Sidney Graves Hamilton (1855-1916); his sale, Sotheby's (25 July 1917, lot 10) to Dobell. Date of acquisition by Bancroft Library UC Berkeley unrecorded. Formerly t2MS BX885 B6.",former owner,"","",,,,
