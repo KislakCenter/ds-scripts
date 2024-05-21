@@ -25,7 +25,7 @@ RSpec.shared_examples "a recon extractor" do |options|
     expect(described_class).to respond_to :extract_former_owners
   end
 
-  it 'responds to extract_genres', unless: skip?(options, :skip_genres) do
+  it 'responds to extract_genres', unless: skip?(options, :genres) do
     expect(described_class).to respond_to :extract_genres
   end
 
@@ -33,7 +33,7 @@ RSpec.shared_examples "a recon extractor" do |options|
     expect(described_class).to respond_to :extract_subjects
   end
 
-  it 'responds to extract_named_subjects', unless: skip?(options, :skip_named_subjects) do
+  it 'responds to extract_named_subjects', unless: skip?(options, :named_subjects) do
     expect(described_class).to respond_to :extract_named_subjects
   end
 

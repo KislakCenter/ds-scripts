@@ -31,6 +31,8 @@ module Recon
 
     DELIMITER_MAP = { '|' => ';' }
 
+    BALANCED_COLUMNS = []
+
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first

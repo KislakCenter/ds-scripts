@@ -35,49 +35,31 @@ recon:
       subset_column: vocabulary
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :materials
       repo_path: terms/reconciled/materials.csv
       key_column: material_as_recorded
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :languages
       repo_path: terms/reconciled/languages.csv
       key_column: language_as_recorded
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :places
       repo_path: terms/reconciled/places.csv
       key_column: place_as_recorded
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :subjects
       repo_path: terms/reconciled/subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :'named-subjects'
       repo_path: terms/reconciled/named-subjects.csv
       key_column: subject_as_recorded
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :'all-subjects'
       repo_path:
         - terms/reconciled/subjects.csv
@@ -85,9 +67,6 @@ recon:
       key_column: subject_as_recorded
       structured_data_column: structured_value
       authorized_label_column: authorized_label
-      balanced_columns:
-        - structured_value
-        - authorized_label
     - name: :titles
       repo_path: terms/reconciled/titles.csv
       key_column: title_as_recorded

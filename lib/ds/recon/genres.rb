@@ -41,6 +41,11 @@ module Recon
 
     METHOD_NAME = %i{ extract_genres }
 
+    BALANCED_COLUMNS = %i{
+      structured_value
+      authorized_label
+    }
+
     # Adds recon the 'authorized_label' and 'structured_value' columns
     # to each row in the given array.
     # @param [Array] rows an array of arrays :genre_as_recorded

@@ -398,13 +398,15 @@ end
 #####################################################################
 # Top-level methods
 #####################################################################
-def skip_example? options, *symbols
-  return unless options.present?
-  symbols.any? { |sym| options.include? sym }
-end
 
-def skip? options, *types
-  return unless options.present?
-  return unless types.present?
-  types.any? { |type| options[type] }
+# Determines whether to skip a certain context based on the provided skips and context.
+#
+# @param skips [Array<Symbol>, nil] An array of contexts to skip.
+# @param ctxt [Symbol, nil] The context to check.
+# @return [Boolean] Returns true if the context should be skipped, falsey otherwise.
+def skip? skips, ctxt
+  skips_normal = [skips].flatten.compact
+  return unless skips_normal.present?
+  return unless ctxt.present?
+  skips_normal.include? ctxt
 end

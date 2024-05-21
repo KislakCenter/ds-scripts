@@ -36,6 +36,8 @@ module Recon
 
     METHOD_NAME = %i{ extract_authors extract_artists extract_scribes extract_former_owners }
 
+    BALANCED_COLUMNS = %i{ structured_value authorized_label instance_of }
+
     def self.add_recon_values rows
       rows.each do |row|
         name = row.first

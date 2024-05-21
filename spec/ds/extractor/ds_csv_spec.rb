@@ -14,7 +14,7 @@ describe DS::Extractor::DsCsv do
   let(:record) { contributor_csv.first }
 
   context "extractor interface" do
-    skips = { skip_other_names: true }
+    skips = %i{ other_names }
     it_behaves_like "an extractor", skips
     it_behaves_like "a recon extractor", skips
   end

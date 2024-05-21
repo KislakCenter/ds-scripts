@@ -11,7 +11,7 @@ describe DS::Extractor::MarcXml do
   }
 
   context "extractor interface" do
-    skips = { skip_other_names: true }
+    skips = %i{ other_names }
     it_behaves_like "a recon extractor", skips
     it_behaves_like "an extractor", skips
   end

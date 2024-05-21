@@ -35,6 +35,10 @@ module Recon
       def method_name
         self::METHOD_NAME
       end
+
+      def balanced_columns
+        self::BALANCED_COLUMNS
+      end
     end
   end
 end

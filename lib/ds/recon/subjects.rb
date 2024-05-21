@@ -51,8 +51,8 @@ module Recon
     }
 
     METHOD_NAME = %i{ extract_subjects }
-    # TODO: ADD subfield_codes as key column
 
+    BALANCED_COLUMNS = %i{ structured_value authorized_label }
 
     AS_RECORDED_COLUMN = :subject_as_recorded
 

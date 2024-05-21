@@ -33,6 +33,8 @@ module Recon
 
     DELIMITER_MAP = { '|' => ';' }
 
+    BALANCED_COLUMNS = %i{ structured_value authorized_label }
+
     def self.add_recon_values rows
       rows.each do |row|
         material_as_recorded = row.first

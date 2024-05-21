@@ -26,6 +26,8 @@ module Recon
 
     METHOD_NAME = %i{ extract_places }
 
+    BALANCED_COLUMNS = %i{ structured_value authorized_label }
+
     def self.add_recon_values rows
       rows.each do |row|
         place_as_recorded = row.first

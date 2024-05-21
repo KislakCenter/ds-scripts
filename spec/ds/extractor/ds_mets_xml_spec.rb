@@ -46,17 +46,17 @@ describe DS::Extractor::DsMetsXml do
   let(:record) { na_ds_xml }
 
   context "extractor interface" do
-    skips = {
-      skip_named_subjects: true,
-      skip_cataloging_convention: true,
-      skip_uniform_titles: true,
-      skip_genres: true,
-      skip_titles_agr: true,
-      skip_uniform_titles_agr: true,
-      skip_authors_agr: true,
-      skip_artists_agr: true,
-      skip_scribes_agr: true,
-      skip_former_owners_agr: true,
+    skips = %i{
+      named_subjects
+      cataloging_convention
+      uniform_titles
+      genres
+      titles_agr
+      uniform_titles_agr
+      authors_agr
+      artists_agr
+      scribes_agr
+      former_owners_agr
     }
     it_behaves_like "a recon extractor", skips
     it_behaves_like "an extractor", skips

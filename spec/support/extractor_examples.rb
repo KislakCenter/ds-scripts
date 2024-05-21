@@ -26,7 +26,7 @@ RSpec.shared_examples "an extractor" do |options|
       end
     end
 
-    context 'extract_titles_as_recorded_agr', unless: skip?(options, :skip_titles_agr) do
+    context 'extract_titles_as_recorded_agr', unless: skip?(options, :titles_agr) do
       let(:extract_method) { :extract_titles_as_recorded_agr }
       let(:return_type) { Array }
 
@@ -53,7 +53,7 @@ RSpec.shared_examples "an extractor" do |options|
     end
   end # titles
 
-  context 'uniform_titles', unless: skip?(options, :skip_uniform_titles) do
+  context 'uniform_titles', unless: skip?(options, :uniform_titles) do
     context 'extract_uniform_titles_as_recorded' do
       let(:extract_method) { :extract_uniform_titles_as_recorded }
       let(:return_type) { Array }
@@ -67,7 +67,7 @@ RSpec.shared_examples "an extractor" do |options|
       end
     end
 
-    context 'extract_uniform_titles_as_recorded_agr', unless: skip?(options, :skip_uniform_titles_agr) do
+    context 'extract_uniform_titles_as_recorded_agr', unless: skip?(options, :uniform_titles_agr) do
       let(:extract_method) { :extract_uniform_titles_as_recorded_agr }
       let(:return_type) { Array }
 
@@ -159,7 +159,7 @@ RSpec.shared_examples "an extractor" do |options|
         end
       end
 
-      context 'extract_authors_as_recorded_agr', unless: skip?(options, :skip_authors_agr) do
+      context 'extract_authors_as_recorded_agr', unless: skip?(options, :authors_agr) do
         let(:extract_method) { :extract_authors_as_recorded_agr }
         let(:return_type) { Array }
 
@@ -198,7 +198,7 @@ RSpec.shared_examples "an extractor" do |options|
         end
       end
 
-      context 'extract_artists_as_recorded_agr', unless: skip?(options, :skip_artists_agr) do
+      context 'extract_artists_as_recorded_agr', unless: skip?(options, :artists_agr) do
         let(:extract_method) { :extract_artists_as_recorded_agr }
         let(:return_type) { Array }
 
@@ -238,7 +238,7 @@ RSpec.shared_examples "an extractor" do |options|
         end
       end
 
-      context 'extract_scribes_as_recorded_agr', unless: skip?(options, :skip_scribes_agr) do
+      context 'extract_scribes_as_recorded_agr', unless: skip?(options, :scribes_agr) do
         let(:extract_method) { :extract_scribes_as_recorded_agr }
         let(:return_type) { Array }
 
@@ -277,7 +277,7 @@ RSpec.shared_examples "an extractor" do |options|
         end
       end
 
-      context 'extract_former_owners_as_recorded_agr', unless: skip?(options, :skip_former_owners_agr) do
+      context 'extract_former_owners_as_recorded_agr', unless: skip?(options, :former_owners_agr) do
         let(:extract_method) { :extract_former_owners_as_recorded_agr }
         let(:return_type) { Array }
 
@@ -291,7 +291,7 @@ RSpec.shared_examples "an extractor" do |options|
       end
     end
 
-    context 'other_names', unless: skip?(options, :skip_other_names) do
+    context 'other_names', unless: skip?(options, :other_names) do
       context 'extract_other_names' do
         let(:extraction_method) { :extract_other_names }
         let(:composite_type) { DS::Extractor::Name }
@@ -331,7 +331,7 @@ RSpec.shared_examples "an extractor" do |options|
   end # context: names
 
   context 'terms' do
-    context 'genres', unless: skip?(options, :skip_genres) do
+    context 'genres', unless: skip?(options, :genres) do
       context 'extract_genres' do
         let(:extraction_method) { :extract_genres }
         let(:composite_type) { DS::Extractor::Genre }
@@ -421,7 +421,7 @@ RSpec.shared_examples "an extractor" do |options|
       end
     end
 
-    context 'named_subjects', unless: skip?(options, :skip_named_subjects) do
+    context 'named_subjects', unless: skip?(options, :named_subjects) do
       context 'extract_named_subjects' do
         let(:extraction_method) { :extract_named_subjects }
         let(:composite_type) { DS::Extractor::Subject }
@@ -520,7 +520,7 @@ RSpec.shared_examples "an extractor" do |options|
   end
 
 
-  context 'extract_cataloging_convention', unless: skip?(options, :skip_cataloging_convention) do
+  context 'extract_cataloging_convention', unless: skip?(options, :cataloging_convention) do
     let(:extract_method) { :extract_cataloging_convention }
     let(:return_type) { String }
 

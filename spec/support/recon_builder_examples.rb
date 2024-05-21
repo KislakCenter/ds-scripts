@@ -39,7 +39,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
   context "#each_recon" do
 
-    context ':places', unless: skip_example?(skips, :places) do
+    context ':places', unless: skip?(skips, :places) do
       let(:set_name) { :places }
       let(:recon_class) { Recon::Places }
       let(:recon_row) {
@@ -64,7 +64,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     end
 
-    context ':materials', unless: skip_example?(skips, :materials) do
+    context ':materials', unless: skip?(skips, :materials) do
       let(:set_name) { :materials }
       let(:recon_class) { Recon::Materials }
       let(:recon_row) {
@@ -87,7 +87,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
       end
     end
 
-    context ':languages', unless: skip_example?(skips, :languages) do
+    context ':languages', unless: skip?(skips, :languages) do
       let(:set_name) { :languages }
       let(:recon_class) { Recon::Languages }
       let(:recon_row) {
@@ -112,7 +112,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     end
 
-    context ':genres', unless: skip_example?(skips, :genres) do
+    context ':genres', unless: skip?(skips, :genres) do
       let(:set_name) { :genres }
       let(:recon_class) { Recon::Genres }
       let(:recon_row) {
@@ -138,7 +138,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     end
 
-    context ':subjects', unless: skip_example?(skips, :subjects) do
+    context ':subjects', unless: skip?(skips, :subjects) do
       let(:set_name) { :subjects }
       let(:recon_class) { Recon::Subjects }
 
@@ -172,7 +172,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
       end
     end
 
-    context ':named-subjects', unless: skip_example?(skips, :'named-subjects') do
+    context ':named-subjects', unless: skip?(skips, :'named-subjects') do
       let(:set_name) { :'named-subjects' }
       let(:recon_class) { Recon::NamedSubjects }
       let(:terms) {
@@ -204,7 +204,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     end
 
-    context ':names', unless: skip_example?(skips, :names) do
+    context ':names', unless: skip?(skips, :names) do
       let(:set_name) { :names }
       let(:recon_class) { Recon::Names }
       let(:terms) {
@@ -237,7 +237,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     end
 
-    context ':titles', unless: skip_example?(skips, :titles) do
+    context ':titles', unless: skip?(skips, :titles) do
       let(:set_name) { :titles }
       let(:recon_class) { Recon::Titles }
 
