@@ -205,14 +205,14 @@ module Recon
   end
 
   def self.validate_csv_splits set_name, csv_file
-    set_config = Recon.find_set_config set_name
-    return unless set_config['balanced_columns']
+    recon_type = Recon.find_recon_type set_name
+    return unless recon_type.balanced_columns
 
-    balanced_columns = set_config['balanced_columns']
+    balanced_columns = recon_type.balanced_columns
     errors = []
     csv = CSV.open csv_file, headers: true
     csv.each do |row|
-      row_values = balanced_columns.map { |col| row[col] }
+      row_values = balanced_columns.map { |col| row[col.to_sym] || row[col.to_s] }
       error =  validate_row_splits row_values: row_values, separators: ';|'
       next unless error
       errors << "#{error}: #{csv_file}, line #{csv.lineno}: #{row}"
