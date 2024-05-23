@@ -7,6 +7,7 @@ module DS
       ERROR_UNBALANCED_SUBFIELDS     = 'Row has subfields of different lengths'
       ERROR_BLANK_SUBFIELDS          = 'Row has blank subfields'
       ERROR_MISSING_REQUIRED_COLUMNS = "CSV is missing required column(s)"
+      ERROR_TRAILING_WHITESPACE      = 'Row contains trailing whitespace'
 
       # split on pipes that are not escaped with '\'
       PIPE_SPLIT_REGEXP     = %r{(?<!\\)\|}
@@ -31,6 +32,7 @@ module DS
       def self.validate_row row, required_columns: [], balanced_columns: {}, nested_columns: {}, allow_blank: false
         errors = []
         errors += validate_required_columns(row, required_columns)
+        return errors unless errors.blank?
         errors += validate_balanced_columns(row, balanced_columns: balanced_columns, allow_blank: allow_blank)
         errors += validate_whitespace(row, nested_columns: nested_columns)
         errors
@@ -161,8 +163,8 @@ module DS
           # subfield type
           split_chars = nested_columns.include?(column) ? PIPE_SEMICOLON_REGEXP : PIPE_SPLIT_REGEXP
           if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
-            group = nested_columns[column]
-            errors << "WARNING: trailing whitespace found group: #{group}, column #{column}, value: '#{value}'"
+            group = nested_columns[column] || :default
+            errors << "#{ERROR_TRAILING_WHITESPACE}: group: #{group.inspect}, column #{column.inspect}, value: #{value.inspect}"
           end
         end
 
