@@ -4,6 +4,60 @@ require 'spec_helper'
 
 RSpec.describe DS::Util::CsvValidator do
 
+  context ".validate_all_rows" do
+    let(:valid_rows) {
+      [
+        { a: 'a', b: 'b' }, { a: 'x', b: 'y' }
+      ]
+    }
+
+    it 'returns no errors for a valid row' do
+      expect(described_class.validate_all_rows(valid_rows)).to be_empty
+    end
+
+    context 'with required column missing' do
+      let(:invalid_rows) { [{ a: 'a', b: 'b' }, { a: 'x', b: 'y' }] }
+      let(:required_columns) { %i{ a x } }
+      let(:expected_error) {
+        /CSV is missing required column\(s\): x/
+      }
+      let(:errors) {
+        described_class.validate_all_rows(invalid_rows, required_columns: required_columns)
+      }
+      it "returns 1 error" do
+        expect(errors.size).to eq 1
+      end
+
+      it 'returns the expected error' do
+        expect(errors.first).to match(expected_error)
+      end
+    end
+
+    context 'multiple errors' do
+      let(:invalid_rows) { [{ a: 'a|a', b: 'b' }, { a: 'x', b: 'y|y' }] }
+      let(:balanced_columns) {
+        { group1: %i{ a b } }
+      }
+      let(:expected_errors) {
+        [
+          /Row has subfields of different lengths/,
+          /Row has subfields of different lengths/,
+        ]
+      }
+
+      let(:errors) {
+        described_class.validate_all_rows(invalid_rows, balanced_columns: balanced_columns)
+      }
+      it "returns 2 errors" do
+        expect(errors.size).to eq 2
+      end
+
+      it "returns the expected errors" do
+        expect(errors).to match_array(expected_errors)
+      end
+    end
+  end
+
   context '.validate_row' do
 
     let(:valid_row) {
@@ -240,45 +294,65 @@ RSpec.describe DS::Util::CsvValidator do
   end
 
   context '.validate_row_splits' do
-    let(:valid_row) {
-      { a: 'a|a;a', b: 'b|b;b' }
-    }
+    let(:valid_row) { { a: 'a|a;a', b: 'b|b;b' } }
     let(:valid_values) { valid_row.values }
 
     it 'returns no errors for a valid row' do
       expect(described_class.validate_row_splits(row_values: valid_values)).to be_empty
     end
 
-    let(:invalid_row) {
-      { a: 'a', b: 'b|b' }
-    }
-
-    let(:invalid_values) { invalid_row.values }
-
     it 'returns no errors for a valid row' do
       expect(described_class.validate_row_splits(row_values: invalid_values).size).to eq 1
     end
 
+    let(:invalid_row) { { a: 'a', b: 'b|b' } }
+    let(:invalid_values) { invalid_row.values }
+    let(:expected_error) { [/Row has subfields of different lengths/] }
+
     it 'has the expected errors' do
-      expected = [/#{DS::Util::CsvValidator::ERROR_UNBALANCED_SUBFIELDS}/]
-      expect(described_class.validate_row_splits(row_values: invalid_values)).to match expected
+      expect(described_class.validate_row_splits(row_values: invalid_values)).to match expected_error
+    end
+
+    context 'with missing columns' do
+      let(:valid_values) { [nil,nil] }
+
+      it "returns no errors when both values are nil" do
+        expect(described_class.validate_row_splits(row_values: valid_values)).to be_empty
+      end
+
+      let(:nil_and_non_nil_values) { [nil, 'a'] }
+
+      it "returns no errors when one value is nil and the other has no subfields" do
+        expect(described_class.validate_row_splits(row_values: nil_and_non_nil_values)).to be_blank
+      end
+
+      let(:nil_and_subfield_values) { [nil, 'a|a'] }
+      let(:expected_error) { [/Row has subfields of different lengths/] }
+      let(:errors) {
+        described_class.validate_row_splits(row_values: nil_and_subfield_values)
+      }
+
+      it "returns 1 error when one values is nil and the other has subfields" do
+        expect(errors.size).to eq 1
+      end
+
+      it "returns the expected error" do
+        expect(errors).to match expected_error
+      end
     end
 
   end
 
   context ".validate_required_columns" do
 
-    let(:valid_row) {
-      { a: 'a', b: 'b' }
-    }
+    let(:valid_row) { { a: 'a', b: 'b' } }
     let(:required_columns) { [:a, :b] }
+
     it 'returns no errors for a valid row' do
       expect(described_class.validate_required_columns(valid_row, required_columns)).to be_blank
     end
 
-    let(:invalid_row) {
-      { a: 'a|a', c: 'c|c' }
-    }
+    let(:invalid_row) { { a: 'a|a', c: 'c|c' } }
 
     it 'returns errors for an invalid row' do
       expect(described_class.validate_required_columns(invalid_row, required_columns)).not_to be_blank

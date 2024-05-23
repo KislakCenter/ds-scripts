@@ -14,6 +14,18 @@ module DS
       # split on pipes and semicolons that are not escaped with '\'
       PIPE_SEMICOLON_REGEXP = %r{(?<!\\)[;|]}
 
+
+      def self.validate_all_rows rows, required_columns: [], balanced_columns: {}, nested_columns: {}, allow_blank: false
+        errors = validate_required_columns(rows.first, required_columns)
+        return errors unless errors.blank?
+        rows.each do |row|
+          errors += validate_row(
+            row, balanced_columns: balanced_columns, nested_columns: nested_columns,
+            allow_blank: allow_blank
+          )
+        end
+        errors
+      end
       # Validates a row of data against a set of required columns and balanced columns.
       #
       #   # validate a CSV row for required columns and balanced columns
@@ -44,6 +56,7 @@ module DS
       # @param required_columns [Array<Symbol>] The required columns for the row.
       # @return [Array<String>] An array of error messages, if any; otherwise, an empty array.
       def self.validate_required_columns row, required_columns
+        return [] if required_columns.blank?
         missing = required_columns - row.keys
         return [] if missing.empty?
         ["#{ERROR_MISSING_REQUIRED_COLUMNS}: #{missing.join ', '}"]
@@ -90,14 +103,19 @@ module DS
       # subfields.
       #
       # Note: It is always allowed for every value to be blank (empty string).
+      # When row values are +nil+ they are treated as empty strings.
+      # Blank values are treated a single values
       #
       # So:
       #
-      #   [ 'a|b|c', '1|2|3' ]   # => valid, return nil
-      #   [ '', '' ]             # => valid, return nil
+      #   [ 'a|b|c', '1|2|3' ]   # => valid, return []
+      #   [ '', '' ]             # => valid, return []
+      #   [ 'a', '']             # => valid, return []
       #   [ 'a|b|c', '1|2' ]     # => not valid, return ERROR_UNBALANCED_SUBFIELDS
+      #   [ 'a|b', '']           # => not valid, return ERROR_UNBALANCED_SUBFIELDS
       #   [ 'a||c', '1|2|3' ]    # => not valid, return ERROR_BLANK_SUBFIELDS
-      #   [ 'a||c', '1|2|3' ]    # => valid, if allow_blank == true, return nil
+      #   [ 'a||c', '1|2|3' ]    # => valid, if allow_blank == true, return []
+      #
       #
       # @param [Array<String>] row_values an array of strings from one or more columns
       # @param [String] separators a list of allowed subfield separators; e.g., ';', '|', ';|'
@@ -105,7 +123,7 @@ module DS
       # @return [Array<String>] the row errors, or [] if there are no errors
       def self.validate_row_splits row_values: [], separators: '|;', allow_blank: false, group: nil
         errors = []
-        return errors if row_values.all? { |val| val.to_s.strip.empty? }
+        return errors if row_values.all? { |val| val.blank? }
         # Input array is an array of two or more strings that must split into
         # equal numbers of subfields.
         #
@@ -119,11 +137,15 @@ module DS
         #    ['a|bc', '1|2|3'] => # 3 subfields each; => valid
         #    ['a|b|c', '1|2']  => # 2 and 3 subfields; => not valid
         splits = row_values.map { |v|
-          v.split %r{[#{Regexp.escape separators}]}, MAX_SPLITS
+          v.to_s.split %r{[#{Regexp.escape separators}]}, MAX_SPLITS
         }
-        # there should be only one subfield length:
+
+        # all sizes should 0 or 1; or there should be only one
+        # subfield length
         sizes = splits.map { |vals| vals.size }
-        if sizes.uniq.size > 1
+        if sizes.all? { |size| [0,1].include? size }
+          return errors
+        elsif sizes.uniq.size > 1
           errors << "#{ERROR_UNBALANCED_SUBFIELDS}: group: #{group.inspect}, sizes: #{sizes.inspect}, row: #{row_values.inspect}"
         end
 
