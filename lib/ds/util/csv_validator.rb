@@ -15,6 +15,14 @@ module DS
       PIPE_SEMICOLON_REGEXP = %r{(?<!\\)[;|]}
 
 
+      # Validates all rows of data against a set of required columns, balanced columns, and nested columns.
+      #
+      # @param rows [Array<Hash,CSV::Row>] The rows of data to be validated.
+      # @param required_columns [Array<Symbol>] The required columns for each row.
+      # @param balanced_columns [Hash<Symbol, Array<Symbol>>] A hash of groups of balanced columns.
+      # @param nested_columns [Hash<Symbol, Array<Symbol>>] A hash of nested columns.
+      # @param allow_blank [Boolean] Whether to allow blank subfields in balanced columns.
+      # @return [Array<String>] An array of error messages, if any.
       def self.validate_all_rows rows, required_columns: [], balanced_columns: {}, nested_columns: {}, allow_blank: false
         errors = validate_required_columns(rows.first, required_columns)
         return errors unless errors.blank?
@@ -26,6 +34,7 @@ module DS
         end
         errors
       end
+      
       # Validates a row of data against a set of required columns and balanced columns.
       #
       #   # validate a CSV row for required columns and balanced columns
