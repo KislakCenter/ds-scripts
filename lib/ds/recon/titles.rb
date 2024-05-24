@@ -11,7 +11,7 @@ module Recon
 
     METHOD_NAME = %i{ extract_titles }
 
-    CSV_HEADERS = %i{
+    CSV_HEADERS = %w{
       title_as_recorded
       title_as_recorded_agr
       uniform_title_as_recorded
@@ -31,7 +31,7 @@ module Recon
 
     DELIMITER_MAP = { '|' => ';' }
 
-    BALANCED_COLUMNS = []
+    BALANCED_COLUMNS = {}
 
     def self.add_recon_values rows
       rows.each do |row|

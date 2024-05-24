@@ -9,7 +9,7 @@ module Recon
 
     SET_NAME = :places
 
-    CSV_HEADERS = %i{ place_as_recorded authorized_label structured_value ds_qid}
+    CSV_HEADERS = %w{ place_as_recorded authorized_label structured_value ds_qid}
 
     LOOKUP_COLUMNS = %i{
       authorized_label
@@ -26,7 +26,7 @@ module Recon
 
     METHOD_NAME = %i{ extract_places }
 
-    BALANCED_COLUMNS = %i{ structured_value authorized_label }
+    BALANCED_COLUMNS = { places: %w{ structured_value authorized_label } }
 
     def self.add_recon_values rows
       rows.each do |row|

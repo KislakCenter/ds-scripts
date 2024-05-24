@@ -34,7 +34,7 @@ module DS
         end
         errors
       end
-      
+
       # Validates a row of data against a set of required columns and balanced columns.
       #
       #   # validate a CSV row for required columns and balanced columns
@@ -66,7 +66,7 @@ module DS
       # @return [Array<String>] An array of error messages, if any; otherwise, an empty array.
       def self.validate_required_columns row, required_columns
         return [] if required_columns.blank?
-        missing = required_columns - row.keys
+        missing = required_columns - row.to_h.keys
         return [] if missing.empty?
         ["#{ERROR_MISSING_REQUIRED_COLUMNS}: #{missing.join ', '}"]
       end
@@ -95,7 +95,7 @@ module DS
           values = columns.map { |column| row[column.to_s] || row[column.to_sym] }
           errors += validate_row_splits(group: group, row_values: values, allow_blank: allow_blank)
         }
-        errors
+      errors
       end
 
       # Maximum number of subfields to allow in a row; this number is

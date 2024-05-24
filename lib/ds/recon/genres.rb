@@ -15,7 +15,7 @@ module Recon
 
     SET_NAME = :genres
 
-    CSV_HEADERS = %i{
+    CSV_HEADERS = %w{
       genre_as_recorded
       vocabulary
       source_authority_uri
@@ -41,9 +41,8 @@ module Recon
 
     METHOD_NAME = %i{ extract_genres }
 
-    BALANCED_COLUMNS = %i{
-      structured_value
-      authorized_label
+    BALANCED_COLUMNS = {
+      genres: %w{ structured_value authorized_label }
     }
 
     # Adds recon the 'authorized_label' and 'structured_value' columns

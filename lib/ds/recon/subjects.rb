@@ -30,7 +30,7 @@ module Recon
 
     SET_NAME = :subjects
 
-    CSV_HEADERS = %i{
+    CSV_HEADERS = %w{
       subject_as_recorded
       subfield_codes
       vocab
@@ -52,7 +52,7 @@ module Recon
 
     METHOD_NAME = %i{ extract_subjects }
 
-    BALANCED_COLUMNS = %i{ structured_value authorized_label }
+    BALANCED_COLUMNS = { subjects: %w{ structured_value authorized_label } }
 
     AS_RECORDED_COLUMN = :subject_as_recorded
 

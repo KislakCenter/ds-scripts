@@ -21,8 +21,8 @@ RSpec.shared_examples "a recon type class" do |skips|
       expect(described_class).to respond_to the_method
     end
 
-    it 'returns an array of symbols' do
-      expect(described_class.send the_method).to all be_a Symbol
+    it 'returns an array of strings' do
+      expect(described_class.send the_method).to all be_a String
     end
   end
 
@@ -97,7 +97,7 @@ RSpec.shared_examples "a recon type class" do |skips|
     end
 
     it 'returns an array of symbols' do
-      expect(described_class.send the_method).to all be_a(Symbol)
+      expect(described_class.send the_method).to be_a(Hash)
     end
   end
 end

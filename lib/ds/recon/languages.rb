@@ -7,7 +7,7 @@ module Recon
 
     SET_NAME = :languages
 
-    CSV_HEADERS = %i{
+    CSV_HEADERS = %w{
       language_as_recorded
       language_code
       authorized_label
@@ -31,7 +31,7 @@ module Recon
 
     METHOD_NAME = %i{ extract_languages }
 
-    BALANCED_COLUMNS = %i{ structured_value authorized_label }
+    BALANCED_COLUMNS = { languages: %w{ structured_value authorized_label } }
 
 
     def self.add_recon_values rows

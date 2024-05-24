@@ -9,7 +9,7 @@ module Recon
 
     SET_NAME = :materials
 
-    CSV_HEADERS = %i{
+    CSV_HEADERS = %w{
       material_as_recorded
       authorized_label
       structured_value
@@ -33,7 +33,7 @@ module Recon
 
     DELIMITER_MAP = { '|' => ';' }
 
-    BALANCED_COLUMNS = %i{ structured_value authorized_label }
+    BALANCED_COLUMNS = { materials: %w{ structured_value authorized_label } }
 
     def self.add_recon_values rows
       rows.each do |row|

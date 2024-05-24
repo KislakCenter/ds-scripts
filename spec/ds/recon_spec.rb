@@ -36,18 +36,5 @@ describe 'Recon' do
         Recon.validate! :genres, invalid_genres_csv
       }.to raise_error /genre_as_recorded, vocabulary, authorized_label, structured_value, ds_qid/
     end
-
-    it 'fails a csv with unbalanced columns' do
-      expect(
-        Recon.validate_csv_splits :genres, invalid_genres_splits_csv
-      ).to include /has unmatched subfields/
-    end
-
-    it 'passes a csv with balanced columns' do
-      expect(
-        Recon.validate_csv_splits :genres, valid_genres_csv
-      ).to be_blank
-    end
-
   end
 end
