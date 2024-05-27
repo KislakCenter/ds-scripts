@@ -14,6 +14,7 @@ module Recon
     def initialize recon_builder:, out_dir:
       @out_dir       = out_dir
       @recon_builder = recon_builder
+      @validations   = {}
     end
 
     # Write all recon CSV files.
@@ -39,5 +40,27 @@ module Recon
       end
     end
 
+    def validate(recon_type, recon, ndx: nil)
+      errors = DS::Util::CsvValidator.validate_required_columns(recon, recon_type.csv_headers)
+      # If required columns are missing, stop and raise an exception
+      raise DSError.new errors.join("\n") unless errors.blank?
+      errors = DS::Util::CsvValidator.validate_row(
+        recon,
+        required_columns: recon_type.csv_headers,
+        balanced_columns: recon_type.balanced_columns,
+        nested_columns:   recon_type.nested_columns,
+        allow_blank:      false
+      )
+    end
+
+    Validation = Struct.new :recon_type, :errors do
+      def error_count
+        errors.count
+      end
+    end
+    def add_errors(recon_type, errors)
+      @validations[recon_type.set_name] ||= Validation.new recon_type, errors
+
+    end
   end
 end

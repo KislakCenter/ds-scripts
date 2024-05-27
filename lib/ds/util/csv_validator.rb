@@ -24,11 +24,14 @@ module DS
       # @param allow_blank [Boolean] Whether to allow blank subfields in balanced columns.
       # @return [Array<String>] An array of error messages, if any.
       def self.validate_all_rows rows, required_columns: [], balanced_columns: {}, nested_columns: {}, allow_blank: false
-        errors = validate_required_columns(rows.first, required_columns)
+        errors = validate_required_columns(rows.first, row_num: 1, required_columns: required_columns)
         return errors unless errors.blank?
-        rows.each do |row|
+        rows.each_with_index do |row, row_num|
           errors += validate_row(
-            row, balanced_columns: balanced_columns, nested_columns: nested_columns,
+            row, row_num: row_num + 1,
+            required_columns: required_columns,
+            balanced_columns: balanced_columns,
+            nested_columns: nested_columns,
             allow_blank: allow_blank
           )
         end
@@ -50,12 +53,12 @@ module DS
       # @param balanced_columns [Hash<Symbol, Array<Symbol>>] a hash of groups of balanced columns; see example above
       # @param allow_blank [Boolean] Whether to allow blank subfields in balanced columns
       # @return [Array<String>] An array of error messages, if any.
-      def self.validate_row row, required_columns: [], balanced_columns: {}, nested_columns: {}, allow_blank: false
+      def self.validate_row row, row_num:, required_columns: [], balanced_columns: {}, nested_columns: {}, allow_blank: false
         errors = []
-        errors += validate_required_columns(row, required_columns)
+        errors += validate_required_columns(row, row_num: row_num, required_columns: required_columns)
         return errors unless errors.blank?
-        errors += validate_balanced_columns(row, balanced_columns: balanced_columns, allow_blank: allow_blank)
-        errors += validate_whitespace(row, nested_columns: nested_columns)
+        errors += validate_balanced_columns(row, row_num: row_num, balanced_columns: balanced_columns, allow_blank: allow_blank)
+        errors += validate_whitespace(row, row_num: row_num, nested_columns: nested_columns)
         errors
       end
 
@@ -64,11 +67,11 @@ module DS
       # @param row [Hash, CSV::Row] The row of data to be validated.
       # @param required_columns [Array<Symbol>] The required columns for the row.
       # @return [Array<String>] An array of error messages, if any; otherwise, an empty array.
-      def self.validate_required_columns row, required_columns
+      def self.validate_required_columns row, row_num:, required_columns:
         return [] if required_columns.blank?
         missing = required_columns - row.to_h.keys
         return [] if missing.empty?
-        ["#{ERROR_MISSING_REQUIRED_COLUMNS}: #{missing.join ', '}"]
+        ["#{ERROR_MISSING_REQUIRED_COLUMNS}: #{missing.join ', '} (row #{row_num})"]
       end
 
 
@@ -88,12 +91,12 @@ module DS
       #     csv_validator.validate_balanced_columns(
       #         row, balanced_columns: balanced_columns
       #     )  # => ["Row has subfields of different lengths: group: :group1, sizes: [1, 2], row: [\"a\", \"b|b\"]"]
-      def self.validate_balanced_columns row, balanced_columns: {}, allow_blank: false
+      def self.validate_balanced_columns row, row_num:, balanced_columns: {}, allow_blank: false
         return [] if balanced_columns.blank?
         errors = []
         balanced_columns.each { |group, columns|
           values = columns.map { |column| row[column.to_s] || row[column.to_sym] }
-          errors += validate_row_splits(group: group, row_values: values, allow_blank: allow_blank)
+          errors += validate_row_splits(group: group, row_num: row_num, row_values: values, allow_blank: allow_blank)
         }
       errors
       end
@@ -123,14 +126,14 @@ module DS
       #   [ 'a|b|c', '1|2' ]     # => not valid, return ERROR_UNBALANCED_SUBFIELDS
       #   [ 'a|b', '']           # => not valid, return ERROR_UNBALANCED_SUBFIELDS
       #   [ 'a||c', '1|2|3' ]    # => not valid, return ERROR_BLANK_SUBFIELDS
-      #   [ 'a||c', '1|2|3' ]    # => valid, if allow_blank == true, return []
+      #   [ 'a||c', '1|2|3' ]    # => valid if allow_blank == true, return []
       #
       #
       # @param [Array<String>] row_values an array of strings from one or more columns
       # @param [String] separators a list of allowed subfield separators; e.g., ';', '|', ';|'
       # @param [Boolean] allow_blank whether any of the subfields may be blank
       # @return [Array<String>] the row errors, or [] if there are no errors
-      def self.validate_row_splits row_values: [], separators: '|;', allow_blank: false, group: nil
+      def self.validate_row_splits row_values: [], row_num:, separators: '|;', allow_blank: false, group: nil
         errors = []
         return errors if row_values.all? { |val| val.blank? }
         # Input array is an array of two or more strings that must split into
@@ -155,7 +158,7 @@ module DS
         if sizes.all? { |size| [0,1].include? size }
           return errors
         elsif sizes.uniq.size > 1
-          errors << "#{ERROR_UNBALANCED_SUBFIELDS}: group: #{group.inspect}, sizes: #{sizes.inspect}, row: #{row_values.inspect}"
+          errors << "#{ERROR_UNBALANCED_SUBFIELDS}: group: #{group.inspect}, sizes: #{sizes.inspect}, row: #{row_values.inspect} (row #{row_num})"
         end
 
         # return true if we don't have check for blanks
@@ -163,7 +166,7 @@ module DS
 
         # return an error if any of the subfields are blank
         if splits.flatten.any? &:blank?
-          errors << "#{ERROR_BLANK_SUBFIELDS}: group: #{group.inspect}, row: #{row_values.inspect}"
+          errors << "#{ERROR_BLANK_SUBFIELDS}: group: #{group.inspect}, row: #{row_values.inspect} (row #{row_num})"
         end
         errors
       end
@@ -184,7 +187,7 @@ module DS
       # @param row [Hash] The row of data to be validated.
       # @param nested_columns [Hash<String, Symbol] A hash of nested columns.
       # @return [Array<String>] An array of error messages, if any.
-      def self.validate_whitespace row, nested_columns: {}
+      def self.validate_whitespace row, row_num:, nested_columns: {}
         errors = []
 
         row.each do |column, value|
@@ -195,7 +198,7 @@ module DS
           split_chars = nested_columns.include?(column) ? PIPE_SEMICOLON_REGEXP : PIPE_SPLIT_REGEXP
           if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
             group = nested_columns[column] || :default
-            errors << "#{ERROR_TRAILING_WHITESPACE}: group: #{group.inspect}, column #{column.inspect}, value: #{value.inspect}"
+            errors << "#{ERROR_TRAILING_WHITESPACE}: group: #{group.inspect}, column #{column.inspect}, value: #{value.inspect} (row #{row_num})"
           end
         end
 
