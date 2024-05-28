@@ -31,8 +31,8 @@ module DS
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
-        production_date_as_recorded        = DS::Extractor::TeiXml.extract_production_date_as_recorded(record, range_sep: '-').join
-        production_date                    = DS::Extractor::TeiXml.extract_production_date_as_recorded(record, range_sep: '^').join
+        production_date_as_recorded        = DS::Extractor::TeiXml.extract_production_date_as_recorded(record, range_sep: '-').join('|')
+        production_date                    = DS::Extractor::TeiXml.extract_production_date_as_recorded(record, range_sep: '^').join('|')
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
         production_place_as_recorded       = DS::Extractor::TeiXml.extract_production_places_as_recorded(record).join '|'
@@ -84,8 +84,8 @@ module DS
         former_owner_instance_of           = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
         former_owner_label                 = Recon::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
         material_as_recorded               = DS::Extractor::TeiXml.extract_material_as_recorded record
-        material                           = Recon::Materials.lookup(material_as_recorded.split('|'), column: 'structured_value').join '|'
-        material_label                     = Recon::Materials.lookup(material_as_recorded.split('|'), column: 'authorized_label').join '|'
+        material                           = Recon::Materials.lookup(material_as_recorded.to_s.split('|'), column: 'structured_value').join '|'
+        material_label                     = Recon::Materials.lookup(material_as_recorded.to_s.split('|'), column: 'authorized_label').join '|'
         acknowledgements                   = DS::Extractor::TeiXml.extract_acknowledgments(record).join '|'
         physical_description               = DS::Extractor::TeiXml.extract_physical_description(record).join '|'
         note                               = DS::Extractor::TeiXml.extract_notes(record).join '|'
