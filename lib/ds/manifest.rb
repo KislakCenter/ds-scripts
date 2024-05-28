@@ -19,7 +19,7 @@ module DS
   # that the Manifest is completed and well-formed, and that all records
   # can be found the specified source diretory.
   #
-  # The valid {DS::Manifest::Manifest} is used by {DS::Converter::BaseConverter}
+  # The valid {DS::Manifest::Manifest} is used by {DS::Converter::Converter}
   # to orchestrate mapping of source record data for the creation of
   # the DS import CSV.
   module Manifest

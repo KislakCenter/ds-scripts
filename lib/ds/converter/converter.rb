@@ -91,6 +91,6 @@ module DS
       def mapper_key entry
         { source_type: entry.source_type, manifest_path: manifest.csv_path }
       end
-    end # class BaseConverter
+    end # class Converter
   end # module Converter
 end # module DS

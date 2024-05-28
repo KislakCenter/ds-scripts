@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DS::Converter::BaseConverter' do
+RSpec.describe DS::Converter::Converter do
 
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
   let(:manifest_path) { File.join marc_xml_dir, 'manifest.csv'  }
@@ -11,7 +11,7 @@ RSpec.describe 'DS::Converter::BaseConverter' do
   let(:entry) { manifest.first }
 
   context '#initialize' do
-    it 'creates a new DS::Converter::BaseConverter' do
+    it 'creates a new DS::Converter::Converter' do
       expect(
         DS::Converter::Converter.new manifest
       ).to be_a DS::Converter::Converter
