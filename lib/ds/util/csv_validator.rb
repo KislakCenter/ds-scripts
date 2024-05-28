@@ -185,9 +185,9 @@ module DS
       #     }
       #
       # @param row [Hash] The row of data to be validated.
-      # @param nested_columns [Hash<String, Symbol] A hash of nested columns.
+      # @param nested_columns [Array<Symbol>] A hash of nested columns.
       # @return [Array<String>] An array of error messages, if any.
-      def self.validate_whitespace row, row_num:, nested_columns: {}
+      def self.validate_whitespace row, row_num:, nested_columns: []
         errors = []
 
         row.each do |column, value|
@@ -197,8 +197,7 @@ module DS
           # subfield type
           split_chars = nested_columns.include?(column) ? PIPE_SEMICOLON_REGEXP : PIPE_SPLIT_REGEXP
           if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
-            group = nested_columns[column] || :default
-            errors << "#{ERROR_TRAILING_WHITESPACE}: group: #{group.inspect}, column #{column.inspect}, value: #{value.inspect} (row #{row_num})"
+            errors << "#{ERROR_TRAILING_WHITESPACE}: column #{column.inspect}, value: #{value.inspect} (row #{row_num})"
           end
         end
 

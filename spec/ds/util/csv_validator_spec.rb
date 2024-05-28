@@ -64,9 +64,7 @@ RSpec.describe DS::Util::CsvValidator do
       { a: 'a|a;a', b: 'b|b;b' }
     }
 
-    let(:nested_columns) {
-      { b: :b_group }
-    }
+    let(:nested_columns) { %i{ b } }
 
     context 'with default parameters' do
       it 'returns no errors for a valid row' do
@@ -145,9 +143,7 @@ RSpec.describe DS::Util::CsvValidator do
           { group1: [:a, :b] }
         }
 
-        let(:nested_columns) {
-          { a: :group1, b: :group1 }
-        }
+        let(:nested_columns) { %i{ a b } }
 
         let(:valid_row) {
           { a: 'a|a;a', b: 'b|b;b' }
@@ -406,9 +402,7 @@ RSpec.describe DS::Util::CsvValidator do
         { a: 'a', b: 'b|b ;b', c: 'c', d: 'd' }
       }
 
-      let(:nested_columns) {
-        { b: :group1, a: :group1 }
-      }
+      let(:nested_columns) { %i{ a b } }
 
       it 'returns no errors for a valid row' do
         expect(described_class.validate_whitespace(valid_row, row_num: 1, nested_columns: nested_columns)).to be_empty
@@ -418,9 +412,7 @@ RSpec.describe DS::Util::CsvValidator do
         expect(described_class.validate_whitespace(invalid_row, row_num: 1, nested_columns: nested_columns).size).to eq 1
       end
 
-      let(:expected_error) {
-        [/group: :group1.*column :b.*row \d/]
-      }
+      let(:expected_error) { [/column :b.*row \d/] }
 
       it 'has the expected errors' do
         expect(described_class.validate_whitespace(invalid_row, row_num: 1, nested_columns: nested_columns)).to match expected_error
