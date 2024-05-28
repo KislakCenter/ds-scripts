@@ -511,7 +511,7 @@ module DS
             if [:all, term_vocab].include? vocab
               DS::Extractor::Genre.new(
                 as_recorded:          as_recorded,
-                vocab:                term_vocab,
+                vocabulary:           term_vocab,
                 source_authority_uri: source_authority_uri
               )
             end
@@ -523,7 +523,7 @@ module DS
         # @param [Nokogiri::XML::Node] record the MARC XML record to extract genre vocabulary from
         # @return [Array<Symbol>] an array of extracted genre vocabularies
         def extract_genre_vocabulary record
-          extract_genres(record).map(&:vocab)
+          extract_genres(record).map(&:vocabulary)
         end
 
         # Extracts reconstructed subjects from the given record.

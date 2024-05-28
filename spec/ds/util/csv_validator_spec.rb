@@ -19,7 +19,7 @@ RSpec.describe DS::Util::CsvValidator do
       let(:invalid_rows) { [{ a: 'a', b: 'b' }, { a: 'x', b: 'y' }] }
       let(:required_columns) { %i{ a x } }
       let(:expected_error) {
-        /CSV is missing required column\(s\): x.*row \d/
+        /CSV is missing required column\(s\): :x.*row \d/
       }
       let(:errors) {
         described_class.validate_all_rows(invalid_rows, required_columns: required_columns)
@@ -98,7 +98,7 @@ RSpec.describe DS::Util::CsvValidator do
       end
 
       let(:expected_error) {
-        [/CSV is missing required column\(s\): x.*row \d+/]
+        [/CSV is missing required column\(s\): :x.*row \d+/]
       }
       it "returns an error with the row number" do
         expect(described_class.validate_row(invalid_row, row_num: 1, required_columns: required_columns)).to match(expected_error)
@@ -367,7 +367,7 @@ RSpec.describe DS::Util::CsvValidator do
     end
 
     let(:expected_error) {
-      [/CSV is missing required column\(s\): b.*row \d/]
+      [/CSV is missing required column\(s\): :b.*row \d/]
     }
     it 'has the expected errors' do
       expect(described_class.validate_required_columns(invalid_row, row_num: 1, required_columns: required_columns)).to match expected_error
@@ -417,9 +417,11 @@ RSpec.describe DS::Util::CsvValidator do
       it 'returns errors for a invalid row' do
         expect(described_class.validate_whitespace(invalid_row, row_num: 1, nested_columns: nested_columns).size).to eq 1
       end
+
       let(:expected_error) {
         [/group: :group1.*column :b.*row \d/]
       }
+
       it 'has the expected errors' do
         expect(described_class.validate_whitespace(invalid_row, row_num: 1, nested_columns: nested_columns)).to match expected_error
       end

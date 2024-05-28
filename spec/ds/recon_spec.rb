@@ -22,7 +22,7 @@ describe 'Recon' do
     it 'fails a names CSV missing headers' do
       expect {
         Recon.validate! :names, invalid_names_csv
-      }.to raise_error /name_as_recorded, instance_of, authorized_label, structured_value, ds_qid/
+      }.to raise_error /name_as_recorded.*instance_of.*authorized_label.*structured_value.*ds_qid/
     end
 
     it 'passes a valid genres CSV' do
@@ -34,7 +34,7 @@ describe 'Recon' do
     it 'fails a genres CSV missing headers' do
       expect {
         Recon.validate! :genres, invalid_genres_csv
-      }.to raise_error /genre_as_recorded, vocabulary, authorized_label, structured_value, ds_qid/
+      }.to raise_error /genre_as_recorded.*vocabulary.*authorized_label.*structured_value.*ds_qid/
     end
   end
 end

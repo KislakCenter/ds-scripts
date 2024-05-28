@@ -108,8 +108,8 @@ module Recon
 
     data = {}
     params = {
-      key_column:    set_config['key_column'],
-      subset_column: set_config['subset_column'],
+      key_column:    set_config['key_column'].to_sym,
+      subset_column: (set_config['subset_column'] && set_config['subset_column'].to_sym),
       data:          data
     }
 
@@ -126,7 +126,8 @@ module Recon
 
   def self.read_csv csv_file:, key_column:, subset_column:, data:
     CSV.foreach csv_file, headers: true do |row|
-      next if %w{authorized_label structured_value}.all? { |k| row[k].blank? }
+      row = row.to_h.symbolize_keys
+      next if %i{authorized_label structured_value}.all? { |k| row[k].blank? }
       struct    = OpenStruct.new row.to_h
       value     = row[key_column]
       subset    = subset_column ? row[subset_column] : ''
@@ -135,23 +136,21 @@ module Recon
     end
     data
   end
-  
+
 
   def self.validate set_name, csv_file
     return unless RECON_VALIDATION_SETS.include? set_name
     return "#{ERROR_CSV_FILE_NOT_FOUND}: '#{csv_file}'" unless File.exist? csv_file
 
     recon_type       = Recon.find_recon_type set_name
-    required_columns = recon_type.csv_headers
-    balanced_columns = recon_type.balanced_columns
-    allow_blank      = false
 
-    rows = CSV.readlines csv_file, headers: true
-    errors = DS::Util::CsvValidator.validate_all_rows(rows,
-        required_columns: required_columns,
-        balanced_columns: balanced_columns,
-        allow_blank: allow_blank)
-    errors
+
+    row_num = 0
+    CSV.readlines(csv_file, headers: true).map(&:to_h).filter_map { |row|
+      row.symbolize_keys!
+      error = validate_row recon_type, row, row_num+=1
+      error if error.present?
+    }
   end
 
   def self.validate! set_name, csv_file
@@ -159,6 +158,14 @@ module Recon
     return unless error.present?
 
     raise DSError, "Error validating #{set_name} recon CSV #{csv_file}:\n#{error}"
+  end
+
+  def self.validate_row recon_type, row, row_num
+    errors = DS::Util::CsvValidator.validate_required_columns(row, required_columns: recon_type.csv_headers, row_num: row_num)
+    raise DSError.new errors.join("\n") unless errors.blank?
+    DS::Util::CsvValidator.validate_balanced_columns(
+      row, balanced_columns: recon_type.balanced_columns, row_num: row_num
+    )
   end
 
   def self.add_alt_keys data

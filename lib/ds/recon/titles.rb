@@ -11,7 +11,7 @@ module Recon
 
     METHOD_NAME = %i{ extract_titles }
 
-    CSV_HEADERS = %w{
+    CSV_HEADERS = %i{
       title_as_recorded
       title_as_recorded_agr
       uniform_title_as_recorded
@@ -26,6 +26,8 @@ module Recon
     }
 
     KEY_COLUMNS =  %i{ :title_as_recorded }
+
+    SUBSET_COLUMN = nil
 
     AS_RECORDED_COLUMN = :title_as_recorded
 

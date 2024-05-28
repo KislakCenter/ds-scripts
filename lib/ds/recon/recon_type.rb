@@ -36,6 +36,10 @@ module Recon
         self::METHOD_NAME
       end
 
+      def subset_column
+        self::SUBSET_COLUMN
+      end
+
       # Returns the balanced columns for the current object.
       #
       # Balanced columns should have equal numbers of fields and

@@ -71,7 +71,7 @@ module DS
         return [] if required_columns.blank?
         missing = required_columns - row.to_h.keys
         return [] if missing.empty?
-        ["#{ERROR_MISSING_REQUIRED_COLUMNS}: #{missing.join ', '} (row #{row_num})"]
+        ["#{ERROR_MISSING_REQUIRED_COLUMNS}: #{missing.map(&:inspect).join(', ')} row #{row_num}"]
       end
 
 

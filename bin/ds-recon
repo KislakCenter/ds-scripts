@@ -317,6 +317,22 @@ LONGDESC
     true
   end
 
+  desc 'build', 'Build the data'
+  def build *files
+    return false unless validate_args files
+    invoke :recon_update
+    recon_builder = Recon::ReconBuilder.new(
+      out_dir: options[:directory],
+      source_type: options[:'source-type'],
+      files: files
+    )
+    recon_manager = Recon::ReconManager.new(recon_builder: recon_builder, out_dir: options[:directory])
+    outfiles = recon_manager.write_all_csvs
+
+    outfiles.each { |outfile| puts "Wrote #{outfile}" }
+    true
+  end
+
   desc "splits FILES", "Extract long lines"
   long_desc <<-LONGDESC
   Extract strings longer than 400 characters

@@ -9,7 +9,7 @@ module Recon
 
     SET_NAME = :names
 
-    CSV_HEADERS = %w{
+    CSV_HEADERS = %i{
       name_as_recorded
       role name_agr
       source_authority_uri
@@ -30,13 +30,15 @@ module Recon
       name_as_recorded
     }
 
+    SUBSET_COLUMN = nil
+
     AS_RECORDED_COLUMN = :name_as_recorded
 
     DELIMITER_MAP = {}
 
     METHOD_NAME = %i{ extract_authors extract_artists extract_scribes extract_former_owners }
 
-    BALANCED_COLUMNS = { names: %w{ structured_value authorized_label instance_of } }
+    BALANCED_COLUMNS = { names: %i{ structured_value authorized_label instance_of } }
 
     def self.add_recon_values rows
       rows.each do |row|

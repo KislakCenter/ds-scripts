@@ -22,7 +22,7 @@ RSpec.shared_examples "a recon type class" do |skips|
     end
 
     it 'returns an array of strings' do
-      expect(described_class.send the_method).to all be_a String
+      expect(described_class.send the_method).to all be_a Symbol
     end
   end
 

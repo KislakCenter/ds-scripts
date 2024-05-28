@@ -14,53 +14,53 @@ module Recon
     def initialize recon_builder:, out_dir:
       @out_dir       = out_dir
       @recon_builder = recon_builder
-      @validations   = {}
+      @errors = {}
     end
 
     # Write all recon CSV files.
     #
     # @return [void]
     def write_all_csvs
+      outfiles = []
       Recon::RECON_TYPES.each do |recon_type|
-        write_csv recon_type
+        outfile = File.join out_dir, "#{recon_type.set_name}.csv"
+        write_csv recon_type, outfile
+        outfiles << outfile
       end
+      outfiles
     end
 
     # Write a CSV file for a specific recon type.
     #
     # @param recon_type [Recon::ReconType] the type of reconciliation data
     # @return [void]
-    def write_csv recon_type
-      outfile = File.join out_dir, "#{recon_type.set_name}.csv"
+    def write_csv recon_type, outfile
       CSV.open(outfile, 'w+', headers: true) do |csv|
+        row_num = 0
         csv << recon_type.csv_headers
         recon_builder.each_recon(recon_type.set_name) do |recon|
+          errors = Recon.validate_row(recon_type, recon, row_num: row_num+=1)
+          add_errors recon_type, errors unless errors.blank?
           csv << recon
         end
       end
-    end
-
-    def validate(recon_type, recon, ndx: nil)
-      errors = DS::Util::CsvValidator.validate_required_columns(recon, recon_type.csv_headers)
-      # If required columns are missing, stop and raise an exception
-      raise DSError.new errors.join("\n") unless errors.blank?
-      errors = DS::Util::CsvValidator.validate_row(
-        recon,
-        required_columns: recon_type.csv_headers,
-        balanced_columns: recon_type.balanced_columns,
-        nested_columns:   recon_type.nested_columns,
-        allow_blank:      false
-      )
-    end
-
-    Validation = Struct.new :recon_type, :errors do
-      def error_count
-        errors.count
+      if has_errors?(recon_type)
+        raise DSError, "Error writing #{outfile}:\n#{errors_for_type(recon_type).join("\n")}"
       end
     end
-    def add_errors(recon_type, errors)
-      @validations[recon_type.set_name] ||= Validation.new recon_type, errors
 
+    def add_errors(recon_type, errors)
+      (@errors[recon_type.set_name] ||= []) << errors
     end
+
+    def has_errors? recon_type
+      errors_for_type(recon_type).present?
+    end
+
+    def errors_for_type recon_type
+      @errors[recon_type.set_name]
+    end
+
+
   end
 end

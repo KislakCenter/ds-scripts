@@ -9,7 +9,7 @@ module Recon
 
     SET_NAME = :materials
 
-    CSV_HEADERS = %w{
+    CSV_HEADERS = %i{
       material_as_recorded
       authorized_label
       structured_value
@@ -28,6 +28,7 @@ module Recon
 
     METHOD_NAME = %i{ extract_materials }
 
+    SUBSET_COLUMN = nil
 
     AS_RECORDED_COLUMN = :material_as_recorded
 

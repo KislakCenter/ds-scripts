@@ -143,10 +143,11 @@ module Recon
     # @return [Hash<Symbol,String>] a recon CSV row
     def build_recon item:, recon_type:
       as_recorded = item.as_recorded
+      subset = item.send(recon_type.subset_column) if recon_type.subset_column.present?
       recon_hash = item.to_h
       recon_type.lookup_columns.each do |col|
-        val = Recon.lookup(recon_type.set_name, value: as_recorded, column: col)
-        recon_hash[col.to_sym] = fix_delimiters val, recon_type.delimiter_map
+        val = Recon.lookup(recon_type.set_name, value: as_recorded, column: col, subset: subset)
+        recon_hash[col] = fix_delimiters val, recon_type.delimiter_map
       end
       prep_row recon_hash: recon_hash, recon_type: recon_type
     end

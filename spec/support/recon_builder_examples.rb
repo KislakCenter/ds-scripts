@@ -126,7 +126,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
         }
       }
       let(:terms) {
-        [DS::Extractor::Genre.new(as_recorded: 'Qurʼans', vocab: 'aat' )]
+        [DS::Extractor::Genre.new(as_recorded: 'Qurʼans', vocabulary: 'aat' )]
       }
 
       it 'yields a hash' do

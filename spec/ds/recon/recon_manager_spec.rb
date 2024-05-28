@@ -42,7 +42,7 @@ RSpec.describe Recon::ReconManager do
   context '#write_csv' do
     let(:outfile) { "#{out_dir}/places.csv" }
     before(:each) do
-      subject.write_csv Recon::Places
+      subject.write_csv Recon::Places, outfile
     end
 
     it 'writes a CSV file' do

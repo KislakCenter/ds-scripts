@@ -7,7 +7,7 @@ module Recon
 
     SET_NAME = :languages
 
-    CSV_HEADERS = %w{
+    CSV_HEADERS = %i{
       language_as_recorded
       language_code
       authorized_label
@@ -26,6 +26,8 @@ module Recon
     }
 
     AS_RECORDED_COLUMN = :language_as_recorded
+
+    SUBSET_COLUMN = nil
 
     DELIMITER_MAP = {}
 
