@@ -32,6 +32,7 @@ module DS
         @timestamp    = Time.now
         @source_dir   = manifest.source_dir
         @mapper_cache = DS::Util::Cache.new
+        @errors       = []
       end
 
       ##
@@ -41,14 +42,42 @@ module DS
       #   hashes for the provided manifest
       def convert &block
         data = []
-        each do |entry|
+        each_with_index do |entry, index|
           mapper = find_or_create_mapper entry, timestamp
           hash   = mapper.map_record entry
           data << hash
+          validate_row index + 1, hash
           yield hash if block_given?
         end
         data
       end
+
+      ##
+      # @param [Integer] row_num the row number
+      # @param [Hash <Symbol,String>] row the row data
+      # @return [void]
+      def validate_row row_num, row
+        @errors += DS::Util::CsvValidator.validate_whitespace(
+          row,
+          row_num: row_num,
+          nested_columns: DS::Constants::NESTED_COLUMNS
+        )
+      end
+
+      # Checks if there are any errors in the CSV.
+      #
+      # @return [Boolean] Returns true if there are no errors, false otherwise.
+      def csv_valid?
+        errors.empty?
+      end
+
+      # Returns a duplicate of the array of errors.
+      #
+      # @return [Array<String>] a duplicate of the array of errors
+      def errors
+        @errors.dup
+      end
+
 
       ##
       # @yieldparam [DS::Manifest::Entry] entry the manifest line item

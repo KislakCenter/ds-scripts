@@ -34,13 +34,6 @@ module DS
           valid = false
           STDERR.puts "WARNING: #{error}"
         end
-        # row.each do |column, value|
-        #   split_chars = NESTED_COLUMNS.include?(column) ? PIPE_SEMICOLON_REGEXP : PIPE_SPLIT_REGEXP
-        #   if value.to_s.split(split_chars).any? { |sub| sub =~ %r{\s+$} }
-        #     valid = false
-        #     STDERR.puts "WARNING: trailing whitespace in row #{index}, column #{column}, value: '#{value}'"
-        #   end
-        # end
         valid
       end
     end

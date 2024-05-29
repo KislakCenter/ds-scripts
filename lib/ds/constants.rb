@@ -75,6 +75,8 @@ data_source_modified
 source_file
 }
 
+
+    NESTED_COLUMNS = %i{ subject subject_label genre genre_label production_place production_place_label language language_label }
     # Institutions dependent on DS and their DS IDs
     # Some institutions have more than one collection
     #

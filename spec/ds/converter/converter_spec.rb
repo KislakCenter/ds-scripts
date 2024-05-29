@@ -65,6 +65,97 @@ RSpec.describe DS::Converter::Converter do
 
       expect(converter.convert).to include({ a: 1 })
     end
+
+    it "calls #validate_row" do
+      expect(converter).to receive(:validate_row).at_least :once
+      converter.convert
+    end
+  end
+
+  context "#errors" do
+    before(:each) do
+      converter.convert
+    end
+
+    it "returns an empty array by default" do
+      expect(converter.errors).to be_empty
+    end
+
+    context "output with errors (untestable?)" do
+
+      # NOTE: It may not be possible to test this; the extractor
+      #   should fix all errors in values extracted from the source.
+      #   Errors typically arise when there's an problem with the
+      #   recon CSV data. This is tested elsewhere.
+      it "returns an error of errors"
+
+    end
+  end
+
+  context "#csv_valid?" do
+    before(:each) do
+      converter.convert
+    end
+
+    it "returns true by default" do
+      expect(converter.csv_valid?).to be true
+    end
+  end
+
+  context "#validate_row" do
+    let(:valid_row) {
+      {
+        subject:                "a|b",
+        subject_label:          "a|b",
+        genre:                  "a|b",
+        genre_label:            "a|b",
+        production_place:       "a|b",
+        production_place_label: "a|b",
+        language:               "a|b",
+        language_label:         "a|b",
+      }
+    }
+
+    it "returns an empty array by default" do
+      expect(converter.validate_row(1, valid_row)).to be_empty
+    end
+
+    let(:row_with_errors) {
+      {
+        subject:                "a |b",
+        subject_label:          "a |b",
+        genre:                  "a |b",
+        genre_label:            "a |b",
+        production_place:       "a |b",
+        production_place_label: "a |b",
+        language:               "a |b",
+        language_label:         "a |b",
+      }
+    }
+
+    it "returns an array of errors" do
+      expect(converter.validate_row(1, row_with_errors)).not_to be_empty
+    end
+
+    let(:expected_errors) {
+      [
+      /\bsubject\b/,
+      /\bsubject_label\b/,
+      /\bgenre\b/,
+      /\bgenre_label\b/,
+      /\bproduction_place\b/,
+      /\bproduction_place_label\b/,
+      /\blanguage\b/,
+      /\blanguage_label\b/,
+      ]
+    }
+
+    it "returns the expected errors" do
+      expected_errors.each do |error|
+        expect(converter.validate_row(1, row_with_errors)).to include error
+      end
+    end
+
   end
 
   context '#mapper_cache' do
