@@ -15,14 +15,6 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
 
   let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
-  before(:each) do
-    # suppress STDERR
-    allow($stderr).to receive(:puts)
-    allow($stderr).to receive(:write)
-    # use the following to restore STDERR
-    # RSpec::Mocks.space.proxy_for($stderr).reset
-  end
-
   context 'initialize' do
 
     it 'creates a new ManifestValidator' do
@@ -34,7 +26,7 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
 
     context "a valid csv" do
       it 'is valid' do
-        RSpec::Mocks.space.proxy_for($stderr).reset
+        # RSpec::Mocks.space.proxy_for($stderr).reset
         expect(validator.valid?)
       end
     end
@@ -103,6 +95,7 @@ EOF
       let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
       it 'is falsey' do
+        # RSpec::Mocks.space.proxy_for($/).reset
         expect(validator.validate_columns).to be_falsey
       end
     end
@@ -302,9 +295,10 @@ EOF
     context 'for a CSV with bad IDs' do
       let(:csv_data) { <<~EOF
         filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
-        9951865503503681_marc.xml,marc-xml,XXXXXXXXX,"controlfield[@tag='001']/text()"
+        9951865503503681_marc.xml,marc-xml,XXXXXXXXX,"//controlfield[@tag='001']/text()"
       EOF
       }
+
       let(:manifest_path) {
         temp_csv csv_data
       }
@@ -315,7 +309,26 @@ EOF
       it 'is falsey' do
         expect(validator.validate_ids).to be_falsey
       end
+    end
 
+    context 'for a CSV with an ambiguous location in source' do
+
+      let(:csv_data) { <<~EOF
+        filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
+        multiple_marc_records.xml,marc-xml,9951865503503681,"//controlfield[@tag='001']/text()"
+      EOF
+      }
+
+      let(:manifest_path) {
+        temp_csv csv_data
+      }
+
+      let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir}
+      let(:validator) { DS::Manifest::ManifestValidator.new manifest }
+
+      it 'returns falsey' do
+        expect(validator.validate_ids).to be_falsey
+      end
     end
 
     context 'validate_ids_unique' do
@@ -336,6 +349,82 @@ EOF
     context 'multiple records for one ID' do
       it 'is falsey'
     end
+
+  end
+
+  context '#id_in_marc_xml?' do
+    context 'for a valid location specification' do
+
+      let(:file_path) {
+        File.join marc_xml_dir, 'multiple_marc_records.xml'
+      }
+
+      let(:inst_id) { '9951865503503681' }
+      let(:location) { 'controlfield[@tag="001"]' }
+
+      it 'is truthy' do
+        expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_truthy
+      end
+    end
+
+    context 'for an ambiguous location specification' do
+
+      let(:file_path) {
+        File.join marc_xml_dir, 'multiple_marc_records.xml'
+      }
+
+      let(:inst_id) { '9951865503503681' }
+      let(:location) { '//controlfield[@tag="001"]' }
+      let(:expected_error) {
+        [/ERROR: Multiple records \(\d+\) found for id: .* \(location: .*\)/]
+      }
+
+      it 'is falsey' do
+        expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_falsey
+        expect(validator.errors).to match_array expected_error
+      end
+    end
+
+    context 'for a source with duplicate IDs' do
+
+      let(:file_path) {
+        File.join marc_xml_dir, 'multiple_marc_records_duplicate_ids.xml'
+      }
+
+      let(:inst_id) { '9951865503503681' }
+      let(:location) { 'controlfield[@tag="001"]' }
+
+      let(:expected_error) {
+        [/ERROR: Multiple records \(\d+\) found for id: .* \(location: .*\)/]
+      }
+
+      it 'is falsey' do
+        expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_falsey
+        expect(validator.errors).to match_array expected_error
+      end
+    end
+
+    context 'for a source that lacks the ID' do
+
+      let(:file_path) {
+        File.join marc_xml_dir, 'multiple_marc_records.xml'
+      }
+
+      let(:inst_id) { 'NOT_AN_ID' }
+      let(:location) { 'controlfield[@tag="001"]' }
+
+      let(:expected_error) {
+        [/ERROR: No records found for id: .* \(location: .*\)/]
+      }
+
+      it 'is falsey' do
+        expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_falsey
+        expect(validator.errors).to match_array expected_error
+      end
+    end
+
+
+
   end
 
   context 'DS CSV' do
@@ -353,7 +442,7 @@ EOF
 
     context 'validate_required_values' do
       it 'is truthy' do
-        RSpec::Mocks.space.proxy_for($stderr).reset
+        # RSpec::Mocks.space.proxy_for($stderr).reset
         expect(validator.validate_required_values).to be_truthy
       end
     end
@@ -388,14 +477,50 @@ EOF
         let(:manifest) { DS::Manifest::Manifest.new manifest_path, source_dir }
         let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
+        let(:expected_error) {
+          [/ERROR: No records found for id: .* \(location: \w+\)/]
+        }
+
         it 'is falsey' do
           expect(validator.validate_ids).to be_falsey
+          expect(validator.errors).to match expected_error
+        end
+      end
+    end
+
+    context '#id_in_csv?' do
+      context "when the ID is in the CSV" do
+        let(:id) { 'BP128.57 .A2 1700z' }
+        let(:location) { 'Shelfmark' }
+
+        it 'returns true' do
+          expect(validator.id_in_csv?(source_file, id, location)).to be_truthy
         end
       end
 
+      context "when the ID is not in the CSV" do
+        let(:id) { 'xxxxx' }
+        let(:location) { 'Shelfmark' }
+
+        it 'returns false' do
+          expect(validator.id_in_csv?(source_file, id, location)).to be_falsey
+          expect(validator.errors).to include "ERROR: No records found for id: #{id} (location: #{location})"
+        end
+      end
+
+      context  "when more than one matching record is found in the source" do
+        let(:id) { 'BP128.57 .A2 1700z' }
+        let(:location) { 'Shelfmark' }
+        let(:source_file) { File.join source_dir, 'ucriverside-dscsv-duplicate_id.csv' }
+
+        let(:expected_error) {
+          [/ERROR: Multiple records \(2\) found for id: .* \(location: \w+\)/]
+        }
+        it "returns false" do
+          expect(validator.id_in_csv?(source_file, id, location)).to be_falsey
+          expect(validator.errors).to match expected_error
+        end
+      end
     end
-
   end
-
-
 end

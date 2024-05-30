@@ -25,6 +25,7 @@ module DS
 
       attr_reader :manifest
       attr_reader :source_dir
+      attr_reader :errors
 
       URI_REGEXP = URI::DEFAULT_PARSER.make_regexp %w{http https}
       QID_REGEXP = %r{\AQ\d+\z}
@@ -34,6 +35,7 @@ module DS
       # @return [DS::ManifestValidator]
       def initialize manifest
         @manifest = manifest
+        @errors   = []
       end
 
       ##
@@ -52,8 +54,9 @@ module DS
       def validate_columns
         found_columns = manifest.headers
         diff          = MANIFEST_COLUMNS - found_columns
-        return true if diff.empty?
-        STDERR.puts "Manifest missing required columns: #{diff.join ', '}"
+        return true if diff.blank?
+        add_error "Manifest missing required columns: #{diff.join ', '}" if diff.present?
+        false
       end
 
       ##
@@ -63,7 +66,7 @@ module DS
         manifest.each_with_index do |row, ndx|
           REQUIRED_VALUES.each do |col|
             if row[col].blank?
-              STDERR.puts "Required value missing in row: #{ndx+1}, col.: #{col}"
+              add_error "Required value missing in row: #{ndx+1}, col.: #{col}"
               is_valid = false
             end
           end
@@ -91,7 +94,7 @@ module DS
           file_path = File.join manifest.source_dir, entry.filename
           unless File.exist? file_path
             is_valid = false
-            STDERR.puts "Source file not found row: #{row_num+1}; source directory: #{source_dir}; file: #{entry.filename}"
+            add_error "Source file not found row: #{row_num+1}; source directory: #{source_dir}; file: #{entry.filename}"
           end
         end
         is_valid
@@ -111,7 +114,7 @@ module DS
           inst_id       = entry.institutional_id
           found         = case normal_source
                           when 'MARC XML', 'marcxml'
-                            id_in_marc_xml? file_path, entry
+                            id_in_marc_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           when 'teixml'
                             id_in_xml? file_path, inst_id, entry.institutional_id_location_in_source
                           when 'dsmetsxml'
@@ -121,10 +124,7 @@ module DS
                           else
                             raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
                           end
-          unless found
-            STDERR.puts "ID not found in source file row: #{row_num+1}; id: #{inst_id}; source_file: #{entry.filename}"
-            is_valid = false
-          end
+            is_valid = false unless found
         end
         is_valid
       end
@@ -142,29 +142,55 @@ module DS
         tei:   'http://www.tei-c.org/ns/1.0'
       }
 
-      ##
-      # @param [String] file_path the path to the MARC XML file
-      # @param [DS::Manifest::Entry] entry entry for a single record
-      # @return [boolean] whether the is found in the record
-      def id_in_marc_xml? file_path, entry
+
+      def id_in_marc_xml? file_path, inst_id, source_location
         xml = File.open(file_path) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
 
-        xpath = "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
-        xml.xpath(xpath).to_a.present?
+        xpath = "//record[#{source_location} = '#{inst_id}']"
+        records = xml.xpath(xpath)
+
+        return true if records.size == 1
+
+        handle_count_error records.size, inst_id, xpath
+        false
       end
 
       def id_in_xml? file_path, id, xpath
         xml = File.open(file_path) { |f| Nokogiri::XML(f) }
         xml.remove_namespaces!
-        id_in_source = xml.xpath(xpath).text
+        id_in_source = xml.xpath(xpath)
 
-        id_in_source == id
+        return true if id_in_source.size == 1
+
+        handle_count_error id_in_source.size, id, xpath
+        false
       end
 
       def id_in_csv? file_path, id, location
         csv = CSV.readlines file_path, headers: true
-        csv.any? { |row| row[location] == id}
+        records = csv.filter_map { |row| row if row[location] == id}
+
+        handle_count_error records.size, id, location
+        return true if records.size == 1
+      end
+
+      # Handles the error when the count of records found for a given `inst_id` and `location_in_source` is
+      # 0 or more than 1.
+      #
+      # @param count [Integer] the number of records found for the given `inst_id` and `location_in_source`
+      # @param inst_id [String] the identifier of the record
+      # @param location_in_source [String] the location in the source where the record is found
+      # @return [nil]
+      def handle_count_error count, inst_id, location_in_source
+        return if count == 1
+
+        if count > 1
+          add_error "ERROR: Multiple records (#{count}) found for id: #{inst_id} (location: #{location_in_source})"
+        elsif count == 0
+          add_error "ERROR: No records found for id: #{inst_id} (location: #{location_in_source})"
+        end
+        nil
       end
 
       ####################################
@@ -174,7 +200,7 @@ module DS
         is_valid = true
 
         unless source_types.include? entry.source_type
-          STDERR.puts "Invalid source type in row: #{row_num+1}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry.source_type}'"
+          add_error "Invalid source type in row: #{row_num+1}; expected one of #{VALID_SOURCE_TYPES.join ', '}; got: '#{entry.source_type}'"
           is_valid = false
         end
         is_valid
@@ -184,7 +210,7 @@ module DS
         is_valid = true
         URI_COLUMNS.each do |col|
           if entry[col].present? && entry[col].to_s !~ URI_REGEXP
-            STDERR.puts "Invalid URL in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
+            add_error "Invalid URL in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
             is_valid = false
           end
         end
@@ -196,7 +222,7 @@ module DS
         QID_COLUMNS.each do |col|
           unless entry[col].to_s =~ QID_REGEXP
             is_valid = false
-            STDERR.puts "Invalid QID in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
+            add_error "Invalid QID in row: #{row_num+1}; col.: #{col}: '#{entry[col]}'"
           end
         end
         is_valid
@@ -210,11 +236,27 @@ module DS
             Date.parse entry[col]
           rescue Date::Error
             is_valid = false
-            STDERR.puts "Invalid date in row: #{row_num+1}, col.: #{col}: '#{entry[col]}'"
+            add_error "Invalid date in row: #{row_num+1}, col.: #{col}: '#{entry[col]}'"
           end
         end
         is_valid
       end
+
+      # Adds an error message to the list of errors.
+      #
+      # @param message [String] the error message to add
+      # @return [void]
+      def add_error message
+        @errors << message
+      end
+
+      # Checks if there are any errors in the errors collection.
+      #
+      # @return [Boolean] true if there are errors, false otherwise
+      def has_errors?
+        errors.any?
+      end
+
 
       def source_types
         VALID_SOURCE_TYPES
