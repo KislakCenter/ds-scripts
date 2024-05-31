@@ -114,10 +114,12 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
       obj
     }
 
+    let(:source_file_path) { "some/path/some_file.xml" }
+
     it '#find_or_open_source calls #open_source once for the same source' do
       expect(test_mapper).to receive(:open_source).exactly(:once)
-      test_mapper.find_or_open_source entry1
-      test_mapper.find_or_open_source entry2
+      test_mapper.find_or_open_source source_file_path
+      test_mapper.find_or_open_source source_file_path
     end
   end
 

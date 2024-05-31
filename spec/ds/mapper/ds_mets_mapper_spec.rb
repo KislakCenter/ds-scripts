@@ -25,6 +25,9 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
   let(:extractor) {  DS::Extractor::DsMetsXml }
 
+  let(:subject) { mapper}
+  it_behaves_like "an source cache implementation"
+
   context 'mapper implementation' do
     except = %i[
         extract_cataloging_convention

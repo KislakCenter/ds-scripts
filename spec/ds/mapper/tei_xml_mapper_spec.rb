@@ -26,6 +26,9 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
 
   let(:extractor) { DS::Extractor::TeiXml }
 
+  let(:subject) { mapper}
+  it_behaves_like "an source cache implementation"
+
   context 'mapper implementation' do
     except = %i[
       extract_cataloging_convention
@@ -57,7 +60,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
     end
 
     it 'implements #open_source' do
-      expect { mapper.open_source entry }.not_to raise_error
+      expect { mapper.open_source xml_file }.not_to raise_error
     end
 
     it 'is a kind of BaseMapper' do

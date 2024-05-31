@@ -9,13 +9,13 @@ module DS
       # @param [DS::Manifest::Entry] entry +entry+ representing one
       #     row in a manifest
       def extract_record entry
-        xml = find_or_open_source entry
+        source_file_path = File.join source_dir, entry.filename
+        xml = find_or_open_source source_file_path
         xpath = "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
         xml.at_xpath xpath
       end
 
-      def open_source entry
-        source_file_path = File.join source_dir, entry.filename
+      def open_source source_file_path
         xml_string = File.open(source_file_path).read
         xml = Nokogiri::XML xml_string
         xml.remove_namespaces!

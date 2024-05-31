@@ -10,13 +10,13 @@ module DS
       attr_reader :source_file
 
       def extract_record entry
-        xml   = find_or_open_source entry
+        source_file_path = File.join source_dir, entry.filename
+        xml   = find_or_open_source source_file_path
         xpath = "/mets:mets[./mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type = 'local' and ./text() = '#{entry.institutional_id}']]"
         xml.at_xpath xpath
       end
 
-      def open_source entry
-        source_file_path = File.join source_dir, entry.filename
+      def open_source source_file_path
         File.open(source_file_path) { |f| Nokogiri::XML f }
       end
 

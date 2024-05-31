@@ -139,15 +139,14 @@ module DS
       end
 
       def extract_record entry
-        csv = find_or_open_source entry
+        csv = find_or_open_source File.join(source_dir, entry.filename)
         # csv.rewind
         csv.find { |row|
           row[entry.institutional_id_location_in_source] = entry.institutional_id
         }
       end
 
-      def open_source entry
-        source_file_path = File.join source_dir, entry.filename
+      def open_source source_file_path
         CSV.readlines source_file_path, headers: true
       end
 

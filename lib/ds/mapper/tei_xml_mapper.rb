@@ -5,13 +5,13 @@ module DS
     class TeiXmlMapper < BaseMapper
 
       def extract_record entry
-        xml = find_or_open_source entry
+        source_file_path = File.join source_dir, entry.filename
+        xml = find_or_open_source source_file_path
         xpath = "//TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = '#{entry.institutional_id}']"
         xml.at_xpath xpath
       end
 
-      def open_source entry
-        source_file_path = File.join source_dir, entry.filename
+      def open_source source_file_path
         xml_string = File.open(source_file_path).read
         xml = Nokogiri::XML xml_string
         xml.remove_namespaces!
