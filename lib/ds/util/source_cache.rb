@@ -22,21 +22,21 @@ module DS
 
       # Finds or opens a source file at the given path.
       #
-      # @param path [String] the path to the source file
+      # @param source_path [String] the path to the source file
       # @return [Object] the contents of the source file
-      def find_or_open_source path
-        return cache.get_item path if cache.include? path
-        source = open_source path
-        cache.add path, source
+      def find_or_open_source source_path
+        return cache.get_item source_path if cache.include? source_path
+        source = open_source source_path
+        cache.add source_path, source
         source
       end
 
       # Opens a source file at the given path.
       #
-      # @param path [String] the path to the source file
+      # @param source_path [String] the path to the source file
       # @return [Object] the contents of the source file
       # @raise [NotImplementedError] unless implemented by including class
-      def open_source path
+      def open_source source_path
         raise NotImplementedError
       end
 

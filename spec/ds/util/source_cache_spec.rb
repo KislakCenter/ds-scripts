@@ -15,7 +15,8 @@ RSpec.describe DS::Util::SourceCache do
 
   let(:subject) { SourceCacheTest.new }
 
-  it_behaves_like "an source cache implementation"
+  let(:source_path)  { "some/path"}
+  it_behaves_like "a source cache implementation"
 
   context "#open_source" do
     it "returns the expected source" do

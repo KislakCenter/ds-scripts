@@ -47,7 +47,8 @@ RSpec.describe DS::Mapper::DSCSVMapper do
   }
 
   let(:subject) { mapper}
-  it_behaves_like "an source cache implementation"
+  let(:source_path) { File.join source_dir, entry.filename }
+  it_behaves_like "a source cache implementation"
 
   context '#extract_record' do
 
@@ -65,8 +66,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
   end
 
   context 'DS::Mapper::BaseMapper implementation' do
-    let(:source_file_path) { File.join source_dir, entry.filename
-    }
+    let(:source_file_path) { File.join source_dir, entry.filename }
     it 'implements #extract_record(entry)' do
       expect { mapper.extract_record entry }.not_to raise_error
     end
