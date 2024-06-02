@@ -4,6 +4,10 @@
 require_relative 'manifest/constants'
 require_relative 'manifest/entry'
 require_relative 'manifest/manifest'
+require_relative 'manifest/base_id_validator'
+require_relative 'manifest/simple_xml_id_validator'
+require_relative 'manifest/ds_csv_id_validator'
+require_relative 'manifest/marc_id_validator'
 require_relative 'manifest/manifest_validator'
 
 module DS

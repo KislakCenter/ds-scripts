@@ -36,6 +36,7 @@ module DS
       def initialize manifest
         @manifest = manifest
         @errors   = []
+        @id_validators = {}
       end
 
       ##
@@ -43,9 +44,10 @@ module DS
       def valid?
         return false unless validate_columns
         return false unless validate_required_values
+        return false unless validate_ids_unique
         return false unless validate_data_types
         return false unless validate_files_exist
-        return false unless validate_ids
+        return false unless validate_records_present
         true
       end
 
@@ -100,79 +102,48 @@ module DS
         is_valid
       end
 
+      # Validates the uniqueness of all IDs in the manifest.
+      #
+      # This method collects the count of all IDs in the manifest and selects those with a count greater than 1.
+      # It then iterates over the multiples and adds an error for each duplicate ID found.
+      #
+      # Returns:
+      # - `true` if no duplicate IDs are found.
+      # - `false` if duplicate IDs are found.
+      def validate_ids_unique
+        # collect the count of all ids and select those with a count > 1
+        multiples = manifest.inject({}) { |h, id|
+          h[id] ||= 0; h[id] += 1; h
+        }.filter_map { |id, count|
+          [id, count] if count > 1
+        }
+
+        return true if multiples.blank?
+
+        multiples.each do |id, count|
+          add_error "Duplicate ID found in manifest: ID '#{id}' found in #{count} rows"
+        end
+        false
+      end
+
       ##
       # @return [boolean] true if all +holding_institution_institutional_id+
       #     values match source file
-      def validate_ids
+      def validate_records_present
         is_valid = true
         manifest.each_with_index do |entry, row_num|
-          file_path   = File.join manifest.source_dir, entry.filename
+          file_path = File.join manifest.source_dir, entry.filename
 
-          source_type = entry.source_type
+          inst_id      = entry.institutional_id
+          id_validator = get_id_validator entry.source_type
+          found        = id_validator.valid? file_path, inst_id, entry.institutional_id_location_in_source
 
-          normal_source = DS.normalize_key source_type
-          inst_id       = entry.institutional_id
-          found         = case normal_source
-                          when 'MARC XML', 'marcxml'
-                            id_in_marc_xml? file_path, inst_id, entry.institutional_id_location_in_source
-                          when 'teixml'
-                            id_in_xml? file_path, inst_id, entry.institutional_id_location_in_source
-                          when 'dsmetsxml'
-                            id_in_xml? file_path, inst_id, entry.institutional_id_location_in_source
-                          when 'dscsv'
-                            id_in_csv? file_path, inst_id, entry.institutional_id_location_in_source
-                          else
-                            raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
-                          end
-            is_valid = false unless found
+          unless found
+            is_valid = false
+            id_validator.errors.each { |error| add_error error }
+          end
         end
         is_valid
-      end
-
-      NAMESPACES = {
-        marc:  'http://www.loc.gov/MARC21/slim',
-        mets:  'http://www.loc.gov/METS/',
-        mods:  'http://www.loc.gov/mods/v3',
-        rts:   'http://cosimo.stanford.edu/sdr/metsrights/',
-        mix:   'http://www.loc.gov/mix/v10',
-        xlink: 'http://www.w3.org/1999/xlink',
-        xsi:   'http://www.w3.org/2001/XMLSchema-instance',
-        xs:    'http://www.w3.org/2001/XMLSchema',
-        xd:    'http://www.oxygenxml.com/ns/doc/xsl',
-        tei:   'http://www.tei-c.org/ns/1.0'
-      }
-
-
-      def id_in_marc_xml? file_path, inst_id, source_location
-        xml = File.open(file_path) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
-
-        xpath = "//record[#{source_location} = '#{inst_id}']"
-        records = xml.xpath(xpath)
-
-        return true if records.size == 1
-
-        handle_count_error records.size, inst_id, xpath
-        false
-      end
-
-      def id_in_xml? file_path, id, xpath
-        xml = File.open(file_path) { |f| Nokogiri::XML(f) }
-        xml.remove_namespaces!
-        id_in_source = xml.xpath(xpath)
-
-        return true if id_in_source.size == 1
-
-        handle_count_error id_in_source.size, id, xpath
-        false
-      end
-
-      def id_in_csv? file_path, id, location
-        csv = CSV.readlines file_path, headers: true
-        records = csv.filter_map { |row| row if row[location] == id}
-
-        handle_count_error records.size, id, location
-        return true if records.size == 1
       end
 
       # Handles the error when the count of records found for a given `inst_id` and `location_in_source` is
@@ -257,6 +228,23 @@ module DS
         errors.any?
       end
 
+      # Retrieves the appropriate ID validator for the given source type.
+      #
+      # @param source_type [Symbol] the type of the source
+      # @return [DS::Manifest::BaseIdValidator] the ID validator for the source type
+      # @raise [NotImplementedError] if the source type is not implemented
+      def get_id_validator source_type
+        case source_type
+        when DS::Constants::MARC_XML
+          @id_validators[source_type] ||= SimpleXmlIdValidator.new
+        when DS::Constants::DS_METS, DS::Constants::TEI_XML
+          @id_validators[source_type] ||= SimpleXmlIdValidator.new
+        when DS::Constants::DS_CSV
+          @id_validators[source_type] ||= DsCsvIdValidator.new
+        else
+          raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
+        end
+      end
 
       def source_types
         VALID_SOURCE_TYPES

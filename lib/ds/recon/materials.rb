@@ -59,7 +59,6 @@ module Recon
       process_xml files, remove_namespaces: true do |xml|
         xml.xpath('//record').each do |record|
           data += [DS::Extractor::MarcXml.collect_datafields(record, tags: 300, codes: 'b')]
-          # require 'pry'; binding.pry
         end
       end
       add_recon_values data

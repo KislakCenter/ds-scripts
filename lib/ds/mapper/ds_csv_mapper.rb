@@ -139,11 +139,9 @@ module DS
       end
 
       def extract_record entry
+        locator = DS::Extractor::CsvRecordLocator.new
         csv = find_or_open_source File.join(source_dir, entry.filename)
-        # csv.rewind
-        csv.find { |row|
-          row[entry.institutional_id_location_in_source] = entry.institutional_id
-        }
+        locator.locate_record(csv, entry.institutional_id, entry.institutional_id_location_in_source).first
       end
 
       def open_source source_file_path

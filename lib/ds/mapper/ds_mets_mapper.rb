@@ -10,10 +10,15 @@ module DS
       attr_reader :source_file
 
       def extract_record entry
+        locator = DS::Extractor::XmlRecordLocator.new
         source_file_path = File.join source_dir, entry.filename
         xml   = find_or_open_source source_file_path
         xpath = "/mets:mets[./mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type = 'local' and ./text() = '#{entry.institutional_id}']]"
-        xml.at_xpath xpath
+        record = locator.locate_record xml, entry.institutional_id, entry.institutional_id_location_in_source
+        # xml.at_xpath xpath
+        return record if record.present?
+
+        raise "Unable to locate record for #{entry.institutional_id} (errors: #{locator.errors.join(', ')})"
       end
 
       def open_source source_file_path

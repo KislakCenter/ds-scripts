@@ -169,6 +169,19 @@ source_file
       DS_METS
     ].freeze
 
+    XML_NAMESPACES = {
+      marc:  'http://www.loc.gov/MARC21/slim',
+      mets:  'http://www.loc.gov/METS/',
+      mods:  'http://www.loc.gov/mods/v3',
+      rts:   'http://cosimo.stanford.edu/sdr/metsrights/',
+      mix:   'http://www.loc.gov/mix/v10',
+      xlink: 'http://www.w3.org/1999/xlink',
+      xsi:   'http://www.w3.org/2001/XMLSchema-instance',
+      xs:    'http://www.w3.org/2001/XMLSchema',
+      xd:    'http://www.oxygenxml.com/ns/doc/xsl',
+      tei:   'http://www.tei-c.org/ns/1.0'
+    }
+
     # MARC_XML = :marc
     # METS_XML = :mets
     # TEI_XML  = :tei

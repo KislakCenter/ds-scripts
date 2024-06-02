@@ -3,8 +3,32 @@
 require 'spec_helper'
 require 'csv'
 
-RSpec.describe 'DS::Manifest::ManifestValidator' do
+RSpec.describe DS::Manifest::ManifestValidator do
 
+
+  context "METS XML" do
+    let(:mets_dir) { fixture_path 'ds_mets_xml' }
+    let(:manifest_path) { File.join mets_dir, 'manifest.csv' }
+    # let(:csv_data) {
+    #   CSV.parse File.open(manifest_path, 'r').read, headers: true
+    # }
+    let(:manifest) { DS::Manifest::Manifest.new manifest_path, mets_dir }
+    let(:validator) { DS::Manifest::ManifestValidator.new manifest }
+    let(:subject) { validator }
+
+    it_behaves_like 'a manifest validator'
+  end
+
+  context "TEI XML" do
+    let(:tei_xml_dir) { fixture_path 'tei_xml' }
+    let(:manifest_path) { File.join tei_xml_dir, 'manifest.csv' }
+    let(:manifest) { DS::Manifest::Manifest.new manifest_path, tei_xml_dir }
+    let(:validator) { DS::Manifest::ManifestValidator.new manifest }
+    let(:subject) { validator }
+
+    it_behaves_like 'a manifest validator'
+
+  end
   context "MARC XML" do
     let(:marc_xml_dir) { fixture_path 'marc_xml' }
     let(:manifest_csv) { 'manifest.csv' }
@@ -16,66 +40,9 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
 
     let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
-    context 'initialize' do
+    it_behaves_like 'a manifest validator'
 
-      it 'creates a new ManifestValidator' do
-        expect(DS::Manifest::ManifestValidator.new manifest).to be_a DS::Manifest::ManifestValidator
-      end
-    end
 
-    context 'valid?' do
-
-      context "a valid csv" do
-        it 'is valid' do
-          # RSpec::Mocks.space.proxy_for($stderr).reset
-          expect(validator.valid?)
-        end
-      end
-
-      context 'when run' do
-        let(:sub_validations) {
-          %i{
-          validate_columns validate_required_values
-          validate_data_types validate_files_exist validate_ids
-        }
-        }
-
-        it 'calls validate_columns' do
-          add_stubs validator, sub_validations, true
-
-          expect(validator).to receive(:validate_columns)
-          validator.valid?
-        end
-
-        it 'calls validate_required_values' do
-          add_stubs validator, sub_validations, true
-
-          expect(validator).to receive(:validate_required_values)
-          validator.valid?
-        end
-
-        it 'calls validate_data_types' do
-          add_stubs validator, sub_validations, true
-
-          expect(validator).to receive(:validate_data_types)
-          validator.valid?
-        end
-
-        it 'calls validate_files_exist' do
-          add_stubs validator, sub_validations, true
-
-          expect(validator).to receive(:validate_files_exist)
-          validator.valid?
-        end
-
-        it 'call validate_ids' do
-          add_stubs validator, sub_validations, true
-
-          expect(validator).to receive(:validate_ids)
-          validator.valid?
-        end
-      end
-    end
 
     context 'validate_columns' do
       context 'with valid columns' do
@@ -287,14 +254,14 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
     context 'validate_ids for MARC XML' do
       context 'for a CSV with valid IDs' do
         it 'is truthy' do
-          expect(validator.validate_ids).to be_truthy
+          expect(validator.validate_records_present).to be_truthy
         end
       end
 
       context 'for a CSV with bad IDs' do
         let(:csv_data) { <<~EOF
           filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
-          9951865503503681_marc.xml,marc-xml,XXXXXXXXX,"//controlfield[@tag='001']/text()"
+          9951865503503681_marc.xml,marc-xml,XXXXXXXXX,"//marc:record[./marc:controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]"
         EOF
         }
 
@@ -306,7 +273,7 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
         let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
         it 'is falsey' do
-          expect(validator.validate_ids).to be_falsey
+          expect(validator.validate_records_present).to be_falsey
         end
       end
 
@@ -314,7 +281,7 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
 
         let(:csv_data) { <<~EOF
           filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
-          multiple_marc_records.xml,marc-xml,9951865503503681,"//controlfield[@tag='001']/text()"
+          multiple_marc_records.xml,marc-xml,9951865503503681,"//record[//controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]"
         EOF
         }
 
@@ -326,13 +293,27 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
         let(:validator) { DS::Manifest::ManifestValidator.new manifest }
 
         it 'returns falsey' do
-          expect(validator.validate_ids).to be_falsey
+          expect(validator.validate_records_present).to be_falsey
         end
       end
 
-      context 'validate_ids_unique' do
+      context '#validate_ids_unique' do
         context 'ids are unique' do
-          it 'is truthy'
+          let(:csv_data) { <<~EOF
+            filename,source_data_type,holding_institution_institutional_id,institutional_id_location_in_source
+            multiple_marc_records.xml,marc-xml,9951865503503681,"//controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']"
+          EOF
+          }
+
+          let(:manifest_path) {
+            temp_csv csv_data
+          }
+
+          let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
+          let(:validator) { DS::Manifest::ManifestValidator.new manifest }
+          it 'is truthy' do
+            expect(validator.validate_ids_unique).to be_truthy
+          end
         end
 
         context 'ids are not unique' do
@@ -351,78 +332,6 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
 
     end
 
-    context '#id_in_marc_xml?' do
-      context 'for a valid location specification' do
-
-        let(:file_path) {
-          File.join marc_xml_dir, 'multiple_marc_records.xml'
-        }
-
-        let(:inst_id) { '9951865503503681' }
-        let(:location) { 'controlfield[@tag="001"]' }
-
-        it 'is truthy' do
-          expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_truthy
-        end
-      end
-
-      context 'for an ambiguous location specification' do
-
-        let(:file_path) {
-          File.join marc_xml_dir, 'multiple_marc_records.xml'
-        }
-
-        let(:inst_id) { '9951865503503681' }
-        let(:location) { '//controlfield[@tag="001"]' }
-        let(:expected_error) {
-          [/ERROR: Multiple records \(\d+\) found for id: .* \(location: .*\)/]
-        }
-
-        it 'is falsey' do
-          expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_falsey
-          expect(validator.errors).to match_array expected_error
-        end
-      end
-
-      context 'for a source with duplicate IDs' do
-
-        let(:file_path) {
-          File.join marc_xml_dir, 'multiple_marc_records_duplicate_ids.xml'
-        }
-
-        let(:inst_id) { '9951865503503681' }
-        let(:location) { 'controlfield[@tag="001"]' }
-
-        let(:expected_error) {
-          [/ERROR: Multiple records \(\d+\) found for id: .* \(location: .*\)/]
-        }
-
-        it 'is falsey' do
-          expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_falsey
-          expect(validator.errors).to match_array expected_error
-        end
-      end
-
-      context 'for a source that lacks the ID' do
-
-        let(:file_path) {
-          File.join marc_xml_dir, 'multiple_marc_records.xml'
-        }
-
-        let(:inst_id) { 'NOT_AN_ID' }
-        let(:location) { 'controlfield[@tag="001"]' }
-
-        let(:expected_error) {
-          [/ERROR: No records found for id: .* \(location: .*\)/]
-        }
-
-        it 'is falsey' do
-          expect(validator.id_in_marc_xml?(file_path, inst_id, location)).to be_falsey
-          expect(validator.errors).to match_array expected_error
-        end
-      end
-
-    end
   end
 
   context 'DS CSV' do
@@ -449,6 +358,56 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
       it 'is valid' do
         expect(validator.valid?).to be_truthy
       end
+
+      let(:sub_validations) {
+        %i{
+          validate_columns validate_required_values
+          validate_data_types validate_files_exist validate_ids
+          validate_ids_unique
+        }
+      }
+
+      it 'calls validate_columns' do
+        add_stubs validator, sub_validations, true
+
+        expect(validator).to receive(:validate_columns)
+        validator.valid?
+      end
+
+      it 'calls validate_required_values' do
+        add_stubs validator, sub_validations, true
+
+        expect(validator).to receive(:validate_required_values)
+        validator.valid?
+      end
+
+      it 'calls validate_data_types' do
+        add_stubs validator, sub_validations, true
+
+        expect(validator).to receive(:validate_data_types)
+        validator.valid?
+      end
+
+      it 'calls validate_files_exist' do
+        add_stubs validator, sub_validations, true
+
+        expect(validator).to receive(:validate_files_exist)
+        validator.valid?
+      end
+
+      it 'calls validate_ids' do
+        add_stubs validator, sub_validations, true
+
+        expect(validator).to receive(:validate_records_present)
+        validator.valid?
+      end
+
+      it "calls validate_ids_unique" do
+        add_stubs validator, sub_validations, true
+
+        expect(validator).to receive(:validate_ids_unique)
+        validator.valid?
+      end
     end
 
     context 'validate_data_types' do
@@ -466,7 +425,7 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
     context 'validate_ids' do
       context 'when all IDs are in the source CSV' do
         it 'is truthy' do
-          expect(validator.validate_ids).to be_truthy
+          expect(validator.validate_records_present).to be_truthy
         end
       end
 
@@ -480,45 +439,11 @@ RSpec.describe 'DS::Manifest::ManifestValidator' do
         }
 
         it 'is falsey' do
-          expect(validator.validate_ids).to be_falsey
+          expect(validator.validate_records_present).to be_falsey
           expect(validator.errors).to match expected_error
         end
       end
     end
 
-    context '#id_in_csv?' do
-      context "when the ID is in the CSV" do
-        let(:id) { 'BP128.57 .A2 1700z' }
-        let(:location) { 'Shelfmark' }
-
-        it 'returns true' do
-          expect(validator.id_in_csv?(source_file, id, location)).to be_truthy
-        end
-      end
-
-      context "when the ID is not in the CSV" do
-        let(:id) { 'xxxxx' }
-        let(:location) { 'Shelfmark' }
-
-        it 'returns false' do
-          expect(validator.id_in_csv?(source_file, id, location)).to be_falsey
-          expect(validator.errors).to include "ERROR: No records found for id: #{id} (location: #{location})"
-        end
-      end
-
-      context  "when more than one matching record is found in the source" do
-        let(:id) { 'BP128.57 .A2 1700z' }
-        let(:location) { 'Shelfmark' }
-        let(:source_file) { File.join source_dir, 'ucriverside-dscsv-duplicate_id.csv' }
-
-        let(:expected_error) {
-          [/ERROR: Multiple records \(2\) found for id: .* \(location: \w+\)/]
-        }
-        it "returns false" do
-          expect(validator.id_in_csv?(source_file, id, location)).to be_falsey
-          expect(validator.errors).to match expected_error
-        end
-      end
-    end
   end
 end

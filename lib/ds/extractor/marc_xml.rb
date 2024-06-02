@@ -402,7 +402,6 @@ module DS
             datafield.xpath("subfield").map { |subfield|
               subfield_text = DS::Util.clean_string subfield.text
               subfield_code = subfield.xpath('./@code').text
-              # require 'pry'; binding.pry if subfield_text =~ /accounting/i
               case subfield_code
               when 'e', 'w'
                 # don't include these formatted in subject

@@ -11,7 +11,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
 
   let(:csv_string) { <<~EOF
     holding_institution_wikidata_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,manifest_generated_at
-    Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno,Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,https://some.iiif.manifest/,2023-11-18T17:13:02-0500
+    Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = 'ID_PLACEHOLDER'],Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,https://some.iiif.manifest/,2023-11-18T17:13:02-0500
       EOF
   }
   let(:manifest_path) { temp_csv csv_string}
