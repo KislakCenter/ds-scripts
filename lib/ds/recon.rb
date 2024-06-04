@@ -94,7 +94,9 @@ module Recon
   # @param set_name [String] the name of the set
   # @return [Recon::ReconType, nil] the configuration for the set name, or nil if not found
   def self.find_recon_type set_name
-    RECON_TYPES.find { |config| config.set_name == set_name }
+    RECON_TYPES.find { |config|
+      config.set_name.to_sym == set_name.to_sym
+    }
   end
 
   def self.csv_files set_name
