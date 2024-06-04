@@ -13,7 +13,6 @@ class ReconCLI < DS::CLI
   RECON_SETS = Settings.recon.sets.map { |set| set[:name] }.freeze
   # We don't validate the aggregate subjects, named subjects set
 
-  class_option :tag, banner: 'TAG', desc: "Append tag to output csv name; e.g., 'penn' => 'names-penn.csv'[ignored by recon-update, validate]", aliases: '-a'
   class_option :directory, banner: 'PATH', desc: "Output directory [ignored by recon-update, validate]", aliases: '-o', default: '.'
   class_option :'source-type',
                banner: 'TYPE',
@@ -33,7 +32,6 @@ class ReconCLI < DS::CLI
   option :'recon-set', banner: 'SET', desc: "One of #{Recon::RECON_VALIDATION_SETS.join ', '}; REQUIRED", aliases: '-s', required: true
   def validate recon_csv = nil
     set_name = options[:'recon-set']
-    set_config = Recon.find_set_config set_name
     recon_csvs = Recon.csv_files set_name unless recon_csv
     errors = recon_csvs.flat_map { |csv| Recon.validate set_name, csv }.compact
 
@@ -43,7 +41,7 @@ class ReconCLI < DS::CLI
   end
 
 
-  desc "names FILES", "Extract names from one or more FILEs"
+  desc "names FILES", "Extract names from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
     Extract names from one or more FILEs.
 
@@ -55,33 +53,13 @@ class ReconCLI < DS::CLI
     # TODO: Add role column to names
     return false unless validate_args files
 
-    out_csv = out_file 'names', options
-    begin
-      invoke :recon_update
-
-      case options[:'source-type']
-      when 'marc'
-        data = Names.from_marc select_input files
-      when 'mets'
-        data = Names.from_mets select_input files
-      when 'tei'
-        data = Names.from_tei select_input files
-      else
-        raise NotImplementedError, "No method to extract names for source type: '#{options[:source_type]}'"
-      end
-
-      validate! data unless options[:'skip-validation']
-      write_csv out_csv, Names::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :names, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc "places FILES", "Extract place names from one or more FILEs"
+  desc "places FILES", "Extract place names from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
     Extract place names from one or more FILEs.
 
@@ -91,34 +69,15 @@ class ReconCLI < DS::CLI
   LONGDESC
   def places *files
     return false unless validate_args files
+    invoke :recon_update
 
-    out_csv = out_file 'places', options
-    begin
-      invoke :recon_update
-
-      case options[:'source-type']
-      when 'marc'
-        data = Places.from_marc select_input files
-      when 'mets'
-        data = Places.from_mets select_input files
-      when 'tei'
-        data = Places.from_tei select_input files
-      else
-        raise NotImplementedError, "No method to extract places for source type: '#{options[:source_type]}'"
-      end
-
-      validate! data unless options[:skip_validation]
-      write_csv out_csv, Places::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :places, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc "subjects FILES", "Extract LC subjects (650, 651 or 600, 610)"
+  desc "subjects FILES", "Extract subjects from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
   Extract LC subjects from one or more FILEs.
 
@@ -131,42 +90,19 @@ class ReconCLI < DS::CLI
   NOTE: Not implemented for mets or tei source types.
 
 LONGDESC
-  option :'named-subjects', desc: 'LCSH named subjects 600, 610', aliases: '-n', type: :boolean, default: false
+  option :'named-subjects', desc: 'Extract named subjects', aliases: '-n', type: :boolean, default: false
   def subjects *files
+
     return false unless validate_args files
+    invoke :recon_update
 
-    base    = options[:'named-subjects'] ? 'named-subjects' : 'subjects'
-    klass   = options[:'named-subjects'] ? NamedSubjects : Subjects
-    tags    = options[:'named-subjects'] ? [600, 610, 611, 630, 647, 648] : [650, 651]
-    out_csv = out_file base, options
-    begin
-      invoke :recon_update
-
-      data = []
-
-      case options[:'source-type']
-      when 'marc'
-        data = klass.from_marc select_input(files), tags: tags
-      when 'mets'
-        data = klass.from_mets(select_input(files)) unless options[:'source-type'] == 'named-subjects'
-      when 'tei'
-        data = klass.from_tei select_input files
-      else
-        raise NotImplementedError, "No method to extract subjects for source type: '#{options[:source_type]}'"
-      end
-
-      validate! data unless options[:skip_validation]
-      write_csv out_csv, Subjects::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :subjects, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc "genres FILES", "Extract genre terms (655)"
+  desc "genres FILES", "Extract genre terms from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
   Extract genre terms from one or more FILEs.
 
@@ -179,34 +115,15 @@ LONGDESC
   LONGDESC
   def genres *files
     return false unless validate_args files
+    invoke :recon_update
 
-    out_csv = out_file 'genres', options
-
-    begin
-      invoke :recon_update
-      data = []
-      case options[:'source-type']
-      when 'marc'
-        data = Genres.from_marc select_input files
-      when 'tei'
-        data = Genres.from_tei select_input files
-      when 'mets'
-      else
-        raise NotImplementedError, "No method to extract genres for source type: '#{options[:source_type]}'"
-      end
-
-      validate! data unless options[:skip_validation]
-      write_csv out_csv, Genres::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :genres, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc "materials FILES", "Extract materials"
+  desc "materials FILES", "Extract materials terms from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
   Extract materials terms from one or more FILEs.
 
@@ -216,34 +133,15 @@ LONGDESC
   LONGDESC
   def materials *files
     return false unless validate_args files
+    invoke :recon_update
 
-    out_csv = out_file 'materials', options
-    begin
-      invoke :recon_update
-
-      case options[:'source-type']
-      when 'marc'
-        data = Materials.from_marc select_input files
-      when 'mets'
-        data = Materials.from_mets select_input files
-      when 'tei'
-        data = Materials.from_tei select_input files
-      else
-        raise NotImplementedError, "No method to extract materials for source type: '#{options[:source_type]}'"
-      end
-
-      validate! data unless options[:skip_validation]
-      write_csv out_csv, Materials::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :materials, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc "languages FILES", "Extract languages"
+  desc "languages FILES", "Extract languages from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
   Extract languages from one or more files.
 
@@ -253,34 +151,15 @@ LONGDESC
   LONGDESC
   def languages *files
     return false unless validate_args files
+    invoke :recon_update
 
-    out_csv = out_file 'languages', options
-    begin
-      invoke :recon_update
-
-      case options[:'source-type']
-      when 'marc'
-        data = Languages.from_marc select_input(files), separator: ';'
-      when 'tei'
-        data = Languages.from_tei select_input(files), separator: ';'
-      when 'mets'
-        data = Languages.from_mets select_input files
-      else
-        raise NotImplementedError, "No method to extract languages for source type: '#{options[:'source-type']}"
-      end
-
-      validate! data unless options[:skip_validation]
-      write_csv out_csv, Languages::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :languages, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc "titles FILES", "Extract titles"
+  desc "titles FILES", "Extract titles from one or more FILEs and write to CSV"
   long_desc <<-LONGDESC
   Extract titles from one or more files.
 
@@ -290,47 +169,24 @@ LONGDESC
   LONGDESC
   def titles *files
     return false unless validate_args files
+    invoke :recon_update
 
-    out_csv = out_file 'titles', options
-    begin
-      invoke :recon_update
-
-      case options[:'source-type']
-      when 'marc'
-        data = Titles.from_marc select_input files
-      when 'tei'
-        data = Titles.from_tei select_input files
-      when 'mets'
-        data = Titles.from_mets select_input files
-      else
-        raise NotImplementedError, "No method to extract titles for source type: '#{options[:'source-type']}"
-      end
-
-      validate! data unless options[:skip_validation]
-      write_csv out_csv, Titles::CSV_HEADERS, data
-
-    rescue NotImplementedError, StandardError
-      STDERR.puts $!.backtrace if options[:verbose]
-      abort "#{$!}"
-    end
+    out_csv = write_csv_for :titles, files
+    puts "Wrote: #{out_csv}"
 
     true
   end
 
-  desc 'build', 'Build the data'
-  def build *files
+  desc 'write-all FILES', 'Extract recons and write to CSV for all recon types'
+  def write_all *files
     return false unless validate_args files
     invoke :recon_update
 
-    recon_manager = Recon::ReconManager.new(
-      source_type: options[:'source-type'],
-      out_dir: options[:directory],
-      files: files
-    )
-
-    outfiles = recon_manager.write_all_csvs
-
-    outfiles.each { |outfile| puts "Wrote #{outfile}" }
+    recon_manager = build_recon_manager files
+    Recon::RECON_TYPES.each do |recon_type|
+      out_csv = recon_manager.write_csv recon_type
+      puts "Wrote: #{out_csv}"
+    end
     true
   end
 
@@ -373,6 +229,34 @@ LONGDESC
 
   protected
 
+  # Extract recon values from files for given recon type, and write to CSV.
+  #
+  # @param recon_type_name [String] the name of the recon type
+  # @param files [Array<String>] the list of files to process
+  # @return [String] the path of the output CSV file
+  def write_csv_for recon_type_name, files
+    build_recon_manager = build_recon_manager files
+    recon_type = Recon.find_recon_type recon_type_name
+    out_file = build_recon_manager.write_csv recon_type
+    out_file
+  end
+
+  # Builds a ReconManager object with the given files.
+  #
+  # @param files [Array<String>] the list of files to process
+  # @return [Recon::ReconManager] the ReconManager object
+  def build_recon_manager files
+    Recon::ReconManager.new(
+      source_type: options[:'source-type'],
+      out_dir: options[:directory],
+      files: files
+    )
+  end
+
+  # Ensures that the list of files is not empty and that they exist.
+  #
+  # @param files [Array<String>] the list of files to validate
+  # @return [Boolean] true if the arguments are valid, false otherwise
   def validate_args files
     return true if read_from_stdin? files
     cannot_find = files.reject { |f| File.exist?(f) }
@@ -380,25 +264,6 @@ LONGDESC
 
     puts "Can't find input file(s): #{cannot_find.join '; ' }"
     false
-  end
-
-  def out_file base, options
-    csv_name = options[:tag] ? "#{base}-#{options[:tag]}.csv" : "#{base}.csv"
-    File.join options[:directory], csv_name
-  end
-
-  def write_csv out_csv, header, data
-    if data.nil? || data.empty?
-      puts "WARNING: No data for recon CSV; not writing: #{out_csv}"
-      return
-    end
-    CSV.open out_csv, 'wb' do |csv|
-      csv << header
-      data.each do |row|
-        csv << row
-      end
-    end
-    puts "Wrote: #{out_csv}"
   end
 end
 
