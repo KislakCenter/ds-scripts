@@ -22,7 +22,7 @@ module Recon
 
     # Write all recon CSV files.
     #
-    # @return [Array<String>] the list of output filess
+    # @return [Array<String>] the list of output files
     def write_all_csvs
       outfiles = []
       Recon::RECON_TYPES.each do |recon_type|
