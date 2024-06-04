@@ -61,14 +61,6 @@ module Recon
 
     DELIMITER_MAP = { '|' => ';' }
 
-    def self.add_recon_values rows
-      rows.each do |row|
-        term, _ = row
-        row << _lookup_single(term, from_column: 'authorized_label')
-        row << _lookup_single(term, from_column: 'structured_value')
-      end
-    end
-
 
     def self.lookup terms, from_column: 'structured_value'
       terms.map { |term|

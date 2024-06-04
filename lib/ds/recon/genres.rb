@@ -47,20 +47,6 @@ module Recon
       genres: %i{ structured_value authorized_label }
     }
 
-    # Adds recon the 'authorized_label' and 'structured_value' columns
-    # to each row in the given array.
-    # @param [Array] rows an array of arrays :genre_as_recorded
-    #       :vocabulary, :source_authority_uri
-    # @return [Array] the updated rows
-    def self.add_recon_values rows
-      rows.each do |row|
-        term, vocab, _ = row
-        row << _lookup_single(term, vocab, from_column: 'authorized_label')
-        row << _lookup_single(term, vocab, from_column: 'structured_value')
-      end
-      rows
-    end
-
     def self.lookup genres, vocabs, from_column: 'structured_value'
       genres.zip(vocabs).map { |term, vocab|
         _lookup_single term, vocab, from_column: from_column

@@ -36,16 +36,6 @@ module Recon
 
     BALANCED_COLUMNS = { materials: %w{ structured_value authorized_label } }
 
-    def self.add_recon_values rows
-      rows.each do |row|
-        material_as_recorded = row.first
-        material_labels      = Recon.lookup SET_NAME, value: material_as_recorded, column: 'authorized_label'
-        material_uris        = Recon.lookup SET_NAME, value: material_as_recorded, column: 'structured_value'
-        row << material_labels.to_s.gsub('|', ';')
-        row << material_uris.to_s.gsub('|', ';')
-      end
-    end
-
     def self.lookup materials, column:
       materials.map { |material|
         material_uris = Recon.lookup SET_NAME, value: material, column: column

@@ -35,15 +35,6 @@ module Recon
 
     BALANCED_COLUMNS = { languages: %w{ structured_value authorized_label } }
 
-
-    def self.add_recon_values rows
-      rows.each do |row|
-        lang = row.first
-        row << Recon.lookup('languages', value: lang, column: 'authorized_label')
-        row << Recon.lookup('languages', value: lang, column: 'structured_value')
-      end
-    end
-
     def self.lookup languages, from_column: 'structured_value', separator: '|'
       languages.split(separator).map { |lang|
         # make sure each group of languages is separated by ';'

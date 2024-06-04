@@ -40,15 +40,6 @@ module Recon
 
     BALANCED_COLUMNS = { names: %i{ structured_value authorized_label instance_of } }
 
-    def self.add_recon_values rows
-      rows.each do |row|
-        name = row.first
-        row << Recon.lookup('names', value: name, column: 'instance_of')
-        row << Recon.lookup('names', value: name, column: 'authorized_label')
-        row << Recon.lookup('names', value: name, column: 'structured_value')
-      end
-    end
-
     def self.lookup names, column:
       names.map {|name|
         Recon.lookup(SET_NAME, value: name, column: column)
