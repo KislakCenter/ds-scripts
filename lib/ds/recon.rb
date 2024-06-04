@@ -102,6 +102,7 @@ module Recon
     repo_paths = [set_config['repo_path']].flatten # ensure repo_path is an array
     repo_paths.map { |path| File.join Recon.git_repo, path }
   end
+
   def self.load_set set_name
     set_config = find_set_config set_name
     raise "No configured set found for: '#{set_name}'" unless set_config
@@ -142,10 +143,8 @@ module Recon
     return unless RECON_VALIDATION_SETS.include? set_name
     return "#{ERROR_CSV_FILE_NOT_FOUND}: '#{csv_file}'" unless File.exist? csv_file
 
-    recon_type       = Recon.find_recon_type set_name
-
-
-    row_num = 0
+    recon_type = Recon.find_recon_type set_name
+    row_num    = 0
     CSV.readlines(csv_file, headers: true).map(&:to_h).filter_map { |row|
       row.symbolize_keys!
       error = validate_row recon_type, row, row_num+=1

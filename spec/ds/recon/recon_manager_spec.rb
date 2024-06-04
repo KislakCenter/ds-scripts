@@ -11,14 +11,8 @@ RSpec.describe Recon::ReconManager do
     "#{fixture_path 'marc_xml'}/9951865503503681_marc.xml"
   }
 
-  let(:recon_builder ) {
-    Recon::ReconBuilder.new(
-      out_dir: out_dir, source_type: source_type, files: files
-    )
-  }
-
   let(:subject) {
-    described_class.new recon_builder: recon_builder, out_dir: out_dir
+    described_class.new source_type: source_type, out_dir: out_dir, files: files
   }
 
   before(:each) do
@@ -33,7 +27,7 @@ RSpec.describe Recon::ReconManager do
     it 'is a ReconManager' do
       expect(
         Recon::ReconManager.new(
-          recon_builder: recon_builder, out_dir: out_dir
+          source_type: source_type, out_dir: out_dir, files: files
         )
       ).to be_a Recon::ReconManager
     end
@@ -42,7 +36,7 @@ RSpec.describe Recon::ReconManager do
   context '#write_csv' do
     let(:outfile) { "#{out_dir}/places.csv" }
     before(:each) do
-      subject.write_csv Recon::Places, outfile
+      subject.write_csv Recon::Places
     end
 
     it 'writes a CSV file' do
