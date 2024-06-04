@@ -30,14 +30,18 @@ class ReconCLI < DS::CLI
     ds-recon -s names path/to/names.csv
   LONGDESC
   option :'recon-set', banner: 'SET', desc: "One of #{Recon::RECON_VALIDATION_SETS.join ', '}; REQUIRED", aliases: '-s', required: true
-  def validate recon_csv = nil
+  def validate *files
     set_name = options[:'recon-set']
-    recon_csvs = Recon.csv_files set_name unless recon_csv
+    recon_csvs = files.present? ? files : Recon.csv_files(set_name.to_sym)
     errors = recon_csvs.flat_map { |csv| Recon.validate set_name, csv }.compact
 
-    unless errors.empty?
+    if errors.empty?
+      puts "SUCCESS no errors found for: #{recon_csvs.join ', '}"
+    else
       puts "ERRORS validating #{recon_csvs.join ', '}:#{$/}#{$/}#{errors.join $/}" unless errors.empty?
     end
+
+    true
   end
 
 
