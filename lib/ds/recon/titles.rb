@@ -47,34 +47,5 @@ module Recon
         Recon.lookup SET_NAME, value: name, column: column
       }
     end
-
-    def self.from_marc files
-      data = []
-      process_xml files, remove_namespaces: true do |xml|
-        xml.xpath('//record').each do |record|
-          data << DS::Extractor::MarcXml.extract_recon_titles(record)
-        end
-      end
-      add_recon_values data
-      data.sort { |a,b| a.first <=> b.first }.uniq
-    end
-
-    def self.from_mets files
-      data = []
-      process_xml files do |xml|
-        data += DS::Extractor::DsMetsXml.extract_recon_titles xml
-      end
-      add_recon_values data
-      data.sort { |a,b| a.first <=> b.first }.uniq
-    end
-
-    def self.from_tei files
-      data = []
-      process_xml files,remove_namespaces: true do |xml|
-        data += DS::Extractor::TeiXml.extract_recon_titles xml
-      end
-      add_recon_values data
-      data.sort { |a, b| a.first <=> b.first }.uniq
-    end
   end
 end

@@ -99,45 +99,5 @@ module Recon
         data << [code,code]
       end
     end
-
-    def self.from_marc files, separator: '|'
-      data = []
-      process_xml files,remove_namespaces: true do |xml|
-        xml.xpath('//record').each do |record|
-          as_recorded = DS::Util.clean_string record.xpath("datafield[@tag=546]/subfield[@code='a']").text, terminator: ''
-          codes       = DS::Extractor::MarcXml.extract_langs record, separator: separator
-          as_recorded = codes.gsub('|', ';') if as_recorded.to_s =~ %r{^[|;[:space:]]*$}
-          data << [as_recorded, codes]
-        end
-      end
-      expand_codes data, separator: separator
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
-    def self.from_mets files, separator: '|'
-      data = []
-      process_xml files do |xml|
-        DS::Extractor::DsMetsXml.extract_languages_as_recorded(xml, separator: separator).split(separator).each do |lang|
-          data << [DS::Util.terminate(lang, terminator: ''), nil]
-        end
-      end
-      # the Mets files don't have codes; so no need for expand_codes
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
-    def self.from_tei files, separator: '|'
-      data = []
-      # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/msContents/textLang/text()'
-      process_xml files,remove_namespaces: true do |xml|
-        as_recorded = DS::Extractor::TeiXml.extract_languages_as_recorded xml
-        codes       = DS::Extractor::TeiXml.extract_language_codes xml, separator: separator
-        data << [as_recorded,codes]
-      end
-      expand_codes data
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
   end
 end

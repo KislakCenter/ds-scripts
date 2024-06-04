@@ -69,39 +69,11 @@ module Recon
       end
     end
 
-    def self.from_marc files, tags: []
-      data = []
-      process_xml files,remove_namespaces: true do |xml|
-        xml.xpath('//record').each do |record|
-          data += DS::Extractor::MarcXml.extract_recon_subjects record, tags: tags
-        end
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
 
     def self.lookup terms, from_column: 'structured_value'
       terms.map { |term|
         _lookup_single term, from_column: from_column
       }
-    end
-
-    def self.from_mets files
-      data = []
-      process_xml files do |xml|
-        data += DS::Extractor::DsMetsXml.extract_recon_subjects(xml)
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
-    def self.from_tei files
-      data = []
-      process_xml files, remove_namespaces: true do |xml|
-        data += DS::Extractor::TeiXml.extract_recon_subjects xml
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
     end
 
     def self._lookup_single term, from_column:

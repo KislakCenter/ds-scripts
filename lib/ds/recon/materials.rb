@@ -53,35 +53,5 @@ module Recon
       }
     end
 
-    def self.from_marc files
-      data = []
-
-      process_xml files, remove_namespaces: true do |xml|
-        xml.xpath('//record').each do |record|
-          data += [DS::Extractor::MarcXml.collect_datafields(record, tags: 300, codes: 'b')]
-        end
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
-    def self.from_mets files
-      data = []
-      process_xml files do |xml|
-        data << [DS::Extractor::DsMetsXml.extract_material_as_recorded(xml)]
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
-    def self.from_tei files
-      data = []
-      process_xml files, remove_namespaces: true do |xml|
-        data += DS::Extractor::TeiXml.extract_material_as_recorded(xml).split('|')
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
   end
 end

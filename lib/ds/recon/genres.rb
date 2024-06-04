@@ -67,29 +67,6 @@ module Recon
       }
     end
 
-    def self.from_marc files
-      data = []
-      process_xml files, remove_namespaces: true do |xml|
-        xml.xpath('//record').each do |record|
-          data += DS::Extractor::MarcXml.extract_recon_genres record, sub_sep: '--'
-        end
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
-
-    def self.from_mets files
-      raise NotImplementedError, "No method to process genres for DS METS"
-    end
-
-    def self.from_tei files
-      data = []
-      process_xml files, remove_namespaces: true do |xml|
-        data += DS::Extractor::TeiXml.extract_recon_genres xml
-      end
-      add_recon_values data
-      Recon.sort_and_dedupe data
-    end
 
     protected
 
