@@ -59,8 +59,8 @@ module DS
         standard_title                     = Recon::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join '|'
         genre_as_recorded                  = DS::Extractor::MarcXml.extract_genres_as_recorded(record).join('|')
         genre_vocabulary                   = DS::Extractor::MarcXml.extract_genre_vocabulary(record).join '|'
-        genre                              = Recon::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value').join '|'
-        genre_label                        = Recon::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label').join '|'
+        genre                              = Recon::Types::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value').join '|'
+        genre_label                        = Recon::Types::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label').join '|'
         subject_as_recorded                = DS::Extractor::MarcXml.extract_all_subjects_as_recorded(record).join '|'
         subject                            = Recon::AllSubjects.lookup(subject_as_recorded.split('|'), from_column: 'structured_value').join '|'
         subject_label                      = Recon::AllSubjects.lookup(subject_as_recorded.split('|'), from_column: 'authorized_label').join '|'

@@ -114,7 +114,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':genres', unless: skip?(skips, :genres) do
       let(:set_name) { :genres }
-      let(:recon_class) { Recon::Genres }
+      let(:recon_class) { Recon::Types::Genres }
       let(:recon_row) {
         {
           :authorized_label=>"Qur'ans",

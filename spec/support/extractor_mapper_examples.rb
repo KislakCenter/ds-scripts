@@ -78,7 +78,7 @@ RSpec.shared_examples 'an extractor mapper' do |except|
 
   let(:recon_classes) {
     [
-      Recon::AllSubjects, Recon::Genres, Recon::Languages,
+      Recon::AllSubjects, Recon::Types::Genres, Recon::Languages,
       Recon::Materials, Recon::Names, Recon::Places,
       Recon::Titles,
     ]

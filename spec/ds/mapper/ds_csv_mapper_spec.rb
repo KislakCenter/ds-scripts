@@ -14,7 +14,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
 
   let(:recon_classes) {
     [
-      Recon::AllSubjects, Recon::Genres, Recon::Languages,
+      Recon::AllSubjects, Recon::Types::Genres, Recon::Languages,
       Recon::Materials, Recon::Names, Recon::Places,
       Recon::Titles,
     ]

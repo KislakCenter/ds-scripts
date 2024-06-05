@@ -5,7 +5,7 @@ require_relative 'recon/marc_xml_enumerator'
 require_relative 'recon/tei_xml_enumerator'
 require_relative 'recon/ds_mets_xml_enumerator'
 require_relative 'recon/url_lookup'
-require_relative 'recon/genres'
+require_relative 'recon/types/genres'
 require_relative 'recon/languages'
 require_relative 'recon/materials'
 require_relative 'recon/names'
@@ -42,7 +42,7 @@ module Recon
   }
   # ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
   RECON_TYPES = [
-    Recon::Genres,
+    Recon::Types::Genres,
     Recon::Languages,
     Recon::Materials,
     Recon::NamedSubjects,
