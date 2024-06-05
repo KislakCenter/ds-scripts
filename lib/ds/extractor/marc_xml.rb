@@ -941,7 +941,7 @@ module DS
         # @param [Nokogiri::XML::Node] record the MARC XML record to extract material from
         # @return [String] the extracted material as recorded
         def extract_material_as_recorded record
-          extract_materials(record).map(&:as_recorded).first
+          extract_materials(record).map(&:as_recorded).first.to_s
         end
 
         # Extracts materials from the given MARC XML record.
