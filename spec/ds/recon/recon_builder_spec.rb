@@ -25,7 +25,7 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
-    let(:extractor) { DS::Extractor::MarcXml }
+    let(:extractor) { DS::Extractor::MarcXmlExtractor }
 
     it_behaves_like 'a ReconBuilder'
 
@@ -104,7 +104,7 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
-    let(:extractor) { DS::Extractor::DsCsv }
+    let(:extractor) { DS::Extractor::DsCsvExtractor }
 
     it_behaves_like 'a ReconBuilder'
 
@@ -409,7 +409,7 @@ RSpec.describe Recon::ReconBuilder do
     let(:recon_builder) {
       Recon::ReconBuilder.new source_type: source_type, files: files, out_dir: out_dir
     }
-    let(:extractor) { DS::Extractor::DsMetsXml }
+    let(:extractor) { DS::Extractor::DsMetsXmlExtractor }
 
     skips = %i{ genres named-subjects }
     it_behaves_like 'a ReconBuilder', skips

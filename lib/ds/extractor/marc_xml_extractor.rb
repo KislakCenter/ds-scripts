@@ -2,7 +2,7 @@ require 'csv'
 
 module DS
   module Extractor
-    module MarcXml
+    module MarcXmlExtractor
       module ClassMethods
 
         ############################################################
@@ -831,9 +831,9 @@ module DS
         # @return [Array<DS::Extractor::Title>] an array of extracted titles
         def extract_titles record
           tar      = title_as_recorded record
-          tar_agr  = DS::Util.clean_string DS::Extractor::MarcXml.title_as_recorded_agr(record, 245), terminator: ''
-          utar     = DS::Util.clean_string DS::Extractor::MarcXml.uniform_titles_as_recorded(record), terminator: ''
-          utar_agr = DS::Util.clean_string DS::Extractor::MarcXml.uniform_title_as_recorded_agr(record), terminator: ''
+          tar_agr  = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(record, 245), terminator: ''
+          utar     = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.uniform_titles_as_recorded(record), terminator: ''
+          utar_agr = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.uniform_title_as_recorded_agr(record), terminator: ''
 
           [DS::Extractor::Title.new(
             as_recorded:              tar,
@@ -949,7 +949,7 @@ module DS
         # @param [Nokogiri::XML::Node] record the MARC XML record to extract materials from
         # @return [Array<DS::Extractor::Material>] an array of extracted materials
         def extract_materials record
-          DS::Extractor::MarcXml.collect_datafields(
+          DS::Extractor::MarcXmlExtractor.collect_datafields(
             record, tags: 300, codes: 'b'
           ).map { |material|
             DS::Extractor::Material.new as_recorded: material

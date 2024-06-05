@@ -23,7 +23,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
     )
   }
 
-  let(:extractor) {  DS::Extractor::DsMetsXml }
+  let(:extractor) {  DS::Extractor::DsMetsXmlExtractor }
 
   let(:subject) { mapper}
   let(:source_path) { File.join xml_dir, entry.filename }

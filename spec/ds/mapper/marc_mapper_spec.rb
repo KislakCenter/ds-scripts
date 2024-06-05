@@ -38,7 +38,7 @@ RSpec.describe DS::Mapper::MarcMapper do
     )
   }
 
-  let(:extractor) { DS::Extractor::MarcXml }
+  let(:extractor) { DS::Extractor::MarcXmlExtractor }
 
   let(:subject) { mapper}
   let(:source_path) { xml_file }

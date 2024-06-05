@@ -2,7 +2,7 @@ require 'csv'
 
 module DS
   module Extractor
-    module DsCsv
+    module DsCsvExtractor
       COLUMN_MAPPINGS = {
         dsid:                               "DS ID",
         holding_institution_as_recorded:    "Holding Institution",

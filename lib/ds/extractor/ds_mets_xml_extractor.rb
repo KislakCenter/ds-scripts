@@ -6,7 +6,7 @@ require 'csv'
 # Module with class methods for working with DS10 METS XML.
 module DS
   module Extractor
-    module DsMetsXml
+    module DsMetsXmlExtractor
       module ClassMethods
 
         NS = {
@@ -263,7 +263,7 @@ module DS
         # @param [Object] record the record to extract authors from
         # @return [Array<DS::Extractor::Name>] an array of extracted authors
         def extract_authors record
-          DS::Extractor::DsMetsXml.extract_name record, *%w{ author [author] }
+          DS::Extractor::DsMetsXmlExtractor.extract_name record, *%w{ author [author] }
         end
 
         # Extracts authors as recorded from the given record.
@@ -286,7 +286,7 @@ module DS
         # @param [Object] record the record to extract artists from
         # @return [Array<DS::Extractor::Name>] an array of extracted artists
         def extract_artists record
-          DS::Extractor::DsMetsXml.extract_name record, *%w{ artist [artist] illuminator }
+          DS::Extractor::DsMetsXmlExtractor.extract_name record, *%w{ artist [artist] illuminator }
         end
 
         # Extracts scribes as recorded from the given record.
@@ -302,7 +302,7 @@ module DS
         # @param record [Object] the record to extract scribes from
         # @return [Array<String>] the extracted scribes
         def extract_scribes record
-          DS::Extractor::DsMetsXml.extract_name record, *%w{ scribe [scribe] }
+          DS::Extractor::DsMetsXmlExtractor.extract_name record, *%w{ scribe [scribe] }
         end
 
         # Extract other names as recorded from the given record.
@@ -318,7 +318,7 @@ module DS
         # @param record [Object] the record to extract other names from
         # @return [Array<String>] the extracted other names
         def extract_other_names record
-          DS::Extractor::DsMetsXml.extract_name record, 'other'
+          DS::Extractor::DsMetsXmlExtractor.extract_name record, 'other'
         end
 
         ##
@@ -439,7 +439,7 @@ module DS
         # be treated as rows by Recon::Splits
         def extract_recon_splits xml
           data = []
-          data += DS::Extractor::DsMetsXml.extract_former_owners_as_recorded xml, lookup_split: false
+          data += DS::Extractor::DsMetsXmlExtractor.extract_former_owners_as_recorded xml, lookup_split: false
           data.flatten.select { |d| d.to_s.size >= 400 }.map { |d| [d.strip] }
         end
 

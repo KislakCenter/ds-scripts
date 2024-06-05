@@ -47,9 +47,9 @@ module Recon
     # - DS::Extractor::TeiXml
     # - DS::Extractor::DsMetsXml
     SOURCE_TYPE_EXTRACTORS = {
-      DS::Constants::MARC_XML => DS::Extractor::MarcXml,
-      DS::Constants::DS_CSV   => DS::Extractor::DsCsv,
-      DS::Constants::DS_METS  => DS::Extractor::DsMetsXml,
+      DS::Constants::MARC_XML => DS::Extractor::MarcXmlExtractor,
+      DS::Constants::DS_CSV   => DS::Extractor::DsCsvExtractor,
+      DS::Constants::DS_METS  => DS::Extractor::DsMetsXmlExtractor,
       DS::Constants::TEI_XML  => DS::Extractor::TeiXml
     }
 
@@ -69,7 +69,7 @@ module Recon
       @enumerator = klass.new files
     end
 
-    # @return [DS::Extractor::MarcXml,DS::Extractor::DsCsv,DS::Extractor::DsMetsXml,DS::Extractor::TeiXml] an extractor type; e.g., DS::Extractor::MarcXml
+    # @return [DS::Extractor::MarcXml,DS::Extractor::DsCsvExtractor,DS::Extractor::DsMetsXml,DS::Extractor::TeiXml] an extractor type; e.g., DS::Extractor::MarcXml
     def extractor
       @extractor ||= SOURCE_TYPE_EXTRACTORS[source_type]
     end

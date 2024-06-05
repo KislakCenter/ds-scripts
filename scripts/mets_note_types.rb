@@ -48,20 +48,20 @@ CSV do |csv|
     source_file = in_xml.chomp
     xml         = File.open(source_file) { |f| Nokogiri::XML(f) }
 
-    ms         = DS::Extractor::DsMetsXml.find_ms xml
-    shelfmark  = DS::Extractor::DsMetsXml.extract_shelfmark xml
+    ms         = DS::Extractor::DsMetsXmlExtractor.find_ms xml
+    shelfmark  = DS::Extractor::DsMetsXmlExtractor.extract_shelfmark xml
     ms_note_types = count_notes [ms].flatten
     ms_pds = ms.xpath 'descendant::mods:physicalDescription'
     ms_phys_desc = count_notes ms_pds, phys_desc: true
-    parts = DS::Extractor::DsMetsXml.find_parts xml
+    parts = DS::Extractor::DsMetsXmlExtractor.find_parts xml
     number_of_parts = parts.size
     part_note_types = count_notes parts
     part_pds = parts.flat_map { |p| p.xpath('descendant::mods:physicalDescription') }
     part_phys_desc = count_notes part_pds, phys_desc: true
-    texts = DS::Extractor::DsMetsXml.find_texts xml
+    texts = DS::Extractor::DsMetsXmlExtractor.find_texts xml
     number_of_texts = texts.size
     text_note_types = count_notes texts
-    pages = DS::Extractor::DsMetsXml.find_pages xml
+    pages = DS::Extractor::DsMetsXmlExtractor.find_pages xml
     number_of_pages = pages.size
     page_notes = count_notes pages
     csv << [
