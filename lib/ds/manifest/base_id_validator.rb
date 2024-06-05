@@ -16,10 +16,10 @@ module DS
     # Concrete subclasses of {DS::Manifest::BaseIdValidator} must implement
     #
     #   - +#locate_record+, required this class
-    #   - +#open_source+, required by DS::Util::SourceCache
+    #   - +#open_source+, required by DS::Source::SourceCache
     #
     class BaseIdValidator
-      include DS::Util::SourceCache
+      include DS::Source::SourceCache
 
       attr_reader :errors
 

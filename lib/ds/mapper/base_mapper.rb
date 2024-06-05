@@ -3,7 +3,7 @@
 module DS
   module Mapper
     class BaseMapper
-      include DS::Util::SourceCache
+      include DS::Source::SourceCache
 
       attr_reader :timestamp
       attr_reader :source_dir

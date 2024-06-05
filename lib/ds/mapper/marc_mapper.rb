@@ -9,7 +9,9 @@ module DS
       # @param [DS::Manifest::Entry] entry +entry+ representing one
       #     row in a manifest
       def extract_record entry
-        record_locator = DS::Extractor::XmlRecordLocator.new
+        record_locator = DS::Extractor::XmlRecordLocator.new(
+          namespaces: DS::Constants::XML_NAMESPACES
+        )
 
         source_file_path = File.join source_dir, entry.filename
         xml = find_or_open_source source_file_path
@@ -23,7 +25,6 @@ module DS
       def open_source source_file_path
         xml_string = File.open(source_file_path).read
         xml = Nokogiri::XML xml_string
-        xml.remove_namespaces!
         xml
       end
 

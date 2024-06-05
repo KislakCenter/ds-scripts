@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DS
-  module Util
+  module Source
 
     ##
     # This module provides methods for caching and opening source files.

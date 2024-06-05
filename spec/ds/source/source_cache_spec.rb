@@ -2,10 +2,10 @@
 
 require 'spec_helper'
 
-RSpec.describe DS::Util::SourceCache do
+RSpec.describe DS::Source::SourceCache do
 
   class SourceCacheTest
-    include DS::Util::SourceCache
+    include DS::Source::SourceCache
 
     def open_source arg
       @counter ||= 0
