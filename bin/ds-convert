@@ -87,14 +87,17 @@ LONGDESC
 
     manifest = DS::Manifest::Manifest.new manifest_path, source_dir
 
-    if DS::Manifest::ManifestValidator.new(manifest).valid?
+    manifest_validator = DS::Manifest::ManifestValidator.new manifest
+    if manifest_validator.valid?
       print_message(options) {
         "SUCCESS! Manifest is valid: '#{manifest_path}'".colorize(:green)
       }
     else
+      print_message(options) { manifest_validator.errors.take(10).join("\n") }
       print_message(options) {
         "ERROR: Manifest has validation errors".colorize(:red)
       }
+
       exit 1
     end
   end
