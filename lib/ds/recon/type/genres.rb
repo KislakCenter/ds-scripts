@@ -1,8 +1,7 @@
 require 'nokogiri'
-require_relative '../recon_type'
 
 module Recon
-  module Types
+  module Type
     ##
     # Extract genre terms for reconciliation CSV output.
     #

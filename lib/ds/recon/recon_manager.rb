@@ -34,7 +34,7 @@ module Recon
 
     # Write a CSV file for a specific recon type.
     #
-    # @param recon_type [Recon::ReconType] the type of reconciliation data
+    # @param recon_type [Recon::Type::ReconType] the type of reconciliation data
     # @return [String] the path to the output CSV file
     def write_csv recon_type
       outfile = File.join out_dir, "#{recon_type.set_name}.csv"

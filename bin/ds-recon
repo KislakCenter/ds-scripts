@@ -17,6 +17,7 @@ class ReconCLI < DS::CLI
   class_option :'source-type',
                banner: 'TYPE',
                desc: "One of #{DS::VALID_SOURCE_TYPES.join(', ')}; REQUIRED except for recon-update, validate",
+               enum: DS::VALID_SOURCE_TYPES,
                aliases: '-t',
                required: (ARGV.size > 0 && ! %w{recon-update validate}.include?(ARGV[0]))
   class_option :verbose, desc: "Print full error messages", aliases: '-v', type: :boolean, default: false

@@ -5,16 +5,17 @@ require_relative 'recon/marc_xml_enumerator'
 require_relative 'recon/tei_xml_enumerator'
 require_relative 'recon/ds_mets_xml_enumerator'
 require_relative 'recon/url_lookup'
-require_relative 'recon/types/genres'
-require_relative 'recon/languages'
-require_relative 'recon/materials'
-require_relative 'recon/names'
-require_relative 'recon/places'
-require_relative 'recon/subjects'
-require_relative 'recon/splits'
-require_relative 'recon/named_subjects'
-require_relative 'recon/all_subjects'
-require_relative 'recon/titles'
+require_relative 'recon/type/recon_type'
+require_relative 'recon/type/genres'
+require_relative 'recon/type/languages'
+require_relative 'recon/type/materials'
+require_relative 'recon/type/names'
+require_relative 'recon/type/places'
+require_relative 'recon/type/subjects'
+require_relative 'recon/type/splits'
+require_relative 'recon/type/named_subjects'
+require_relative 'recon/type/all_subjects'
+require_relative 'recon/type/titles'
 require_relative 'recon/recon_builder'
 require_relative 'recon/recon_manager'
 require_relative 'constants'
@@ -42,14 +43,14 @@ module Recon
   }
   # ReconConfig = Struct.new(:method_name, :klass, :set_name, keyword_init: true)
   RECON_TYPES = [
-    Recon::Types::Genres,
-    Recon::Languages,
-    Recon::Materials,
-    Recon::NamedSubjects,
-    Recon::Names,
-    Recon::Places,
-    Recon::Subjects,
-    Recon::Titles
+    Recon::Type::Genres,
+    Recon::Type::Languages,
+    Recon::Type::Materials,
+    Recon::Type::NamedSubjects,
+    Recon::Type::Names,
+    Recon::Type::Places,
+    Recon::Type::Subjects,
+    Recon::Type::Titles
   ].freeze
 
   RECON_VALIDATION_SETS = RECON_TYPES.map(&:set_name).freeze
@@ -92,7 +93,7 @@ module Recon
   # Finds the reconciliation type configuration for the given set name.
   #
   # @param set_name [String] the name of the set
-  # @return [Recon::ReconType, nil] the configuration for the set name, or nil if not found
+  # @return [Recon::Type::ReconType, nil] the configuration for the set name, or nil if not found
   def self.find_recon_type set_name
     RECON_TYPES.find { |config|
       config.set_name.to_sym == set_name.to_sym

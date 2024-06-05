@@ -251,7 +251,7 @@ module DS
           notes = clean_notes(record.xpath(xpath).flat_map(&:text))
 
           notes.flat_map { |n|
-            splits = Recon::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
+            splits = Recon::Type::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
             splits.present? ? splits : n
           }.map { |n|
             DS::Extractor::Name.new as_recorded: DS.mark_long(n)
@@ -436,7 +436,7 @@ module DS
         # Extract acknowledgements, notes, physical descriptions, and
         # former owners; return all strings that start with SPLIT:,
         # remove 'SPLIT: ' and return an array of arrays that can
-        # be treated as rows by Recon::Splits
+        # be treated as rows by Recon::Type::Splits
         def extract_recon_splits xml
           data = []
           data += DS::Extractor::DsMetsXmlExtractor.extract_former_owners_as_recorded xml, lookup_split: false
@@ -456,7 +456,7 @@ module DS
         end
 
         ##
-        # See the note for [Recon::Subjects]: Each source subject extraction
+        # See the note for [Recon::Type::Subjects]: Each source subject extraction
         # method should return a two dimensional array:
         #
         #     [["Islamic law--Early works to 1800", ""],

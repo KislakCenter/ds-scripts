@@ -1,17 +1,17 @@
 require 'nokogiri'
-require_relative 'recon_type'
 
 module Recon
-  class Places
+  module Type
+    class Places
 
-    extend DS::Util
-    include ReconType
+      extend DS::Util
+      include ReconType
 
-    SET_NAME = :places
+      SET_NAME = :places
 
-    CSV_HEADERS = %i{ place_as_recorded authorized_label structured_value ds_qid}
+      CSV_HEADERS = %i{ place_as_recorded authorized_label structured_value ds_qid}
 
-    LOOKUP_COLUMNS = %i{
+      LOOKUP_COLUMNS = %i{
       authorized_label
       structured_value
       ds_qid
@@ -37,6 +37,6 @@ module Recon
       }
     end
 
-
+    end
   end
 end

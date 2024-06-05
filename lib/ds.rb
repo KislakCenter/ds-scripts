@@ -4,7 +4,7 @@ require 'active_support/all'
 require_relative 'ds/ds_error'
 require_relative 'ds/util'
 require_relative 'ds/recon/recon_data'
-require_relative 'ds/recon/splits'
+require_relative 'ds/recon/type/splits'
 require_relative 'ds/constants'
 require_relative 'ds/source'
 require_relative 'ds/extractor'
@@ -55,7 +55,7 @@ module DS
     def mark_long s
       return s if s.to_s.size <= DS::MAX_WIKIBASE_FIELD_LENGTH
 
-      splits = Recon::Splits._lookup_single s, from_column: 'authorized_label'
+      splits = Recon::Type::Splits._lookup_single s, from_column: 'authorized_label'
       return "SPLIT: #{s}" if splits.blank?
       splits
     end

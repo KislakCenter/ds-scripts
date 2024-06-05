@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-RSpec.describe Recon::Places do
+RSpec.describe Recon::Type::Places do
   it_behaves_like 'a recon type class'
 end

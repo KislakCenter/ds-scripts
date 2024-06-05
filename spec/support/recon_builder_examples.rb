@@ -41,7 +41,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':places', unless: skip?(skips, :places) do
       let(:set_name) { :places }
-      let(:recon_class) { Recon::Places }
+      let(:recon_class) { Recon::Type::Places }
       let(:recon_row) {
         {
           authorized_label:  "Paris",
@@ -66,7 +66,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':materials', unless: skip?(skips, :materials) do
       let(:set_name) { :materials }
-      let(:recon_class) { Recon::Materials }
+      let(:recon_class) { Recon::Type::Materials }
       let(:recon_row) {
         {
           :authorized_label=>"paper",
@@ -89,7 +89,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':languages', unless: skip?(skips, :languages) do
       let(:set_name) { :languages }
-      let(:recon_class) { Recon::Languages }
+      let(:recon_class) { Recon::Type::Languages }
       let(:recon_row) {
         {
           :authorized_label=>"Latin",
@@ -114,7 +114,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':genres', unless: skip?(skips, :genres) do
       let(:set_name) { :genres }
-      let(:recon_class) { Recon::Types::Genres }
+      let(:recon_class) { Recon::Type::Genres }
       let(:recon_row) {
         {
           :authorized_label=>"Qur'ans",
@@ -140,7 +140,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':subjects', unless: skip?(skips, :subjects) do
       let(:set_name) { :subjects }
-      let(:recon_class) { Recon::Subjects }
+      let(:recon_class) { Recon::Type::Subjects }
 
       let(:recon_row) {
         {
@@ -174,7 +174,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':named-subjects', unless: skip?(skips, :'named-subjects') do
       let(:set_name) { :'named-subjects' }
-      let(:recon_class) { Recon::NamedSubjects }
+      let(:recon_class) { Recon::Type::NamedSubjects }
       let(:terms) {
         [
           DS::Extractor::Subject.new(
@@ -206,7 +206,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':names', unless: skip?(skips, :names) do
       let(:set_name) { :names }
-      let(:recon_class) { Recon::Names }
+      let(:recon_class) { Recon::Type::Names }
       let(:terms) {
         [
           DS::Extractor::Name.new(
@@ -239,7 +239,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
 
     context ':titles', unless: skip?(skips, :titles) do
       let(:set_name) { :titles }
-      let(:recon_class) { Recon::Titles }
+      let(:recon_class) { Recon::Type::Titles }
 
       let(:recon_row) {
         {:title_as_recorded_agr=>"Title in vernacular",

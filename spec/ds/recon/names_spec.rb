@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-RSpec.describe Recon::Names do
+RSpec.describe Recon::Type::Names do
   it_behaves_like 'a recon type class'
 end

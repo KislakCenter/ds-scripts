@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # require_relative 'recon_config'
-require_relative 'recon_type'
+require_relative 'type/recon_type'
 
 module Recon
 
@@ -66,6 +66,7 @@ module Recon
     def enumerator
       return @enumerator if @enumerator.present?
       klass = SOURCE_TYPE_ENUMERATORS[source_type]
+      raise "Unknown source type: #{source_type}" unless klass
       @enumerator = klass.new files
     end
 
@@ -82,7 +83,7 @@ module Recon
     #
     #     # for a ReconBuilder for set of TEI files
     #     CSV headers: true do |csv|
-    #       csv << Recon::Places.csv_headers
+    #       csv << Recon::Type::Places.csv_headers
     #       recon_builder.each_recon(:places) do |recon|
     #         csv << recon
     #       end
@@ -110,7 +111,7 @@ module Recon
     # Find a recon type configuration by name
     #
     # @param [String] name the name of the recon type to find
-    # @return [Recon::ReconType, nil] the recon type configuration if found, nil otherwise
+    # @return [Recon::Type::ReconType, nil] the recon type configuration if found, nil otherwise
     def find_recon_type name
       Recon::RECON_TYPES.find { |config| config.set_name == name.to_s }
     end
@@ -139,7 +140,7 @@ module Recon
     #      :structured_value => "Q13955" }
     #
     # @param [DS::Extractor::BaseTerm] item a term like a DS::Extractor::Place
-    # @param [Recon::ReconType] recon_type a recon type configuration like Recon::Places
+    # @param [Recon::Type::ReconType] recon_type a recon type configuration like Recon::Type::Places
     # @return [Hash<Symbol,String>] a recon CSV row
     def build_recon item:, recon_type:
       as_recorded = item.as_recorded
@@ -160,7 +161,7 @@ module Recon
     #
     #
     # @param recon_hash [Hash<Symbol,Object>] a hash of the CSV row
-    # @param recon_type [Recon::ReconType] a ReconType like, ReconPlaces
+    # @param recon_type [Recon::Type::ReconType] a ReconType like, ReconPlaces
     # @return [Hash<Symbol,Object>]
     def prep_row recon_hash:, recon_type:
       row = recon_hash.dup
@@ -168,6 +169,8 @@ module Recon
       row[recon_type.as_recorded_column] = ar_value
       row
     end
+
+
 
   end
 end
