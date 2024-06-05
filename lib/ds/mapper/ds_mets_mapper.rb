@@ -3,26 +3,24 @@
 module DS
   module Mapper
     class DSMetsMapper < DS::Mapper::BaseMapper
-      attr_reader :xml
-      attr_reader :timestamp
       attr_reader :iiif_lookup
       attr_reader :ia_url_lookup
-      attr_reader :source_file
+
+
+      def initialize(source_dir:, timestamp:)
+        super source_dir: source_dir, timestamp: timestamp, source: DS::Source::DSMetsXML.new
+      end
 
       def extract_record entry
         locator = DS::Extractor::XmlRecordLocator.new
         source_file_path = File.join source_dir, entry.filename
-        xml   = find_or_open_source source_file_path
-        xpath = "/mets:mets[./mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type = 'local' and ./text() = '#{entry.institutional_id}']]"
+        xml   = source.load_source source_file_path
+
         record = locator.locate_record xml, entry.institutional_id, entry.institutional_id_location_in_source
         # xml.at_xpath xpath
         return record if record.present?
 
         raise "Unable to locate record for #{entry.institutional_id} (errors: #{locator.errors.join(', ')})"
-      end
-
-      def open_source source_file_path
-        File.open(source_file_path) { |f| Nokogiri::XML f }
       end
 
       ##

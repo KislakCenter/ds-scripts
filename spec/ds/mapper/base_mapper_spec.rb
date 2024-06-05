@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DS::Mapper::BaseMapper' do
+RSpec.describe DS::Mapper::BaseMapper do
 
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
 
@@ -13,16 +13,15 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
 
     def map_record entry; {}; end
 
-    def open_source entry; {}; end
   end
 
   let(:timestamp) { Time.now }
   let(:base_mapper) {
-    DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
+    DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
   }
 
   let(:test_mapper) {
-    TestMapper.new source_dir: marc_xml_dir, timestamp: timestamp
+    TestMapper.new source_dir: marc_xml_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
   }
 
   let(:entry) { Object.new }
@@ -30,7 +29,7 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
   context 'initialize' do
     it 'creates a new mapper' do
       expect(
-        DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
+        DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
       ).to be_a DS::Mapper::BaseMapper
     end
   end
@@ -72,56 +71,4 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
       }.to raise_exception NotImplementedError
     end
   end
-
-  context "#==" do
-    let(:other_mapper) {
-      DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
-    }
-
-    it 'is not based on object ID' do
-      expect(base_mapper).to eq other_mapper
-    end
-
-    it 'is commutative' do
-      expect(other_mapper).to eq base_mapper
-    end
-
-    let(:test_mapper) {
-      TestMapper.new(
-        source_dir: base_mapper.source_dir,
-        timestamp: base_mapper.timestamp
-      )
-    }
-
-    it 'requires classes be the same' do
-      expect(test_mapper).not_to eq base_mapper
-    end
-  end
-
-  context "#source_cache" do
-    # confirm caching works: create two entries with the same source
-    # filename
-
-    let(:entry1) {
-      obj = Object.new
-      obj.define_singleton_method(:filename) do; "some_file.xml"; end
-      obj
-    }
-
-    let(:entry2) {
-      obj = Object.new
-      obj.define_singleton_method(:filename) do; "some_file.xml"; end
-      obj
-    }
-
-    let(:source_file_path) { "some/path/some_file.xml" }
-
-    it '#find_or_open_source calls #open_source once for the same source' do
-      expect(test_mapper).to receive(:open_source).exactly(:once)
-      test_mapper.find_or_open_source source_file_path
-      test_mapper.find_or_open_source source_file_path
-    end
-  end
-
-
 end

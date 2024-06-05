@@ -236,11 +236,13 @@ module DS
       def get_id_validator source_type
         case source_type
         when DS::Constants::MARC_XML
-          @id_validators[source_type] ||= SimpleXmlIdValidator.new
-        when DS::Constants::DS_METS, DS::Constants::TEI_XML
-          @id_validators[source_type] ||= SimpleXmlIdValidator.new
+          @id_validators[source_type] ||= SimpleXmlIdValidator.new(DS::Source::MarcXML.new)
+        when DS::Constants::DS_METS
+          @id_validators[source_type] ||= SimpleXmlIdValidator.new(DS::Source::DSMetsXML.new)
+        when DS::Constants::TEI_XML
+          @id_validators[source_type] ||= SimpleXmlIdValidator.new(DS::Source::TeiXML.new)
         when DS::Constants::DS_CSV
-          @id_validators[source_type] ||= DsCsvIdValidator.new
+          @id_validators[source_type] ||= DsCsvIdValidator.new(DS::Source::DSCSV.new)
         else
           raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
         end

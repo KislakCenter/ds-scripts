@@ -16,14 +16,19 @@ module DS
     # Concrete subclasses of {DS::Manifest::BaseIdValidator} must implement
     #
     #   - +#locate_record+, required this class
-    #   - +#open_source+, required by DS::Source::SourceCache
     #
     class BaseIdValidator
-      include DS::Source::SourceCache
 
       attr_reader :errors
+      attr_reader :source
 
-      def initialize
+      ##
+      # Create a new ID Validator
+      #
+      # @param source [DS::Source::BaseSource] the source to validate
+      # @return [void]
+      def initialize source
+        @source = source
         @errors = []
       end
 

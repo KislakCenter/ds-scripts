@@ -42,7 +42,6 @@ RSpec.describe DS::Mapper::MarcMapper do
 
   let(:subject) { mapper}
   let(:source_path) { xml_file }
-  it_behaves_like "a source cache implementation"
 
   context 'mapper implementation' do
     except = %i[extract_acknowledgments]

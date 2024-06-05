@@ -5,6 +5,9 @@ module DS
 
     class MarcMapper < DS::Mapper::BaseMapper
 
+      def initialize(source_dir:, timestamp:)
+        super source_dir: source_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
+      end
       ##
       # @param [DS::Manifest::Entry] entry +entry+ representing one
       #     row in a manifest
@@ -14,18 +17,12 @@ module DS
         )
 
         source_file_path = File.join source_dir, entry.filename
-        xml = find_or_open_source source_file_path
+        xml = source.load_source source_file_path
         xpath = entry.institutional_id_location_in_source.gsub('ID_PLACEHOLDER', entry.institutional_id) # "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
         record = record_locator.locate_record(xml, entry.institutional_id, xpath).first
         return record if record.present?
 
         raise "Unable to locate record for #{entry.institutional_id} (errors: #{record_locator.errors.join(', ')})"
-      end
-
-      def open_source source_file_path
-        xml_string = File.open(source_file_path).read
-        xml = Nokogiri::XML xml_string
-        xml
       end
 
       ##

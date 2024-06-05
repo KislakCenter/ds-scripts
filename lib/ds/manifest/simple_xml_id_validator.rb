@@ -6,9 +6,9 @@ module DS
 
       attr_accessor :namespaces
 
-      def initialize namespaces = {}
+      def initialize source, namespaces = {}
         @namespaces = namespaces.present? ? namespaces : DS::Constants::XML_NAMESPACES
-        super()
+        super source
       end
 
       # Locates a record in the XML document based on the given source path, ID, and ID location.
@@ -27,23 +27,15 @@ module DS
       # @return [Nokogiri::XML::NodeSet] the located record(s)
       def locate_record source_path, id, id_location
         locator = DS::Extractor::XmlRecordLocator.new namespaces: namespaces
-        source = find_or_open_source source_path
-        locator.locate_record source, id, id_location
+        xml = source.load_source source_path
+        locator.locate_record xml, id, id_location
       end
 
-      # def try_locate_record xml, xpath, namespaces: nil
-      #   xml.xpath xpath, namespaces
-      # rescue Nokogiri::XML::XPath::SyntaxError => e
-      #   raise unless e.message =~ /undefined namespace prefix/i
-      #   []
-      # end
-
-      # Opens the XML source file at the given path and returns an XML document without namespaces.
-      #
-      # @param source_path [String] the path to the source file
-      # @return [Nokogiri::XML::Document] the XML document without namespaces
-      def open_source source_path
-        File.open(source_path) { |f| Nokogiri::XML(f) }
+      def try_locate_record xml, xpath, namespaces: nil
+        xml.xpath xpath, namespaces
+      rescue Nokogiri::XML::XPath::SyntaxError => e
+        raise unless e.message =~ /undefined namespace prefix/i
+        []
       end
     end
   end

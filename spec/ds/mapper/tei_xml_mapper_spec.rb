@@ -28,7 +28,6 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
 
   let(:subject) { mapper}
   let(:source_path) { xml_file }
-  it_behaves_like "a source cache implementation"
 
   context 'mapper implementation' do
     except = %i[
@@ -58,10 +57,6 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
   context 'DS::Mapper::BaseMapper implementation' do
     it 'implements #extract_record(entry)' do
       expect { mapper.extract_record entry }.not_to raise_error
-    end
-
-    it 'implements #open_source' do
-      expect { mapper.open_source xml_file }.not_to raise_error
     end
 
     it 'is a kind of BaseMapper' do

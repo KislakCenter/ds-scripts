@@ -27,7 +27,6 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
   let(:subject) { mapper}
   let(:source_path) { File.join xml_dir, entry.filename }
-  it_behaves_like "a source cache implementation"
 
   context 'mapper implementation' do
     except = %i[

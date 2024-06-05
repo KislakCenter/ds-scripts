@@ -5,6 +5,11 @@ module DS
 
     class DSCSVMapper < DS::Mapper::BaseMapper
 
+
+      def initialize(source_dir:, timestamp:)
+        super source_dir: source_dir, timestamp: timestamp, source: DS::Source::DSCSV.new
+      end
+
       def map_record entry
         record = extract_record entry
         source_type                        = 'ds-csv'
@@ -140,13 +145,10 @@ module DS
 
       def extract_record entry
         locator = DS::Extractor::CsvRecordLocator.new
-        csv = find_or_open_source File.join(source_dir, entry.filename)
+        csv = source.load_source File.join(source_dir, entry.filename)
         locator.locate_record(csv, entry.institutional_id, entry.institutional_id_location_in_source).first
       end
 
-      def open_source source_file_path
-        CSV.readlines source_file_path, headers: true
-      end
 
     end
   end

@@ -4,20 +4,19 @@ module DS
   module Mapper
     class TeiXmlMapper < BaseMapper
 
+
+      def initialize source_dir:, timestamp:
+        super source_dir: source_dir, timestamp: timestamp, source: DS::Source::TeiXML.new
+      end
+
       def extract_record entry
         locator = DS::Extractor::XmlRecordLocator.new
         source_file_path = File.join source_dir, entry.filename
-        xml = find_or_open_source source_file_path
+        xml = source.load_source source_file_path
         record = locator.locate_record xml, entry.institutional_id, entry.institutional_id_location_in_source
         return record if record.present?
 
         raise "Unable to locate record for #{entry.institutional_id} (errors: #{record_locator.errors.join(', ')})"
-      end
-
-      def open_source source_file_path
-        xml_string = File.open(source_file_path).read
-        xml = Nokogiri::XML xml_string
-        xml.remove_namespaces!
       end
 
       def map_record entry
