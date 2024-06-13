@@ -122,11 +122,11 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
           :genre_as_recorded=>"Qurʼans",
           :source_authority_uri=>nil,
           :structured_value=>"http://vocab.getty.edu/aat/300265128",
-          :vocabulary=>"aat"
+          :vocab=>"aat"
         }
       }
       let(:terms) {
-        [DS::Extractor::Genre.new(as_recorded: 'Qurʼans', vocabulary: 'aat' )]
+        [DS::Extractor::Genre.new(as_recorded: 'Qurʼans', vocab: 'aat' )]
       }
 
       it 'yields a hash' do

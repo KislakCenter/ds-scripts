@@ -4,7 +4,7 @@ module Recon
   module Constants
     GENRE_HEADERS = %w{
       genre_as_recorded
-      vocabulary
+      vocab
       source_authority_uri
       authorized_label
       structured_value

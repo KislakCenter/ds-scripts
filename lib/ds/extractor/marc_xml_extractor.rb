@@ -486,7 +486,7 @@ module DS
         # Extract genre terms for reconciliation CSV output.
         #
         # Returns a two-dimensional array, each row is a place; and each row has
-        # three columns: term, vocabulary, and authority number.
+        # three columns: term, vocab, and authority number.
         #
         # @param [Nokogiri::XML:Node] record a +<MARC_RECORD>+ node
         # @return [Array<Array>] an array of arrays of values
@@ -498,7 +498,7 @@ module DS
         #
         # @param [Nokogiri::XML:Node] record the MARC XML record to extract genres from
         # @param [String] sub_sep (default: '--') the separator for joining subfields
-        # @param [Symbol, String] vocab (default: :all) the vocabulary type to extract
+        # @param [Symbol, String] vocab (default: :all) the vocab type to extract
         # @return [Array<DS::Extractor::Genre>] an array of extracted genres
         def extract_genres record, sub_sep: '--', vocab: :all
           xpath = %q{datafield[@tag = 655]}
@@ -510,7 +510,7 @@ module DS
             if [:all, term_vocab].include? vocab
               DS::Extractor::Genre.new(
                 as_recorded:          as_recorded,
-                vocabulary:           term_vocab,
+                vocab:           term_vocab,
                 source_authority_uri: source_authority_uri
               )
             end
@@ -522,7 +522,7 @@ module DS
         # @param [Nokogiri::XML::Node] record the MARC XML record to extract genre vocabulary from
         # @return [Array<Symbol>] an array of extracted genre vocabularies
         def extract_genre_vocabulary record
-          extract_genres(record).map(&:vocabulary)
+          extract_genres(record).map(&:vocab)
         end
 
         # Extracts reconstructed subjects from the given record.

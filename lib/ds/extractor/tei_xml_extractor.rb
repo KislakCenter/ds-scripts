@@ -344,7 +344,7 @@ module DS
             as_recorded          = DS::Util.normalize_string term.text
             vocab                = 'openn-form/genre'
             source_authority_uri = term['target']
-            DS::Extractor::Genre.new as_recorded: as_recorded, vocabulary: vocab, source_authority_uri: source_authority_uri
+            DS::Extractor::Genre.new as_recorded: as_recorded, vocab: vocab, source_authority_uri: source_authority_uri
           }
         end
 

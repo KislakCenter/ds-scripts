@@ -6,7 +6,7 @@ module Recon
     # Extract genre terms for reconciliation CSV output.
     #
     # Return a two-dimensional array, each row is a term; and each row has
-    # three columns: term, vocabulary, and authority number.
+    # three columns: term, vocab, and authority number.
     #
     class Genres
 
@@ -17,7 +17,7 @@ module Recon
 
       CSV_HEADERS = %i{
       genre_as_recorded
-      vocabulary
+      vocab
       source_authority_uri
       authorized_label
       structured_value
@@ -32,10 +32,10 @@ module Recon
 
       KEY_COLUMNS = %i{
       genre_as_recorded
-      vocabulary
+      vocab
     }
 
-      SUBSET_COLUMN = :vocabulary
+      SUBSET_COLUMN = :vocab
 
       AS_RECORDED_COLUMN = :genre_as_recorded
 

@@ -1,4 +1,4 @@
-genre_as_recorded,vocabulary,source_authority_uri,authorized_label,structured_value,ds_qid
+genre_as_recorded,vocab,source_authority_uri,authorized_label,structured_value,ds_qid
 Agreements,aat,,agreements,http://vocab.getty.edu/aat/300027628,
 Anecdotes,fast,(OCoLC)fst01423876,Anecdotes,http://id.worldcat.org/fast/1423876,
 Annotations (Provenance),rbprov,,Annotations,http://id.loc.gov/vocabulary/rbmscv/cv00102,
