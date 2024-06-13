@@ -309,8 +309,7 @@ module DS
         # @param [CSV::Row] record the record to extract material from
         # @return [String, nil] the extracted material as recorded
         def extract_material_as_recorded record
-          materials = extract_materials(record)
-          return materials.first.as_recorded if materials.present?
+          extract_materials(record).map(&:as_recorded).join '|'
         end
 
         # Extracts materials from the given record.
