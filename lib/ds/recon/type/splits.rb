@@ -3,12 +3,28 @@
 module Recon
   module Type
     class Splits
-      extend DS::Util
 
-      CSV_HEADERS = %w{
-      as_recorded
-      authorized_label
-    }
+      extend DS::Util
+      include ReconType
+
+      SET_NAME = :splits
+
+      RECON_CSV_HEADERS = %i{ as_recorded authorized_label }
+
+      LOOKUP_COLUMNS = %i{ authorized_label }
+
+      KEY_COLUMNS = %i{ as_recorded }
+
+      SUBSET_COLUMN = nil
+
+      AS_RECORDED_COLUMN = :as_recorded
+
+      DELIMITER_MAP = {}
+
+      METHOD_NAME = []
+
+      BALANCED_COLUMNS = {}
+
 
       def self.add_recon_values rows
         rows.each do |row|
@@ -39,7 +55,7 @@ module Recon
       end
 
       def self._lookup_single as_recorded, from_column:
-        Recon.lookup(:splits, value: as_recorded, column: from_column)
+        Recon.lookup_single(:splits, value: as_recorded, column: from_column)
       end
 
     end

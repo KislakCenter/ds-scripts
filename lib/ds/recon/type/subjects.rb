@@ -30,7 +30,7 @@ module Recon
 
       SET_NAME = :subjects
 
-      CSV_HEADERS = %i{
+      RECON_CSV_HEADERS = %i{
       subject_as_recorded
       subfield_codes
       vocab
@@ -51,7 +51,7 @@ module Recon
       vocab
     }
 
-      SUBSET_COLUMN = nil
+      SUBSET_COLUMN = :vocab
 
       METHOD_NAME = %i{ extract_subjects }
 
@@ -68,7 +68,7 @@ module Recon
       end
 
       def self._lookup_single term, from_column:
-        uris = Recon.lookup(SET_NAME, value: term, column: from_column)
+        uris = Recon.lookup_single(SET_NAME, value: term, column: from_column)
         uris.to_s.gsub '|', ';'
       end
     end

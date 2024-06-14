@@ -30,18 +30,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
   let(:source_path) { xml_file }
 
   context 'mapper implementation' do
-    except = %i[
-      extract_cataloging_convention
-      extract_date_range
-      extract_uniform_titles_as_recorded
-      extract_uniform_titles_as_recorded_agr
-      extract_titles_as_recorded_agr
-      extract_authors_as_recorded_agr
-      extract_scribes_as_recorded_agr
-      extract_former_owners_as_recorded_agr
-      extract_genre_vocabulary
-    ]
-    it_behaves_like 'an extractor mapper', except
+    it_behaves_like 'an extractor mapper'
   end
 
   context 'initialize' do
@@ -71,7 +60,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
         :date_added                         => "",
         :date_last_updated                  => "",
         :dated                              => "",
-        :cataloging_convention              => "",
+        :cataloging_convention              => "tei-xml",
         :source_type                        => "tei-xml",
         :holding_institution                => "Q3087288",
         :holding_institution_as_recorded    => "Free Library of Philadelphia",
@@ -82,6 +71,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
         :production_place_as_recorded       => "Flanders",
         :production_place                   => "",
         :production_place_label             => "",
+        :production_place_ds_qid            => "",
         :production_date_as_recorded        => "1600-1757",
         :production_date                    => "1600^1757",
         :century                            => "17;18",
@@ -91,50 +81,61 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
         :uniform_title_as_recorded          => "",
         :uniform_title_agr                  => "",
         :standard_title                     => "",
+        :standard_title_ds_qid              => "",
         :genre_as_recorded                  => "Codices (bound manuscripts)|Manuscripts (documents)",
         :genre                              => "|",
         :genre_label                        => "|",
+        :genre_ds_qid                       => "|",
+        :genre_vocabulary                   => "openn-form/genre|openn-form/genre",
         :subject_as_recorded                => "Arabic language--Grammar--Early works to 1800|Arabic language--Syntax--Early works to 1800|Manuscripts, Arabic--17th century|Manuscripts, Arabic--18th century",
         :subject                            => "|||",
         :subject_label                      => "|||",
+        :subject_ds_qid                     => "|||",
         :author_as_recorded                 => "Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360|Unwrapped name",
         :author_as_recorded_agr             => "ابن هشام، عبد الله بن يوسف،|",
         :author_wikidata                    => "|",
-        :author                             => "",
+        :author                             => "|",
         :author_instance_of                 => "|",
         :author_label                       => "|",
+        :author_ds_qid                      => "|",
         :artist_as_recorded                 => "An artist",
         :artist_as_recorded_agr             => "An artist vernacular",
         :artist_wikidata                    => "",
         :artist                             => "",
         :artist_instance_of                 => "",
         :artist_label                       => "",
+        :artist_ds_qid                      => "",
         :scribe_as_recorded                 => "A scribe",
         :scribe_as_recorded_agr             => "A scribe vernacular",
         :scribe_wikidata                    => "WDQIDSCRIBE",
         :scribe                             => "",
         :scribe_instance_of                 => "human",
         :scribe_label                       => "Scribe auth name",
+        :scribe_ds_qid                      => "",
         :associated_agent_as_recorded       => "",
         :associated_agent_as_recorded_agr   => "",
         :associated_agent                   => "",
         :associated_agent_label             => "",
         :associated_agent_wikidata          => "",
         :associated_agent_instance_of       => "",
+        :associated_agent_ds_qid            => "",
         :language_as_recorded               => "Arabic",
         :language                           => "Q13955",
         :language_label                     => "Arabic",
+        :language_ds_qid                    => "",
         :former_owner_as_recorded           => "Jamālī, Yūsuf ibn Shaykh Muḥammad|Lewis, John Frederick, 1860-1932",
         :former_owner_as_recorded_agr       => "يوسف بن شيخ محمد الجمالي.|",
         :former_owner_wikidata              => "|",
-        :former_owner                       => "",
+        :former_owner                       => "|",
         :former_owner_instance_of           => "|",
         :former_owner_label                 => "|",
+        :former_owner_ds_qid                => "|",
         :material_as_recorded               => "paper",
         :material                           => "http://vocab.getty.edu/aat/300014109",
         :material_label                     => "paper",
+        :material_ds_qid                    => "",
         :physical_description               => "Extent: 50 leaves : 215 x 155 (155 x 90) mm bound to 217 x 162 mm; paper",
-        :acknowledgements                   => "",
+        :acknowledgments                   => "",
         :note                               =>
           "Ms. codex.|Title from introduction (f. 1v).|Kabīkaj invocation on f. 1r.|Catalog entry describing the manuscript pasted onto f. 1r.|Binding: Laid paper over pasteboard with flap (Type II) and leather spine back. No decorations. Textblock is detached from cover.|Layout: 25 long lines.|Script: Written in naskh in black and red; pointed.|Decoration: Rubrications in red.|Provenance: Gift of Anne Baker Lewis in 1933.|Provenance: Formerly owned by Yūsuf ibn Shaykh Muḥammad al-Jamālī (note dated 1170 AH [1757], f. 1r).|Provenance: Formerly owned by John Frederick Lewis.",
         :data_processed_at                  => be_some_kind_of_date_time.or(be_blank),

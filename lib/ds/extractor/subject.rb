@@ -46,6 +46,7 @@ module DS
       # @return [Hash<Symbol,String>] A hash containing the recorded data, subfield codes, vocabulary, and source authority URI.
       def to_h
         {
+          subject_as_recorded:  as_recorded,
           as_recorded:          as_recorded,
           subfield_codes:       subfield_codes,
           vocab:                vocab,

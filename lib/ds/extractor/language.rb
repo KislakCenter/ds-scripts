@@ -21,6 +21,7 @@ module DS
 
       def to_h
         {
+          language_as_recorded: as_recorded,
           as_recorded: as_recorded,
           language_code: codes.join(';')
         }

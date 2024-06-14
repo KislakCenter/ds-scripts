@@ -9,7 +9,7 @@ module Recon
 
       SET_NAME = :places
 
-      CSV_HEADERS = %i{ place_as_recorded authorized_label structured_value ds_qid}
+      RECON_CSV_HEADERS = %i{ place_as_recorded authorized_label structured_value ds_qid}
 
       LOOKUP_COLUMNS = %i{
       authorized_label
@@ -17,7 +17,7 @@ module Recon
       ds_qid
     }
 
-    KEY_COLUMNS = %i{ :place_as_recorded }
+    KEY_COLUMNS = %i{ place_as_recorded }
 
     SUBSET_COLUMN = nil
 
@@ -32,7 +32,7 @@ module Recon
     def self.lookup places, from_column: 'structured_value'
       places.map { |place|
         place_cleaned = DS::Util.clean_string place, terminator: ''
-        place_uris = Recon.lookup SET_NAME, value: place_cleaned, column: from_column
+        place_uris = Recon.lookup_single SET_NAME, value: place_cleaned, column: from_column
         place_uris.to_s.gsub '|', ';'
       }
     end

@@ -135,12 +135,14 @@ module DS
         # Extracts the date range from the given record using the specified separator.
         #
         # @param [CSV::Row] record the record to extract the date range from
-        # @param [String] separator the separator to be used in the date range
+        # @param [String] range_sep the separator to be used in the date range
         # @return [Array<String>] the extracted date range
-        def extract_date_range record, separator: '-'
+        def extract_date_range record, range_sep:
           start_date = extract_production_date_start record
           end_date   = extract_production_date_end record
-          [start_date, end_date].select(&:present?)
+          range = [start_date, end_date].select(&:present?)
+          return [] if range.blank?
+          [range.join(range_sep)]
         end
 
         # Extracts the production date start value from the given record.
@@ -286,6 +288,16 @@ module DS
           extract_names(record, :former_owners_as_recorded, 'former_owner')
         end
 
+        # Extracts associated agents from the given record.
+        #
+        # @note Method to fulfill DS::Extractor contract; returns an empty array
+        #
+        # @param [CSV::Row] record the record
+        # @return [Array<String>] an empty array
+        def extract_associated_agents record
+          []
+        end
+
         # Extracts languages as recorded from the given record.
         #
         # @param [CSV::Row] record the record to extract languages from
@@ -369,11 +381,22 @@ module DS
         # @param [CSV::Row] record a CSV row with headers
         # @return [Array<DS::Extractor::Title>] the names a list
         def extract_titles record
-          extract_values_for(:titles_as_recorded, record).map { |name|
-            as_recorded, vernacular = name.to_s.split ';;', 2
-            DS::Extractor::Title.new as_recorded: as_recorded, vernacular: vernacular
+          as_recorded_titles = extract_values_for(:titles_as_recorded, record)
+          uniform_titles     = extract_values_for(:uniform_titles_as_recorded, record)
+          raise ArgumentError, "Unbalanced number of titles and uniform titles" if as_recorded_titles.length != uniform_titles.length
+
+          as_recorded_titles.zip(uniform_titles).map { |as_rec, uniform|
+            as_recorded, vernacular                 = as_rec.split ';;', 2
+            uniform_title, uniform_title_vernacular = uniform.split ';;', 2
+            DS::Extractor::Title.new(
+              as_recorded:              as_recorded,
+              vernacular:               vernacular,
+              uniform_title:            uniform_title,
+              uniform_title_vernacular: uniform_title_vernacular
+            )
           }
         end
+
 
         ##
         # Note: BaseTerm implementations require +as_recorded+; for DS

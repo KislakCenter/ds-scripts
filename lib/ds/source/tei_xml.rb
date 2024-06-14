@@ -4,6 +4,8 @@ module DS
   module Source
     class TeiXML < BaseSource
 
+      TYPE = DS::Constants::TEI_XML
+
       # Opens a TEI XML file at the given path and returns it as a Nokogiri::XML object.
       #
       # NB: Namespaces are stripped from the document.

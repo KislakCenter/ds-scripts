@@ -20,34 +20,12 @@ RSpec.describe DS::Mapper::DSCSVMapper do
     ]
   }
 
-  let(:extractor_methods) {
-    %i{
-        extract_cataloging_convention
-        extract_production_date_as_recorded
-        extract_production_places_as_recorded
-        extract_uniform_titles_as_recorded
-        extract_uniform_titles_as_recorded_agr
-        extract_titles_as_recorded
-        extract_titles_as_recorded_agr
-        extract_genres_as_recorded
-        extract_all_subjects_as_recorded
-        extract_authors_as_recorded
-        extract_authors_as_recorded_agr
-        extract_artists_as_recorded
-        extract_artists_as_recorded_agr
-        extract_scribes_as_recorded
-        extract_scribes_as_recorded_agr
-        extract_former_owners_as_recorded
-        extract_former_owners_as_recorded_agr
-        extract_languages_as_recorded
-        extract_physical_description
-        extract_material_as_recorded
-        extract_notes
-      }
-  }
-
-  let(:subject) { mapper}
+  let(:subject) { mapper }
   let(:source_path) { File.join source_dir, entry.filename }
+  let(:extractor) {  DS::Extractor::DsCsvExtractor }
+  context 'mapper implementation' do
+    it_behaves_like 'an extractor mapper'
+  end
 
   context '#extract_record' do
 
@@ -96,6 +74,9 @@ RSpec.describe DS::Mapper::DSCSVMapper do
     let(:expected_map) {
       {
         ds_id:                              "DS1234",
+        date_added:                         "",
+        date_last_updated:                  "",
+        dated:                              "",
         source_type:                        "ds-csv",
         cataloging_convention:              "amremm",
         holding_institution:                "Q1075148",
@@ -110,48 +91,66 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         production_place_as_recorded:       "Paris",
         production_place:                   "http://vocab.getty.edu/tgn/paris_id",
         production_place_label:             "Paris",
+        production_place_ds_qid:            "",
         production_date_as_recorded:        "circa 18th-20th century",
         uniform_title_as_recorded:          "Uniform title",
         uniform_title_agr:                  "Uniform title in vernacular",
         title_as_recorded:                  "Title",
         title_as_recorded_agr:              "Title in vernacular",
         standard_title:                     "Standard title",
+        standard_title_ds_qid:              "",
         genre_as_recorded:                  "prayer books|Glossaries|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term",
+        genre_vocabulary:                   "||||||||||",
         genre:                              "|http://vocab.getty.edu/aat/300026189|||||||||",
         genre_label:                        "|glossaries|||||||||",
+        genre_ds_qid:                       "||||||||||",
         subject_as_recorded:                "A topical subject|A geographical subject|A chronological subject|A personal named subject|A corporate named subject|A named event|A uniform title subject",
         subject:                            "http://id.worldcat.org/fast/topical_subject||||http://id.worldcat.org/fast/named_subject||",
         subject_label:                      "Topical auth label||||Named subject auth label||",
+        subject_ds_qid:                     "||||||",
         author_as_recorded:                 "An author",
         author_as_recorded_agr:             "An author in original script",
         author_wikidata:                    "WDQIDAUTHOR",
         author:                             "",
         author_instance_of:                 "human",
         author_label:                       "Author auth name",
+        author_ds_qid:                      "",
         artist_as_recorded:                 "An artist|Another artist",
         artist_as_recorded_agr:             "|Another artist original script",
         artist_wikidata:                    "|WDQIDARTIST",
-        artist:                             "",
+        artist:                             "|",
         artist_instance_of:                 "|human",
         artist_label:                       "|Artist auth name",
+        artist_ds_qid:                      "|",
         scribe_as_recorded:                 "A scribe",
         scribe_as_recorded_agr:             "A scribe in original script",
         scribe_wikidata:                    "WDQIDSCRIBE",
         scribe:                             "",
         scribe_instance_of:                 "human",
         scribe_label:                       "Scribe auth name",
+        scribe_ds_qid:                      "",
         language_as_recorded:               "Arabic|Farsi",
         language:                           "Q13955|Q9168",
         language_label:                     "Arabic|Persian",
+        language_ds_qid:                    "|",
         former_owner_as_recorded:           "Former owner as recorded",
         former_owner_as_recorded_agr:       "Former owner in original script",
         former_owner_wikidata:              "WDQIDOWNER",
         former_owner:                       "",
         former_owner_instance_of:           "organization",
         former_owner_label:                 "Former owner auth name",
+        former_owner_ds_qid:                "",
+        associated_agent:                   "",
+        associated_agent_as_recorded:       "",
+        associated_agent_as_recorded_agr:   "",
+        associated_agent_ds_qid:            "",
+        associated_agent_instance_of:       "",
+        associated_agent_label:             "",
+        associated_agent_wikidata:          "",
         material_as_recorded:               "materials description",
         material:                           "http://vocab.getty.edu/aat/300014109;http://vocab.getty.edu/aat/300011851",
         material_label:                     "parchment;paper",
+        material_ds_qid:                    "",
         physical_description:               "Extent: 1 folio; materials description; 310 x 190 mm bound to 320 x 200 mm",
         note:                               "Layout: 1 column, 24 lines|Script: Carolingian|Decoration: Illuminated manuscript|Binding: Bound in vellum|Other miscellaneous physical description|Provenance: Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017|The first note|The second note",
         data_processed_at:                  be_some_kind_of_date_time,
@@ -163,18 +162,6 @@ RSpec.describe DS::Mapper::DSCSVMapper do
 
     it 'maps a record' do
       expect(mapper.map_record entry).to match expected_map
-    end
-
-    it 'calls all the DSSCV methods' do
-      add_stubs recon_classes, :lookup, []
-      add_expects objects: DS::Extractor::DsCsvExtractor, methods: extractor_methods, return_val: []
-
-      mapper.map_record entry
-    end
-
-    it 'calls lookup on all the Recon classes' do
-      add_expects objects: recon_classes, methods: [:lookup], return_val: []
-      mapper.map_record entry
     end
   end
 end

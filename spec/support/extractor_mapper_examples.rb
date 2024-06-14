@@ -40,24 +40,15 @@ RSpec.shared_examples 'an extractor mapper' do |except|
         extract_cataloging_convention
         extract_production_date_as_recorded
         extract_date_range
-        extract_production_places_as_recorded
-        extract_uniform_titles_as_recorded
-        extract_uniform_titles_as_recorded_agr
-        extract_titles_as_recorded
-        extract_titles_as_recorded_agr
-        extract_genres_as_recorded
-        extract_genre_vocabulary
-        extract_all_subjects_as_recorded
-        extract_authors_as_recorded
-        extract_authors_as_recorded_agr
-        extract_artists_as_recorded
-        extract_artists_as_recorded_agr
-        extract_scribes_as_recorded
-        extract_scribes_as_recorded_agr
-        extract_languages_as_recorded
-        extract_former_owners_as_recorded
-        extract_former_owners_as_recorded_agr
-        extract_material_as_recorded
+        extract_titles
+        extract_genres
+        extract_all_subjects
+        extract_authors
+        extract_artists
+        extract_scribes
+        extract_languages
+        extract_former_owners
+        extract_materials
         extract_physical_description
         extract_notes
         extract_acknowledgments
@@ -102,6 +93,7 @@ RSpec.shared_examples 'an extractor mapper' do |except|
       production_place:                   be_a(String),
       production_place_label:             be_a(String),
       production_date_as_recorded:        be_a(String),
+      production_place_ds_qid:            be_a(String),
       production_date:                    be_a(String),
       century:                            be_a(String),
       century_aat:                        be_a(String),
@@ -110,51 +102,62 @@ RSpec.shared_examples 'an extractor mapper' do |except|
       uniform_title_as_recorded:          be_a(String),
       uniform_title_agr:                  be_a(String),
       standard_title:                     be_a(String),
+      standard_title_ds_qid:              be_a(String),
       genre_as_recorded:                  be_a(String),
       genre:                              be_a(String),
       genre_label:                        be_a(String),
+      genre_ds_qid:                       be_a(String),
+      genre_vocabulary:                   be_a(String),
       subject_as_recorded:                be_a(String),
       subject:                            be_a(String),
       subject_label:                      be_a(String),
+      subject_ds_qid:                     be_a(String),
       author_as_recorded:                 be_a(String),
       author_as_recorded_agr:             be_a(String),
       author:                             be_a(String),
       author_wikidata:                    be_a(String),
       author_instance_of:                 be_a(String),
       author_label:                       be_a(String),
+      author_ds_qid:                      be_a(String),
       artist_as_recorded:                 be_a(String),
       artist_as_recorded_agr:             be_a(String),
       artist:                             be_a(String),
       artist_label:                       be_a(String),
       artist_wikidata:                    be_a(String),
       artist_instance_of:                 be_a(String),
+      artist_ds_qid:                      be_a(String),
       scribe_as_recorded:                 be_a(String),
       scribe_as_recorded_agr:             be_a(String),
       scribe:                             be_a(String),
       scribe_label:                       be_a(String),
       scribe_wikidata:                    be_a(String),
       scribe_instance_of:                 be_a(String),
+      scribe_ds_qid:                      be_a(String),
       associated_agent_as_recorded:       be_a(String),
       associated_agent_as_recorded_agr:   be_a(String),
       associated_agent:                   be_a(String),
       associated_agent_label:             be_a(String),
       associated_agent_wikidata:          be_a(String),
       associated_agent_instance_of:       be_a(String),
+      associated_agent_ds_qid:            be_a(String),
       language_as_recorded:               be_a(String),
       language:                           be_a(String),
       language_label:                     be_a(String),
+      language_ds_qid:                    be_a(String),
       former_owner_as_recorded:           be_a(String),
       former_owner_as_recorded_agr:       be_a(String),
       former_owner:                       be_a(String),
       former_owner_label:                 be_a(String),
       former_owner_wikidata:              be_a(String),
       former_owner_instance_of:           be_a(String),
+      former_owner_ds_qid:                be_a(String),
       material_as_recorded:               be_a(String),
       material:                           be_a(String),
       material_label:                     be_a(String),
+      material_ds_qid:                    be_a(String),
       physical_description:               be_a(String),
       note:                               be_a(String),
-      acknowledgements:                   be_a(String),
+      acknowledgments:                   be_a(String),
       data_processed_at:                  be_some_kind_of_date_time.or(be_blank),
       data_source_modified:               be_some_kind_of_date_time.or(be_blank),
       source_file:                        be_a(String),
@@ -192,6 +195,13 @@ RSpec.shared_examples 'an extractor mapper' do |except|
     it 'returns a hash with all the import CSV columns' do
       add_stubs recon_classes, :lookup, []
       expect(mapper.map_record(entry).keys.sort).to eq DS::Constants::HEADINGS.sort
+    end
+  end
+
+  context 'recon mapping' do
+    it 'calls Recon.lookup' do
+      expect(mapper.recon_builder).to receive(:build_all_recons).with(any_args).at_least(:once).and_return([])
+      mapper.map_record(entry)
     end
   end
 

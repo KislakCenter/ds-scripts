@@ -15,7 +15,7 @@ RSpec.shared_examples "a recon type class" do |skips|
   end
 
   context '.csv_headers' do
-    let(:the_method) { :csv_headers }
+    let(:the_method) { :recon_csv_headers }
 
     it 'implements the method' do
       expect(described_class).to respond_to the_method

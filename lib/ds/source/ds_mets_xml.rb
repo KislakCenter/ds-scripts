@@ -4,6 +4,8 @@ module DS
   module Source
     class DSMetsXML < BaseSource
 
+      TYPE = DS::Constants::DS_METS
+
       # Opens a METS XML file at the given path and returns it as a Nokogiri::XML object.
       #
       # Namespaces are *not* removed from the document.

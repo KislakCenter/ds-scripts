@@ -93,15 +93,15 @@ module Recon
     # @yield [Hash<Symbol, String>] a block that yields recon rows
     def each_recon set_name, &block
       items = Set.new
-      recon_config = Recon.find_recon_type set_name
+      recon_type = Recon.find_recon_type set_name
 
       enumerator.each do |record|
-        [recon_config.method_name].flatten.each do |name|
+        [recon_type.method_name].flatten.each do |name|
           next unless extractor.respond_to? name.to_sym
           extractor.send(name.to_sym, record).each do |item|
             unless items.include? item
               items << item
-              yield build_recon recon_type: recon_config, item: item
+              yield build_recon recon_type: recon_type, item: item
             end
           end
         end
@@ -131,7 +131,16 @@ module Recon
       val
     end
 
-    private
+    # Builds an array of recon CSV rows for each term in the given terms array
+    # using the given recon type configuration.
+    #
+    # @param terms [Array<DS::Extractor::BaseTerm>] an array of terms to build recon rows for
+    # @param recon_type [Recon::Type::ReconType] a recon type configuration
+    # @return [Array<Hash<Symbol,String>>] an array of recon CSV rows
+    def build_all_recons terms, recon_type
+      terms.map { |term| build_recon item: term, recon_type: recon_type }
+    end
+
     # Build a single recon CSV row; e.g.,
     #
     #    { :language_as_recorded => "Arabic",
@@ -147,11 +156,13 @@ module Recon
       subset = item.send(recon_type.subset_column) if recon_type.subset_column.present?
       recon_hash = item.to_h
       recon_type.lookup_columns.each do |col|
-        val = Recon.lookup(recon_type.set_name, value: as_recorded, column: col, subset: subset)
+        val = Recon.lookup_single(recon_type.set_name, value: as_recorded, column: col, subset: subset)
         recon_hash[col] = fix_delimiters val, recon_type.delimiter_map
       end
-      prep_row recon_hash: recon_hash, recon_type: recon_type
+      recon_hash
     end
+
+    private
 
     ##
     # Transform the recon hash
@@ -169,8 +180,6 @@ module Recon
       row[recon_type.as_recorded_column] = ar_value
       row
     end
-
-
 
   end
 end

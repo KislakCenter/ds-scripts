@@ -9,9 +9,10 @@ module Recon
 
       SET_NAME = :names
 
-      CSV_HEADERS = %i{
+      RECON_CSV_HEADERS = %i{
       name_as_recorded
-      role name_agr
+      role
+      name_agr
       source_authority_uri
       instance_of
       authorized_label
@@ -42,10 +43,30 @@ module Recon
 
       def self.lookup names, column:
         names.map { |name|
-          Recon.lookup(SET_NAME, value: name, column: column)
+          Recon.lookup_single(SET_NAME, value: name, column: column)
         }
       end
 
+    end
+
+    class Authors < Names
+      METHOD_NAME = %i{ extract_authors }.freeze
+    end
+
+    class Artists < Names
+      METHOD_NAME = %i{ extract_artists }.freeze
+    end
+
+    class AssociatedAgents < Names
+      METHOD_NAME = %i{ extract_associated_agents }.freeze
+    end
+
+    class FormerOwners < Names
+      METHOD_NAME = %i{ extract_former_owners }.freeze
+    end
+
+    class Scribes < Names
+      METHOD_NAME = %i{ extract_scribes }.freeze
     end
   end
 end

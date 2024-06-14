@@ -220,20 +220,20 @@ describe DS::Extractor::DsMetsXmlExtractor do
       end
     end
 
-    context 'extract_acknowledgements' do
-      it 'formats an ms acknowledgement' do
+    context 'extract_acknowledgments' do
+      it 'formats an ms acknowledgment' do
         expect(DS::Extractor::DsMetsXmlExtractor.extract_acknowledgments na_ds_xml).to have_item_matching /^MS acknowledgement/
       end
 
-      it 'formats a part acknowledgement' do
+      it 'formats a part acknowledgment' do
         expect(DS::Extractor::DsMetsXmlExtractor.extract_acknowledgments na_ds_xml).to have_item_matching /^One leaf: Part acknowledgement/
       end
 
-      it 'formats a text acknowledgement' do
+      it 'formats a text acknowledgment' do
         expect(DS::Extractor::DsMetsXmlExtractor.extract_acknowledgments na_ds_xml).to have_item_matching /^One leaf: Text acknowledgement/
       end
 
-      it 'formats a page acknowledgement' do
+      it 'formats a page acknowledgment' do
         expect(DS::Extractor::DsMetsXmlExtractor.extract_acknowledgments na_ds_xml).to have_item_matching /^f. 1r: Page acknowledgement/
       end
     end

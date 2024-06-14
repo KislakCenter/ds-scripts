@@ -170,6 +170,10 @@ module DS
             extract_names(record, tags: [700, 710, 711], relators: %w{author})
         end
 
+        def extract_associated_agents record
+          []
+        end
+
         ##
         # For the given record, extract the names as an array of arrays, including
         # the concatenated name string (subfields, a, b, c, d) and, if present,
@@ -482,6 +486,7 @@ module DS
           extract_all_subjects(record).map &:as_recorded
         end
 
+
         ##
         # Extract genre terms for reconciliation CSV output.
         #
@@ -683,7 +688,7 @@ module DS
         #
         # @param [Nokogiri::XML::Node] record the +marc:record+ node
         # @return [Array]
-        def extract_date_range record
+        def extract_date_range record, range_sep:
           # 008 controlfield; e.g.,
           #
           #     "220518q14001500xx            000 0     d"
@@ -697,9 +702,12 @@ module DS
           part2 = extract_date_part date_str, 5, 8 # '193u'
           part2.gsub! /u/, '9' if part2.present?
 
-          compile_dates(record, code, part1, part2).filter_map { |y|
+          range = compile_dates(record, code, part1, part2).filter_map { |y|
             y if y.present?
           }
+
+          return [] if range.blank?
+          [range.join(range_sep)]
         end
 
         # Compiles dates based on the provided code and parts. This
@@ -809,7 +817,7 @@ module DS
           dar = record.xpath("datafield[@tag=245]/subfield[@code='f']").text
           return [DS::Util.clean_string(dar)] unless dar.strip.empty?
 
-          encoded_date = extract_date_range record
+          encoded_date = extract_date_range record, range_sep: '-'
           [encoded_date.join('_').strip]
         end
 

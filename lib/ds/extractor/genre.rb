@@ -34,6 +34,7 @@ module DS
       # @return [Hash<Symbol,String>] a hash with keys +:as_recorded+, +:source_authority_uri+, and +:vocabulary+
       def to_h
         {
+          genre_as_recorded: as_recorded,
           as_recorded: as_recorded,
           source_authority_uri: source_authority_uri,
           vocabulary: vocabulary

@@ -40,7 +40,7 @@ module Recon
       outfile = File.join out_dir, "#{recon_type.set_name}.csv"
       CSV.open(outfile, 'w+', headers: true) do |csv|
         row_num = 0
-        csv << recon_type.csv_headers
+        csv << recon_type.recon_csv_headers
         recon_builder.each_recon(recon_type.set_name) do |recon|
           errors = Recon.validate_row(recon_type, recon, row_num: row_num += 1)
           add_errors recon_type, errors unless errors.blank?

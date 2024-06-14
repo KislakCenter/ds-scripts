@@ -60,6 +60,51 @@ RSpec.describe DS::Mapper::BaseMapper do
     end
   end
 
+  context 'term string methods' do
+    let(:recon_hashes) {
+      [
+        { recon_key_a: '1', recon_key_b: '4' },
+        { recon_key_a: '2', recon_key_b: '5' },
+        { recon_key_a: '3', recon_key_b: '6' }
+      ]
+    }
+
+    context '#build_term_strings' do
+      it 'is a Mapper method' do
+        expect(base_mapper.methods).to include :build_term_strings
+      end
+
+      let(:column_map) {
+        { import_csv_key_a: :recon_key_a, import_csv_key_b: :recon_key_b }
+      }
+
+      let(:expected_term_strings) {
+        { import_csv_key_a: '1|2|3', import_csv_key_b: '4|5|6' }
+      }
+
+      it 'returns a hash of term strings' do
+        expect(
+          base_mapper.build_term_strings recon_hashes, column_map
+        ).to eq expected_term_strings
+      end
+    end
+
+    context '#build_term_string' do
+      let(:recon_key) { :recon_key_a }
+      let(:expected_term_string) { '1|2|3' }
+
+      it 'is a Mapper method' do
+        expect(base_mapper.methods).to include :build_term_string
+      end
+
+      it 'returns a term string' do
+        expect(
+          base_mapper.build_term_string recon_hashes, recon_key
+        ).to eq expected_term_string
+      end
+    end
+  end
+
   context '#map_record' do
     it 'is a Mapper method' do
       expect(base_mapper.methods).to include :map_record

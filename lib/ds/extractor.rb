@@ -13,6 +13,12 @@ require_relative 'extractor/xml_record_locator'
 require_relative 'extractor/csv_record_locator'
 
 module DS
+  # Module for DS Extractor classes, which are responsible for extracting
+  # import CSV rows from source records.
+  #
+  # Extractors are used by {DS::Mapper::BaseMapper} instances to extract
+  # data from a source records and by {Recon::ReconBuilder} instances
+  # to extract data from DS data sources for recon CSVs.
   module Extractor
   end
 end

@@ -38,6 +38,7 @@ module DS
       # @return [Hash] the name as a hash
       def to_h
         {
+          name_as_recorded: as_recorded,
           as_recorded: as_recorded,
           role: role,
           name_agr: vernacular,

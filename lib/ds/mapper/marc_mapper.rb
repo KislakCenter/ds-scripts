@@ -6,7 +6,11 @@ module DS
     class MarcMapper < DS::Mapper::BaseMapper
 
       def initialize(source_dir:, timestamp:)
-        super source_dir: source_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
+        super(
+          source_dir: source_dir,
+          timestamp: timestamp,
+          source: DS::Source::MarcXML.new
+        )
       end
       ##
       # @param [DS::Manifest::Entry] entry +entry+ representing one
@@ -44,67 +48,16 @@ module DS
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
         production_date_as_recorded        = DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(record).join '|'
-        production_date                    = DS::Extractor::MarcXmlExtractor.extract_date_range(record).join '^'
+        production_date                    = DS::Extractor::MarcXmlExtractor.extract_date_range(record, range_sep: '^').join '|'
         century                            = DS.transform_dates_to_centuries production_date
         century_aat                        = DS.transform_centuries_to_aat century
-        production_place_as_recorded       = DS::Extractor::MarcXmlExtractor.extract_production_places_as_recorded(record).join '|'
-        production_place                   = Recon::Type::Places.lookup(production_place_as_recorded.split('|'), from_column: 'structured_value').join '|'
-        production_place_label             = Recon::Type::Places.lookup(production_place_as_recorded.split('|'), from_column: 'authorized_label').join '|'
-        uniform_title_as_recorded          = DS::Extractor::MarcXmlExtractor.extract_uniform_titles_as_recorded(record).join '|'
-        uniform_title_agr                  = DS::Extractor::MarcXmlExtractor.extract_uniform_titles_as_recorded_agr(record).join '|'
-        title_as_recorded                  = DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(record).join '|'
-        title_as_recorded_agr              = DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded_agr(record).join '|'
-        standard_title                     = Recon::Type::Titles.lookup(title_as_recorded.split('|'), column: 'authorized_label').join '|'
-        genre_as_recorded                  = DS::Extractor::MarcXmlExtractor.extract_genres_as_recorded(record).join('|')
-        genre_vocabulary                   = DS::Extractor::MarcXmlExtractor.extract_genre_vocabulary(record).join '|'
-        genre                              = Recon::Type::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'structured_value').join '|'
-        genre_label                        = Recon::Type::Genres.lookup(genre_as_recorded.split('|'), genre_vocabulary.split('|'), from_column: 'authorized_label').join '|'
-        subject_as_recorded                = DS::Extractor::MarcXmlExtractor.extract_all_subjects_as_recorded(record).join '|'
-        subject                            = Recon::Type::AllSubjects.lookup(subject_as_recorded.split('|'), from_column: 'structured_value').join '|'
-        subject_label                      = Recon::Type::AllSubjects.lookup(subject_as_recorded.split('|'), from_column: 'authorized_label').join '|'
-        author_as_recorded                 = DS::Extractor::MarcXmlExtractor.extract_authors_as_recorded(record).join '|'
-        author_as_recorded_agr             = DS::Extractor::MarcXmlExtractor.extract_authors_as_recorded_agr(record).join '|'
-        author_wikidata                    = Recon::Type::Names.lookup(author_as_recorded.split('|'), column: 'structured_value').join '|'
-        author                             = ''
-        author_instance_of                 = Recon::Type::Names.lookup(author_as_recorded.split('|'), column: 'instance_of').join '|'
-        author_label                       = Recon::Type::Names.lookup(author_as_recorded.split('|'), column: 'authorized_label').join '|'
-        artist_as_recorded                 = DS::Extractor::MarcXmlExtractor.extract_artists_as_recorded(record).join '|'
-        artist_as_recorded_agr             = DS::Extractor::MarcXmlExtractor.extract_artists_as_recorded_agr(record).join '|'
-        artist_wikidata                    = Recon::Type::Names.lookup(artist_as_recorded.split('|'), column: 'structured_value').join '|'
-        artist                             = ''
-        artist_instance_of                 = Recon::Type::Names.lookup(artist_as_recorded.split('|'), column: 'instance_of').join '|'
-        artist_label                       = Recon::Type::Names.lookup(artist_as_recorded.split('|'), column: 'authorized_label').join '|'
-        scribe_as_recorded                 = DS::Extractor::MarcXmlExtractor.extract_scribes_as_recorded(record).join '|'
-        scribe_as_recorded_agr             = DS::Extractor::MarcXmlExtractor.extract_scribes_as_recorded_agr(record).join '|'
-        scribe_wikidata                    = Recon::Type::Names.lookup(scribe_as_recorded.split('|'), column: 'structured_value').join '|'
-        scribe                             = ''
-        scribe_instance_of                 = Recon::Type::Names.lookup(scribe_as_recorded.split('|'), column: 'instance_of').join '|'
-        scribe_label                       = Recon::Type::Names.lookup(scribe_as_recorded.split('|'), column: 'authorized_label').join '|'
-        associated_agent_as_recorded       = ''
-        associated_agent_as_recorded_agr   = ''
-        associated_agent                   = ''
-        associated_agent_label             = ''
-        associated_agent_wikidata          = ''
-        associated_agent_instance_of       = ''
-        language_as_recorded               = DS::Extractor::MarcXmlExtractor.extract_languages_as_recorded(record).join '|'
-        language                           = Recon::Type::Languages.lookup(language_as_recorded, from_column: 'structured_value').join '|'
-        language_label                     = Recon::Type::Languages.lookup(language_as_recorded, from_column: 'authorized_label').join '|'
-        former_owner_as_recorded           = DS::Extractor::MarcXmlExtractor.extract_former_owners_as_recorded(record).join '|'
-        former_owner_as_recorded_agr       = DS::Extractor::MarcXmlExtractor.extract_former_owners_as_recorded_agr(record).join '|'
-        former_owner_wikidata              = Recon::Type::Names.lookup(former_owner_as_recorded.split('|'), column: 'structured_value').join '|'
-        former_owner                       = ''
-        former_owner_instance_of           = Recon::Type::Names.lookup(former_owner_as_recorded.split('|'), column: 'instance_of').join '|'
-        former_owner_label                 = Recon::Type::Names.lookup(former_owner_as_recorded.split('|'), column: 'authorized_label').join '|'
-        material_as_recorded               = DS::Extractor::MarcXmlExtractor.extract_material_as_recorded record
-        material                           = Recon::Type::Materials.lookup(material_as_recorded.split('|'), column: 'structured_value').join '|'
-        material_label                     = Recon::Type::Materials.lookup(material_as_recorded.split('|'), column: 'authorized_label').join '|'
         physical_description               = DS::Extractor::MarcXmlExtractor.extract_physical_description(record).join('|')
         note                               = DS::Extractor::MarcXmlExtractor.extract_notes(record).join '|'
         data_processed_at                  = timestamp
         data_source_modified               = entry.record_last_updated
-        acknowledgements                   = ''
+        acknowledgments                   = ''
 
-        {
+        data = {
           ds_id:                              ds_id,
           date_added:                         date_added,
           date_last_updated:                  date_last_updated,
@@ -120,64 +73,15 @@ module DS
           production_date:                    production_date,
           century:                            century,
           century_aat:                        century_aat,
-          production_place_as_recorded:       production_place_as_recorded,
-          production_place:                   production_place,
-          production_place_label:             production_place_label,
           production_date_as_recorded:        production_date_as_recorded,
-          uniform_title_as_recorded:          uniform_title_as_recorded,
-          uniform_title_agr:                  uniform_title_agr,
-          title_as_recorded:                  title_as_recorded,
-          title_as_recorded_agr:              title_as_recorded_agr,
-          standard_title:                     standard_title,
-          genre_as_recorded:                  genre_as_recorded,
-          genre:                              genre,
-          genre_label:                        genre_label,
-          subject_as_recorded:                subject_as_recorded,
-          subject:                            subject,
-          subject_label:                      subject_label,
-          author_as_recorded:                 author_as_recorded,
-          author_as_recorded_agr:             author_as_recorded_agr,
-          author_wikidata:                    author_wikidata,
-          author:                             author,
-          author_instance_of:                 author_instance_of,
-          author_label:                       author_label,
-          artist_as_recorded:                 artist_as_recorded,
-          artist_as_recorded_agr:             artist_as_recorded_agr,
-          artist_wikidata:                    artist_wikidata,
-          artist:                             artist,
-          artist_instance_of:                 artist_instance_of,
-          artist_label:                       artist_label,
-          scribe_as_recorded:                 scribe_as_recorded,
-          scribe_as_recorded_agr:             scribe_as_recorded_agr,
-          scribe_wikidata:                    scribe_wikidata,
-          scribe:                             scribe,
-          scribe_instance_of:                 scribe_instance_of,
-          scribe_label:                       scribe_label,
-          associated_agent_as_recorded:       associated_agent_as_recorded,
-          associated_agent_as_recorded_agr:   associated_agent_as_recorded_agr,
-          associated_agent:                   associated_agent,
-          associated_agent_label:             associated_agent_label,
-          associated_agent_wikidata:          associated_agent_wikidata,
-          associated_agent_instance_of:       associated_agent_instance_of,
-          language_as_recorded:               language_as_recorded,
-          language:                           language,
-          language_label:                     language_label,
-          former_owner_as_recorded:           former_owner_as_recorded,
-          former_owner_as_recorded_agr:       former_owner_as_recorded_agr,
-          former_owner_wikidata:              former_owner_wikidata,
-          former_owner:                       former_owner,
-          former_owner_instance_of:           former_owner_instance_of,
-          former_owner_label:                 former_owner_label,
-          material_as_recorded:               material_as_recorded,
-          material:                           material,
-          material_label:                     material_label,
           physical_description:               physical_description,
           note:                               note,
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
           source_file:                        source_file,
-          acknowledgements:                   acknowledgements,
-        }
+          acknowledgments:                   acknowledgments,
+        }.update build_term_maps DS::Extractor::MarcXmlExtractor, record
+        # data.update build_term_maps(DS::Extractor::MarcXmlExtractor, record)
       end
     end
   end

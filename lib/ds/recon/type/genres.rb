@@ -15,7 +15,7 @@ module Recon
 
       SET_NAME = :genres
 
-      CSV_HEADERS = %i{
+      RECON_CSV_HEADERS = %i{
       genre_as_recorded
       vocabulary
       source_authority_uri
@@ -56,7 +56,7 @@ module Recon
       protected
 
       def self._lookup_single term, vocab, from_column:
-        uris = Recon.lookup(SET_NAME, subset: vocab, value: term, column: from_column)
+        uris = Recon.lookup_single(SET_NAME, subset: vocab, value: term, column: from_column)
         uris.to_s.gsub('|', ';')
       end
     end

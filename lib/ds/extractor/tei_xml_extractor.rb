@@ -20,6 +20,14 @@ module DS
 
       module ClassMethods
 
+
+        ############################################################
+        # SOURCE METADATA
+        ############################################################
+        def extract_cataloging_convention record
+          'tei-xml'
+        end
+
         ############################################################
         # NAMES
         ############################################################
@@ -227,6 +235,17 @@ module DS
           extract_resps(xml, RESP_FORMER_OWNER)
         end
 
+        # Extracts associated agents from the given XML record.
+        #
+        # NB: Associated agents are not extracted from TEI XML. This
+        # method returns an empty array.
+        #
+        # @param [Nokogiri::XML::Node] xml the parsed TEI XML
+        # @return [Array] an empty array
+        def extract_associated_agents xml
+          []
+        end
+
         #########################################################################
         # Miscellaneous authority values
         #########################################################################
@@ -364,6 +383,10 @@ module DS
           extract_subjects_as_recorded xml
         end
 
+        def extract_all_subjects xml
+          extract_subjects xml
+        end
+
         # Extracts subjects from the given TEI XML record as recorded.
         #
         # @param [Nokogiri::XML::Node] xml the TEI XML record
@@ -423,7 +446,7 @@ module DS
         #
         # @param [Nokogiri::XML::Node] xml the TEI XML record
         # @param [String] range_sep the separator for the date range
-        # @return [String] the extracted date of production as recorded
+        # @return [Array<String>] the extracted dates of production as recorded
         def extract_production_date_as_recorded xml, range_sep: '-'
           extract_date_range(xml, range_sep: range_sep)
         end
@@ -433,9 +456,9 @@ module DS
         # @param [Nokogiri::XML::Node] record the TEI XML record
         # @param [String] range_sep the separator for the date range
         # @return [Array<String>] an array of formatted date ranges
-        def extract_date_range record, range_sep: '-'
+        def extract_date_range record, range_sep:
           record.xpath('//origDate').map { |orig|
-            orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join range_sep
+            orig.xpath('@notBefore|@notAfter').map { |d| d.text.to_i }.sort.join(range_sep)
           }
         end
 

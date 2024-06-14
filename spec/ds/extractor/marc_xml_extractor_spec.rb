@@ -371,7 +371,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
       it 'returns an empty array' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
         ).to eq []
       end
     end
@@ -388,7 +388,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
       it 'returns an empty array' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
         ).to eq []
       end
     end
@@ -411,8 +411,8 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns the range' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w{-150 -75}
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w{-150^-75}
         end
       end
 
@@ -433,8 +433,8 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns the range' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w{-150 75}
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w{-150^75}
         end
       end
 
@@ -454,7 +454,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns the year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq %w{-150}
         end
       end
@@ -475,7 +475,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns the year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq %w{-150}
         end
       end
@@ -496,7 +496,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns an empty array' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq []
         end
       end
@@ -515,7 +515,7 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns the year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1120"]
         end
       end
@@ -531,7 +531,7 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns the year and ignores letter code' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1120"]
         end
       end
@@ -550,8 +550,8 @@ describe DS::Extractor::MarcXmlExtractor do
         }
       it 'returns a year range' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
-        ).to eq %w[1512 1716]
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+        ).to eq %w[1512^1716]
       end
     end
 
@@ -569,8 +569,8 @@ describe DS::Extractor::MarcXmlExtractor do
 
       it 'returns a year range' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
-        ).to eq %w[739 741]
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+        ).to eq %w[739^741]
       end
 
       context 'with "u"s in date1' do
@@ -585,8 +585,8 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns a year range and substitutes "0" for "u"' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w[1700 1900]
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[1700^1900]
         end
       end
 
@@ -602,8 +602,8 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns a year range and substitutes "9" for "u"' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w[618 1939]
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[618^1939]
         end
       end
 
@@ -619,8 +619,8 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'substitutes 0 and 9 for "u" as appropriate'  do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w[610 1939]
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[610^1939]
         end
       end
 
@@ -639,7 +639,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
       it 'returns an empty array' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
         ).to eq []
       end
 
@@ -660,7 +660,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
       it 'returns a year' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
         ).to eq ["1400"]
       end
     end
@@ -678,8 +678,8 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns a year range' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w[100 299]
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[100^299]
         end
       end
       context "single year" do
@@ -694,7 +694,7 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns a year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["979"]
         end
 
@@ -713,8 +713,8 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it "returns a range replacing u's with 0s and 9s as appropriate" do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
-          ).to eq %w[1300 1499]
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[1300^1499]
         end
       end
 
@@ -731,7 +731,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it "returns the first year when the second is uuuu" do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1425"]
         end
       end
@@ -749,7 +749,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it "returns the second year when the first is uuuu" do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1597"]
         end
       end
@@ -767,7 +767,7 @@ describe DS::Extractor::MarcXmlExtractor do
       }
       it 'returns the first year' do
         expect(
-          DS::Extractor::MarcXmlExtractor.extract_date_range record
+          DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
         ).to eq ["1175"]
       end
     end
@@ -785,7 +785,7 @@ describe DS::Extractor::MarcXmlExtractor do
         }
         it 'returns a single year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1171"]
         end
       end
@@ -803,7 +803,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns a single year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1171"]
         end
       end
@@ -821,7 +821,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it 'returns a single year' do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1171"]
         end
       end
@@ -839,7 +839,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it "substitutes 0 for u: 's19uu    '" do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
           ).to eq ["1900"]
         end
       end
@@ -857,7 +857,7 @@ describe DS::Extractor::MarcXmlExtractor do
 
         it "returns the first year: 's15631564'" do
           expect(
-            DS::Extractor::MarcXmlExtractor.extract_date_range record
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: "^"
           ).to eq ["1563"]
         end
       end

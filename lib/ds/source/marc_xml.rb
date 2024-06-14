@@ -4,6 +4,8 @@ module DS
   module Source
     class MarcXML < BaseSource
 
+      TYPE = DS::Constants::MARC_XML
+
       # Opens a MARC XML source file at the given path and returns a Nokogiri::XML object representing the record.
       #
       # NB: Namespaces are stripped from the document.

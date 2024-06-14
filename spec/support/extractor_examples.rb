@@ -292,8 +292,8 @@ RSpec.shared_examples "an extractor" do |options|
     end
 
     context 'other_names', unless: skip?(options, :other_names) do
-      context 'extract_other_names' do
-        let(:extraction_method) { :extract_other_names }
+      context 'extract_associated_agents' do
+        let(:extraction_method) { :extract_associated_agents }
         let(:composite_type) { DS::Extractor::Name }
         it 'returns an array of Name objects' do
           expect(
@@ -514,7 +514,11 @@ RSpec.shared_examples "an extractor" do |options|
       end
 
       it 'returns the expected type' do
-        expect(described_class.send extract_method, record).to be_a return_type
+        expect(described_class.send extract_method, record, range_sep: '^').to be_a return_type
+      end
+
+      it 'returns an array of year-range strings' do
+        expect(described_class.send extract_method, record, range_sep: '^').to all be_a String
       end
     end
   end

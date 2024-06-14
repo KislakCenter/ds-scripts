@@ -47,6 +47,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
           authorized_label:  "Paris",
           ds_qid:            "",
           place_as_recorded: "Paris",
+          as_recorded:       "Paris",
           structured_value:  "http://vocab.getty.edu/tgn/paris_id"
         }
       }
@@ -72,6 +73,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
           :authorized_label=>"paper",
           :ds_qid=>"",
           :material_as_recorded=>"paper",
+          :as_recorded=>"paper",
           :structured_value=>"http://vocab.getty.edu/aat/300014109"
         }
       }
@@ -95,6 +97,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
           :authorized_label=>"Latin",
           :ds_qid=>nil,
           :language_as_recorded=>"Latin",
+          :as_recorded=>"Latin",
           :language_code=>"la",
           :structured_value=>"Q397"
         }
@@ -120,6 +123,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
           :authorized_label=>"Qur'ans",
           :ds_qid=>"",
           :genre_as_recorded=>"Qurʼans",
+          :as_recorded=>"Qurʼans",
           :source_authority_uri=>nil,
           :structured_value=>"http://vocab.getty.edu/aat/300265128",
           :vocabulary=>"aat"
@@ -150,7 +154,8 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
           authorized_label:      "Wine and wine making--Law and legislation",
           structured_value:      "http://id.worldcat.org/fast/1175925",
           ds_qid:                "",
-          subject_as_recorded:   "Wine and wine making--Law and legislation"
+          subject_as_recorded:   "Wine and wine making--Law and legislation",
+          as_recorded:           "Wine and wine making--Law and legislation"
         }
       }
       let(:terms) {
@@ -192,7 +197,9 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
          :authorized_label=>"Rhetorica ad Herennium",
          :structured_value=>"http://id.worldcat.org/fast/1357545",
          :ds_qid=>"",
-         :subject_as_recorded=>"Rhetorica ad Herennium"}
+         :subject_as_recorded=>"Rhetorica ad Herennium",
+         :as_recorded=>"Rhetorica ad Herennium"
+        }
       }
 
       it 'yields a hash' do
@@ -225,7 +232,9 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
          :structured_value=>"WDQIDOWNER",
          :instance_of=>"organization",
          :ds_qid=>nil,
-         :name_as_recorded=>"Former owner as recorded"}
+         :name_as_recorded=>"Former owner as recorded",
+         :as_recorded=>"Former owner as recorded",
+        }
       }
 
       it 'yields a hash' do
@@ -247,7 +256,9 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
          :uniform_title_as_recorded_agr=>"Uniform title in vernacular",
          :authorized_label=>"Standard title",
          :ds_qid=>"",
-         :title_as_recorded=>"Title"}
+         :title_as_recorded=>"Title",
+         :as_recorded=>"Title",
+        }
       }
       let(:terms) {
         [DS::Extractor::Title.new(

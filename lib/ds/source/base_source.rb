@@ -12,12 +12,20 @@ module DS
     class BaseSource
       include DS::Source::SourceCache
 
+      def source_type
+        self.class::TYPE
+      end
+
       # Loads the specified source path.
       #
       # @param source_path [String] The path to the source file.
       # @return [Object] The parsed source file; e.g, Nokogiri::XML::Document or CSV::Table
       def load_source source_path
         find_or_open_source source_path
+      end
+
+      def to_s
+        "#{self.class_name}: source_type #{source_type}"
       end
     end
   end

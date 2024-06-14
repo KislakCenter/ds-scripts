@@ -132,6 +132,59 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
+  context "extract_date_range" do
+    it 'returns the date range' do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_date_range record, range_sep: "^"
+        ).to eq ["1700^1999"]
+    end
+
+    context 'no date range' do
+      let(:record) {
+        {
+          'Production Date START' => nil,
+          'Production Date END' => nil
+        }
+      }
+
+      it "returns an empty array if the date range is not present" do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_date_range record, range_sep: "^"
+        ).to eq []
+      end
+    end
+
+    context 'start date only' do
+      let(:record) {
+        {
+          'Production Date START' => "1700",
+          'Production Date END' => nil
+        }
+      }
+
+      it 'returns the start' do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_date_range record, range_sep: "^"
+        ).to eq ['1700']
+      end
+    end
+
+    context 'end date only' do
+      let(:record) {
+        {
+          'Production Date START' => nil,
+          'Production Date END' => "1999"
+        }
+      }
+
+      it 'returns the end' do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_date_range record, range_sep: "^"
+        ).to eq ['1999']
+      end
+    end
+  end
+
   context "extract_dated" do
     it 'returns the dated column value' do
         expect(
@@ -392,7 +445,7 @@ describe DS::Extractor::DsCsvExtractor do
     it "returns an array that includes the title as recorded data" do
       expect(
         DS::Extractor::DsCsvExtractor.extract_recon_titles record
-      ).to include ["Title", "Title in vernacular", nil, nil]
+      ).to include ["Title", "Title in vernacular", "Uniform title", "Uniform title in vernacular"]
     end
   end
 

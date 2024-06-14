@@ -14,6 +14,10 @@ module DS
           mets: 'http://www.loc.gov/METS/',
         }
 
+        def extract_cataloging_convention xml
+          'ds-mets'
+        end
+
         # Extracts the institution name from the given XML document.
         #
         # @param [Nokogiri::XML::Node] xml the XML document to extract the institution name from
@@ -141,7 +145,7 @@ module DS
         #   Accounted for
         #   - ownership -- accounted for, former owner
         #   - action -- skip; administrative note: "Inputter ...."
-        #   - admin -- acknowledgements
+        #   - admin -- acknowledgments
         #   - untyped -- 'Manuscript Note'
         #   - bibliography -- 'Bibliography'
         #   - source note -- skip; not present on DS legacy pages
@@ -173,7 +177,7 @@ module DS
         #  # Text note types
         #
         #   Accounted for
-        #   - admin - acknowledgements
+        #   - admin - acknowledgments
         #
         #   - condition -> 'Status of text'
         #   - content -> handled as Text Incipit
@@ -251,8 +255,8 @@ module DS
           notes = clean_notes(record.xpath(xpath).flat_map(&:text))
 
           notes.flat_map { |n|
-            splits = Recon::Type::Splits._lookup_single(n, from_column: 'authorized_label').split('|')
-            splits.present? ? splits : n
+            splits = Recon::Type::Splits._lookup_single(n, from_column: 'authorized_label')
+            splits.present? ? splits.split('|') : n
           }.map { |n|
             DS::Extractor::Name.new as_recorded: DS.mark_long(n)
           }
@@ -310,14 +314,14 @@ module DS
         # @param record [Object] the record to extract other names from
         # @return [Array<String>] the extracted other names as recorded
         def extract_other_names_as_recorded record
-          extract_other_names(record).map &:as_recorded
+          extract_associated_agents(record).map &:as_recorded
         end
 
         # Extract other names from the given record.
         #
         # @param record [Object] the record to extract other names from
         # @return [Array<String>] the extracted other names
-        def extract_other_names record
+        def extract_associated_agents record
           DS::Extractor::DsMetsXmlExtractor.extract_name record, 'other'
         end
 
@@ -428,12 +432,12 @@ module DS
           data += extract_artists(xml).map &:to_a
           data += extract_scribes(xml).map &:to_a
           data += extract_former_owners(xml).map &:to_a
-          data += extract_other_names(xml).map &:to_a
+          data += extract_associated_agents(xml).map &:to_a
           data
         end
 
         ##
-        # Extract acknowledgements, notes, physical descriptions, and
+        # Extract acknowledgments, notes, physical descriptions, and
         # former owners; return all strings that start with SPLIT:,
         # remove 'SPLIT: ' and return an array of arrays that can
         # be treated as rows by Recon::Type::Splits
@@ -453,6 +457,10 @@ module DS
         def extract_shelfmark xml
           ms = find_ms xml
           ms.xpath('mods:mods/mods:identifier[@type="local"]/text()').text
+        end
+
+        def extract_genres xml
+          []
         end
 
         ##
@@ -538,7 +546,7 @@ module DS
           find_parts(xml).map { |part|
             date_created = extract_date_created part
             assigned     = extract_assigned_date part
-            range        = extract_date_range(part).join '-'
+            range        = extract_date_range_for_part(part).join '-'
             [date_created, assigned, range].uniq.reject(&:empty?).join '; '
           }.reject { |date| date.to_s.strip.empty? }
         end
@@ -551,13 +559,25 @@ module DS
         #   <mods:dateCreated point="end" encoding="iso8601">1399</mods:dateCreated>
         #
         # @param [Nokogiri::XML:Node] part a part-level node
-        # @return [Array<Integer>] the start and end dates as an array of integers
-        def extract_date_range part
-          xpath = 'mods:mods/mods:originInfo/mods:dateCreated[@point="start"]'
+        # @return [Array<String>] the start and end dates as an array of integers
+        def extract_date_range xml, range_sep:
+          find_parts(xml).map { |part|
+            extract_date_range_for_part(part).join range_sep
+          }
+        end
 
-          start_date = part.xpath(xpath).text
-          xpath      = 'mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
-          end_date   = part.xpath(xpath).text
+        DATE_START_XPATH = 'mods:mods/mods:originInfo/mods:dateCreated[@point="start"]'
+        DATE_END_XPATH   = 'mods:mods/mods:originInfo/mods:dateCreated[@point="end"]'
+
+        ##
+        # Extract ranges from `mods:dateCreated` elements where a @point is
+        # start and end
+        #
+        # @param [Nokogiri::XML:Node] part a part-level node
+        # @return [Array<Integer>] the start and end dates as an array of integers
+        def extract_date_range_for_part part
+          start_date = part.xpath(DATE_START_XPATH).text
+          end_date   = part.xpath(DATE_END_XPATH).text
           [start_date, end_date].reject(&:empty?).map(&:to_i)
         end
 
@@ -617,15 +637,6 @@ module DS
           part.xpath(xpath).text.gsub %r{#\^?([\w/]+)(\^|#)}, '(\1)'
         end
 
-        # Transform the production date based on the parts found in the XML document.
-        #
-        # @param [Nokogiri::XML::Node] xml the parsed XML document
-        # @return [String] the transformed production date string
-        def transform_production_date xml
-          find_parts(xml).map { |part|
-            extract_date_range(part).join '^'
-          }.reject(&:empty?).join '|'
-        end
 
         # Extracts acknowledgments from the given XML document.
         #
@@ -900,6 +911,17 @@ module DS
           }
         end
 
+        # Extracts all subjects from the given record.
+        #
+        # @note method returns {#extract_subjects} to fulfill
+        #     DS::Extractor contract
+        #
+        # @param [Object] record the record to extract subjects from
+        # @return [Array<DS::Extractor::Subject>] the extracted subjects
+        def extract_all_subjects record
+          extract_subjects record
+        end
+
         # Extracts subjects from the given record.
         #
         # @param [Object] record the record to extract subjects from
@@ -908,7 +930,8 @@ module DS
           xpath = '//mods:originInfo/mods:edition'
           find_texts(record).flat_map { |text|
             text.xpath(xpath).map { |subj|
-              DS::Extractor::Subject.new as_recorded: subj.text.strip.gsub(/\s+/, ' ')
+              as_recorded = subj.text.strip.gsub(/\s+/, ' ')
+              DS::Extractor::Subject.new as_recorded: as_recorded, vocab: 'ds-subject'
             }
           }
         end

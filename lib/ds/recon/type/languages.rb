@@ -7,7 +7,7 @@ module Recon
 
       SET_NAME = :languages
 
-      CSV_HEADERS = %i{
+      RECON_CSV_HEADERS = %i{
       language_as_recorded
       language_code
       authorized_label
@@ -38,7 +38,7 @@ module Recon
       def self.lookup languages, from_column: 'structured_value', separator: '|'
         languages.split(separator).map { |lang|
           # make sure each group of languages is separated by ';'
-          Recon.lookup(SET_NAME, value: lang, column: from_column).gsub('|', ';')
+          Recon.lookup_single(SET_NAME, value: lang, column: from_column).gsub('|', ';')
         }
       end
 

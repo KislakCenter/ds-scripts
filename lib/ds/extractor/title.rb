@@ -40,6 +40,7 @@ module DS
       # @return [Hash] the title as a hash
       def to_h
         {
+          title_as_recorded: as_recorded,
           as_recorded: as_recorded,
           title_as_recorded_agr: vernacular,
           uniform_title_as_recorded: uniform_title,

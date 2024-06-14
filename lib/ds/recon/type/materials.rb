@@ -10,7 +10,7 @@ module Recon
 
       SET_NAME = :materials
 
-      CSV_HEADERS = %i{
+      RECON_CSV_HEADERS = %i{
       material_as_recorded
       authorized_label
       structured_value
@@ -39,7 +39,7 @@ module Recon
 
       def self.lookup materials, column:
         materials.map { |material|
-          material_uris = Recon.lookup SET_NAME, value: material, column: column
+          material_uris = Recon.lookup_single SET_NAME, value: material, column: column
           material_uris.to_s.gsub '|', ';'
         }
       end
