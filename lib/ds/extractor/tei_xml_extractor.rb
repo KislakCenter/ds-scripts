@@ -363,7 +363,7 @@ module DS
             as_recorded          = DS::Util.normalize_string term.text
             vocab                = 'openn-form/genre'
             source_authority_uri = term['target']
-            DS::Extractor::Genre.new as_recorded: as_recorded, vocabulary: vocab, source_authority_uri: source_authority_uri
+            DS::Extractor::Genre.new as_recorded: as_recorded, vocab: vocab, source_authority_uri: source_authority_uri
           }
         end
 
@@ -392,9 +392,11 @@ module DS
         # @param [Nokogiri::XML::Node] xml the TEI XML record
         # @return [Array<DS::Extractor::Subject>] the extracted subjects
         def extract_subjects xml
-          xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term/text()'
-          extract_normalized_strings(xml, xpath).map { |term|
-            DS::Extractor::Subject.new as_recorded: term, vocab: "openn-keywords"
+          xpath = '/TEI/teiHeader/profileDesc/textClass/keywords[@n="subjects" or @n="keywords"]/term'
+          xml.xpath(xpath).map { |subject|
+            subject_type = "openn-#{subject.parent['n']}"
+            as_recorded = DS::Util.normalize_string subject.text
+            DS::Extractor::Subject.new as_recorded: as_recorded, vocab: subject_type
           }
         end
 

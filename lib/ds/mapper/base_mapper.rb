@@ -36,7 +36,7 @@ module DS
         genre_as_recorded: :genre_as_recorded,
         genre:             :structured_value,
         genre_label:       :authorized_label,
-        genre_vocabulary:  :vocabulary,
+        genre_vocabulary:  :vocab,
         genre_ds_qid:      :ds_qid
       }
 

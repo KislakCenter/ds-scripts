@@ -99,10 +99,9 @@ module Recon
         [recon_type.method_name].flatten.each do |name|
           next unless extractor.respond_to? name.to_sym
           extractor.send(name.to_sym, record).each do |item|
-            unless items.include? item
-              items << item
-              yield build_recon recon_type: recon_type, item: item
-            end
+            next if items.include? item
+            items << item
+            yield build_recon recon_type: recon_type, item: item
           end
         end
       end

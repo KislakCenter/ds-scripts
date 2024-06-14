@@ -19,7 +19,7 @@ recon:
     - name: :genres
       repo_path: terms/reconciled/genres.csv
       key_column: genre_as_recorded
-      subset_column: vocabulary
+      subset_column: vocab
     - name: :materials
       repo_path: terms/reconciled/materials.csv
       key_column: material_as_recorded

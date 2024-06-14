@@ -57,9 +57,22 @@ module DS
         { as_recorded: as_recorded }
       end
 
+
       def ==(other)
         self.class == other.class &&
           self.to_h == other.to_h
+      end
+
+      ##
+      # Override '#eql?' for Set equivalence
+      def eql?(other)
+        self == other
+      end
+
+      ##
+      # Override '#hash' for Set equivalence
+      def hash
+        to_h.hash
       end
     end
   end
