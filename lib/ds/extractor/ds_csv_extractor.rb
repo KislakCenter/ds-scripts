@@ -382,7 +382,11 @@ module DS
         def extract_titles record
           as_recorded_titles = extract_values_for(:titles_as_recorded, record)
           uniform_titles     = extract_values_for(:uniform_titles_as_recorded, record)
-          raise ArgumentError, "Unbalanced number of titles and uniform titles" if as_recorded_titles.length != uniform_titles.length
+          as_recorded_titles << '' if as_recorded_titles.blank?
+          uniform_titles << '' if uniform_titles.blank?
+          unless balanced_titles? as_recorded_titles, uniform_titles
+            raise ArgumentError, "Unbalanced number of titles and uniform titles (titles: #{as_recorded_titles.inspect}, uniform titles: #{uniform_titles.inspect})"
+          end
 
           as_recorded_titles.zip(uniform_titles).map { |as_rec, uniform|
             as_recorded, vernacular                 = as_rec.split ';;', 2
@@ -396,6 +400,19 @@ module DS
           }
         end
 
+        # Return true if the as_recorded and uniform titles are of equal length.
+        #
+        # @param [Array<String>] as_recorded_titles
+        # @param [Array<String>] uniform_titles
+        # @return [Boolean]
+        def balanced_titles? as_recorded_titles, uniform_titles
+          return true if as_recorded_titles.blank? && uniform_titles.blank?
+          return true if as_recorded_titles.size == uniform_titles.size
+
+          # for our purposes, ['Some title'] and [] are balanced
+          return true if [as_recorded_titles, uniform_titles].all? { |arr| arr.length <= 1 }
+          false
+        end
 
         ##
         # Note: BaseTerm implementations require +as_recorded+; for DS

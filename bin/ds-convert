@@ -117,6 +117,7 @@ LONGDESC
       yield csv
     end
   end
+
   def write_csv rows, options
     out_csv = options[:'output-csv']
     CSV.open out_csv, "w", headers: true do |csv|
