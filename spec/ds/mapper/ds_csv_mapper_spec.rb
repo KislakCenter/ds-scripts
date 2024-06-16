@@ -100,7 +100,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         standard_title:                     "Standard title",
         standard_title_ds_qid:              "",
         genre_as_recorded:                  "prayer books|Glossaries|A third genre|An AAT term|A second AAT term|An LCGFT term|Another LCGFT term|A FAST term|A second FAST term|An RBMSVC term|An LoBT term",
-        genre_vocabulary:                   "||||||||||",
+        genre_vocabulary:                   "ds-genre|ds-genre|ds-genre|ds-genre|ds-genre|ds-genre|ds-genre|ds-genre|ds-genre|ds-genre|ds-genre",
         genre:                              "|http://vocab.getty.edu/aat/300026189|||||||||",
         genre_label:                        "|glossaries|||||||||",
         genre_ds_qid:                       "||||||||||",

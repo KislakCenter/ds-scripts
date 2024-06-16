@@ -489,7 +489,7 @@ module DS
         # @param [CSV::Row] record the record to extract genres from
         # @return [Array<DS::Extractor::Genre>] the extracted genres
         def extract_genres record
-          extract_terms record, :genres_as_recorded, DS::Extractor::Genre
+          extract_terms record, :genres_as_recorded, DS::Extractor::Genre, vocab: 'ds-genre'
         end
 
         # Extracts subjects as recorded from the given record.
@@ -521,7 +521,7 @@ module DS
         # @param [CSV::Row] record the record to extract subjects from
         # @return [Array<DS::Extractor::Subject>] the extracted subjects
         def extract_subjects record
-          extract_terms record, :subjects_as_recorded, DS::Extractor::Subject
+          extract_terms record, :subjects_as_recorded, DS::Extractor::Subject, vocab: 'ds-subject'
         end
 
         # Extracts named subjects as recorded from the given record.
@@ -537,7 +537,7 @@ module DS
         # @param [CSV::Row] record the record to extract named subjects from
         # @return [Array<DS::Extractor::Subject>] the extracted named subjects
         def extract_named_subjects record
-          extract_terms record, :named_subjects_as_recorded, DS::Extractor::Subject
+          extract_terms record, :named_subjects_as_recorded, DS::Extractor::Subject, vocab: 'ds-subject'
         end
 
         # Extracts terms of a specific type from the given record using the specified property.
@@ -546,9 +546,9 @@ module DS
         # @param [Symbol] property the property to extract terms from the record
         # @param [Class] term_type the type of terms to extract
         # @return [Array<term_type>] the extracted terms
-        def extract_terms record, property, term_type
+        def extract_terms record, property, term_type, vocab: nil
           extract_values_for(property, record).map { |term|
-            term_type.new as_recorded: term
+            term_type.new as_recorded: term, vocab: vocab
           }
         end
 

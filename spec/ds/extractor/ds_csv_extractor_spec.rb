@@ -249,6 +249,14 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
+  context '#extract_genres' do
+    it 'all genres vocabs are "ds-genre"' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_genres(record).map &:vocab
+      ).to all eq 'ds-genre'
+    end
+  end
+
   context "extract_all_subjects_as_recorded" do
     let(:subjects) {
       [
@@ -455,15 +463,15 @@ describe DS::Extractor::DsCsvExtractor do
     end
 
     it "returns an array that includes genre data" do
-      expect(DS::Extractor::DsCsvExtractor.extract_recon_genres record).to include ["prayer books", nil, nil  ]
-      expect(DS::Extractor::DsCsvExtractor.extract_recon_genres record).to include ["An LoBT term", nil, nil  ]
+      expect(DS::Extractor::DsCsvExtractor.extract_recon_genres record).to include ["prayer books", 'ds-genre', nil  ]
+      expect(DS::Extractor::DsCsvExtractor.extract_recon_genres record).to include ["An LoBT term", 'ds-genre', nil  ]
     end
   end
 
   context "extract_recon_subjects" do
     it "returns the recon subject data" do
-      expect(DS::Extractor::DsCsvExtractor.extract_recon_subjects record).to include ["A personal named subject", nil, nil, nil  ]
-      expect(DS::Extractor::DsCsvExtractor.extract_recon_subjects record).to include ["A chronological subject", nil, nil, nil  ]
+      expect(DS::Extractor::DsCsvExtractor.extract_recon_subjects record).to include ["A personal named subject", nil, 'ds-subject', nil  ]
+      expect(DS::Extractor::DsCsvExtractor.extract_recon_subjects record).to include ["A chronological subject", nil, 'ds-subject', nil  ]
     end
   end
 
