@@ -32,17 +32,3 @@ echo "${convert_args}" | while read -r args
 do
   ${SCRIPT_DIR}/../bin/ds-convert convert $args
 done
-
-
-
-
-
-#bundle exec bin/ds-convert convert -o tmp/tei-test-import.csv ../ds-member-data/test/20240604/tei-test/20220604-tei-test-set-flp-manifest.csv
-#bundle exec bin/ds-convert convert -o tmp/mets-test-import.csv ../ds-member-data/test/20240604/mets-test/20240604-mets-test-set-missouri-manifest.csv
-#bundle exec bin/ds-convert convert -o tmp/csv-test-import.csv ../ds-member-data/test/20240604/csv-test/20240604-csv-test-set-rutgers-manifest.csv
-#bundle exec bin/ds-convert convert -o tmp/marc/marc-import.csv ../ds-member-data/test/20240604/marc-test/20240604-marc-test-set-kansas-manifest.csv
-#
-#bundle exec bin/ds-recon write-all --source-type ds-csv -o tmp/csv  ../ds-member-data/test/20240604/csv-test/20240604-rutgers-hebrew-csv.csv
-#bundle exec bin/ds-recon write-all --source-type ds-mets-xml -o tmp/mets  ../ds-member-data/test/20240604/mets-test/*.xml
-#bundle exec bin/ds-recon write-all --source-type marc-xml -o tmp/marc  ../ds-member-data/test/20240604/marc-test/*.xml
-#bundle exec bin/ds-recon write-all --source-type tei-xml -o tmp/tei  ../ds-member-data/test/20240604/tei-test/*.xml
