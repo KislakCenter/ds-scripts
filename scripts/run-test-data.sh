@@ -10,6 +10,7 @@ tei_dir=${SCRIPT_DIR}/../tmp/test/tei
 for x in ${csv_dir} ${mets_dir} ${marc_dir} ${tei_dir}
 do
   [[ -e ${x} ]] || mkdir -vp ${x}
+  rm -vf ${x}/*
 done
 
 recon_args="--source-type ds-csv      -o ${csv_dir}   ${SCRIPT_DIR}/../../ds-member-data/test/20240604/csv-test/20240604-rutgers-hebrew-csv.csv
@@ -22,10 +23,10 @@ do
   ${SCRIPT_DIR}/../bin/ds-recon write-all ${args}
 done
 
-convert_args="-o ${tei_dir}/tei-test-import.csv ../ds-member-data/test/20240604/tei-test/20220604-tei-test-set-flp-manifest.csv
--o ${mets_dir}/mets-test-import.csv ../ds-member-data/test/20240604/mets-test/20240604-mets-test-set-missouri-manifest.csv
--o ${csv_dir}/csv-test-import.csv ../ds-member-data/test/20240604/csv-test/20240604-csv-test-set-rutgers-manifest.csv
--o ${marc_dir}/marc-import.csv ../ds-member-data/test/20240604/marc-test/20240604-marc-test-set-kansas-manifest.csv"
+convert_args="-o ${tei_dir}/import.csv ../ds-member-data/test/20240604/tei-test/20220604-tei-test-set-flp-manifest.csv
+-o ${mets_dir}/import.csv ../ds-member-data/test/20240604/mets-test/20240604-mets-test-set-missouri-manifest.csv
+-o ${csv_dir}/import.csv ../ds-member-data/test/20240604/csv-test/20240604-csv-test-set-rutgers-manifest.csv
+-o ${marc_dir}/import.csv ../ds-member-data/test/20240604/marc-test/20240604-marc-test-set-kansas-manifest.csv"
 
 echo "${convert_args}" | while read -r args
 do
