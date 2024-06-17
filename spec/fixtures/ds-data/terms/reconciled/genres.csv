@@ -26,8 +26,8 @@ Early works,openn-form/genre,,Early works,http://id.worldcat.org/fast/1411636,
 Early works,fast,,Early works,http://id.worldcat.org/fast/1411636,
 Engravings--England,gmgpc,,Engravings;England,http://id.worldcat.org/fast/1986244;http://id.worldcat.org/fast/1219920,
 Figured initials--England--14th century,aat,,figure initials;England;Fourteenth century,http://vocab.getty.edu/aat/300199991;http://id.worldcat.org/fast/1219920;http://id.worldcat.org/fast/933420,
-Glossaries,aat,,glossaries,http://vocab.getty.edu/aat/300026189,
-Glossaries,ds-genre,,glossaries,http://vocab.getty.edu/aat/300026189,
+Glossaries,aat,,glossaries,http://vocab.getty.edu/aat/300026189,QGENRE
+Glossaries,ds-genre,,glossaries,http://vocab.getty.edu/aat/300026189,QGENRE
 Gold-tooled (decoration),lobt,,gold-tooled (decoration),http://w3id.org/lob/concept/1371,
 Gothic scripts--France--15th century,aat,,Gothic scripts;France;Fifteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204289;http://id.worldcat.org/fast/923962,
 Gothic scripts--Italy--14th century,aat,,Gothic scripts;Italy;Fourteenth century,http://vocab.getty.edu/aat/300195226;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/933420,
@@ -105,3 +105,4 @@ Qur'ans,aat,,Qur'ans,http://vocab.getty.edu/aat/300265128,
 Qurʼans,openn-form/genre,,Qur'ans,http://vocab.getty.edu/aat/300265128,
 Qurʼans,,,Qur'ans,http://vocab.getty.edu/aat/300265128,
 Term with .,somevocab,,Term With,http://vocab.getty.edu/tgn/term-with,Q12345
+Manuscripts (documents),openn-form/genre,,Manuscripts (documents),http://vocab.getty.edu/tgn/mss-docs,QGENREMSS

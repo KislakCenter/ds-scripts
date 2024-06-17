@@ -81,7 +81,6 @@ module DS
           source_file:                        source_file,
           acknowledgments:                   acknowledgments,
         }.update build_term_maps DS::Extractor::MarcXmlExtractor, record
-        # data.update build_term_maps(DS::Extractor::MarcXmlExtractor, record)
       end
     end
   end

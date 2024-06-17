@@ -63,7 +63,7 @@ RSpec.describe Recon::ReconBuilder do
             :role=>"author",
             :source_authority_uri=>"http://id.loc.gov/authorities/names/n79029805",
             :structured_value=>"Q102851",
-            :ds_qid=>nil},
+            :ds_qid=>'QBOETHIUS'},
            {:authorized_label=>"Thomas Phillipps",
             :instance_of=>"human",
             :name_agr=>"",
@@ -72,16 +72,16 @@ RSpec.describe Recon::ReconBuilder do
             :role=>"former owner",
             :source_authority_uri=>"http://id.loc.gov/authorities/names/n50078542",
             :structured_value=>"Q2147709",
-            :ds_qid=>nil},
+            :ds_qid=>'QPHILLIPPS'},
             {:authorized_label=>"Helmut Beck",
             :instance_of=>"human",
             :name_agr=>"",
             :name_as_recorded=>"Beck, Helmut, 1919-2001",
             :as_recorded=>"Beck, Helmut, 1919-2001",
             :role=>"former owner",
-            :source_authority_uri=>"",
+            :source_authority_uri=>be_blank,
             :structured_value=>"Q94821473",
-            :ds_qid=>nil},
+            :ds_qid=>'QBECK'},
            {:authorized_label=>"Fleury Abbey",
             :instance_of=>"organization",
             :name_agr=>"",
@@ -90,12 +90,13 @@ RSpec.describe Recon::ReconBuilder do
             :role=>"former owner",
             :source_authority_uri=>"http://id.loc.gov/authorities/names/n83019607",
             :structured_value=>"Q956741",
-            :ds_qid=>nil},
+            :ds_qid=>'QBENOIT'},
           ]
 
         }
 
         it 'yields the auth values' do
+          # recon_builder.each_recon(recon_type) { |recon| require 'pry'; binding.pry }
           expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end
@@ -122,7 +123,7 @@ RSpec.describe Recon::ReconBuilder do
           :place_as_recorded=>"Paris",
           :as_recorded=>"Paris",
           :structured_value=>"http://vocab.getty.edu/tgn/paris_id",
-          :ds_qid=>be_blank.or(match /^Q\d+/)},
+          :ds_qid=>'QPARIS'},
           {:authorized_label=>"France",
           :place_as_recorded=>"France",
           :as_recorded=>"France",
@@ -145,7 +146,7 @@ RSpec.describe Recon::ReconBuilder do
           :as_recorded=>"materials description",
           :structured_value=>
             "http://vocab.getty.edu/aat/300014109;http://vocab.getty.edu/aat/300011851",
-          :ds_qid=>be_blank.or(match /^Q\d+/),
+          :ds_qid=>'QMATERIAL1;QMATERIAL2',
           }]
       }
 
@@ -164,18 +165,18 @@ RSpec.describe Recon::ReconBuilder do
           :name_as_recorded=>"An author",
           :as_recorded=>"An author",
           :role=>"author",
-          :source_authority_uri=>nil,
+          :source_authority_uri=>'http://example.com/author_uri',
           :structured_value=>"WDQIDAUTHOR",
-          :ds_qid=>nil},
-         {:authorized_label=>nil,
-          :instance_of=>nil,
+          :ds_qid=>'QAUTHOR'},
+         {:authorized_label=>'An Artist',
+          :instance_of=>'human',
           :name_agr=>nil,
           :name_as_recorded=>"An artist",
           :as_recorded=>"An artist",
           :role=>"artist",
-          :source_authority_uri=>nil,
-          :structured_value=>nil,
-          :ds_qid=>nil
+          :source_authority_uri=>'https://example.com/name/arstist1_uri',
+          :structured_value=>'Qabcedfghi',
+          :ds_qid=>'QARTIST1',
          },
          {:authorized_label=>"Artist auth name",
           :instance_of=>"human",
@@ -183,18 +184,18 @@ RSpec.describe Recon::ReconBuilder do
           :name_as_recorded=>"Another artist",
           :as_recorded=>"Another artist",
           :role=>"artist",
-          :source_authority_uri=>nil,
+          :source_authority_uri=>'http://example.com/artist_uri',
           :structured_value=>"WDQIDARTIST",
-          :ds_qid=>nil},
+          :ds_qid=>'QARTIST'},
           {:authorized_label=>"Scribe auth name",
           :instance_of=>"human",
           :name_agr=>"A scribe in original script",
           :name_as_recorded=>"A scribe",
           :as_recorded=>"A scribe",
           :role=>"scribe",
-          :source_authority_uri=>nil,
+          :source_authority_uri=>'http://example.com/scribe_uri',
           :structured_value=>"WDQIDSCRIBE",
-          :ds_qid=>nil
+          :ds_qid=>'QSCRIBE'
          },
          {:authorized_label=>"Former owner auth name",
           :instance_of=>"organization",
@@ -202,9 +203,9 @@ RSpec.describe Recon::ReconBuilder do
           :name_as_recorded=>"Former owner as recorded",
           :as_recorded=>"Former owner as recorded",
           :role=>"former_owner",
-          :source_authority_uri=>nil,
+          :source_authority_uri=>'http://example.com/owner_uri',
           :structured_value=>"WDQIDOWNER",
-          :ds_qid=>nil},
+          :ds_qid=>'QOWNER'},
         ]
       }
 
@@ -230,7 +231,7 @@ RSpec.describe Recon::ReconBuilder do
               :source_authority_uri=>nil,
               :structured_value=>"http://vocab.getty.edu/aat/300026189",
               :vocab=>'ds-genre',
-              :ds_qid=>be_blank.or(match /^Q\d+/),},
+              :ds_qid=>'QGENRE',},
           {:authorized_label=>"",
               :genre_as_recorded=>"A third genre",
               :as_recorded=>"A third genre",
@@ -321,7 +322,7 @@ RSpec.describe Recon::ReconBuilder do
           :subject_as_recorded=>"A topical subject",
           :as_recorded=>"A topical subject",
           :vocab=>'ds-subject',
-          :ds_qid=>be_blank.or(match /^Q\d+/),},
+          :ds_qid=>'QTOPICAL'},
          {:authorized_label=>"",
           :source_authority_uri=>nil,
           :structured_value=>"",
@@ -366,7 +367,7 @@ RSpec.describe Recon::ReconBuilder do
           :subject_as_recorded=>"A corporate named subject",
           :as_recorded=>"A corporate named subject",
           :vocab=>'ds-subject',
-          :ds_qid=>be_blank.or(match /^Q\d+/),},
+          :ds_qid=>'QNAMEDSUBJECT'},
          {:authorized_label=>"",
           :source_authority_uri=>nil,
           :structured_value=>"",
@@ -402,7 +403,7 @@ RSpec.describe Recon::ReconBuilder do
            :uniform_title_as_recorded=>"Uniform title",
            :uniform_title_as_recorded_agr=>"Uniform title in vernacular",
            :authorized_label=>"Standard title",
-           :ds_qid=>""},
+           :ds_qid=>"QTITLE"},
           {:title_as_recorded=>"Book of Hours",
            :as_recorded=>"Book of Hours",
            :title_as_recorded_agr=>nil,
@@ -423,8 +424,8 @@ RSpec.describe Recon::ReconBuilder do
       let(:recon_type) { :languages }
       let(:recons) {
         [
-          { :language_as_recorded => "Arabic", :as_recorded => "Arabic", :language_code => "", :authorized_label => "Arabic", :structured_value => "Q13955", ds_qid: nil },
-          { :language_as_recorded => "Farsi", :as_recorded => "Farsi", :language_code => "", :authorized_label => "Persian", :structured_value => "Q9168", ds_qid: nil },
+          { :language_as_recorded => "Arabic", :as_recorded => "Arabic", :language_code => "", :authorized_label => "Arabic", :structured_value => "Q13955", ds_qid: 'QARABIC' },
+          { :language_as_recorded => "Farsi", :as_recorded => "Farsi", :language_code => "", :authorized_label => "Persian", :structured_value => "Q9168", ds_qid: 'QFARSI' },
           { :language_as_recorded => "Latin", :as_recorded => "Latin", :language_code => "", :authorized_label => "Latin", :structured_value => "Q397", ds_qid: nil }
         ]
       }

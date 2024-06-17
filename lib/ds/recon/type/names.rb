@@ -23,6 +23,7 @@ module Recon
       LOOKUP_COLUMNS = %i{
       authorized_label
       structured_value
+      source_authority_uri
       instance_of
       ds_qid
     }

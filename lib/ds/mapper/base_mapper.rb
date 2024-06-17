@@ -18,8 +18,6 @@ module DS
 
       PLACES_COLUMN_MAP = {
         production_place_as_recorded: :place_as_recorded,
-        production_place:             :structured_value,
-        production_place_label:       :authorized_label,
         production_place_ds_qid:      :ds_qid
       }
 
@@ -28,87 +26,57 @@ module DS
         title_as_recorded_agr:     :title_as_recorded_agr,
         uniform_title_as_recorded: :uniform_title_as_recorded,
         uniform_title_agr:         :uniform_title_as_recorded_agr,
-        standard_title:            :authorized_label,
         standard_title_ds_qid:     :ds_qid
       }
 
       GENRES_COLUMN_MAP = {
         genre_as_recorded: :genre_as_recorded,
-        genre:             :structured_value,
-        genre_label:       :authorized_label,
-        genre_vocabulary:  :vocab,
         genre_ds_qid:      :ds_qid
       }
 
       SUBJECTS_COLUMN_MAP = {
         subject_as_recorded: :subject_as_recorded,
-        subject:             :structured_value,
-        subject_label:       :authorized_label,
         subject_ds_qid:      :ds_qid,
       }
 
       AUTHORS_COLUMN_MAP = {
-        author:                 :empty_value,
         author_as_recorded:     :name_as_recorded,
         author_as_recorded_agr: :name_agr,
-        author_wikidata:        :structured_value,
-        author_instance_of:     :instance_of,
-        author_label:           :authorized_label,
         author_ds_qid:          :ds_qid
 
       }
 
       ARTISTS_COLUMN_MAP = {
-        artist:                 :empty_value,
         artist_as_recorded:     :name_as_recorded,
         artist_as_recorded_agr: :name_agr,
-        artist_wikidata:        :structured_value,
-        artist_instance_of:     :instance_of,
-        artist_label:           :authorized_label,
         artist_ds_qid:          :ds_qid
       }
 
       SCRIBES_COLUMN_MAP = {
-        scribe:                 :empty_value,
         scribe_as_recorded:     :name_as_recorded,
         scribe_as_recorded_agr: :name_agr,
-        scribe_wikidata:        :structured_value,
-        scribe_instance_of:     :instance_of,
-        scribe_label:           :authorized_label,
         scribe_ds_qid:          :ds_qid
       }
 
       ASSOCIATED_AGENT_COLUMN_MAP = {
-        associated_agent:                 :empty_value,
         associated_agent_as_recorded:     :name_as_recorded,
         associated_agent_as_recorded_agr: :name_agr,
-        associated_agent_wikidata:        :structured_value,
-        associated_agent_instance_of:     :instance_of,
-        associated_agent_label:           :authorized_label,
         associated_agent_ds_qid:          :ds_qid
       }
 
       LANGUAGE_COLUMN_MAP = {
         language_as_recorded: :language_as_recorded,
-        language:             :structured_value,
-        language_label:       :authorized_label,
         language_ds_qid:      :ds_qid
       }
 
       FORMER_OWNER_COLUMN_MAP = {
-        former_owner:                 :empty_value,
         former_owner_as_recorded:     :name_as_recorded,
         former_owner_as_recorded_agr: :name_agr,
-        former_owner_wikidata:        :structured_value,
-        former_owner_instance_of:     :instance_of,
-        former_owner_label:           :authorized_label,
         former_owner_ds_qid:          :ds_qid
       }
 
       MATERIAL_COLUMN_MAP = {
         material_as_recorded: :material_as_recorded,
-        material:             :structured_value,
-        material_label:       :authorized_label,
         material_ds_qid:      :ds_qid
       }
 

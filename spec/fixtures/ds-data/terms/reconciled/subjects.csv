@@ -1,11 +1,11 @@
 subject_as_recorded,subfield_codes,vocab,source_authority_uri,authorized_label,structured_value,ds_qid
-A topical subject,"",ds-subject,"",Topical auth label,http://id.worldcat.org/fast/topical_subject,
+A topical subject,"",ds-subject,"",Topical auth label,http://id.worldcat.org/fast/topical_subject,QTOPICAL
 Accounting--Italy--16th century,a--z--y,0,,Accounting;Italy;Sixteenth century,http://id.worldcat.org/fast/795379;http://id.worldcat.org/fast/1204565;http://id.worldcat.org/fast/1119851,
 Advaita--Early works to 1800,a--x,0,,Advaita;Early works,http://id.worldcat.org/fast/797410;http://id.worldcat.org/fast/1411636,
 Aghorīs,a,fast,http://id.worldcat.org/fast/800288,Aghorīs,http://id.worldcat.org/fast/800288,
-Armorial,,openn-keywords,,armorials (reference sources),http://vocab.getty.edu/aat/300255028,
+Armorial,,openn-subjects,,armorials (reference sources),http://vocab.getty.edu/aat/300255028,QARMORIAL
 "Astronomy, Medieval--Early works to 1800.",a--v,0,,"Astronomy, Medieval;Early works",http://id.worldcat.org/fast/819781;http://id.worldcat.org/fast/1411636,
-Austrian,,openn-keywords,,Austrian,http://vocab.getty.edu/aat/300111153,
+Austrian,,openn-subjects,,Austrian,http://vocab.getty.edu/aat/300111153,
 Bishops--Temporal power--Early works to 1800,a--x--v,0,,Bishops--Temporal power;Early works,http://id.worldcat.org/fast/833391;http://id.worldcat.org/fast/1411636,
 Canon law.,a,0,http://id.loc.gov/authorities/subjects/sh85019646,Canon law,http://id.worldcat.org/fast/845910,
 "China--History--Yuan dynasty, 1260-1368",a--x--y,0,http://id.loc.gov/authorities/subjects/sh85024071,China;History,http://id.worldcat.org/fast/1206073;http://id.worldcat.org/fast/958235,

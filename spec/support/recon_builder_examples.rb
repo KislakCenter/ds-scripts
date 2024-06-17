@@ -45,7 +45,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
       let(:recon_row) {
         {
           authorized_label:  "Paris",
-          ds_qid:            "",
+          ds_qid:            "QPARIS",
           place_as_recorded: "Paris",
           as_recorded:       "Paris",
           structured_value:  "http://vocab.getty.edu/tgn/paris_id"
@@ -71,7 +71,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
       let(:recon_row) {
         {
           :authorized_label=>"paper",
-          :ds_qid=>"",
+          :ds_qid=>"QPAPER",
           :material_as_recorded=>"paper",
           :as_recorded=>"paper",
           :structured_value=>"http://vocab.getty.edu/aat/300014109"
@@ -231,7 +231,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
          :authorized_label=>"Former owner auth name",
          :structured_value=>"WDQIDOWNER",
          :instance_of=>"organization",
-         :ds_qid=>nil,
+         :ds_qid=>'QOWNER',
          :name_as_recorded=>"Former owner as recorded",
          :as_recorded=>"Former owner as recorded",
         }
@@ -255,7 +255,7 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
          :uniform_title_as_recorded=>"Uniform title",
          :uniform_title_as_recorded_agr=>"Uniform title in vernacular",
          :authorized_label=>"Standard title",
-         :ds_qid=>"",
+         :ds_qid=>"QTITLE",
          :title_as_recorded=>"Title",
          :as_recorded=>"Title",
         }
