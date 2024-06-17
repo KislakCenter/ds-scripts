@@ -19,8 +19,6 @@ module Recon
 
     KEY_COLUMNS = %i{ place_as_recorded }
 
-    SUBSET_COLUMN = nil
-
     AS_RECORDED_COLUMN = :place_as_recorded
 
     DELIMITER_MAP = { '|' => ';' }
@@ -31,8 +29,8 @@ module Recon
 
     def self.lookup places, from_column: 'structured_value'
       places.map { |place|
-        place_cleaned = DS::Util.clean_string place, terminator: ''
-        place_uris = Recon.lookup_single SET_NAME, value: place_cleaned, column: from_column
+        key_values = get_key_values place.to_h
+        place_uris = Recon.lookup_single SET_NAME, key_values: key_values, column: from_column
         place_uris.to_s.gsub '|', ';'
       }
     end

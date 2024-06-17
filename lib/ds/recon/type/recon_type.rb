@@ -99,13 +99,6 @@ module Recon
           self::METHOD_NAME
         end
 
-        # Returns the subset column; e.g., :vocabulary
-        #
-        # @return [Symbol] the subset column
-        def subset_column
-          self::SUBSET_COLUMN
-        end
-
         # Returns the balanced columns for the current object.
         #
         # Balanced columns should have equal numbers of fields and
@@ -130,7 +123,7 @@ module Recon
         #
         # @param row [Hash<Symbol,String>] The row to extract values from.
         # @return [Array<String>] The values of the key columns in the given row.
-        def key_values row
+        def get_key_values row
           key_columns.map { |key| row[key] }
         end
 

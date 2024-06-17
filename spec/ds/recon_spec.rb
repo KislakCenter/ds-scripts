@@ -16,22 +16,21 @@ describe Recon do
   context '.lookup' do
     let(:recons_csv) { genres_csv }
     let(:set_name) { :genres }
-    let(:subset) { 'somevocab' }
-    let(:value) { 'term with .' }
+    let(:key_values) { ['term with .', 'somevocab'] }
     let(:expected_label) { 'Term With' }
     let(:expected_url) { 'http://vocab.getty.edu/tgn/term-with' }
     let(:expected_ds_qid) { 'Q12345' }
 
     it 'returns the expected label' do
-      expect(Recon.lookup_single set_name, subset: subset, value: value, column: 'authorized_label').to eq expected_label
+      expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
     end
 
     it 'returns the expected url' do
-      expect(Recon.lookup_single set_name, subset: subset, value: value, column: 'structured_value').to eq expected_url
+      expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
     end
 
     it 'returns the expected ds_qid' do
-      expect(Recon.lookup_single set_name, subset: subset, value: value, column: 'ds_qid').to eq expected_ds_qid
+      expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
     end
   end
 

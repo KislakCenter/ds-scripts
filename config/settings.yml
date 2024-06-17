@@ -15,37 +15,26 @@ recon:
   sets:
     - name: :names
       repo_path: terms/reconciled/names.csv
-      key_column: name_as_recorded
     - name: :genres
       repo_path: terms/reconciled/genres.csv
-      key_column: genre_as_recorded
-      subset_column: vocab
     - name: :materials
       repo_path: terms/reconciled/materials.csv
-      key_column: material_as_recorded
     - name: :languages
       repo_path: terms/reconciled/languages.csv
-      key_column: language_as_recorded
     - name: :places
       repo_path: terms/reconciled/places.csv
-      key_column: place_as_recorded
     - name: :subjects
       repo_path: terms/reconciled/subjects.csv
-      key_column: subject_as_recorded
     - name: :'named-subjects'
       repo_path: terms/reconciled/named-subjects.csv
-      key_column: subject_as_recorded
     - name: :'all-subjects'
       repo_path:
         - terms/reconciled/subjects.csv
         - terms/reconciled/named-subjects.csv
-      key_column: subject_as_recorded
     - name: :titles
       repo_path: terms/reconciled/titles.csv
-      key_column: title_as_recorded
     - name: :splits
       repo_path: terms/reconciled/splits.csv
-      key_column: as_recorded
 
 institutions:
   Q463271:

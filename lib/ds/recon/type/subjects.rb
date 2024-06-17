@@ -51,8 +51,6 @@ module Recon
       vocab
     }
 
-      SUBSET_COLUMN = :vocab
-
       METHOD_NAME = %i{ extract_subjects }
 
       BALANCED_COLUMNS = { subjects: %i{ structured_value authorized_label } }
@@ -61,16 +59,6 @@ module Recon
 
       DELIMITER_MAP = { '|' => ';' }
 
-      def self.lookup terms, from_column: 'structured_value'
-        terms.map { |term|
-          _lookup_single term, from_column: from_column
-        }
-      end
-
-      def self._lookup_single term, from_column:
-        uris = Recon.lookup_single(SET_NAME, value: term, column: from_column)
-        uris.to_s.gsub '|', ';'
-      end
     end
   end
 end

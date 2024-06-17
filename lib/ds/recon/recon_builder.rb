@@ -151,11 +151,10 @@ module Recon
     # @param [Recon::Type::ReconType] recon_type a recon type configuration like Recon::Type::Places
     # @return [Hash<Symbol,String>] a recon CSV row
     def build_recon item:, recon_type:
-      as_recorded = item.as_recorded
-      subset = item.send(recon_type.subset_column) if recon_type.subset_column.present?
       recon_hash = item.to_h
+      key_values = recon_type.get_key_values recon_hash
       recon_type.lookup_columns.each do |col|
-        val = Recon.lookup_single(recon_type.set_name, value: as_recorded, column: col, subset: subset)
+        val = Recon.lookup_single(recon_type.set_name, key_values: key_values, column: col)
         recon_hash[col] = fix_delimiters val, recon_type.delimiter_map
       end
       recon_hash

@@ -27,26 +27,12 @@ module Recon
 
       KEY_COLUMNS = %i{ title_as_recorded }
 
-      SUBSET_COLUMN = nil
-
       AS_RECORDED_COLUMN = :title_as_recorded
 
       DELIMITER_MAP = { '|' => ';' }
 
       BALANCED_COLUMNS = {}
 
-      def self.add_recon_values rows
-        rows.each do |row|
-          name = row.first
-          row << Recon.lookup_single(SET_NAME, value: name, column: 'authorized_label')
-        end
-      end
-
-      def self.lookup names, column:
-        names.map { |name|
-          Recon.lookup_single SET_NAME, value: name, column: column
-        }
-      end
     end
   end
 end

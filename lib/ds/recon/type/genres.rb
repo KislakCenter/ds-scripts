@@ -35,8 +35,6 @@ module Recon
       vocab
     }
 
-      SUBSET_COLUMN = :vocab
-
       AS_RECORDED_COLUMN = :genre_as_recorded
 
       DELIMITER_MAP = { '|' => ';' }
@@ -47,18 +45,6 @@ module Recon
         genres: %i{ structured_value authorized_label }
       }
 
-      def self.lookup genres, vocabs, from_column: 'structured_value'
-        genres.zip(vocabs).map { |term, vocab|
-          _lookup_single term, vocab, from_column: from_column
-        }
-      end
-
-      protected
-
-      def self._lookup_single term, vocab, from_column:
-        uris = Recon.lookup_single(SET_NAME, subset: vocab, value: term, column: from_column)
-        uris.to_s.gsub('|', ';')
-      end
     end
   end
 end

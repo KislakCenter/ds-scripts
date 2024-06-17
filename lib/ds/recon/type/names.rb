@@ -31,8 +31,6 @@ module Recon
       name_as_recorded
     }
 
-      SUBSET_COLUMN = nil
-
       AS_RECORDED_COLUMN = :name_as_recorded
 
       DELIMITER_MAP = {}
@@ -40,12 +38,6 @@ module Recon
       METHOD_NAME = %i{ extract_authors extract_artists extract_scribes extract_former_owners }
 
       BALANCED_COLUMNS = { names: %i{ structured_value authorized_label instance_of } }
-
-      def self.lookup names, column:
-        names.map { |name|
-          Recon.lookup_single(SET_NAME, value: name, column: column)
-        }
-      end
 
     end
 

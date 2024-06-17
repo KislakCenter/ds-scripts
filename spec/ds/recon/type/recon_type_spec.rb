@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe 'Recon::Type::ReconType' do
 
 
-  context '.key_values' do
+  context '.get_key_values' do
     let(:recon_type) { Recon::Type::Titles }
     let(:row) {
       {
@@ -20,7 +20,7 @@ RSpec.describe 'Recon::Type::ReconType' do
       ["Title as recorded"]
     }
     it 'returns the key values' do
-      expect(recon_type.key_values(row)).to eq expected_key_values
+      expect(recon_type.get_key_values(row)).to eq expected_key_values
     end
   end
 end
