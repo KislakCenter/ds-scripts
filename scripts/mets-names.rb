@@ -34,7 +34,7 @@ CSV do |csv|
     xml         = File.open(source_file) { |f| Nokogiri::XML(f) }
     institution = source_file.split('/')[3]
     xpath       = '//mods:name'
-    shelfmark  = DS::DS10.extract_shelfmark xml
+    shelfmark  = DS::Extractor::DsMetsXmlExtractor.extract_shelfmark xml
     xml.xpath(xpath).each do |node|
       role = node.xpath('./mods:role/mods:roleTerm').text
       name = node.xpath('./mods:namePart').text
@@ -42,5 +42,3 @@ CSV do |csv|
     end
   end
 end
-
-

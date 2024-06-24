@@ -4,19 +4,17 @@ require 'active_support/all'
 require_relative 'ds/ds_error'
 require_relative 'ds/util'
 require_relative 'ds/recon/recon_data'
-require_relative 'ds/recon/splits'
 require_relative 'ds/constants'
+require_relative 'ds/source'
 require_relative 'ds/extractor'
-require_relative 'ds/ds10'
-require_relative 'ds/openn_tei'
-require_relative 'ds/marc_xml'
+require_relative 'ds/extractor/ds_mets_xml_extractor'
+require_relative 'ds/extractor/tei_xml_extractor'
+require_relative 'ds/extractor/marc_xml_extractor'
 require_relative 'ds/csv_util'
+require_relative 'ds/extractor/ds_csv_extractor'
 require_relative 'ds/recon'
 require_relative 'ds/institutions'
-require_relative 'ds/mapper/base_mapper'
-require_relative 'ds/mapper/marc_mapper'
-require_relative 'ds/mapper/ds_mets_mapper'
-require_relative 'ds/mapper/openn_tei_mapper'
+require_relative 'ds/mapper'
 require_relative 'ds/manifest'
 require_relative 'ds/converter'
 
@@ -25,6 +23,14 @@ module DS
 
   def self.root
     File.expand_path '../..', __FILE__
+  end
+
+  def self.env
+    @@env ||= 'production'
+  end
+
+  def self.env= environment
+    @@env = environment
   end
 
   def self.normalize_key key
@@ -38,22 +44,19 @@ module DS
 
   def self.configure!
     config_dir = File.join root, 'config'
-    yaml_files = Dir["#{config_dir}/*.yml"]
+    # yaml_files = Dir["#{config_dir}/**/*.yml"]
+    # Config.load_and_set_settings(Config.setting_files("/path/to/config_root", "your_project_environment"))
     # Set Settings, so you can do things like Settings.recon.key ...
-    Config.load_and_set_settings *yaml_files
+    Config.load_and_set_settings(Config.setting_files config_dir, DS.env)
   end
-  configure!
 
   module ClassMethods
     def mark_long s
       return s if s.to_s.size <= DS::MAX_WIKIBASE_FIELD_LENGTH
 
-      splits = Recon::Splits._lookup_single s, from_column: 'authorized_label'
+      splits = Recon::Type::Splits._lookup_single s, from_column: 'authorized_label'
       return "SPLIT: #{s}" if splits.blank?
       splits
-      # splits.split('|').map { |s|
-      #   s ? s.to_s.size < 400 : "SPLIT: #{s}"
-      # }.join '|'
     end
 
     ##

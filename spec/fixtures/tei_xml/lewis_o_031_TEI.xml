@@ -11,6 +11,8 @@
           <licence target="http://creativecommons.org/publicdomain/mark/1.0/">These images and the content of Rare Book Department Lewis O 31: Qaṭr al-nadā wa-ball al-ṣadā. are free of known copyright restrictions and in the public domain. See the Creative Commons Public Domain Mark page for usage details, http://creativecommons.org/publicdomain/mark/1.0/.</licence>
           <licence target="https://creativecommons.org/publicdomain/zero/1.0/legalcode">To the extent possible under law, Free Library of Philadelphia, Special Collections has waived all copyright and related or neighboring rights to this metadata about Rare Book Department Lewis O 31: Qaṭr al-nadā wa-ball al-ṣadā.. This work is published from: United States. For a summary of CC0, see https://creativecommons.org/publicdomain/zero/1.0/. Legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.</licence>
         </availability>
+        <!--  Publication date added to make specs pass -->
+        <date>2024-01-01</date>
       </publicationStmt>
       <notesStmt>
         <note>Ms. codex.</note>
@@ -55,6 +57,16 @@
                 <resp>former owner</resp>
                 <persName type="authority">Jamālī, Yūsuf ibn Shaykh Muḥammad</persName>
                 <persName type="vernacular">يوسف بن شيخ محمد الجمالي.</persName>
+              </respStmt>
+              <respStmt>
+                <resp>scribe</resp>
+                <persName type="authority">A scribe</persName>
+                <persName type="vernacular">A scribe vernacular</persName>
+              </respStmt>
+              <respStmt>
+                <resp>artist</resp>
+                <persName type="authority">An artist</persName>
+                <persName type="vernacular">An artist vernacular</persName>
               </respStmt>
               <respStmt>
                 <resp>former owner</resp>
@@ -102,7 +114,8 @@
           <history>
             <origin>
               <p>Item is not dated. Perhaps copied in the 17th or 18th century.</p>
-              <origDate>between 1600 and 1757</origDate>
+              <origDate notBefore="1600" notAfter="1757">between 1600 and 1757</origDate>
+              <origPlace>Flanders</origPlace>
             </origin>
             <provenance>Gift of Anne Baker Lewis in 1933.</provenance>
             <provenance>Formerly owned by Yūsuf ibn Shaykh Muḥammad al-Jamālī (note dated 1170 AH [1757], f. 1r).</provenance>
@@ -118,6 +131,7 @@
           <term>Arabic language--Syntax--Early works to 1800</term>
           <term>Manuscripts, Arabic--17th century</term>
           <term>Manuscripts, Arabic--18th century</term>
+          <term>Armorial</term>
         </keywords>
         <keywords n="form/genre">
           <term>Codices (bound manuscripts)</term>

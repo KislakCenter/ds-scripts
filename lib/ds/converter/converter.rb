@@ -32,6 +32,7 @@ module DS
         @timestamp    = Time.now
         @source_dir   = manifest.source_dir
         @mapper_cache = DS::Util::Cache.new
+        @errors       = []
       end
 
       ##
@@ -41,14 +42,42 @@ module DS
       #   hashes for the provided manifest
       def convert &block
         data = []
-        each do |entry|
+        each_with_index do |entry, index|
           mapper = find_or_create_mapper entry, timestamp
           hash   = mapper.map_record entry
           data << hash
+          validate_row index + 1, hash
           yield hash if block_given?
         end
         data
       end
+
+      ##
+      # @param [Integer] row_num the row number
+      # @param [Hash <Symbol,String>] row the row data
+      # @return [void]
+      def validate_row row_num, row
+        @errors += DS::Util::CsvValidator.validate_whitespace(
+          row,
+          row_num: row_num,
+          nested_columns: DS::Constants::NESTED_COLUMNS
+        )
+      end
+
+      # Checks if there are any errors in the CSV.
+      #
+      # @return [Boolean] Returns true if there are no errors, false otherwise.
+      def csv_valid?
+        errors.empty?
+      end
+
+      # Returns a duplicate of the array of errors.
+      #
+      # @return [Array<String>] a duplicate of the array of errors
+      def errors
+        @errors.dup
+      end
+
 
       ##
       # @yieldparam [DS::Manifest::Entry] entry the manifest line item
@@ -69,16 +98,18 @@ module DS
 
       def create_mapper entry, tstamp
         case entry.source_type
-        when DS::Manifest::Constants::MARC_XML
+        when DS::Constants::MARC_XML
           DS::Mapper::MarcMapper.new source_dir: source_dir, timestamp:  tstamp
-        when DS::Manifest::Constants::TEI_XML
-          DS::Mapper::OPennTEIMapper.new source_dir: source_dir, timestamp:  tstamp
-        when DS::Manifest::Constants::DS_METS
+        when DS::Constants::TEI_XML
+          DS::Mapper::TeiXmlMapper.new source_dir: source_dir, timestamp: tstamp
+        when DS::Constants::DS_METS
           DS::Mapper::DSMetsMapper.new source_dir: source_dir, timestamp: tstamp
+        when DS::Constants::DS_CSV
+          DS::Mapper::DSCSVMapper.new source_dir: source_dir, timestamp: tstamp
         else
-          raise NotImplementedError {
+          raise NotImplementedError.new(
             "Mapper not implemented for source type: '#{entry.source_type}'"
-          }
+          )
         end
       end
 
@@ -89,6 +120,6 @@ module DS
       def mapper_key entry
         { source_type: entry.source_type, manifest_path: manifest.csv_path }
       end
-    end # class BaseConverter
+    end # class Converter
   end # module Converter
 end # module DS

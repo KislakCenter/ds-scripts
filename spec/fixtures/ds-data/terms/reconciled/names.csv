@@ -1,0 +1,16 @@
+name_as_recorded,role,name_agr,source_authority_uri,instance_of,authorized_label,structured_value,ds_qid
+Former owner as recorded,former owner,Former owner in original script,http://example.com/owner_uri,organization,Former owner auth name,WDQIDOWNER,QOWNER
+An author,author,An author in original script,http://example.com/author_uri,human,Author auth name,WDQIDAUTHOR,QAUTHOR
+Another artist,artist,Another artist in original script,http://example.com/artist_uri,human,Artist auth name,WDQIDARTIST,QARTIST
+A scribe,scribe,A scribe in original script,http://example.com/scribe_uri,human,Scribe auth name,WDQIDSCRIBE,QSCRIBE
+"Phillipps, Thomas",former owner,,,human,Thomas Phillipps,Q2147709,
+"Phillipps, Thomas, Sir, 1792-1872",former owner,,,human,Thomas Phillipps,Q2147709,QPHILLIPPS
+"Phillipps, Thomas, Sir, 1792-1872",former owner,,http://id.loc.gov/authorities/names/n50078542,human,Thomas Phillipps,Q2147709,QPHILLIPPS
+"Boethius, -524",author,,http://id.loc.gov/authorities/names/n79029805,human,Boethius,Q102851,QBOETHIUS
+"Beck, Helmut, 1919-2001",former owner,,,human,Helmut Beck,Q94821473,QBECK
+Saint-Benoît-sur-Loire (Abbey),former owner,,,organization,Fleury Abbey,Q956741,QBENOIT
+Saint-Benoît-sur-Loire (Abbey),former owner,,http://id.loc.gov/authorities/names/n83019607,organization,Fleury Abbey,Q956741,QBENOIT
+Catholic Church.,author,,,organization,Catholic Church,Q12345,
+"Lewis, John Frederick, 1860-1932",former owner,,https://example.com/name/JFL,human,John Frederick Lewis,Q768910,QOWNERLEWIS
+"Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360",author,,,human,Ibn Hishām,Q04923890,QAUTHORIBNHASHIM
+An artist,artist,An artist vernacular,https://example.com/name/arstist1_uri,human,An Artist,Qabcedfghi,QARTIST1

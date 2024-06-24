@@ -2,6 +2,8 @@ require 'nokogiri'
 
 require_relative 'util/strings'
 require_relative 'util/cache'
+require_relative 'util/csv_writer'
+require_relative 'util//csv_validator'
 
 module DS
   module Util

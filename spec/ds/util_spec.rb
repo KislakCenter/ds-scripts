@@ -348,22 +348,27 @@ RSpec.describe 'DS::Util' do
     end
 
     it 'cleans removes tabs and newlines space' do
+      expect(source_string).to match %r{[\t\n]}
       expect(result).not_to match %r{[\t\n]}
     end
 
     it 'removes duplicate periods' do
+      expect(source_string).to match %r{  +}
       expect(result).not_to match %r{  +}
     end
 
     it 'removes leading white space' do
+      expect(source_string).to match %r{^\s}
       expect(result).not_to match %r{^\s}
     end
 
     it 'removes trailing white space' do
+      expect(source_string).to match %r{\s$}
       expect(result).not_to match %r{\s$}
     end
 
     it 'removes duplicate periods' do
+      expect(source_string).to include '..'
       expect(result).not_to include '..'
     end
 
@@ -372,11 +377,13 @@ RSpec.describe 'DS::Util' do
     end
 
     it 'does not have a trailing "]"' do
+      expect(source_string).to match %r{\]$}
       expect(result).not_to match %r{\]$}
     end
 
     it 'does not have a leading "["' do
-      expect(result).not_to match %r{^\[}
+      expect(source_string).to match %r{^\s*\[}
+      expect(result).not_to match %r{^\s*\[}
     end
 
     it 'does not remove medial [' do

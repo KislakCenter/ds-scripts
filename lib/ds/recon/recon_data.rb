@@ -9,7 +9,7 @@ module Recon
       branch    = Settings.recon.git_branch || 'main'
       logger    = DS.logger
 
-      Dir.chdir DS.data_dir do
+      Dir.chdir local_dir do
         unless File.exist? repo_name
           Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger
         end
@@ -26,8 +26,12 @@ module Recon
       end
     end
 
+    def self.local_dir
+      Settings.recon.local_dir
+    end
     def self.repo_dir
       File.join DS.root, Settings.recon.git_local_name
     end
+
   end
 end

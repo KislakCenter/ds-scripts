@@ -4,6 +4,12 @@ require 'csv'
 
 module DS
   module Manifest
+    ##
+    # A Manifest is a collection of {DS::Manifest::Entry} instances.
+    #
+    # This class loads a manifest CSV and provides an {#each} method
+    # to iterate over the entries in the manifest.
+    #
     class Manifest
       include Enumerable
 

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DS::Mapper::BaseMapper' do
+RSpec.describe DS::Mapper::BaseMapper do
 
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
 
@@ -13,16 +13,15 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
 
     def map_record entry; {}; end
 
-    def open_source entry; {}; end
   end
 
   let(:timestamp) { Time.now }
   let(:base_mapper) {
-    DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
+    DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
   }
 
   let(:test_mapper) {
-    TestMapper.new source_dir: marc_xml_dir, timestamp: timestamp
+    TestMapper.new source_dir: marc_xml_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
   }
 
   let(:entry) { Object.new }
@@ -30,7 +29,7 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
   context 'initialize' do
     it 'creates a new mapper' do
       expect(
-        DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
+        DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp, source: DS::Source::MarcXML.new
       ).to be_a DS::Mapper::BaseMapper
     end
   end
@@ -61,6 +60,51 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
     end
   end
 
+  context 'term string methods' do
+    let(:recon_hashes) {
+      [
+        { recon_key_a: '1', recon_key_b: '4' },
+        { recon_key_a: '2', recon_key_b: '5' },
+        { recon_key_a: '3', recon_key_b: '6' }
+      ]
+    }
+
+    context '#build_term_strings' do
+      it 'is a Mapper method' do
+        expect(base_mapper.methods).to include :build_term_strings
+      end
+
+      let(:column_map) {
+        { import_csv_key_a: :recon_key_a, import_csv_key_b: :recon_key_b }
+      }
+
+      let(:expected_term_strings) {
+        { import_csv_key_a: '1|2|3', import_csv_key_b: '4|5|6' }
+      }
+
+      it 'returns a hash of term strings' do
+        expect(
+          base_mapper.build_term_strings recon_hashes, column_map
+        ).to eq expected_term_strings
+      end
+    end
+
+    context '#build_term_string' do
+      let(:recon_key) { :recon_key_a }
+      let(:expected_term_string) { '1|2|3' }
+
+      it 'is a Mapper method' do
+        expect(base_mapper.methods).to include :build_term_string
+      end
+
+      it 'returns a term string' do
+        expect(
+          base_mapper.build_term_string recon_hashes, recon_key
+        ).to eq expected_term_string
+      end
+    end
+  end
+
   context '#map_record' do
     it 'is a Mapper method' do
       expect(base_mapper.methods).to include :map_record
@@ -72,54 +116,4 @@ RSpec.describe 'DS::Mapper::BaseMapper' do
       }.to raise_exception NotImplementedError
     end
   end
-
-  context "#==" do
-    let(:other_mapper) {
-      DS::Mapper::BaseMapper.new source_dir: marc_xml_dir, timestamp: timestamp
-    }
-
-    it 'is not based on object ID' do
-      expect(base_mapper).to eq other_mapper
-    end
-
-    it 'is commutative' do
-      expect(other_mapper).to eq base_mapper
-    end
-
-    let(:test_mapper) {
-      TestMapper.new(
-        source_dir: base_mapper.source_dir,
-        timestamp: base_mapper.timestamp
-      )
-    }
-
-    it 'requires classes be the same' do
-      expect(test_mapper).not_to eq base_mapper
-    end
-  end
-
-  context "#source_cache" do
-    # confirm caching works: create two entries with the same source
-    # filename
-
-    let(:entry1) {
-      obj = Object.new
-      obj.define_singleton_method(:filename) do; "some_file.xml"; end
-      obj
-    }
-
-    let(:entry2) {
-      obj = Object.new
-      obj.define_singleton_method(:filename) do; "some_file.xml"; end
-      obj
-    }
-
-    it '#find_or_open_source calls #open_source once for the same source' do
-      expect(test_mapper).to receive(:open_source).exactly(:once)
-      test_mapper.find_or_open_source entry1
-      test_mapper.find_or_open_source entry2
-    end
-  end
-
-
 end

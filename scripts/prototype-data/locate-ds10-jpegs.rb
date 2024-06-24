@@ -219,23 +219,23 @@ CSV.open output_file, 'w+', headers: true do |csv|
       xml             = File.open(mets_xml) { |f| Nokogiri::XML f }
       row                       = {}
       row[:inst]                = inst
-      row[:callno]              = DS::DS10.extract_shelfmark xml
+      row[:callno]              = DS::Extractor::DsMetsXmlExtractor.extract_shelfmark xml
       row[:folio]               = 'None'
       row[:mets_path]           = rel_path mets_xml
       row[:mets_basename]       = File.basename mets_xml
       row[:mets_image_filename] = 'NO_PAGES' # default value
       row[:jpeg]                = 'NO_PAGES' # default value
 
-      pages = DS::DS10.find_pages(xml)
+      pages = DS::Extractor::DsMetsXmlExtractor.find_pages(xml)
       # if there are no pages, accept the values and go to the next METS file
       pages.empty? and (csv << row) and next
 
       pages.each do |page_node|
         row[:dmdsec_id] = page_node['ID'] # get the node ID; e.g., DM4
-        DS::DS10.extract_filenames(page_node).each do |filename|
+        DS::Extractor::DsMetsXmlExtractor.extract_filenames(page_node).each do |filename|
           row[:mets_image_filename] = filename
           row[:jpeg]                = 'NO_FILE' # default value
-          row[:folio]               = DS::DS10.extract_folio_num page_node
+          row[:folio]               = DS::Extractor::DsMetsXmlExtractor.extract_folio_num page_node
 
           # if filename isn't present, accept values and go to next filename
           filename == 'NO_FILE' and (csv << row) and next

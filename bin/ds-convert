@@ -7,7 +7,6 @@ require_relative '../lib/ds/cli'
 # TODO: No URIs for Scribes in prototype data set; need test data
 
 class DSConvertCLI < DS::CLI
-  DS.configure!
 
   def self.exit_on_failure?
     true
@@ -46,13 +45,12 @@ The MANIFEST is validated before the import CSV is generated. See
     write outfile: outfile do |csv|
       converter.convert do |row|
         count += 1
-        valid = false unless DS::CSVUtil.row_valid? row, count
         csv << row
       end
     end
 
     print_message(options) { "Wrote #{number_to_delimited(count)} rows to '#{outfile}'" }
-    if valid
+    if converter.csv_valid?
       print_message(options) { "CSV is valid: #{outfile}".colorize(:green) }
     else
       raise DSError, "Validation errors found; see previous messages".colorize(:red)
@@ -81,6 +79,7 @@ The validator:
        identifier provided in the manifest
 
 LONGDESC
+
   def validate manifest_path, source_dir=nil
     print_message(options, verbose_only: true) {
       "Validating manifest CSV: '#{manifest_path}'"
@@ -88,14 +87,17 @@ LONGDESC
 
     manifest = DS::Manifest::Manifest.new manifest_path, source_dir
 
-    if DS::Manifest::ManifestValidator.new(manifest).valid?
+    manifest_validator = DS::Manifest::ManifestValidator.new manifest
+    if manifest_validator.valid?
       print_message(options) {
         "SUCCESS! Manifest is valid: '#{manifest_path}'".colorize(:green)
       }
     else
+      print_message(options) { manifest_validator.errors.take(10).join("\n") }
       print_message(options) {
         "ERROR: Manifest has validation errors".colorize(:red)
       }
+
       exit 1
     end
   end
@@ -115,6 +117,7 @@ LONGDESC
       yield csv
     end
   end
+
   def write_csv rows, options
     out_csv = options[:'output-csv']
     CSV.open out_csv, "w", headers: true do |csv|

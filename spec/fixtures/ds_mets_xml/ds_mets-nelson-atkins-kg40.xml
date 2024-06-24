@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/"
+  xmlns:mods="http://www.loc.gov/mods/v3"
+  xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/"
+  xmlns:mix="http://www.loc.gov/mix/v10"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:premis="http://www.loc.gov/standards/premis/v2"
+  xsi:schemaLocation=
+  "http://www.loc.gov/METS/
+  http://www.loc.gov/standards/mets/mets.xsd
+  http://www.loc.gov/standards/rights/METSRights.xsd
+  http://www.loc.gov/mods/v3/
+  http://www.loc.gov/standards/mods/v3/mods-3-4.xsd
+  http://www.loc.gov/mix/v10/
+  http://www.loc.gov/standards/mix/mix10/mix10.xsd
+  info:lc/xmlns/premis-v2/
+  http://www.loc.gov/standards/premis/premis.xsd"
+  OBJID="ark:/28722/bk0016x8890"
+  LABEL="[No Title for Display]"
+  PROFILE="http://www.loc.gov/mets/profiles/00000013.xml">
+  <mets:metsHdr CREATEDATE="2016-07-19T02:37:41" LASTMODDATE="2016-09-13T08:51:34">
+    <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
+      <mets:name>Nelson-Atkins Museum of Art;;Spencer Art Reference Library;;Kansas City</mets:name>
+    </mets:agent>
+  </mets:metsHdr>
+  <mets:dmdSec ID="DM1">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:name type="corporate">
+            <mods:namePart>Catholic Church.</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Author</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>William Skrene; John Quynton; John Blecche and his wife, Mary</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">other</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Pynchebek</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Scribe</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Hans Wertinger, also called Hans Schwab von Wertinger (1465/70&#8211;1533), of Landshut, or his workshop</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Artist</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="personal">
+            <mods:namePart>Pynchebek</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text">Scribe</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>One leaf</mods:extent>
+            <mods:note type="presentation">Not bound</mods:note>
+            <mods:note type="presentation">Long MS description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note><mods:note type="physical details">Long part description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="ownership">Lewis Gould purchased from Galena Books from the Los Angeles Book Fair. Gift of Lewis Gould to the Nelson-Atkins Museum of Art in 2015 in his wife&apos;s memory.</mods:note>
+          <mods:note type="ownership">Long ownership: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:note type="source note">Fragment</mods:note>
+          <mods:note type="source note">source note</mods:note>
+          <mods:note type="admin">We are grateful to Brother Thomas Sullivarn, O.S.B., for providing the identification of the text, and to Linda Ehrsam Voigts for the physical description.</mods:note>
+          <mods:note type="admin">MS acknowledgement</mods:note>
+          <mods:note type="admin">Long acknowledgement: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:note type="action">Vicki Kirby 2016-07-08</mods:note>
+          <mods:note>Untyped note</mods:note>
+          <mods:note>Long MS note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:note type="bibliography">Bibliography</mods:note>
+          <mods:relatedItem displayLabel="Metacollection" type="host">
+            <mods:titleInfo>
+              <mods:title>Digital
+                Scriptorium</mods:title>
+            </mods:titleInfo>
+          </mods:relatedItem>
+          <mods:identifier type="local">KG 40</mods:identifier>
+          <mods:location>
+            <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
+          </mods:location>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  <mets:dmdSec ID="DM2">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative">
+            <mods:title>3 rubric recto, line 1 &quot;Versus&quot;; verso, line 5, &quot;Primus&quot;; line 15 &quot;Hymnus&quot;</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:originInfo>
+            <mods:place>
+              <mods:placeTerm type="text">France;;Northern</mods:placeTerm>
+            </mods:place>
+            <mods:dateCreated encoding="iso8601" point="start">1400</mods:dateCreated>
+            <mods:dateCreated encoding="iso8601" point="end">1499</mods:dateCreated>
+            <mods:dateOther>s. XV</mods:dateOther>
+              <mods:edition>Catholic Church--Liturgy--Texts.</mods:edition>
+              <mods:edition>Manuscripts, Latin (Medieval and
+                modern)--Massachusetts--Northampton.</mods:edition>
+          </mods:originInfo>
+          <mods:physicalDescription>
+            <mods:extent>One leaf;;132 x 87</mods:extent>
+            <mods:note type="technique">Technique note</mods:note>
+            <mods:note type="marks">Marks note</mods:note>
+            <mods:note type="script">Script note</mods:note>
+            <mods:note type="support">Parchment, semi-translucent</mods:note>
+            <mods:note type="medium">Medium note</mods:note>
+            <mods:note type="physical details">Long part description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+            <mods:note type="physical details">Physical details note</mods:note>
+            <mods:note type="physical description">Physical description note;;number of scribes</mods:note>
+            <mods:note type="physical description">Border 70 x 37 mm gold background. Fifteen lettered lines in Latin in brown ink with rubricated capitals. Recto, right margin: narcissus, 2 strawberries, violet, 2 strawberries. Verso, left margin: quadrifoliate blue flower, red and pink quadrifoliate flower, sweet pea(?), narcissus, sweet pea, pink and red blossom. Two 2-line initials (recto, verso) with light blue ground, dark blue letter with gold flourishing. Two 1-line initials on verso; gold letter on red ground.;;1</mods:note>
+          </mods:physicalDescription>
+          <mods:note>Top margin, recto and verso: Of. de la Croix</mods:note>
+          <mods:note type="admin">Part acknowledgement</mods:note>
+          <mods:note>Untyped part note</mods:note>
+          <mods:note>Long part note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:location>
+            <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
+          </mods:location>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  <mets:dmdSec ID="DM3">
+    <mets:mdWrap MDTYPE="MODS" LABEL="Book of Hours, excerpt Hours of the Cross">
+      <mets:xmlData>
+        <mods:mods>
+          <mods:titleInfo>
+            <mods:title>Book of Hours, excerpt Hours of the Cross</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>One leaf</mods:extent>
+          </mods:physicalDescription>
+          <mods:abstract>Text abstract</mods:abstract>
+          <mods:note>lang: Latin</mods:note>
+          <mods:note>Untyped text note</mods:note>
+          <mods:note type="admin">Text acknowledgement</mods:note>
+          <mods:note>Long text note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:note type="condition">Condition note</mods:note>
+          <mods:note type="content">Text content note</mods:note>
+          <mods:location>
+            <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
+          </mods:location>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  <mets:dmdSec ID="DM4">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 1r</mods:extent>
+          </mods:physicalDescription>
+          <mods:note>Untyped page note</mods:note>
+          <mods:note type="admin">Page acknowledgement</mods:note>
+          <mods:identifier type="filename" displayLabel="Filename">GouldCollection040recto.tif</mods:identifier>
+          <mods:location>
+            <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
+          </mods:location>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  <mets:dmdSec ID="DM5">
+    <mets:mdWrap MDTYPE="MODS" LABEL="[Title not supplied]">
+      <mets:xmlData>
+        <mods:mods>
+          <mods:titleInfo>
+            <mods:title>[Title not supplied]</mods:title>
+          </mods:titleInfo>
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:physicalDescription>
+            <mods:extent>f. 1v</mods:extent>
+          </mods:physicalDescription>
+          <mods:abstract>Page abstract</mods:abstract>
+          <mods:note type="content">Page content note</mods:note>
+          <mods:note>Verso</mods:note>
+          <mods:note>Long page note: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ligula ullamcorper malesuada proin libero. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Parturient montes nascetur ridiculus mus. Augue neque gravida in fermentum et sollicitudin ac orci. Ullamcorper sit amet risus nullam eget felis eget nunc. Egestas sed sed risus pretium quam vulputate dignissim. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Sagittis vitae et leo duis. Ut sem viverra aliquet eget.</mods:note>
+          <mods:identifier type="filename" displayLabel="Filename">GouldCollection040verso.tif</mods:identifier>
+          <mods:location>
+            <mods:physicalLocation>Spencer Art Reference Library in the Nelson-Atkins Museum of Art;;, The Nelson-Atkins Museum of Art, 4525 Oak Street, Kansas City, MO 64111, Phone: 816.751.1278;;, URL: http://www.nelson-atkins.org/education/Library.cfm</mods:physicalLocation>
+          </mods:location>
+        </mods:mods>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  <mets:amdSec>
+    <mets:techMD ID="ADM1">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/tiff</mix:formatName>
+              </mix:FormatDesignation>
+              <mix:Compression>
+                <mix:compressionScheme>Uncompressed</mix:compressionScheme>
+              </mix:Compression>
+            </mix:BasicDigitalObjectInformation>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM2">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:FormatDesignation>
+                <mix:formatName>image/jpeg</mix:formatName>
+              </mix:FormatDesignation>
+              <mix:Compression>
+                <mix:compressionScheme>JPEG Baseline Sequential</mix:compressionScheme>
+              </mix:Compression>
+            </mix:BasicDigitalObjectInformation>
+            <mix:ImageAssessmentMetadata>
+              <mix:ImageColorEncoding>
+                <mix:bitsPerSample>
+                  <mix:bitsPerSampleValue>8,8,8</mix:bitsPerSampleValue>
+                  <mix:bitsPerSampleUnit>integer</mix:bitsPerSampleUnit>
+                </mix:bitsPerSample>
+                <mix:samplesPerPixel>3</mix:samplesPerPixel>
+              </mix:ImageColorEncoding>
+            </mix:ImageAssessmentMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM3">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k2s</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2016-08-08</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM4">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k7j</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ImageCaptureMetadata>
+              <mix:SourceInformation>
+                <mix:sourceType>text</mix:sourceType>
+              </mix:SourceInformation>
+              <mix:GeneralCaptureInformation>
+                <mix:dateTimeCreated>2016-08-08</mix:dateTimeCreated>
+              </mix:GeneralCaptureInformation>
+            </mix:ImageCaptureMetadata>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM5">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k5f</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>85</mix:imageWidth>
+                <mix:imageHeight>128</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k2s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM6">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k4w</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>341</mix:imageWidth>
+                <mix:imageHeight>512</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k2s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM7">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k3b</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>683</mix:imageWidth>
+                <mix:imageHeight>1024</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k2s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM8">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k17</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>3840</mix:imageWidth>
+                <mix:imageHeight>5760</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k2s</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM9">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8m06</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>85</mix:imageWidth>
+                <mix:imageHeight>128</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k7j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM10">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k9n</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>341</mix:imageWidth>
+                <mix:imageHeight>512</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k7j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM11">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k83</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>683</mix:imageWidth>
+                <mix:imageHeight>1024</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k7j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:techMD ID="ADM12">
+      <mets:mdWrap MDTYPE="NISOIMG">
+        <mets:xmlData>
+          <mix:mix>
+            <mix:BasicDigitalObjectInformation>
+              <mix:ObjectIdentifier>
+                <mix:objectIdentifierType>ark</mix:objectIdentifierType>
+                <mix:objectIdentifierValue>ark:/28722/bk0016x8k60</mix:objectIdentifierValue>
+              </mix:ObjectIdentifier>
+            </mix:BasicDigitalObjectInformation>
+            <mix:BasicImageInformation>
+              <mix:BasicImageCharacteristics>
+                <mix:imageWidth>3840</mix:imageWidth>
+                <mix:imageHeight>5760</mix:imageHeight>
+              </mix:BasicImageCharacteristics>
+            </mix:BasicImageInformation>
+            <mix:ChangeHistory>
+              <mix:ImageProcessing>
+                <mix:dateTimeProcessed>2016-08-08</mix:dateTimeProcessed>
+                <mix:sourceData>http://nma.berkeley.edu/ark:/28722/bk0016x8k7j</mix:sourceData>
+              </mix:ImageProcessing>
+            </mix:ChangeHistory>
+          </mix:mix>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:rightsMD ID="RMD1">
+      <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+        <mets:xmlData>
+          <rts:RightsDeclarationMD RIGHTSCATEGORY="OTHER" OTHERCATEGORYTYPE="UNKNOWN">
+            <rts:RightsHolder>
+              <rts:RightsHolderComments>The Nelson-Atkins Museum of Art respects all valid claims of copyright by artists, or by their respective families, estates, foundations, or representatives.
+                The copyright status of individual works and artists must be investigated carefully by anyone wishing to make potential use of these images. The Museum does not warrant that the use of individual works will not infringe on the rights of third parties. It is the individual’s responsibility to determine and satisfy copyright or other use restrictions before copying, transmitting, or making other use of protected items beyond that allowed by "fair use," as such term is understood under the United States Copyright Act.
+                The Nelson-Atkins Museum of Art holds the right to assert its copyright in all one-of-a-kind works that it owns that are not explicitly covered by other claims.</rts:RightsHolderComments>
+            </rts:RightsHolder>
+            <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
+              <rts:Constraints>
+                <rts:ConstraintDescription>Some materials in these collections may be protected by the U.S. Copyright Law (Title 17, U.S.C.). In addition, the reproduction of some materials may be restricted by terms of University of California gift or purchase agreements, donor restrictions, privacy and publicity rights, licensing and trademarks. Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.</rts:ConstraintDescription>
+              </rts:Constraints>
+            </rts:Context>
+          </rts:RightsDeclarationMD>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:rightsMD>
+  </mets:amdSec>
+  <mets:fileSec>
+    <mets:fileGrp USE="image/master">
+      <mets:file ID="FID1" MIMETYPE="image/tiff" SEQ="1" CREATED="2016-08-08T09:22:43.417" ADMID="ADM1 ADM3" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k2s" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID2" MIMETYPE="image/tiff" SEQ="1" CREATED="2016-08-08T09:22:43.567" ADMID="ADM1 ADM4" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k7j" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp USE="image/thumbnail">
+      <mets:file ID="FID3" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.467" ADMID="ADM2" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k5f" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID4" MIMETYPE="image/jpeg" SEQ="2" CREATED="2016-08-08T09:22:43.63" ADMID="ADM2" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8m06" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID5" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.453" ADMID="ADM2" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k4w" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID6" MIMETYPE="image/jpeg" SEQ="2" CREATED="2016-08-08T09:22:43.61" ADMID="ADM2" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k9n" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID7" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.44" ADMID="ADM2" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k3b" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID8" MIMETYPE="image/jpeg" SEQ="2" CREATED="2016-08-08T09:22:43.6" ADMID="ADM2" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k83" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+    <mets:fileGrp USE="image/reference">
+      <mets:file ID="FID9" MIMETYPE="image/jpeg" SEQ="1" CREATED="2016-08-08T09:22:43.43" ADMID="ADM2" GROUPID="GID1">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k17" LOCTYPE="URL"/>
+      </mets:file>
+      <mets:file ID="FID10" MIMETYPE="image/jpeg" SEQ="2" CREATED="2016-08-08T09:22:43.587" ADMID="ADM2" GROUPID="GID2">
+        <mets:FLocat xlink:href="http://nma.berkeley.edu/ark:/28722/bk0016x8k60" LOCTYPE="URL"/>
+      </mets:file>
+    </mets:fileGrp>
+  </mets:fileSec>
+  <mets:structMap>
+    <mets:div TYPE="text" LABEL="[No Title for Display]" ADMID="RMD1" DMDID="DM1">
+      <mets:div TYPE="text" LABEL="[No Title for Display]" DMDID="DM2">
+        <mets:div TYPE="text" LABEL="Book of Hours, excerpt Hours of the Cross" DMDID="DM3">
+          <mets:div TYPE="text" LABEL="[No Title for Display]" DMDID="DM4">
+            <mets:fptr FILEID="FID1"/>
+            <mets:fptr FILEID="FID3"/>
+            <mets:fptr FILEID="FID5"/>
+            <mets:fptr FILEID="FID7"/>
+            <mets:fptr FILEID="FID9"/>
+          </mets:div>
+          <mets:div TYPE="text" LABEL="[No Title for Display]" DMDID="DM5">
+            <mets:fptr FILEID="FID2"/>
+            <mets:fptr FILEID="FID4"/>
+            <mets:fptr FILEID="FID6"/>
+            <mets:fptr FILEID="FID8"/>
+            <mets:fptr FILEID="FID10"/>
+          </mets:div>
+        </mets:div>
+      </mets:div>
+    </mets:div>
+  </mets:structMap>
+</mets:mets>
