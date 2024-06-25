@@ -515,7 +515,7 @@ describe DS::Extractor::DsCsvExtractor do
       let(:expected) { ["Title;;Title in vernacular"] }
       it 'returns the property values for the header' do
         expect(
-          DS::Extractor::DsCsvExtractor.extract_values_for_header header, record
+          DS::Extractor::DsCsvExtractor.extract_values_for_header header: header, record: record
         ).to eq expected
       end
     end
@@ -524,7 +524,7 @@ describe DS::Extractor::DsCsvExtractor do
       let(:header) { "Note 1" }
       it 'strips leading and trailing spaces from the property values' do
         expect(
-          DS::Extractor::DsCsvExtractor.extract_values_for_header header, record
+          DS::Extractor::DsCsvExtractor.extract_values_for_header header: header, record: record
         ).not_to include /\s+$/
       end
     end
