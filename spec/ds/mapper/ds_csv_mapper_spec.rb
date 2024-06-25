@@ -79,7 +79,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         dated:                              "",
         source_type:                        "ds-csv",
         cataloging_convention:              "amremm",
-        holding_institution:                "Q1075148",
+        holding_institution_ds_qid:         "Q1075148",
         holding_institution_as_recorded:    "University of California, Riverside",
         holding_institution_id_number:      "BP128.57 .A2 1700z",
         holding_institution_shelfmark:      "BP128.57 .A2 1700z",

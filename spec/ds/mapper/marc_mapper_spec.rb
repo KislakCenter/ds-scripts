@@ -7,7 +7,7 @@ RSpec.describe DS::Mapper::MarcMapper do
   let(:manifest) {  }
 
   let(:manifest_csv) { parse_csv(<<~EOF
-    holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
+    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
     Q49117,marc_xml_with_all_values.xml,University of Pennsylvania,MARC XML,DS10000,9951865503503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
     Q49117,9949533433503681_marc.xml,University of Pennsylvania,MARC XML,,9949533433503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105856,Oversize LJS 280,Decretales a[b]breviate,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3wm13v03/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9949533433503681,2023-08-01T11:31:22-0400
 
@@ -88,7 +88,7 @@ RSpec.describe DS::Mapper::MarcMapper do
         :dated                              => "",
         :source_type                        => "marc-xml",
         :cataloging_convention              => "amremm",
-        :holding_institution                => "Q49117",
+        :holding_institution_ds_qid         => "Q49117",
         :holding_institution_as_recorded    => "University of Pennsylvania",
         :holding_institution_id_number      => "9951865503503681",
         :holding_institution_shelfmark      => "LJS 101",

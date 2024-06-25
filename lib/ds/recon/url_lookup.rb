@@ -20,8 +20,8 @@ module Recon
       @url_hash = {}
     end
 
-    def find_url holding_institution, shelfmark
-      key = url_key holding_institution, shelfmark
+    def find_url holding_inst_as_recorded, shelfmark
+      key = url_key holding_inst_as_recorded, shelfmark
       urls[key]
     end
 

@@ -23,7 +23,7 @@ module DS
         date_last_updated                  = ''
         dated                              = ''
         cataloging_convention              = DS::Extractor::DsCsvExtractor.extract_cataloging_convention(record)
-        holding_institution                = entry.institution_wikidata_qid
+        holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = entry.institutional_id
         holding_institution_shelfmark      = entry.call_number
@@ -46,7 +46,7 @@ module DS
           dated:                              dated,
           source_type:                        source_type,
           cataloging_convention:              cataloging_convention,
-          holding_institution:                holding_institution,
+          holding_institution_ds_qid:         holding_institution_ds_qid,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,
           holding_institution_shelfmark:      holding_institution_shelfmark,

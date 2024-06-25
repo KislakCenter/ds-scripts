@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
   let(:manifest_csv) { parse_csv <<~EOF
-    holding_institution_wikidata_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,manifest_generated_at
+    holding_institution_ds_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,manifest_generated_at
     Q1976985,The Nelson-Atkins Museum of Art ,,ds-mets,ds_mets-nelson-atkins-kg40.xml,KG 40,"/mets:mets[./mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods/mods:identifier[@type = 'local' and ./text() = 'ID_PLACEHOLDER']]",KG 40,https://archive.org/details/KG40_46,2016-09-13T08:51:34,"Book of Hours, excerpt Hours of the Cross",https://iiif.archivelab.org/iiif/images_KG40_46/manifest.json,2023-12-16T12:51:52-0500
     EOF
   }
@@ -61,7 +61,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
         dated:                              false,
         cataloging_convention:              "ds-mets",
         source_type:                        "ds-mets",
-        holding_institution:                "Q1976985",
+        holding_institution_ds_qid:         "Q1976985",
         holding_institution_as_recorded:    "The Nelson-Atkins Museum of Art ",
         holding_institution_id_number:      "KG 40",
         holding_institution_shelfmark:      "KG 40",

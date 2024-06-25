@@ -6,7 +6,7 @@ date_added
 date_last_updated
 source_type
 cataloging_convention
-holding_institution
+holding_institution_ds_qid
 holding_institution_as_recorded
 holding_institution_id_number
 holding_institution_shelfmark

@@ -39,8 +39,8 @@ module DS
         row[key]
       end
 
-      def institution_wikidata_qid
-        row[INSTITUTION_WIKIDATA_QID]
+      def institution_ds_qid
+        row[INSTITUTION_DS_QID]
       end
 
       # FILENAME                            = 'filename'
@@ -103,18 +103,18 @@ module DS
 
       def to_h
         {
-        institution_wikidata_qid:     institution_wikidata_qid,
-        institution_wikidata_label:   institution_wikidata_label,
-        ds_id:                        ds_id,
-        call_number:                  call_number,
-        institutional_id:             institutional_id,
-        title:                        title,
-        link_to_institutional_record: link_to_institutional_record,
-        iiif_manifest_url:            iiif_manifest_url,
-        record_last_updated:          record_last_updated,
-        source_type:                  source_type,
-        filename:                     filename,
-        manifest_generated_at:        manifest_generated_at,
+          institution_ds_qid:           institution_ds_qid,
+          institution_wikidata_label:   institution_wikidata_label,
+          ds_id:                        ds_id,
+          call_number:                  call_number,
+          institutional_id:             institutional_id,
+          title:                        title,
+          link_to_institutional_record: link_to_institutional_record,
+          iiif_manifest_url:            iiif_manifest_url,
+          record_last_updated:          record_last_updated,
+          source_type:                  source_type,
+          filename:                     filename,
+          manifest_generated_at:        manifest_generated_at,
         }
       end
 
