@@ -612,7 +612,8 @@ module DS
           columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
           columns.filter_map { |header|
             record[header]
-          }.flatten.flat_map { |value| value.split '|' }
+            # use split -1 to preserve empty values
+          }.flatten.flat_map { |value| value.split '|', -1 }
         end
 
         # Determines if a method name maps to a property.
