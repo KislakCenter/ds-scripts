@@ -120,7 +120,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         material_as_recorded:               "materials description",
         material_ds_qid:                    "QMATERIAL1;QMATERIAL2",
         physical_description:               "Extent: 1 folio; materials description; 310 x 190 mm bound to 320 x 200 mm",
-        note:                               "Layout: 1 column, 24 lines|Script: Carolingian|Decoration: Illuminated manuscript|Binding: Bound in vellum|Other miscellaneous physical description|Provenance: Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017|The first note|The second note",
+        note:                               "Layout: 1 column, 24 lines|Script: Carolingian|Decoration: Illuminated manuscript|Binding: Bound in vellum|Other miscellaneous physical description|Provenance: Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017|The first note|Note followed by a space|Final note 1|The second note",
         data_processed_at:                  be_some_kind_of_date_time,
         data_source_modified:               be_some_kind_of_date_time,
         source_file:                        "ucriverside-dscsv.csv",

@@ -410,6 +410,8 @@ describe DS::Extractor::DsCsvExtractor do
         "Other miscellaneous physical description",
         "Provenance: Purchased from Phillip J. Pirages Fine Books and Manuscripts, McMinnville, Oregon, 2017",
         "The first note",
+        "Note followed by a space",
+        "Final note 1",
         "The second note",
       ]
     }
@@ -418,6 +420,12 @@ describe DS::Extractor::DsCsvExtractor do
       expect(
         DS::Extractor::DsCsvExtractor.extract_notes record
       ).to eq notes
+    end
+
+    it 'returns no notes ending with whitespace' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_notes record
+      ).not_to include /\s+$/
     end
   end
 
@@ -498,6 +506,27 @@ describe DS::Extractor::DsCsvExtractor do
 
     it "returns an array that includes the former owner data" do
       expect(DS::Extractor::DsCsvExtractor.extract_recon_names record).to include ["Former owner as recorded", "former owner", "Former owner in original script", nil]
+    end
+  end
+
+  context 'extract_property_for_header' do
+    context 'without trailing white space' do
+      let(:header) { "Title(s)" }
+      let(:expected) { ["Title;;Title in vernacular"] }
+      it 'returns the property values for the header' do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_values_for_header header, record
+        ).to eq expected
+      end
+    end
+
+    context 'with trailing white space' do
+      let(:header) { "Note 1" }
+      it 'strips leading and trailing spaces from the property values' do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_values_for_header header, record
+        ).not_to include /\s+$/
+      end
     end
   end
 

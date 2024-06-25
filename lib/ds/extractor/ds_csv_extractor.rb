@@ -615,10 +615,22 @@ module DS
           raise "Unknown property: #{property}" unless known_property? property
           columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
           columns.filter_map { |header|
-            record[header]
-            # use split -1 to preserve empty values
-          }.flatten.flat_map { |value| value.split '|', -1 }
+            extract_values_for_header header, record
+          }.flatten
         end
+
+        # Extracts the values for a specific header from a record, splitting on '|' and stripping whitespace.
+        #
+        # @param [CSV::Row] record the record containing the values
+        # @param [String] header the header to extract values for
+        # @return [Array<String>] the extracted values
+        def extract_values_for_header header, record
+          return unless record[header].present?
+
+          # use split -1 to preserve empty values
+          record[header].to_s.split('|', -1).map &:strip
+        end
+
 
         # Determines if a method name maps to a property.
         #
@@ -653,7 +665,7 @@ module DS
         # @return [Array<String>] the extracted notes
         def extract_notes record
           COLUMN_MAPPINGS[:notes].filter_map { |header|
-            vals = record[header].to_s.split '|'
+            vals = extract_values_for_header header, record
             next unless vals
             case header
             when /^(Note|Physical description)/i
