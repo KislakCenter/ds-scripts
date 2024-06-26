@@ -530,4 +530,69 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
+  context 'mark_long' do
+    let(:long_string) {
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+
+    it 'prepends the value with a warning' do
+      expect(
+        subject.mark_long long_string
+      ).to start_with "TEXT_EXCEEDS_400_CHARACTERS"
+    end
+
+    it 'returns the value if it is less than 400 characters' do
+      expect(
+        subject.mark_long "Lorem ipsum dolor sit amet"
+      ).to eq "Lorem ipsum dolor sit amet"
+    end
+
+    let(:string_of_400_characters) {
+      "a".ljust(400, "a")
+    }
+
+    it 'returns the value if it is 400 characters' do
+      expect(
+        subject.mark_long string_of_400_characters
+      ).to eq string_of_400_characters
+    end
+
+    it 'returns nil if the value is nil' do
+      expect(subject.mark_long nil).to be_nil
+    end
+
+    it 'returns the empty string if the value is an empty string' do
+      expect(subject.mark_long "").to eq ""
+    end
+
+    context 'is called by other methods' do
+      let(:long_note) {
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+      let(:long_acknowledgement) {
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      }
+
+      let(:record) {
+        csv = parse_csv <<~CSV
+Note 1,Acknowledgements
+"A note|#{long_note}|Another note","Thank you|#{long_acknowledgement}|No, thank you."
+        CSV
+        csv.first
+      }
+
+      it 'marks the long note' do
+        expect(
+          subject.extract_notes record
+        ).to include /TEXT_EXCEEDS_400_CHARACTERS/
+      end
+
+      it 'marks the long acknowledgement' do
+        expect(
+          subject.extract_acknowledgments record
+        ).to include /TEXT_EXCEEDS_400_CHARACTERS/
+      end
+    end
+  end
+
 end

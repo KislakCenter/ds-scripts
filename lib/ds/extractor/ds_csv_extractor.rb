@@ -49,6 +49,8 @@ module DS
         date_source_modified:               "Date Updated by Contributor",
       }.freeze
 
+      LONG_STRING_WARNING = 'TEXT_EXCEEDS_400_CHARACTERS'
+
       module ClassMethods
 
         # Extracts the DSID value from the given record.
@@ -616,7 +618,7 @@ module DS
           columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
           columns.filter_map { |header|
             extract_values_for_header header: header, record: record
-          }.flatten
+          }.flatten.map { |s| mark_long s}
         end
 
         # Extracts the values for a specific header from a record, splitting on '|' and stripping whitespace.
@@ -628,9 +630,8 @@ module DS
           return unless record[header].present?
 
           # use split -1 to preserve empty values
-          record[header].to_s.split('|', -1).map &:strip
+          record[header].to_s.split('|', -1).map(&:strip)
         end
-
 
         # Determines if a method name maps to a property.
         #
@@ -664,9 +665,10 @@ module DS
         # @param [CSV::Row] record the record to extract notes from
         # @return [Array<String>] the extracted notes
         def extract_notes record
-          COLUMN_MAPPINGS[:notes].filter_map { |header|
+          notes = COLUMN_MAPPINGS[:notes].filter_map { |header|
             vals = extract_values_for_header header:  header, record: record
             next unless vals
+
             case header
             when /^(Note|Physical description)/i
               vals
@@ -675,7 +677,15 @@ module DS
             else
               vals.map { |v| "#{header}: #{v}" }
             end
-          }.flatten
+          }.flatten.map { |s| mark_long s }
+          notes
+        end
+
+        def mark_long s
+          return s if s.blank?
+          return s if s.length <= 400
+
+          "#{LONG_STRING_WARNING}: #{s}"
         end
 
       end
