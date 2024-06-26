@@ -1104,7 +1104,7 @@ module DS
         def collect_subfields datafield, codes: [], sub_sep: ' '
           # ensure that +codes+ is an array of strings
           _codes = [codes].flatten.map &:to_s
-          # ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
+          # Code query example: ['a', 'b', 'd', 'c'] => @code = 'a' or @code = 'b' or @code = 'c' or @code = 'd'
           code_query = _codes.map { |code| "@code = '#{code}'" }.join ' or '
           xpath      = %Q{subfield[#{code_query}]}
           DS::Util.clean_string datafield.xpath(xpath).map(&:text).reject(&:empty?).join sub_sep

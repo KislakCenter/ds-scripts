@@ -162,11 +162,5 @@ source_file
       tei:   'http://www.tei-c.org/ns/1.0'
     }
 
-    # MARC_XML = :marc
-    # METS_XML = :mets
-    # TEI_XML  = :tei
-    # DS_CSV   = :csv
-    # SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, DS_CSV ].freeze
-
   end
 end

@@ -385,10 +385,7 @@ module DS
           as_recorded_titles = extract_values_for(property: :titles_as_recorded, record: record)
           uniform_titles     = extract_values_for(property: :uniform_titles_as_recorded, record: record)
           as_recorded_titles << '' if as_recorded_titles.blank?
-          # if uniform_titles.blank?
-          #   uniform_titles << ''
-          #   uniform_titles *= as_recorded_titles.size if as_recorded_titles.size > 1
-          # end
+
           unless balanced_titles? as_recorded_titles, uniform_titles
             raise ArgumentError, "Unbalanced number of titles and uniform titles (titles: #{as_recorded_titles.inspect}, uniform titles: #{uniform_titles.inspect})"
           end
@@ -411,13 +408,9 @@ module DS
         # @param [Array<String>] uniform_titles
         # @return [Boolean]
         def balanced_titles? as_recorded_titles, uniform_titles
-          # return true if as_recorded_titles.blank? && uniform_titles.blank?
           return true if uniform_titles.blank?
-          return true if as_recorded_titles.size == uniform_titles.size
 
-          # for our purposes, ['Some title'] and [] are balanced
-          return true if [as_recorded_titles, uniform_titles].all? { |arr| arr.length <= 1 }
-          false
+          as_recorded_titles.size == uniform_titles.size
         end
 
         ##

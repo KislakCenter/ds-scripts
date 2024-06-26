@@ -96,7 +96,6 @@ RSpec.describe Recon::ReconBuilder do
         }
 
         it 'yields the auth values' do
-          # recon_builder.each_recon(recon_type) { |recon| require 'pry'; binding.pry }
           expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end

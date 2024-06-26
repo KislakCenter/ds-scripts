@@ -18,10 +18,10 @@ recon_args="--source-type ds-csv      -o ${csv_dir}   ${SCRIPT_DIR}/../../ds-mem
 --source-type marc-xml    -o ${marc_dir}  ${SCRIPT_DIR}/../../ds-member-data/test/20240604/marc-test/*.xml
 --source-type tei-xml     -o ${tei_dir}   ${SCRIPT_DIR}/../../ds-member-data/test/20240604/tei-test/*.xml"
 
-#echo "${recon_args}" | while read -r args
-#do
-#  ${SCRIPT_DIR}/../bin/ds-recon write-all ${args}
-#done
+echo "${recon_args}" | while read -r args
+do
+  ${SCRIPT_DIR}/../bin/ds-recon write-all ${args}
+done
 
 convert_args="-o ${tei_dir}/import.csv ../ds-member-data/test/20240604/tei-test/20220604-tei-test-set-flp-manifest.csv
 -o ${mets_dir}/import.csv ../ds-member-data/test/20240604/mets-test/20240604-mets-test-set-missouri-manifest.csv

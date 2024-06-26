@@ -541,7 +541,7 @@ module DS
         # DS10.extract_assigned_date, DS10.extract_date_range.
         #
         # @param [Nokogiri::XML:Node] xml the parsed METS xml document
-        # @return [String] the concatenated date values
+        # @return [Array<String>] the concatenated date values
         def extract_production_date_as_recorded xml
           find_parts(xml).map { |part|
             date_created = extract_date_created part

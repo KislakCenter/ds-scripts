@@ -255,8 +255,6 @@ module DS
         # @param [Nokogiri::XML::Node] record the TEI XML record
         # @return [String] the extracted material as recorded
         def extract_material_as_recorded record
-          # xpath = '/TEI/teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc/supportDesc/support/p'
-          # extract_normalized_strings(record, xpath).first
           extract_materials(record).map(&:as_recorded).first
         end
 

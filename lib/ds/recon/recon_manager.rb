@@ -26,7 +26,6 @@ module Recon
     def write_all_csvs
       outfiles = []
       Recon::RECON_TYPES.each do |recon_type|
-        # outfile = File.join out_dir, "#{recon_type.set_name}.csv"
         outfiles << write_csv(recon_type)
       end
       outfiles

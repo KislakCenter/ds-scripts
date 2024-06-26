@@ -44,8 +44,6 @@ module DS
 
   def self.configure!
     config_dir = File.join root, 'config'
-    # yaml_files = Dir["#{config_dir}/**/*.yml"]
-    # Config.load_and_set_settings(Config.setting_files("/path/to/config_root", "your_project_environment"))
     # Set Settings, so you can do things like Settings.recon.key ...
     Config.load_and_set_settings(Config.setting_files config_dir, DS.env)
   end
