@@ -21,7 +21,7 @@ module DS
         ds_id                              = entry.ds_id
         date_added                         = ''
         date_last_updated                  = ''
-        dated                              = ''
+        dated                              = entry.dated?
         cataloging_convention              = DS::Extractor::DsCsvExtractor.extract_cataloging_convention(record)
         holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label

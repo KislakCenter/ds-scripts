@@ -4,7 +4,7 @@ module DS
   module Extractor
     module DsCsvExtractor
       COLUMN_MAPPINGS = {
-        dsid:                               "DS ID",
+        ds_id:                              "DS ID",
         holding_institution_as_recorded:    "Holding Institution",
         source_type:                        "Source Type",
         cataloging_convention:              "Cataloging Convention",
@@ -58,7 +58,7 @@ module DS
         # @param [CSV::Row] record the record to extract the DSID from
         # @return [String] the extracted DSID value
         def extract_dsid record
-          [extract_values_for(property: :dsid, record: record)].flatten.first
+          [extract_values_for(property: :ds_id, record: record)].flatten.first
         end
 
         # Extracts the source type value from the given record.

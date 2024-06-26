@@ -59,6 +59,11 @@ module DS
       def ds_id
         row[DS_ID]
       end
+
+      # DATED                               = 'dated'
+      def dated
+        row[DATED]
+      end
       # INSTITUTIONAL_ID                    = 'holding_institution_institutional_id'
       def institutional_id
         row[INSTITUTIONAL_ID]
@@ -101,6 +106,10 @@ module DS
         manifest.present? && manifest.path
       end
 
+      def dated?
+        dated.to_s.strip.downcase == 'true'
+      end
+
       def to_h
         {
           institution_ds_qid:           institution_ds_qid,
@@ -114,6 +123,7 @@ module DS
           record_last_updated:          record_last_updated,
           source_type:                  source_type,
           filename:                     filename,
+          dated:                        dated?,
           manifest_generated_at:        manifest_generated_at,
         }
       end

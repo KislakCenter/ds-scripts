@@ -9,6 +9,7 @@ module DS
       INSTITUTION_WIKIDATA_LABEL          = 'holding_institution_wikidata_label'
       SOURCE_TYPE                         = 'source_data_type'
       DS_ID                               = 'ds_id'
+      DATED                               = 'dated'
       INSTITUTIONAL_ID                    = 'holding_institution_institutional_id'
       INSTITUTIONAL_ID_LOCATION_IN_SOURCE = 'institutional_id_location_in_source'
       RECORD_LAST_UPDATED                 = 'record_last_updated'
@@ -24,6 +25,7 @@ module DS
         FILENAME,
         SOURCE_TYPE,
         DS_ID,
+        DATED,
         INSTITUTIONAL_ID,
         INSTITUTIONAL_ID_LOCATION_IN_SOURCE,
         RECORD_LAST_UPDATED,

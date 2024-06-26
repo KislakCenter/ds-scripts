@@ -39,7 +39,7 @@ module DS
         ds_id                              = entry.ds_id
         date_added                         = ''
         date_last_updated                  = ''
-        dated                              = ''
+        dated                              = entry.dated?
         cataloging_convention              = DS::Extractor::MarcXmlExtractor.extract_cataloging_convention record
         holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
@@ -57,7 +57,7 @@ module DS
         data_source_modified               = entry.record_last_updated
         acknowledgments                   = ''
 
-        data = {
+        {
           ds_id:                              ds_id,
           date_added:                         date_added,
           date_last_updated:                  date_last_updated,

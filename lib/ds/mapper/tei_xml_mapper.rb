@@ -29,7 +29,7 @@ module DS
         date_added                         = ''
         date_last_updated                  = ''
         cataloging_convention              = DS::Extractor::TeiXml.extract_cataloging_convention(record)
-        dated                              = ''
+        dated                              = entry.dated?
         holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = entry.institutional_id
@@ -49,7 +49,7 @@ module DS
 
         # TODO: BiblioPhilly MSS have keywords (not subjects, genre); include them?
 
-        data  = {
+        {
           ds_id:                              ds_id,
           date_added:                         date_added,
           date_last_updated:                  date_last_updated,
@@ -72,8 +72,7 @@ module DS
           data_processed_at:                  data_processed_at,
           data_source_modified:               data_source_modified,
           source_file:                        entry.filename
-        }
-        data.update build_term_maps DS::Extractor::TeiXml, record
+        }.update build_term_maps DS::Extractor::TeiXml, record
       end
     end
   end

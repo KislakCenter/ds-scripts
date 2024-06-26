@@ -76,7 +76,7 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         ds_id:                              "DS1234",
         date_added:                         "",
         date_last_updated:                  "",
-        dated:                              "",
+        dated:                              true,
         source_type:                        "ds-csv",
         cataloging_convention:              "amremm",
         holding_institution_ds_qid:         "Q1075148",

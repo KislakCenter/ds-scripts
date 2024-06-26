@@ -98,7 +98,7 @@ LONGDESC
     else
       print_message(options) { manifest_validator.errors.take(10).join("\n") }
       print_message(options) {
-        "ERROR: Manifest has validation errors".colorize(:red)
+        "ERROR: Manifest has validation errors: #{manifest_path}".colorize(:red)
       }
 
       exit 1
