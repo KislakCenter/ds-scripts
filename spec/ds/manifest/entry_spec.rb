@@ -5,8 +5,8 @@ require 'spec_helper'
 RSpec.describe 'DS::Manifest::Entry' do
 
   let(:manifest_csv) {parse_csv(<<~EOF
-    holding_institution_wikidata_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,dated,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
+    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,true,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
   EOF
   )
  }
@@ -31,8 +31,8 @@ RSpec.describe 'DS::Manifest::Entry' do
 
   context 'attributes' do
 
-    it 'has a institution_wikidata_qid' do
-      expect(entry.institution_wikidata_qid).to eq 'Q49117'
+    it 'has a holding_institution_ds_qid' do
+      expect(entry.institution_ds_qid).to eq 'Q49117'
     end
     it 'has a filename' do
       expect(entry.filename).to eq '9951865503503681_marc.xml'
@@ -70,6 +70,9 @@ RSpec.describe 'DS::Manifest::Entry' do
     it 'has a manifest_generated_at' do
       expect(entry.manifest_generated_at).to eq '2023-07-25T09:52:02-0400'
     end
+    it 'has a dated' do
+      expect(entry.dated.to_s.downcase).to eq 'true'
+    end
   end
 
   context '[]' do
@@ -80,9 +83,10 @@ RSpec.describe 'DS::Manifest::Entry' do
 
   context 'to_h' do
     let(:hash) {
-      { :institution_wikidata_qid     => "Q49117",
+      { :institution_ds_qid           => "Q49117",
         :institution_wikidata_label   => "University of Pennsylvania",
         :ds_id                        => "DS10000",
+        :dated                        => true,
         :call_number                  => "LJS 101",
         :institutional_id             => "9951865503503681",
         :title                        => "Periermenias Aristotelis ... [etc.]",

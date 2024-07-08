@@ -101,7 +101,6 @@ module Recon
   def self.lookup_single set_name, key_values:, column:
     recon_set = find_set set_name
     key = build_key key_values
-    # require 'pry'; binding.pry if key =~ /phillipps/i
     return recon_set.dig key, column if recon_set.include? key
 
     # try a key with a "cleaned" string

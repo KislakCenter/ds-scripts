@@ -4,11 +4,12 @@ module DS
     module Constants
       include DS
 
-      INSTITUTION_WIKIDATA_QID            = 'holding_institution_wikidata_qid'
+      INSTITUTION_DS_QID = 'holding_institution_ds_qid'
       FILENAME                            = 'filename'
       INSTITUTION_WIKIDATA_LABEL          = 'holding_institution_wikidata_label'
       SOURCE_TYPE                         = 'source_data_type'
       DS_ID                               = 'ds_id'
+      DATED                               = 'dated'
       INSTITUTIONAL_ID                    = 'holding_institution_institutional_id'
       INSTITUTIONAL_ID_LOCATION_IN_SOURCE = 'institutional_id_location_in_source'
       RECORD_LAST_UPDATED                 = 'record_last_updated'
@@ -19,11 +20,12 @@ module DS
       MANIFEST_GENERATED_AT               = 'manifest_generated_at'
 
       MANIFEST_COLUMNS = [
-        INSTITUTION_WIKIDATA_QID,
+        INSTITUTION_DS_QID,
         INSTITUTION_WIKIDATA_LABEL,
         FILENAME,
         SOURCE_TYPE,
         DS_ID,
+        DATED,
         INSTITUTIONAL_ID,
         INSTITUTIONAL_ID_LOCATION_IN_SOURCE,
         RECORD_LAST_UPDATED,
@@ -35,7 +37,7 @@ module DS
       ].freeze
 
       REQUIRED_VALUES = [
-        INSTITUTION_WIKIDATA_QID,
+        INSTITUTION_DS_QID,
         FILENAME,
         INSTITUTION_WIKIDATA_LABEL,
         SOURCE_TYPE,
@@ -52,7 +54,7 @@ module DS
       ].freeze
 
       QID_COLUMNS = [
-        INSTITUTION_WIKIDATA_QID
+        INSTITUTION_DS_QID
       ].freeze
 
       DATE_TIME_COLUMNS = [

@@ -83,7 +83,7 @@ RSpec.shared_examples 'an extractor mapper' do |except|
       dated:                              be_one_of([true, false, nil, '']),
       cataloging_convention:              be_a(String),
       source_type:                        be_a(String),
-      holding_institution:                be_a(String),
+      holding_institution_ds_qid:         be_a(String),
       holding_institution_as_recorded:    be_a(String),
       holding_institution_id_number:      be_a(String),
       holding_institution_shelfmark:      be_a(String),

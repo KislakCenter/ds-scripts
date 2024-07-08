@@ -4,7 +4,7 @@ module DS
   module Extractor
     module DsCsvExtractor
       COLUMN_MAPPINGS = {
-        dsid:                               "DS ID",
+        ds_id:                              "DS ID",
         holding_institution_as_recorded:    "Holding Institution",
         source_type:                        "Source Type",
         cataloging_convention:              "Cataloging Convention",
@@ -49,6 +49,8 @@ module DS
         date_source_modified:               "Date Updated by Contributor",
       }.freeze
 
+      LONG_STRING_WARNING = 'TEXT_EXCEEDS_400_CHARACTERS'
+
       module ClassMethods
 
         # Extracts the DSID value from the given record.
@@ -56,7 +58,7 @@ module DS
         # @param [CSV::Row] record the record to extract the DSID from
         # @return [String] the extracted DSID value
         def extract_dsid record
-          [extract_values_for(:dsid, record)].flatten.first
+          [extract_values_for(property: :ds_id, record: record)].flatten.first
         end
 
         # Extracts the source type value from the given record.
@@ -64,7 +66,7 @@ module DS
         # @param [CSV::Row] record the record to extract the source type from
         # @return [String] the extracted source type value
         def extract_source_type record
-          extract_values_for(:source_type, record).first
+          extract_values_for(property: :source_type, record: record).first
         end
 
         # Extracts the cataloging convention value from the given record.
@@ -72,7 +74,7 @@ module DS
         # @param [CSV::Row] record the record to extract the cataloging convention from
         # @return [String] the extracted cataloging convention value
         def extract_cataloging_convention record
-          extract_values_for(:cataloging_convention, record).first
+          extract_values_for(property: :cataloging_convention, record: record).first
         end
 
         # Extracts the cataloging convention value from the given record.
@@ -80,7 +82,7 @@ module DS
         # @param [CSV::Row] record the record to extract the cataloging convention from
         # @return [String] the extracted cataloging convention value
         def extract_holding_institution_as_recorded record
-          extract_values_for(:holding_institution_as_recorded, record).first
+          extract_values_for(property: :holding_institution_as_recorded, record: record).first
         end
 
         # Extracts the institutional identifier (e.g., BibID) from the given record.
@@ -88,7 +90,7 @@ module DS
         # @param [CSV::Row] record the record to extract the cataloging convention from
         # @return [String] the institutional identifier for the manuscript
         def extract_holding_institution_id_number record
-          extract_values_for(:holding_institution_id_number, record).first
+          extract_values_for(property: :holding_institution_id_number, record: record).first
         end
 
         # Extracts the holding institution shelfmark from the given record.
@@ -96,7 +98,7 @@ module DS
         # @param [CSV::Row] record the record to extract the holding institution shelfmark from
         # @return [String] the extracted holding institution shelfmark value
         def extract_holding_institution_shelfmark record
-          extract_values_for(:holding_institution_shelfmark, record).first
+          extract_values_for(property: :holding_institution_shelfmark, record: record).first
         end
 
         # Extracts the fragment number or disambiguator value from the given record.
@@ -104,7 +106,7 @@ module DS
         # @param [CSV::Row] record the record to extract the fragment number or disambiguator from
         # @return [String] the extracted fragment number or disambiguator value
         def extract_fragment_num_disambiguator record
-          extract_values_for(:fragment_num_disambiguator, record).first
+          extract_values_for(property: :fragment_num_disambiguator, record: record).first
         end
 
         # Extracts the link to the holding institution record from the given record.
@@ -112,7 +114,7 @@ module DS
         # @param [CSV::Row] record the record to extract the link from
         # @return [String] the extracted link to the holding institution record
         def extract_link_to_holding_institution_record record
-          extract_values_for(:link_to_holding_institution_record, record).first
+          extract_values_for(property: :link_to_holding_institution_record, record: record).first
         end
 
         # Extracts the link to the IIIF manifest from the given record.
@@ -120,7 +122,7 @@ module DS
         # @param [CSV::Row] record the record to extract the link from
         # @return [String] the extracted link to the IIIF manifest
         def extract_link_to_iiif_manifest record
-          extract_values_for(:link_to_iiif_manifest, record).first
+          extract_values_for(property: :link_to_iiif_manifest, record: record).first
         end
 
         # Extracts the production date as recorded value from the given record.
@@ -128,7 +130,7 @@ module DS
         # @param [CSV::Row] record the record to extract the production date from
         # @return [Array<String>] the extracted production dates
         def extract_production_date_as_recorded record
-          extract_values_for(:production_date_as_recorded, record)
+          extract_values_for(property: :production_date_as_recorded, record: record)
         end
 
 
@@ -150,7 +152,7 @@ module DS
         # @param [CSV::Row] record the record to extract the production date start from
         # @return [String] the extracted production date start value
         def extract_production_date_start record
-          extract_values_for(:production_date_start, record).first
+          extract_values_for(property: :production_date_start, record: record).first
         end
 
         # Extracts the production date end value from the given record.
@@ -158,7 +160,7 @@ module DS
         # @param [CSV::Row] record the record to extract the production date end from
         # @return [String] the extracted production date end value
         def extract_production_date_end record
-          extract_values_for(:production_date_end, record).first
+          extract_values_for(property: :production_date_end, record: record).first
         end
 
         # Extracts the dated value from the given record.
@@ -166,7 +168,7 @@ module DS
         # @param [CSV::Row] record the record to extract the dated value from
         # @return [Boolean] true if the dated value is 'true', false otherwise
         def extract_dated record
-          dated = extract_values_for(:dated, record)
+          dated = extract_values_for(property: :dated, record: record)
           return true if dated.join.strip.downcase == 'true'
         end
 
@@ -176,8 +178,8 @@ module DS
         # @param [CSV::Row] record the record to extract the physical description from
         # @return [Array<String>] the extracted physical description
         def extract_physical_description record
-          extent     = extract_values_for :extent, record
-          material   = extract_values_for :material_as_recorded, record
+          extent     = extract_values_for property: :extent, record: record
+          material   = extract_values_for property: :material_as_recorded, record: record
           dimensions = extract_dimensions record
           desc       = [extent, material, dimensions].flatten
           return unless desc.any?(&:present?)
@@ -189,7 +191,7 @@ module DS
         # @param [CSV::Row] record the record to extract the dimensions from
         # @return [Array<String>] the extracted dimensions
         def extract_dimensions record
-          extract_values_for :dimensions, record
+          extract_values_for property: :dimensions, record: record
         end
 
         # Extracts authors as recorded from the given record.
@@ -311,7 +313,7 @@ module DS
         # @param [CSV::Row] record the record to extract languages from
         # @return [Array<DS::Extractor::Language>] the extracted languages
         def extract_languages record
-          extract_values_for(:languages_as_recorded, record).map { |lang|
+          extract_values_for(property: :languages_as_recorded, record: record).map { |lang|
             DS::Extractor::Language.new as_recorded: lang
           }
         end
@@ -329,7 +331,7 @@ module DS
         # @param [CSV::Row] record the record to extract materials from
         # @return [Array<DS::Extractor::Material>] the extracted materials
         def extract_materials record
-          extract_values_for(:material_as_recorded, record).map { |as_recorded|
+          extract_values_for(property: :material_as_recorded, record: record).map { |as_recorded|
             DS::Extractor::Material.new as_recorded: as_recorded
           }
         end
@@ -380,17 +382,17 @@ module DS
         # @param [CSV::Row] record a CSV row with headers
         # @return [Array<DS::Extractor::Title>] the names a list
         def extract_titles record
-          as_recorded_titles = extract_values_for(:titles_as_recorded, record)
-          uniform_titles     = extract_values_for(:uniform_titles_as_recorded, record)
+          as_recorded_titles = extract_values_for(property: :titles_as_recorded, record: record)
+          uniform_titles     = extract_values_for(property: :uniform_titles_as_recorded, record: record)
           as_recorded_titles << '' if as_recorded_titles.blank?
-          uniform_titles << '' if uniform_titles.blank?
+
           unless balanced_titles? as_recorded_titles, uniform_titles
             raise ArgumentError, "Unbalanced number of titles and uniform titles (titles: #{as_recorded_titles.inspect}, uniform titles: #{uniform_titles.inspect})"
           end
 
           as_recorded_titles.zip(uniform_titles).map { |as_rec, uniform|
             as_recorded, vernacular                 = as_rec.split ';;', 2
-            uniform_title, uniform_title_vernacular = uniform.split ';;', 2
+            uniform_title, uniform_title_vernacular = uniform.to_s.split ';;', 2
             DS::Extractor::Title.new(
               as_recorded:              as_recorded,
               vernacular:               vernacular,
@@ -406,12 +408,9 @@ module DS
         # @param [Array<String>] uniform_titles
         # @return [Boolean]
         def balanced_titles? as_recorded_titles, uniform_titles
-          return true if as_recorded_titles.blank? && uniform_titles.blank?
-          return true if as_recorded_titles.size == uniform_titles.size
+          return true if uniform_titles.blank?
 
-          # for our purposes, ['Some title'] and [] are balanced
-          return true if [as_recorded_titles, uniform_titles].all? { |arr| arr.length <= 1 }
-          false
+          as_recorded_titles.size == uniform_titles.size
         end
 
         ##
@@ -426,7 +425,7 @@ module DS
         # @param [CSV::Row] record the record to extract uniform titles from
         # @return [Array<DS::Extractor::Title>] the extracted uniform titles
         def extract_uniform_titles record
-          extract_values_for(:uniform_titles_as_recorded, record).map { |title|
+          extract_values_for(property: :uniform_titles_as_recorded, record: record).map { |title|
             as_recorded, vernacular = title.to_s.split ';;', 2
             # BaseTerm implementations require +as_recorded+; for DS CSV
             # we don't assume that the Title(s) and Uniform Titles(s)
@@ -451,7 +450,7 @@ module DS
         # @param [String] role the name role; e.g., +artist+
         # @return [Array<DS::Extractor::Name>] the names a list
         def extract_names record, property, role
-          extract_values_for(property, record).map { |name|
+          extract_values_for(property: property, record: record).map { |name|
             as_recorded, vernacular = name.to_s.split ';;', 2
             DS::Extractor::Name.new as_recorded: as_recorded, vernacular: vernacular, role: role
           }
@@ -471,7 +470,7 @@ module DS
         # @param [CSV::Row] record the record to extract places from
         # @return [Array<DS::Extractor::Place>] the extracted places
         def extract_places record, property = :production_places_as_recorded
-          extract_values_for(property, record).map { |place|
+          extract_values_for(property: property, record: record).map { |place|
             DS::Extractor::Place.new as_recorded: place
           }
         end
@@ -547,7 +546,7 @@ module DS
         # @param [Class] term_type the type of terms to extract
         # @return [Array<term_type>] the extracted terms
         def extract_terms record, property, term_type, vocab: nil
-          extract_values_for(property, record).map { |term|
+          extract_values_for(property: property, record: record).map { |term|
             term_type.new as_recorded: term, vocab: vocab
           }
         end
@@ -557,7 +556,7 @@ module DS
         # @param [CSV::Row] record the record to extract acknowledgments from
         # @return [Array] the extracted acknowledgments
         def extract_acknowledgments record
-          extract_values_for :acknowledgments, record
+          extract_values_for property: :acknowledgments, record: record
         end
 
         # Extracts reconstructed places from the given record.
@@ -607,13 +606,24 @@ module DS
         # @param [Symbol] property the property to extract values for
         # @param [CSV::Row] record the record containing the values
         # @return [Array] the extracted values
-        def extract_values_for property, record
+        def extract_values_for property:, record:
           raise "Unknown property: #{property}" unless known_property? property
           columns = [COLUMN_MAPPINGS[property.to_sym]].flatten
           columns.filter_map { |header|
-            record[header]
-            # use split -1 to preserve empty values
-          }.flatten.flat_map { |value| value.split '|', -1 }
+            extract_values_for_header header: header, record: record
+          }.flatten.map { |s| mark_long s}
+        end
+
+        # Extracts the values for a specific header from a record, splitting on '|' and stripping whitespace.
+        #
+        # @param [CSV::Row] record the record containing the values
+        # @param [String] header the header to extract values for
+        # @return [Array<String>] the extracted values
+        def extract_values_for_header header:, record:
+          return unless record[header].present?
+
+          # use split -1 to preserve empty values
+          record[header].to_s.split('|', -1).map(&:strip)
         end
 
         # Determines if a method name maps to a property.
@@ -648,9 +658,10 @@ module DS
         # @param [CSV::Row] record the record to extract notes from
         # @return [Array<String>] the extracted notes
         def extract_notes record
-          COLUMN_MAPPINGS[:notes].filter_map { |header|
-            vals = record[header].to_s.split '|'
+          notes = COLUMN_MAPPINGS[:notes].filter_map { |header|
+            vals = extract_values_for_header header:  header, record: record
             next unless vals
+
             case header
             when /^(Note|Physical description)/i
               vals
@@ -659,7 +670,15 @@ module DS
             else
               vals.map { |v| "#{header}: #{v}" }
             end
-          }.flatten
+          }.flatten.map { |s| mark_long s }
+          notes
+        end
+
+        def mark_long s
+          return s if s.blank?
+          return s if s.length <= 400
+
+          "#{LONG_STRING_WARNING}: #{s}"
         end
 
       end

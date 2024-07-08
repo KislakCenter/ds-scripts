@@ -6,7 +6,7 @@ date_added
 date_last_updated
 source_type
 cataloging_convention
-holding_institution
+holding_institution_ds_qid
 holding_institution_as_recorded
 holding_institution_id_number
 holding_institution_shelfmark
@@ -161,12 +161,6 @@ source_file
       xd:    'http://www.oxygenxml.com/ns/doc/xsl',
       tei:   'http://www.tei-c.org/ns/1.0'
     }
-
-    # MARC_XML = :marc
-    # METS_XML = :mets
-    # TEI_XML  = :tei
-    # DS_CSV   = :csv
-    # SOURCE_TYPES = [ MARC_XML, METS_XML, TEI_XML, DS_CSV ].freeze
 
   end
 end

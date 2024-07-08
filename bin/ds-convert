@@ -14,9 +14,11 @@ class DSConvertCLI < DS::CLI
 
   class_option :'output-csv', banner: 'FILE', desc: "Name of the output CSV file [default: output.csv]", default: 'output.csv', aliases: '-o'
 
-  desc "convert MANIFEST SOURCE_DIR", "Generate import CSV for MANIFEST and SOURCE_DIR"
+  desc "convert OPTIONS MANIFEST [SOURCE_DIR]", "Generate import CSV for MANIFEST and SOURCE_DIR"
   long_desc <<-LONGDESC
     Generate an import CSV for all files listed in the MANIFEST CSV that are found in SOURCE_DIR.
+
+If SOURCE_DIR is not specified, the parent directory of MANIFEST is used to locate source records.
 
 The MANIFEST is validated before the import CSV is generated. See
 'validate' for details.
@@ -53,6 +55,7 @@ The MANIFEST is validated before the import CSV is generated. See
     if converter.csv_valid?
       print_message(options) { "CSV is valid: #{outfile}".colorize(:green) }
     else
+      puts converter.errors
       raise DSError, "Validation errors found; see previous messages".colorize(:red)
     end
   end
@@ -95,7 +98,7 @@ LONGDESC
     else
       print_message(options) { manifest_validator.errors.take(10).join("\n") }
       print_message(options) {
-        "ERROR: Manifest has validation errors".colorize(:red)
+        "ERROR: Manifest has validation errors: #{manifest_path}".colorize(:red)
       }
 
       exit 1

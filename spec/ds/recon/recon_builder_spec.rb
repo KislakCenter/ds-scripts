@@ -96,7 +96,6 @@ RSpec.describe Recon::ReconBuilder do
         }
 
         it 'yields the auth values' do
-          # recon_builder.each_recon(recon_type) { |recon| require 'pry'; binding.pry }
           expect { |b| recon_builder.each_recon(recon_type, &b) }.to yield_successive_args(*recons)
         end
       end
@@ -407,7 +406,14 @@ RSpec.describe Recon::ReconBuilder do
           {:title_as_recorded=>"Book of Hours",
            :as_recorded=>"Book of Hours",
            :title_as_recorded_agr=>nil,
-           :uniform_title_as_recorded=>"Book of Hours",
+           :uniform_title_as_recorded=>nil,
+           :uniform_title_as_recorded_agr=>nil,
+           :authorized_label=>"",
+           :ds_qid=>""},
+          {:title_as_recorded=>"Bible",
+           :as_recorded=>"Bible",
+           :title_as_recorded_agr=>nil,
+           :uniform_title_as_recorded=>nil,
            :uniform_title_as_recorded_agr=>nil,
            :authorized_label=>"",
            :ds_qid=>""}

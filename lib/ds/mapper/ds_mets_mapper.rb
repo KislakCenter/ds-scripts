@@ -38,7 +38,7 @@ module DS
         date_added                         = nil
         date_last_updated                  = nil
         cataloging_convention              = DS::Extractor::DsMetsXmlExtractor.extract_cataloging_convention(record)
-        holding_institution                = entry.institution_wikidata_qid
+        holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = entry.institutional_id
         holding_institution_shelfmark      = entry.call_number
@@ -62,7 +62,7 @@ module DS
           dated:                              dated,
           cataloging_convention:              cataloging_convention,
           source_type:                        source_type,
-          holding_institution:                holding_institution,
+          holding_institution_ds_qid:         holding_institution_ds_qid,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,
           holding_institution_shelfmark:      holding_institution_shelfmark,
