@@ -512,13 +512,14 @@ module DS
             as_recorded          = DS::Util.clean_string as_recorded, terminator: ''
             term_vocab           = extract_vocabulary datafield
             source_authority_uri = extract_authority_number datafield
-            if [:all, term_vocab].include? vocab
-              DS::Extractor::Genre.new(
-                as_recorded:          as_recorded,
-                vocab:           term_vocab,
-                source_authority_uri: source_authority_uri
-              )
-            end
+
+            next unless as_recorded.present?
+            next unless vocab == :all || vocab == term_vocab
+
+            DS::Extractor::Genre.new(
+              as_recorded: as_recorded, vocab: term_vocab,
+              source_authority_uri: source_authority_uri
+            )
           }
         end
 
@@ -959,7 +960,8 @@ module DS
         def extract_materials record
           DS::Extractor::MarcXmlExtractor.collect_datafields(
             record, tags: 300, codes: 'b'
-          ).map { |material|
+          ).filter_map { |material|
+            next unless material.present?
             DS::Extractor::Material.new as_recorded: material
           }
         end
