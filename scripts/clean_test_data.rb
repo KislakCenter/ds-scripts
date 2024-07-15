@@ -38,6 +38,7 @@ class Terms
   def initialize
     @hash = Hash.new
     @randoms = Hash.new
+    @used = Hash.new
   end
 
   def add_terms term_type, terms
@@ -51,6 +52,13 @@ class Terms
   def random_term term_type
     @hash[term_type].sample
   end
+
+  # @param qid [String] the QID to get
+  # @param term_type [Symbol] one of :corporate_names, :personal_names, :languages, :places, :titles, :terms, :materials
+  # @return [String] a the qid previously used for this qid, or a random QID for the +term_type+
+  def get_qid term_type, qid
+    @used[qid] ||= random_term term_type
+  end
 end
 
 ALL_TERMS = TERM_LISTS.reduce(Terms.new) { |terms, key_value|
@@ -58,6 +66,7 @@ ALL_TERMS = TERM_LISTS.reduce(Terms.new) { |terms, key_value|
   terms.add_terms term_type, open(File.join(__dir__, txt), 'r').readlines.map(&:strip)
   terms
 }
+
 
 # Return a QID that is less than MAX, following these rules:
 #
@@ -71,9 +80,9 @@ ALL_TERMS = TERM_LISTS.reduce(Terms.new) { |terms, key_value|
 # @return [String] a value as described above
 def normalize_qid(term_type, qid)
   return '' unless qid =~ /Q(\d+)/
-  return ALL_TERMS.random_term(term_type) if $1.to_i > MAX
+  return qid if $1.to_i <= MAX
 
-  qid
+  ALL_TERMS.get_qid term_type, qid
 end
 
 def clean_qids term_type, qid_string
