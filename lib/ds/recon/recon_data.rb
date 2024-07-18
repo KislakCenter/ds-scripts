@@ -11,13 +11,13 @@ module Recon
 
       Dir.chdir local_dir do
         unless File.exist? repo_name
-          Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger
+          puts Git.clone url, repo_name, branch: branch, remote: 'origin', log: logger
         end
         g = Git.open repo_name, log: logger
         begin
-          g.fetch 'origin'
-          g.checkout branch
-          g.pull 'origin', branch
+          puts g.fetch 'origin'
+          puts g.checkout branch
+          puts g.pull 'origin', branch
         rescue Git::GitExecuteError => e
           logger.warn { "Error executing git command" }
           logger.warn { e.message }
