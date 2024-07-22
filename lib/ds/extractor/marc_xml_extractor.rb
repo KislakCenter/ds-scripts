@@ -704,7 +704,8 @@ module DS
           part2.gsub! /u/, '9' if part2.present?
 
           range = compile_dates(record, code, part1, part2).filter_map { |y|
-            y if y.present?
+            # filter out blank dates and '9999'
+            y if y.present? && y != '9999'
           }
 
           return [] if range.blank?
@@ -775,6 +776,7 @@ module DS
         # @return [String] the extracted part of the datestring
         def extract_date_part datestring, ndx1, ndx2
           part = datestring[ndx1, ndx2]
+
           # part must start with a digit and match a seq of digits and/or u
           return unless part =~ /^\d[\du]+/
 
