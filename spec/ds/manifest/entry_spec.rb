@@ -75,6 +75,16 @@ RSpec.describe 'DS::Manifest::Entry' do
     end
   end
 
+  context '#iiif_manifest_url' do
+    let(:row) {
+      { DS::Manifest::Entry::IIIF_MANIFEST_URL => 'https://example.com | https://example-2.com ; https://example-3.com https://example-4.com' }
+    }
+    let(:entry) { DS::Manifest::Entry.new row, manifest }
+    it 'splits and joins the urls' do
+      expect(entry.iiif_manifest_url).to eq 'https://example.com|https://example-2.com|https://example-3.com|https://example-4.com'
+    end
+  end
+
   context '[]' do
     it 'returns the correct value' do
       expect(entry[DS::Manifest::Entry::CALL_NUMBER]).to eq 'LJS 101'
