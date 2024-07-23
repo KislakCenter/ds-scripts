@@ -624,6 +624,56 @@ describe DS::Extractor::MarcXmlExtractor do
         end
       end
 
+      context 'with "9999" in date2' do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m15549999it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'return the first date'  do
+          expect(
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[1554]
+        end
+      end
+
+      context 'with "9999" in date1' do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m99991554it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'return the second date'  do
+          expect(
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq %w[1554]
+        end
+      end
+
+      context 'with "9999" in both positions' do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130m99999999it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+        it 'return the second date'  do
+          expect(
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: '^'
+          ).to eq []
+        end
+      end
     end
 
     context '008 date type n: Dates unknown' do
@@ -682,6 +732,7 @@ describe DS::Extractor::MarcXmlExtractor do
           ).to eq %w[100^299]
         end
       end
+
       context "single year" do
         let(:record) {
           marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
@@ -844,6 +895,26 @@ describe DS::Extractor::MarcXmlExtractor do
         end
       end
 
+      context "two years are given" do
+        let(:record) {
+          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <controlfield tag="008">101130s15631564it a          000 0 lat d</controlfield>
+      </record>
+      })
+        }
+
+        it "returns the first year: 's15631564'" do
+          expect(
+            DS::Extractor::MarcXmlExtractor.extract_date_range record, range_sep: "^"
+          ).to eq ["1563"]
+        end
+      end
+    end
+
+    context 'Continuing resource second date part is 9999' do
       context "two years are given" do
         let(:record) {
           marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
