@@ -182,7 +182,10 @@ module DS
           material   = extract_values_for property: :material_as_recorded, record: record
           dimensions = extract_dimensions record
           desc       = [extent, material, dimensions].flatten
-          return unless desc.any?(&:present?)
+
+          # return an empty array if no values are present
+          return [] unless desc.any?(&:present?)
+
           ["Extent: #{desc.join '; '}"]
         end
 
