@@ -201,7 +201,7 @@ RSpec.describe Recon::ReconBuilder do
           :name_agr=>"Former owner in original script",
           :name_as_recorded=>"Former owner as recorded",
           :as_recorded=>"Former owner as recorded",
-          :role=>"former_owner",
+          :role=>"former owner",
           :source_authority_uri=>'http://example.com/owner_uri',
           :structured_value=>"WDQIDOWNER",
           :ds_qid=>'QOWNER'},

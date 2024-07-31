@@ -290,7 +290,7 @@ module DS
         # @param [CSV::Row] record the record to extract former owners from
         # @return [Array<String>] the extracted former owners
         def extract_former_owners record
-          extract_names(record, :former_owners_as_recorded, 'former_owner')
+          extract_names(record, :former_owners_as_recorded, 'former owner')
         end
 
         # Extracts associated agents from the given record.
