@@ -130,7 +130,10 @@ module DS
         # @param [CSV::Row] record the record to extract the production date from
         # @return [Array<String>] the extracted production dates
         def extract_production_date_as_recorded record
-          extract_values_for(property: :production_date_as_recorded, record: record)
+          dar = extract_values_for(property: :production_date_as_recorded, record: record)
+          return dar if dar.present?
+
+          extract_date_range record, range_sep: '-'
         end
 
 

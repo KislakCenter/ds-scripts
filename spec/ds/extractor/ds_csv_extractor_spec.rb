@@ -106,6 +106,22 @@ describe DS::Extractor::DsCsvExtractor do
         DS::Extractor::DsCsvExtractor.extract_production_date_as_recorded record
       ).to eq ["circa 18th-20th century"]
     end
+
+    context 'with no Date Description' do
+      let(:record) {
+        {
+          'Date Description'      => nil,
+          'Production Date START' => '1700',
+          'Production Date END'   => '1999'
+        }
+      }
+
+      it 'returns the date range' do
+        expect(
+          DS::Extractor::DsCsvExtractor.extract_production_date_as_recorded record
+        ).to eq ["1700-1999"]
+      end
+    end
   end
 
   context "extract_production_date_as_recorded" do
