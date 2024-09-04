@@ -144,6 +144,12 @@ RSpec.shared_examples "an extractor" do |options|
             described_class.send extraction_method, record
           ).to include an_instance_of composite_type
         end
+
+        it 'returns Name objects with the expected role' do
+          expect(
+            described_class.send extraction_method, record
+          ).to all be_an_instance_of(composite_type).and have_attributes role: 'author'
+        end
       end
 
       context 'extract_authors_as_recorded' do
@@ -182,6 +188,12 @@ RSpec.shared_examples "an extractor" do |options|
           expect(
             described_class.send extraction_method, record
           ).to include an_instance_of composite_type
+        end
+
+        it 'returns Name objects with the expected role' do
+          expect(
+            described_class.send extraction_method, record
+          ).to all be_an_instance_of(composite_type).and have_attributes role: 'artist'
         end
       end
 
@@ -222,6 +234,12 @@ RSpec.shared_examples "an extractor" do |options|
             described_class.send extraction_method, record
           ).to include an_instance_of composite_type
         end
+
+        it 'returns Name objects with the expected role' do
+          expect(
+            described_class.send extraction_method, record
+          ).to all be_an_instance_of(composite_type).and have_attributes role: 'scribe'
+        end
       end
 
 
@@ -261,6 +279,12 @@ RSpec.shared_examples "an extractor" do |options|
             described_class.send extraction_method, record
           ).to include an_instance_of composite_type
         end
+
+        it 'returns Name objects with the expected role' do
+          expect(
+            described_class.send extraction_method, record
+          ).to all be_an_instance_of(composite_type).and have_attributes role: 'former owner'
+        end
       end
 
 
@@ -299,6 +323,12 @@ RSpec.shared_examples "an extractor" do |options|
           expect(
             described_class.send extraction_method, record
           ).to include an_instance_of composite_type
+        end
+
+        it 'returns Name objects with the expected role' do
+          expect(
+            described_class.send extraction_method, record
+          ).to all be_an_instance_of(composite_type).and have_attributes role: 'other'
         end
       end
 

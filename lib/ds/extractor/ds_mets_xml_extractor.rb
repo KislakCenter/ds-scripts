@@ -258,7 +258,7 @@ module DS
             splits = Recon::Type::Splits._lookup_single(n, from_column: 'authorized_label')
             splits.present? ? splits.split('|') : n
           }.map { |n|
-            DS::Extractor::Name.new as_recorded: DS.mark_long(n)
+            DS::Extractor::Name.new as_recorded: DS.mark_long(n), role: 'former owner'
           }
         end
 
@@ -364,7 +364,7 @@ module DS
           node.xpath(xpath).flat_map { |name|
             name.xpath('mods:namePart').text.split %r{\s*;\s*}
           }.uniq.map { |as_recorded|
-            DS::Extractor::Name.new as_recorded: as_recorded
+            DS::Extractor::Name.new as_recorded: as_recorded, role: roles.first
           }
         end
 
