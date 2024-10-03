@@ -48,6 +48,7 @@ module Recon
 
       KEY_COLUMNS = %i{
       subject_as_recorded
+      subfield_codes
       vocab
     }
 

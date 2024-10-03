@@ -25,7 +25,7 @@ module Recon
       ds_qid
     }
 
-      KEY_COLUMNS = %i{ title_as_recorded }
+      KEY_COLUMNS = %i{ title_as_recorded uniform_title_as_recorded }
 
       AS_RECORDED_COLUMN = :title_as_recorded
 
