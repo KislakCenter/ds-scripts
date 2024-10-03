@@ -277,4 +277,10 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
     end
   end
 
+  context '#build_recon', unless: skip?(skips, :build_recon) do
+    context ':titles', unless: skip?(skips, :titles) do
+
+    end
+  end
+
 end

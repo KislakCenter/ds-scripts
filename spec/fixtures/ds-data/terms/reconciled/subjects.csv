@@ -100,3 +100,7 @@ Venice (Italy)--Politics and government--Early works to 1800,a--x--v,0,,Italy--V
 Waqf--Iran--Early works to 1800,,openn-subjects,,Waqf;Iran;Early works,http://id.worldcat.org/fast/1170323;http://id.worldcat.org/fast/1204889;http://id.worldcat.org/fast/1411636,
 Wine and wine making--Law and legislation,a--x,fast,http://id.worldcat.org/fast/1175925,Wine and wine making--Law and legislation,http://id.worldcat.org/fast/1175925,
 Women--Religious aspects--Hinduism,a--x--x,0,http://id.loc.gov/authorities/subjects/sh2020005253,Women--Religious aspects--Hinduism,http://id.worldcat.org/fast/1176916,
+Subject with codes,a--x--x,fast,http://some.url/subject1,Subject--1--auth--label,http://some.url/subject1,QSUBJ1
+Subject with codes,a--x--y,fast,http://some.url/subject1,Subject--2--auth--label,http://some.url/subject2,QSUBJ2
+Subject with codes,,aat,http://some.url/subject1,Subject--3--auth--label,http://some.url/subject3,QSUBJ3
+Subject with codes,,fast,http://some.url/subject1,Subject--4--auth--label,http://some.url/subject4,QSUBJ4

@@ -17,7 +17,7 @@ RSpec.describe 'Recon::Type::ReconType' do
         :ds_qid=>nil}
     }
     let(:expected_key_values) {
-      ["Title as recorded"]
+      ["Title as recorded", 'Uniform title']
     }
     it 'returns the key values' do
       expect(recon_type.get_key_values(row)).to eq expected_key_values

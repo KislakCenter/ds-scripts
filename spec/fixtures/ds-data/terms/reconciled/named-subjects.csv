@@ -101,3 +101,7 @@ Vedas. Yajurveda. Kr̥ṣṇayajurveda (Taittirīyasaṃhitā),a;p;p,0,http://id
 "Zamakhsharī, Maḥmūd ibn ʻUmar, 1075-1144. Unmūdhaj fī al-naḥw",a;d;t,0,,"Unmūdhaj fī al-naḥw (Zamakhsharī, Maḥmūd ibn ʻUmar)",http://id.worldcat.org/fast/1380101,
 "ʻAḍudīyah (Ījī, ʻAḍud al-Dīn ʻAbd al-Raḥmān ibn Aḥmad)",a,fast,(OCoLC)fst01392948,"ʻAḍudīyah (Ījī, ʻAḍud al-Dīn ʻAbd al-Raḥmān ibn Aḥmad)",http://id.worldcat.org/fast/1392948,
 "ʻĀʼishah, approximately 614-678--Early works to 1800.",a;d--v,0,,Early works,http://id.worldcat.org/fast/1411636,
+Named subject as recorded,a;d--v,0,http:://some.auth/named-subject1,Named subject1;Named subject2,https://some.auth/nsub1;https://some.auth/nsub2,QNSUB1;QNSUB2
+Named subject as recorded,a;d--w,0,http:://some.auth/named-subject1,Named subject1;Named subject3,https://some.auth/nsub1;https://some.auth/nsub3,QNSUB1;QNSUB3
+Named subject as recorded,,0,http:://some.auth/named-subject1,Named subject1;Named subject4,https://some.auth/nsub1;https://some.auth/nsub4,QNSUB1;QNSUB4
+Named subject as recorded,"",fast,http:://some.auth/named-subject1,Named subject1;Named subject5,https://some.auth/nsub1;https://some.auth/nsub5,QNSUB1;QNSUB5

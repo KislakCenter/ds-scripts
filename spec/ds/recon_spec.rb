@@ -14,23 +14,260 @@ describe Recon do
 
 
   context '.lookup' do
-    let(:recons_csv) { genres_csv }
-    let(:set_name) { :genres }
-    let(:key_values) { ['term with .', 'somevocab'] }
-    let(:expected_label) { 'Term With' }
-    let(:expected_url) { 'http://vocab.getty.edu/tgn/term-with' }
-    let(:expected_ds_qid) { 'Q12345' }
+    context 'genres' do
+      let(:recons_csv) { genres_csv }
+      let(:set_name) { :genres }
+      let(:key_values) { ['term with .', 'somevocab'] }
+      let(:expected_label) { 'Term With' }
+      let(:expected_url) { 'http://vocab.getty.edu/tgn/term-with' }
+      let(:expected_ds_qid) { 'Q12345' }
 
-    it 'returns the expected label' do
-      expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+      it 'returns the expected label' do
+        expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+      end
+
+      it 'returns the expected url' do
+        expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+      end
+
+      it 'returns the expected ds_qid' do
+        expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+      end
     end
 
-    it 'returns the expected url' do
-      expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+    context 'titles' do
+      let(:recons_csv) { titles_csv }
+      let(:set_name) { :titles }
+      let(:key_values) { ['Title', 'Uniform title'] }
+      let(:expected_label) { 'Standard title' }
+      let(:expected_ds_qid) { 'QTITLE' }
+
+      it 'returns the expected label' do
+        expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+      end
+
+      it 'returns the expected ds_qid' do
+        expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+      end
     end
 
-    it 'returns the expected ds_qid' do
-      expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+    context 'subjects' do
+      let(:recons_csv) { subjects_csv }
+      let(:set_name) { :subjects }
+      context "with distinct subfield_codes" do
+
+        context 'subfield_codes a--x--y' do
+          let(:expected_label) { 'Subject--2--auth--label' }
+          let(:expected_url) { 'http://some.url/subject2' }
+          let(:expected_ds_qid) { 'QSUBJ2' }
+          let(:key_values) { ['Subject with codes', 'a--x--y', 'fast'] }
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+
+        context 'subfield_codes a--x--x' do
+          let(:expected_label) { 'Subject--1--auth--label' }
+          let(:expected_url) { 'http://some.url/subject1' }
+          let(:expected_ds_qid) { 'QSUBJ1' }
+          let(:key_values) { ['Subject with codes', 'a--x--x', 'fast'] }
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+
+        # context 'subfield_codes a--x--y' do
+        #   let(:expected_label) { 'Subject--2--auth--label' }
+        #   let(:expected_url) { 'http://some.url/subject2' }
+        #   let(:expected_ds_qid) { 'QSUBJ2' }
+        #   let(:key_values) { ['Subject with codes', 'a--x--y', 'fast'] }
+        #   it 'returns the expected label' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+        #   end
+        #
+        #   it 'returns the expected url' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+        #   end
+        #
+        #   it 'returns the expected ds_qid' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+        #   end
+        # end
+        #
+        # context 'subfield_codes a--x--x' do
+        #   let(:expected_label) { 'Subject--1--auth--label' }
+        #   let(:expected_url) { 'http://some.url/subject1' }
+        #   let(:expected_ds_qid) { 'QSUBJ1' }
+        #   let(:key_values) { ['Subject with codes', 'a--x--x', 'fast'] }
+        #   it 'returns the expected label' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+        #   end
+        #
+        #   it 'returns the expected url' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+        #   end
+        #
+        #   it 'returns the expected ds_qid' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+        #   end
+        # end
+      end
+
+      context 'with distinct vocabulary' do
+        context 'vocabulary aat' do
+          let(:expected_label) { 'Subject--3--auth--label' }
+          let(:expected_url) { 'http://some.url/subject3' }
+          let(:expected_ds_qid) { 'QSUBJ3' }
+          let(:key_values) { ['Subject with codes', nil, 'aat'] }
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+
+        context 'vocabulary fast' do
+          let(:expected_label) { 'Subject--4--auth--label' }
+          let(:expected_url) { 'http://some.url/subject4' }
+          let(:expected_ds_qid) { 'QSUBJ4' }
+          let(:key_values) { ['Subject with codes', nil, 'fast'] }
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+      end
+
+    end
+
+    context 'named subjects' do
+      let(:recons_csv) { named_subjects_csv }
+      let(:set_name) { :'named-subjects' }
+      context "with distinct subfield_codes" do
+
+        context 'subfield_codes a;d--v' do
+          let(:expected_label) { 'Named subject1;Named subject2' }
+          let(:expected_url) { 'https://some.auth/nsub1;https://some.auth/nsub2' }
+          let(:expected_ds_qid) { 'QNSUB1;QNSUB2' }
+          let(:key_values) { ['Named subject as recorded', 'a;d--v', 0] }
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+
+        context 'subfield_codes a;d--w' do
+          let(:expected_label) { 'Named subject1;Named subject3' }
+          let(:expected_url) { 'https://some.auth/nsub1;https://some.auth/nsub3' }
+          let(:expected_ds_qid) { 'QNSUB1;QNSUB3' }
+          let(:key_values) { ['Named subject as recorded', 'a;d--w', 0] }
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+      end
+
+      context 'with distinct vocabulary' do
+        context 'vocabulary 0' do
+          let(:expected_label) { 'Named subject1;Named subject4' }
+          let(:expected_url) { 'https://some.auth/nsub1;https://some.auth/nsub4' }
+          let(:expected_ds_qid) { 'QNSUB1;QNSUB4' }
+          let(:key_values) { ['Named subject as recorded', nil, 0] }
+
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+
+        context 'vocabulary fast' do
+          let(:expected_label) { 'Named subject1;Named subject5' }
+          let(:expected_url) { 'https://some.auth/nsub1;https://some.auth/nsub5' }
+          let(:expected_ds_qid) { 'QNSUB1;QNSUB5' }
+          let(:key_values) { ['Named subject as recorded', nil, 'fast'] }
+
+          it 'returns the expected label' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+          end
+
+          it 'returns the expected url' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+          end
+
+          it 'returns the expected ds_qid' do
+            expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+          end
+        end
+        # context 'vocabulary fast' do
+        #   let(:expected_label) { 'Subject--4--auth--label' }
+        #   let(:expected_url) { 'http://some.url/subject4' }
+        #   let(:expected_ds_qid) { 'QSUBJ4' }
+        #   let(:key_values) { ['Subject with codes', nil, 'fast'] }
+        #   it 'returns the expected label' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'authorized_label').to eq expected_label
+        #   end
+        #
+        #   it 'returns the expected url' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'structured_value').to eq expected_url
+        #   end
+        #
+        #   it 'returns the expected ds_qid' do
+        #     expect(Recon.lookup_single set_name, key_values: key_values, column: 'ds_qid').to eq expected_ds_qid
+        #   end
+        # end
+      end
+
     end
   end
 
