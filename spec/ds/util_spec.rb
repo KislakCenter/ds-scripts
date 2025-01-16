@@ -168,12 +168,20 @@ RSpec.describe 'DS::Util' do
     end
 
     context %q{force: true} do
-      it %q{forces replacement of '?' with '.' ('car?' => 'car.')} do
-        expect(DS::Util.terminate 'car?', force: true).to eq 'car.'
+      it %q{forces replacement of '!' with '.' ('car!' => 'car.')} do
+        expect(DS::Util.terminate 'car!', force: true).to eq 'car.'
       end
 
-      it %q{forces replacement of '?"' with '."' ('car?"' => 'car."') } do
-        expect(DS::Util.terminate 'car?"', force: true).to eq 'car."'
+      it %q{forces replacement of '!"' with '."' ('car!"' => 'car."') } do
+        expect(DS::Util.terminate 'car!"', force: true).to eq 'car."'
+      end
+
+      it %q{does not force replacement of '?' with '.' ('car?' => 'car?')} do
+        expect(DS::Util.terminate 'car?', force: true).to eq 'car?'
+      end
+
+      it %q{does not force replacement of '?"' with '."' ('car?"' => 'car?"') } do
+        expect(DS::Util.terminate 'car?"', force: true).to eq 'car?"'
       end
     end
 
@@ -194,8 +202,8 @@ RSpec.describe 'DS::Util' do
         expect(DS::Util.terminate %q{car:"}, terminator: '').to eq 'car"'
       end
 
-      it %q{removes '?' from final '?"' ('car?"' => 'car"')} do
-        expect(DS::Util.terminate %q{car?"}, terminator: '').to eq 'car"'
+      it %q{does not remove '?' from final '?"' ('car?"' => 'car?"')} do
+        expect(DS::Util.terminate %q{car?"}, terminator: '').to eq 'car?"'
       end
 
       it %q{removes '!' from final '!"' ('car!"' => 'car"')} do
@@ -222,12 +230,20 @@ RSpec.describe 'DS::Util' do
         expect(DS::Util.terminate %q{car:}, terminator: '').to eq 'car'
       end
 
-      it %q{removes final '?'           ('car?'  => 'car')} do
-        expect(DS::Util.terminate %q{car?}, terminator: '').to eq 'car'
+      it %q{removes final '?'           ('car?'  => 'car?')} do
+        expect(DS::Util.terminate %q{car?}, terminator: '').to eq 'car?'
       end
 
       it %q{removes final '!'           ('car!'  => 'car')} do
         expect(DS::Util.terminate %q{car!}, terminator: '').to eq 'car'
+      end
+
+      it 'leaves in place a single question mark "?" ("?"  => "?")' do
+        expect(DS::Util.terminate %q{?}, terminator: '').to eq '?'
+      end
+
+      it 'leaves in place a single question mark "?" when force: true ("?"  => "?")' do
+        expect(DS::Util.terminate %q{?}, terminator: '', force: true).to eq '?'
       end
     end
 
@@ -248,8 +264,8 @@ RSpec.describe 'DS::Util' do
         expect(DS::Util.terminate %q{car:"}, terminator: nil).to eq 'car"'
       end
 
-      it %q{removes '?' from final '?"' ('car?"' => 'car"')} do
-        expect(DS::Util.terminate %q{car?"}, terminator: nil).to eq 'car"'
+      it %q{does not remove '?' from final '?"' ('car?"' => 'car?"')} do
+        expect(DS::Util.terminate %q{car?"}, terminator: nil).to eq 'car?"'
       end
 
       it %q{removes '!' from final '!"' ('car!"' => 'car"')} do
