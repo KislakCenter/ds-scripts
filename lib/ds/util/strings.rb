@@ -43,13 +43,16 @@ module DS
       end
 
       # TERMINAL_PUNCT_REGEX matches strings terminated by any of +.,;:?!+
-      TERMINAL_PUNCT_REGEX =  %r{\s*([.,;:?!]+)("?)$}
+      TERMINAL_PUNCT_REGEX =  %r{\s*([.,;:!]+)("?)$}
 
       # ELLIPSIS_REGEX matches strings terminated by +...+
       ELLIPSIS_REGEX       = %r{\.\.\."?$}
 
       # ABBREV_REGEX matches values like 'N.T.', 'O.T.'
       ABBREV_REGEX         = %r{\W[A-Z]\.$}
+
+      # Final ? regex
+      FINAL_QUESTION_REGEX = %r{\s*\?(\s*"?\s*)$}
       ##
       # Add termination to string if it lacks terminal punctuation.
       # Terminal punctuation is one of
@@ -78,12 +81,18 @@ module DS
         # don't strip final periods for strings like "N.T."
         return str if str =~ ABBREV_REGEX
 
+        # don't strip final question marks
+        return str if str =~ FINAL_QUESTION_REGEX
+
         # if :terminator is '' or nil, remove any terminal punctuation
         return str.sub TERMINAL_PUNCT_REGEX, '\2' if terminator.blank?
 
         # str is already terminated
         return str if str.end_with? terminator
         return str if str.end_with? %Q{#{terminator}"}
+
+        # if string ends with '?', don't add terminator
+        return str if str.end_with? '?'
 
         # str lacks terminal punctuation; add it;
         #  \\1 => keep final '"' (double-quote)
