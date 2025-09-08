@@ -1,37 +1,29 @@
-# ReadMe
+# DS Convert
 
-Scripts to transform and manage input from multiple sources for DS 2.0 CSV.
-Also includes scripts for parsing METS and locating files for legacy Digital
-Scriptorium.
+RubyGem that provides scripts to transform and manage input from multiple sources to generate a DS 2.0 imports CSV. Also includes scripts to extract strings from sources for authority reconcilation.
+
+# Installation
+
+Run
+
+```
+gem install ds-convert
+```
 
 ## Transformation scripts
 
 There are three main scripts:
 
-    bin/
-    ├── ds-convert          # Convert catalog files to DS CSV
-    ├── marc-mrc-to-xml.rb  # Extract MARC XML from MARC MRC/DAT
-    └── recon               # Extract conciliation CSVs from catalog file
+    ds-convert          # Generate DS import CSV from member source data
+    ds-recon            # Extract string values from source data for reconciliation
+    ds-validate-csv     # Check DS Import CSV for values with trailing whitespace
+    marc-mrc-to-xml.rb  # Utility script to conver MARC MRC files to MARC XML
 
-Here `catalog file` is any set of XML or CSV input files from a DS member
-institution: MARC XML, OPenn TEI XML, DS 1.0 legacy METS XMl, or CSV
-(forthcoming).
+The `ds-convert` script outputs a standard DS import CSV. Columns names and order are defined in `lib/ds/constants.rb` and can be access via `DS::HEADINGS`.
 
-The `ds-convert` script outputs a standard DS CSV. All output CSV files have
-the same columns in the same order. Columns names and order are set in
-`lib/ds/constants.rb` and can be access via `DS::HEADINGS`.
-
-The `recon` script outputs a number of CSV with extracted values for names
-(authors, artists, scribe, former owners), places, subjects, and genres (from
-various vocabularies). CSVs output by `recon` have different columns according
-the content type.
+The `recon` script outputs a number of CSV with extracted values for names (authors, artists, scribe, former owners), places, subjects, and genres (from various vocabularies). CSVs output by `recon` have different columns according the content type.
 
 ### `ds-convert` process
-
-**IMPORTANT: The manifest-based process described below has been
-implemented only for MARC source data. METS and OPenn TEI still
-use a source type-specific process that will be replaced by the method
-described below.**
 
 Given a directory containing a set of source records (MARC XML, DS 1.0
 METS, OPenn TEI XML, a CSV) and a `manifest.csv` file, generate a DS
@@ -47,7 +39,7 @@ designated source records.
 
 DS::Converter::BaseConverter uses the manifest to orchestrate the
 conversion of the source records to the CSV import format.
-Specifically, the converter, reads each manifest entry, selects the
+Specifically, the converter reads each manifest entry, selects the
 appropriate DS::Mapper (e.g, DS::Mapper::MarcMapper), and passes the
 entry and corresponding source record to the data mapper for
 conversion. The converter returns the mapped data for each record (as
@@ -96,18 +88,17 @@ Locate scripts rely on METS files and image lists found in the gzipped tarball
 
 # Requirements
 
-* Ruby version >= 2.6.1 and <= 3.0
+* Ruby version >= 3.4.0
 * bundler Ruby gem
 
-These scripts were written with Ruby version 2.6.1. They should run with Ruby
-`>= 2.6.1` and `< 3.0.0` (and may run with Ruby `~> 3.0`, but they haven't been
-tested with it).
 
 If you need to install Ruby or a compatible version of Ruby, you can use
-[rbenv][rbenv] (recommended) or [rvm][rvm].
+[rbenv][rbenv], [rvm][rvm] or the [asdf][asdf] [ruby plugin][asdf-ruby].
 
 [rbenv]: https://github.com/rbenv/rbenv  "rbenv on github"
-[rvm]:   https://rvm.io                  "Ruby Version Manger home"
+[rvm]:   https://rvm.io  "Ruby Version Manger home"
+[asdf]: https://asdf-vm.com/guide/getting-started.html "ASDF getting started"
+[asdf-ruby]: https://github.com/asdf-vm/asdf-ruby "ASDF Ruby plugin"
 
 ```shell
 $ gem install bundler
