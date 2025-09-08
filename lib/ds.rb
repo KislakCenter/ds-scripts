@@ -17,6 +17,7 @@ require_relative 'ds/institutions'
 require_relative 'ds/mapper'
 require_relative 'ds/manifest'
 require_relative 'ds/converter'
+require_relative 'ds/version'
 
 module DS
   include DS::Constants
