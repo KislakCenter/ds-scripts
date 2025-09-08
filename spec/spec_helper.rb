@@ -1,4 +1,4 @@
-require_relative '../lib/ds'
+require 'ds'
 require 'nokogiri'
 require 'csv'
 require_relative 'support/helpers'
