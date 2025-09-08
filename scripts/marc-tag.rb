@@ -3,6 +3,8 @@
 require 'nokogiri'
 require 'optparse'
 
+# Script to find MARC records for a given TAG and, optionally subfield codes
+
 CMD = File.basename __FILE__
 
 def usage

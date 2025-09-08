@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Script to extract mods:note values by type
+
 THIS_DIR=$(dirname $0)
 
 FIND_DIRS=$(echo data/digitalassets.lib.berkeley.edu/ds/{rome,conception,csl,cuny,grolier,gts,indiana,nelsonatkins,nyu,providence,rutgers,smith})

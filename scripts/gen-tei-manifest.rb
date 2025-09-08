@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
+
+# Script to generate a DS convert manifest for OPenn TEI files.
+
 require 'nokogiri'
 
 require_relative '../lib/ds'

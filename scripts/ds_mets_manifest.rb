@@ -4,6 +4,8 @@
 require 'csv'
 require 'nokogiri'
 
+# Script to generate a DS convert manifest for METS files
+
 require_relative '../lib/ds'
 
 headers = %i{
