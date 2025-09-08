@@ -1,22 +1,21 @@
 # frozen_string_literal: true
 
 module DS
-  ##
-  # The DS Converter is responsible for generating the import
-  # spreadsheet for a set of data. Its work is driven by a Manifest
-  # CSV represented by a DS::Manifest::Manifest instance. Each row of
-  # the CSV is represented by a DS::Manifest::Entry instance.
-  #
-  # The DS Converter does the following:
-  #
-  # 1. Reads each entry from the Manifest CSV
-  # 2. Selects a Mapper type based on the source data type
-  # 3. Assembles the data need for mapping
-  # 4. Maps each record to the data hash, assembling all the
-  #    data hashes needed for the import CSV
-  # 5. Returns the assembled hashes to the caller
-  #
   module Converter
+    ##
+    # The DS Converter is responsible for generating the import
+    # spreadsheet for a set of data. Its work is driven by a Manifest
+    # CSV represented by a DS::Manifest::Manifest instance. Each row of
+    # the CSV is represented by a DS::Manifest::Entry instance.
+    #
+    # The DS Converter does the following:
+    #
+    # 1. Reads each entry from the Manifest CSV
+    # 2. Selects a Mapper type based on the source data type
+    # 3. Assembles the data needed for mapping
+    # 4. Maps each record to the data hash, assembling all the
+    #    data hashes needed for the import CSV
+    # 5. Returns the assembled hashes to the caller
     class Converter
       include Enumerable
 

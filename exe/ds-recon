@@ -28,7 +28,7 @@ class ReconCLI < DS::CLI
 
     -t/-source-type option is NOT REQUIRED
 
-    ds-recon -s names path/to/names.csv
+    ds-recon validate -s names path/to/names.csv
   LONGDESC
   option :'recon-set', banner: 'SET', desc: "One of #{Recon::RECON_VALIDATION_SETS.join ', '}; REQUIRED", aliases: '-s', required: true
   def validate *files

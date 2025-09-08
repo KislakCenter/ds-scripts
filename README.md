@@ -25,8 +25,20 @@ The `recon` script outputs a number of CSV with extracted values for names (auth
 
 ### `ds-convert` process
 
+Usage:
+
+```
+ds-convert convert OPTIONS MANIFEST [SOURCE_DIR]
+```
+
+For example,
+
+```
+ds-convert convert --output path/to/outputdir/output.csv ../path/to/manifest.csv
+```
+
 Given a directory containing a set of source records (MARC XML, DS 1.0
-METS, OPenn TEI XML, a CSV) and a `manifest.csv` file, generate a DS
+METS, OPenn TEI XML, a CSV) and a `manifest.csv` file, `ds-convert` generates a DS
 import CSV for all records listed in `manifest.csv`. The output import
 CSV is used by the DS Import scripts to import data into the DS
 Wikibase instance.
@@ -35,15 +47,40 @@ The values found in the `manifest.csv` are described in the [DS import
 manifest data
 dictionary](https://docs.google.com/spreadsheets/d/195ItCa2Qg69lp0lMuVlq2eLWJzIAmWHUzDP170_af3I/edit?usp=sharing).
 The DS::Manifest::ManifestValidator validates the manifest and the
-designated source records.
+designated source records. Here is a sample manifest: [manifest.csv](https://github.com/DigitalScriptorium/ds-convert/blob/main/spec/fixtures/marc_xml/manifest.csv).
 
-DS::Converter::BaseConverter uses the manifest to orchestrate the
-conversion of the source records to the CSV import format.
-Specifically, the converter reads each manifest entry, selects the
-appropriate DS::Mapper (e.g, DS::Mapper::MarcMapper), and passes the
-entry and corresponding source record to the data mapper for
-conversion. The converter returns the mapped data for each record (as
-a Hash) to the caller to be written to the import CSV.
+### `ds-recon` process
+
+Given a list of source files, `ds-recon` generates one or more CSVs listing reconcilable values from the sources, names, subjects, places, etc.
+
+Usage:
+
+```
+ds-recon --source-type=TYPE genres FILES
+```
+
+Source type is one of `marc-xml`, `tei-xml`, `ds-csv`, or `ds-mets-xml`.
+
+Example:
+
+```
+ds-recon genres --source-type=marc-xml --directory=path/to/output_dir/ path/to/marc/*.xml
+```
+
+The `ds-recon` subcommands are:
+
+- `write-all` - output all recon CSVs
+- `genres` - output `genres.csv`
+- `languages` - output `languages.csv`
+- `materials` - output `materials.csv`
+- `names` - output `names.csv`
+- `places` - output `places.csv`
+- `subjects` - output `subjects.csv`
+- `titles` - output `titles.csv`
+- `splits` - output `splits.csv` (see below) 
+- `validate` - validate a recon CSV for format and well-formedness
+
+Splits: `splits.csv` is an ad hoc list of long lines in source records that exceed the Wikibase 400-character limit for fields. When such long lines occur the data management team splits these lines into smaller chunks and adds them to the [`splits.csv`](https://github.com/DigitalScriptorium/ds-data/blob/main/terms/reconciled/splits.csv).
 
 ## Scripts folder
 
