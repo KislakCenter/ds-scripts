@@ -2,7 +2,7 @@
 ds:
   log_level: <%= ENV['DS_LOG_LEVEL'] || 'WARN' %>
 recon:
-  local_dir: <%= File.join DS.root, 'data' %>
+  local_dir: <%= ENV['DS_DATA_DIR'] || '/tmp' %>
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
   git_branch: main
   git_local_name: ds-data
