@@ -1,6 +1,10 @@
 # DS Convert
 
-RubyGem that provides scripts to transform and manage input from multiple sources to generate a DS 2.0 imports CSV. Also includes scripts to extract strings from sources for authority reconcilation.
+RubyGem that provides scripts to transform and manage input from multiple sources to generate a DS 2.0 imports CSV. Also includes scripts to extract strings from sources for authority reconciliation.
+
+# Requirements
+
+* Ruby version >= 3.4.0
 
 # Installation
 
@@ -77,7 +81,7 @@ The `ds-recon` subcommands are:
 - `places` - output `places.csv`
 - `subjects` - output `subjects.csv`
 - `titles` - output `titles.csv`
-- `splits` - output `splits.csv` (see below) 
+- `splits` - output `splits.csv` (see below)
 - `validate` - validate a recon CSV for format and well-formedness
 
 Splits: `splits.csv` is an ad hoc list of long lines in source records that exceed the Wikibase 400-character limit for fields. When such long lines occur the data management team splits these lines into smaller chunks and adds them to the [`splits.csv`](https://github.com/DigitalScriptorium/ds-data/blob/main/terms/reconciled/splits.csv).
@@ -123,11 +127,12 @@ Locate scripts rely on METS files and image lists found in the gzipped tarball
     University of Kansas                                    kansas/
     Wellesley                                               wellesley/
 
-# Requirements
+# Development
+
+##  Requirements
 
 * Ruby version >= 3.4.0
 * bundler Ruby gem
-
 
 If you need to install Ruby or a compatible version of Ruby, you can use
 [rbenv][rbenv], [rvm][rvm] or the [asdf][asdf] [ruby plugin][asdf-ruby].
@@ -137,34 +142,46 @@ If you need to install Ruby or a compatible version of Ruby, you can use
 [asdf]: https://asdf-vm.com/guide/getting-started.html "ASDF getting started"
 [asdf-ruby]: https://github.com/asdf-vm/asdf-ruby "ASDF Ruby plugin"
 
+If you don't have the bundler gem installed run:
+
 ```shell
 $ gem install bundler
 ```
 
-# Installation
+## Setup
 
-Clone the repository, and then from the repository folder, run bundler.
+Clone the repository, then:
 
 ```shell
-$ bundle install
+cd ds-convert
+bundle install
 ```
 
-All scripts are in the `scripts` directory. It's best to run them with
-bundler; e.g.,
+Run the Rspec specs to confirm everything is working as expected:
 
-```shell
-$ bundle exec ruby scripts/ds-image-counts.rb
+```
+bundle exec rspec
+```
+
+### Testing
+
+This project uses rspec for testing. To run the tests:
+
+```
+bundle exec rspec
 ```
 
 ### Configuration
 
 #### Institution/QID mappings
 
+TODO: These mappings are probably no longer used. Investigate and remove if possible.
+
 Several of the scripts rely on mappings from institution names to Wikidata QIDs
-for CSV output. These have to be entered manually in `config/institutions.yml`.
+for CSV output. These have to be entered manually in `config/settings.yml`.
 
 Wikidata QIDs for institutions are mapped to institution names in
-`config/institutions.yml`. These values are used to create a reverse hash,
+`config/settings.yml`. These values are used to create a reverse hash,
 `Constants::INSTITUTION_NAMES_TO_QID`, which maps institution names and the
 one-word aliases to Wikidata QID URLs.
 
@@ -192,18 +209,20 @@ be the preferred short name for the institution; e.g., 'beinecke',
 
 #### Reconciliation values
 
-Reconciliation CSVs are maintained in git and loaded at runtime from a git
-repository in the `/data` directory.
+Reconciliation CSVs are maintained in git and loaded at runtime.
 
-The file `config/recon.yml` defines the location of the git repository,
+The file `config/settings.yml` defines the location of the git repository,
 path to each reconciliation CSV, and key columns:
 
 ```yaml
 ---
 recon:
+  local_dir: <%= ENV['DS_DATA_DIR'] || '/tmp' %>
   git_repo: 'https://github.com/DigitalScriptorium/ds-data.git'
-  git_branch: 'feature/1-directory-for-reconciliations'
-  git_local_name: 'ds-data'
+  git_branch: main
+  git_local_name: ds-data
+  iiif_manifests: iiif/legacy-iiif-manifests.csv
+  legacy_ia_urls: internet_archive/legacy-ia-urls.csv
   sets:
     - name: names
       repo_path: terms/names.csv
@@ -221,6 +240,4 @@ Values are:
 
 - `sets`: each CSV set loaded by the `Recon` module
 - `name`: name of each set, used by `Recon.find_set(name)`
-- `repo_path`: path of the CSV file in the repository
-- `key_column`: column containing the reconciled values; e.g., personal names, place names, subject terms
-- `subset_column`: name of the column for subsets within the data; e.g., the vocabulary column for genres
+- `repo_path`: path of the CSV file or files in the repository
