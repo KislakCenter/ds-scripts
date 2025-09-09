@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Run a set of test member data files against ds-recon and ds-convert. Each
+# type of source file is teste: CSV, METS, MARC XML, TEI
+
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 csv_dir=${SCRIPT_DIR}/../tmp/test/csv
