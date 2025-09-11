@@ -90,42 +90,12 @@ Splits: `splits.csv` is an ad hoc list of long lines in source records that exce
 
 The `/scripts` directory contains utility scripts for managing DS data.
 
-        scripts
-        ├── collect-prototype-data.sh           # Pull together the prototype data CSV
-        ├── collect-prototype-genres.sh         # Pull together all the prototype genres
-        ├── collect-prototype-names.sh          # Pull together all the prototype names
-        ├── collect-prototype-places.sh         # Pull together all the prototype places
-        ├── collect-prototype-subjects-named.sh # Pull together all the prototype named subjects
-        ├── collect-prototype-subjects.sh       # Pull together all the prototype subjects
-        ├── csv_cat.rb                          # Concatenate _n_ CSVs having the same columns
-        ├── ds-image-counts.rb                  # Count online images for dependent org's
-        ├── get_bibids.rb                       # Grab UPenn MMSIDs from OPenn TEI files
-        ├── locate-ds10-jpegs.rb                # From METS files locate JPEG images
-        ├── locate-ds10-tiffs.rb                # From METS files locate TIFF images
-        ├── merge-jpeg-tiff-locations.rb        # Merge JPEG and TIFF CSVS; TODO: delete?
-        ├── princeton_update_bib2.rb            # Prototype data: Create a Bib2 file to match IslamicGarrettBIB1-trim.xml
-        └── princeton_update_holdings.rb        # Prototype data: Create a holdings file to match IslamicGarrettBIB1-trim.xml
-
-Locate scripts rely on METS files and image lists found in the gzipped tarball
-`data/digitassets-lib-berkeley-edu.tgz`.
-
-#### Institutions dependent on DS:
-
-    California State Library (Sacramento and SF locations)  csl/
-    City College of New York                                cuny/
-    Conception Abbey and Seminary                           conception/
-    General Theological Seminary                            gts/
-    Grolier Club                                            grolier/
-    Indiana University                                      indiana/
-    New York University                                     nyu/
-    Providence Public Library                               providence/
-    Rutgers, The State University of New Jersey             rutgers/
-    The Nelson-Atkins Museum of Art                         nelsonatkins/
-    University of California, Berkeley (Bancroft;           ucb/
-        Jean Gray Hargrove Music Library; Robbins
-        Collection)
-    University of Kansas                                    kansas/
-    Wellesley                                               wellesley/
+    scripts/
+    ├── ds_mets_manifest.rb         # Generate an import manifest for DS METS
+    ├── flp_modification_dates.txt  # List of Free Lib TEI mod dates; used by gen-tei-manifest.rb
+    ├── gen-tei-manifest.rb         # Generate an import manifest for OPenn TEI
+    ├── marc-tag.rb                 # Find marc records by MARC tag/code
+    └── run-test-data.sh            # Test ds-recon, ds-convert with all source types
 
 # Development
 
@@ -241,3 +211,72 @@ Values are:
 - `sets`: each CSV set loaded by the `Recon` module
 - `name`: name of each set, used by `Recon.find_set(name)`
 - `repo_path`: path of the CSV file or files in the repository
+
+# DS Convert Architecture
+
+DS Convert handles two responsibilities within the Digital Scriptorium source-data-to-Wikibase workflow.
+
+## Overall DS data workflow
+
+The overall process from source file to Web publication is shown in the image below.
+
+![DSWorkflow1.jpg](docs/DSWorkflow1.jpg)
+
+DS members provide their manuscript data in structured form, as METS, MARC, TEI, CSV, or (forthcoming) EAD. That data is then converted to an agnostic DS import spreadsheet, with certain values enhanced by links to authorities, like Wikidata, the Getty Art and Architecture Thesaurus, and OCLC FAST. The import CSV is parsed and loaded into Wikibase. The Wikibase records are then extracted and ingested into the DS Search site.
+
+The _**DS Convert**_ scripts `ds-recon` and `ds-convert` are responsible for the extraction and transformation of structure member data to generate the Agnostic Transition Spreadsheet, referred to here as the DS import CSV.
+
+The full workflow, from source to Web is:
+
+1. Source records for extraction are delivered to the DS data manager (as MARC, CSV, etc.)
+2. Reconciliation values are extracted as CSVs from the source records for names, places, languages, etc. (DS Convert's `ds-recon`)
+3. The DS data manager reconciles unreconciled values from the extracted reconciliation CSVs and adds them to the [DS data dictionaries][DS Data Dictionaries].
+4. The data manager generates a manifest listing all manuscript records to be extracted form the source.
+5. The manifest, the data dictionary CSVs, and source data are used to generate the import CSV (DS Convert's `ds-convert`)
+6. The generated import CSV is loaded Wikibase by the data manager (DS Import service, not publicly available)
+7. The Wikibase data is exported and staged for ingest into the DS Search application (DS Import service)
+8. The DS Search application downloads and converts exported Wikibase JSON as Solr records
+
+[DS Data Dictionaries]: https://github.com/DigitalScriptorium/ds-data/tree/main/terms/reconciled "DS Data Dictionaries"\
+
+## DS Convert workflow
+
+The DS Convert scripts `ds-recon` and `ds-covert` are responsible for the extraction of reconciliation CSVs data and the generation DS import CSVs from source data provided by DS members. In more detail:
+
+- `ds-recon` performs the extraction of values, like, names, places, and languages from sources that are to be reconciled with authorities and added to the DS [authority data dictionaries][DS Data Dictionaries], and
+- `ds-convert` generates the import CSV from source records, enhancing those records with authority values from the project data dictionaries
+
+## DS Convert components
+
+The main work of `ds-recon` and `ds-convert` is done by extractors: [DS::Extractor::TeiXml][TEI Extractor], [DS::Extractor::DsMetsXmlExtractor][METS Extractor], [DS::Extractor::DsCsvExtractor][CSV Extractor], and [DS::Extractor::Extractor::MarcXmlExtractor][MARC Extractor]
+
+[CSV Extractor]: lib/ds/extractor/ds_csv_extractor.rb "DS::Extractor::DsCsvExtractor"
+[MARC Extractor]: lib/ds/extractor/marc_xml_extractor.rb "DS::Extractor::Extractor::MarcXmlExtractor"
+[METS Extractor]: lib/ds/extractor/ds_mets_xml_extractor.rb "DS::Extractor::DsMetsXmlExtractor"
+[TEI Extractor]: lib/ds/extractor/tei_xml_extractor.rb "DS::Extractor::TeiXml"
+
+These classes are responsible for extracting reconciliation and manuscript description values from source files.
+
+Separate modules are responsible for transforming the extracted data as either reconciliation CSVs or an import CSV.
+Reconciliation transformations are managed by the [Recon][Recon] module and its components.
+
+The `ds-convert` process is more complex and comprises several modules:
+
+- [Mappers][Mappers] that generate hashes for each source record (i.e., each manuscript description) using extractors
+- Format-specific [Extractors][Extractors] that extract data from source files (MARC XML, DS CSV, etc.)
+- A [Convertor][Convertor] that orchestrates the mapping and collects hashes for output as an import CSV
+- A [Manifest][Manifest] that lists all records in a data source and provides information to a record locator (see below)
+- Record locators, like [DS::Extractors::XmlRecordLocator][XmlRecordLocator]), that are used by a mapper to retrieve records for hash generation
+- [Sources][Sources] that are responsible for open and returning parse source files _in the format expected by a mapper_ (see below)
+
+[Extractors]: lib/ds/extractor
+[Recon]: lib/ds/recon.rb "DS Recon module"
+[Mappers]: lib/ds/mapper "DS Record mappers"
+[Convertor]: lib/ds/converter/converter.rb "DS Converter"
+[Manifest]: lib/ds/manifest "DS Manifest classes"
+[Sources]: lib/ds/source "DS Sources"
+[XmlRecordLocator]: lib/ds/extractor/xml_record_locator.rb "DS::Extractors::XmlRecordLocator"
+
+
+### A note on Sources
+A note on `DS::Source`: A source is used by a mapper to request a parsed source file; for example, a MARC XML file as a Nokogiri::XML document. The primary motivation for the Source is its inclusion of the [SourceCache](lib/ds/source/source_cache.rb), which is responsible for caching open source files. This is useful for source files that have many records and are slow to open and parse, as for DS CSVs and MARC XML files, which may have a thousand or more records.
