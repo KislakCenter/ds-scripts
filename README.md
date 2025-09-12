@@ -108,7 +108,7 @@ If you need to install Ruby or a compatible version of Ruby, you can use
 [rbenv][rbenv], [rvm][rvm] or the [asdf][asdf] [ruby plugin][asdf-ruby].
 
 [rbenv]: https://github.com/rbenv/rbenv  "rbenv on github"
-[rvm]:   https://rvm.io  "Ruby Version Manger home"
+[rvm]: https://rvm.io  "Ruby Version Manger home"
 [asdf]: https://asdf-vm.com/guide/getting-started.html "ASDF getting started"
 [asdf-ruby]: https://github.com/asdf-vm/asdf-ruby "ASDF Ruby plugin"
 
@@ -132,6 +132,18 @@ Run the Rspec specs to confirm everything is working as expected:
 ```
 bundle exec rspec
 ```
+
+Generate the API documentation:
+
+```
+gem install yard webrick
+yard doc  # open doc/index.html
+# or run a yard server at http://localhost:8808/
+yard server
+```
+
+Open `doc/index.html` to view API docs.
+
 
 ### Testing
 
@@ -222,7 +234,7 @@ The overall process from source file to Web publication is shown in the image be
 
 ![DSWorkflow1.jpg](docs/DSWorkflow1.jpg)
 
-DS members provide their manuscript data in structured form, as METS, MARC, TEI, CSV, or (forthcoming) EAD. That data is then converted to an agnostic DS import spreadsheet, with certain values enhanced by links to authorities, like Wikidata, the Getty Art and Architecture Thesaurus, and OCLC FAST. The import CSV is parsed and loaded into Wikibase. The Wikibase records are then extracted and ingested into the DS Search site.
+DS members provide their manuscript data in structured form as METS, MARC, TEI, CSV, or (forthcoming) EAD. That data is then converted to an agnostic DS import spreadsheet, with certain values enhanced by links to authorities, like Wikidata, the Getty Art and Architecture Thesaurus, and OCLC FAST. The import CSV is parsed and loaded into Wikibase. The Wikibase records are then extracted and ingested into the DS Search site.
 
 The _**DS Convert**_ scripts `ds-recon` and `ds-convert` are responsible for the extraction and transformation of structure member data to generate the Agnostic Transition Spreadsheet, referred to here as the DS import CSV.
 
