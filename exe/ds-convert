@@ -5,7 +5,11 @@ require 'csv'
 require_relative '../lib/ds/cli'
 
 # TODO: No URIs for Scribes in prototype data set; need test data
-
+# Given a directory containing a set of source records (MARC XML, DS 1.0
+# METS, OPenn TEI XML, a CSV) and a `manifest.csv` file, generate a DS
+# import CSV for all records listed in `manifest.csv`. The output import
+# CSV is used by the DS Import scripts to import data into the DS
+# Wikibase instance.
 class DSConvertCLI < DS::CLI
 
   def self.exit_on_failure?
@@ -20,8 +24,7 @@ class DSConvertCLI < DS::CLI
 
 If SOURCE_DIR is not specified, the parent directory of MANIFEST is used to locate source records.
 
-The MANIFEST is validated before the import CSV is generated. See
-'validate' for details.
+The MANIFEST is validated before the import CSV is generated. See 'validate' for details.
   LONGDESC
   ##
   # Convert all source records listed in +manifest_csv+; all source

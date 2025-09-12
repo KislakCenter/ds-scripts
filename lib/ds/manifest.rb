@@ -16,7 +16,7 @@ module DS
   #
   # The manifest CSV provides all information needed to ingest a set of
   # source records. This information is detailed in
-  # {DS::Manifest::Manifest}.
+  # {DS::Manifest::Manifest} and {DS::Manifest::Entry}.
   #
   # The {DS::Manifest::ManifestValidator} validates
   # that the Manifest is completed and well-formed, and that all records

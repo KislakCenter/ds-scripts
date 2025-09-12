@@ -3,6 +3,8 @@
 require 'nokogiri'
 require 'optparse'
 
+# Script to find MARC records for a given TAG and, optionally subfield codes
+
 CMD = File.basename __FILE__
 
 def usage
@@ -23,18 +25,19 @@ def subfield_query? codes, options
 end
 
 def build_codes_query codes
-  return if codes.none?
-  codes.map { |code| "@code = '#{code}'" }.join(' or ')
+  return '.' if codes.none?
+
+  "./subfield[#{codes.map { |code| "@code = '#{code}'" }.join(' or ')}]"
 end
 
-def build_subfield_query codes, options
+def build_subfield_query *codes, options
   return '' unless subfield_query? codes, options
 
   # query = []
-  base_query = codes.any? ? "./subfield[#{build_codes_query codes}]" : '.'
-  query = ''
+  # base_query = codes.any? ? "./subfield[#{build_codes_query codes}]" : '.'
+  base_query = codes.any? ? build_codes_query(codes) : '.'
   if options[:contains_insensitive]
-    "and contains(translate(#{base_query},"\
+    " and contains(translate(#{base_query},"\
              " 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',"\
              " 'abcdefghijklmnopqrstuvwxyz'),"\
              "'#{options[:contains_insensitive].downcase}')"
@@ -45,6 +48,14 @@ def build_subfield_query codes, options
   end
 end
 
+def build_subfield_queries codes, options
+  return '' unless subfield_query? codes, options
+  return build_subfield_query codes, options if options[:any_code]
+
+  queries = codes.map { |code| build_subfield_query(code, options) }
+  " #{queries.join(' ')}"
+end
+
 options = { max_count: Float::INFINITY }
 OptionParser.new do |parser|
   parser.banner = "#{usage}
@@ -52,8 +63,12 @@ OptionParser.new do |parser|
 Print all MARC datafields in the provided files for the given datafield TAG
 and subfield CODE or CODEs. Subfield codes are optional.
 
-Note that the -c/--contains matches subfields having CODE or CODEs; when no
-CODE is specified, all subfields will be tested for contains.
+By default, when multiple CODEs are given, only datafields with all subfield
+CODEs are returned (logical AND). Use `--any-code` to return datafields with any
+of the CODEs (logical OR).
+
+Note that c/--contains matches subfields having CODE or CODEs; when no CODE
+is specified, all subfields will be tested for contains.
   "
 
   parser.on("-v", "--[no-]verbose", "Run verbosely") do |v|
@@ -84,6 +99,10 @@ CODE is specified, all subfields will be tested for contains.
     options[:contains_insensitive] = s
   end
 
+  parser.on('-a', '--any-code', 'Find datafields with subfields with any CODE in CODEs') do
+    options[:any_code] = true
+  end
+
 end.parse!
 puts "Options are: #{options.inspect}" if options[:verbose]
 ##
@@ -108,7 +127,7 @@ files = ARGV
 if tag =~ /^00[135678]/
   xpath = "//record/controlfield[@tag=#{tag}#{build_subfield_query codes, options}]"
 else
-  xpath = "//record/datafield[@tag=#{tag}#{build_subfield_query codes, options}]"
+  xpath = "//record/datafield[@tag=#{tag}#{build_subfield_queries codes, options}]"
 end
 puts "Using xpath: #{xpath}" if options[:verbose]
 
