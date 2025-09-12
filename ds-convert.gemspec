@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
     Scripts for convert Digital Scriptorium member data to the DS import spreadsheet format and for extracting values for authority file reconciliation.
   DESC
   # spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.required_ruby_version = ">= 3.4"
+  spec.required_ruby_version = ">= 3.3"
 
   spec.metadata["allowed_push_host"] = 'https://rubygems.org'
   spec.metadata["homepage_uri"] = 'https://github.com/DigitalScriptorium/ds-convert'
