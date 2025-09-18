@@ -865,12 +865,17 @@ module DS
         # Extracts the title as recorded from the given record.
         #
         # @param [Nokogiri::XML:Node] record the record to extract the title from
-        # @return [String] the extracted title as recorded
+        # @return [String] the extracted title as recorded, excluding subfields
+        # 6 and 8
+
         def title_as_recorded record
-          xpath = "datafield[@tag=245]/subfield[@code='a' or @code='b']"
-          record.xpath(xpath).map { |title|
-            DS::Util.clean_string(title.text, terminator: '')
-          }.join '; '
+          characters = %w[a b c f g h k n p s 7]
+          codes = characters.map { |c| "@code='#{c}'"}.join(" or ")
+          xpath = "//datafield[@tag=245]/subfield[#{codes}]"
+
+          title_string = record.xpath(xpath).map { |subfield|
+            subfield.text }
+          title_string.join(' ')
         end
 
         # Extracts the title as recorded with vernacular form from the given record.

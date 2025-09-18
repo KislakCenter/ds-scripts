@@ -57,7 +57,7 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
-  context 'extract_title_as_recorded' do
+  context 'extract_title_as_recorded_a_b_subfields' do
     let(:title_record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
@@ -68,7 +68,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <controlfield tag="005">20220803105853.0</controlfield>
         <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
         <datafield ind1="0" ind2="0" tag="245">
-          <subfield code="a">Subfield a; </subfield>
+          <subfield code="a">Subfield a ;</subfield>
           <subfield code="b">Subfield b.</subfield>
         </datafield>
       </record>
@@ -77,7 +77,106 @@ describe DS::Extractor::MarcXmlExtractor do
     it 'extracts the 245$a and 245$b' do
       expect(
         DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
-      ).to eq ['Subfield a; Subfield b']
+      ).to eq ['Subfield a ; Subfield b.']
+    end
+  end
+
+  context 'extract_title_as_recorded_no_245_field' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      </record>
+    })
+    }
+    it 'extracts an empty string' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
+      ).to eq ['']
+    end
+  end
+
+  context 'extract_title_as_recorded_skips_6_8_subfields' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="6">Subfield 6;</subfield>
+          <subfield code="a">Subfield a;</subfield>
+          <subfield code="8">Subfield 8 /</subfield>
+          <subfield code="b">Subfield b.</subfield>
+        </datafield>
+      </record>
+    })
+    }
+    it 'extracts the 245$a and 245$b and skips 245$6 and 245$8' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
+      ).to eq ['Subfield a; Subfield b.']
+    end
+  end
+
+  context 'extract_title_as_recorded_including duplicates' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="a">Subfield a :</subfield>
+          <subfield code="p">Subfield p.</subfield>
+          <subfield code="p">Subfield p.</subfield>
+          <subfield code="k">Subfield k.</subfield>
+        </datafield>
+      </record>
+    })
+    }
+    it 'extracts the 245$a, both 245$p and 245$k' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
+      ).to eq ['Subfield a : Subfield p. Subfield p. Subfield k.']
+    end
+  end
+
+  context 'extract_title_as_recorded_including duplicates without subfield a' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield tag="245" ind1="0" ind2="0">
+            <subfield code="k">Subfield k :</subfield>
+            <subfield code="b">Subfield b,</subfield>
+            <subfield code="k">Subfield k,</subfield>
+            <subfield code="f">Subfield f.</subfield>
+        </datafield>
+
+      </record>
+    })
+    }
+    it 'extracts the 245$k, 245$b 245$k again and 245$f' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
+      ).to eq ['Subfield k : Subfield b, Subfield k, Subfield f.']
     end
   end
 
@@ -1680,7 +1779,7 @@ describe DS::Extractor::MarcXmlExtractor do
     it 'is invoked by extract_uniform_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_uniform_titles_as_recorded record
-      expect(DS::Util).to have_received(:clean_string).exactly(7).times
+      expect(DS::Util).to have_received(:clean_string).exactly(6).times
     end
 
     it 'is invoked by extract_uniform_title_agr' do
@@ -1692,13 +1791,13 @@ describe DS::Extractor::MarcXmlExtractor do
     it 'is invoked by extract_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded record
-      expect(DS::Util).to have_received(:clean_string).exactly(7).times
+      expect(DS::Util).to have_received(:clean_string).exactly(6).times
     end
 
     it 'is invoked by extract_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded_agr record
-      expect(DS::Util).to have_received(:clean_string).exactly(7).times
+      expect(DS::Util).to have_received(:clean_string).exactly(6).times
     end
 
     it 'is invoked by extract_genre_as_recorded' do

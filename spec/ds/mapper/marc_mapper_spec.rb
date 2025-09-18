@@ -102,7 +102,7 @@ RSpec.describe DS::Mapper::MarcMapper do
         :production_date_as_recorded        => "850?",
         :uniform_title_as_recorded          => "",
         :uniform_title_agr                  => "",
-        :title_as_recorded                  => "Periermenias Aristotelis ... [etc.",
+        :title_as_recorded                  => "Periermenias Aristotelis ... [etc.].",
         :title_as_recorded_agr              => "",
         :standard_title_ds_qid              => "",
         :genre_as_recorded                  => "Manuscripts, Medieval|Manuscripts, Latin--11th century|Manuscripts, Latin--9th century|Codices|Commentaries|Illuminations (visual works)|Poems|Treatises|Criticism, interpretation, etc|Early works|Specimens|Translations (documents)|Diagrams",
