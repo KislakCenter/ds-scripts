@@ -18,7 +18,7 @@ module DS
         record                             = extract_record entry
         source_type                        = 'ds-csv'
         source_file                        = entry.filename
-        ds_id                              = entry.ds_id
+        ds_id                              = locate_ds_id entry, record
         date_added                         = ''
         date_last_updated                  = ''
         dated                              = entry.dated?

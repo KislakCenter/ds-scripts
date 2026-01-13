@@ -1033,6 +1033,152 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
+  context 'when there is only one 510$a$c field with a ds id' do
+
+    let(:ds_id_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="4" ind2=" " tag="510">
+          <subfield code="a">Digital Scriptorium</subfield>
+          <subfield code="c">DS681</subfield>
+        </datafield>
+      </record>
+    })
+    }
+
+    it 'extracts ds id' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_ds_id ds_id_record
+      )
+    end
+  end
+
+  context 'when there is no 510$a$c field with a ds id' do
+
+    let(:ds_id_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      </record>
+    })
+    }
+
+    it 'returns an empty string' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_ds_id ds_id_record
+      )
+    end
+  end
+
+  context 'when there are multiple 510 fields, one matching the 510$a$c pattern' do
+
+    let(:ds_id_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="4" ind2=" " tag="510">
+          <subfield code="a">Digital Scriptorium</subfield>
+          <subfield code="c">DS681</subfield>
+        </datafield>
+        <datafield ind1="4" ind2=" " tag="510">
+          <subfield code="a">Other Scriptorium</subfield>
+          <subfield code="c">DS101</subfield>
+        </datafield>
+        <datafield ind1="3" ind2=" " tag="510">
+          <subfield code="a">Digital Scriptorium</subfield>
+          <subfield code="c">DS41</subfield>
+        </datafield>
+      </record>
+    })
+    }
+
+    it 'returns the ds id value when Digital Scriptorium is in subfield a' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_ds_id ds_id_record
+      )
+    end
+  end
+
+  context 'when there are multiple 510 fields, none matching the 510$a$c pattern' do
+
+    let(:ds_id_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+        <datafield ind1="4" ind2=" " tag="510">
+          <subfield code="c">DS681</subfield>
+        </datafield>
+        <datafield ind1=" " ind2=" " tag="510">
+          <subfield code="a">Other Scriptorium</subfield>
+          <subfield code="c">DS101</subfield>
+        </datafield>
+        <datafield ind1="3" ind2=" " tag="510">
+          <subfield code="a">Digital Scriptorium</subfield>
+          <subfield code="c">DS41</subfield>
+        </datafield>
+      </record>
+    })
+    }
+
+    it 'returns an empty string' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.extract_ds_id ds_id_record
+      )
+    end
+  end
+
+  context 'when there are multiple 510 fields, more than one matching the 510$a$c pattern' do
+    let(:ds_id_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+       <record xmlns="http://www.loc.gov/MARC21/slim"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+       <leader>12792ctm a2201573Ia 4500</leader>
+       <controlfield tag="001">9948617063503681</controlfield>
+       <controlfield tag="005">20220803105853.0</controlfield>        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+       <datafield ind1="4" ind2=" " tag="510">
+         <subfield code="a">Digital Scriptorium</subfield>
+         <subfield code="c">DS101</subfield>
+       </datafield>
+       <datafield ind1="4" ind2=" " tag="510">
+         <subfield code="a">Digital Scriptorium</subfield>
+         <subfield code="c">DS101</subfield>
+       </datafield>
+       <datafield ind1="4" ind2=" " tag="510">
+         <subfield code="a">Digital Scriptorium</subfield>
+         <subfield code="c">DS41</subfield>
+       </datafield>
+      </record>
+      })
+      }
+
+    it 'raises an exception when more than one Digital Scriptorium subfield exists' do
+      expect { DS::Extractor::MarcXmlExtractor.extract_ds_id ds_id_record
+        }.to raise_error(RuntimeError, /Multiple Digital Scriptorium fields/)
+    end
+  end
+
   context 'extract_artists_as_recorded_agr' do
     let(:record) {
       @string = %q{<?xml version="1.0" encoding="UTF-8"?>

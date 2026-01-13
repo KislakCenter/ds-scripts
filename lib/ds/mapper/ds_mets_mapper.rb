@@ -34,7 +34,7 @@ module DS
 
         source_type                        = entry.source_type
         source_file                        = entry.filename
-        ds_id                              = entry.ds_id
+        ds_id                              = locate_ds_id entry, record
         date_added                         = nil
         date_last_updated                  = nil
         cataloging_convention              = DS::Extractor::DsMetsXmlExtractor.extract_cataloging_convention(record)

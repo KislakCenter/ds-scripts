@@ -116,4 +116,12 @@ RSpec.describe DS::Mapper::BaseMapper do
       }.to raise_exception NotImplementedError
     end
   end
+
+  context '#locate_ds_id' do
+    let(:record) { Object.new }
+    it 'returns the ds_id' do
+      entry = instance_double('DS::Manifest::Entry', ds_id: 'DS1234')
+      expect(base_mapper.locate_ds_id entry, record).to eq 'DS1234'
+    end
+  end
 end

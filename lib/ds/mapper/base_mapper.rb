@@ -2,7 +2,7 @@
 
 module DS
   module Mapper
-    # DS::Mapper::BaseMapper abstract Mapper class. Implementing classes
+    # DS::Mapper::BaseMapper abstract Mapper class. Implementing classes do
     # map DS sources records to CSV rows.
     #
     # Implementing classes must implement:
@@ -128,6 +128,10 @@ module DS
       # @raise [NotImplementedError] if the method is not implemented in a subclass
       def map_record entry
         raise NotImplementedError
+      end
+
+      def locate_ds_id entry, record
+        entry.ds_id
       end
 
       # Builds term strings based on the given recons and column mapping.

@@ -4,8 +4,6 @@ require 'spec_helper'
 
 RSpec.describe DS::Mapper::MarcMapper do
 
-  let(:manifest) {  }
-
   let(:manifest_csv) { parse_csv(<<~EOF
     holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,dated,manifest_generated_at
     Q49117,marc_xml_with_all_values.xml,University of Pennsylvania,MARC XML,DS10000,9951865503503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,TRUE,2023-07-25T09:52:02-0400
@@ -143,4 +141,74 @@ RSpec.describe DS::Mapper::MarcMapper do
     end
   end
 
+  context "locate_ds_id" do
+    let(:entry_with_ds_id) { double('entry', ds_id: 'DS10000') }
+    let(:entry_blank) { double('entry', ds_id: '') }
+
+    let(:marc_xml_match) do
+      Nokogiri::XML(<<-XML)
+      <record>
+        <datafield tag="510" ind1="4" ind2=" ">
+          <subfield code="a">Digital Scriptorium</subfield>
+          <subfield code="c">DS10000</subfield>
+        </datafield>
+      </record>
+      XML
+    end
+
+    let(:marc_xml_blank) do
+      Nokogiri::XML(<<-XML)
+      <record>
+        <datafield tag="510" ind1="4" ind2=" ">
+          <subfield code="a">Described in Transformation of knowledge: early manuscripts from the collection of Lawrence J. Schoenberg (London: Paul Holberton, 2006),</subfield>
+          <subfield code="c">p. 126 (LJS 22)</subfield>
+        </datafield>
+      </record>
+      XML
+    end
+
+    let(:marc_xml_mismatch) do
+      Nokogiri::XML(<<-XML)
+      <record>
+        <datafield tag="510" ind1="4" ind2=" ">
+          <subfield code="a">Digital Scriptorium</subfield>
+          <subfield code="c">DS99999</subfield>
+        </datafield>
+      </record>
+      XML
+    end
+
+
+    it 'returns manifest DS ID when both match' do
+      expect(mapper.locate_ds_id(entry_with_ds_id, marc_xml_match)).to eq "DS10000"
+    end
+
+    it 'raises error when marc ds id and manifest ds id do not match' do
+      expect {
+        mapper.locate_ds_id(entry_with_ds_id, marc_xml_mismatch)
+      }.to raise_error(RuntimeError, /DS ID mismatch/)
+    end
+
+    it 'returns manifest DS ID when MARC DS ID is blank' do
+      expect(mapper.locate_ds_id(entry_with_ds_id, marc_xml_blank)).to eq 'DS10000'
+    end
+
+    it 'raises error when manifest DS ID is blank and MARC DS IDs returns a value' do
+      expect {
+        mapper.locate_ds_id(entry_blank, marc_xml_match)
+      }.to raise_error(RuntimeError, /Manifest DS ID is blank; override required to use MARC DS ID/)
+
+    end
+
+    it 'raises error when both manifest and MARC DS IDs are blank' do
+      expect {
+        mapper.locate_ds_id(entry_blank, marc_xml_blank)
+      }.to raise_error(RuntimeError, /DS ID missing in both manifest and MARC XML/)
+
+    end
+
+    it 'allows override when mismatch occurs and override flag is true' do
+      expect(mapper.locate_ds_id(entry_blank, marc_xml_mismatch, override: true)).to eq "DS99999"
+    end
+  end
 end

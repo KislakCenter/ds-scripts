@@ -170,6 +170,12 @@ RSpec.shared_examples 'an extractor mapper' do |except|
       add_stubs recon_classes, :lookup, []
       expect(mapper.map_record(entry).keys.sort).to eq DS::Constants::HEADINGS.sort
     end
+
+    it 'calls #locate_ds_id method' do
+      expect(mapper).to receive(:locate_ds_id)
+      mapper.map_record entry
+    end
+
   end
 
   context 'recon mapping' do

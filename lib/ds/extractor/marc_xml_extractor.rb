@@ -1135,6 +1135,25 @@ module DS
           record.xpath("controlfield[@tag=001]").text
         end
 
+        # Extracts the DS ID from the given MARC XML record, if it is present.
+        #
+        # @param record [Nokogiri::XML::Node] the MARC XML record to extract the DS ID from
+        # @return [String] the extracted MMS ID
+        def extract_ds_id record
+          # Find all 510 records with subfield a that matches 'Digital Scriptorium'
+          ds_fields = record.xpath("datafield[@tag='510' and @ind1='4' and @ind2=' '
+            and subfield[@code='a']='Digital Scriptorium']")
+
+          # Raise an exception if more than one match
+          if ds_fields.size > 1
+            raise "Multiple Digital Scriptorium fields found (#{ds_fields.size})"
+          else
+          # if exactly one match, extract subfield c
+            ds_id = ds_fields.first&.xpath("subfield[@code='c']")&.text
+            ds_id
+          end
+        end
+
         # Extracts acknowledgments from the given record.
         #
         # @param [Nokogiri::XML:Node] record the record to extract acknowledgments from

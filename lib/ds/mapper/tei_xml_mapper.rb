@@ -25,7 +25,7 @@ module DS
       def map_record entry
         record                             = extract_record entry
         source_type                        = 'tei-xml'
-        ds_id                              = entry.ds_id
+        ds_id                              = locate_ds_id entry, record
         date_added                         = ''
         date_last_updated                  = ''
         cataloging_convention              = DS::Extractor::TeiXml.extract_cataloging_convention(record)

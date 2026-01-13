@@ -33,10 +33,10 @@ module DS
       # @param [DS::Manifest::Entry] entry entry instance for a manifest row
       # @return [Hash] the mapped record
       def map_record entry
-        record = extract_record entry
+        record                             = extract_record entry
         source_type                        = 'marc-xml'
         source_file                        = entry.filename
-        ds_id                              = entry.ds_id
+        ds_id                              = locate_ds_id(entry, record)
         date_added                         = ''
         date_last_updated                  = ''
         dated                              = entry.dated?
@@ -81,7 +81,37 @@ module DS
           source_file:                        source_file,
           acknowledgments:                   acknowledgments,
         }.update build_term_maps DS::Extractor::MarcXmlExtractor, record
+        end
+
+
+      def locate_ds_id(entry, marc_xml, override: false)
+        manifest_ds_id = entry.ds_id.to_s.strip
+        marc_ds_id = marc_xml.at_xpath(
+          "//datafield[@tag='510'][subfield[@code='a' and text()='Digital Scriptorium']]/subfield[@code='c']")&.text&.strip
+
+        if manifest_ds_id.empty? && marc_ds_id.to_s.empty?
+          raise 'DS ID missing in both manifest and MARC XML'
+        end
+
+        if manifest_ds_id.empty?
+          if marc_ds_id.present?
+            return marc_ds_id if override
+            raise 'Manifest DS ID is blank; override required to use MARC DS ID'
+          end
+        end
+
+        return manifest_ds_id if marc_ds_id.to_s.empty?
+
+        if manifest_ds_id == marc_ds_id
+          return manifest_ds_id
+        elsif override
+          return manifest_ds_id
+        else
+          raise "DS ID mismatch: manifest=#{manifest_ds_id}, marc=#{marc_ds_id}"
+        end
       end
+
+
     end
   end
 end
