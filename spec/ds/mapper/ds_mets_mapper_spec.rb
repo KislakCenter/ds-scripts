@@ -10,25 +10,18 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
     EOF
   }
   let(:xml_dir) { fixture_path 'ds_mets_xml' }
-  let(:manifest_path) { File.join xml_dir, 'manifest.csv' }
-  let(:manifest_row) { manifest_csv.first }
-  let(:manifest) { DS::Manifest::Manifest.new manifest_path, xml_dir }
-  let(:entry) { DS::Manifest::Entry.new manifest_row, manifest }
+  let(:entry) { DS::Manifest::Entry.new manifest_csv.first }
 
-  let(:timestamp) { Time.now }
   let(:mapper) {
     DS::Mapper::DSMetsMapper.new(
       source_dir: xml_dir,
-      timestamp: timestamp
+      timestamp: Time.now
     )
   }
 
-  let(:extractor) {  DS::Extractor::DsMetsXmlExtractor }
-
-  let(:subject) { mapper}
-  let(:source_path) { File.join xml_dir, entry.filename }
-
   context 'mapper implementation' do
+    let(:extractor) {  DS::Extractor::DsMetsXmlExtractor }
+
     except = %i[
         extract_cataloging_convention
         extract_uniform_titles_as_recorded
@@ -47,7 +40,7 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
   context 'initialize' do
     it 'creates a mapper' do
-      mapper = DS::Mapper::DSMetsMapper.new source_dir: xml_dir, timestamp: timestamp
+      mapper = DS::Mapper::DSMetsMapper.new source_dir: xml_dir, timestamp: Time.now
       expect(mapper).to be_a DS::Mapper::DSMetsMapper
     end
   end

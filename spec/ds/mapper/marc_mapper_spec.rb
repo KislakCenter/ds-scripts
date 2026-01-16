@@ -4,61 +4,45 @@ require 'spec_helper'
 
 RSpec.describe DS::Mapper::MarcMapper do
 
-  let(:manifest) {  }
-
-  let(:manifest_csv) { parse_csv(<<~EOF
-    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,dated,manifest_generated_at
-    Q49117,marc_xml_with_all_values.xml,University of Pennsylvania,MARC XML,DS10000,9951865503503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,TRUE,2023-07-25T09:52:02-0400
-    Q49117,9949533433503681_marc.xml,University of Pennsylvania,MARC XML,,9949533433503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105856,Oversize LJS 280,Decretales a[b]breviate,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3wm13v03/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9949533433503681,FALSE,2023-08-01T11:31:22-0400
-
-  EOF
-  )
+  let(:manifest_csv) {
+    parse_csv(<<~CSV
+      holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,dated,manifest_generated_at
+      Q49117,marc_xml_with_all_values.xml,University of Pennsylvania,MARC XML,DS10000,9951865503503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,TRUE,2023-07-25T09:52:02-0400
+      Q49117,9949533433503681_marc.xml,University of Pennsylvania,MARC XML,,9949533433503681,"//record[./controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']]",20220803105856,Oversize LJS 280,Decretales a[b]breviate,https://colenda.library.upenn.edu/phalt/iiif/2/81431-p3wm13v03/manifest,https://franklin.library.upenn.edu/catalog/FRANKLIN_9949533433503681,FALSE,2023-08-01T11:31:22-0400
+    CSV
+             )
   }
+
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
-  let(:manifest_path) { File.join marc_xml_dir, 'manifest.csv' }
 
-  let(:manifest_row) { manifest_csv.first }
-
-  let(:manifest) {
-    DS::Manifest::Manifest.new manifest_path, marc_xml_dir
-  }
-
-  let(:entry) { DS::Manifest::Entry.new manifest_row, manifest }
-
-  let(:xml_file) {
-    File.join marc_xml_dir, '9951865503503681_marc.xml'
-  }
-
-  let(:timestamp) { Time.now }
+  let(:entry) { DS::Manifest::Entry.new manifest_csv.first }
 
   let(:mapper) {
     DS::Mapper::MarcMapper.new(
       source_dir: marc_xml_dir,
-      timestamp: timestamp
+      timestamp: Time.now
     )
   }
 
-  let(:extractor) { DS::Extractor::MarcXmlExtractor }
-
-  let(:subject) { mapper}
-  let(:source_path) { xml_file }
-
   context 'mapper implementation' do
+    let(:extractor) { DS::Extractor::MarcXmlExtractor }
+
     except = %i[extract_acknowledgments]
+
     it_behaves_like 'an extractor mapper', except
   end
 
   context 'extract_record' do
-
-    it 'returns an XML node' do
-      expect(mapper.extract_record entry).to be_a Nokogiri::XML::Element
-    end
 
     let(:institutional_id) { entry.institutional_id }
     let(:xpath) {
       entry.institutional_id_location_in_source.gsub('ID_PLACEHOLDER', institutional_id)
     }
     let(:record) { mapper.extract_record entry }
+
+    it 'returns an XML node' do
+      expect(mapper.extract_record entry).to be_a Nokogiri::XML::Element
+    end
 
     it 'returns the expected record' do
       xpath = "controlfield[@tag='001']/text()"
@@ -72,7 +56,7 @@ RSpec.describe DS::Mapper::MarcMapper do
       expect(
         DS::Mapper::MarcMapper.new(
           source_dir: marc_xml_dir,
-          timestamp: timestamp
+          timestamp: Time.now
         )
       ).to be_a DS::Mapper::MarcMapper
     end

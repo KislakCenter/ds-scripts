@@ -4,32 +4,24 @@ require 'spec_helper'
 
 RSpec.describe DS::Mapper::TeiXmlMapper do
 
-  let(:xml_dir) { fixture_path 'tei_xml' }
-  let(:xml_file) { File.join xml_dir, 'lewis_o_031_TEI.xml' }
-  let(:record) { xml = File.open(xml_file) { |f| Nokogiri::XML f } }
-  let(:timestamp) { Time.now }
-
-  let(:csv_string) { <<~EOF
+  let(:manifest_csv) { parse_csv <<~CSV
     holding_institution_ds_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,dated,manifest_generated_at
     Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = 'ID_PLACEHOLDER'],Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,https://some.iiif.manifest/,false,2023-11-18T17:13:02-0500
-      EOF
+  CSV
   }
-  let(:manifest_path) { temp_csv csv_string}
-  let(:manifest) { DS::Manifest::Manifest.new manifest_path, xml_dir }
-  let(:entry) { DS::Manifest::Entry.new manifest.csv.first, manifest}
+  let(:xml_dir) { fixture_path 'tei_xml' }
+  # let(:xml_file) { File.join xml_dir, 'lewis_o_031_TEI.xml' }
+
+  let(:entry) { DS::Manifest::Entry.new manifest_csv.first}
 
   let(:mapper) {
     DS::Mapper::TeiXmlMapper.new(
-      source_dir: xml_dir, timestamp: timestamp
+      source_dir: xml_dir, timestamp: Time.now
     )
   }
 
-  let(:extractor) { DS::Extractor::TeiXml }
-
-  let(:subject) { mapper}
-  let(:source_path) { xml_file }
-
   context 'mapper implementation' do
+    let(:extractor) { DS::Extractor::TeiXml }
     it_behaves_like 'an extractor mapper'
   end
 
@@ -37,7 +29,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
     it 'creates a DS::Mapper::TeiXmlMapper' do
       expect(
         DS::Mapper::TeiXmlMapper.new(
-          source_dir: xml_dir, timestamp: timestamp
+          source_dir: xml_dir, timestamp: Time.now
         )
       ).to be_a DS::Mapper::TeiXmlMapper
     end
