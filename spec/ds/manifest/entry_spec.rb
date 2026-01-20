@@ -11,7 +11,6 @@ RSpec.describe 'DS::Manifest::Entry' do
   )
  }
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
-  let(:manifest_path) { File.join marc_xml_dir, 'manifest.csv' }
 
   let(:manifest) {
     DS::Manifest::Manifest.new manifest_path, marc_xml_dir
@@ -19,12 +18,12 @@ RSpec.describe 'DS::Manifest::Entry' do
   let(:manifest_row) { manifest_csv.first }
 
 
-  let(:entry) { DS::Manifest::Entry.new manifest_row, manifest }
+  let(:entry) { DS::Manifest::Entry.new manifest_row }
 
   context 'initialize' do
     it 'creates a new DS::Manifest::Entry' do
       expect(
-        DS::Manifest::Entry.new manifest_row, manifest
+        DS::Manifest::Entry.new manifest_row
       ).to be_a DS::Manifest::Entry
     end
   end
@@ -79,7 +78,7 @@ RSpec.describe 'DS::Manifest::Entry' do
     let(:row) {
       { DS::Manifest::Entry::IIIF_MANIFEST_URL => 'https://example.com | https://example-2.com ; https://example-3.com https://example-4.com' }
     }
-    let(:entry) { DS::Manifest::Entry.new row, manifest }
+    let(:entry) { DS::Manifest::Entry.new row }
     it 'splits and joins the urls' do
       expect(entry.iiif_manifest_url).to eq 'https://example.com|https://example-2.com|https://example-3.com|https://example-4.com'
     end

@@ -41,7 +41,7 @@ module DS
       # @yield [DS::Manifest::Entry] entry representation of the manifest row
       def each &block
         csv.each do |row|
-          yield DS::Manifest::Entry.new row, self
+          yield DS::Manifest::Entry.new row
         end
       end
 

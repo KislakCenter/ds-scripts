@@ -4,12 +4,14 @@ require 'spec_helper'
 
 RSpec.describe DS::Mapper::DSCSVMapper do
 
+  let(:parsed_manifest) { parse_csv <<~CSV
+    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,dated,manifest_generated_at
+    Q1075148,ucriverside-dscsv.csv,"University of California, Riverside",ds-csv,DS1234,BP128.57 .A2 1700z,Shelfmark,2024-02-21T240000,BP128.57 .A2 1700z,al-Ḥajj 1–15,http://example.com/iiif,http://example.com/holding_int_url,TRUE,2024-02-21T240000
+    Q1075148,ucriverside-dscsv.csv,"University of California, Riverside",ds-csv,,BX2080 .C3735 1401,Shelfmark,2024-02-21T240000,BX2080 .C3735 1401,Book of Hours,,https://calisphere.org/item/ark:/86086/n2t72jgg/,FALSE,2024-02-21T240000
+  CSV
+  }
   let(:source_dir) { fixture_path 'ds_csv' }
-  let(:manifest_file) { File.join source_dir, 'ucriverside-manifest.csv' }
-  let(:parsed_manifest) { CSV.parse File.open(manifest_file).read, headers: true }
-  let(:manifest_row) { parsed_manifest.first }
-  let(:manifest) { DS::Manifest::Manifest.new manifest_file, source_dir }
-  let(:entry) { DS::Manifest::Entry.new manifest_row, manifest }
+  let(:entry) { DS::Manifest::Entry.new parsed_manifest.first }
   let(:mapper) { DS::Mapper::DSCSVMapper.new(source_dir: source_dir, timestamp: Time.now) }
 
   let(:recon_classes) {
@@ -20,10 +22,9 @@ RSpec.describe DS::Mapper::DSCSVMapper do
     ]
   }
 
-  let(:subject) { mapper }
-  let(:source_path) { File.join source_dir, entry.filename }
-  let(:extractor) {  DS::Extractor::DsCsvExtractor }
   context 'mapper implementation' do
+    let(:extractor) {  DS::Extractor::DsCsvExtractor }
+
     it_behaves_like 'an extractor mapper'
   end
 
