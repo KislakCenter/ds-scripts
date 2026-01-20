@@ -90,7 +90,7 @@ module DS
           "//datafield[@tag='510'][subfield[@code='a' and text()='Digital Scriptorium']]/subfield[@code='c']")&.text&.strip
 
         if manifest_ds_id.empty? && marc_ds_id.to_s.empty?
-          raise 'DS ID missing in both manifest and MARC XML'
+          return ''
         end
 
         if manifest_ds_id.empty?

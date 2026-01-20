@@ -186,10 +186,8 @@ RSpec.describe DS::Mapper::MarcMapper do
 
     end
 
-    it 'raises error when both manifest and MARC DS IDs are blank' do
-      expect {
-        mapper.locate_ds_id(entry_blank, marc_xml_blank)
-      }.to raise_error(RuntimeError, /DS ID missing in both manifest and MARC XML/)
+    it 'return empty string when both manifest and MARC DS IDs are blank' do
+      expect(mapper.locate_ds_id(entry_blank, marc_xml_blank)).to eq ""
 
     end
 
