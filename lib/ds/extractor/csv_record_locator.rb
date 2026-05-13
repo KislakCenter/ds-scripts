@@ -2,11 +2,11 @@
 
 module DS
   module Extractor
-    class CsvRecordLocator
+    class CsvRecordLocator < DS::Extractor::BaseRecordLocator
 
-      def locate_record csv, id, id_location
+      def locate_record csv, lookup_value, lookup_value_location
         csv.rewind
-        csv.filter_map { |row| row if row[id_location] == id}
+        csv.filter_map { |row| row if row[lookup_value_location] == lookup_value}
       end
     end
   end

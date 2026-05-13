@@ -26,6 +26,7 @@ module DS
         holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = entry.institutional_id
+        record_lookup_value                = entry.record_lookup_value
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
@@ -49,6 +50,7 @@ module DS
           holding_institution_ds_qid:         holding_institution_ds_qid,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,
+          record_lookup_value:                record_lookup_value,
           holding_institution_shelfmark:      holding_institution_shelfmark,
           link_to_holding_institution_record: link_to_holding_institution_record,
           iiif_manifest:                      iiif_manifest,
@@ -68,9 +70,8 @@ module DS
       def extract_record entry
         locator = DS::Extractor::CsvRecordLocator.new
         csv = source.load_source File.join(source_dir, entry.filename)
-        locator.locate_record(csv, entry.institutional_id, entry.institutional_id_location_in_source).first
+        locator.locate_record(csv, entry.record_lookup_value, entry.lookup_value_location_in_source).first
       end
-
 
     end
   end

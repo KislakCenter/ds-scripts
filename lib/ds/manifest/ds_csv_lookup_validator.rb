@@ -2,13 +2,13 @@
 
 module DS
   module Manifest
-    class DsCsvIdValidator < BaseIdValidator
+    class DsCsvLookupValidator < BaseLookupValidator
 
-      def locate_record source_path, id, id_location
+      def locate_record source_path, lookup_value, lookup_value_location
         locator = DS::Extractor::CsvRecordLocator.new
         csv = source.load_source source_path
         csv.rewind
-        locator.locate_record csv, id, id_location
+        locator.locate_record csv, lookup_value, lookup_value_location
       end
     end
   end

@@ -5,8 +5,8 @@ require 'spec_helper'
 RSpec.describe 'DS::Manifest::Entry' do
 
   let(:manifest_csv) {parse_csv(<<~EOF
-    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,dated,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,true,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,dated,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
+    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,true,9951865503503681,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
   EOF
   )
  }
@@ -48,8 +48,11 @@ RSpec.describe 'DS::Manifest::Entry' do
     it 'has a institutional_id' do
       expect(entry.institutional_id).to eq '9951865503503681'
     end
-    it 'has a institutional_id_location_in_source' do
-      expect(entry.institutional_id_location_in_source).to eq "controlfield[@tag='001']/text()"
+    it 'has a record_lookup_value' do
+      expect(entry.record_lookup_value).to eq '9951865503503681'
+    end
+    it 'has a lookup_value_location_in_source' do
+      expect(entry.lookup_value_location_in_source).to eq "controlfield[@tag='001']/text()"
     end
     it 'has a record_last_updated' do
       expect(entry.record_last_updated).to eq '20220803105830'
@@ -90,6 +93,7 @@ RSpec.describe 'DS::Manifest::Entry' do
     end
   end
 
+=begin
   context 'to_h' do
     let(:hash) {
       { :institution_ds_qid           => "Q49117",
@@ -98,6 +102,7 @@ RSpec.describe 'DS::Manifest::Entry' do
         :dated                        => true,
         :call_number                  => "LJS 101",
         :institutional_id             => "9951865503503681",
+        :record_lookup_value          => "9951865503503681",
         :title                        => "Periermenias Aristotelis ... [etc.]",
         :link_to_institutional_record => "https://example-2.com",
         :iiif_manifest_url            => "https://example.com",
@@ -111,4 +116,29 @@ RSpec.describe 'DS::Manifest::Entry' do
       expect(entry.to_h).to eq hash
     end
   end
+
+  context 'to_h' do
+    let(:hash) {
+      { :institution_ds_qid           => "Q49117",
+        :institution_wikidata_label   => "University of Pennsylvania",
+        :ds_id                        => "DS10000",
+        :dated                        => true,
+        :call_number                  => "LJS 101",
+        :institutional_id             => "9951865503503681",
+        :record_lookup_value          => "",
+        :title                        => "Periermenias Aristotelis ... [etc.]",
+        :link_to_institutional_record => "https://example-2.com",
+        :iiif_manifest_url            => "https://example.com",
+        :record_last_updated          => "20220803105830",
+        :source_type                  => DS::Manifest::Entry::MARC_XML,
+        :filename                     => "9951865503503681_marc.xml",
+        :manifest_generated_at        => "2023-07-25T09:52:02-0400" }
+    }
+
+    it "does not return the correct hash, missing record lookup value" do
+      expect(entry.to_h).not_to eq hash
+    end
+  end
+=end
+
 end

@@ -22,11 +22,11 @@ module DS
 
         source_file_path = File.join source_dir, entry.filename
         xml = source.load_source source_file_path
-        xpath = entry.institutional_id_location_in_source.gsub('ID_PLACEHOLDER', entry.institutional_id) # "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
-        record = record_locator.locate_record(xml, entry.institutional_id, xpath).first
+        xpath = entry.lookup_value_location_in_source.gsub('ID_PLACEHOLDER', entry.record_lookup_value) # "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
+        record = record_locator.locate_record(xml, entry.record_lookup_value, xpath).first
         return record if record.present?
 
-        raise "Unable to locate record for #{entry.institutional_id} (errors: #{record_locator.errors.join(', ')})"
+        raise "Unable to locate record for #{entry.record_lookup_value} (errors: #{record_locator.errors.join(', ')})"
       end
 
       ##
@@ -44,6 +44,7 @@ module DS
         holding_institution_ds_qid         = entry.institution_ds_qid
         holding_institution_as_recorded    = entry.institution_wikidata_label
         holding_institution_id_number      = entry.institutional_id
+        record_lookup_value                = entry.record_lookup_value
         holding_institution_shelfmark      = entry.call_number
         link_to_holding_institution_record = entry.link_to_institutional_record
         iiif_manifest                      = entry.iiif_manifest_url
@@ -67,6 +68,7 @@ module DS
           holding_institution_ds_qid:         holding_institution_ds_qid,
           holding_institution_as_recorded:    holding_institution_as_recorded,
           holding_institution_id_number:      holding_institution_id_number,
+          record_lookup_value:                record_lookup_value,
           holding_institution_shelfmark:      holding_institution_shelfmark,
           link_to_holding_institution_record: link_to_holding_institution_record,
           iiif_manifest:                      iiif_manifest,

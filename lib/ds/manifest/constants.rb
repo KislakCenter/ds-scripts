@@ -11,7 +11,8 @@ module DS
       DS_ID                               = 'ds_id'
       DATED                               = 'dated'
       INSTITUTIONAL_ID                    = 'holding_institution_institutional_id'
-      INSTITUTIONAL_ID_LOCATION_IN_SOURCE = 'institutional_id_location_in_source'
+      RECORD_LOOKUP_VALUE                 = 'record_lookup_value'
+      LOOKUP_VALUE_LOCATION_IN_SOURCE     = 'lookup_value_location_in_source'
       RECORD_LAST_UPDATED                 = 'record_last_updated'
       CALL_NUMBER                         = 'call_number'
       TITLE                               = 'title'
@@ -27,7 +28,8 @@ module DS
         DS_ID,
         DATED,
         INSTITUTIONAL_ID,
-        INSTITUTIONAL_ID_LOCATION_IN_SOURCE,
+        RECORD_LOOKUP_VALUE,
+        LOOKUP_VALUE_LOCATION_IN_SOURCE,
         RECORD_LAST_UPDATED,
         CALL_NUMBER,
         TITLE,
@@ -42,7 +44,8 @@ module DS
         INSTITUTION_WIKIDATA_LABEL,
         SOURCE_TYPE,
         INSTITUTIONAL_ID,
-        INSTITUTIONAL_ID_LOCATION_IN_SOURCE,
+        RECORD_LOOKUP_VALUE,
+        LOOKUP_VALUE_LOCATION_IN_SOURCE,
         RECORD_LAST_UPDATED,
         CALL_NUMBER,
         MANIFEST_GENERATED_AT

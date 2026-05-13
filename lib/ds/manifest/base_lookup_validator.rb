@@ -5,7 +5,7 @@ module DS
     ##
     # A {DS::Manifest::BaseIdValidator} is a base class for a
     # cacheable ID validator for sources. The validator is responsible
-    # for opening and caching source files and dtermining that one
+    # for opening and caching source files and determining that one
     # record is found for each source +id+ at the specified
     # +id_location+ in the parsed source.
     #
@@ -17,7 +17,7 @@ module DS
     #
     #   - +#locate_record+, required this class
     #
-    class BaseIdValidator
+    class BaseLookupValidator
 
       attr_reader :errors
       attr_reader :source
@@ -38,11 +38,11 @@ module DS
       # @param id [String] The id to check.
       # @param id_location [String] The location of the id.
       # @return [Boolean] Returns true if the records size is equal to 1, false otherwise.
-      def valid? file_path, id, id_location
-        records = locate_record file_path, id, id_location
+      def valid? file_path, lookup_value, lookup_value_location
+        records = locate_record file_path, lookup_value, lookup_value_location
 
         return true if records.size == 1
-        handle_count_error records.size, id, id_location
+        handle_count_error records.size, lookup_value, lookup_value_location
         false
       end
 
@@ -53,17 +53,17 @@ module DS
       # @param id_location [String] the location of the ID within the record
       # @raise [NotImplementedError] this method is not implemented and should be overridden
       # @return [Array<Object>] an array of objects for each record
-      def locate_record source_path, id, id_location
+      def locate_record source_path, lookup_value, lookup_value_location
         raise NotImplementedError
       end
 
-      def handle_count_error count, inst_id, location_in_source
+      def handle_count_error count, lookup_value, lookup_value_location
         return if count == 1
 
         if count > 1
-          add_error "ERROR: Multiple records (#{count}) found for id: #{inst_id} (location: #{location_in_source})"
+          add_error "ERROR: Multiple records (#{count}) found for id: #{lookup_value} (location: #{lookup_value_location})"
         elsif count == 0
-          add_error "ERROR: No records found for id: #{inst_id} (location: #{location_in_source})"
+          add_error "ERROR: No records found for id: #{lookup_value} (location: #{lookup_value_location})"
         end
         nil
       end

@@ -5,8 +5,8 @@ require 'spec_helper'
 RSpec.describe DS::Mapper::TeiXmlMapper do
 
   let(:manifest_csv) { parse_csv <<~CSV
-    holding_institution_ds_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,institutional_id_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,dated,manifest_generated_at
-    Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,/TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = 'ID_PLACEHOLDER'],Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,https://some.iiif.manifest/,false,2023-11-18T17:13:02-0500
+    holding_institution_ds_qid,holding_institution_wikidata_label,ds_id,source_data_type,filename,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,call_number,link_to_institutional_record,record_last_updated,title,iiif_manifest_url,dated,manifest_generated_at
+    Q3087288,Free Library of Philadelphia,,tei-xml,lewis_o_031_TEI.xml,Lewis O 31,Lewis O 31,/TEI[./teiHeader/fileDesc/sourceDesc/msDesc/msIdentifier/idno/text() = 'ID_PLACEHOLDER'],Lewis O 31,https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html,2019-12-12,Qaṭr al-nadā wa-ball al-ṣadā.,https://some.iiif.manifest/,false,2023-11-18T17:13:02-0500
   CSV
   }
   let(:xml_dir) { fixture_path 'tei_xml' }
@@ -57,6 +57,7 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
         :holding_institution_ds_qid         => "Q3087288",
         :holding_institution_as_recorded    => "Free Library of Philadelphia",
         :holding_institution_id_number      => "Lewis O 31",
+        :record_lookup_value                => "Lewis O 31",
         :holding_institution_shelfmark      => "Lewis O 31",
         :link_to_holding_institution_record => "https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html",
         :iiif_manifest                      => "https://some.iiif.manifest/",

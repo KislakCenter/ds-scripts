@@ -2,7 +2,7 @@
 
 module DS
   module Manifest
-    class SimpleXmlIdValidator < BaseIdValidator
+    class SimpleXmlLookupValidator < BaseLookupValidator
 
       attr_accessor :namespaces
 
@@ -25,10 +25,10 @@ module DS
       # @param id [String] the ID of the record to locate
       # @param id_location [String] the XPath expression to locate the record
       # @return [Nokogiri::XML::NodeSet] the located record(s)
-      def locate_record source_path, id, id_location
+      def locate_record source_path, lookup_value, lookup_value_location
         locator = DS::Extractor::XmlRecordLocator.new namespaces: namespaces
         xml = source.load_source source_path
-        locator.locate_record xml, id, id_location
+        locator.locate_record xml, lookup_value, lookup_value_location
       end
 
       def try_locate_record xml, xpath, namespaces: nil
