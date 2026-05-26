@@ -11,13 +11,13 @@ RSpec.describe 'Recon::Type::ReconType' do
       {
         :title_as_recorded=>"Title as recorded",
         :title_as_recorded_agr=>nil,
-        :uniform_title_as_recorded=>"Uniform title",
-        :uniform_title_as_recorded_agr=>nil,
+        # :uniform_title_as_recorded=>"Uniform title",
+        # :uniform_title_as_recorded_agr=>nil,
         :authorized_label=>"Roman de Lancelot",
         :ds_qid=>nil}
     }
     let(:expected_key_values) {
-      ["Title as recorded", 'Uniform title']
+      ["Title as recorded"]
     }
     it 'returns the key values' do
       expect(recon_type.get_key_values(row)).to eq expected_key_values

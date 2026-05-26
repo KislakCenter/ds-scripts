@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'csv'
 
 module DS
@@ -841,23 +843,35 @@ module DS
         # @param [Nokogiri::XML:Node] record the record to extract titles from
         # @return [Array<DS::Extractor::Title>] an array of extracted titles
         def extract_titles record
-          tar      = title_as_recorded record
+          tar      = title_as_recorded record, 245, 'a', 'b'
+          var_tar  = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded(record, 246, 'a', 'b'), terminator: ''
           tar_agr  = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(record, 245), terminator: ''
-          utar     = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.uniform_titles_as_recorded(record), terminator: ''
-          utar_agr = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.uniform_title_as_recorded_agr(record), terminator: ''
+          var_agr  = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(record, 246), terminator: ''
+          utar_130 = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded(record, 130, 'a', 'p'), terminator: ''
+          utar_240 = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded(record, 240, 'a', 'p'), terminator: ''
+          utar_agr_130 = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(record, 130), terminator: ''
+          utar_agr_240 = DS::Util.clean_string DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(record, 240), terminator: ''
+          [
+            DS::Extractor::Title.new(as_recorded: tar, vernacular: tar_agr),
+            DS::Extractor::Title.new(as_recorded: var_tar, vernacular: var_agr),
+            DS::Extractor::Title.new(as_recorded: utar_130, vernacular: utar_agr_130),
+            DS::Extractor::Title.new(as_recorded: utar_240, vernacular: utar_agr_240),
+          ].uniq.reject(&:empty?)
+        end
 
-          [DS::Extractor::Title.new(
-            as_recorded:              tar,
-            vernacular:               tar_agr,
-            uniform_title:            utar,
-            uniform_title_vernacular: utar_agr
-          )]
+        # Extracts a single title from the given record.
+        #
+        # @param [Nokogiri::XML:Node] record the record to extract title from
+        # @return [<DS::Extractor::Title>] an extracted title object
+        def extract_title_for record, tag, subfield1, subfield2
+          Title.new(as_recorded: title_as_recorded(record, tag, subfield1, subfield2),
+          vernacular: title_as_recorded_agr(record, tag))
         end
 
         # Extracts titles as recorded with vernacular form from the given record.
         #
         # @param [Nokogiri::XML:Node] record the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded with vernacular form
+        # @return [Array<String>] the extracted titles as recorded and vernacular form
         def extract_titles_as_recorded_agr record
           extract_titles(record).map &:vernacular
         end
@@ -866,14 +880,22 @@ module DS
         #
         # @param [Nokogiri::XML:Node] record the record to extract the title from
         # @return [String] the extracted title as recorded
-        def title_as_recorded record
-          xpath = "datafield[@tag=245]/subfield[@code='a' or @code='b']"
-          record.xpath(xpath).map { |title|
-            DS::Util.clean_string(title.text, terminator: '')
-          }.join '; '
+        def title_as_recorded record, tag, subfield1, subfield2
+          xpath = "datafield[@tag='#{tag}']/subfield[@code='#{subfield1}' or @code='#{subfield2}']"
+          if tag == 130 || tag == 240
+            arr = record.xpath(xpath).map { |title|
+              DS::Util.clean_string(title.text, terminator: '')
+            }
+            first = arr.shift
+            "#{first}: #{arr.join ' '}"
+          else
+            record.xpath(xpath).map { |title|
+              DS::Util.clean_string(title.text, terminator: '')
+            }.join '; '
+          end
         end
 
-        # Extracts the title as recorded with vernacular form from the given record.
+        # Extracts the title as recorded with vernacular form from the given record
         #
         # @param [Nokogiri::XML::Node] record the record to extract the title from
         # @param [Integer] tag the tag to use for extraction
@@ -882,10 +904,24 @@ module DS
           linkage = record.xpath("datafield[@tag=#{tag}]/subfield[@code='6']").text
           return '' if linkage.empty?
           index = linkage.split('-').last
-          xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a']"
-          DS::Util.clean_string record.xpath(xpath).text.delete '[]'
-        end
+          # record.xpath(xpath).map { |subfield |
+          #   DS::Util.clean_string subfield.text, terminator: ''
+          # }.join('; ')
 
+          if tag == 130 || tag == 240
+            xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a' or @code='p']"
+            arr = record.xpath(xpath).map { |title|
+              DS::Util.clean_string(title.text, terminator: '')
+            }
+            first = arr.shift
+            "#{first}: #{arr.join ' '}"
+          else
+            xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}')]/subfield[@code='a' or @code='b']"
+            record.xpath(xpath).map { |title|
+              DS::Util.clean_string(title.text, terminator: '')
+            }.join '; '
+          end
+        end
         # Extracts titles as recorded from the given record.
         #
         # @param record [Nokogiri::XML:Node] the record to extract titles from
@@ -910,24 +946,26 @@ module DS
         #
         # @param [Nokogiri::XML:Node] record the record to extract uniform titles from
         # @return [Array<String>] the extracted uniform titles as recorded
-        def extract_uniform_titles_as_recorded record
-          extract_titles(record).map &:uniform_title
-        end
+
+        # def extract_uniform_titles_as_recorded record
+        #   extract_titles(record).map &:uniform_title
+        # end
 
 
         # Extracts uniform titles as recorded with vernacular form from the given MARC XML record.
         #
         # @param [Nokogiri::XML:Node] record the record to extract uniform titles from
         # @return [Array<String>] the extracted uniform titles as recorded with vernacular form
-        def extract_uniform_titles_as_recorded_agr record
-          extract_titles(record).map &:uniform_title_vernacular
-        end
+
+        # def extract_uniform_titles_as_recorded_agr record
+        #   extract_titles(record).map &:uniform_title_vernacular
+        # end
 
         # Extracts uniform titles as recorded and aggregates them from the given MARC XML record.
         #
         # @param [Nokogiri::XML::Node] record the MARC XML record to extract uniform titles from
         # @return [String] the aggregated uniform titles as recorded
-        def uniform_title_as_recorded_agr record
+        def uniform_titles_as_recorded_agr record
           tag240 = title_as_recorded_agr record, 240
           tag130 = title_as_recorded_agr record, 130
           [tag240, tag130].reject(&:empty?).map { |title|

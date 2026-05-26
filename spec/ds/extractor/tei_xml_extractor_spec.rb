@@ -452,8 +452,8 @@ RSpec.describe DS::Extractor::TeiXml do
     context 'extract_recon_titles' do
       let(:expected_recon_titles) {
         [
-          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', nil, nil],
-          ['Second title', nil, nil, nil]
+          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا'],
+          ['Second title', nil]
         ]
       }
       it 'returns paired titles' do

@@ -370,9 +370,9 @@ module DS
         #
         # @param [CSV::Row] record the record to extract uniform titles from
         # @return [Array<String>] the extracted uniform titles as recorded with vernacular form
-        def extract_uniform_titles_as_recorded_agr record
-          extract_uniform_titles(record).map &:uniform_title_vernacular
-        end
+        # def extract_uniform_titles_as_recorded_agr record
+        #   extract_uniform_titles(record).map &:uniform_title_vernacular
+        # end
 
         ##
         # Return titles as an array of DS::Extractor::Title instances.
@@ -392,19 +392,19 @@ module DS
           uniform_titles     = extract_values_for(property: :uniform_titles_as_recorded, record: record)
           as_recorded_titles << '' if as_recorded_titles.blank?
 
-          unless balanced_titles? as_recorded_titles, uniform_titles
-            raise ArgumentError, "Unbalanced number of titles and uniform titles (titles: #{as_recorded_titles.inspect}, uniform titles: #{uniform_titles.inspect})"
-          end
+          # unless balanced_titles? as_recorded_titles, uniform_titles
+          #   raise ArgumentError, "Unbalanced number of titles and uniform titles (titles: #{as_recorded_titles.inspect}, uniform titles: #{uniform_titles.inspect})"
+          # end
 
-          as_recorded_titles.zip(uniform_titles).map { |as_rec, uniform|
-            as_recorded, vernacular                 = as_rec.split ';;', 2
-            uniform_title, uniform_title_vernacular = uniform.to_s.split ';;', 2
-            DS::Extractor::Title.new(
-              as_recorded:              as_recorded,
-              vernacular:               vernacular,
-              uniform_title:            uniform_title,
-              uniform_title_vernacular: uniform_title_vernacular
-            )
+          as_recorded_titles.map { |as_rec|
+            as_recorded, vernacular = as_rec.split(';;', 2)
+
+            # uniform_title, uniform_title_vernacular = uniform.to_s.split ';;', 2
+
+            DS::Extractor::Title.new(as_recorded: as_recorded, vernacular: vernacular)
+
+              # uniform_title:            uniform_title,
+              # uniform_title_vernacular: uniform_title_vernacular
           }
         end
 
@@ -430,15 +430,15 @@ module DS
         #
         # @param [CSV::Row] record the record to extract uniform titles from
         # @return [Array<DS::Extractor::Title>] the extracted uniform titles
-        def extract_uniform_titles record
-          extract_values_for(property: :uniform_titles_as_recorded, record: record).map { |title|
-            as_recorded, vernacular = title.to_s.split ';;', 2
-            # BaseTerm implementations require +as_recorded+; for DS CSV
-            # we don't assume that the Title(s) and Uniform Titles(s)
-            # are paralleled so there handled separately
-            DS::Extractor::Title.new as_recorded: nil, uniform_title: as_recorded, uniform_title_vernacular: vernacular
-          }
-        end
+        # def extract_uniform_titles record
+        #   extract_values_for(property: :uniform_titles_as_recorded, record: record).map { |title|
+        #     as_recorded, vernacular = title.to_s.split ';;', 2
+        #     # BaseTerm implementations require +as_recorded+; for DS CSV
+        #     # we don't assume that the Title(s) and Uniform Titles(s)
+        #     # are paralleled so there handled separately
+        #     DS::Extractor::Title.new as_recorded: nil, uniform_title: as_recorded, uniform_title_vernacular: vernacular
+        #   }
+        # end
 
         ##
         # Return names as an array DS::Extractor::Name instances. Name

@@ -20,7 +20,9 @@ century
 century_aat
 dated
 title_as_recorded
+varying_title
 title_as_recorded_agr
+var_vernacular
 uniform_title_as_recorded
 uniform_title_agr
 standard_title_ds_qid

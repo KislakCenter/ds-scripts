@@ -74,6 +74,11 @@ module DS
       def hash
         to_h.hash
       end
+
+      def empty?
+        to_a.all? { |v| v.blank? }
+      end
+
     end
   end
 end

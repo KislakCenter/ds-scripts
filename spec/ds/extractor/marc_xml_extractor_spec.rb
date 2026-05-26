@@ -1,5 +1,8 @@
+# encoding: UTF-8
+#
 require 'spec_helper'
 require 'nokogiri'
+
 
 describe DS::Extractor::MarcXmlExtractor do
 
@@ -57,7 +60,8 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
-  context 'extract_title_as_recorded' do
+=begin
+  context 'extract_old_title_as_recorded' do
     let(:title_record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
@@ -67,7 +71,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <controlfield tag="001">9948617063503681</controlfield>
         <controlfield tag="005">20220803105853.0</controlfield>
         <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
-        <datafield ind1="0" ind2="0" tag="245">
+      <datafield ind1="0" ind2="0" tag="245">
           <subfield code="a">Subfield a; </subfield>
           <subfield code="b">Subfield b.</subfield>
         </datafield>
@@ -78,6 +82,422 @@ describe DS::Extractor::MarcXmlExtractor do
       expect(
         DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
       ).to eq ['Subfield a; Subfield b']
+    end
+  end
+=end
+
+  context 'extract title_as_recorded' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="130">
+        <subfield code="a">130 subfield a</subfield>
+        <subfield code="p">130 subfield p.</subfield>
+        <subfield code="p">130 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="240">
+        <subfield code="a">240 subfield a</subfield>
+        <subfield code="p">240 subfield p.</subfield>
+        <subfield code="p">240 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="a">245 subfield a; </subfield>
+          <subfield code="b">245 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="a">246 subfield a; </subfield>/
+        <subfield code="b">246 subfield b.</subfield>
+      </datafield>
+      </record>
+    })
+    }
+
+    it 'extracts the 245$a and 245$b' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 245, 'a', 'b')
+      ).to eq '245 subfield a; 245 subfield b'
+    end
+
+    it 'extracts the 130$a and 130$b' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 130, 'a', 'p')
+      ).to eq '130 subfield a: 130 subfield p 130 subfield p 2'
+    end
+
+    it 'extracts the 246$a and 246$b' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 246, 'a', 'b')
+      ).to eq '246 subfield a; 246 subfield b'
+    end
+    it 'extracts the 240$a and 240$p' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 240, 'a', 'p')
+      ).to eq '240 subfield a: 240 subfield p 240 subfield p 2'
+    end
+  end
+
+  context 'extracts title_as_recorded_agr' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="130">
+        <subfield code="6">880-03</subfield>
+        <subfield code="a">130 subfield a</subfield>
+        <subfield code="p">130 subfield p.</subfield>
+        <subfield code="p">130 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="" tag="240">
+        <subfield code="6">880-04</subfield>
+        <subfield code="a">240 subfield a</subfield>
+        <subfield code="p">240 subfield p.</subfield>
+        <subfield code="p">240 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="6">880-02</subfield>
+          <subfield code="a">245 subfield a; </subfield>
+          <subfield code="b">245 subfield b.</subfield>
+        </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="6">880-01</subfield>
+        <subfield code="a">246 subfield a; </subfield>
+        <subfield code="b">246 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">245-02</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">246-01</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">130-03</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="p">880 subfield p.</subfield>
+        <subfield code="p">880 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">240-04</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="p">880 subfield p.</subfield>
+        <subfield code="p">880 subfield p 2.</subfield>
+      </datafield>
+      </record>
+    })
+    }
+    it 'extracts title_as_recorded_agr for 245' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 245)
+      ).to eq '880 subfield a; 880 subfield b'
+    end
+    it 'extracts title_as_recorded_agr for 246' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 246)
+      ).to eq '880 subfield a; 880 subfield b'
+    end
+    it 'extracts uniform_title_as_recorded_agr for 130' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 130)
+      ).to eq '880 subfield a: 880 subfield p 880 subfield p 2'
+    end
+    it 'extracts uniform_title_as_recorded_agr for 240' do
+      expect(
+        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 240)
+      ).to eq '880 subfield a: 880 subfield p 880 subfield p 2'
+    end
+  end
+
+  context 'extract_titles' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="130">
+        <subfield code="a">130 subfield a</subfield>
+        <subfield code="p">130 subfield p.</subfield>
+        <subfield code="p">130 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="240">
+        <subfield code="a">240 subfield a</subfield>
+        <subfield code="p">240 subfield p.</subfield>
+        <subfield code="p">240 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="a">245 subfield a; </subfield>
+          <subfield code="b">245 subfield b.</subfield>
+        </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="a">246 subfield a; </subfield>/
+        <subfield code="b">246 subfield b.</subfield>
+      </datafield>
+      </record>
+    })
+    }
+
+    it 'extracts titles' do
+      actual_titles = [
+        DS::Extractor::Title.new(as_recorded: "245 subfield a; 245 subfield b", vernacular: ""),
+        DS::Extractor::Title.new(as_recorded: "246 subfield a; 246 subfield b", vernacular: ""),
+        DS::Extractor::Title.new(as_recorded: "130 subfield a: 130 subfield p 130 subfield p 2", vernacular: ""),
+        DS::Extractor::Title.new(as_recorded: "240 subfield a: 240 subfield p 240 subfield p 2", vernacular: "")
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match actual_titles
+    end
+  end
+
+  context 'extract only unique titles, 245 with 880 and 240 with 880' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="240">
+        <subfield code="6">880-03</subfield>
+        <subfield code="a">240 subfield a</subfield>
+        <subfield code="p">240 subfield p.</subfield>
+        <subfield code="p">240 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="6">880-02</subfield>
+          <subfield code="a">Subfield a; </subfield>
+          <subfield code="b">subfield b.</subfield>
+        </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="6">880-01</subfield>
+        <subfield code="a">Subfield a; </subfield>
+        <subfield code="b">subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">245-02</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">246-01</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">240-03</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="p">880 subfield p.</subfield>
+        <subfield code="p">880 subfield p 2.</subfield>
+      </datafield>
+      </record>
+    })
+    }
+    it 'ensures extracted titles are unique, 245 with 880 and 240 with 880' do
+      actual_titles = [
+        DS::Extractor::Title.new(as_recorded: "Subfield a; subfield b", vernacular: "880 subfield a; 880 subfield b"),
+        DS::Extractor::Title.new(as_recorded: "240 subfield a: 240 subfield p 240 subfield p 2", vernacular: "880 subfield a: 880 subfield p 880 subfield p 2")
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match actual_titles
+    end
+  end
+
+  context 'extract only unique titles, 245 with 880 and 246 with 880' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="240">
+        <subfield code="6">880-03</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="6">880-02</subfield>
+          <subfield code="a">Subfield a</subfield>
+        </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="6">880-01</subfield>
+        <subfield code="a">246 subfield a; </subfield>
+        <subfield code="b">246 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">245-02</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">246-01</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">240-03</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      </record>
+    })
+    }
+    it 'ensures extracted titles are unique, 245 with 880 and 246 with 880' do
+      actual_titles = [
+        DS::Extractor::Title.new(as_recorded: "Subfield a", vernacular: "Subfield a"),
+        DS::Extractor::Title.new(as_recorded: "246 subfield a; 246 subfield b", vernacular: "880 subfield a; 880 subfield b")
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match actual_titles
+    end
+  end
+
+  context 'extract only unique titles, 245 with 880' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="240">
+        <subfield code="6">880-03</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="6">880-02</subfield>
+          <subfield code="a">Subfield a</subfield>
+        </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="6">880-01</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">245-02</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">246-01</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">240-03</subfield>
+        <subfield code="a">Subfield a</subfield>
+      </datafield>
+      </record>
+    })
+    }
+    it 'ensures extracted titles are unique, 245 with 880' do
+      actual_titles = [
+        DS::Extractor::Title.new(as_recorded: "Subfield a", vernacular: "Subfield a")
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match(actual_titles)
+    end
+  end
+
+  context 'extract title for' do
+    let(:title_record) {
+      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+      <datafield ind1="0" ind2="" tag="130">
+        <subfield code="6">880-03</subfield>
+        <subfield code="a">130 subfield a</subfield>
+        <subfield code="p">130 subfield p.</subfield>
+        <subfield code="p">130 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="" tag="240">
+        <subfield code="6">880-04</subfield>
+        <subfield code="a">240 subfield a</subfield>
+        <subfield code="p">240 subfield p.</subfield>
+        <subfield code="p">240 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2="0" tag="245">
+          <subfield code="6">880-02</subfield>
+          <subfield code="a">245 subfield a; </subfield>
+          <subfield code="b">245 subfield b.</subfield>
+        </datafield>
+      <datafield ind1="3" ind2="8" tag="246">
+        <subfield code="6">880-01</subfield>
+        <subfield code="a">246 subfield a; </subfield>
+        <subfield code="b">246 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">245-02</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">246-01</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="b">880 subfield b.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">130-03</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="p">880 subfield p.</subfield>
+        <subfield code="p">880 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2="0" tag="880">
+        <subfield code="6">240-04</subfield>
+        <subfield code="a">880 subfield a; </subfield>
+        <subfield code="p">880 subfield p.</subfield>
+        <subfield code="p">880 subfield p 2.</subfield>
+      </datafield>
+      </record>
+    })
+    }
+    it 'extracts a title for 130' do
+      actual_title =
+        DS::Extractor::Title.new(as_recorded: '130 subfield a: 130 subfield p 130 subfield p 2',
+                                 vernacular: '880 subfield a: 880 subfield p 880 subfield p 2')
+
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, "a", "p")).to match actual_title
+    end
+
+    it 'extracts a title for 240' do
+      actual_title =
+        DS::Extractor::Title.new(as_recorded: '240 subfield a: 240 subfield p 240 subfield p 2',
+                                 vernacular: '880 subfield a: 880 subfield p 880 subfield p 2')
+
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, "a", "p")).to match actual_title
+    end
+
+    it 'extracts a title for 245' do
+      actual_title =
+        DS::Extractor::Title.new(as_recorded: '245 subfield a; 245 subfield b',
+                                 vernacular: '880 subfield a; 880 subfield b')
+
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, "a", "b")).to match actual_title
+    end
+
+    it 'extracts a title for 246' do
+      actual_title =
+        DS::Extractor::Title.new(as_recorded: '246 subfield a; 246 subfield b',
+                                 vernacular: '880 subfield a; 880 subfield b')
+
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, "a", "b")).to match actual_title
     end
   end
 
@@ -1677,28 +2097,28 @@ describe DS::Extractor::MarcXmlExtractor do
       expect(DS::Util).to have_received(:clean_string).at_least(:once)
     end
 
-    it 'is invoked by extract_uniform_title_as_recorded' do
-      allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::Extractor::MarcXmlExtractor.extract_uniform_titles_as_recorded record
-      expect(DS::Util).to have_received(:clean_string).exactly(7).times
-    end
+    # it 'is invoked by extract_uniform_titles_as_recorded' do
+    #   allow(DS::Util).to receive(:clean_string).and_return ''
+    #   DS::Extractor::MarcXmlExtractor.extract_uniform_titles_as_recorded record
+    #   expect(DS::Util).to have_received(:clean_string).exactly(7).times
+    # end
 
-    it 'is invoked by extract_uniform_title_agr' do
-      allow(DS::Util).to receive(:clean_string).and_return ''
-      DS::Extractor::MarcXmlExtractor.uniform_title_as_recorded_agr record
-      expect(DS::Util).to have_received :clean_string
-    end
+    # it 'is invoked by extract_uniform_title_agr' do
+    #   allow(DS::Util).to receive(:clean_string).and_return ''
+    #   DS::Extractor::MarcXmlExtractor.uniform_titles_as_recorded_agr record
+    #   expect(DS::Util).to have_received :clean_string
+    # end
 
     it 'is invoked by extract_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded record
-      expect(DS::Util).to have_received(:clean_string).exactly(7).times
+      expect(DS::Util).to have_received(:clean_string).exactly(11).times
     end
 
     it 'is invoked by extract_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded_agr record
-      expect(DS::Util).to have_received(:clean_string).exactly(7).times
+      expect(DS::Util).to have_received(:clean_string).exactly(11).times
     end
 
     it 'is invoked by extract_genre_as_recorded' do

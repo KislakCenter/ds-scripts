@@ -70,6 +70,8 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
         title_as_recorded_agr:              "",
         uniform_title_as_recorded:          "",
         uniform_title_agr:                  "",
+        varying_title:                      "",
+        var_vernacular:                     "",
         standard_title_ds_qid:              "",
         genre_as_recorded:                  "",
         genre_ds_qid:                       "",
