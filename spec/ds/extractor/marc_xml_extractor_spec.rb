@@ -120,24 +120,24 @@ describe DS::Extractor::MarcXmlExtractor do
 
     it 'extracts the 245$a and 245$b' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 245, 'a', 'b')
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded(title_record, 245)
       ).to eq '245 subfield a; 245 subfield b'
     end
 
     it 'extracts the 130$a and 130$b' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 130, 'a', 'p')
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
       ).to eq '130 subfield a: 130 subfield p 130 subfield p 2'
     end
 
     it 'extracts the 246$a and 246$b' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 246, 'a', 'b')
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded(title_record, 246)
       ).to eq '246 subfield a; 246 subfield b'
     end
     it 'extracts the 240$a and 240$p' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded(title_record, 240, 'a', 'p')
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
       ).to eq '240 subfield a: 240 subfield p 240 subfield p 2'
     end
   end
@@ -201,22 +201,22 @@ describe DS::Extractor::MarcXmlExtractor do
     }
     it 'extracts title_as_recorded_agr for 245' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 245)
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded_agr(title_record, 245)
       ).to eq '880 subfield a; 880 subfield b'
     end
     it 'extracts title_as_recorded_agr for 246' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 246)
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded_agr(title_record, 246)
       ).to eq '880 subfield a; 880 subfield b'
     end
     it 'extracts uniform_title_as_recorded_agr for 130' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 130)
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded_agr(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
       ).to eq '880 subfield a: 880 subfield p 880 subfield p 2'
     end
     it 'extracts uniform_title_as_recorded_agr for 240' do
       expect(
-        DS::Extractor::MarcXmlExtractor.title_as_recorded_agr(title_record, 240)
+        DS::Extractor::MarcXmlExtractor.extract_title_as_recorded_agr(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
       ).to eq '880 subfield a: 880 subfield p 880 subfield p 2'
     end
   end
@@ -255,10 +255,10 @@ describe DS::Extractor::MarcXmlExtractor do
 
     it 'extracts titles' do
       actual_titles = [
-        DS::Extractor::Title.new(as_recorded: "245 subfield a; 245 subfield b", vernacular: ""),
-        DS::Extractor::Title.new(as_recorded: "246 subfield a; 246 subfield b", vernacular: ""),
-        DS::Extractor::Title.new(as_recorded: "130 subfield a: 130 subfield p 130 subfield p 2", vernacular: ""),
-        DS::Extractor::Title.new(as_recorded: "240 subfield a: 240 subfield p 240 subfield p 2", vernacular: "")
+        DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, formatter: DS::Extractor::MarcTitleFormatter.new),
+        DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, formatter: DS::Extractor::MarcTitleFormatter.new),
+        DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new),
+        DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
       ]
       expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match actual_titles
     end
@@ -310,10 +310,12 @@ describe DS::Extractor::MarcXmlExtractor do
     })
     }
     it 'ensures extracted titles are unique, 245 with 880 and 240 with 880' do
-      actual_titles = [
-        DS::Extractor::Title.new(as_recorded: "Subfield a; subfield b", vernacular: "880 subfield a; 880 subfield b"),
-        DS::Extractor::Title.new(as_recorded: "240 subfield a: 240 subfield p 240 subfield p 2", vernacular: "880 subfield a: 880 subfield p 880 subfield p 2")
-      ]
+      actual_titles = Set.new
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, formatter: DS::Extractor::MarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+      actual_titles = actual_titles.to_a.compact.reject(&:empty?)
       expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match actual_titles
     end
   end
@@ -358,10 +360,12 @@ describe DS::Extractor::MarcXmlExtractor do
     })
     }
     it 'ensures extracted titles are unique, 245 with 880 and 246 with 880' do
-      actual_titles = [
-        DS::Extractor::Title.new(as_recorded: "Subfield a", vernacular: "Subfield a"),
-        DS::Extractor::Title.new(as_recorded: "246 subfield a; 246 subfield b", vernacular: "880 subfield a; 880 subfield b")
-      ]
+      actual_titles = Set.new
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, formatter: DS::Extractor::MarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+      actual_titles = actual_titles.to_a.compact.reject(&:empty?)
       expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match actual_titles
     end
   end
@@ -404,9 +408,12 @@ describe DS::Extractor::MarcXmlExtractor do
     })
     }
     it 'ensures extracted titles are unique, 245 with 880' do
-      actual_titles = [
-        DS::Extractor::Title.new(as_recorded: "Subfield a", vernacular: "Subfield a")
-      ]
+      actual_titles = Set.new
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, formatter: DS::Extractor::MarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+      actual_titles << DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+      actual_titles = actual_titles.to_a.compact.reject(&:empty?)
       expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match(actual_titles)
     end
   end
@@ -473,7 +480,7 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '130 subfield a: 130 subfield p 130 subfield p 2',
                                  vernacular: '880 subfield a: 880 subfield p 880 subfield p 2')
 
-      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, "a", "p")).to match actual_title
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match actual_title
     end
 
     it 'extracts a title for 240' do
@@ -481,7 +488,7 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '240 subfield a: 240 subfield p 240 subfield p 2',
                                  vernacular: '880 subfield a: 880 subfield p 880 subfield p 2')
 
-      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, "a", "p")).to match actual_title
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match actual_title
     end
 
     it 'extracts a title for 245' do
@@ -489,7 +496,7 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '245 subfield a; 245 subfield b',
                                  vernacular: '880 subfield a; 880 subfield b')
 
-      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, "a", "b")).to match actual_title
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 245, formatter: DS::Extractor::MarcTitleFormatter.new)).to match actual_title
     end
 
     it 'extracts a title for 246' do
@@ -497,7 +504,7 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '246 subfield a; 246 subfield b',
                                  vernacular: '880 subfield a; 880 subfield b')
 
-      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, "a", "b")).to match actual_title
+      expect(DS::Extractor::MarcXmlExtractor.extract_title_for(title_record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)).to match actual_title
     end
   end
 
@@ -2112,13 +2119,13 @@ describe DS::Extractor::MarcXmlExtractor do
     it 'is invoked by extract_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded record
-      expect(DS::Util).to have_received(:clean_string).exactly(11).times
+      expect(DS::Util).to have_received(:clean_string).exactly(4).times
     end
 
     it 'is invoked by extract_title_agr' do
       allow(DS::Util).to receive(:clean_string).and_return ''
       DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded_agr record
-      expect(DS::Util).to have_received(:clean_string).exactly(11).times
+      expect(DS::Util).to have_received(:clean_string).exactly(4).times
     end
 
     it 'is invoked by extract_genre_as_recorded' do

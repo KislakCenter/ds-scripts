@@ -16,8 +16,8 @@ module DS
       # Returns:
       # - A new Title object
       def initialize as_recorded:, vernacular: nil
-        @vernacular               = vernacular
         super(as_recorded: as_recorded)
+        @vernacular               = vernacular
       end
 
       # Returns an array containing the title as recorded, vernacular title, uniform title, and vernacular uniform title.
