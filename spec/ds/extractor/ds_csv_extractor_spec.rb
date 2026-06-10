@@ -13,6 +13,16 @@ describe DS::Extractor::DsCsvExtractor do
 
   let(:record) { contributor_csv.first }
 
+  let(:csv_fixture_uniform_title) {
+    File.join fixture_path('ds_csv'), 'ucriverside-dscsv-uniform-title.csv'
+  }
+
+  let(:contributor_csv_uniform_title) {
+    CSV.parse File.open(csv_fixture_uniform_title, 'r').read, headers: true
+  }
+
+  let(:record_uniform_title) { contributor_csv_uniform_title.first }
+
   context "extractor interface" do
     skips = %i{ other_names }
     it_behaves_like "an extractor", skips
@@ -209,21 +219,21 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
-  # context "extract_uniform_titles_as_recorded" do
-  #   it 'returns the uniform titles' do
-  #     expect(
-  #       DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded record
-  #     ).to eq ["Uniform title"]
-  #   end
-  # end
+  context "extract_uniform_titles_as_recorded" do
+    it 'returns the uniform titles' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded record
+      ).to eq []
+    end
+  end
 
-  # context "extract_uniform_titles_as_recorded_agr" do
-  #   it 'returns the uniform titles in original script' do
-  #     expect(
-  #       DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded_agr record
-  #     ).to eq ["Uniform title in vernacular"]
-  #   end
-  # end
+  context "extract_uniform_titles_as_recorded_agr" do
+    it 'returns the uniform titles in original script' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded_agr record
+      ).to eq []
+    end
+  end
 
   context "extract_titles_as_recorded" do
     it 'returns the title' do
@@ -238,6 +248,21 @@ describe DS::Extractor::DsCsvExtractor do
       expect(DS::Extractor::DsCsvExtractor.extract_titles_as_recorded_agr(
         record)
       ).to eq ["Title in vernacular"]
+    end
+  end
+
+  context "extract_titles" do
+    it 'returns an array of title objects' do
+      actual_titles = [DS::Extractor::Title.new(as_recorded: "Title", vernacular: "Title in vernacular")]
+      expect(DS::Extractor::DsCsvExtractor.extract_titles(record)).to match actual_titles
+    end
+  end
+
+  context "extract_titles_with_uniform_titles" do
+    it 'returns an array of title objects including uniform titles' do
+      actual_titles = [DS::Extractor::Title.new(as_recorded: "Title", vernacular: "Title in vernacular"),
+                       DS::Extractor::Title.new(as_recorded: "Uniform title", vernacular: "Uniform title in vernacular")]
+      expect(DS::Extractor::DsCsvExtractor.extract_titles(record_uniform_title)).to match actual_titles
     end
   end
 

@@ -60,32 +60,6 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
-=begin
-  context 'extract_old_title_as_recorded' do
-    let(:title_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
-      <record xmlns="http://www.loc.gov/MARC21/slim"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <leader>12792ctm a2201573Ia 4500</leader>
-        <controlfield tag="001">9948617063503681</controlfield>
-        <controlfield tag="005">20220803105853.0</controlfield>
-        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
-      <datafield ind1="0" ind2="0" tag="245">
-          <subfield code="a">Subfield a; </subfield>
-          <subfield code="b">Subfield b.</subfield>
-        </datafield>
-      </record>
-    })
-    }
-    it 'extracts the 245$a and 245$b' do
-      expect(
-        DS::Extractor::MarcXmlExtractor.extract_titles_as_recorded(title_record)
-      ).to eq ['Subfield a; Subfield b']
-    end
-  end
-=end
-
   context 'extract title_as_recorded' do
     let(:title_record) {
       marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
@@ -2103,18 +2077,6 @@ describe DS::Extractor::MarcXmlExtractor do
       DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded record
       expect(DS::Util).to have_received(:clean_string).at_least(:once)
     end
-
-    # it 'is invoked by extract_uniform_titles_as_recorded' do
-    #   allow(DS::Util).to receive(:clean_string).and_return ''
-    #   DS::Extractor::MarcXmlExtractor.extract_uniform_titles_as_recorded record
-    #   expect(DS::Util).to have_received(:clean_string).exactly(7).times
-    # end
-
-    # it 'is invoked by extract_uniform_title_agr' do
-    #   allow(DS::Util).to receive(:clean_string).and_return ''
-    #   DS::Extractor::MarcXmlExtractor.uniform_titles_as_recorded_agr record
-    #   expect(DS::Util).to have_received :clean_string
-    # end
 
     it 'is invoked by extract_title_as_recorded' do
       allow(DS::Util).to receive(:clean_string).and_return ''
