@@ -362,7 +362,7 @@ RSpec.describe DS::Manifest::ManifestValidator do
         end
       end
 
-      context '#validate_lookups_unique' do
+      context '#validate_records_unique' do
         context 'lookups are unique' do
           let(:csv_data) { <<~EOF
             holding_institution_ds_qid,filename,source_data_type,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,call_number,link_to_institutional_record
@@ -378,11 +378,11 @@ RSpec.describe DS::Manifest::ManifestValidator do
           let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
           let(:validator) { DS::Manifest::ManifestValidator.new manifest }
           it 'is truthy' do
-            expect(validator.validate_lookups_unique).to be_truthy
+            expect(validator.validate_records_unique).to be_truthy
           end
         end
 
-        context 'lookups are not unique' do
+        context 'records are not unique' do
           let(:csv_data) { <<~EOF
             holding_institution_ds_qid,filename,source_data_type,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,call_number,link_to_institutional_record
             Q49117,multiple_marc_records.xml,marc-xml,9951865503503681,9951865503503681,"//controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']",LJS 101,https://find.library.upenn.edu/catalog/9951865503503681?hld_id=22335156650003681
@@ -397,7 +397,7 @@ RSpec.describe DS::Manifest::ManifestValidator do
           let(:manifest) { DS::Manifest::Manifest.new manifest_path, marc_xml_dir }
           let(:validator) { DS::Manifest::ManifestValidator.new manifest }
           it 'is falsey' do
-            expect(validator.validate_lookups_unique).to be_falsey
+            expect(validator.validate_records_unique).to be_falsey
           end
         end
       end
@@ -488,7 +488,7 @@ RSpec.describe DS::Manifest::ManifestValidator do
         %i{
           validate_columns validate_required_values
           validate_data_types validate_files_exist validate_lookups
-          validate_lookups_unique
+          validate_records_unique
         }
       }
 
@@ -527,10 +527,10 @@ RSpec.describe DS::Manifest::ManifestValidator do
         validator.valid?
       end
 
-      it "calls validate_lookups_unique" do
+      it "calls validate_records_unique" do
         add_stubs validator, sub_validations, true
 
-        expect(validator).to receive(:validate_lookups_unique)
+        expect(validator).to receive(:validate_records_unique)
         validator.valid?
       end
     end
@@ -547,8 +547,8 @@ RSpec.describe DS::Manifest::ManifestValidator do
       end
     end
 
-    context 'validate_lookups' do
-      context 'when all lookups are in the source CSV' do
+    context 'validate_records' do
+      context 'when all records are in the source CSV' do
         it 'is truthy' do
           expect(validator.validate_records_present).to be_truthy
         end

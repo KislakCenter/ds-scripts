@@ -4,6 +4,7 @@ require 'csv'
 require 'uri'
 require 'date'
 require_relative './constants'
+require_relative './entry_identity'
 
 module DS
   module Manifest
@@ -44,7 +45,7 @@ module DS
       def valid?
         return false unless validate_columns
         return false unless validate_required_values
-        return false unless validate_lookups_unique
+        return false unless validate_records_unique
         return false unless validate_data_types
         return false unless validate_files_exist
         return false unless validate_records_present
@@ -110,16 +111,17 @@ module DS
       # Returns:
       # - `true` if no duplicate IDs are found.
       # - `false` if duplicate IDs are found.
-      def validate_lookups_unique
-        fields_to_check = [:institution_ds_qid, :institutional_id, :call_number, :link_to_institutional_record]
+      def validate_records_unique
+        # fields_to_check = [:institution_ds_qid, :institutional_id, :call_number, :link_to_institutional_record]
 
         # collect the count of all ids and select those with a count > 1
         multiples = manifest.inject({}) { |h, entry|
-          key = fields_to_check.map { |f| entry.send(f) }.join('|')
-          h[key] ||= 0; h[key] += 1; h
-        }.filter_map { |key, count|
-          [key, count] if count > 1
+          entry_id = EntryIdentity.new(entry)
+          h[entry_id] ||= 0; h[entry_id] += 1; h
+        }.filter_map { |entry_id, count|
+          [entry_id, count] if count > 1
         }
+
 
         return true if multiples.blank?
 
