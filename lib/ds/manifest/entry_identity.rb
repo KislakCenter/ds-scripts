@@ -2,6 +2,12 @@
 module DS
   module Manifest
     class EntryIdentity < Entry
+      ##
+      # An Entry identity is a subset of Entry which determines its uniqueness.
+      #
+      # This class inherits from Entry and uses to_h as criteria to compare
+      # with other entry identities to determine its uniqueness
+      #
       def to_h
         {
           institution_ds_qid: institution_ds_qid.upcase,

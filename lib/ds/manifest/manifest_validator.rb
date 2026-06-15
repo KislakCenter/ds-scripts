@@ -112,8 +112,6 @@ module DS
       # - `true` if no duplicate IDs are found.
       # - `false` if duplicate IDs are found.
       def validate_records_unique
-        # fields_to_check = [:institution_ds_qid, :institutional_id, :call_number, :link_to_institutional_record]
-
         # collect the count of all ids and select those with a count > 1
         multiples = manifest.inject({}) { |h, entry|
           entry_id = EntryIdentity.new(entry)
@@ -121,7 +119,6 @@ module DS
         }.filter_map { |entry_id, count|
           [entry_id, count] if count > 1
         }
-
 
         return true if multiples.blank?
 
