@@ -5,10 +5,9 @@ module DS
       ##
       # An Entry Identity is a subclass of Entry which helps determines its uniqueness.
       #
-      # This class inherits from Entry and uses to_h as criteria to compare
-      # with other entry identities to determine its uniqueness. Entry Identity is
-      # determined by the institution_ds_qid, institutional_id, call_number and
-      # link_to_institutional_record
+      # Entry Identity is determined by the institution_ds_qid, institutional_id, call_number
+      # and link_to_institutional_record. EntryIdentity is used to compare an entry
+      # with other entry identities to determine its uniqueness.
       #
       def to_h
         {
