@@ -363,7 +363,7 @@ RSpec.describe DS::Manifest::ManifestValidator do
       end
 
       context '#validate_records_unique' do
-        context 'lookups are unique' do
+        context 'records are unique' do
           let(:csv_data) { <<~EOF
             holding_institution_ds_qid,filename,source_data_type,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,call_number,link_to_institutional_record
             Q49117,multiple_marc_records.xml,marc-xml,9951865503503681,9951865503503681,"//controlfield[@tag='001' and ./text() = 'ID_PLACEHOLDER']",LJS 101,https://find.library.upenn.edu/catalog/9951865503503681?hld_id=22335156650003681
@@ -401,15 +401,6 @@ RSpec.describe DS::Manifest::ManifestValidator do
           end
         end
       end
-
-      # context 'validate_records_unique' do
-      #   context "one record per ID" do
-      #     it 'is truthy'
-      #   end
-      # end
-      # context 'multiple records for one ID' do
-      #   it 'is falsey'
-      # end
 
     end
     context 'validate_records present for MARC XML' do
