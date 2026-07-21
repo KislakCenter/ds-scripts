@@ -219,22 +219,6 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
-  context "extract_uniform_titles_as_recorded" do
-    it 'returns the uniform titles' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded record
-      ).to eq []
-    end
-  end
-
-  context "extract_uniform_titles_as_recorded_agr" do
-    it 'returns the uniform titles in original script' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded_agr record
-      ).to eq []
-    end
-  end
-
   context "extract_titles_as_recorded" do
     it 'returns the title' do
       expect(DS::Extractor::DsCsvExtractor.extract_titles_as_recorded(

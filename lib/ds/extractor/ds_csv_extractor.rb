@@ -358,22 +358,6 @@ module DS
           extract_titles(record).map &:vernacular
         end
 
-        # Extracts uniform titles as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract uniform titles from
-        # @return [Array<String>] the extracted uniform titles as recorded
-        def extract_uniform_titles_as_recorded record
-          extract_uniform_titles(record).map &:uniform_title
-        end
-
-        # Extracts uniform titles as recorded with vernacular form from the given record.
-        #
-        # @param [CSV::Row] record the record to extract uniform titles from
-        # @return [Array<String>] the extracted uniform titles as recorded with vernacular form
-        def extract_uniform_titles_as_recorded_agr record
-          extract_uniform_titles(record).map &:uniform_title_vernacular
-        end
-
         ##
         # Return titles as an array of DS::Extractor::Title instances.
         # Title as recorded and vernacular values are in single columns:

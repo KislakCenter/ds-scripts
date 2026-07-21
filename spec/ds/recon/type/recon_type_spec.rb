@@ -11,8 +11,6 @@ RSpec.describe 'Recon::Type::ReconType' do
       {
         :title_as_recorded=>"Title as recorded",
         :title_as_recorded_agr=>nil,
-        # :uniform_title_as_recorded=>"Uniform title",
-        # :uniform_title_as_recorded_agr=>nil,
         :authorized_label=>"Roman de Lancelot",
         :ds_qid=>nil}
     }
