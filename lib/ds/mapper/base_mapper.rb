@@ -23,9 +23,7 @@ module DS
 
       TITLES_COLUMN_MAP = {
         title_as_recorded:         :title_as_recorded,
-        varying_title:             :varying_title,
         title_as_recorded_agr:     :title_as_recorded_agr,
-        var_vernacular:            :var_vernacular,
         uniform_title_as_recorded: :uniform_title_as_recorded,
         uniform_title_agr:         :uniform_title_as_recorded_agr,
         standard_title_ds_qid:     :ds_qid

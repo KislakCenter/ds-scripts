@@ -94,8 +94,6 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         production_date_as_recorded:        "circa 18th-20th century",
         uniform_title_as_recorded:          "",
         uniform_title_agr:                  "",
-        varying_title:                      "",
-        var_vernacular:                     "",
         title_as_recorded:                  "Title",
         title_as_recorded_agr:              "Title in vernacular",
         standard_title_ds_qid:              "QTITLE",
