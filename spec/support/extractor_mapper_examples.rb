@@ -86,7 +86,6 @@ RSpec.shared_examples 'an extractor mapper' do |except|
       holding_institution_ds_qid:         be_a(String),
       holding_institution_as_recorded:    be_a(String),
       holding_institution_id_number:      be_a(String),
-      record_lookup_value:                be_a(String),
       holding_institution_shelfmark:      be_a(String),
       link_to_holding_institution_record: be_a(String),
       iiif_manifest:                      be_a(String),

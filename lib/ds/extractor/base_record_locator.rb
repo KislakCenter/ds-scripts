@@ -10,7 +10,7 @@ module DS
         @errors = []
       end
 
-      def locate_record parsed_source, id, id_location
+      def locate_record parsed_source, lookup_value, lookup_value_location
         raise NotImplementedError
       end
 

@@ -66,6 +66,7 @@ module DS
       def institutional_id
         row[INSTITUTIONAL_ID]
       end
+
       # RECORD_LOOKUP_VALUE                 = 'record_lookup_value'
       def record_lookup_value
         row[RECORD_LOOKUP_VALUE]
@@ -107,28 +108,6 @@ module DS
       def dated?
         dated.to_s.strip.downcase == 'true'
       end
-
-=begin
-      def to_h
-        {
-          institution_ds_qid:           institution_ds_qid,
-          institution_wikidata_label:   institution_wikidata_label,
-          ds_id:                        ds_id,
-          call_number:                  call_number,
-          institutional_id:             institutional_id,
-          record_lookup_value:          record_lookup_value,
-          title:                        title,
-          link_to_institutional_record: link_to_institutional_record,
-          iiif_manifest_url:            iiif_manifest_url,
-          record_last_updated:          record_last_updated,
-          source_type:                  source_type,
-          filename:                     filename,
-          dated:                        dated?,
-          manifest_generated_at:        manifest_generated_at,
-        }
-      end
-=end
-
     end
   end
 end

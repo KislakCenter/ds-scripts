@@ -57,7 +57,6 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
         holding_institution_ds_qid:         "Q1976985",
         holding_institution_as_recorded:    "The Nelson-Atkins Museum of Art ",
         holding_institution_id_number:      "KG 40",
-        record_lookup_value:                "KG 40",
         holding_institution_shelfmark:      "KG 40",
         link_to_holding_institution_record: "https://archive.org/details/KG40_46",
         iiif_manifest:                      "https://iiif.archivelab.org/iiif/images_KG40_46/manifest.json",

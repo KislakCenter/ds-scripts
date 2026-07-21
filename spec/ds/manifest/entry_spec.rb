@@ -4,10 +4,11 @@ require 'spec_helper'
 
 RSpec.describe 'DS::Manifest::Entry' do
 
-  let(:manifest_csv) {parse_csv(<<~EOF
-    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,dated,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
-    Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,true,9951865503503681,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
-  EOF
+  let(:manifest_csv) {
+    parse_csv(<<~EOF
+      holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,dated,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,manifest_generated_at
+      Q49117,9951865503503681_marc.xml,University of Pennsylvania,marc-xml,DS10000,true,9951865503503681,9951865503503681,"controlfield[@tag='001']/text()",20220803105830,LJS 101,Periermenias Aristotelis ... [etc.],https://example.com,https://example-2.com,2023-07-25T09:52:02-0400
+    EOF
   )
  }
   let(:marc_xml_dir) { fixture_path 'marc_xml' }
@@ -82,6 +83,7 @@ RSpec.describe 'DS::Manifest::Entry' do
       { DS::Manifest::Entry::IIIF_MANIFEST_URL => 'https://example.com | https://example-2.com ; https://example-3.com https://example-4.com' }
     }
     let(:entry) { DS::Manifest::Entry.new row }
+
     it 'splits and joins the urls' do
       expect(entry.iiif_manifest_url).to eq 'https://example.com|https://example-2.com|https://example-3.com|https://example-4.com'
     end
@@ -92,53 +94,4 @@ RSpec.describe 'DS::Manifest::Entry' do
       expect(entry[DS::Manifest::Entry::CALL_NUMBER]).to eq 'LJS 101'
     end
   end
-
-=begin
-  context 'to_h' do
-    let(:hash) {
-      { :institution_ds_qid           => "Q49117",
-        :institution_wikidata_label   => "University of Pennsylvania",
-        :ds_id                        => "DS10000",
-        :dated                        => true,
-        :call_number                  => "LJS 101",
-        :institutional_id             => "9951865503503681",
-        :record_lookup_value          => "9951865503503681",
-        :title                        => "Periermenias Aristotelis ... [etc.]",
-        :link_to_institutional_record => "https://example-2.com",
-        :iiif_manifest_url            => "https://example.com",
-        :record_last_updated          => "20220803105830",
-        :source_type                  => DS::Manifest::Entry::MARC_XML,
-        :filename                     => "9951865503503681_marc.xml",
-        :manifest_generated_at        => "2023-07-25T09:52:02-0400" }
-    }
-
-    it 'returns the correct hash' do
-      expect(entry.to_h).to eq hash
-    end
-  end
-
-  context 'to_h' do
-    let(:hash) {
-      { :institution_ds_qid           => "Q49117",
-        :institution_wikidata_label   => "University of Pennsylvania",
-        :ds_id                        => "DS10000",
-        :dated                        => true,
-        :call_number                  => "LJS 101",
-        :institutional_id             => "9951865503503681",
-        :record_lookup_value          => "",
-        :title                        => "Periermenias Aristotelis ... [etc.]",
-        :link_to_institutional_record => "https://example-2.com",
-        :iiif_manifest_url            => "https://example.com",
-        :record_last_updated          => "20220803105830",
-        :source_type                  => DS::Manifest::Entry::MARC_XML,
-        :filename                     => "9951865503503681_marc.xml",
-        :manifest_generated_at        => "2023-07-25T09:52:02-0400" }
-    }
-
-    it "does not return the correct hash, missing record lookup value" do
-      expect(entry.to_h).not_to eq hash
-    end
-  end
-=end
-
 end

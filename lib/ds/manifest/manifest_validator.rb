@@ -14,11 +14,11 @@ module DS
     # Validation does the following:
     #
     #   - Confirms all required columns are present
-    #   - Confirms all all required values are present
+    #   - Confirms all required values are present
     #   - Confirms all column values are the correct type
     #   - Confirms all listed input files are present
-    #   - Confirms all listed input files match the record
-    #     lookup value provided in the manifest
+    #   - Confirms all records are present in the source
+    #   - Confirms all manifest entries are unique
     #
     # @todo Add test for live URLs
     class ManifestValidator
@@ -58,6 +58,7 @@ module DS
         found_columns = manifest.headers
         diff          = MANIFEST_COLUMNS - found_columns
         return true if diff.blank?
+
         add_error "Manifest missing required columns: #{diff.join ', '}" if diff.present?
         false
       end
@@ -103,48 +104,53 @@ module DS
         is_valid
       end
 
-      # Validates the uniqueness of all Lookup values in the manifest.
+      # Validates the uniqueness of all Entries in the manifest.
       #
-      # This method collects the count of all Lookup values in the manifest and selects those with a count greater than 1.
-      # It then iterates over the multiples and adds an error for each duplicate ID found.
+      # This method collects the count of all EntryIdentities values in the
+      # manifest and selects those with a count greater than 1. It then
+      # iterates over the multiples and adds an error for each duplicate
+      # Entry found.
       #
       # Returns:
       # - `true` if no duplicate IDs are found.
       # - `false` if duplicate IDs are found.
       def validate_records_unique
         # collect the count of all ids and select those with a count > 1
-        multiples = manifest.inject({}) { |h, entry|
+        multiples = manifest.each_with_object({}) { |entry, h|
           entry_id = EntryIdentity.new(entry)
-          h[entry_id] ||= 0; h[entry_id] += 1; h
+          h[entry_id] ||= 0
+          h[entry_id] += 1
         }.filter_map { |entry_id, count|
           [entry_id, count] if count > 1
         }
 
         return true if multiples.blank?
 
-        multiples.each do |key, count|
-          add_error "Duplicate Lookup found in manifest: Lookup value '#{key}' found in #{count} rows"
+        multiples.each do |identity, count|
+          add_error "Duplicate Entries found in manifest: #{count} rows found for '#{identity}'"
         end
         false
       end
 
       ##
-      # @return [boolean] true if all +record_lookup_value+
-      #     values match source file
+      # @return [boolean] +true+ if one record is found for each
+      #   +record_lookup_value+ and +lookup_value_location_in_source+;
+      #   otherwise, return +false+
       def validate_records_present
         is_valid = true
-        manifest.each_with_index do |entry, row_num|
+        manifest.each do |entry|
           file_path = File.join manifest.source_dir, entry.filename
 
-          lookup_value      = entry.record_lookup_value
           lookup_validator = get_lookup_validator entry.source_type
-          found        = lookup_validator.valid? file_path, lookup_value, entry.lookup_value_location_in_source
+          next if lookup_validator.valid?(
+            file_path,
+            entry.record_lookup_value,
+            entry.lookup_value_location_in_source)
 
-          unless found
-            is_valid = false
-            lookup_validator.errors.each { |error| add_error error }
-          end
+          is_valid = false
+          lookup_validator.errors.each { |error| add_error error }
         end
+
         is_valid
       end
 
@@ -152,15 +158,15 @@ module DS
       # 0 or more than 1.
       #
       # @param count [Integer] the number of records found for the given `inst_id` and `location_in_source`
-      # @param inst_id [String] the identifier of the record
-      # @param location_in_source [String] the location in the source where the record is found
+      # @param lookup_value [String] the lookup_value for the record
+      # @param location_in_source [String] the location in the source where the lookup_value is found
       # @return [nil]
       def handle_count_error count, lookup_value, location_in_source
         return if count == 1
 
         if count > 1
           add_error "ERROR: Multiple records (#{count}) found for lookup value: #{lookup_value} (location: #{location_in_source})"
-        elsif count == 0
+        elsif count.zero?
           add_error "ERROR: No records found for lookup value: #{lookup_value} (location: #{location_in_source})"
         end
         nil

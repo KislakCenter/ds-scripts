@@ -9,7 +9,6 @@ cataloging_convention
 holding_institution_ds_qid
 holding_institution_as_recorded
 holding_institution_id_number
-record_lookup_value
 holding_institution_shelfmark
 link_to_holding_institution_record
 iiif_manifest

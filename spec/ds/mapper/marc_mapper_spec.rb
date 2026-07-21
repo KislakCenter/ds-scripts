@@ -75,7 +75,6 @@ RSpec.describe DS::Mapper::MarcMapper do
         :holding_institution_ds_qid         => "Q49117",
         :holding_institution_as_recorded    => "University of Pennsylvania",
         :holding_institution_id_number      => "9951865503503681",
-        :record_lookup_value                => "9951865503503681",
         :holding_institution_shelfmark      => "LJS 101",
         :link_to_holding_institution_record => "https://example-2.com",
         :iiif_manifest                      => "https://example.com",

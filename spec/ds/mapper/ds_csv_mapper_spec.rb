@@ -41,7 +41,6 @@ RSpec.describe DS::Mapper::DSCSVMapper do
     let(:record) { mapper.extract_record entry }
 
     it 'returns the expected record' do
-      #expect(record[id_location]).to eq entry.institutional_id
       expect(record[lookup_value_location]).to eq lookup_value
     end
   end
@@ -86,7 +85,6 @@ RSpec.describe DS::Mapper::DSCSVMapper do
         holding_institution_ds_qid:         "Q1075148",
         holding_institution_as_recorded:    "University of California, Riverside",
         holding_institution_id_number:      "BP128.57 .A2 1700z",
-        record_lookup_value:                "BP128.57 .A2 1700z",
         holding_institution_shelfmark:      "BP128.57 .A2 1700z",
         link_to_holding_institution_record: "http://example.com/holding_int_url",
         iiif_manifest:                      "http://example.com/iiif",

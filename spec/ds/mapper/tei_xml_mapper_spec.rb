@@ -57,7 +57,6 @@ RSpec.describe DS::Mapper::TeiXmlMapper do
         :holding_institution_ds_qid         => "Q3087288",
         :holding_institution_as_recorded    => "Free Library of Philadelphia",
         :holding_institution_id_number      => "Lewis O 31",
-        :record_lookup_value                => "Lewis O 31",
         :holding_institution_shelfmark      => "Lewis O 31",
         :link_to_holding_institution_record => "https://openn.library.upenn.edu/Data/0023/html/lewis_o_031.html",
         :iiif_manifest                      => "https://some.iiif.manifest/",
