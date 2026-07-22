@@ -861,7 +861,7 @@ module DS
         # @param [<DS::Extractor::MarcTitleFormatter>,<DS::Extractor::UniformMarcTitleFormatter>] a
         # Marc formatter for a title; default: <DS::Extractor::MarcTitleFormatter>
         # @return [<DS::Extractor::Title>] an extracted title object
-        def extract_title_for record, tag, formatter: formatter
+        def extract_title_for record, tag, formatter: MarcTitleFormatter.new
           Title.new(as_recorded: extract_title_as_recorded(record, tag, formatter: formatter),
           vernacular: extract_title_as_recorded_agr(record, tag, formatter: formatter))
         end
