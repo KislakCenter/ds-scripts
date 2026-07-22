@@ -219,22 +219,6 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
-  context "extract_titles_as_recorded" do
-    it 'returns the title' do
-      expect(DS::Extractor::DsCsvExtractor.extract_titles_as_recorded(
-        record)
-      ).to eq ["Title"]
-    end
-  end
-
-  context "extract_title_as_recorded_agr" do
-    it 'returns the title in original script' do
-      expect(DS::Extractor::DsCsvExtractor.extract_titles_as_recorded_agr(
-        record)
-      ).to eq ["Title in vernacular"]
-    end
-  end
-
   context "extract_titles" do
     it 'returns an array of title objects' do
       actual_titles = [DS::Extractor::Title.new(as_recorded: "Title", vernacular: "Title in vernacular")]

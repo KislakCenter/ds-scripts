@@ -342,22 +342,6 @@ module DS
           }
         end
 
-        # Extracts titles as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded
-        def extract_titles_as_recorded record
-          extract_titles(record).map &:as_recorded
-        end
-
-        # Extracts titles as recorded with vernacular form from the given record.
-        #
-        # @param [CSV::Row] record the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded with vernacular form
-        def extract_titles_as_recorded_agr record
-          extract_titles(record).map &:vernacular
-        end
-
         ##
         # Return titles as an array of DS::Extractor::Title instances.
         # Title as recorded and vernacular values are in single columns:

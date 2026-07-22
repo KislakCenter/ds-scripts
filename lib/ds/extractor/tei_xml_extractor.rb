@@ -506,22 +506,6 @@ module DS
           titles
         end
 
-        # Extracts the titles from the given TEI record as recorded.
-        #
-        # @param [Nokogiri::XML::Node] record the TEI record
-        # @return [Array<String>] list of titles as recorded
-        def extract_titles_as_recorded record
-          extract_titles(record).map { |t| t.as_recorded }
-        end
-
-        # Extracts the titles from the given TEI record as recorded in the vernacular language.
-        #
-        # @param [Nokogiri::XML::Node] record the TEI record
-        # @return [Array<String>] list of titles in the vernacular language as recorded
-        def extract_titles_as_recorded_agr record
-          extract_titles(record).map { |t| t.vernacular }
-        end
-
         # Extracts the titles from the given TEI record to an array of titles.
         #
         # @param [Nokogiri::XML::Node] xml the TEI record

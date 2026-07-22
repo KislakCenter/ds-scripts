@@ -416,38 +416,9 @@ RSpec.describe DS::Extractor::TeiXml do
         </TEI>}
     }
 
-    let(:titles) {
-      DS::Extractor::TeiXml.extract_titles_as_recorded tei_xml
-    }
-
-    let(:titles_agr) {
-      DS::Extractor::TeiXml.extract_titles_as_recorded_agr tei_xml
-    }
-
     let(:recon_titles) {
       DS::Extractor::TeiXml.extract_recon_titles tei_xml
     }
-
-    context 'extract_title_as_recorded' do
-      it 'extracts titles' do
-        expect(titles).to eq ['Qaṭr al-nadā wa-ball al-ṣadā.', 'Second title']
-      end
-
-      it 'extracts all non-vernacular titles' do
-        expect(titles).not_to include 'قطر الندا وبل الصدا'
-      end
-    end
-
-    context 'extract_title_as_recorded_agr' do
-
-      it 'extracts vernacular titles' do
-        expect(titles_agr).to eq ['قطر الندا وبل الصدا', nil]
-      end
-
-      it 'returns a equal number of titles and titles agr' do
-        expect(titles_agr.size).to eq titles.size
-      end
-    end
 
     context 'extract_recon_titles' do
       let(:expected_recon_titles) {

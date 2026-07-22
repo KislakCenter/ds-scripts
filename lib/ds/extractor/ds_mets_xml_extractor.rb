@@ -368,14 +368,6 @@ module DS
           }
         end
 
-        # Extract titles as recorded from the given record.
-        #
-        # @param record [Object] the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded
-        def extract_titles_as_recorded record
-          extract_titles(record).map &:as_recorded
-        end
-
         # Extract titles from the given record.
         #
         # @param record [Object] the record to extract titles from

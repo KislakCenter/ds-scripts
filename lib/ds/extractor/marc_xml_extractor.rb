@@ -517,7 +517,7 @@ module DS
             term_vocab           = extract_vocabulary datafield
             source_authority_uri = extract_authority_number datafield
 
-            next unless as_recorded.present?
+            next if as_recorded.blank?
             next unless vocab == :all || vocab == term_vocab
 
             DS::Extractor::Genre.new(
@@ -847,31 +847,53 @@ module DS
         def extract_titles record
           marc_title_formatter = DS::Extractor::MarcTitleFormatter.new
           titles = Set.new
-          titles << extract_title_for(record,245, formatter: marc_title_formatter)
-          titles << extract_title_for(record,246, formatter: marc_title_formatter)
-          titles << extract_title_for(record,130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
-          titles << extract_title_for(record,240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+          titles += extract_titles_for(record,245, formatter: marc_title_formatter)
+          titles += extract_titles_for(record,246, formatter: marc_title_formatter)
+          titles += extract_titles_for(record,130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
+          titles += extract_titles_for(record,240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)
           titles.to_a.compact.reject(&:empty?)
         end
 
         # Extracts a single title from the given record.
         #
-        # @param [Nokogiri::XML:Node] record the record to extract title from
-        # @param [Integer] tag the Marc tag to use for extraction
-        # @param [<DS::Extractor::MarcTitleFormatter>,<DS::Extractor::UniformMarcTitleFormatter>] a
+        # @param record [Nokogiri::XML:Node] record the record to extract title from
+        # @param tag [Integer] tag the Marc tag to use for extraction
+        # @param formatter [<DS::Extractor::MarcTitleFormatter>,<DS::Extractor::UniformMarcTitleFormatter>] a
         # Marc formatter for a title; default: <DS::Extractor::MarcTitleFormatter>
-        # @return [<DS::Extractor::Title>] an extracted title object
-        def extract_title_for record, tag, formatter: MarcTitleFormatter.new
-          Title.new(as_recorded: extract_title_as_recorded(record, tag, formatter: formatter),
-          vernacular: extract_title_as_recorded_agr(record, tag, formatter: formatter))
+        # @return [Array<<DS::Extractor::Title>>] an extracted title object
+        def extract_titles_for record, tag, formatter: MarcTitleFormatter.new
+          xpath = "datafield[@tag='#{tag}' and ./subfield/@code='a']"
+          record.xpath(xpath).map do |datafield|
+            as_recorded = formatter.format(datafield)
+            vernacular = extract_agr_for(record, datafield, formatter: formatter)
+            Title.new(as_recorded: as_recorded, vernacular: vernacular)
+          end
         end
 
-        # Extracts titles as recorded with vernacular form from the given record.
-        #
-        # @param [Nokogiri::XML:Node] record the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded and vernacular form
-        def extract_titles_as_recorded_agr record
-          extract_titles(record).map &:vernacular
+        ##
+        # For the given title +datafield+ locate the corresponding 880 datafield
+        # from +record+ and format it using +formatter+. Return empty string if
+        # no associated 880 is found.
+        # @param record [Nokogiri::XML::Node] record the record to extract the
+        #   880 title from
+        # @param datafield [Nokogiri::XML::Node] the node to check for a
+        #   corresponding 880 field
+        # @param formatter [<DS::Extractor::MarcTitleFormatter>,<DS::Extractor::UniformMarcTitleFormatter>] a
+        #   Marc formatter for a title; default: <DS::Extractor::MarcTitleFormatter>
+        # @return [String] the formatted title
+        def extract_agr_for record, datafield, formatter: DS::Extractor::MarcTitleFormatter.new
+          linkage_xpath = "./subfield[@code='6']"
+          return '' if datafield.xpath(linkage_xpath).blank?
+
+          tag = datafield.at_xpath('./@tag').text
+          linkage = datafield.at_xpath(linkage_xpath).text
+
+          index = linkage.split('-').last
+          xpath = "datafield[@tag='880' and contains(./subfield[@code='6'], '#{tag}-#{index}') and subfield[@code='a']]"
+          datafield = record.at_xpath(xpath)
+          return if datafield.blank?
+
+          formatter.format(datafield)
         end
 
         # Extracts the title as recorded from the given record.
@@ -904,14 +926,6 @@ module DS
           formatter.format(datafield)
         end
 
-        # Extracts titles as recorded from the given record.
-        #
-        # @param record [Nokogiri::XML:Node] the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded
-        def extract_titles_as_recorded record
-          extract_titles(record).map &:as_recorded
-        end
-
         #########################################################################
         # Physical description
         #########################################################################
@@ -940,7 +954,7 @@ module DS
           DS::Extractor::MarcXmlExtractor.collect_datafields(
             record, tags: 300, codes: 'b'
           ).filter_map { |material|
-            next unless material.present?
+            next if material.blank?
             DS::Extractor::Material.new as_recorded: material
           }
         end
