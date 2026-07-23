@@ -102,14 +102,6 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
-  context "extract_production_places_as_recorded" do
-    it 'returns the production place' do
-      expect(DS::Extractor::DsCsvExtractor.extract_production_places_as_recorded(
-        record)
-      ).to eq ["Paris"]
-    end
-  end
-
   context "extract_production_date_as_recorded" do
     it 'returns the date string in an array' do
       expect(
@@ -234,159 +226,11 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
-  context "extract_genre_as_recorded" do
-    let(:genres) {
-      [
-        "prayer books",
-        "Glossaries",
-        "A third genre",
-        "An AAT term",
-        "A second AAT term",
-        "An LCGFT term",
-        "Another LCGFT term",
-        "A FAST term",
-        "A second FAST term",
-        "An RBMSVC term",
-        "An LoBT term"
-      ]
-    }
-
-    it 'returns the genres' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_genres_as_recorded record
-      ).to eq genres
-    end
-  end
-
   context '#extract_genres' do
     it 'all genres vocabs are "ds-genre"' do
       expect(
         DS::Extractor::DsCsvExtractor.extract_genres(record).map &:vocab
       ).to all eq 'ds-genre'
-    end
-  end
-
-  context "extract_all_subjects_as_recorded" do
-    let(:subjects) {
-      [
-        "A topical subject",
-        "A geographical subject",
-        "A chronological subject",
-        "A personal named subject",
-        "A corporate named subject",
-        "A named event",
-        "A uniform title subject"
-      ]
-    }
-
-    it 'returns the subjects' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_all_subjects_as_recorded record
-      ).to match subjects
-    end
-  end
-
-  context "extract_subjects_as_recorded" do
-    let(:subjects) {
-      ["A topical subject", "A geographical subject", "A chronological subject"]
-    }
-
-    it 'returns the subjects' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_subjects_as_recorded record
-      ).to eq subjects
-    end
-  end
-
-  context "extract_named_subjects_as_recorded" do
-    let(:subjects) {
-      [
-        "A personal named subject",
-        "A corporate named subject",
-        "A named event",
-        "A uniform title subject",
-      ]
-    }
-
-    it 'returns the subjects' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_named_subjects_as_recorded record
-      ).to eq subjects
-    end
-  end
-
-
-
-  context "extract_author_as_recorded" do
-    it 'returns the authors' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_authors_as_recorded record
-      ).to eq ["An author"]
-    end
-  end
-
-  context "extract_author_as_recorded_agr" do
-    it 'returns the authors' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_authors_as_recorded_agr record
-      ).to eq ["An author in original script"]
-    end
-  end
-
-  context "extract_artist_as_recorded" do
-    it 'returns the artists' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_artists_as_recorded record
-      ).to eq ["An artist", "Another artist"]
-    end
-  end
-
-  context "extract_artist_as_recorded_agr" do
-    it 'returns the artist names in vernacular script' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_artists_as_recorded_agr record
-      ).to eq [nil, "Another artist original script"]
-    end
-  end
-
-  context "extract_scribe_as_recorded" do
-    it 'returns the scribes' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_scribes_as_recorded record
-      ).to eq ["A scribe"]
-    end
-  end
-
-  context "extract_scribe_as_recorded_agr" do
-    it 'returns the scribes' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_scribes_as_recorded_agr record
-      ).to eq ["A scribe in original script"]
-    end
-  end
-
-  context "extract_former_owner_as_recorded" do
-    it 'returns the former owners' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_former_owners_as_recorded record
-      ).to eq ["Former owner as recorded"]
-    end
-  end
-
-
-  context "extract_languages_as_recorded" do
-    it 'returns the languages' do
-      expect(DS::Extractor::DsCsvExtractor.extract_languages_as_recorded(
-        record)
-      ).to eq ["Arabic", "Farsi"]
-    end
-  end
-
-  context "extract_material_as_recorded" do
-    it 'returns the material string' do
-      expect(
-        DS::Extractor::DsCsvExtractor.extract_material_as_recorded record
-      ).to eq "materials description"
     end
   end
 

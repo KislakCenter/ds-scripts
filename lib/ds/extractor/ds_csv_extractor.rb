@@ -200,44 +200,12 @@ module DS
           extract_values_for property: :dimensions, record: record
         end
 
-        # Extracts authors as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract authors from
-        # @return [Array<String>] the extracted authors as recorded
-        def extract_authors_as_recorded record
-          extract_authors(record).map &:as_recorded
-        end
-
-        # Extracts authors as recorded with vernacular form from the given record.
-        #
-        # @param [CSV::Row] record the record to extract authors from
-        # @return [Array<String>] the extracted authors as recorded with vernacular form
-        def extract_authors_as_recorded_agr record
-          extract_authors(record).map &:vernacular
-        end
-
         # Extracts authors from the given record using the specified type and role.
         #
         # @param [CSV::Row] record the record to extract authors from
         # @return [Array<String>] the extracted authors
         def extract_authors record
           extract_names(record, :authors_as_recorded, 'author')
-        end
-
-        # Extracts artists as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract artists from
-        # @return [Array<String>] the extracted artists as recorded
-        def extract_artists_as_recorded record
-          extract_artists(record).map &:as_recorded
-        end
-
-        # Extracts artists as recorded with vernacular form from the given record.
-        #
-        # @param [CSV::Row] record the record to extract artists from
-        # @return [Array<String>] the extracted artists as recorded with vernacular form
-        def extract_artists_as_recorded_agr record
-          extract_artists(record).map &:vernacular
         end
 
         # Extracts artists from the given record using the specified type and role.
@@ -248,44 +216,12 @@ module DS
           extract_names(record, :artists_as_recorded, 'artist')
         end
 
-        # Extracts scribes as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract scribes from
-        # @return [Array<String>] the extracted scribes as recorded
-        def extract_scribes_as_recorded record
-          extract_scribes(record).map &:as_recorded
-        end
-
-        # Extracts scribes as recorded with vernacular form from the given record.
-        #
-        # @param [CSV::Row] record the record to extract scribes from
-        # @return [Array<String>] the extracted scribes as recorded with vernacular form
-        def extract_scribes_as_recorded_agr record
-          extract_scribes(record).map &:vernacular
-        end
-
         # Extracts scribes from the given record using the specified type and role.
         #
         # @param [CSV::Row] record the record to extract scribes from
         # @return [Array<String>] the extracted scribes
         def extract_scribes record
           extract_names(record, :scribes_as_recorded, 'scribe')
-        end
-
-        # Extracts former owners as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract former owners from
-        # @return [Array<String>] the extracted former owners as recorded
-        def extract_former_owners_as_recorded record
-          extract_former_owners(record).map &:as_recorded
-        end
-
-        # Extracts former owners as recorded with vernacular form from the given record.
-        #
-        # @param [CSV::Row] record the record to extract former owners from
-        # @return [Array<String>] the extracted former owners as recorded with vernacular form
-        def extract_former_owners_as_recorded_agr record
-          extract_former_owners(record).map &:vernacular
         end
 
         # Extracts former owners from the given record using the specified type and role.
@@ -306,14 +242,6 @@ module DS
           []
         end
 
-        # Extracts languages as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract languages from
-        # @return [Array<String>] the extracted languages as recorded
-        def extract_languages_as_recorded record
-          extract_languages(record).map &:as_recorded
-        end
-
         # Extracts languages from the given record using the specified type and role.
         #
         # @param [CSV::Row] record the record to extract languages from
@@ -322,14 +250,6 @@ module DS
           extract_values_for(property: :languages_as_recorded, record: record).map { |lang|
             DS::Extractor::Language.new as_recorded: lang
           }
-        end
-
-        # Extracts material as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract material from
-        # @return [String, nil] the extracted material as recorded
-        def extract_material_as_recorded record
-          extract_materials(record).map(&:as_recorded).join '|'
         end
 
         # Extracts materials from the given record.
@@ -428,14 +348,6 @@ module DS
           }
         end
 
-        # Extracts production places as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract production places from
-        # @return [Array<String>] the extracted production places as recorded
-        def extract_production_places_as_recorded record
-          extract_places(record, :production_places_as_recorded).map &:as_recorded
-        end
-
         # Extracts places from the given record using the specified property.
         #
         # @param [Symbol] property the property to extract places from the record
@@ -447,36 +359,12 @@ module DS
           }
         end
 
-        # Extracts genres as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract genres from
-        # @return [Array<String>] the extracted genres as recorded
-        def extract_genres_as_recorded record
-          extract_genres(record).map &:as_recorded
-        end
-
         # Extracts genres from the given record.
         #
         # @param [CSV::Row] record the record to extract genres from
         # @return [Array<DS::Extractor::Genre>] the extracted genres
         def extract_genres record
           extract_terms record, :genres_as_recorded, DS::Extractor::Genre, vocab: 'ds-genre'
-        end
-
-        # Extracts subjects as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract subjects from
-        # @return [Array<String>] the extracted subjects as recorded
-        def extract_subjects_as_recorded record
-          extract_subjects(record).map &:as_recorded
-        end
-
-        # Extracts all subjects as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract all subjects from
-        # @return [Array<String>] the extracted all subjects as recorded
-        def extract_all_subjects_as_recorded record
-          extract_all_subjects(record).map &:as_recorded
         end
 
         # Extracts all subjects from the given record, including subjects and named subjects.
@@ -493,14 +381,6 @@ module DS
         # @return [Array<DS::Extractor::Subject>] the extracted subjects
         def extract_subjects record
           extract_terms record, :subjects_as_recorded, DS::Extractor::Subject, vocab: 'ds-subject'
-        end
-
-        # Extracts named subjects as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract named subjects from
-        # @return [Array<String>] the extracted named subjects as recorded
-        def extract_named_subjects_as_recorded record
-          extract_named_subjects(record).map &:as_recorded
         end
 
         # Extracts named subjects from the given record.
