@@ -11,8 +11,6 @@ module DS
     # Returns:
     # - A formatted Title string
     class MarcTitleFormatter
-      attr_accessor :datafield
-
       # Formats title strings
       #
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
