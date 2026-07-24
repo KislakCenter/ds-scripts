@@ -47,6 +47,25 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="a">246 subfield a; </subfield>/
         <subfield code="b">246 subfield b.</subfield>
       </datafield>
+
+      <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="t">700 subfield t 1.</subfield>
+        <subfield code="p">700 subfield p 1.</subfield>
+      </datafield>
+
+      <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">710 subfield a 1.</subfield>
+        <subfield code="t">710 subfield t 1.</subfield>
+        <subfield code="p">710 subfield p 1.</subfield>
+      </datafield>
+
+      <datafield ind1="0" ind2=" " tag="730">
+        <subfield code="6">880-09</subfield>
+        <subfield code="a">730 subfield a 1.</subfield>
+        <subfield code="p">730 subfield p 1.</subfield>
+        <subfield code="p">730 subfield p 1 part 2.</subfield>
+      </datafield>
+
       </record>'
     }
 
@@ -56,7 +75,11 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '246 subfield a; 246 subfield b', vernacular: ''),
         DS::Extractor::Title.new(as_recorded: '130 subfield a: 130 subfield p 130 subfield p 2', vernacular: ''),
         DS::Extractor::Title.new(as_recorded: '240 subfield a: 240 subfield p 240 subfield p 2', vernacular: ''),
+        DS::Extractor::Title.new(as_recorded: '700 subfield t 1: 700 subfield p 1', vernacular: ''),
+        DS::Extractor::Title.new(as_recorded: '710 subfield t 1: 710 subfield p 1', vernacular: ''),
+        DS::Extractor::Title.new(as_recorded: '730 subfield a 1: 730 subfield p 1 730 subfield p 1 part 2', vernacular: ''),
       ]
+
       expect(DS::Extractor::MarcXmlExtractor.extract_titles(record)).to match expected
     end
   end
@@ -223,28 +246,33 @@ describe DS::Extractor::MarcXmlExtractor do
         <controlfield tag="001">9948617063503681</controlfield>
         <controlfield tag="005">20220803105853.0</controlfield>
         <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+
       <datafield ind1="0" ind2="" tag="130">
         <subfield code="6">880-03</subfield>
         <subfield code="a">130 subfield a</subfield>
         <subfield code="p">130 subfield p.</subfield>
         <subfield code="p">130 subfield p 2.</subfield>
       </datafield>
+
       <datafield ind1="0" ind2="" tag="240">
         <subfield code="6">880-04</subfield>
         <subfield code="a">240 subfield a</subfield>
         <subfield code="p">240 subfield p.</subfield>
         <subfield code="p">240 subfield p 2.</subfield>
       </datafield>
+
       <datafield ind1="0" ind2="0" tag="245">
           <subfield code="6">880-02</subfield>
           <subfield code="a">245 subfield a; </subfield>
           <subfield code="b">245 subfield b.</subfield>
         </datafield>
+
       <datafield ind1="3" ind2="8" tag="246">
         <subfield code="6">880-01</subfield>
         <subfield code="a">246 subfield a; </subfield>
         <subfield code="b">246 subfield b.</subfield>
       </datafield>
+
       <datafield ind1="1" ind2="0" tag="880">
         <subfield code="6">245-02</subfield>
         <subfield code="a">880 subfield a; </subfield>
@@ -266,6 +294,64 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="a">880 subfield a; </subfield>
         <subfield code="p">880 subfield p.</subfield>
         <subfield code="p">880 subfield p 2.</subfield>
+      </datafield>
+
+      <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="6">880-05</subfield>
+        <subfield code="t">700 subfield t 1.</subfield>
+        <subfield code="p">700 subfield p 1.</subfield>
+      </datafield>
+      <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="t">700 subfield t 2.</subfield>
+        <subfield code="p">700 subfield p 2.</subfield>
+      </datafield>
+
+      <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="6">880-07</subfield>
+        <subfield code="a">710 subfield a 1.</subfield>
+        <subfield code="t">710 subfield t 1.</subfield>
+        <subfield code="p">710 subfield p 1.</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">710 subfield a 2.</subfield>
+        <subfield code="t">710 subfield t 2.</subfield>
+        <subfield code="p">710 subfield p 2.</subfield>
+      </datafield>
+      <datafield ind1="2" ind2=" " tag="710">
+        <subfield code="a">710 subfield a 2.</subfield>
+      </datafield>
+
+      <datafield ind1="0" ind2=" " tag="730">
+        <subfield code="6">880-09</subfield>
+        <subfield code="a">730 subfield a 1.</subfield>
+        <subfield code="p">730 subfield p 1.</subfield>
+        <subfield code="p">730 subfield p 1 part 2.</subfield>
+      </datafield>
+      <datafield ind1="0" ind2=" " tag="730">
+        <subfield code="a">730 subfield a 2.</subfield>
+        <subfield code="p">730 subfield p 2.</subfield>
+        <subfield code="p">730 subfield p 2 part 2.</subfield>
+      </datafield>
+
+      <datafield ind1="1" ind2=" " tag="880">
+        <subfield code="6">700-05</subfield>
+        <subfield code="a">880 700 subfield a 1.</subfield>
+        <subfield code="t">880 700 subfield t 1.</subfield>
+        <subfield code="p">880 700 subfield p 1.</subfield>
+      </datafield>
+
+      <datafield ind1="2" ind2=" " tag="880">
+        <subfield code="6">710-07</subfield>
+        <subfield code="a">880 710 subfield a 1.</subfield>
+        <subfield code="t">880 710 subfield t 1.</subfield>
+        <subfield code="p">880 710 subfield p 1.</subfield>
+      </datafield>
+
+      <datafield ind1="0" ind2=" " tag="880">
+        <subfield code="6">730-09</subfield>
+        <subfield code="a">880 730 subfield a 1.</subfield>
+        <subfield code="p">880 730 subfield p 1.</subfield>
+        <subfield code="p">880 730 subfield p 1 part 2.</subfield>
       </datafield>
       </record>'
     }
@@ -299,6 +385,48 @@ describe DS::Extractor::MarcXmlExtractor do
                                  vernacular: '880 subfield a; 880 subfield b')
       ]
       expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)).to match expected
+    end
+
+    it 'extracts titles for 700' do
+      expected = [
+        DS::Extractor::Title.new(
+          as_recorded: '700 subfield t 1: 700 subfield p 1',
+          vernacular:  '880 700 subfield t 1: 880 700 subfield p 1'
+        ),
+        DS::Extractor::Title.new(
+          as_recorded: '700 subfield t 2: 700 subfield p 2',
+          vernacular: ''
+        )
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 700, code: 't', formatter: DS::Extractor::AddedEntryMarcTitleFormatter.new)).to match expected
+    end
+
+    it 'extracts titles for 710' do
+      expected = [
+        DS::Extractor::Title.new(
+          as_recorded: '710 subfield t 1: 710 subfield p 1',
+          vernacular:  '880 710 subfield t 1: 880 710 subfield p 1'
+        ),
+        DS::Extractor::Title.new(
+          as_recorded: '710 subfield t 2: 710 subfield p 2',
+          vernacular:  ''
+        )
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 710, code: 't', formatter: DS::Extractor::AddedEntryMarcTitleFormatter.new)).to match expected
+    end
+
+    it 'extracts titles for 730' do
+      expected = [
+        DS::Extractor::Title.new(
+          as_recorded: '730 subfield a 1: 730 subfield p 1 730 subfield p 1 part 2',
+          vernacular: '880 730 subfield a 1: 880 730 subfield p 1 880 730 subfield p 1 part 2'
+        ),
+        DS::Extractor::Title.new(
+          as_recorded: '730 subfield a 2: 730 subfield p 2 730 subfield p 2 part 2',
+          vernacular: ''
+        )
+      ]
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 730, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match expected
     end
   end
 
