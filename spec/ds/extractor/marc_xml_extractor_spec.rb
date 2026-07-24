@@ -20,8 +20,8 @@ describe DS::Extractor::MarcXmlExtractor do
   end
 
   context 'extract_titles' do
-    let(:title_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -47,8 +47,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="a">246 subfield a; </subfield>/
         <subfield code="b">246 subfield b.</subfield>
       </datafield>
-      </record>
-    })
+      </record>'
     }
 
     it 'extracts titles' do
@@ -58,13 +57,13 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '130 subfield a: 130 subfield p 130 subfield p 2', vernacular: ''),
         DS::Extractor::Title.new(as_recorded: '240 subfield a: 240 subfield p 240 subfield p 2', vernacular: ''),
       ]
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match expected
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(record)).to match expected
     end
   end
 
   context 'extract only unique titles, 245 with 880 and 240 with 880' do
-    let(:title_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -104,8 +103,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="p">240 880 subfield p.</subfield>
         <subfield code="p">240 880 subfield p 2.</subfield>
       </datafield>
-      </record>
-    })
+      </record>'
     }
     it 'ensures extracted titles are unique, 245 with 880 and 240 with 880' do
       expected = Set.new
@@ -116,13 +114,13 @@ describe DS::Extractor::MarcXmlExtractor do
       # 130 == No 130 present
       # 240
       expected << DS::Extractor::Title.new(as_recorded: '240 subfield a: 240 subfield p 240 subfield p 2', vernacular: '240 880 subfield a: 240 880 subfield p 240 880 subfield p 2')
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match expected.to_a
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(record)).to match expected.to_a
     end
   end
 
   context 'extract only unique titles, 245 with 880 and 246 with 880' do
-    let(:title_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -156,8 +154,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="6">240-03</subfield>
         <subfield code="a">240 880 subfield a</subfield>
       </datafield>
-      </record>
-    })
+      </record>'
     }
     it 'ensures extracted titles are unique, 245 with 880 and 246 with 880' do
       expected = Set.new
@@ -168,13 +165,13 @@ describe DS::Extractor::MarcXmlExtractor do
       # 130 == No 130 present
       # 240
       expected << DS::Extractor::Title.new(as_recorded: '240 subfield a', vernacular: '240 880 subfield a')
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match expected.to_a
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(record)).to match expected.to_a
     end
   end
 
   context 'extract only unique titles, 245 with 880' do
-    let(:title_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -206,20 +203,19 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="6">240-03</subfield>
         <subfield code="a">Subfield a</subfield>
       </datafield>
-      </record>
-    })
+      </record>'
     }
     it 'ensures extracted titles are unique, 245 with 880' do
       expected = [
         DS::Extractor::Title.new(as_recorded: 'Subfield a', vernacular: 'Subfield a')
       ]
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles(title_record)).to match expected
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles(record)).to match expected
     end
   end
 
   context 'extract_titles_for' do
-    let(:title_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -271,15 +267,14 @@ describe DS::Extractor::MarcXmlExtractor do
         <subfield code="p">880 subfield p.</subfield>
         <subfield code="p">880 subfield p 2.</subfield>
       </datafield>
-      </record>
-    })
+      </record>'
     }
     it 'extracts titles for 130' do
       expected = [
         DS::Extractor::Title.new(as_recorded: '130 subfield a: 130 subfield p 130 subfield p 2',
                                  vernacular: '880 subfield a: 880 subfield p 880 subfield p 2')
       ]
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(title_record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match expected
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 130, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match expected
     end
 
     it 'extracts titles for 240' do
@@ -287,7 +282,7 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '240 subfield a: 240 subfield p 240 subfield p 2',
                                  vernacular: '880 subfield a: 880 subfield p 880 subfield p 2')
       ]
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(title_record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match expected
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 240, formatter: DS::Extractor::UniformMarcTitleFormatter.new)).to match expected
     end
 
     it 'extracts titles for 245' do
@@ -295,7 +290,7 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '245 subfield a; 245 subfield b',
                                  vernacular: '880 subfield a; 880 subfield b')
       ]
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(title_record, 245, formatter: DS::Extractor::MarcTitleFormatter.new)).to match expected
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 245, formatter: DS::Extractor::MarcTitleFormatter.new)).to match expected
     end
 
     it 'extracts titles for 246' do
@@ -303,14 +298,14 @@ describe DS::Extractor::MarcXmlExtractor do
         DS::Extractor::Title.new(as_recorded: '246 subfield a; 246 subfield b',
                                  vernacular: '880 subfield a; 880 subfield b')
       ]
-      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(title_record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)).to match expected
+      expect(DS::Extractor::MarcXmlExtractor.extract_titles_for(record, 246, formatter: DS::Extractor::MarcTitleFormatter.new)).to match expected
     end
   end
 
   context 'genre extraction' do
 
-    let(:record) {
-      marc_record %q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      %q(<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -337,7 +332,7 @@ describe DS::Extractor::MarcXmlExtractor do
         </datafield>
 
       </record>
-    }
+      )
     }
 
     context "extract_genre_vocabulary" do
@@ -379,34 +374,33 @@ describe DS::Extractor::MarcXmlExtractor do
 
   context 'extract_date_as_recorded' do
 
-    let(:date_260c_marc) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
-        <record xmlns="http://www.loc.gov/MARC21/slim"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-          <leader>12792ctm a2201573Ia 4500</leader>
-          <controlfield tag="001">9948617063503681</controlfield>
-          <controlfield tag="005">20220803105853.0</controlfield>
-          <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
-          <datafield ind1=" " ind2=" " tag="260">
-            <subfield code="a">Vienna ;</subfield>
-            <subfield code="c">1644 February 10</subfield>
-          </datafield>
-        </record>
+    context '260$c' do
+      let(:marc_xml) {
+         ' <?xml version="1.0" encoding="UTF-8"?>
+          <record xmlns="http://www.loc.gov/MARC21/slim"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+            <leader>12792ctm a2201573Ia 4500</leader>
+            <controlfield tag="001">9948617063503681</controlfield>
+            <controlfield tag="005">20220803105853.0</controlfield>
+            <controlfield tag="008">101130s1409    it a          000 0 lat</controlfield>
+            <datafield ind1=" " ind2=" " tag="260">
+              <subfield code="a">Vienna ;</subfield>
+              <subfield code="c">1644 February 10</subfield>
+            </datafield>
+          </record>'
       }
-      )
-    }
 
-    it 'extracts 260$c' do
-      expect(
-        DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(date_260c_marc)
-      ).to eq ['1644 February 10']
+      it 'extracts 260$c' do
+        expect(
+          DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(record)
+        ).to eq ['1644 February 10']
+      end
     end
 
-    let(:date_260d_marc) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+    context '260$d' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -418,19 +412,19 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="a">[Italy,</subfield>
           <subfield code="d">14th and 15th centuries]</subfield>
         </datafield>
-      </record>
-    }
-      )
-    }
-    it 'extracts 260$d' do
-      expect(
-        DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(date_260d_marc)
-      ).to eq ['14th and 15th centuries']
+      </record>'
+      }
+
+      it 'extracts 260$d' do
+        expect(
+          DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(record)
+        ).to eq ['14th and 15th centuries']
+      end
     end
 
-    let(:date_264c_marc) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+    context '264$c' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -442,20 +436,19 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="a">Lahore,</subfield>
           <subfield code="c">1596.</subfield>
         </datafield>
-      </record>
-    }
-      )
-    }
+      </record>'
+      }
 
-    it 'extracts 264$c' do
-      expect(
-        DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(date_264c_marc)
-      ).to eq ['1596.']
+      it 'extracts 264$c' do
+        expect(
+          DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(record)
+        ).to eq ['1596.']
+      end
     end
 
-
-    let(:date_245f_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    context '245$f' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -467,18 +460,19 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="a">Shah-nameh,</subfield>
           <subfield code="f">1600s.</subfield>
         </datafield>
-      </record>
-    }
-      )
-    }
-    it 'extracts 245$f' do
-      expect(
-        DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(date_245f_record)
-      ).to eq ['1600s.']
+      </record>'
+      }
+
+      it 'extracts 245$f' do
+        expect(
+          DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(record)
+        ).to eq ['1600s.']
+      end
     end
 
-    let(:date_008_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    context '008' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -486,35 +480,22 @@ describe DS::Extractor::MarcXmlExtractor do
         <controlfield tag="001">9948617063503681</controlfield>
         <controlfield tag="005">20220803105853.0</controlfield>
         <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
-      </record>
-    })
-    }
+      </record>'
+      }
 
-    it 'extracts 008[7,9]' do
-      expect(
-        DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(date_008_record)
-      ).to eq ['1409']
+      it 'extracts 008[7,9]' do
+        expect(
+          DS::Extractor::MarcXmlExtractor.extract_production_date_as_recorded(record)
+        ).to eq ['1409']
+      end
     end
-
-    let(:date_008_blank_date_record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
-      <record xmlns="http://www.loc.gov/MARC21/slim"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <leader>12792ctm a2201573Ia 4500</leader>
-        <controlfield tag="001">9948617063503681</controlfield>
-        <controlfield tag="005">20220803105853.0</controlfield>
-        <controlfield tag="008">101130s        it a          000 0 lat d</controlfield>
-      </record>
-    })
-    }
 
   end
 
   context 'extract_production_date' do
     context '088 has no date value' do
-      let(:record) {
-        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -523,8 +504,7 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="b">150</subfield>
           <subfield code="d">75</subfield>
         </datafield>
-      </record>
-      })
+      </record>'
       }
 
       it 'returns an empty array' do
@@ -535,13 +515,12 @@ describe DS::Extractor::MarcXmlExtractor do
     end
 
     context 'no 008 is present' do
-      let(:record) {
-        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-      </record>
-      })
+      </record>'
       }
 
       it 'returns an empty array' do
@@ -553,8 +532,8 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context '008 date type b: BCE date' do
       context "BCE to BCE year" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -563,8 +542,7 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="b">150</subfield>
           <subfield code="d">75</subfield>
         </datafield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns the range' do
@@ -575,8 +553,8 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "BCE to CE year" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -585,8 +563,7 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="b">150</subfield>
           <subfield code="e">75</subfield>
         </datafield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns the range' do
@@ -597,8 +574,8 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "single BCE year" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -606,8 +583,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <datafield ind1="0" ind2="0" tag="046">
           <subfield code="b">150</subfield>
         </datafield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns the year' do
@@ -618,8 +594,8 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "single BCE year" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -627,8 +603,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <datafield ind1="0" ind2="0" tag="046">
           <subfield code="b">150</subfield>
         </datafield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns the year' do
@@ -639,8 +614,8 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "no 046$b, BCE date 1" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -648,8 +623,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <datafield ind1="0" ind2="0" tag="046">
           <subfield code="e">150</subfield>
         </datafield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns an empty array' do
@@ -662,14 +636,13 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context '008 date type e: Detailed date' do
       context "full YYYYMMDD date" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130e11200520it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns the year' do
           expect(
@@ -678,14 +651,13 @@ describe DS::Extractor::MarcXmlExtractor do
         end
       end
       context "YYYYMM date with code" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130e112005 xit a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns the year and ignores letter code' do
           expect(
@@ -697,14 +669,13 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context '008 date type k: range of collection' do
 
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130k15121716it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
       it 'returns a year range' do
         expect(
@@ -715,14 +686,13 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context '008 date type m: multiple dates' do
 
-      let(:record) {
-        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m07390741it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
       }
 
       it 'returns a year range' do
@@ -732,14 +702,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context 'with "u"s in date1' do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m17uu1900it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns a year range and substitutes "0" for "u"' do
           expect(
@@ -749,14 +718,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context 'with "u"s in date2' do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m0618193uit a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns a year range and substitutes "9" for "u"' do
           expect(
@@ -766,14 +734,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context 'with "u"s in both dates' do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m061u193uit a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'substitutes 0 and 9 for "u" as appropriate'  do
           expect(
@@ -783,14 +750,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context 'with "9999" in date2' do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m15549999it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'return the first date'  do
           expect(
@@ -800,14 +766,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context 'with "9999" in date1' do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m99991554it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'return the second date'  do
           expect(
@@ -817,14 +782,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context 'with "9999" in both positions' do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130m99999999it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'return the second date'  do
           expect(
@@ -835,14 +799,13 @@ describe DS::Extractor::MarcXmlExtractor do
     end
 
     context '008 date type n: Dates unknown' do
-      let(:record) {
-        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130nuuuuuuuuit a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
       }
 
       it 'returns an empty array' do
@@ -856,14 +819,13 @@ describe DS::Extractor::MarcXmlExtractor do
     context '008 date type p: Date of ... when different' do
       # p - Date of distribution/release/issue and
       #     production/recording session when different
-      let(:record) {
-        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130p1400    it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
       }
 
       it 'returns a year' do
@@ -875,14 +837,13 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context '008 date type q: Questionable date' do
       context "year range" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130q01000299it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns a year range' do
           expect(
@@ -892,14 +853,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "single year" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130q0979    it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns a year' do
           expect(
@@ -910,14 +870,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "dates with u's present" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130q13uu14uuit a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it "returns a range replacing u's with 0s and 9s as appropriate" do
@@ -928,14 +887,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "second year is uuuu" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130q1425uuuuit a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it "returns the first year when the second is uuuu" do
@@ -946,14 +904,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "first year is uuuu" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130quuuu1597it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it "returns the second year when the first is uuuu" do
@@ -965,14 +922,13 @@ describe DS::Extractor::MarcXmlExtractor do
     end
 
     context '008 date type r - Reprint/reissue date and original date' do
-      let(:record) {
-        marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130r11751199it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
       }
       it 'returns the first year' do
         expect(
@@ -983,14 +939,13 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context '008 date type s - Single known date/probable date' do
       context "single date is given: 's1171    '" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130s1171    it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
         it 'returns a single year' do
           expect(
@@ -1000,14 +955,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "single date is given with code: 's1171 xx '" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130s1171 xx it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns a single year' do
@@ -1018,14 +972,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "single date is given with pipes: 's1171||||'" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130s1171||||it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it 'returns a single year' do
@@ -1036,14 +989,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "single date is given with u's: 's19uu    '" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130s19uu    it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it "substitutes 0 for u: 's19uu    '" do
@@ -1054,14 +1006,13 @@ describe DS::Extractor::MarcXmlExtractor do
       end
 
       context "two years are given" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130s15631564it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it "returns the first year: 's15631564'" do
@@ -1074,14 +1025,13 @@ describe DS::Extractor::MarcXmlExtractor do
 
     context 'Continuing resource second date part is 9999' do
       context "two years are given" do
-        let(:record) {
-          marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+        let(:marc_xml) {
+          '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
         <controlfield tag="008">101130s15631564it a          000 0 lat d</controlfield>
-      </record>
-      })
+      </record>'
         }
 
         it "returns the first year: 's15631564'" do
@@ -1093,9 +1043,10 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
-  let(:place_260a_record) {
-    marc_record(
-      %q{<?xml version="1.0" encoding="UTF-8"?>
+  context 'extract_recon_places' do
+    context '260$a' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -1107,14 +1058,19 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="a">[Italy,</subfield>
           <subfield code="d">14th and 15th centuries]</subfield>
         </datafield>
-      </record>
-    }
-    )
-  }
+      </record>'
+      }
 
-  let(:place_264a_record) {
-    marc_record(
-      %q{<?xml version="1.0" encoding="UTF-8"?>
+      it 'extracts 260$a' do
+        expect(
+          DS::Extractor::MarcXmlExtractor::extract_recon_places record
+        ).to eq [['Italy']]
+      end
+    end
+
+    context '264$a' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -1126,29 +1082,20 @@ describe DS::Extractor::MarcXmlExtractor do
           <subfield code="a">Lahore,</subfield>
           <subfield code="c">1596.</subfield>
         </datafield>
-      </record>
-    }
-    )
-  }
+      </record>'
+      }
 
-  context 'extract_recon_places' do
-    it 'extracts 260$a' do
-      expect(
-        DS::Extractor::MarcXmlExtractor::extract_recon_places place_260a_record
-      ).to eq [['Italy']]
-    end
-
-    it 'extracts 264$a' do
-      expect(
-        DS::Extractor::MarcXmlExtractor::extract_recon_places place_264a_record
-      ).to eq [['Lahore']]
+      it 'extracts 264$a' do
+        expect(
+          DS::Extractor::MarcXmlExtractor::extract_recon_places record
+        ).to eq [['Lahore']]
+      end
     end
   end
 
   context 'extract note' do
-    let(:record) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
             <record xmlns="http://www.loc.gov/MARC21/slim"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -1171,9 +1118,7 @@ describe DS::Extractor::MarcXmlExtractor do
               <datafield ind1="1" ind2=" " tag="561">
                 <subfield code="a">Sold by Ronald Orlovsky (Ebay), 2017.</subfield>
               </datafield>
-            </record>
-        }
-      )
+            </record>'
     }
     let(:values) {
       DS::Extractor::MarcXmlExtractor.extract_notes record
@@ -1189,9 +1134,8 @@ describe DS::Extractor::MarcXmlExtractor do
   end
 
   context 'extract_named_500' do
-    let(:note_500_record) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
             <record xmlns="http://www.loc.gov/MARC21/slim"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -1214,51 +1158,50 @@ describe DS::Extractor::MarcXmlExtractor do
               <datafield ind1="1" ind2=" " tag="561">
                 <subfield code="a">Sold by Ronald Orlovsky (Ebay), 2017.</subfield>
               </datafield>
-            </record>
-        }
-      )
+            </record>'
     }
+
     it 'returns a named note with prefix' do
       expect(
-        DS::Extractor::MarcXmlExtractor.extract_named_500 note_500_record, name: 'Binding'
+        DS::Extractor::MarcXmlExtractor.extract_named_500 record, name: 'Binding'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'returns 561$a' do
       expect(
-        DS::Extractor::MarcXmlExtractor.extract_named_500 note_500_record, name: 'Binding'
+        DS::Extractor::MarcXmlExtractor.extract_named_500 record, name: 'Binding'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'returns a named note without a prefix' do
       expect(
-        DS::Extractor::MarcXmlExtractor.extract_named_500 note_500_record, name: 'Binding', strip_name: true
+        DS::Extractor::MarcXmlExtractor.extract_named_500 record, name: 'Binding', strip_name: true
       ).to include 'Modern red morocco with marbled rose endpapers.'
     end
 
     it 'handles a "name" parameter with a trailing ":"' do
       expect(
-        DS::Extractor::MarcXmlExtractor.extract_named_500 note_500_record, name: 'Binding:'
+        DS::Extractor::MarcXmlExtractor.extract_named_500 record, name: 'Binding:'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'has case-insensitive name matching' do
       expect(
-        DS::Extractor::MarcXmlExtractor.extract_named_500 note_500_record, name: 'bInDiNg'
+        DS::Extractor::MarcXmlExtractor.extract_named_500 record, name: 'bInDiNg'
       ).to include 'Binding: Modern red morocco with marbled rose endpapers.'
     end
 
     it 'has case-insensitive name matching and stripping' do
       expect(
-        DS::Extractor::MarcXmlExtractor.extract_named_500 note_500_record, name: 'bInDiNg', strip_name: true
+        DS::Extractor::MarcXmlExtractor.extract_named_500 record, name: 'bInDiNg', strip_name: true
       ).to include 'Modern red morocco with marbled rose endpapers.'
     end
   end
 
   context 'find_shelfmark' do
-    let(:shelfmark_in_500a_record) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+    context 'shelfmark in 500$a' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
             <record xmlns="http://www.loc.gov/MARC21/slim"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -1269,14 +1212,13 @@ describe DS::Extractor::MarcXmlExtractor do
               <datafield ind1=" " ind2=" " tag="500">
                 <subfield code="a">Shelfmark: Eugene, OR, Special Collections and University Archives, University of Oregon, MS 041.</subfield>
               </datafield>
-            </record>
-        }
-      )
-    }
+            </record>'
+      }
+    end
 
-    let(:shelfmark_in_099a_record) {
-      marc_record(
-        %q{<?xml version="1.0" encoding="UTF-8"?>
+    context 'shelfmark in 099$a' do
+      let(:marc_xml) {
+        '<?xml version="1.0" encoding="UTF-8"?>
             <record xmlns="http://www.loc.gov/MARC21/slim"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
@@ -1289,15 +1231,14 @@ describe DS::Extractor::MarcXmlExtractor do
                 <subfield code="a">65</subfield>
                 <subfield code="9">local</subfield>
               </datafield>
-            </record>
-        }
-      )
-    }
+            </record>'
+      }
+    end
   end
 
   context 'extract_cataloging_convention' do
-    let(:record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
             <record xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
               <leader>03556ctm a2200637Ia 4500</leader>
               <controlfield tag="001">9937281963503681</controlfield>
@@ -1322,9 +1263,7 @@ describe DS::Extractor::MarcXmlExtractor do
                 <subfield code="c">PAULM</subfield>
                 <subfield code="d">PAULM</subfield>
               </datafield>
-            </record>
-        }
-      )
+            </record>'
     }
 
     let(:extracted_values) { DS::Extractor::MarcXmlExtractor.extract_cataloging_convention record }
@@ -1335,8 +1274,8 @@ describe DS::Extractor::MarcXmlExtractor do
   end
 
   context 'DS::Util.clean_string' do
-    let(:record) {
-      marc_record(%q{<?xml version="1.0" encoding="UTF-8"?>
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
   <marc:record xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
     <marc:leader>04310ctm a2200613Ia 4500</marc:leader>
     <marc:controlfield tag="001">9968531423503681</marc:controlfield>
@@ -1484,10 +1423,7 @@ describe DS::Extractor::MarcXmlExtractor do
         <marc:location>cjsrarms</marc:location>
       </marc:holding>
     </marc:holdings>
-  </marc:record>
-
-        }
-      )
+  </marc:record>'
     }
 
     it 'is invoked by extract_date_as_recorded' do
