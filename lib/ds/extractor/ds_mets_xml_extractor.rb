@@ -215,14 +215,6 @@ module DS
           }.join ', '
         end
 
-        # Extracts the material as recorded from the given record.
-        #
-        # @param [CSV::Row] record the record to extract material from
-        # @return [String] the extracted material as recorded
-        def extract_material_as_recorded record
-          extract_materials(record).map(&:as_recorded).join '|'
-        end
-
         # Extracts materials from the given record.
         #
         # @param [Object] record the record to extract materials from
@@ -235,15 +227,6 @@ module DS
           }.uniq.map { |as_recorded|
             DS::Extractor::Material.new as_recorded: as_recorded
           }
-        end
-
-        # Extracts former owners as recorded from the given XML.
-        #
-        # @param [Nokogiri::XML::NodeSet] xml the parsed XML to extract former owners from
-        # @param [Boolean] lookup_split whether to lookup split information or not
-        # @return [Array<String>] the extracted former owners as recorded
-        def extract_former_owners_as_recorded xml, lookup_split: true
-          extract_former_owners(xml).map &:as_recorded
         end
 
         # Extracts former owners from the given record.
@@ -270,35 +253,12 @@ module DS
           DS::Extractor::DsMetsXmlExtractor.extract_name record, *%w{ author [author] }
         end
 
-        # Extracts authors as recorded from the given record.
-        #
-        # @param [Object] record the record to extract authors from
-        # @return [Array<String>] the extracted authors as recorded
-        def extract_authors_as_recorded record
-          extract_authors(record).map &:as_recorded
-        end
-
-        # Extracts artists as recorded from the given record.
-        #
-        # @param [Object] record the record to extract artists
-        def extract_artists_as_recorded record
-          extract_artists(record).map &:as_recorded
-        end
-
         # Extracts artists from the given record using the specified type and role.
         #
         # @param [Object] record the record to extract artists from
         # @return [Array<DS::Extractor::Name>] an array of extracted artists
         def extract_artists record
           DS::Extractor::DsMetsXmlExtractor.extract_name record, *%w{ artist [artist] illuminator }
-        end
-
-        # Extracts scribes as recorded from the given record.
-        #
-        # @param [Object] record the record to extract scribes from
-        # @return [Array<String>] the extracted scribes as recorded
-        def extract_scribes_as_recorded record
-          extract_scribes(record).map &:as_recorded
         end
 
         # Extract scribes from the given record.
@@ -323,16 +283,6 @@ module DS
         # @return [Array<String>] the extracted other names
         def extract_associated_agents record
           DS::Extractor::DsMetsXmlExtractor.extract_name record, 'other'
-        end
-
-        ##
-        # Return a list of unique languages from the text-level <mods:note>s
-        # that start with "lang:" (case -insensitive), joined with separator;
-        # so, "Latin", rather than "Latin|Latin|Latin", etc.
-        #
-        # @return [String]
-        def extract_languages_as_recorded record
-          extract_languages(record).map &:as_recorded
         end
 
         # Extract languages from the given record.
@@ -368,14 +318,6 @@ module DS
           }
         end
 
-        # Extract titles as recorded from the given record.
-        #
-        # @param record [Object] the record to extract titles from
-        # @return [Array<String>] the extracted titles as recorded
-        def extract_titles_as_recorded record
-          extract_titles(record).map &:as_recorded
-        end
-
         # Extract titles from the given record.
         #
         # @param record [Object] the record to extract titles from
@@ -389,14 +331,6 @@ module DS
           }.map { |as_recorded|
             DS::Extractor::Title.new as_recorded: as_recorded
           }
-        end
-
-        # Extract production places as recorded from the given XML.
-        #
-        # @param xml [Object] the XML to extract production places from
-        # @return [Array<String>] the extracted production places as recorded
-        def extract_production_places_as_recorded xml
-          extract_places(xml).map &:as_recorded
         end
 
         ##
@@ -434,17 +368,6 @@ module DS
           data += extract_former_owners(xml).map &:to_a
           data += extract_associated_agents(xml).map &:to_a
           data
-        end
-
-        ##
-        # Extract acknowledgments, notes, physical descriptions, and
-        # former owners; return all strings that start with SPLIT:,
-        # remove 'SPLIT: ' and return an array of arrays that can
-        # be treated as rows by Recon::Type::Splits
-        def extract_recon_splits xml
-          data = []
-          data += DS::Extractor::DsMetsXmlExtractor.extract_former_owners_as_recorded xml, lookup_split: false
-          data.flatten.select { |d| d.to_s.size >= 400 }.map { |d| [d.strip] }
         end
 
         ##
@@ -499,18 +422,6 @@ module DS
         #
         # @param [Nokogiri::XML:Node] xml a +<METS_XML>+ node
         # @return [Array<String>] an of subjects
-        def extract_subjects_as_recorded xml
-          extract_subjects(xml).map(&:as_recorded)
-        end
-
-        # Extract all subjects as recorded from the given XML.
-        #
-        # @param xml [Nokogiri::XML::Node] the XML to extract subjects from
-        # @return [Array<String>] the extracted subjects as recorded
-        def extract_all_subjects_as_recorded xml
-          extract_subjects_as_recorded xml
-        end
-
         # Extract link to institution record from the given XML.
         #
         # @param xml [Nokogiri::XML::Node] the XML to extract the link from
