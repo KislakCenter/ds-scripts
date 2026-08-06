@@ -12,10 +12,10 @@ module Recon
       METHOD_NAME = %i{ extract_titles }
 
       RECON_CSV_HEADERS = %i{
-      authorized_label
-      ds_qid
       title_as_recorded
       title_as_recorded_agr
+      authorized_label
+      ds_qid
     }
 
       LOOKUP_COLUMNS = %i{
