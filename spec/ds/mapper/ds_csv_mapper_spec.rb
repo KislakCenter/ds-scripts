@@ -5,9 +5,9 @@ require 'spec_helper'
 RSpec.describe DS::Mapper::DSCSVMapper do
 
   let(:parsed_manifest) { parse_csv <<~CSV
-    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,institutional_id_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,dated,manifest_generated_at
-    Q1075148,ucriverside-dscsv.csv,"University of California, Riverside",ds-csv,DS1234,BP128.57 .A2 1700z,Shelfmark,2024-02-21T240000,BP128.57 .A2 1700z,al-Ḥajj 1–15,http://example.com/iiif,http://example.com/holding_int_url,TRUE,2024-02-21T240000
-    Q1075148,ucriverside-dscsv.csv,"University of California, Riverside",ds-csv,,BX2080 .C3735 1401,Shelfmark,2024-02-21T240000,BX2080 .C3735 1401,Book of Hours,,https://calisphere.org/item/ark:/86086/n2t72jgg/,FALSE,2024-02-21T240000
+    holding_institution_ds_qid,filename,holding_institution_wikidata_label,source_data_type,ds_id,holding_institution_institutional_id,record_lookup_value,lookup_value_location_in_source,record_last_updated,call_number,title,iiif_manifest_url,link_to_institutional_record,dated,manifest_generated_at
+    Q1075148,ucriverside-dscsv.csv,"University of California, Riverside",ds-csv,DS1234,BP128.57 .A2 1700z,BP128.57 .A2 1700z,Shelfmark,2024-02-21T240000,BP128.57 .A2 1700z,al-Ḥajj 1–15,http://example.com/iiif,http://example.com/holding_int_url,TRUE,2024-02-21T240000
+    Q1075148,ucriverside-dscsv.csv,"University of California, Riverside",ds-csv,BX2080 .C3735 1401,BX2080 .C3735 1401,Shelfmark,2024-02-21T240000,BX2080 .C3735 1401,Book of Hours,,https://calisphere.org/item/ark:/86086/n2t72jgg/,FALSE,2024-02-21T240000
   CSV
   }
   let(:source_dir) { fixture_path 'ds_csv' }
@@ -35,11 +35,13 @@ RSpec.describe DS::Mapper::DSCSVMapper do
     end
 
     let(:institutional_id) { entry.institutional_id }
+    let(:lookup_value) { entry.record_lookup_value }
     let(:id_location) { entry.institutional_id_location_in_source }
+    let(:lookup_value_location) { entry.lookup_value_location_in_source }
     let(:record) { mapper.extract_record entry }
 
     it 'returns the expected record' do
-      expect(record[id_location]).to eq entry.institutional_id
+      expect(record[lookup_value_location]).to eq lookup_value
     end
   end
 

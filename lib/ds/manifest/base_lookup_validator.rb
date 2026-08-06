@@ -5,7 +5,7 @@ module DS
     ##
     # A {DS::Manifest::BaseIdValidator} is a base class for a
     # cacheable ID validator for sources. The validator is responsible
-    # for opening and caching source files and dtermining that one
+    # for opening and caching source files and determining that one
     # record is found for each source +id+ at the specified
     # +id_location+ in the parsed source.
     #
@@ -17,13 +17,13 @@ module DS
     #
     #   - +#locate_record+, required this class
     #
-    class BaseIdValidator
+    class BaseLookupValidator
 
       attr_reader :errors
       attr_reader :source
 
       ##
-      # Create a new ID Validator
+      # Create a new Lookup Validator
       #
       # @param source [DS::Source::BaseSource] the source to validate
       # @return [void]
@@ -32,38 +32,39 @@ module DS
         @errors = []
       end
 
-      # Checks if the given file path, id, and id location are valid.
+      # Checks if the given file path, lookup_value, and lookup_value_location are valid.
       #
       # @param file_path [String] The path to the file.
-      # @param id [String] The id to check.
-      # @param id_location [String] The location of the id.
+      # @param lookup_value [String] The lookup_value to check.
+      # @param lookup_value_location [String] The location of the lookup_value in the source.
       # @return [Boolean] Returns true if the records size is equal to 1, false otherwise.
-      def valid? file_path, id, id_location
-        records = locate_record file_path, id, id_location
-
+      def valid? file_path, lookup_value, lookup_value_location
+        records = locate_record file_path, lookup_value, lookup_value_location
         return true if records.size == 1
-        handle_count_error records.size, id, id_location
+
+        handle_count_error records.size, lookup_value, lookup_value_location
         false
       end
 
-      # Locates a record based on the given source path, ID, and ID location.
+      # Locates a record based on the given source path, lookup_value and lookup_value_location.
       #
       # @param source_path [String] the path to the source file
-      # @param id [String] the ID of the record
-      # @param id_location [String] the location of the ID within the record
+      # @param lookup_value [String] the lookup value for the record; e.g, MMSID
+      # @param lookup_value_location [String] the location of the
+      #   lookup_value_location within the record; e.g., column name or XPath
       # @raise [NotImplementedError] this method is not implemented and should be overridden
       # @return [Array<Object>] an array of objects for each record
-      def locate_record source_path, id, id_location
+      def locate_record source_path, lookup_value, lookup_value_location
         raise NotImplementedError
       end
 
-      def handle_count_error count, inst_id, location_in_source
+      def handle_count_error count, lookup_value, lookup_value_location
         return if count == 1
 
         if count > 1
-          add_error "ERROR: Multiple records (#{count}) found for id: #{inst_id} (location: #{location_in_source})"
-        elsif count == 0
-          add_error "ERROR: No records found for id: #{inst_id} (location: #{location_in_source})"
+          add_error "ERROR: Multiple records (#{count}) found for id: #{lookup_value} (location: #{lookup_value_location})"
+        elsif count.zero?
+          add_error "ERROR: No records found for id: #{lookup_value} (location: #{lookup_value_location})"
         end
         nil
       end

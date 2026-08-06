@@ -68,9 +68,8 @@ module DS
       def extract_record entry
         locator = DS::Extractor::CsvRecordLocator.new
         csv = source.load_source File.join(source_dir, entry.filename)
-        locator.locate_record(csv, entry.institutional_id, entry.institutional_id_location_in_source).first
+        locator.locate_record(csv, entry.record_lookup_value, entry.lookup_value_location_in_source).first
       end
-
 
     end
   end

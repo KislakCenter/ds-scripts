@@ -11,8 +11,8 @@ module DS
         super()
       end
 
-      def locate_record xml, id, id_location
-        xpath = id_location.gsub(/ID_PLACEHOLDER/, id)
+      def locate_record xml, lookup_value, lookup_value_location
+        xpath = lookup_value_location.gsub(/ID_PLACEHOLDER/, lookup_value)
         # try with namespaces
         record = try_locate_record xml, xpath, namespaces: namespaces
         return record if record.present?

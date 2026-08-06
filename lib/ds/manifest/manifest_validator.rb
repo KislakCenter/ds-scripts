@@ -4,6 +4,7 @@ require 'csv'
 require 'uri'
 require 'date'
 require_relative './constants'
+require_relative './entry_identity'
 
 module DS
   module Manifest
@@ -13,11 +14,11 @@ module DS
     # Validation does the following:
     #
     #   - Confirms all required columns are present
-    #   - Confirms all all required values are present
+    #   - Confirms all required values are present
     #   - Confirms all column values are the correct type
     #   - Confirms all listed input files are present
-    #   - Confirms all listed input files match the record
-    #     identifier provided in the manifest
+    #   - Confirms all records are present in the source
+    #   - Confirms all manifest entries are unique
     #
     # @todo Add test for live URLs
     class ManifestValidator
@@ -36,7 +37,7 @@ module DS
       def initialize manifest
         @manifest = manifest
         @errors   = []
-        @id_validators = {}
+        @lookup_validators = {}
       end
 
       ##
@@ -44,7 +45,7 @@ module DS
       def valid?
         return false unless validate_columns
         return false unless validate_required_values
-        return false unless validate_ids_unique
+        return false unless validate_records_unique
         return false unless validate_data_types
         return false unless validate_files_exist
         return false unless validate_records_present
@@ -57,6 +58,7 @@ module DS
         found_columns = manifest.headers
         diff          = MANIFEST_COLUMNS - found_columns
         return true if diff.blank?
+
         add_error "Manifest missing required columns: #{diff.join ', '}" if diff.present?
         false
       end
@@ -102,47 +104,53 @@ module DS
         is_valid
       end
 
-      # Validates the uniqueness of all IDs in the manifest.
+      # Validates the uniqueness of all Entries in the manifest.
       #
-      # This method collects the count of all IDs in the manifest and selects those with a count greater than 1.
-      # It then iterates over the multiples and adds an error for each duplicate ID found.
+      # This method collects the count of all EntryIdentities values in the
+      # manifest and selects those with a count greater than 1. It then
+      # iterates over the multiples and adds an error for each duplicate
+      # Entry found.
       #
       # Returns:
       # - `true` if no duplicate IDs are found.
       # - `false` if duplicate IDs are found.
-      def validate_ids_unique
+      def validate_records_unique
         # collect the count of all ids and select those with a count > 1
-        multiples = manifest.inject({}) { |h, id|
-          h[id] ||= 0; h[id] += 1; h
-        }.filter_map { |id, count|
-          [id, count] if count > 1
+        multiples = manifest.each_with_object({}) { |entry, h|
+          entry_id = EntryIdentity.new(entry)
+          h[entry_id] ||= 0
+          h[entry_id] += 1
+        }.filter_map { |entry_id, count|
+          [entry_id, count] if count > 1
         }
 
         return true if multiples.blank?
 
-        multiples.each do |id, count|
-          add_error "Duplicate ID found in manifest: ID '#{id}' found in #{count} rows"
+        multiples.each do |identity, count|
+          add_error "Duplicate Entries found in manifest: #{count} rows found for '#{identity}'"
         end
         false
       end
 
       ##
-      # @return [boolean] true if all +holding_institution_institutional_id+
-      #     values match source file
+      # @return [boolean] +true+ if one record is found for each
+      #   +record_lookup_value+ and +lookup_value_location_in_source+;
+      #   otherwise, return +false+
       def validate_records_present
         is_valid = true
-        manifest.each_with_index do |entry, row_num|
+        manifest.each do |entry|
           file_path = File.join manifest.source_dir, entry.filename
 
-          inst_id      = entry.institutional_id
-          id_validator = get_id_validator entry.source_type
-          found        = id_validator.valid? file_path, inst_id, entry.institutional_id_location_in_source
+          lookup_validator = get_lookup_validator entry.source_type
+          next if lookup_validator.valid?(
+            file_path,
+            entry.record_lookup_value,
+            entry.lookup_value_location_in_source)
 
-          unless found
-            is_valid = false
-            id_validator.errors.each { |error| add_error error }
-          end
+          is_valid = false
+          lookup_validator.errors.each { |error| add_error error }
         end
+
         is_valid
       end
 
@@ -150,16 +158,16 @@ module DS
       # 0 or more than 1.
       #
       # @param count [Integer] the number of records found for the given `inst_id` and `location_in_source`
-      # @param inst_id [String] the identifier of the record
-      # @param location_in_source [String] the location in the source where the record is found
+      # @param lookup_value [String] the lookup_value for the record
+      # @param location_in_source [String] the location in the source where the lookup_value is found
       # @return [nil]
-      def handle_count_error count, inst_id, location_in_source
+      def handle_count_error count, lookup_value, location_in_source
         return if count == 1
 
         if count > 1
-          add_error "ERROR: Multiple records (#{count}) found for id: #{inst_id} (location: #{location_in_source})"
-        elsif count == 0
-          add_error "ERROR: No records found for id: #{inst_id} (location: #{location_in_source})"
+          add_error "ERROR: Multiple records (#{count}) found for lookup value: #{lookup_value} (location: #{location_in_source})"
+        elsif count.zero?
+          add_error "ERROR: No records found for lookup value: #{lookup_value} (location: #{location_in_source})"
         end
         nil
       end
@@ -233,18 +241,18 @@ module DS
       # @param source_type [Symbol] the type of the source
       # @return [DS::Manifest::BaseIdValidator] the ID validator for the source type
       # @raise [NotImplementedError] if the source type is not implemented
-      def get_id_validator source_type
+      def get_lookup_validator source_type
         case source_type
         when DS::Constants::MARC_XML
-          @id_validators[source_type] ||= SimpleXmlIdValidator.new(DS::Source::MarcXML.new)
+          @lookup_validators[source_type] ||= SimpleXmlLookupValidator.new(DS::Source::MarcXML.new)
         when DS::Constants::DS_METS
-          @id_validators[source_type] ||= SimpleXmlIdValidator.new(DS::Source::DSMetsXML.new)
+          @lookup_validators[source_type] ||= SimpleXmlLookupValidator.new(DS::Source::DSMetsXML.new)
         when DS::Constants::TEI_XML
-          @id_validators[source_type] ||= SimpleXmlIdValidator.new(DS::Source::TeiXML.new)
+          @lookup_validators[source_type] ||= SimpleXmlLookupValidator.new(DS::Source::TeiXML.new)
         when DS::Constants::DS_CSV
-          @id_validators[source_type] ||= DsCsvIdValidator.new(DS::Source::DSCSV.new)
+          @lookup_validators[source_type] ||= DsCsvLookupValidator.new(DS::Source::DSCSV.new)
         else
-          raise NotImplementedError, "validate_ids not implemented for: #{source_type}"
+          raise NotImplementedError, "validate_lookups not implemented for: #{source_type}"
         end
       end
 

@@ -67,9 +67,14 @@ module DS
         row[INSTITUTIONAL_ID]
       end
 
-      # INSTITUTIONAL_ID_LOCATION_IN_SOURCE = 'institutional_id_location_in_source'
-      def institutional_id_location_in_source
-        row[INSTITUTIONAL_ID_LOCATION_IN_SOURCE]
+      # RECORD_LOOKUP_VALUE                 = 'record_lookup_value'
+      def record_lookup_value
+        row[RECORD_LOOKUP_VALUE]
+      end
+
+      # LOOKUP_VALUE_LOCATION_IN_SOURCE     = 'lookup_value_location_in_source'
+      def lookup_value_location_in_source
+        row[LOOKUP_VALUE_LOCATION_IN_SOURCE]
       end
       # RECORD_LAST_UPDATED                 = 'record_last_updated'
       def record_last_updated
@@ -103,25 +108,6 @@ module DS
       def dated?
         dated.to_s.strip.downcase == 'true'
       end
-
-      def to_h
-        {
-          institution_ds_qid:           institution_ds_qid,
-          institution_wikidata_label:   institution_wikidata_label,
-          ds_id:                        ds_id,
-          call_number:                  call_number,
-          institutional_id:             institutional_id,
-          title:                        title,
-          link_to_institutional_record: link_to_institutional_record,
-          iiif_manifest_url:            iiif_manifest_url,
-          record_last_updated:          record_last_updated,
-          source_type:                  source_type,
-          filename:                     filename,
-          dated:                        dated?,
-          manifest_generated_at:        manifest_generated_at,
-        }
-      end
-
     end
   end
 end

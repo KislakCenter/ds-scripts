@@ -16,10 +16,10 @@ module DS
         locator = DS::Extractor::XmlRecordLocator.new
         source_file_path = File.join source_dir, entry.filename
         xml = source.load_source source_file_path
-        record = locator.locate_record xml, entry.institutional_id, entry.institutional_id_location_in_source
+        record = locator.locate_record xml, entry.record_lookup_value, entry.lookup_value_location_in_source
         return record if record.present?
 
-        raise "Unable to locate record for #{entry.institutional_id} (errors: #{record_locator.errors.join(', ')})"
+        raise "Unable to locate record for #{entry.record_lookup_value} (errors: #{record_locator.errors.join(', ')})"
       end
 
       def map_record entry

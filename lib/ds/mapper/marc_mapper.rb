@@ -22,11 +22,11 @@ module DS
 
         source_file_path = File.join source_dir, entry.filename
         xml = source.load_source source_file_path
-        xpath = entry.institutional_id_location_in_source.gsub('ID_PLACEHOLDER', entry.institutional_id) # "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
-        record = record_locator.locate_record(xml, entry.institutional_id, xpath).first
+        xpath = entry.lookup_value_location_in_source.gsub('ID_PLACEHOLDER', entry.record_lookup_value) # "//record[#{entry.institutional_id_location_in_source} = '#{entry.institutional_id}']"
+        record = record_locator.locate_record(xml, entry.record_lookup_value, xpath).first
         return record if record.present?
 
-        raise "Unable to locate record for #{entry.institutional_id} (errors: #{record_locator.errors.join(', ')})"
+        raise "Unable to locate record for #{entry.record_lookup_value} (errors: #{record_locator.errors.join(', ')})"
       end
 
       ##
