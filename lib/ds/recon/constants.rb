@@ -47,8 +47,6 @@ module Recon
     TITLE_HEADERS = %w{
       title_as_recorded
       title_as_recorded_agr
-      uniform_title_as_recorded
-      uniform_title_as_recorded_agr
       authorized_label
     }.freeze
 
