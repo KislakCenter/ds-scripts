@@ -3,16 +3,13 @@ require 'nokogiri'
 require 'csv'
 require_relative 'support/helpers'
 
-RSpec.configure do |config|
-  config.fail_if_no_examples = true
+RSpec.configure do |c|
+  c.fail_if_no_examples = true
   DS.env = 'test'
   DS.configure!
-  config.expect_with :rspec do |c|
-    c.max_formatted_output_length = nil
-  end
   # Do not run ReconData.update! for tests; recon CSVs are fixtures
   # Recon::ReconData.update!
-  config.include Helpers
+  c.include Helpers
 end
 
 require_relative 'support/expectations'

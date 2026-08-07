@@ -24,6 +24,8 @@ RSpec.describe 'DS::Mapper::DSMetsMapper' do
 
     except = %i[
         extract_cataloging_convention
+        extract_uniform_titles_as_recorded
+        extract_uniform_titles_as_recorded_agr
         extract_titles_as_recorded_agr
         extract_authors_as_recorded_agr
         extract_artists_as_recorded_agr

@@ -396,21 +396,27 @@ RSpec.describe Recon::ReconBuilder do
       let(:recon_type) { :titles }
       let(:recons) {
         [
-          {:authorized_label=>"Standard title 2",
-           :ds_qid=>"QTITLE",
-           :title_as_recorded=>"Title",
+          {:title_as_recorded=>"Title",
+           :as_recorded=>"Title",
            :title_as_recorded_agr=>"Title in vernacular",
-           },
-          {:authorized_label=>"",
-           :ds_qid=>"",
-           :title_as_recorded=>"Book of Hours",
-           :title_as_recorded_agr=>nil
-          },
-          {:authorized_label=>"",
-           :ds_qid=>"",
-           :title_as_recorded=>"Bible",
+           :uniform_title_as_recorded=>"Uniform title",
+           :uniform_title_as_recorded_agr=>"Uniform title in vernacular",
+           :authorized_label=>"Standard title",
+           :ds_qid=>"QTITLE"},
+          {:title_as_recorded=>"Book of Hours",
+           :as_recorded=>"Book of Hours",
            :title_as_recorded_agr=>nil,
-          }
+           :uniform_title_as_recorded=>nil,
+           :uniform_title_as_recorded_agr=>nil,
+           :authorized_label=>"",
+           :ds_qid=>""},
+          {:title_as_recorded=>"Bible",
+           :as_recorded=>"Bible",
+           :title_as_recorded_agr=>nil,
+           :uniform_title_as_recorded=>nil,
+           :uniform_title_as_recorded_agr=>nil,
+           :authorized_label=>"",
+           :ds_qid=>""}
         ]
 
       }

@@ -13,16 +13,6 @@ describe DS::Extractor::DsCsvExtractor do
 
   let(:record) { contributor_csv.first }
 
-  let(:csv_fixture_uniform_title) {
-    File.join fixture_path('ds_csv'), 'ucriverside-dscsv-uniform-title.csv'
-  }
-
-  let(:contributor_csv_uniform_title) {
-    CSV.parse File.open(csv_fixture_uniform_title, 'r').read, headers: true
-  }
-
-  let(:record_uniform_title) { contributor_csv_uniform_title.first }
-
   context "extractor interface" do
     skips = %i{ other_names }
     it_behaves_like "an extractor", skips
@@ -99,6 +89,14 @@ describe DS::Extractor::DsCsvExtractor do
       expect(
         DS::Extractor::DsCsvExtractor.extract_link_to_iiif_manifest record
       ).to eq "https://example.com/iiif"
+    end
+  end
+
+  context "extract_production_places_as_recorded" do
+    it 'returns the production place' do
+      expect(DS::Extractor::DsCsvExtractor.extract_production_places_as_recorded(
+        record)
+      ).to eq ["Paris"]
     end
   end
 
@@ -211,18 +209,59 @@ describe DS::Extractor::DsCsvExtractor do
     end
   end
 
-  context "extract_titles" do
-    it 'returns an array of title objects' do
-      actual_titles = [DS::Extractor::Title.new(as_recorded: "Title", vernacular: "Title in vernacular")]
-      expect(DS::Extractor::DsCsvExtractor.extract_titles(record)).to match actual_titles
+  context "extract_uniform_titles_as_recorded" do
+    it 'returns the uniform titles' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded record
+      ).to eq ["Uniform title"]
     end
   end
 
-  context "extract_titles_with_uniform_titles" do
-    it 'returns an array of title objects including uniform titles' do
-      actual_titles = [DS::Extractor::Title.new(as_recorded: "Title", vernacular: "Title in vernacular"),
-                       DS::Extractor::Title.new(as_recorded: "Uniform title", vernacular: "Uniform title in vernacular")]
-      expect(DS::Extractor::DsCsvExtractor.extract_titles(record_uniform_title)).to match actual_titles
+  context "extract_uniform_titles_as_recorded_agr" do
+    it 'returns the uniform titles in original script' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_uniform_titles_as_recorded_agr record
+      ).to eq ["Uniform title in vernacular"]
+    end
+  end
+
+  context "extract_titles_as_recorded" do
+    it 'returns the title' do
+      expect(DS::Extractor::DsCsvExtractor.extract_titles_as_recorded(
+        record)
+      ).to eq ["Title"]
+    end
+  end
+
+  context "extract_title_as_recorded_agr" do
+    it 'returns the title in original script' do
+      expect(DS::Extractor::DsCsvExtractor.extract_titles_as_recorded_agr(
+        record)
+      ).to eq ["Title in vernacular"]
+    end
+  end
+
+  context "extract_genre_as_recorded" do
+    let(:genres) {
+      [
+        "prayer books",
+        "Glossaries",
+        "A third genre",
+        "An AAT term",
+        "A second AAT term",
+        "An LCGFT term",
+        "Another LCGFT term",
+        "A FAST term",
+        "A second FAST term",
+        "An RBMSVC term",
+        "An LoBT term"
+      ]
+    }
+
+    it 'returns the genres' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_genres_as_recorded record
+      ).to eq genres
     end
   end
 
@@ -231,6 +270,130 @@ describe DS::Extractor::DsCsvExtractor do
       expect(
         DS::Extractor::DsCsvExtractor.extract_genres(record).map &:vocab
       ).to all eq 'ds-genre'
+    end
+  end
+
+  context "extract_all_subjects_as_recorded" do
+    let(:subjects) {
+      [
+        "A topical subject",
+        "A geographical subject",
+        "A chronological subject",
+        "A personal named subject",
+        "A corporate named subject",
+        "A named event",
+        "A uniform title subject"
+      ]
+    }
+
+    it 'returns the subjects' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_all_subjects_as_recorded record
+      ).to match subjects
+    end
+  end
+
+  context "extract_subjects_as_recorded" do
+    let(:subjects) {
+      ["A topical subject", "A geographical subject", "A chronological subject"]
+    }
+
+    it 'returns the subjects' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_subjects_as_recorded record
+      ).to eq subjects
+    end
+  end
+
+  context "extract_named_subjects_as_recorded" do
+    let(:subjects) {
+      [
+        "A personal named subject",
+        "A corporate named subject",
+        "A named event",
+        "A uniform title subject",
+      ]
+    }
+
+    it 'returns the subjects' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_named_subjects_as_recorded record
+      ).to eq subjects
+    end
+  end
+
+
+
+  context "extract_author_as_recorded" do
+    it 'returns the authors' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_authors_as_recorded record
+      ).to eq ["An author"]
+    end
+  end
+
+  context "extract_author_as_recorded_agr" do
+    it 'returns the authors' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_authors_as_recorded_agr record
+      ).to eq ["An author in original script"]
+    end
+  end
+
+  context "extract_artist_as_recorded" do
+    it 'returns the artists' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_artists_as_recorded record
+      ).to eq ["An artist", "Another artist"]
+    end
+  end
+
+  context "extract_artist_as_recorded_agr" do
+    it 'returns the artist names in vernacular script' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_artists_as_recorded_agr record
+      ).to eq [nil, "Another artist original script"]
+    end
+  end
+
+  context "extract_scribe_as_recorded" do
+    it 'returns the scribes' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_scribes_as_recorded record
+      ).to eq ["A scribe"]
+    end
+  end
+
+  context "extract_scribe_as_recorded_agr" do
+    it 'returns the scribes' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_scribes_as_recorded_agr record
+      ).to eq ["A scribe in original script"]
+    end
+  end
+
+  context "extract_former_owner_as_recorded" do
+    it 'returns the former owners' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_former_owners_as_recorded record
+      ).to eq ["Former owner as recorded"]
+    end
+  end
+
+
+  context "extract_languages_as_recorded" do
+    it 'returns the languages' do
+      expect(DS::Extractor::DsCsvExtractor.extract_languages_as_recorded(
+        record)
+      ).to eq ["Arabic", "Farsi"]
+    end
+  end
+
+  context "extract_material_as_recorded" do
+    it 'returns the material string' do
+      expect(
+        DS::Extractor::DsCsvExtractor.extract_material_as_recorded record
+      ).to eq "materials description"
     end
   end
 
@@ -314,7 +477,7 @@ describe DS::Extractor::DsCsvExtractor do
     it "returns an array that includes the title as recorded data" do
       expect(
         DS::Extractor::DsCsvExtractor.extract_recon_titles record
-      ).to include ["Title", "Title in vernacular"]
+      ).to include ["Title", "Title in vernacular", "Uniform title", "Uniform title in vernacular"]
     end
   end
 

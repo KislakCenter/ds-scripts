@@ -251,15 +251,20 @@ RSpec.shared_examples 'a ReconBuilder' do |skips|
       let(:recon_class) { Recon::Type::Titles }
 
       let(:recon_row) {
-        {:authorized_label=>"Standard title 2",
+        {:title_as_recorded_agr=>"Title in vernacular",
+         :uniform_title_as_recorded=>"Uniform title",
+         :uniform_title_as_recorded_agr=>"Uniform title in vernacular",
+         :authorized_label=>"Standard title",
          :ds_qid=>"QTITLE",
          :title_as_recorded=>"Title",
-         :title_as_recorded_agr=>"Title in vernacular",
+         :as_recorded=>"Title",
         }
       }
       let(:terms) {
         [DS::Extractor::Title.new(
-          as_recorded: 'Title', vernacular: 'Title in vernacular'
+          as_recorded: 'Title', vernacular: 'Title in vernacular',
+          uniform_title: 'Uniform title',
+          uniform_title_vernacular: 'Uniform title in vernacular'
         )]
       }
 

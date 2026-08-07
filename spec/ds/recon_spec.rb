@@ -38,8 +38,8 @@ describe Recon do
     context 'titles' do
       let(:recons_csv) { titles_csv }
       let(:set_name) { :titles }
-      let(:key_values) { ['Title'] }
-      let(:expected_label) { 'Standard title 2' }
+      let(:key_values) { ['Title', 'Uniform title'] }
+      let(:expected_label) { 'Standard title' }
       let(:expected_ds_qid) { 'QTITLE' }
 
       it 'returns the expected label' do
