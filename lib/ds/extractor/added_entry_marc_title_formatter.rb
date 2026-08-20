@@ -17,11 +17,8 @@ module DS
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
       # @return [String] a formatted uniform title string
       def format datafield
-        arr = datafield.xpath("subfield[@code='t' or @code='p']").map { |title|
-          DS::Util.clean_string(title.text, terminator: '')
-        }
-        first = arr.shift
-        arr.empty? ? first : "#{first}: #{arr.join ' '}"
+        title = datafield.xpath("subfield[@code='t' or @code='p']").map(&:text).join ' '
+        DS::Util.normalize_string(title)
       end
     end
   end
