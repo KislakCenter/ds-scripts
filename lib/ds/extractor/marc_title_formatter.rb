@@ -11,13 +11,26 @@ module DS
     # Returns:
     # - A formatted Title string
     class MarcTitleFormatter
-      # Formats title strings
+      # Formats title strings using normalization
       #
-      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
       # @return [String] a formatted title string
+      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
       def format datafield
-        title = datafield.xpath("subfield[@code='a' or @code='b']").map(&:text).join ' '
-        DS::Util.normalize_string(title)
+        DS::Util.normalize_string(xpath datafield)
+      end
+
+      private
+      # @return [Array] an array of subfield codes
+      def codes
+        %w[a b]
+      end
+
+      # Extracts subfields from an xpath node and joins them as a string
+      #
+      # @return [String] joined text from subfields
+      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
+      def xpath datafield
+        datafield.xpath("subfield[@code='#{codes[0]}' or @code='#{codes[1]}']").map(&:text).join ' '
       end
     end
   end

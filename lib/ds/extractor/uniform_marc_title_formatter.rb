@@ -2,7 +2,8 @@
 module DS
   module Extractor
     ##
-    # The UniformMarcTitleFormatter is responsible for formatting
+    # The UniformMarcTitleFormatter inherits from the
+    # MarcTitleFormatter and is responsible for formatting
     # a title string given a Marc datafield. It works for
     # 130, 240 and 730 title fields.
     #
@@ -10,15 +11,12 @@ module DS
     # - datafield: a Marc xml datafield node
     #
     # Returns:
-    # - A formatted Title string
-    class UniformMarcTitleFormatter
-      # Formats uniform title strings
-      #
-      # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
-      # @return [String] a formatted uniform title string
-      def format datafield
-        title = datafield.xpath("subfield[@code='a' or @code='p']").map(&:text).join ' '
-        DS::Util.normalize_string(title)
+    # - A formatted Uniform Title string
+    class UniformMarcTitleFormatter < MarcTitleFormatter
+
+      private
+      def codes
+        %w[a p]
       end
     end
   end
