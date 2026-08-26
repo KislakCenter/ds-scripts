@@ -16,21 +16,23 @@ module DS
       # @return [String] a formatted title string
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
       def format datafield
-        DS::Util.normalize_string(xpath datafield)
+        title = datafield.xpath(xpath).map(&:text).join ' '
+        DS::Util.normalize_string(title)
       end
 
-      private
       # @return [Array] an array of subfield codes
       def codes
         %w[a b]
       end
 
-      # Extracts subfields from an xpath node and joins them as a string
+      # Creates a subfields string to be extracted from an xpath node
       #
       # @return [String] joined text from subfields
       # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node
-      def xpath datafield
-        datafield.xpath("subfield[@code='#{codes[0]}' or @code='#{codes[1]}']").map(&:text).join ' '
+      def xpath
+        return "subfield" if codes.empty?
+        "subfield[" +
+          codes.map { |code| "@code='#{code}'" }.join(' or ') + "]"
       end
     end
   end
