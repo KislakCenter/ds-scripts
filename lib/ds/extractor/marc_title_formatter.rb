@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 module DS
   module Extractor
+    # The MarcTitleFormatter is responsible for formatting
+    # a title string given a Marc datafield node. It concatenates
+    # subfields a and b and then normalizes the string.
+    # Subclasses can override #codes to change the
+    # subfields that are used.
     class MarcTitleFormatter
-      # The MarcTitleFormatter is responsible for formatting
-      # a title string given a Marc datafield node. It concatenates
-      # subfields a and b and then normalizes the string.
-      # Subclasses can override #codes to change the
-      # subfields that are used.
 
       # Formats the title string given a datafield
       # node and concatenated string from the
@@ -19,11 +19,6 @@ module DS
         DS::Util.normalize_string(title)
       end
 
-      # @return [Array] an array of subfield codes
-      def codes
-        %w[a b]
-      end
-
       # Concatenates a subfields string to be extracted from
       # a xpath node
       #
@@ -32,6 +27,13 @@ module DS
         return "subfield" if codes.empty?
         code_string = codes.map { |code| "@code='#{code}'"}.join ' or '
         "subfield[#{code_string}]"
+      end
+
+      private
+
+      # @return [Array] an array of subfield codes
+      def codes
+        %w[a b]
       end
     end
   end
