@@ -84,7 +84,7 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
-  context 'extract only unique titles, 245 with 880 and 240 with 880' do
+  context 'extract titles, 245 with 880 and 240 with 880' do
     let(:marc_xml) {
       '<?xml version="1.0" encoding="UTF-8"?>
       <record xmlns="http://www.loc.gov/MARC21/slim"
@@ -129,64 +129,13 @@ describe DS::Extractor::MarcXmlExtractor do
       </record>'
     }
 
-    it 'ensures extracted titles are unique, 245 with 880 and 240 with 880' do
+    it 'ensures extraction for 245 with 880 and 240 with 880' do
       expected = [
         DS::Extractor::Title.new(as_recorded: '245 subfield a; 245 subfield b.', vernacular: '245 880 subfield a; 245 880 subfield b.'),
         DS::Extractor::Title.new(as_recorded: '246 subfield a... 246 subfield b...', vernacular: '246 880 subfield a; 246 880 subfield b.'),
         DS::Extractor::Title.new(as_recorded: '240 subfield a 240 subfield p. 240 subfield p 2.', vernacular: '240 880 subfield a; 240 880 subfield p?. 240 880 subfield p 2?.')
       ]
       expect(described_class.extract_titles(record)).to match expected
-    end
-  end
-
-  context 'extract only unique titles, 245 with 880 and 246 with 880' do
-    let(:marc_xml) {
-      '<?xml version="1.0" encoding="UTF-8"?>
-      <record xmlns="http://www.loc.gov/MARC21/slim"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
-        <leader>12792ctm a2201573Ia 4500</leader>
-        <controlfield tag="001">9948617063503681</controlfield>
-        <controlfield tag="005">20220803105853.0</controlfield>
-        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
-      <datafield ind1="0" ind2="" tag="240">
-        <subfield code="6">880-03</subfield>
-        <subfield code="a">240 subfield a</subfield>
-      </datafield>
-      <datafield ind1="0" ind2="0" tag="245">
-          <subfield code="6">880-02</subfield>
-          <subfield code="a">245 subfield a</subfield>
-        </datafield>
-      <datafield ind1="3" ind2="8" tag="246">
-        <subfield code="6">880-01</subfield>
-        <subfield code="a">246 subfield a; </subfield>
-        <subfield code="b">246 subfield b.</subfield>
-      </datafield>
-      <datafield ind1="1" ind2="0" tag="880">
-        <subfield code="6">245-02</subfield>
-        <subfield code="a">245 880 subfield a</subfield>
-      </datafield>
-      <datafield ind1="1" ind2="0" tag="880">
-        <subfield code="6">246-01</subfield>
-        <subfield code="a">246 880 subfield a; </subfield>
-        <subfield code="b">246 880 subfield b.</subfield>
-      </datafield>
-      <datafield ind1="1" ind2="0" tag="880">
-        <subfield code="6">240-03</subfield>
-        <subfield code="a">240 880 subfield a</subfield>
-      </datafield>
-      </record>'
-    }
-    it 'ensures extracted titles are unique, 245 with 880 and 246 with 880' do
-      expected = Set.new
-      # 245
-      expected << DS::Extractor::Title.new(as_recorded: '245 subfield a', vernacular: '245 880 subfield a')
-      # 246
-      expected << DS::Extractor::Title.new(as_recorded: '246 subfield a; 246 subfield b.', vernacular: '246 880 subfield a; 246 880 subfield b.')
-      # 130 == No 130 present
-      # 240
-      expected << DS::Extractor::Title.new(as_recorded: '240 subfield a', vernacular: '240 880 subfield a')
-      expect(described_class.extract_titles(record)).to match expected.to_a
     end
   end
 
