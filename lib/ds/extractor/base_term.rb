@@ -57,7 +57,6 @@ module DS
         { as_recorded: as_recorded }
       end
 
-
       def ==(other)
         self.class == other.class &&
           self.to_h == other.to_h
@@ -72,8 +71,13 @@ module DS
       ##
       # Override '#hash' for Set equivalence
       def hash
-        to_h.hash
+        [[self.class] + [to_a]].hash
       end
+
+      def empty?
+        to_a.all?(&:blank?)
+      end
+
     end
   end
 end

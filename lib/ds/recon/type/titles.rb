@@ -14,8 +14,6 @@ module Recon
       RECON_CSV_HEADERS = %i{
       title_as_recorded
       title_as_recorded_agr
-      uniform_title_as_recorded
-      uniform_title_as_recorded_agr
       authorized_label
       ds_qid
     }
@@ -25,7 +23,7 @@ module Recon
       ds_qid
     }
 
-      KEY_COLUMNS = %i{ title_as_recorded uniform_title_as_recorded }
+      KEY_COLUMNS = %i{ title_as_recorded }
 
       AS_RECORDED_COLUMN = :title_as_recorded
 

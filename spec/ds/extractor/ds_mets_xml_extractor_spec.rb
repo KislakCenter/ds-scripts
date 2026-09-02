@@ -99,21 +99,21 @@ describe DS::Extractor::DsMetsXmlExtractor do
 
     context 'extract_name' do
       it 'returns "" when there are no scribes' do
-        expect(DS::Extractor::DsMetsXmlExtractor.extract_scribes_as_recorded csl_ds_xml).to be_empty
+        expect(DS::Extractor::DsMetsXmlExtractor.extract_scribes csl_ds_xml).to be_empty
       end
 
       it 'returns the scribe names' do
-        actual = DS::Extractor::DsMetsXmlExtractor.extract_scribes_as_recorded ds_names_xml
+        actual = DS::Extractor::DsMetsXmlExtractor.extract_scribes(ds_names_xml).map(&:as_recorded)
         expect(actual.sort).to eq ['Bracketed scribe', 'Part 1 scribe','Part 2 scribe']
       end
 
       it 'returns the artist names' do
-        actual = DS::Extractor::DsMetsXmlExtractor.extract_artists_as_recorded ds_names_xml
+        actual = DS::Extractor::DsMetsXmlExtractor.extract_artists(ds_names_xml).map(&:as_recorded)
         expect(actual.sort).to eq ['Illuminator artist', 'Part 1 artist', 'Part 2 artist']
       end
 
       it 'returns the author names' do
-        actual = DS::Extractor::DsMetsXmlExtractor.extract_authors_as_recorded ds_names_xml
+        actual = DS::Extractor::DsMetsXmlExtractor.extract_authors(ds_names_xml).map(&:as_recorded)
         expect(actual.sort).to eq ['Bracketed author','Corporate author', 'Personal author 1', 'Personal author 2']
       end
     end
@@ -235,9 +235,9 @@ describe DS::Extractor::DsMetsXmlExtractor do
     end
   end # context: physical description
 
-  context 'extract_former_owners_as_recorded' do
+  context 'extract_former_owners' do
     it 'flags a long ownership note' do
-      expect(DS::Extractor::DsMetsXmlExtractor.extract_former_owners_as_recorded na_ds_xml).to have_item_matching /^SPLIT.*Long ownership/
+      expect(DS::Extractor::DsMetsXmlExtractor.extract_former_owners(na_ds_xml).map(&:as_recorded)).to have_item_matching /^SPLIT.*Long ownership/
     end
   end
 end
