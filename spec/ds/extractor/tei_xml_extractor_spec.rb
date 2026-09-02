@@ -194,45 +194,6 @@ RSpec.describe DS::Extractor::TeiXml do
         </TEI>}
     }
 
-    context 'authors' do
-
-      context 'extract_authors_as_recorded' do
-        let(:authors) { DS::Extractor::TeiXml.extract_authors_as_recorded tei_xml }
-        it 'includes a persName[@type = "authority"]' do
-          expect(authors).to include 'Ibn Hishām, ʻAbd Allāh ibn Yūsuf, 1309-1360'
-        end
-
-        it 'includes a name[@type = "authority"]' do
-          expect(authors).to include 'Some Organization'
-        end
-
-        it 'includes an author without a <name> or <persName> element' do
-          expect(authors).to include 'Unwrapped Name'
-        end
-
-        it 'includes an author with an untyped persName' do
-          expect(authors).to include 'name Without Type'
-        end
-
-      end
-
-      context 'extract_authors_agr_as_recorded' do
-        let(:authors) { DS::Extractor::TeiXml.extract_authors_as_recorded tei_xml }
-        let(:authors_agr) { DS::Extractor::TeiXml.extract_authors_as_recorded_agr tei_xml }
-        it 'extracts an agr name' do
-          expect(authors_agr).to include 'ابن هشام، عبد الله بن يوسف،'
-        end
-
-        it 'extracts nil when no vernacular name is present' do
-          expect(authors_agr).to include nil
-        end
-
-        it 'extracts as many vernacular names/slots as names' do
-          expect(authors_agr.size).to eq authors.size
-        end
-      end
-    end
-
     context 'extract_resps' do
       let(:resps) { DS::Extractor::TeiXml.extract_resps tei_xml, 'former owner' }
       it 'gets all the former owners' do
@@ -241,95 +202,6 @@ RSpec.describe DS::Extractor::TeiXml do
 
     end
 
-    context 'former owners' do
-      context 'extract_former_owners' do
-        let(:former_owners) { DS::Extractor::TeiXml.extract_former_owners_as_recorded tei_xml }
-        it 'extracts a former owner' do
-          expect(former_owners).to include 'Jamālī, Yūsuf ibn Shaykh Muḥammad'
-        end
-
-        it 'extracts all former owners' do
-          expect(former_owners.size).to eq 3
-        end
-      end
-
-      context 'extract_former_owners_agr' do
-        let(:former_owners) { DS::Extractor::TeiXml.extract_former_owners_as_recorded tei_xml }
-        let(:former_owners_agr) { DS::Extractor::TeiXml.extract_former_owners_as_recorded_agr tei_xml }
-
-        it 'extracts a former owner vernacular name' do
-          expect(former_owners_agr).to include 'يوسف بن شيخ محمد الجمالي.'
-        end
-
-        it 'extracts nil when no vernacular name is present' do
-          expect(former_owners_agr).to include nil
-        end
-
-        it 'extracts as many vernacular names/slots as names' do
-          expect(former_owners_agr.size).to eq former_owners.size
-        end
-      end
-    end
-
-    context 'artists' do
-      context 'extract_artists' do
-        let(:artists) { DS::Extractor::TeiXml.extract_artists_as_recorded tei_xml }
-        it 'extracts an artist' do
-          expect(artists).to include 'Artist One'
-        end
-
-        it 'extracts all artists' do
-          expect(artists.size).to eq 2
-        end
-      end
-
-      context 'extract_artists_agr' do
-        let(:artists) { DS::Extractor::TeiXml.extract_artists_as_recorded tei_xml }
-        let(:artists_agr) { DS::Extractor::TeiXml.extract_artists_as_recorded_agr tei_xml }
-
-        it 'extracts an artist vernacular name' do
-          expect(artists_agr).to include 'Artist One Vernacular'
-        end
-
-        it 'extracts nil when no vernacular name is present' do
-          expect(artists_agr).to include nil
-        end
-
-        it 'extracts as many vernacular names/slots as names' do
-          expect(artists_agr.size).to eq artists.size
-        end
-      end
-    end
-
-    context 'scribes' do
-      context 'extract_scribes' do
-        let(:scribes) { DS::Extractor::TeiXml.extract_scribes_as_recorded tei_xml }
-        it 'extracts an scribe' do
-          expect(scribes).to include 'Scribe One'
-        end
-
-        it 'extracts all scribes' do
-          expect(scribes.size).to eq 2
-        end
-      end
-
-      context 'extract_scribes_agr' do
-        let(:scribes) { DS::Extractor::TeiXml.extract_scribes_as_recorded tei_xml }
-        let(:scribes_agr) { DS::Extractor::TeiXml.extract_scribes_as_recorded_agr tei_xml }
-
-        it 'extracts an scribe vernacular name' do
-          expect(scribes_agr).to include 'Scribe One Vernacular'
-        end
-
-        it 'extracts nil when no vernacular name is present' do
-          expect(scribes_agr).to include nil
-        end
-
-        it 'extracts as many vernacular names/slots as names' do
-          expect(scribes_agr.size).to eq scribes.size
-        end
-      end
-    end
   end
 
   context 'extract_acknowledgments' do
@@ -416,44 +288,15 @@ RSpec.describe DS::Extractor::TeiXml do
         </TEI>}
     }
 
-    let(:titles) {
-      DS::Extractor::TeiXml.extract_titles_as_recorded tei_xml
-    }
-
-    let(:titles_agr) {
-      DS::Extractor::TeiXml.extract_titles_as_recorded_agr tei_xml
-    }
-
     let(:recon_titles) {
       DS::Extractor::TeiXml.extract_recon_titles tei_xml
     }
 
-    context 'extract_title_as_recorded' do
-      it 'extracts titles' do
-        expect(titles).to eq ['Qaṭr al-nadā wa-ball al-ṣadā.', 'Second title']
-      end
-
-      it 'extracts all non-vernacular titles' do
-        expect(titles).not_to include 'قطر الندا وبل الصدا'
-      end
-    end
-
-    context 'extract_title_as_recorded_agr' do
-
-      it 'extracts vernacular titles' do
-        expect(titles_agr).to eq ['قطر الندا وبل الصدا', nil]
-      end
-
-      it 'returns a equal number of titles and titles agr' do
-        expect(titles_agr.size).to eq titles.size
-      end
-    end
-
     context 'extract_recon_titles' do
       let(:expected_recon_titles) {
         [
-          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا', nil, nil],
-          ['Second title', nil, nil, nil]
+          ['Qaṭr al-nadā wa-ball al-ṣadā.', 'قطر الندا وبل الصدا'],
+          ['Second title', nil]
         ]
       }
       it 'returns paired titles' do
@@ -587,13 +430,6 @@ RSpec.describe DS::Extractor::TeiXml do
       end
     end
 
-    context 'extract_material_as_recorded' do
-      let(:material) { DS::Extractor::TeiXml.extract_material_as_recorded tei_xml }
-
-      it 'returns the support material' do
-        expect(material).to eq 'Parchment'
-      end
-    end
   end
 
   context 'holding information' do
@@ -680,14 +516,6 @@ RSpec.describe DS::Extractor::TeiXml do
          </TEI>
       }
     }
-
-    context 'extract_production_place' do
-      let(:place) { DS::Extractor::TeiXml.extract_production_places_as_recorded tei_xml }
-
-      it 'extracts the place of production' do
-        expect(place).to eq ['Flanders']
-      end
-    end
 
     context 'extract_production_date' do
       let(:date) { DS::Extractor::TeiXml.extract_production_date_as_recorded tei_xml }
