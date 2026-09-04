@@ -145,7 +145,7 @@ module DS
         end
 
         ###
-        # Extract the the PN from datafield, pulling subfields $a, $b, $c, $d.
+        # Extract the PN from datafield, pulling subfields $a, $b, $c, $d.
         #
         # @param [Nokogiri::XML::Node] datafield the +marc:datafield+ node with the name
         # @return [String]
@@ -788,7 +788,7 @@ module DS
           agr_datafield = find_agr_datafield datafield
           return '' if agr_datafield.blank?
 
-          extract_name_portion agr_datafield.xpath(xpath)
+          extract_name_portion agr_datafield
         end
 
         def extract_cataloging_convention record

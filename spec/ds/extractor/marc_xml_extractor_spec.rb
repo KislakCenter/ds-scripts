@@ -377,6 +377,50 @@ describe DS::Extractor::MarcXmlExtractor do
     end
   end
 
+  context 'extract_scribes' do
+    let(:marc_xml) {
+      '<?xml version="1.0" encoding="UTF-8"?>
+      <record xmlns="http://www.loc.gov/MARC21/slim"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>12792ctm a2201573Ia 4500</leader>
+        <controlfield tag="001">9948617063503681</controlfield>
+        <controlfield tag="005">20220803105853.0</controlfield>
+        <controlfield tag="008">101130s1409    it a          000 0 lat d</controlfield>
+
+      <datafield ind1="1" ind2=" " tag="700">
+        <subfield code="6">880-01</subfield>
+        <subfield code="a">700 subfield a</subfield>
+        <subfield code="b">700 subfield b</subfield>
+        <subfield code="c">700 subfield c</subfield>
+        <subfield code="d">700 subfield d</subfield>
+        <subfield code="e">scribe</subfield>
+      </datafield>
+
+      <datafield ind1="1" ind2=" " tag="880">
+        <subfield code="6">700-01</subfield>
+        <subfield code="a">880 700 subfield a</subfield>
+        <subfield code="b">880 700 subfield b</subfield>
+        <subfield code="c">880 700 subfield c</subfield>
+        <subfield code="d">880 700 subfield d</subfield>
+      </datafield>
+      </record>'
+    }
+
+    it 'extracts scribes, including the vernacular (880) name' do
+      expected = [
+        DS::Extractor::Name.new(
+          as_recorded: '700 subfield a 700 subfield b 700 subfield c 700 subfield d',
+          role: 'scribe',
+          vernacular: '880 700 subfield a 880 700 subfield b 880 700 subfield c 880 700 subfield d',
+          ref: ''
+        )
+      ]
+
+      expect(described_class.extract_scribes(record)).to match expected
+    end
+  end
+
   context 'genre extraction' do
 
     let(:marc_xml) {
